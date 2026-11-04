@@ -201,13 +201,28 @@ class PartPhysicalState:
         raise ValueError(f"部件{self.part_id}不存在接口{name}")
 
     def moments(self) -> MassMoments:
-        x = self.centers_world_m
+        """先在局部坐标积分，再解析变换到共同世界坐标。
+
+        Returns:
+            含有限立方单元尺寸贡献的原始质量矩，采用SI单位。
+        """
+        x = self.centers_local_m
         mass = self.density_kg_m3 * self.pitch_m**3
         total = float(mass.sum())
         # 单元是有限立方体，二阶矩必须保留自身尺寸贡献。
         second = np.einsum("i,ij,ik->jk", mass, x, x)
         second += np.eye(3) * total * self.pitch_m**2 / 12
-        return MassMoments(total, mass @ x, second)
+        rotation = self.local_to_world[:3, :3]
+        translation = self.local_to_world[:3, 3]
+        first = rotation @ (mass @ x)
+        # 避免逐体素累加带大平移的二阶矩，降低恢复中心惯量时的消减误差。
+        second = (
+            rotation @ second @ rotation.T
+            + np.outer(first, translation)
+            + np.outer(translation, first)
+            + total * np.outer(translation, translation)
+        )
+        return MassMoments(total, first + total * translation, second)
 
 
 @dataclass(frozen=True)

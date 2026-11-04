@@ -1,14 +1,16 @@
 {
   "date": "2026-11-04",
-  "full_suite_passed": 85,
-  "editing_subset_passed": 39,
+  "full_suite_passed": 86,
   "runtime": "Windows / Python 3.13",
-  "linux_ci": "configured_not_yet_executed",
+  "linux_ci": "see_actions_for_exact_revision_result",
   "real_models_executed": false,
   "real_object_accuracy_validated": false,
   "commands": [
     "python -m pytest -q -p no:cacheprovider",
     "python scripts/edit_parts.py"
   ],
-  "scope": "synthetic software references; not learned research performance"
+  "scope": "synthetic software references; not learned research performance",
+  "initial_editing_subset_passed": 39,
+  "linux_ci_url": "https://github.com/fanyizhi/PartPhy3D/actions/workflows/tests.yml",
+  "numerical_method": "integrate finite cells locally, then transform raw mass moments analytically"
 }

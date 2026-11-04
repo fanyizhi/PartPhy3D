@@ -12,7 +12,8 @@ python -m pytest -q
 ```
 
 可编辑安装避免`tactile3d`导入路径错误。本机实际执行环境是Windows/Python 3.13；
-配置的Linux CI需要推送后实际运行。无需为该演示安装torch或下载模型。
+Linux/Python 3.10的结果见对应提交的[自动测试](https://github.com/fanyizhi/PartPhy3D/actions/workflows/tests.yml)。
+无需为该演示安装torch或下载模型。
 
 输出到新的`outputs/edit_commands/run_<编号>`。默认指定设计的总质量依次为
 0.7840、3.0880、2.5228、0.8568 kg，不是ABO质量预测。完成的`manifest.json`

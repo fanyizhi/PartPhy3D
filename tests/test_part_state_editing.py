@@ -33,8 +33,10 @@ def example() -> tuple[PhysicalObject, PartPhysicalState]:
     return make_example()
 
 
+@pytest.mark.parametrize("translation", [(1.0, 2.0, 3.0), (2.0, -3.0, 4.0)])
 def test_box_mass_full_inertia_rotation_and_translation(
     example: tuple[PhysicalObject, PartPhysicalState],
+    translation: tuple[float, float, float],
 ) -> None:
     source, _ = example
     body = source.part("body")
@@ -49,10 +51,10 @@ def test_box_mass_full_inertia_rotation_and_translation(
     rotation = np.array([[0.0, -1, 0], [1, 0, 0], [0, 0, 1]])
     transform = np.eye(4)
     transform[:3, :3] = rotation
-    transform[:3, 3] = [1, 2, 3]
+    transform[:3, 3] = translation
     moved = replace(body, local_to_world=transform)
     result = PhysicalObject("moved", (moved,), source.grid_origin_m).total.properties()
-    np.testing.assert_allclose(result["center_of_mass_m"], [1, 2, 3], atol=1e-14)
+    np.testing.assert_allclose(result["center_of_mass_m"], translation, atol=1e-14)
     np.testing.assert_allclose(
         result["inertia_kg_m2"], rotation @ inertia @ rotation.T, atol=2e-14
     )
