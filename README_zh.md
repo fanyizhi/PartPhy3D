@@ -51,6 +51,7 @@ donor替换与重放。本机当前通过86项测试；Linux/Python 3.10的自�
 
 ## 文档
 
+- [完整研究设计草案：方法、损失、比较与验收](docs/research_blueprint_2026-11-04_zh.md)
 - [安装、数据与复现](docs/QUICKSTART_zh.md)
 - [数据目录与许可](docs/DATA.md)
 - [实验入口与复现范围](docs/EXPERIMENTS.md)

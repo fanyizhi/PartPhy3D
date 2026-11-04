@@ -13,6 +13,7 @@ research decisions; they are not evidence that all proposed modules are complete
 | Understand state, identities and interfaces | [Part state contract](part_state_and_edit_contract_zh.md) |
 | Write/replay edits | [Editing commands](edit_commands_2026-11-04_zh.md) |
 | Review the planned method step by step | [Method review](method_step_review_2026-11-04_zh.md) |
+| Review the complete proposed study and acceptance gates | [Research blueprint, Chinese](research_blueprint_2026-11-04_zh.md) |
 | Distinguish generation from simplification | [Generation and preview](generation_and_material_preview_2026-11-04_zh.md) |
 | Plan mass and physical comparisons | [Evaluation protocol](evaluation_protocol_zh.md) |
 | Plan the next accepted milestone | [Roadmap](ROADMAP.md) |
