@@ -1,0 +1,33 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  linux-cpu:
+    runs-on: ubuntu-22.04
+    env:
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -e ".[dev,figures]"
+      - run: python -m ruff check .
+      - run: python -m pytest -q
+      - run: python scripts/edit_parts.py --output outputs/ci-edit
+      - run: python scripts/edit_parts.py --plan examples/wood_to_hollow_steel.json --output outputs/ci-program
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cpu-edit-demo
+          path: |
+            outputs/ci-edit
+            outputs/ci-program
+          if-no-files-found: error
+          retention-days: 14

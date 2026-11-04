@@ -1,0 +1,10 @@
+method,status,kind,input_condition,n_requested,n_valid,n_missing,ade_kg,alde,ape_percent,mnre,rmse_kg,reason,predictions_sha256,evidence_sha256
+Surface solid,executed,rule_baseline,reference ABO mesh + dataset views + cached priors,10,10,0,22.520055345613663,1.329156384265425,283.6398522001942,0.3350748705102182,33.67211833591796,,dd9007842885cbd287167b1f88d875b024fea1ede24b49cbe07bbaafdc523e98,4343137f94cb46d9a375c8696a66597bb90724efea2bcf69eb17e6d6c227be9a
+Shell only,executed,rule_baseline,reference ABO mesh + dataset views + cached priors,10,10,0,7.609960570048779,0.8687412261474303,67.80525921456515,0.5072434599394955,15.437790658521934,,3e30a6d41a3a0b7d088404ec94c70b64e7d90d255e453380c99a5ec8e93d2e7a,4343137f94cb46d9a375c8696a66597bb90724efea2bcf69eb17e6d6c227be9a
+Construction prior,executed,rule_baseline,reference ABO mesh + dataset views + cached priors,10,10,0,11.41454194930342,0.7577101491311072,88.8394236393555,0.48998159897840593,19.62937105217812,,92a4076ef168654582a3fd1f55121a4e9d590f5566689212395656a4c937e942,4343137f94cb46d9a375c8696a66597bb90724efea2bcf69eb17e6d6c227be9a
+NeRF2Physics,pending,reproduced_paper,not run; fair input protocol to be declared,10,0,10,,,,,,not run,,
+PUGS,pending,reproduced_paper,not run; fair input protocol to be declared,10,0,10,,,,,,not run,,
+PhysVGGT,pending,reproduced_paper,not run; fair input protocol to be declared,10,0,10,,,,,,not run,,
+Gen2Physics,pending,reproduced_paper,not run; fair input protocol to be declared,10,0,10,,,,,,not run,,
+VoMP,pending,reproduced_paper,not run; fair input protocol to be declared,10,0,10,,,,,,not run,,
+PartPhy3D learned full pipeline,pending,proposed_method,not run; fair input protocol to be declared,10,0,10,,,,,,not run,,

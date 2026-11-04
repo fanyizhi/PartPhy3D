@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tactile3d"
+version = "0.4.0"
+description = "Probabilistic mesh physical grounding, VLM adaptation, and part-level editing."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Tactile3D Contributors"}]
+dependencies = [
+  "numpy>=1.24",
+  "Pillow>=10.0",
+  "PyYAML>=6.0",
+  "trimesh>=4.0",
+  "fast-simplification>=0.1.9",
+  "shapely>=2.0",
+  "scipy>=1.10",
+  "tqdm>=4.66"
+]
+
+[project.optional-dependencies]
+vision = ["torch>=2.1", "torchvision>=0.16", "open_clip_torch>=2.24"]
+train = [
+  "torch>=2.6",
+  "transformers>=4.57",
+  "datasets>=3.0",
+  "accelerate>=1.0",
+  "peft>=0.17",
+  "trl>=0.29",
+  "bitsandbytes>=0.46; platform_system == 'Linux'"
+]
+figures = ["matplotlib>=3.8"]
+dev = ["pytest>=7.4", "ruff>=0.4"]
+
+[project.scripts]
+tactile3d = "tactile3d.cli:main"
+
+[project.urls]
+Repository = "https://github.com/fanyizhi/PartPhy3D"
+Documentation = "https://github.com/fanyizhi/PartPhy3D/tree/main/docs"
+Issues = "https://github.com/fanyizhi/PartPhy3D/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+# 外部状态契约统一用ValueError报告非法值，调用方依此处理回滚。
+[tool.ruff.lint.per-file-ignores]
+"src/tactile3d/eval/import_baseline.py" = ["TRY004"]
+"src/tactile3d/physics/edit_program.py" = ["TRY004"]
+"src/tactile3d/physics/part_editing.py" = ["TRY004"]
+"src/tactile3d/physics/part_state.py" = ["TRY004"]

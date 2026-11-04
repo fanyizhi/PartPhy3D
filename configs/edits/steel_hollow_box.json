@@ -1,0 +1,8 @@
+{
+  "target_part_id": "leg",
+  "operation": "construction_change",
+  "expected_part_version": 1,
+  "material_name": "steel",
+  "construction": "hollow_box",
+  "wall_thickness_m": 0.01
+}

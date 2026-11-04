@@ -1,0 +1,47 @@
+seed: 17
+
+dataset:
+  mesh_unit_to_meter: 1.0
+
+mesh:
+  repair_strategy: fill_only
+  require_watertight: true
+
+segmentation:
+  num_parts: 3
+  feature_weights:
+    position: 1.0
+    normal: 0.6
+    area: 0.1
+  max_iters: 20
+  smoothing_iters: 1
+  voxel_resolution: 16
+
+views:
+  max_views: 2
+  crop_padding: 0.1
+  zbuffer_size: 64
+
+features:
+  backend: handcrafted
+
+vlm:
+  backend: heuristic
+  surface_fusion_weight: 0.5
+  fallback_on_error: false
+
+materials:
+  priors: material_priors.yaml
+  temperature: 1.0
+
+uncertainty:
+  num_samples: 32
+  view_bootstrap_fraction: 1.0
+  metric_scale_cv: 0.0
+
+calibration:
+  l2: 0.02
+  max_iters: 100
+
+output:
+  save_crops: false

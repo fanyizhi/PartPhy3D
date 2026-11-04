@@ -1,0 +1,40 @@
+experiment: fixed_ten_object_untrained_reference_mesh_pilot
+selection: first_10_published_test_ids_no_replacement
+seed: 20261030
+samples: 4096
+regions: 8
+max_clustering_faces: 40000
+voxel_resolutions: [96, 144, 192]
+main_resolution: 144
+max_bbox_cells: 2500000
+alpha_threshold: 128
+alignment_mean_iou_min: 0.85
+display_resolution: 420
+lod_face_fractions: [0.5, 0.25]
+component_gate_padding_in_voxels: 0.5
+construction:
+  shell_to_core_void_fraction: [0.0, 0.03, 0.10]
+  generic_core_occupancy: [0.65, 0.85, 1.0]
+  electronics_core_occupancy: [0.10, 0.25, 0.45]
+  hollow_core_occupancy: [0.0, 0.02, 0.08]
+  soft_core_occupancy: [0.75, 0.90, 1.0]
+  hidden_wood_fraction: [0.02, 0.07, 0.15]
+  dumbbell_steel_fraction: [0.70, 0.85, 0.95]
+  furniture_panel_fill: [0.10, 0.20, 0.35]
+  default_shell_thickness_m: [0.001, 0.003, 0.005]
+fallback_materials:
+  foam: {density: [20, 60], thickness_m: [0.05, 0.10]}
+  wood: {density: [300, 800], thickness_m: [0.01, 0.03]}
+  fabric: {density: [100, 300], thickness_m: [0.002, 0.005]}
+  steel: {density: [7600, 8000], thickness_m: [0.002, 0.005]}
+  circuit_board: {density: [1500, 2000], thickness_m: [0.002, 0.003]}
+status:
+  reference_mesh_and_dataset_alpha_used: true
+  trained: false
+  instantmesh_executed: false
+  qwen_executed: false
+  learned_part_model_executed: false
+  material_source: cached_NeRF2Physics_proposals_plus_declared_heuristic
+  calibrated_uncertainty: false
+  part_ground_truth_available: false
+  local_physical_ground_truth_available: false

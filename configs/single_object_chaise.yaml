@@ -1,0 +1,46 @@
+experiment: unedited_ABO500_reference_mesh_diagnostic
+scene_id: B07B4G5RBN_ATVPDKIKX0DER
+selection: first object in the released test list, before opening its mass label
+mesh_url: https://amazon-berkeley-objects.s3.amazonaws.com/3dmodels/original/N/B07B4G5RBN.glb
+mesh_unit_to_meter: 1.0
+seed: 20261030
+samples: 4096
+main_pitch_m: 0.012
+convergence_pitches_m: [0.020, 0.012, 0.008]
+volume_method: geometry_trimmed_multiview_visual_hull
+alpha_threshold: 128
+closing_iterations: 1
+display_view_index: 3
+material_order: [wood, foam, fabric, batting, void]
+# Density ranges are copied from this object's released info.json, not fitted
+# to its mass. Elastic constants below are explicit illustrative assumptions.
+materials:
+  wood: {density_range: [300, 700], youngs_pa: 1.0e10, poisson: 0.30}
+  foam: {density_range: [20, 60], youngs_pa: 2.0e6, poisson: 0.30}
+  fabric: {density_range: [100, 300], youngs_pa: 1.0e8, poisson: 0.30}
+  batting: {density_range: [10, 50], youngs_pa: 1.0e5, poisson: 0.25}
+  void: {density_range: [0, 0], youngs_pa: 0.0, poisson: 0.0}
+shell:
+  fabric_thickness_m: 0.0035
+  batting_thickness_m: 0.0035
+  frame_localization_width_m: 0.04
+# Uncalibrated, hand-specified construction assumptions. Foam density is already
+# apparent density; these fractions express macroscopic occupancy only.
+construction:
+  base:
+    wood_fraction_triangular: [0.04, 0.10, 0.18]
+    foam_fraction_triangular: [0.20, 0.35, 0.50]
+  back_and_arms:
+    wood_fraction_triangular: [0.02, 0.06, 0.12]
+    foam_fraction_triangular: [0.35, 0.50, 0.65]
+  cushions:
+    wood_fraction_triangular: [0.0, 0.0, 0.0]
+    foam_fraction_triangular: [0.85, 0.95, 1.0]
+status:
+  trained: false
+  instantmesh_executed: false
+  qwen_executed: false
+  learned_part_model_executed: false
+  priors_calibrated: false
+  local_property_ground_truth: false
+  friction_prediction: unavailable; no contact-pair measurement

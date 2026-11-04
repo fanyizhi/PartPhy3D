@@ -1,0 +1,28 @@
+seed: 7
+num_samples: 8
+num_parts: 4
+require_watertight: true
+repair_strategy: fill_then_hull
+
+mesh:
+  backend: geometric
+  resolution: 48
+  nominal_depth_m: 0.08
+  scale_jitter: 0.08
+  depth_jitter: 0.12
+
+segmentation:
+  method: geometry_kmeans
+  feature_weights:
+    position: 1.0
+    normal: 0.55
+    area: 0.15
+  max_iters: 40
+
+materials:
+  priors: configs/material_priors.yaml
+  temperature: 0.8
+
+output:
+  save_mesh_samples: true
+  save_part_json: true

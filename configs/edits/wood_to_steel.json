@@ -1,0 +1,11 @@
+{
+  "target_part_id": "leg",
+  "operation": "material_change",
+  "expected_part_version": 0,
+  "material_name": "wood",
+  "new_material": {
+    "name": "steel",
+    "density_kg_m3": 7850.0,
+    "source": "explicit_synthetic_design_parameter"
+  }
+}

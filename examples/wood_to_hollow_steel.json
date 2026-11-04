@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "object_id": "synthetic_mount_assembly",
+  "expected_object_version": 0,
+  "steps": [
+    {
+      "target_part_id": "leg",
+      "operation": "material_change",
+      "expected_part_version": 0,
+      "material_name": "wood",
+      "new_material": {
+        "name": "steel",
+        "density_kg_m3": 7850.0,
+        "source": "explicit_design_input"
+      }
+    },
+    {
+      "target_part_id": "leg",
+      "operation": "construction_change",
+      "expected_part_version": 1,
+      "material_name": "steel",
+      "construction": "hollow_box",
+      "wall_thickness_m": 0.01
+    }
+  ]
+}

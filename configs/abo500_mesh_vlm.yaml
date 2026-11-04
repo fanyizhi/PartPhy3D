@@ -1,0 +1,65 @@
+seed: 17
+
+dataset:
+  mesh_unit_to_meter: null
+
+mesh:
+  repair_strategy: fill_only
+  require_watertight: true
+
+segmentation:
+  method: geometry_kmeans
+  num_parts: 6
+  feature_weights:
+    position: 1.0
+    normal: 0.65
+    area: 0.10
+  max_iters: 60
+  smoothing_iters: 4
+  voxel_resolution: 64
+
+views:
+  max_views: 12
+  crop_padding: 0.15
+  zbuffer_size: 256
+
+features:
+  backend: open_clip
+  model: ViT-B-32
+  pretrained: laion2b_s34b_b79k
+  batch_size: 16
+  similarity_scale: 30.0
+  prompt_templates:
+    - "a close-up photograph of an object part made of {}"
+    - "the visible surface material is {}"
+
+vlm:
+  # Compatible with `vllm serve Qwen/Qwen3-VL-8B-Instruct`.
+  backend: openai_compatible
+  base_url: http://127.0.0.1:8000/v1
+  model: Qwen/Qwen3-VL-8B-Instruct
+  max_images_per_part: 4
+  temperature: 0.15
+  max_tokens: 1800
+  timeout_seconds: 120
+  retries: 3
+  retry_delay_seconds: 2
+  json_response_format: true
+  surface_fusion_weight: 0.55
+  fallback_on_error: false
+
+materials:
+  priors: material_priors.yaml
+  temperature: 1.0
+
+uncertainty:
+  num_samples: 512
+  view_bootstrap_fraction: 0.75
+  metric_scale_cv: 0.03
+
+calibration:
+  l2: 0.02
+  max_iters: 500
+
+output:
+  save_crops: true

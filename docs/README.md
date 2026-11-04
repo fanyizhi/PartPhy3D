@@ -1,0 +1,26 @@
+# Documentation
+
+Start with the installation guide and implementation status. Dated notes preserve
+research decisions; they are not evidence that all proposed modules are complete.
+
+| Need | Read |
+| --- | --- |
+| Install and run on CPU | [Quick start, Chinese](QUICKSTART_zh.md) |
+| Prepare ABO images, cameras and meshes | [Data](DATA.md) |
+| Reproduce supported experiments | [Experiment commands](EXPERIMENTS.md) |
+| Check what actually works | [Implementation status](IMPLEMENTATION_STATUS.md) |
+| Inspect recorded numerical evidence | [Results](results/README.md) |
+| Understand state, identities and interfaces | [Part state contract](part_state_and_edit_contract_zh.md) |
+| Write/replay edits | [Editing commands](edit_commands_2026-11-04_zh.md) |
+| Review the planned method step by step | [Method review](method_step_review_2026-11-04_zh.md) |
+| Distinguish generation from simplification | [Generation and preview](generation_and_material_preview_2026-11-04_zh.md) |
+| Plan mass and physical comparisons | [Evaluation protocol](evaluation_protocol_zh.md) |
+| Plan the next accepted milestone | [Roadmap](ROADMAP.md) |
+
+The main package is named `tactile3d`; the repository and research project are
+named **PartPhy3D**. This preserves existing command and import compatibility.
+SI units are used: meter, kilogram, second, pascal and kilogram per cubic meter.
+
+Historical material in `archive/` may describe an earlier scope. The current
+implementation status and versioned state contracts take precedence when using
+the code. No document authorizes starting jobs on a shared server.

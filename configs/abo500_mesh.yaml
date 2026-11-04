@@ -1,0 +1,59 @@
+seed: 17
+
+dataset:
+  # Set this only when every mesh uses the same metric unit. Otherwise put a
+  # mesh_scale.json with {"mesh_unit_to_meter": ...} inside every scene.
+  mesh_unit_to_meter: null
+
+mesh:
+  repair_strategy: fill_only
+  require_watertight: true
+
+segmentation:
+  method: geometry_kmeans
+  num_parts: 6
+  feature_weights:
+    position: 1.0
+    normal: 0.65
+    area: 0.10
+  max_iters: 60
+  smoothing_iters: 4
+  voxel_resolution: 48
+
+views:
+  max_views: 12
+  crop_padding: 0.15
+  zbuffer_size: 256
+
+features:
+  backend: open_clip
+  model: ViT-B-32
+  pretrained: laion2b_s34b_b79k
+  batch_size: 16
+  similarity_scale: 30.0
+  prompt_templates:
+    - "a close-up photograph of an object part made of {}"
+    - "the surface material is {}"
+
+# surface_only reproduces the original all-solid mesh baseline. Use
+# configs/abo500_mesh_vlm.yaml for structured hidden-interior inference.
+vlm:
+  backend: surface_only
+  surface_fusion_weight: 0.5
+  fallback_on_error: false
+
+materials:
+  priors: material_priors.yaml
+  temperature: 1.0
+
+uncertainty:
+  num_samples: 512
+  view_bootstrap_fraction: 0.75
+  metric_scale_cv: 0.03
+
+calibration:
+  l2: 0.02
+  max_iters: 500
+
+output:
+  save_crops: false
