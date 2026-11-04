@@ -135,7 +135,15 @@ def build_release(root: Path, output: Path) -> dict[str, Any]:
         relative = source.relative_to(root)
         target = destination / relative
         target.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(source, target)
+        if source.suffix == ".png":
+            shutil.copy2(source, target)
+        else:
+            # 统一导出换行，避免Git规范化后与发布哈希不一致。
+            target.write_text(
+                source.read_text(encoding="utf-8-sig"),
+                encoding="utf-8",
+                newline="\n",
+            )
         manifest["files"][relative.as_posix()] = digest(target)
     manifest_file = destination / "RELEASE_MANIFEST.json"
     manifest_file.write_text(

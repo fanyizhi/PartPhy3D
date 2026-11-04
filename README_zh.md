@@ -34,7 +34,7 @@ python -m pytest -q
 ## 实现状态
 
 已实现显式部件状态、密度积分、质量矩、受限中文/严格JSON编辑、回滚、接口兼容
-donor替换与重放。本机当前通过86项测试；Linux/Python 3.10的自动测试和演示
+donor替换与重放。本机当前通过96项测试；Linux/Python 3.10的自动测试和演示
 结果请查看页面上方的CI链接，并对应到具体提交。
 
 真实InstantMesh/Qwen/部件模型链、学习式联合构造推断、生成侧自适应网格构建及
@@ -52,6 +52,7 @@ donor替换与重放。本机当前通过86项测试；Linux/Python 3.10的自�
 ## 文档
 
 - [完整研究设计草案：方法、损失、比较与验收](docs/research_blueprint_2026-11-04_zh.md)
+- [各问题的解法、方法优势与证据条件](docs/problem_solution_advantages_2026-11-04_zh.md)
 - [安装、数据与复现](docs/QUICKSTART_zh.md)
 - [数据目录与许可](docs/DATA.md)
 - [实验入口与复现范围](docs/EXPERIMENTS.md)

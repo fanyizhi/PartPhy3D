@@ -1,0 +1,72 @@
+{
+  "scope": "analytic_scalar_model_not_learned_or_real_object_validation",
+  "assumptions": [
+    "known_envelope_volume_and_two_exact_edit_densities",
+    "single_uniform_material_phase_plus_void",
+    "unchanged_geometry_macro_occupancy_and_rest_mass",
+    "independent_mass_observations_available_for_the_audit"
+  ],
+  "model_training_executed": false,
+  "real_object_accuracy_validated": false,
+  "rgb_only_test_identifiability_established": false,
+  "jacobian_absolute_error": 8.22666379463044e-11,
+  "masses_kg": [
+    0.65,
+    1.0,
+    1.75
+  ],
+  "alternative_masses_kg": [
+    0.65,
+    1.0,
+    1.6
+  ],
+  "recovered": {
+    "density_kg_m3": 500.0,
+    "fill_fraction": 0.5,
+    "occupied_volume_m3": 0.0005,
+    "rest_mass_kg": 0.4
+  },
+  "cases": [
+    {
+      "case": "original_only",
+      "observations": 1,
+      "unknowns": 3,
+      "rank": 1,
+      "condition_number": null
+    },
+    {
+      "case": "one_edit",
+      "observations": 2,
+      "unknowns": 3,
+      "rank": 2,
+      "condition_number": null
+    },
+    {
+      "case": "two_distinct_edits",
+      "observations": 3,
+      "unknowns": 3,
+      "rank": 3,
+      "condition_number": 13.864955733775735
+    },
+    {
+      "case": "two_duplicate_edits",
+      "observations": 3,
+      "unknowns": 3,
+      "rank": 2,
+      "condition_number": null
+    },
+    {
+      "case": "two_near_duplicate_edits",
+      "observations": 3,
+      "unknowns": 3,
+      "rank": 3,
+      "condition_number": 7279.594603168301
+    }
+  ],
+  "illustrative_noise": {
+    "assumed_independent_mass_sigma_kg": 0.001,
+    "distinct_edits_fill_sigma": 0.0009428090415820634,
+    "one_kg_m3_density_gap_fill_sigma": 1.4142135623730951,
+    "excludes_density_geometry_and_manufacturing_uncertainty": true
+  }
+}

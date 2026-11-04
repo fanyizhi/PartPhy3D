@@ -26,7 +26,7 @@ recomputation. The custom JSON/replay path checks recomputation agreement; it do
 not automatically acquire an independent physical ground truth.
 
 Inspect `report.json`, `manifest.json`, `physical_updates.csv`, saved states,
-PLYs and PNG/SVG/PDF figures. Local validation currently records 86 passing tests:
+PLYs and PNG/SVG/PDF figures. Local validation currently records 96 passing tests:
 
 ```bash
 python -m ruff check .
@@ -36,6 +36,18 @@ python -m pytest -q
 GitHub Actions runs the CPU tests and both demos on Linux, and stores generated
 demo artifacts for 14 days. Check its actual run result; a configured workflow
 alone is not a passed check. These tests do not require or start training.
+
+## E0b: independent scalar observability audit
+
+The independent scalar observability audit is also available without data or GPU:
+
+```bash
+python scripts/audit_edit_observability.py
+```
+
+It checks original, single, complementary, duplicate and nearly duplicate edits.
+The JSON/CSV reports state the assumptions; this is not a trained RGB model or
+real-object evaluation. See [problem/solution design](problem_solution_advantages_2026-11-04_zh.md).
 
 ## E1: ten-object reference-mesh development diagnostic
 

@@ -14,6 +14,7 @@ research decisions; they are not evidence that all proposed modules are complete
 | Write/replay edits | [Editing commands](edit_commands_2026-11-04_zh.md) |
 | Review the planned method step by step | [Method review](method_step_review_2026-11-04_zh.md) |
 | Review the complete proposed study and acceptance gates | [Research blueprint, Chinese](research_blueprint_2026-11-04_zh.md) |
+| Match each problem to a method and testable advantage | [Problem/solution/evidence, Chinese](problem_solution_advantages_2026-11-04_zh.md) |
 | Distinguish generation from simplification | [Generation and preview](generation_and_material_preview_2026-11-04_zh.md) |
 | Plan mass and physical comparisons | [Evaluation protocol](evaluation_protocol_zh.md) |
 | Plan the next accepted milestone | [Roadmap](ROADMAP.md) |

@@ -9,7 +9,7 @@ The construction prior did not beat the shell baseline on every metric. These
 objects have been used for development and are not an untouched test cohort.
 
 `software_validation.json` records local software checks: the initial editing
-subset had 39 passing checks, and the complete current suite has 86 passing checks.
+subset had 39 passing checks, and the complete current suite has 96 passing checks.
 The suite includes two translated analytic-inertia references. Synthetic tests do
 not establish real-object accuracy. Check the exact commit's
 [Linux CI result](https://github.com/fanyizhi/PartPhy3D/actions/workflows/tests.yml)
@@ -23,3 +23,10 @@ release.
 Its reference values come from the specified box dimensions and densities.
 Near-zero error verifies integration arithmetic for this construction, not
 inferred real-world density or hidden structure.
+
+`observability_audit.json` and `observability_audit.csv` record a simplified
+analytic assembly with one material phase, void and unchanged remaining mass.
+They check observation rank and conditioning under declared interventions, with
+known scale and new densities. The noise calculation uses an illustrative assumed
+measurement error. These records do not establish RGB-only identifiability,
+trained-model performance or real-object accuracy.
