@@ -1,5 +1,12 @@
 # Recorded evidence
 
+Version 0.5.1 adds a fixed-geometry, fixed-occupancy material edit on a known stool.
+The [three views](material_edit_v1_views.png), [physical changes](material_edit_v1_physics.png),
+[CSV](material_edit_v1_physics.csv) and [audit report](material_edit_v1_report.json)
+come from specified dimensions and material values, not real-object inference.
+The total mass changes from 5.120 to 6.432 kg. No pixels outside the selected
+visible region change under the fixed simple renderer. See [scope and reproduction](../material_edit_v1_zh.md).
+
 Version 0.5.0 adds executed shared-construction learning, adaptive-surface and
 real two-object rule diagnostics. See [the execution report](reproduction_v0.5.0_zh.md).
 The bundled figures and CSV preserve adverse results as well as improvements.

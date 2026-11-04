@@ -107,3 +107,8 @@ I_COM = trace(Q)*Identity - Q
 首版新增：`physics/part_state.py`、`part_editing.py`及`part_io.py`已实现显式部件状态、严格EditSpec、确定性缓存更新、矩形接口及材料支持采样、材料/盒壳编辑和兼容体素donor装配。`mesh/state_surface.py`提取体素材料边界，不使用凸包填空腔。16项新增测试及5项既有相关回归通过，另完成10例缓存字段迁移审计。
 
 尚未完成：任意姿态重体素化、自由分层构造、可靠跨LOD锚点迁移、学习式跨模态对齐和全局推断/力学依赖传播。旧`mesh/editing.py`的凸包/ICP基线单独保留，不与新体素引擎混称。
+# v0.5.1补充
+
+物理状态schema 2增加可选材料杨氏模量、泊松比和RGBA示意色，仍可读取schema 1。
+固定构造的区域绑定与材料同步编辑见[材料编辑第一版](material_edit_v1_zh.md)。
+旧颜色预览和新绑定编辑有不同证据范围，不能混用。

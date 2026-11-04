@@ -1,0 +1,13 @@
+{
+  "target_part_id": "front_left_leg",
+  "target_region_id": "bulk",
+  "expected_part_version": 0,
+  "new_material": {
+    "name": "aluminum",
+    "density_kg_m3": 2700.0,
+    "youngs_modulus_pa": 69000000000.0,
+    "poisson_ratio": 0.33,
+    "display_rgba": [170, 185, 200, 255],
+    "source": "specified_synthetic_intervention_not_measured"
+  }
+}

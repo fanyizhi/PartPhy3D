@@ -1,0 +1,147 @@
+{
+  "operation": "material_change",
+  "part_id": "front_left_leg",
+  "source_version": 0,
+  "result_version": 1,
+  "old_instance_id": "fixture:front_left_leg",
+  "new_instance_id": "fixture:front_left_leg",
+  "recomputed_parts": [
+    "front_left_leg"
+  ],
+  "reused_parts": [
+    "seat",
+    "front_right_leg",
+    "rear_left_leg",
+    "rear_right_leg"
+  ],
+  "invalidated_fields": [
+    "target_physics",
+    "target_fused_features"
+  ],
+  "revalidated_interfaces": [],
+  "interface_checks": [],
+  "interface_validation": "frame, size and voxel contact samples",
+  "before": {
+    "mass_kg": 5.12,
+    "center_of_mass_m": [
+      -6.369687763352339e-17,
+      -5.692061405548898e-17,
+      0.3484999999999925
+    ],
+    "inertia_kg_m2": [
+      [
+        0.1385186133333653,
+        5.2909066017292635e-17,
+        -5.120556756388093e-17
+      ],
+      [
+        5.2909066017292635e-17,
+        0.15592661333336597,
+        -1.0503403702344153e-16
+      ],
+      [
+        -5.120556756388093e-17,
+        -1.0503403702344153e-16,
+        0.1404245333333347
+      ]
+    ]
+  },
+  "after": {
+    "mass_kg": 6.432,
+    "center_of_mass_m": [
+      -0.028557213930347988,
+      -0.02447761194029837,
+      0.3182089552238744
+    ],
+    "inertia_kg_m2": [
+      [
+        0.19425681194032904,
+        -0.017545552238805672,
+        -0.021712620895520826
+      ],
+      [
+        -0.017545552238805672,
+        0.21709557810948377,
+        -0.018610817910446567
+      ],
+      [
+        -0.021712620895520826,
+        -0.018610817910446567,
+        0.17628325572139397
+      ]
+    ]
+  },
+  "appearance_rendered": true,
+  "dependency_scope": "explicit fields; no global learned/stress solver",
+  "uncertainty_updated": false,
+  "strength_validated": false,
+  "region_id": "bulk",
+  "material_slot": 0,
+  "old_material": {
+    "name": "wood",
+    "density_kg_m3": 650.0,
+    "source": "specified_synthetic_fixture_not_measured",
+    "youngs_modulus_pa": 10000000000.0,
+    "poisson_ratio": 0.3,
+    "display_rgba": [
+      155,
+      105,
+      58,
+      255
+    ]
+  },
+  "new_material": {
+    "name": "aluminum",
+    "density_kg_m3": 2700.0,
+    "source": "specified_synthetic_intervention_not_measured",
+    "youngs_modulus_pa": 69000000000.0,
+    "poisson_ratio": 0.33,
+    "display_rgba": [
+      170,
+      185,
+      200,
+      255
+    ]
+  },
+  "selected_faces": 12,
+  "changed_faces": 12,
+  "surface_label_source": "known_design_not_predicted_segmentation",
+  "occupied_region_volume_m3": 0.0006400000000000002,
+  "geometry_and_occupancy_unchanged": true,
+  "expected_delta_mass_kg": 1.3120000000000003,
+  "delta_mass_kg": 1.3120000000000003,
+  "full_recompute_error": {
+    "mass_kg": 0.0,
+    "first_kg_m": 0.0,
+    "second_kg_m2": 0.0
+  },
+  "appearance_bound_to_state": true,
+  "elasticity_scope": "declared isotropic material values; no stiffness/strength validation",
+  "views": [
+    {
+      "view": 0,
+      "azimuth_degrees": -55.0,
+      "visible_target_pixels": 3299,
+      "changed_pixels": 3299,
+      "outside_target_changed": 0
+    },
+    {
+      "view": 1,
+      "azimuth_degrees": -125.0,
+      "visible_target_pixels": 3314,
+      "changed_pixels": 3314,
+      "outside_target_changed": 0
+    },
+    {
+      "view": 2,
+      "azimuth_degrees": 45.0,
+      "visible_target_pixels": 999,
+      "changed_pixels": 999,
+      "outside_target_changed": 0
+    }
+  ],
+  "status": "complete",
+  "independent_reference": "analytic_boxes",
+  "real_object_accuracy_established": false,
+  "interpretation": "declared material edit; geometry/occupancy fixed; schematic colors"
+}

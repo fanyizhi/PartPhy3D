@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 Construction-aware physical inference and part editing. **Research prototype,
-version 0.5.0; no peer-reviewed performance or acceptance claim.**
+version 0.5.1; no peer-reviewed performance or acceptance claim.**
 
 [中文](README_zh.md) · [Complete methods and reproduction](docs/METHODS_AND_REPRODUCTION_zh.md) ·
 [Status](docs/IMPLEMENTATION_STATUS.md) · [Data](docs/DATA.md) · [Evidence](docs/results/README.md)
@@ -92,6 +92,17 @@ rather than silently using a convex hull. The executed two-object rule baseline
 has large errors; see the [report](docs/results/reproduction_v0.5.0_zh.md).
 
 ## Other commands
+
+Version 0.5.1 binds material-region selection, schematic colors, density and
+declared elastic properties to the same state. Run the known-design chair example:
+
+```bash
+python scripts/edit_material.py --output outputs/material_first
+```
+
+This exports three before/after views, physical changes, editable assets and
+independent analytic checks. See [material editing](docs/material_edit_v1_zh.md).
+The full CPU suite includes this experiment under `bound_material/`.
 
 ```bash
 python scripts/reproduce.py --output outputs/learn_only

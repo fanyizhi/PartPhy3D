@@ -17,7 +17,7 @@ from tactile3d.physics.part_state import (
     PhysicalObject,
 )
 
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 HASH_CHUNK_BYTES = 1024 * 1024
 
 
@@ -60,9 +60,9 @@ def save_object(state: PhysicalObject, directory: str | Path) -> Path:
         for phase, material in enumerate(part.materials):
             key = f"{prefix}_density_{phase}"
             arrays[key] = np.asarray(material.density_kg_m3)
-            materials.append(
-                {"name": material.name, "source": material.source, "density_key": key}
-            )
+            descriptor = material.to_dict()
+            descriptor.pop("density_kg_m3")
+            materials.append({**descriptor, "density_key": key})
         parts.append(
             {
                 "part_id": part.part_id,
@@ -108,7 +108,10 @@ def load_object(directory: str | Path) -> PhysicalObject:
     """校验存储完整性后重建状态，不信任旧物理缓存。"""
     folder = Path(directory).expanduser().resolve()
     payload = json.loads((folder / "state.json").read_text(encoding="utf-8"))
-    if payload.get("schema_version") != SCHEMA_VERSION or payload.get("units") != {
+    if (
+        type(payload.get("schema_version")) is not int
+        or payload["schema_version"] not in {1, SCHEMA_VERSION}
+    ) or payload.get("units") != {
         "length": "m",
         "mass": "kg",
         "density": "kg/m^3",
@@ -121,7 +124,16 @@ def load_object(directory: str | Path) -> PhysicalObject:
     with np.load(file, allow_pickle=False) as arrays:
         for row in payload["parts"]:
             materials = tuple(
-                Material(item["name"], arrays[item["density_key"]], item["source"])
+                Material.from_dict(
+                    {
+                        **{
+                            key: value
+                            for key, value in item.items()
+                            if key != "density_key"
+                        },
+                        "density_kg_m3": arrays[item["density_key"]],
+                    }
+                )
                 for item in row["materials"]
             )
             parts.append(

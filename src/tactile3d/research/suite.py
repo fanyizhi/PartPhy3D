@@ -9,6 +9,7 @@ import time
 from pathlib import Path
 from typing import Any
 
+from tactile3d.experiments.bound_material_demo import run_material_edit
 from tactile3d.experiments.edit_commands import (
     DEFAULT_COMMANDS,
     export_result,
@@ -46,6 +47,7 @@ def run_suite(
         )
         result = execute_program(source, program, {donor_key: donor})
         export_result(result, output / "editing", synthetic_reference())
+        run_material_edit(output / "bound_material")
         write_json(output / "observability.json", audit_observability())
         run_adaptive(output / "adaptive")
         report.update(

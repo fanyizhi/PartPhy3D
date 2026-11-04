@@ -122,14 +122,7 @@ class EditSpec:
             raise ValueError("EditSpec不是对象或含有未知字段")
         payload = dict(value)
         if "new_material" in payload:
-            material = payload["new_material"]
-            if (
-                not isinstance(material, dict)
-                or set(material) - {"name", "density_kg_m3", "source"}
-                or not {"name", "density_kg_m3"} <= set(material)
-            ):
-                raise ValueError("new_material需要名称、密度及可选来源")
-            payload["new_material"] = Material(**material)
+            payload["new_material"] = Material.from_dict(payload["new_material"])
         if payload.get("donor_state_ref"):
             if not isinstance(payload["donor_state_ref"], str):
                 raise ValueError("donor_state_ref必须为目录字符串")
@@ -148,11 +141,7 @@ class EditSpec:
             if getattr(self, item.name) is not None
         }
         if self.new_material is not None:
-            payload["new_material"] = {
-                "name": self.new_material.name,
-                "density_kg_m3": np.asarray(self.new_material.density_kg_m3).tolist(),
-                "source": self.new_material.source,
-            }
+            payload["new_material"] = self.new_material.to_dict()
         return payload
 
     def to_json(self, path: str | Path) -> Path:

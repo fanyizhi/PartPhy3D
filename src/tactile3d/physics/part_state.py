@@ -51,6 +51,9 @@ class Material:
     name: str
     density_kg_m3: float | FloatArray
     source: str = "user_specified"
+    youngs_modulus_pa: float | None = None
+    poisson_ratio: float | None = None
+    display_rgba: tuple[int, int, int, int] | None = None
 
     def __post_init__(self) -> None:
         if not isinstance(self.name, str) or not isinstance(self.source, str):
@@ -61,6 +64,57 @@ class Material:
         if density.ndim > 1 or density.size == 0 or np.any(density < 0):
             raise ValueError("密度必须是非负标量或一维字段")
         object.__setattr__(self, "density_kg_m3", density)
+        if self.youngs_modulus_pa is not None:
+            elastic = float(self.youngs_modulus_pa)
+            if not np.isfinite(elastic) or elastic <= 0 or np.any(density <= 0):
+                raise ValueError("弹性材料需要正的有限密度和杨氏模量，单位Pa")
+            object.__setattr__(self, "youngs_modulus_pa", elastic)
+        if self.poisson_ratio is not None:
+            ratio = float(self.poisson_ratio)
+            if not np.isfinite(ratio) or not -1 < ratio < 0.5:
+                raise ValueError("各向同性弹性诊断的泊松比必须在(-1,0.5)内")
+            object.__setattr__(self, "poisson_ratio", ratio)
+        if self.display_rgba is not None:
+            color = tuple(self.display_rgba)
+            if len(color) != 4 or any(
+                isinstance(value, (bool, np.bool_))
+                or not isinstance(value, (int, np.integer))
+                or not 0 <= value <= 255
+                for value in color
+            ):
+                raise ValueError("示意色必须是四个0到255的RGBA整数")
+            object.__setattr__(self, "display_rgba", tuple(int(v) for v in color))
+
+    def to_dict(self) -> dict[str, Any]:
+        """导出颜色与物理参数的共同来源，不从显示颜色反推材料属性。"""
+        result = {
+            "name": self.name,
+            "density_kg_m3": self.density_kg_m3.tolist(),
+            "source": self.source,
+        }
+        for name in ("youngs_modulus_pa", "poisson_ratio", "display_rgba"):
+            value = getattr(self, name)
+            if value is not None:
+                result[name] = value
+        return result
+
+    @classmethod
+    def from_dict(cls, payload: object) -> Material:
+        allowed = {
+            "name",
+            "density_kg_m3",
+            "source",
+            "youngs_modulus_pa",
+            "poisson_ratio",
+            "display_rgba",
+        }
+        if (
+            not isinstance(payload, dict)
+            or set(payload) - allowed
+            or not {"name", "density_kg_m3"} <= set(payload)
+        ):
+            raise ValueError("材料字段错误，需要名称、密度及明确的可选物理/显示属性")
+        return cls(**payload)
 
     def values(self, count: int) -> FloatArray:
         if count <= 0:

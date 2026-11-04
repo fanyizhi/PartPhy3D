@@ -8,6 +8,7 @@ scipy>=1.10
 tqdm>=4.66
 pytest>=7.4
 ruff>=0.4
+black>=24.4
 torch>=2.6
 torchvision>=0.16
 open_clip_torch>=2.24

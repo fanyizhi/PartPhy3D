@@ -9,6 +9,7 @@ claims are tracked separately.
 | Density, mass, COM and full inertia | Analytic synthetic checks pass | Independent real-object accuracy |
 | Material, closed-box and donor editing | Commands, rollback, snapshots and replay run | Arbitrary poses, free-form layers and mechanics |
 | Material-color preview | One reference ABO asset rendered | Learned selection and physical-state binding |
+| Bound region material editing | Known-design multiview colors and physical fields synchronize; analytic and replay checks | Checked real segmentation-to-volume correspondence and independent measurements |
 | Ten-object rule baseline | Executed on reference geometry | Real models and held-out evaluation |
 | Fixed-cohort comparison | Implemented; missing methods have no scores | Actual published baseline reproduction |
 | InstantMesh and Qwen path | External command adapter and HTTP backend exist; real weights not executed | GPU compatibility, inference, correspondence and logs |
@@ -27,3 +28,7 @@ Version 0.5.0 provides `scripts/reproduce_all.py` and audited source/wheel/sdist
 packaging. Read [the complete guide](METHODS_AND_REPRODUCTION_zh.md) and
 [actual results](results/reproduction_v0.5.0_zh.md). The two-object real rule
 baseline has large errors, and task-only refinement loses global volume accuracy.
+
+Version 0.5.1 adds [bound material editing](material_edit_v1_zh.md). Physical state
+schema 2 retains optional material elasticity and display colors while reading
+schema 1. Legacy standalone color preview is separate from the new bound asset.

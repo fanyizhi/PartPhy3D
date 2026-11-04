@@ -1,6 +1,6 @@
 # PartPhy3D
 
-面向部件构造、物理属性推断和物理一致编辑的研究工程，当前版本 **0.5.0**。
+面向部件构造、物理属性推断和物理一致编辑的研究工程，当前版本 **0.5.1**。
 源码包含可执行程序和研究设计；尚未完成真实联合模型，不能据此宣称优于论文方法。
 
 [English](README.md) · [完整方法、程序与复现](docs/METHODS_AND_REPRODUCTION_zh.md) ·
@@ -59,6 +59,17 @@ outputs/first_run/suite.json                         整体状态、作用范围
 
 ## 真实数据与模型
 
+材料编辑第一版已接通：指定部件/材料区域，保持几何和占用，颜色和物理参数从
+同一状态更新。先运行已知构造示例：
+
+```bash
+python scripts/edit_material.py --output outputs/material_first
+```
+
+输出多视角换色图、质量/质心/惯量、材料参数和可重放资产；默认总质量为
+5.120→6.432kg，属于设计预设核对。[用法与边界](docs/material_edit_v1_zh.md)。
+完整CPU复现也包含该实验，位于`bound_material/`。
+
 - ABO图像、相机和称重标签放在`data/abo_500/`，参考GLB与生成Mesh分目录。
 - 已下载资产支持`data/abo500_ten/<scene_id>/model.glb`。
 - `scripts/reconstruct_instantmesh.py`适配官方`run.py`，默认仅检查；显式增加
@@ -82,7 +93,7 @@ python scripts/package_project.py --output outputs/release --results outputs/fir
 拿到wheel后可在其他环境安装运行：
 
 ```bash
-python -m pip install "outputs/release/dist/tactile3d-0.5.0-py3-none-any.whl[figures]"
+python -m pip install "outputs/release/dist/tactile3d-0.5.1-py3-none-any.whl[figures]"
 partphy3d-reproduce --output outputs/wheel_check
 ```
 

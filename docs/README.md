@@ -13,6 +13,7 @@ research decisions; they are not evidence that all proposed modules are complete
 | Inspect recorded numerical evidence | [Results](results/README.md) |
 | Understand state, identities and interfaces | [Part state contract](part_state_and_edit_contract_zh.md) |
 | Write/replay edits | [Editing commands](edit_commands_2026-11-04_zh.md) |
+| Bind material colors and physics to one region | [Material editing v1, Chinese](material_edit_v1_zh.md) |
 | Review the planned method step by step | [Method review](method_step_review_2026-11-04_zh.md) |
 | Review the complete proposed study and acceptance gates | [Research blueprint, Chinese](research_blueprint_2026-11-04_zh.md) |
 | Match each problem to a method and testable advantage | [Problem/solution/evidence, Chinese](problem_solution_advantages_2026-11-04_zh.md) |

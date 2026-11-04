@@ -1,6 +1,6 @@
 {
   "date": "2026-11-04",
-  "full_suite_passed": 123,
+  "full_suite_passed": 141,
   "runtime": "Windows / Python 3.13",
   "linux_ci": "see_actions_for_exact_revision_result",
   "real_models_executed": false,
@@ -16,7 +16,7 @@
   "numerical_method": "integrate finite cells locally, then transform raw mass moments analytically",
   "observability_checks_passed": 10,
   "observability_scope": "independent analytic model; not RGB or real-object validation",
-  "software_version": "0.5.0",
+  "software_version": "0.5.1",
   "synthetic_learning_executed": true,
   "real_two_object_smoke": {
     "strict_requested": 2,
@@ -25,5 +25,7 @@
     "approximate_envelope_succeeded": 2,
     "ADE_kg": 73.46520593556696,
     "warning": "not a learned model or acceptable physical accuracy"
-  }
+  },
+  "bound_material_tests_passed": 18,
+  "bound_material_scope": "known-design fixed-geometry edit; not inferred real material validation"
 }
