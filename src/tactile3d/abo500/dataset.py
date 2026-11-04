@@ -156,9 +156,9 @@ class ABO500Dataset:
         candidates: list[Path] = []
         if self.mesh_root is not None:
             candidates.extend(self.mesh_root / f"{scene_id}{ext}" for ext in MESH_EXTENSIONS)
-            for name in ("mesh", "object", "reconstruction"):
+            for name in ("mesh", "object", "reconstruction", "model"):
                 candidates.extend(self.mesh_root / scene_id / f"{name}{ext}" for ext in MESH_EXTENSIONS)
-        for name in ("mesh", "object", "reconstruction"):
+        for name in ("mesh", "object", "reconstruction", "model"):
             candidates.extend(scene_dir / f"{name}{ext}" for ext in MESH_EXTENSIONS)
             candidates.extend(scene_dir / "mesh" / f"{name}{ext}" for ext in MESH_EXTENSIONS)
         for candidate in candidates:
@@ -172,9 +172,13 @@ class ABO500Dataset:
         if scale_path.exists():
             raw = read_json(scale_path)
             value = raw.get("mesh_unit_to_meter", raw.get("unit_to_meter"))
-            if value is not None and float(value) > 0:
+            if value is not None and np.isfinite(float(value)) and float(value) > 0:
                 return float(value)
-        if self.default_mesh_unit_to_meter is not None and self.default_mesh_unit_to_meter > 0:
+        if (
+            self.default_mesh_unit_to_meter is not None
+            and np.isfinite(self.default_mesh_unit_to_meter)
+            and self.default_mesh_unit_to_meter > 0
+        ):
             return float(self.default_mesh_unit_to_meter)
         raise ValueError(
             f"Metric mesh scale is unknown for {scene_dir.name}. Add mesh_scale.json "

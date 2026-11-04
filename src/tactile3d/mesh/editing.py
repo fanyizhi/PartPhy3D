@@ -8,6 +8,7 @@ import numpy as np
 import trimesh
 from scipy.spatial import ConvexHull, QhullError, cKDTree
 
+from tactile3d.mesh.io import load_triangle_mesh
 from tactile3d.utils.io import ensure_dir, write_json
 
 
@@ -369,15 +370,4 @@ def _stability(mesh: trimesh.Trimesh, center_of_mass: np.ndarray, vertical_axis:
 
 
 def _load_mesh(path: str | Path, process: bool = True) -> trimesh.Trimesh:
-    path = Path(path).expanduser().resolve()
-    loaded = trimesh.load(path, force=None, process=process)
-    if isinstance(loaded, trimesh.Scene):
-        geometries = [
-            item for item in loaded.geometry.values() if isinstance(item, trimesh.Trimesh)
-        ]
-        if not geometries:
-            raise ValueError(f"No triangular mesh found in {path}")
-        return trimesh.util.concatenate(geometries)
-    if not isinstance(loaded, trimesh.Trimesh):
-        raise TypeError(f"Unsupported mesh payload in {path}")
-    return loaded
+    return load_triangle_mesh(path, process=process)

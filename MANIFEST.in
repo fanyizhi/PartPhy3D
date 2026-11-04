@@ -1,0 +1,9 @@
+include README.md README_zh.md LICENSE CITATION.cff THIRD_PARTY.md CONTRIBUTING.md
+include requirements.txt environment.yml
+recursive-include configs *.yaml *.yml *.json
+recursive-include examples *.json *.md
+recursive-include docs *.md *.json *.csv *.png *.svg
+recursive-include scripts *.py *.sh
+recursive-include tests *.py
+exclude scripts/verify_server_preflight.py
+global-exclude __pycache__ *.py[cod]

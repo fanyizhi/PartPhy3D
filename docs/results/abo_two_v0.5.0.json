@@ -1,0 +1,61 @@
+{
+  "source": "native_ABO_GLB_explicit_voxel_envelope_handcrafted_surface_prior",
+  "learned_model": false,
+  "input_scale_assumption_m_per_unit": 1.0,
+  "camera_mesh_registration_independently_verified": false,
+  "records": [
+    {
+      "scene_id": "B07WTFJGRG",
+      "target_mass_kg": 4.4406656799999995,
+      "predicted_mass_kg": {
+        "mean": 85.01276541093485,
+        "q05": 36.68767165037036,
+        "q50": 76.98503055189411,
+        "q95": 172.26639744463185,
+        "std": 42.89475524679645
+      },
+      "repair": {
+        "approximate_envelope": true,
+        "assumption": "surface voxelization + closing + exterior flood fill",
+        "closing_iterations": 1,
+        "final_watertight": true,
+        "initial_watertight": false,
+        "pitch_mesh_units": 0.029874997834364574,
+        "resolution": 48,
+        "solid_cells": 1227,
+        "strategy": "voxel_envelope",
+        "true_internal_geometry_recovered": false,
+        "used_convex_hull": false,
+        "volume_m3": 0.032716603457395764,
+        "volume_mesh_units3": 0.032716603457395764
+      }
+    },
+    {
+      "scene_id": "B073WGP8XN",
+      "target_mass_kg": 7.8471416000000005,
+      "predicted_mass_kg": {
+        "mean": 74.20545374019906,
+        "q05": 17.840262038282866,
+        "q50": 53.278154184557444,
+        "q95": 178.0200703754785,
+        "std": 53.285695775877
+      },
+      "repair": {
+        "approximate_envelope": true,
+        "assumption": "surface voxelization + closing + exterior flood fill",
+        "closing_iterations": 1,
+        "final_watertight": true,
+        "initial_watertight": false,
+        "pitch_mesh_units": 0.02483825385570526,
+        "resolution": 48,
+        "solid_cells": 1772,
+        "strategy": "voxel_envelope",
+        "true_internal_geometry_recovered": false,
+        "used_convex_hull": false,
+        "volume_m3": 0.02715356784247315,
+        "volume_mesh_units3": 0.02715356784247315
+      }
+    }
+  ],
+  "internal_properties_independently_measured": false
+}

@@ -34,6 +34,7 @@ ROOT_FILES = (
     "environment.yml",
     ".gitignore",
     ".gitattributes",
+    "MANIFEST.in",
 )
 ALLOWED_SUFFIXES = {
     ".py",

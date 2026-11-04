@@ -24,6 +24,8 @@ jobs:
       - run: python scripts/edit_parts.py --output outputs/ci-edit
       - run: python scripts/edit_parts.py --plan examples/wood_to_hollow_steel.json --output outputs/ci-program
       - run: python scripts/audit_edit_observability.py --output outputs/ci-observability
+      - run: python scripts/reproduce_all.py --output outputs/ci-reproduction
+      - run: python scripts/package_project.py --output outputs/ci-release
       - uses: actions/upload-artifact@v4
         with:
           name: cpu-edit-demo
@@ -31,5 +33,7 @@ jobs:
             outputs/ci-edit
             outputs/ci-program
             outputs/ci-observability
+            outputs/ci-reproduction
+            outputs/ci-release/dist
           if-no-files-found: error
           retention-days: 14

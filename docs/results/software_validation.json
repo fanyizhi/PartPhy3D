@@ -1,19 +1,29 @@
 {
   "date": "2026-11-04",
-  "full_suite_passed": 96,
+  "full_suite_passed": 123,
   "runtime": "Windows / Python 3.13",
   "linux_ci": "see_actions_for_exact_revision_result",
   "real_models_executed": false,
   "real_object_accuracy_validated": false,
   "commands": [
-    "python -m pytest -q -p no:cacheprovider",
-    "python scripts/edit_parts.py",
-    "python scripts/audit_edit_observability.py"
+    "python -m pytest -q",
+    "python scripts/reproduce_all.py --output outputs/first_run",
+    "python scripts/package_project.py --output outputs/release"
   ],
-  "scope": "synthetic software references; not learned research performance",
+  "scope": "software tests and analytic synthetic learning; real rule baseline failed accuracy",
   "initial_editing_subset_passed": 39,
   "linux_ci_url": "https://github.com/fanyizhi/PartPhy3D/actions/workflows/tests.yml",
   "numerical_method": "integrate finite cells locally, then transform raw mass moments analytically",
   "observability_checks_passed": 10,
-  "observability_scope": "independent analytic model; not RGB or real-object validation"
+  "observability_scope": "independent analytic model; not RGB or real-object validation",
+  "software_version": "0.5.0",
+  "synthetic_learning_executed": true,
+  "real_two_object_smoke": {
+    "strict_requested": 2,
+    "strict_succeeded": 0,
+    "approximate_envelope_requested": 2,
+    "approximate_envelope_succeeded": 2,
+    "ADE_kg": 73.46520593556696,
+    "warning": "not a learned model or acceptable physical accuracy"
+  }
 }

@@ -5,6 +5,7 @@ research decisions; they are not evidence that all proposed modules are complete
 
 | Need | Read |
 | --- | --- |
+| Follow every implemented step, loss and command | [Complete v0.5.0 guide, Chinese](METHODS_AND_REPRODUCTION_zh.md) |
 | Install and run on CPU | [Quick start, Chinese](QUICKSTART_zh.md) |
 | Prepare ABO images, cameras and meshes | [Data](DATA.md) |
 | Reproduce supported experiments | [Experiment commands](EXPERIMENTS.md) |

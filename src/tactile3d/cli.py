@@ -134,7 +134,7 @@ def main() -> None:
     mesh_volume.add_argument("--mesh", required=True)
     mesh_volume.add_argument("--mesh-unit-to-meter", required=True, type=float)
     mesh_volume.add_argument(
-        "--repair-strategy", choices=("none", "fill_only", "fill_then_hull"), default="fill_only"
+        "--repair-strategy", choices=("none", "fill_only", "fill_then_hull", "voxel_envelope"), default="fill_only"
     )
     mesh_volume.add_argument("--convex-hull-proxy", action="store_true")
     mesh_volume.add_argument("--density", type=float, help="optional uniform density in kg/m^3")

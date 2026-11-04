@@ -73,6 +73,16 @@ def test_abo500_mesh_pipeline(tmp_path):
     assert (tmp_path / "output" / "interior_proposals.json").exists()
 
 
+def test_abo500_discovers_downloaded_model_glb(tmp_path: Path) -> None:
+    root, mesh_root = _make_mini_abo500(tmp_path)
+    (mesh_root / "scene0000.ply").unlink()
+    asset = mesh_root / "scene0000/model.glb"
+    asset.parent.mkdir()
+    trimesh.creation.box().export(asset)
+    dataset = ABO500Dataset(root, mesh_root, mesh_unit_to_meter=1.0)
+    assert dataset.get_scene("scene0000").mesh_path == asset
+
+
 def test_calibration_and_metrics(tmp_path):
     cfg = load_config(Path("configs/abo500_mesh_smoke.yaml"))
     priors = load_material_priors(

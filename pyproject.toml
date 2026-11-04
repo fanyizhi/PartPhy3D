@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "tactile3d"
-version = "0.4.0"
+version = "0.5.0"
 description = "Probabilistic mesh physical grounding, VLM adaptation, and part-level editing."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -33,10 +33,14 @@ train = [
   "bitsandbytes>=0.46; platform_system == 'Linux'"
 ]
 figures = ["matplotlib>=3.8"]
-dev = ["pytest>=7.4", "ruff>=0.4"]
+dev = ["pytest>=7.4", "ruff>=0.4", "build>=1.2", "setuptools>=68", "wheel>=0.42"]
 
 [project.scripts]
 tactile3d = "tactile3d.cli:main"
+partphy3d-reproduce = "tactile3d.research.suite:main"
+partphy3d-learn = "tactile3d.research.workflow:main"
+partphy3d-construct = "tactile3d.research.adaptive_demo:main"
+partphy3d-instantmesh = "tactile3d.research.frontend:main"
 
 [project.urls]
 Repository = "https://github.com/fanyizhi/PartPhy3D"

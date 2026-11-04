@@ -1,5 +1,9 @@
 # Recorded evidence
 
+Version 0.5.0 adds executed shared-construction learning, adaptive-surface and
+real two-object rule diagnostics. See [the execution report](reproduction_v0.5.0_zh.md).
+The bundled figures and CSV preserve adverse results as well as improvements.
+
 The CSV records the already executed fixed ten-object development comparison:
 reference ABO geometry, cached language suggestions and untrained construction rules.
 It is not the learned image-to-physical-object pipeline.
@@ -9,7 +13,7 @@ The construction prior did not beat the shell baseline on every metric. These
 objects have been used for development and are not an untouched test cohort.
 
 `software_validation.json` records local software checks: the initial editing
-subset had 39 passing checks, and the complete current suite has 96 passing checks.
+subset had 39 passing checks; the exact current count is in that JSON file.
 The suite includes two translated analytic-inertia references. Synthetic tests do
 not establish real-object accuracy. Check the exact commit's
 [Linux CI result](https://github.com/fanyizhi/PartPhy3D/actions/workflows/tests.yml)

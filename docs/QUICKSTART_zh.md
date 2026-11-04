@@ -1,5 +1,14 @@
 # 安装、数据与复现
 
+v0.5.0完整学习、编辑和曲面构造验收见
+[完整手册](METHODS_AND_REPRODUCTION_zh.md)。安装后可先运行：
+
+```bash
+python scripts/reproduce_all.py --output outputs/first_run
+```
+
+它是无需外部数据的CPU合成诊断，不是ABO或千问微调结果。
+
 ## 无数据CPU验证
 
 在项目根目录使用Python 3.10及以上：

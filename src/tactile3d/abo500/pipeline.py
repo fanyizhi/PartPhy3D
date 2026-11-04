@@ -10,6 +10,7 @@ from tqdm import tqdm
 
 from tactile3d.abo500.dataset import ABO500Dataset, ABOScene
 from tactile3d.config import resolve_config_path
+from tactile3d.mesh.io import load_triangle_mesh
 from tactile3d.mesh.repair import repair_mesh
 from tactile3d.mesh.segmentation import PartSegmentation, segment_mesh
 from tactile3d.models.calibration import (
@@ -443,15 +444,7 @@ def run_abo500_split(
 
 
 def _load_mesh(path: Path) -> trimesh.Trimesh:
-    loaded = trimesh.load(path, force=None, process=True)
-    if isinstance(loaded, trimesh.Scene):
-        meshes = [geometry for geometry in loaded.geometry.values() if isinstance(geometry, trimesh.Trimesh)]
-        if not meshes:
-            raise ValueError(f"No triangular geometry in {path}")
-        return trimesh.util.concatenate(meshes)
-    if not isinstance(loaded, trimesh.Trimesh):
-        raise TypeError(f"Unsupported mesh payload in {path}")
-    return loaded
+    return load_triangle_mesh(path)
 
 
 def _stats(values: np.ndarray) -> dict[str, float]:
