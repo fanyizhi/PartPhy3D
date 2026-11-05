@@ -14,6 +14,10 @@
 **当前先导规模已于2026-11-05改为5个真实物体**，保持原冻结队列的前5个；先检查
 第一个，再继续其余4个。准备命令和运行入口见[五物体复现说明](docs/QUICKSTART_zh.md)。
 
+真实数据入口现在默认`data/abo500_five/`：固定5物体的150张图、相机、参考GLB
+和质量标签。用`scripts/prepare_five_objects.py`从本地全量数据复制并校验，
+用`--archive`生成服务器传输包。[数据结构与准备命令](docs/DATA.md)。
+
 ## Linux完整CPU验收
 
 在MobaXterm终端中：

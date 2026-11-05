@@ -13,6 +13,25 @@ python scripts/reproduce_mesh_native.py --output outputs/mesh_first
 2026-11-05起，当前真实物体先导缩减为**5个物体**，沿用原10物体冻结队列的前5个。
 先验证第一个，再继续其余4个，失败不补位；旧10物体结果保留作开发历史。
 
+当前真实数据入口默认读取`data/abo500_five/`。已有全量ABO-500时：
+
+```bash
+python scripts/prepare_five_objects.py --source-root /data/abo_500 \
+  --mesh-source data/abo500_ten --archive outputs/datasets/ABO500-five.zip
+python scripts/prepare_five_objects.py --verify-only
+```
+
+若使用已经打包好的`ABO500-five.zip`，在项目根目录解压：
+
+```bash
+mkdir -p data
+unzip /path/to/ABO500-five.zip -d data
+python scripts/prepare_five_objects.py --verify-only
+```
+
+包含5个真实物体、150张原始图、相机、参考GLB和质量标签。参考Mesh与图像的
+配准、米制尺度仍需独立核验；这一步只准备数据，不运行模型。
+
 只准备队列，不运行模型：
 
 ```bash
@@ -22,8 +41,7 @@ python scripts/run_five_objects.py --prepare-only --output outputs/five_plan
 数据就绪后运行当前严格几何基线（`1`仅用于已核验为米制的Mesh）：
 
 ```bash
-python scripts/run_five_objects.py --root /data/abo_500 \
-  --mesh-root /data/abo_meshes --mesh-unit-to-meter 1 --output outputs/abo500_five
+python scripts/run_five_objects.py --mesh-unit-to-meter 1 --output outputs/abo500_five
 ```
 
 默认读取`configs/five_object_pilot.json`中的明确对象ID，不通过元数据过滤或成功率

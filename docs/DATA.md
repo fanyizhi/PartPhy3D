@@ -5,6 +5,43 @@ It needs no dataset download, API key, pretrained checkpoint or GPU.
 
 ## ABO-500 diagnostic track
 
+### Prepared five-object subset
+
+The current pilot defaults to `data/abo500_five`, containing the fixed five IDs
+in `configs/five_object_pilot.json`. To construct it from an existing local release:
+
+```bash
+python scripts/prepare_five_objects.py --source-root /data/abo_500 \
+  --mesh-source data/abo500_ten --archive outputs/datasets/ABO500-five.zip
+python scripts/prepare_five_objects.py --verify-only
+```
+
+```text
+data/abo500_five/
+  scenes/<scene_id>/images/           original observations, 30 per real object
+  scenes/<scene_id>/transforms.json   original camera parameters
+  scenes/<scene_id>/info.json         cached upstream annotations/proposals
+  meshes_reference/<scene_id>/model.glb
+  filtered_product_weights.json      five evaluation labels indexed by scene ID
+  splits.json                        original split membership, restricted to five
+  selected_objects.json              fixed development selection
+  subset_manifest.json               source hashes, label-key mapping, file hashes
+  selected_objects.jpg               five-object visual index
+```
+
+The builder explicitly maps ASIN-indexed weights to locale-suffixed scene IDs.
+Missing or conflicting labels, missing views and invalid cameras fail without
+substituting another object. Reference GLBs remain separate from generated Mesh.
+It does not include the previous `features/` and `ns/` caches, run inference,
+verify metric scale or establish camera-to-reference-Mesh registration.
+The data ZIP extracts to `abo500_five/`; extract it into the project's `data/`
+directory on the server. Raw data remain local and are excluded from source Git.
+
+These five objects are a development cohort, not SFT training data or an untouched
+test benchmark. The standalone synthetic learning diagnostics remain separate.
+
+### Original full release
+
 Obtain the ABO-500 release using the instructions in the upstream
 [NeRF2Physics repository](https://github.com/ajzhai/NeRF2Physics).
 The helper `bash scripts/download_abo500.sh data` downloads and extracts the
@@ -78,7 +115,7 @@ reads them only after prediction sealing. Density, modulus, friction and edited
 mass need their own independently sourced reference labels; ABO total weight
 alone does not establish them. Material presets are hypotheses, not measurements.
 
-No dataset, product photo, upstream model or checkpoint is bundled. The MIT
+No dataset, product photo, upstream model or checkpoint is bundled in the source release. The MIT
 license applies to this project's code, not third-party data or weights. Keep
 API credentials in the local environment and outside Git. See
 [THIRD_PARTY.md](../THIRD_PARTY.md) for upstream resources.

@@ -1,0 +1,43 @@
+{
+  "num_objects": 5,
+  "num_views": 150,
+  "files": 171,
+  "dataset_root": "data/abo500_five",
+  "archive": "outputs/datasets/ABO500-five.zip",
+  "archive_bytes": 170197333,
+  "archive_sha256": "f05ced3700a91d43c5eb0718b91f6ec73ec8f4225c76237577f9a70a1a87b643",
+  "objects": [
+    {
+      "scene_id": "B07B4G5RBN_ATVPDKIKX0DER",
+      "views": 30,
+      "source_weight_key": "B07B4G5RBN",
+      "original_split": "test"
+    },
+    {
+      "scene_id": "B076YKYHCB_A1F83G8C2ARO7P",
+      "views": 30,
+      "source_weight_key": "B076YKYHCB",
+      "original_split": "test"
+    },
+    {
+      "scene_id": "B07WTFJGRG",
+      "views": 30,
+      "source_weight_key": "B07WTFJGRG",
+      "original_split": "test"
+    },
+    {
+      "scene_id": "B073WGP8XN",
+      "views": 30,
+      "source_weight_key": "B073WGP8XN",
+      "original_split": "test"
+    },
+    {
+      "scene_id": "B013TGFGWS_A1F83G8C2ARO7P",
+      "views": 30,
+      "source_weight_key": "B013TGFGWS",
+      "original_split": "test"
+    }
+  ],
+  "inference_or_training_executed": false,
+  "held_out_benchmark": false
+}

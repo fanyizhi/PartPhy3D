@@ -145,8 +145,10 @@ def run_pilot(
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--root", type=Path, default=Path("data/abo_500"))
-    parser.add_argument("--mesh-root", type=Path, default=Path("data/abo500_ten"))
+    parser.add_argument("--root", type=Path, default=Path("data/abo500_five"))
+    parser.add_argument(
+        "--mesh-root", type=Path, default=Path("data/abo500_five/meshes_reference")
+    )
     parser.add_argument("--output", type=Path, default=Path("outputs/abo500_five"))
     parser.add_argument("--cohort", type=Path, default=DEFAULT_COHORT)
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)

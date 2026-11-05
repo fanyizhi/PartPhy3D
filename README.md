@@ -12,6 +12,9 @@ version 0.6.0; no peer-reviewed performance or acceptance claim.**
 As of 2026-11-05, the current real-object pilot uses **five development objects**,
 the first five IDs of the previously frozen ten-object cohort. Use
 `scripts/run_five_objects.py`; historical ten-object results are retained.
+The pilot now defaults to `data/abo500_five/`. Build this portable subset with
+`scripts/prepare_five_objects.py`: original views, cameras, separate reference GLBs,
+five evaluation labels and SHA-256 checks. See [data preparation](docs/DATA.md).
 
 **New Mesh-native path:** disjoint closed material regions, signed boundary
 integration, cached mass/COM/full inertia and fixed-construction material edits.

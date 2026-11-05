@@ -30,6 +30,10 @@ jobs:
           scripts/train_mesh_state.py scripts/reproduce_mesh_native.py
           tests/test_mesh_native.py tests/test_training_split_guard.py
       - run: python -m pytest -q
+      - run: >-
+          python -m black --check src/tactile3d/abo500/subset.py
+          src/tactile3d/experiments/five_object_pilot.py
+          scripts/prepare_five_objects.py tests/test_abo_subset.py
       - run: python scripts/edit_parts.py --output outputs/ci-edit
       - run: python scripts/edit_parts.py --plan examples/wood_to_hollow_steel.json --output outputs/ci-program
       - run: python scripts/audit_edit_observability.py --output outputs/ci-observability
