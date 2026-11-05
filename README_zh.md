@@ -6,6 +6,9 @@
 [English](README.md) · [完整方法、程序与复现](docs/METHODS_AND_REPRODUCTION_zh.md) ·
 [实现状态](docs/IMPLEMENTATION_STATUS.md) · [运行结果和不足](docs/results/reproduction_v0.5.0_zh.md)
 
+**当前先导规模已于2026-11-05改为5个真实物体**，保持原冻结队列的前5个；先检查
+第一个，再继续其余4个。准备命令和运行入口见[五物体复现说明](docs/QUICKSTART_zh.md)。
+
 ## Linux完整CPU验收
 
 在MobaXterm终端中：

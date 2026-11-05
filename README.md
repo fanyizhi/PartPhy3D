@@ -9,6 +9,10 @@ version 0.5.1; no peer-reviewed performance or acceptance claim.**
 [中文](README_zh.md) · [Complete methods and reproduction](docs/METHODS_AND_REPRODUCTION_zh.md) ·
 [Status](docs/IMPLEMENTATION_STATUS.md) · [Data](docs/DATA.md) · [Evidence](docs/results/README.md)
 
+As of 2026-11-05, the current real-object pilot uses **five development objects**,
+the first five IDs of the previously frozen ten-object cohort. Use
+`scripts/run_five_objects.py`; historical ten-object results are retained.
+
 ## Reproduce on CPU
 
 ```bash

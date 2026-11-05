@@ -32,8 +32,11 @@ GLB assets are obtained separately from the
 Do not rename a point cloud to make it a surface mesh. Check face count,
 coordinates, scene identity, orientation, visibility and metric scale.
 
-The fixed development selection is the first ten IDs in the released `test`
-list. The helper below downloads only their native assets and records per-asset
+The historical development selection was the first ten IDs in the released `test`
+list. As of 2026-11-05, the active pilot is the first five IDs of that frozen
+selection, stored in `configs/five_object_pilot.json`. The current entry point is
+`scripts/run_five_objects.py`; the old ten-object selection and results remain
+historical evidence. The helper below downloads their native assets and records per-asset
 failures, URLs and hashes; it does not run a learned reconstruction:
 
 ```bash

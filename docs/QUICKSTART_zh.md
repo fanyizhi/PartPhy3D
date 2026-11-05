@@ -1,5 +1,25 @@
 # 安装、数据与复现
 
+2026-11-05起，当前真实物体先导缩减为**5个物体**，沿用原10物体冻结队列的前5个。
+先验证第一个，再继续其余4个，失败不补位；旧10物体结果保留作开发历史。
+
+只准备队列，不运行模型：
+
+```bash
+python scripts/run_five_objects.py --prepare-only --output outputs/five_plan
+```
+
+数据就绪后运行当前严格几何基线（`1`仅用于已核验为米制的Mesh）：
+
+```bash
+python scripts/run_five_objects.py --root /data/abo_500 \
+  --mesh-root /data/abo_meshes --mesh-unit-to-meter 1 --output outputs/abo500_five
+```
+
+默认读取`configs/five_object_pilot.json`中的明确对象ID，不通过元数据过滤或成功率
+重选对象。默认配置是既有CPU几何/材料规则基线；真实模型联调仍需另行核验。
+可用`--limit 1`检查首个对象。非水密等失败会保留并以非零退出码报告，不替换样本。
+
 v0.5.0完整学习、编辑和曲面构造验收见
 [完整手册](METHODS_AND_REPRODUCTION_zh.md)。安装后可先运行：
 

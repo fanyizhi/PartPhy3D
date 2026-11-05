@@ -1,5 +1,10 @@
 # Experiment commands and acceptance
 
+The current real-object pilot was reduced to **five objects** on 2026-11-05.
+Use `scripts/run_five_objects.py` and `configs/five_object_pilot.json`, as described
+in [the quick start](QUICKSTART_zh.md). Start with the first object; retain failures.
+The ten-object section below describes the preserved historical diagnostic.
+
 Commands assume the project root and an editable installation:
 
 ```bash
@@ -26,7 +31,7 @@ recomputation. The custom JSON/replay path checks recomputation agreement; it do
 not automatically acquire an independent physical ground truth.
 
 Inspect `report.json`, `manifest.json`, `physical_updates.csv`, saved states,
-PLYs and PNG/SVG/PDF figures. Local validation currently records 96 passing tests:
+PLYs and PNG/SVG/PDF figures. Validation counts are recorded in `results/software_validation.json`:
 
 ```bash
 python -m ruff check .

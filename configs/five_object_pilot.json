@@ -1,0 +1,14 @@
+{
+  "cohort_name": "abo500_five_object_development_pilot",
+  "selection_rule": "first five IDs of the previously frozen ten-object development cohort",
+  "parent_split_sha256": "cee2d846d5a51bbeaf211f21e367da67e0faf1873a7a6e3111602fd9118fe374",
+  "object_ids": [
+    "B07B4G5RBN_ATVPDKIKX0DER",
+    "B076YKYHCB_A1F83G8C2ARO7P",
+    "B07WTFJGRG",
+    "B073WGP8XN",
+    "B013TGFGWS_A1F83G8C2ARO7P"
+  ],
+  "failure_policy": "retain failures; no replacement objects",
+  "held_out_benchmark": false
+}
