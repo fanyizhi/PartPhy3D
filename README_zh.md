@@ -1,10 +1,15 @@
 # PartPhy3D
 
-面向部件构造、物理属性推断和物理一致编辑的研究工程，当前版本 **0.5.1**。
+面向部件构造、物理属性推断和物理一致编辑的研究工程，当前版本 **0.6.0**。
 源码包含可执行程序和研究设计；尚未完成真实联合模型，不能据此宣称优于论文方法。
 
 [English](README.md) · [完整方法、程序与复现](docs/METHODS_AND_REPRODUCTION_zh.md) ·
 [实现状态](docs/IMPLEMENTATION_STATUS.md) · [运行结果和不足](docs/results/reproduction_v0.5.0_zh.md)
+
+**本版新增Mesh原生主线**：用互斥封闭材料域的三角边界直接积分质量、质心和
+完整惯量，换材时复用几何矩；新路径不调用体素化。旧体素原型保留作对照。
+[新主线的步骤、公式、输入格式与局限](docs/mesh_native_v0.6_zh.md)。
+[实际执行结果和不足](docs/results/mesh_native_v0.6_zh.md)。
 
 **当前先导规模已于2026-11-05改为5个真实物体**，保持原冻结队列的前5个；先检查
 第一个，再继续其余4个。准备命令和运行入口见[五物体复现说明](docs/QUICKSTART_zh.md)。
@@ -21,7 +26,7 @@ source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -e ".[dev,figures]"
 python -m pytest -q
-python scripts/reproduce_all.py --output outputs/first_run
+python scripts/reproduce_mesh_native.py --output outputs/mesh_first
 ```
 
 建议先用Python 3.10；Linux CI检查3.10，本地另测3.13。
@@ -30,7 +35,33 @@ CPU验收不需要4090、torch、模型权重或ABO，也不连接服务器或�
 完整依赖统一在`requirements.txt`，不再分`requirements-train`。
 CPU安装跳过大模型包；完整环境和模型准备见详细手册。
 
-## 一条命令实际完成什么
+## 新主线实际完成什么
+
+1. 对实心、空心、外壳＋填充的Mesh积分，与独立解析体积/惯量核对。
+2. 固定构造换材，同步示意颜色、密度、E、ν，重算质量/COM/I并核对全量积分。
+3. 导出可重放的部件/区域资产、物理CSV、多视角图和材料截面属性图。
+4. 用四类Mesh候选的积分体积训练小型共享状态模型，比较质量和编辑响应监督。
+5. 在分族独立测试集报告原物体及编辑质量误差，输出封存预测和校准区间。
+
+默认9.7728→25.1136kg是**指定构造**的解析核对；学习使用384个合成对象的
+11维代理观测，不是千问微调或ABO结果。新主线不执行图像重建和精细语义分割。
+
+```text
+outputs/mesh_first/editing/mesh_edit_views.png         三视角换材对照
+outputs/mesh_first/editing/mesh_property_sections.png  外壳/填充的ρ、填充率、E
+outputs/mesh_first/editing/mesh_physics.png             质量、COM和惯量
+outputs/mesh_first/editing/physics.csv                 完整物理数值
+outputs/mesh_first/editing/original/part_tokens.json   部件统一数据结构
+outputs/mesh_first/learning/learning_results.png       真实执行的合成学习结果
+outputs/mesh_first/learning/metrics.csv                质量误差表
+outputs/mesh_first/suite.json                          状态与尚未完成项
+```
+
+![指定构造的Mesh属性截面](docs/results/mesh_native_v0.6_sections.png)
+
+## 历史体素原型与曲面诊断
+
+`python scripts/reproduce_all.py --output outputs/legacy_first`仍可运行旧版验收：
 
 1. 用独立解析构造生成384个合成对象，按对象族划分训练、校准、测试集。
 2. 用三种初始化训练质量监督、共享状态＋编辑响应、直接回归三个对照。
@@ -88,7 +119,7 @@ python scripts/edit_material.py --output outputs/material_first
 ## 打包与安装
 
 ```bash
-python scripts/package_project.py --output outputs/release --results outputs/first_run
+python scripts/package_project.py --output outputs/release --results outputs/mesh_first
 ```
 
 输出源码ZIP、wheel、sdist、CPU结果ZIP和校验文件。
@@ -96,8 +127,8 @@ python scripts/package_project.py --output outputs/release --results outputs/fir
 拿到wheel后可在其他环境安装运行：
 
 ```bash
-python -m pip install "outputs/release/dist/tactile3d-0.5.1-py3-none-any.whl[figures]"
-partphy3d-reproduce --output outputs/wheel_check
+python -m pip install "outputs/release/dist/tactile3d-0.6.0-py3-none-any.whl[figures]"
+partphy3d-mesh-reproduce --output outputs/wheel_check
 ```
 
 ## 研究说明

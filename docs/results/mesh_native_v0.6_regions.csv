@@ -1,0 +1,5 @@
+state,part_id,region_id,volume_m3,fill_fraction,density_kg_m3,effective_density_kg_m3,material,youngs_modulus_pa,poisson_ratio,triangles,source
+original,body,shell,0.009024,1.0,1000.0,1000.0,shell_polymer,2000000000.0,0.35,24,known_design_preset
+original,body,filling,0.014975999999999996,1.0,50.0,50.0,foam,,,12,known_design_preset
+edited,body,shell,0.009024,1.0,2700.0,2700.0,aluminum,69000000000.0,0.33,24,explicit_design_intervention
+edited,body,filling,0.014975999999999996,1.0,50.0,50.0,foam,,,12,known_design_preset

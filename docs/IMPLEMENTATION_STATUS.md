@@ -1,10 +1,12 @@
 # Implementation status
 
-Updated 2026-11-04. Runnable software, executed experiments and validated research
+Updated 2026-11-05. Runnable software, executed experiments and validated research
 claims are tracked separately.
 
 | Component | Current evidence | Remaining work |
 | --- | --- | --- |
+| Mesh-native physical mainline (v0.6.0) | Direct closed-boundary moments, Mesh CSG shells, disjoint regions, replay and material edits run without voxelization | Evidence-backed regions from real images and independent physical measurements |
+| Mesh-basis response learning | Four CSG candidates, actual CPU training, sealed synthetic test predictions | Pixel/Mesh encoders, real edit references, Qwen training |
 | Part states and SI units | Implemented and tested | Real multimodal representation and richer constructions |
 | Density, mass, COM and full inertia | Analytic synthetic checks pass | Independent real-object accuracy |
 | Material, closed-box and donor editing | Commands, rollback, snapshots and replay run | Arbitrary poses, free-form layers and mechanics |
@@ -32,3 +34,8 @@ baseline has large errors, and task-only refinement loses global volume accuracy
 Version 0.5.1 adds [bound material editing](material_edit_v1_zh.md). Physical state
 schema 2 retains optional material elasticity and display colors while reading
 schema 1. Legacy standalone color preview is separate from the new bound asset.
+
+Version 0.6.0 adds `scripts/reproduce_mesh_native.py` as the preferred mathematical
+and software acceptance path. See [its scope and limitations](mesh_native_v0.6_zh.md).
+`scripts/reproduce_all.py` still runs the historical voxel-based diagnostic suite.
+Neither entry point silently replaces real reconstruction, segmentation or VLM training.

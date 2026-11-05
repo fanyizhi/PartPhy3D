@@ -1,5 +1,15 @@
 # 安装、数据与复现
 
+v0.6.0的**Mesh原生、无体素**CPU主线：
+
+```bash
+python -m pip install -e ".[dev,figures]"
+python scripts/reproduce_mesh_native.py --output outputs/mesh_first
+```
+
+输入、输出图、直接积分公式、材料编辑重放和限制见
+[Mesh原生复现](mesh_native_v0.6_zh.md)。无需数据的数学验收与下述真实ABO先导分开。
+
 2026-11-05起，当前真实物体先导缩减为**5个物体**，沿用原10物体冻结队列的前5个。
 先验证第一个，再继续其余4个，失败不补位；旧10物体结果保留作开发历史。
 

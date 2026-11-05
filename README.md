@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 Construction-aware physical inference and part editing. **Research prototype,
-version 0.5.1; no peer-reviewed performance or acceptance claim.**
+version 0.6.0; no peer-reviewed performance or acceptance claim.**
 
 [中文](README_zh.md) · [Complete methods and reproduction](docs/METHODS_AND_REPRODUCTION_zh.md) ·
 [Status](docs/IMPLEMENTATION_STATUS.md) · [Data](docs/DATA.md) · [Evidence](docs/results/README.md)
@@ -12,6 +12,11 @@ version 0.5.1; no peer-reviewed performance or acceptance claim.**
 As of 2026-11-05, the current real-object pilot uses **five development objects**,
 the first five IDs of the previously frozen ten-object cohort. Use
 `scripts/run_five_objects.py`; historical ten-object results are retained.
+
+**New Mesh-native path:** disjoint closed material regions, signed boundary
+integration, cached mass/COM/full inertia and fixed-construction material edits.
+No voxelization is called by this path. The voxel prototype remains available.
+See [the detailed implementation guide](docs/mesh_native_v0.6_zh.md).
 
 ## Reproduce on CPU
 
@@ -21,7 +26,7 @@ source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -e ".[dev,figures]"
 python -m pytest -q
-python scripts/reproduce_all.py --output outputs/first_run
+python scripts/reproduce_mesh_native.py --output outputs/mesh_first
 ```
 
 Linux CI checks Python 3.10; development also uses Python 3.13. On Windows activate
@@ -30,8 +35,24 @@ by the default suite. Output directories are never overwritten.
 
 The suite generates 384 analytic objects, splits **by object family** into
 246 training, 66 calibration and 72 test objects, trains three small NumPy models
-with three initializations, and runs editing, observability and adaptive surface
-construction diagnostics. **These are synthetic diagnostics, not ABO/VLM results.**
+with three initializations, and verifies Mesh-native material editing against
+independent box/cavity references. **These are synthetic diagnostics, not ABO/VLM results.**
+
+```text
+outputs/mesh_first/
+  suite.json                         # status, scope, remaining research work
+  editing/mesh_edit_views.png         # synchronized material colors
+  editing/mesh_property_sections.png  # Mesh sections: density, fill, modulus
+  editing/physics.csv                 # mass, COM, complete inertia
+  editing/original/part_tokens.json    # executable schema, not learned embeddings
+  learning/metrics.csv                # original and edited mass metrics
+  learning/learning_results.png        # actual synthetic training and evaluation
+```
+
+The known-design reference mass is 9.7728 → 25.1136 kg. It verifies software;
+it does not establish real-object inference accuracy. The learned encoder still
+uses 11 synthetic proxy features. The legacy voxel/observability/adaptive suite
+is retained as `python scripts/reproduce_all.py --output outputs/first_run`:
 
 ```text
 outputs/first_run/
@@ -53,6 +74,8 @@ outputs/first_run/
 
 ## What works
 
+- Mesh-native scalar-material regions, closed-shell Mesh CSG, signed geometric
+  moments, overlap checks, unit validation and replayable material edits.
 - Explicit Object/Part/Region/Cell state with SI units, identity, versions, void,
   evidence and mounting interfaces.
 - Mass, COM and full inertia from one density field, including finite-cell inertia;
@@ -120,13 +143,13 @@ python -m tactile3d.cli --help
 ## Package and install
 
 ```bash
-python scripts/package_project.py --output outputs/release --results outputs/first_run
+python scripts/package_project.py --output outputs/release --results outputs/mesh_first
 ```
 
 Produces an audited source ZIP, wheel, sdist, optional CPU-results ZIP and SHA-256
 checksums. Excludes datasets, weights, credentials and local SSH configuration.
 Dependencies are **not** an offline wheelhouse. After installing the wheel, run
-`partphy3d-reproduce --output PATH` from any directory.
+`partphy3d-mesh-reproduce --output PATH` from any directory.
 
 `requirements.txt` is the single full project dependency list. The CPU quickstart
 uses optional dependencies to avoid downloading training packages. Upstream model

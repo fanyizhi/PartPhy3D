@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this software, cite it and the upstream resources used in your experiment."
 title: "PartPhy3D: Mesh Physical Grounding and Editing"
 type: software
-version: 0.5.1
+version: 0.6.0
 date-released: 2026-11-04
 license: MIT
 repository-code: "https://github.com/fanyizhi/PartPhy3D"

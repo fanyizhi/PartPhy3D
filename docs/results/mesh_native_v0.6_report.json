@@ -1,0 +1,128 @@
+{
+  "part_id": "body",
+  "region_id": "shell",
+  "before": {
+    "mass_kg": 9.7728,
+    "center_of_mass_m": [
+      0.10000000000000003,
+      -0.04000000000000001,
+      0.2
+    ],
+    "inertia_kg_m2": [
+      [
+        0.2661996799999997,
+        6.290048857997982e-34,
+        6.945670167485266e-19
+      ],
+      [
+        6.290048857997982e-34,
+        0.21599488000000006,
+        4.0657581468206373e-19
+      ],
+      [
+        6.945670167485266e-19,
+        4.0657581468206373e-19,
+        0.14950207999999995
+      ]
+    ]
+  },
+  "after": {
+    "mass_kg": 25.1136,
+    "center_of_mass_m": [
+      0.10000000000000003,
+      -0.04000000000000001,
+      0.2
+    ],
+    "inertia_kg_m2": [
+      [
+        0.6978201599999991,
+        1.6670390843941134e-33,
+        1.8465318250143755e-18
+      ],
+      [
+        1.6670390843941134e-33,
+        0.5667225600000001,
+        9.825582188149872e-19
+      ],
+      [
+        1.8465318250143755e-18,
+        9.825582188149872e-19,
+        0.3937689599999998
+      ]
+    ]
+  },
+  "expected_delta_mass_kg": 15.340800000000002,
+  "delta_mass_kg": 15.340800000000002,
+  "reintegrated_meshes": 0,
+  "changed_material_regions": 1,
+  "geometry_and_fill_unchanged": true,
+  "voxelization_used": false,
+  "old_material": {
+    "name": "shell_polymer",
+    "density_kg_m3": 1000.0,
+    "source": "known_design_preset",
+    "youngs_modulus_pa": 2000000000.0,
+    "poisson_ratio": 0.35,
+    "display_rgba": [
+      175,
+      125,
+      75,
+      255
+    ]
+  },
+  "new_material": {
+    "name": "aluminum",
+    "density_kg_m3": 2700.0,
+    "source": "explicit_design_intervention",
+    "youngs_modulus_pa": 69000000000.0,
+    "poisson_ratio": 0.33,
+    "display_rgba": [
+      170,
+      185,
+      200,
+      255
+    ]
+  },
+  "verification": {
+    "mass_kg": 0.0,
+    "center_of_mass_m": 0.0,
+    "inertia_kg_m2": 0.0
+  },
+  "analytic_errors": {
+    "0_mass_kg": 7.105427357601002e-15,
+    "0_center_of_mass_m": 6.938893903907228e-18,
+    "0_inertia_kg_m2": 1.1102230246251565e-16,
+    "1_mass_kg": 1.7763568394002505e-15,
+    "1_center_of_mass_m": 2.7755575615628914e-17,
+    "1_inertia_kg_m2": 3.3306690738754696e-16,
+    "2_mass_kg": 1.7763568394002505e-15,
+    "2_center_of_mass_m": 2.7755575615628914e-17,
+    "2_inertia_kg_m2": 2.7755575615628914e-16,
+    "3_mass_kg": 3.552713678800501e-15,
+    "3_center_of_mass_m": 2.7755575615628914e-17,
+    "3_inertia_kg_m2": 8.881784197001252e-16
+  },
+  "real_physical_accuracy_established": false,
+  "geometry_method": "signed_boundary_tetrahedra_and_mesh_CSG",
+  "scope": "known_construction_or_explicit_user_regions_not_image_inference",
+  "views": [
+    {
+      "view": 0,
+      "visible_target_pixels": 33208,
+      "changed_pixels": 33208,
+      "outside_target_changed": 0
+    },
+    {
+      "view": 1,
+      "visible_target_pixels": 33208,
+      "changed_pixels": 33208,
+      "outside_target_changed": 0
+    },
+    {
+      "view": 2,
+      "visible_target_pixels": 34830,
+      "changed_pixels": 34830,
+      "outside_target_changed": 0
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "part_id": "body",
+  "region_id": "shell",
+  "expected_version": 0,
+  "material": {
+    "name": "aluminum",
+    "density_kg_m3": 2700,
+    "youngs_modulus_pa": 69000000000,
+    "poisson_ratio": 0.33,
+    "display_rgba": [170, 185, 200, 255],
+    "source": "explicit_design_intervention"
+  }
+}

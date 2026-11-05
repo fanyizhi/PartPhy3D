@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Any
+from typing import Any, Protocol
 
 import numpy as np
 from PIL import Image
@@ -28,8 +28,13 @@ STATE_COLORS = ("#997047", "#7189A4")
 COM_BAR_WIDTH = 0.32
 
 
+class SurfaceGeometry(Protocol):
+    vertices_m: np.ndarray
+    faces: np.ndarray
+
+
 def raster_face_ids(
-    surface: BoundSurface, azimuth: float, resolution: int = RESOLUTION
+    surface: SurfaceGeometry, azimuth: float, resolution: int = RESOLUTION
 ) -> np.ndarray:
     """正交相机逐像素深度测试，前后图复用完全相同的面可见性。
 
@@ -91,6 +96,13 @@ def raster_face_ids(
 def shade_surface(
     surface: BoundSurface, state: PhysicalObject, face_ids: np.ndarray
 ) -> np.ndarray:
+    return shade_face_colors(surface, surface.face_rgba(state), face_ids)
+
+
+def shade_face_colors(
+    surface: SurfaceGeometry, rgba: np.ndarray, face_ids: np.ndarray
+) -> np.ndarray:
+    """独立于物理表示的示意色着色；体素和Mesh资产共用同一深度逻辑。"""
     if face_ids.ndim != 2 or not face_ids.size or face_ids.dtype.kind not in "iu":
         raise ValueError("渲染需要二维整数面编号")
     if face_ids.min() < -1 or face_ids.max() >= len(surface.faces):
@@ -103,7 +115,8 @@ def shade_surface(
     light = np.array(LIGHT_DIRECTION)
     light /= np.linalg.norm(light)
     brightness = AMBIENT_WEIGHT + DIFFUSE_WEIGHT * np.abs(normal @ light)
-    rgba = surface.face_rgba(state)
+    if rgba.shape != (len(surface.faces), 4):
+        raise ValueError("RGBA必须与每个三角面一一对应")
     color = np.rint(rgba[:, :3] * brightness[:, None]).astype(np.uint8)
     result = np.full((*face_ids.shape, 3), 255, dtype=np.uint8)
     visible = face_ids >= 0

@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-05",
+  "version": "0.6.0",
+  "platform": "Windows Python 3.13.0",
+  "pytest": {
+    "passed": 157,
+    "elapsed_seconds": 14.25,
+    "command": "python -m pytest -q"
+  },
+  "quality": {
+    "ruff": "passed",
+    "black_new_native_modules": "passed",
+    "native_python_line_limit": 88
+  },
+  "mesh_suite": "docs/results/mesh_native_v0.6_suite.json",
+  "linux_ci": "Check workflow for the corresponding commit; not inferred from Windows results",
+  "scope": "Closed-region geometry integration and synthetic proxy-feature learning; not full image pipeline",
+  "server_training_started": false
+}

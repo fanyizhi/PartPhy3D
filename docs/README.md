@@ -5,6 +5,8 @@ research decisions; they are not evidence that all proposed modules are complete
 
 | Need | Read |
 | --- | --- |
+| Run the Mesh-native, non-voxel physical mainline | [v0.6.0 implementation and reproduction, Chinese](mesh_native_v0.6_zh.md) |
+| Inspect new independent references and synthetic results | [v0.6.0 executed results](results/mesh_native_v0.6_zh.md) |
 | Follow every implemented step, loss and command | [Complete v0.5.0 guide, Chinese](METHODS_AND_REPRODUCTION_zh.md) |
 | Install and run on CPU | [Quick start, Chinese](QUICKSTART_zh.md) |
 | Prepare ABO images, cameras and meshes | [Data](DATA.md) |

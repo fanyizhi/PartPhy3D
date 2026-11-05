@@ -38,6 +38,7 @@ def prepare_sft_dataset(
     rows = read_jsonl(annotations_path)
     partitions: dict[str, list[dict[str, Any]]] = {"train": [], "val": [], "test": []}
     rejected: list[dict[str, str]] = []
+    group_splits: dict[str, str] = {}
 
     for index, row in enumerate(rows):
         sample_id = str(row.get("sample_id", f"sample_{index:06d}"))
@@ -46,6 +47,10 @@ def prepare_sft_dataset(
             split = str(row.get("split") or _split_for(row, train_fraction, val_fraction, seed))
             if split not in partitions:
                 raise ValueError(f"unsupported split {split!r}")
+            group = sample["group_id"]
+            if group in group_splits and group_splits[group] != split:
+                raise ValueError(f"同一物体组跨分割：{group}")
+            group_splits[group] = split
             sample["split"] = split
             partitions[split].append(sample)
         except (FileNotFoundError, TypeError, ValueError) as exc:
@@ -111,7 +116,7 @@ def _convert_record(
         {
             "role": "system",
             "content": [
-                {"type": "text", "text": "You are a calibrated physical-material analyst."}
+                {"type": "text", "text": "Analyze materials; state evidence and unknowns."}
             ],
         },
         {"role": "user", "content": user_content},

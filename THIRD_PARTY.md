@@ -14,6 +14,7 @@ dataset archives are bundled. Follow their terms before downloading or reusing.
 | [VoMP](https://research.nvidia.com/labs/sil/projects/vomp/) | Related volumetric mechanical fields |
 | [FlexiCubes](https://research.nvidia.com/labs/toronto-ai/flexicubes/) | Related controllable mesh extraction |
 | [QEM](https://www.mgarland.org/research/quadrics.html) | Standard simplification foundation |
+| [Manifold](https://github.com/elalish/manifold) | Apache-2.0 upstream Mesh boolean and section operations used in the native physical path |
 
 Optional Qwen, CLIP and SAM-family models require model/version and license records.
 Their methods are not PartPhy3D's original contributions. Describing a related

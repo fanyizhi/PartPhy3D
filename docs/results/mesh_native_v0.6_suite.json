@@ -1,0 +1,22 @@
+{
+  "status": "complete",
+  "scope": "offline_CPU_diagnostics",
+  "representation": "closed_material_region_mesh",
+  "voxelization_used": false,
+  "python": "3.13.0",
+  "seconds": 12.826667700002872,
+  "example_mass_before_kg": 9.7728,
+  "example_mass_after_kg": 25.1136,
+  "learning_seconds": 9.383875100000296,
+  "data": "specified_construction_and_independent_analytic_synthetic_labels",
+  "full_research_pipeline_complete": false,
+  "real_model_inference": false,
+  "server_training_started": false,
+  "remaining": [
+    "Real image reconstruction and fine semantic parts",
+    "Evidence-backed hidden construction and independent measurements",
+    "Qwen adaptation and multimodal part encoders",
+    "Error-controlled sparse construction in actual geometry decoder",
+    "Fixed five-object development pilot and published baselines"
+  ]
+}
