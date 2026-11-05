@@ -1,4 +1,7 @@
-numpy>=1.24
+# 在项目根目录执行：python -m pip install -r requirements.txt
+--prefer-binary
+
+numpy>=1.24,<3
 Pillow>=10.0
 PyYAML>=6.0
 trimesh>=4.0
@@ -10,16 +13,19 @@ tqdm>=4.66
 pytest>=7.4
 ruff>=0.4
 black>=24.4
-torch>=2.6
-torchvision>=0.16
-open_clip_torch>=2.24
-transformers>=4.57
-datasets>=3.0
-accelerate>=1.0
-peft>=0.17
-trl>=0.29
-bitsandbytes>=0.46; platform_system == "Linux"
+torch==2.6.0
+torchvision==0.21.0
+open_clip_torch==2.32.0
+transformers==4.57.6
+datasets==3.6.0
+accelerate>=1.4,<2
+peft==0.17.1
+trl==0.29.0
+bitsandbytes==0.46.1; platform_system == "Linux"
 matplotlib>=3.8
 build>=1.2
 setuptools>=68
 wheel>=0.42
+
+# 同时安装项目及命令行入口，避免只装第三方包后无法导入tactile3d。
+-e .

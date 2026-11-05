@@ -1,6 +1,6 @@
 # PartPhy3D
 
-面向部件构造、物理属性推断和物理一致编辑的研究工程，当前版本 **0.6.0**。
+面向部件构造、物理属性推断和物理一致编辑的研究工程，当前版本 **0.6.1**。
 源码包含可执行程序和研究设计；尚未完成真实联合模型，不能据此宣称优于论文方法。
 
 [English](README.md) · [完整方法、程序与复现](docs/METHODS_AND_REPRODUCTION_zh.md) ·
@@ -14,30 +14,41 @@
 **当前先导规模已于2026-11-05改为5个真实物体**，保持原冻结队列的前5个；先检查
 第一个，再继续其余4个。准备命令和运行入口见[五物体复现说明](docs/QUICKSTART_zh.md)。
 
-真实数据入口现在默认`data/abo500_five/`：固定5物体的150张图、相机、参考GLB
-和质量标签。用`scripts/prepare_five_objects.py`从本地全量数据复制并校验，
-用`--archive`生成服务器传输包。[数据结构与准备命令](docs/DATA.md)。
+**下载仓库即包含**`data/abo500_five/`：固定5物体的150张图、相机、参考GLB、
+质量标签和数据许可。默认路径已连接真实先导入口。
+[统一安装与服务器迁移](docs/SERVER_SETUP_zh.md) · [数据结构](docs/DATA.md)。
 
-## Linux完整CPU验收
+## Linux统一安装与验收
 
 在MobaXterm终端中：
 
 ```bash
-git clone https://github.com/fanyizhi/PartPhy3D.git
+git clone --depth 1 https://github.com/fanyizhi/PartPhy3D.git
 cd PartPhy3D
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
-python -m pip install -e ".[dev,figures]"
+python -m pip install -r requirements.txt
+python scripts/check_installation.py --training
 python -m pytest -q
 python scripts/reproduce_mesh_native.py --output outputs/mesh_first
 ```
 
 建议先用Python 3.10；Linux CI检查3.10，本地另测3.13。
-CPU验收不需要4090、torch、模型权重或ABO，也不连接服务器或恢复队列。
+数学验收使用CPU，不加载预训练权重，也不连接服务器或恢复队列。
 请在新环境安装，不要直接升级其他人正在使用的共享环境。
 完整依赖统一在`requirements.txt`，不再分`requirements-train`。
-CPU安装跳过大模型包；完整环境和模型准备见详细手册。
+该安装命令同时安装几何、绘图、测试、视觉和微调依赖，以及项目命令行入口。
+`check_installation.py`检查导入与内置数据，不执行训练或GPU测试。
+
+需要一次上传到服务器时：
+
+```bash
+python scripts/package_server.py --output outputs/server_bundle
+```
+
+得到`PartPhy3D-with-data.zip`，内含代码、配置、文档和5物体，解压后仍使用上面的
+requirements安装命令。Python依赖通过pip联网下载，预训练权重按上游另行准备。
 
 ## 新主线实际完成什么
 
@@ -131,7 +142,7 @@ python scripts/package_project.py --output outputs/release --results outputs/mes
 拿到wheel后可在其他环境安装运行：
 
 ```bash
-python -m pip install "outputs/release/dist/tactile3d-0.6.0-py3-none-any.whl[figures]"
+python -m pip install "outputs/release/dist/tactile3d-0.6.1-py3-none-any.whl[figures]"
 partphy3d-mesh-reproduce --output outputs/wheel_check
 ```
 

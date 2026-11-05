@@ -4,14 +4,14 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "tactile3d"
-version = "0.6.0"
+version = "0.6.1"
 description = "Probabilistic mesh physical grounding, VLM adaptation, and part-level editing."
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
 authors = [{name = "Tactile3D Contributors"}]
 dependencies = [
-  "numpy>=1.24",
+  "numpy>=1.24,<3",
   "Pillow>=10.0",
   "PyYAML>=6.0",
   "trimesh>=4.0",
@@ -23,15 +23,15 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-vision = ["torch>=2.1", "torchvision>=0.16", "open_clip_torch>=2.24"]
+vision = ["torch==2.6.0", "torchvision==0.21.0", "open_clip_torch==2.32.0"]
 train = [
-  "torch>=2.6",
-  "transformers>=4.57",
-  "datasets>=3.0",
-  "accelerate>=1.0",
-  "peft>=0.17",
-  "trl>=0.29",
-  "bitsandbytes>=0.46; platform_system == 'Linux'"
+  "torch==2.6.0",
+  "transformers==4.57.6",
+  "datasets==3.6.0",
+  "accelerate>=1.4,<2",
+  "peft==0.17.1",
+  "trl==0.29.0",
+  "bitsandbytes==0.46.1; platform_system == 'Linux'"
 ]
 figures = ["matplotlib>=3.8"]
 dev = ["pytest>=7.4", "ruff>=0.4", "black>=24.4", "build>=1.2", "setuptools>=68", "wheel>=0.42"]
@@ -47,6 +47,7 @@ partphy3d-mesh = "tactile3d.experiments.mesh_native_demo:main"
 partphy3d-mesh-learn = "tactile3d.research.native_learning:main"
 partphy3d-mesh-reproduce = "tactile3d.research.native_suite:main"
 partphy3d-prepare-five = "tactile3d.abo500.subset:main"
+partphy3d-check = "tactile3d.utils.preflight:main"
 
 [project.urls]
 Repository = "https://github.com/fanyizhi/PartPhy3D"
@@ -55,6 +56,9 @@ Issues = "https://github.com/fanyizhi/PartPhy3D/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+"tactile3d.abo500" = ["licenses/*.txt", "licenses/*.md"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

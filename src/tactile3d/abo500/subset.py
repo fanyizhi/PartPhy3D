@@ -6,6 +6,7 @@ import argparse
 import json
 import shutil
 import struct
+from importlib.resources import files as resource_files
 from pathlib import Path
 from typing import Any
 from zipfile import ZIP_DEFLATED, ZipFile
@@ -26,6 +27,15 @@ MANIFEST_NAME = "subset_manifest.json"
 SCHEMA = "abo500_fixed_five_v1"
 PREVIEW_CELL_SIZE = (300, 320)
 CAMERA_ATOL = 1e-4
+
+
+def write_attribution(directory: Path) -> None:
+    """随子集保留上游署名及许可，读取安装包内资源而不依赖本机绝对路径。"""
+    directory.mkdir(parents=True, exist_ok=True)
+    resources = resource_files("tactile3d.abo500").joinpath("licenses")
+    for resource in resources.iterdir():
+        if resource.is_file():
+            (directory / resource.name).write_bytes(resource.read_bytes())
 
 
 def read_object(path: Path) -> dict[str, Any]:
@@ -207,6 +217,7 @@ def build_subset(
         }
         write_json(output / "splits.json", splits)
         write_json(output / "selected_objects.json", selection)
+        write_attribution(output)
         create_preview(output, ids)
         (output / "README.md").write_text(
             "# ABO-500 five-object development subset\n\n"

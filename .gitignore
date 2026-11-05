@@ -9,7 +9,8 @@ build/
 dist/
 *.egg-info/
 outputs/
-data/
+data/*
+!data/abo500_five/
 wandb/
 .reference/
 checkpoints/

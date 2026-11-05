@@ -1,5 +1,15 @@
 # 安装、数据与复现
 
+v0.6.1：**下载仓库已经包含5物体数据**。建议按
+[统一requirements安装与服务器迁移](SERVER_SETUP_zh.md)操作：
+
+```bash
+python -m pip install -r requirements.txt
+python scripts/check_installation.py --training
+```
+
+下述复制步骤用于从全量ABO重新构建，输出必须使用一个新目录。
+
 v0.6.0的**Mesh原生、无体素**CPU主线：
 
 ```bash

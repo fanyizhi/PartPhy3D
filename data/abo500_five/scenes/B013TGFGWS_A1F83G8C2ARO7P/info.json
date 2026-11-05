@@ -1,0 +1,6 @@
+{
+    "idx_to_caption": "9",
+    "caption": "the gray felt sleeve is for a macbook",
+    "candidate_materials_density": "(felt: 300-500 kg/m^3);(wool: 100-200 kg/m^3);(nylon: 1000-1500 kg/m^3);(polyester: 700-1100 kg/m^3);(cotton: 400-600 kg/m^3)",
+    "thickness": "(felt: 0.2-0.5 cm);(wool: 0.2-0.5 cm);(nylon: 0.05-0.1 cm);(polyester: 0.05-0.1 cm);(cotton: 0.1-0.3 cm)"
+}

@@ -1,7 +1,9 @@
 # Third-party resources
 
-Upstream data, code and weights retain their own licenses; no checkpoints or
-dataset archives are bundled. Follow their terms before downloading or reusing.
+Upstream data, code and weights retain their own licenses. The repository includes
+the fixed five-object ABO-500 subset under `data/abo500_five/`, with its
+`ATTRIBUTION.md` and license texts. No pretrained checkpoints or full dataset are
+bundled. The project MIT license applies to our code, not a relicensing of the data.
 
 | Resource | Role |
 | --- | --- |

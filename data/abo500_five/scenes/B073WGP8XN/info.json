@@ -1,0 +1,6 @@
+{
+    "idx_to_caption": "9",
+    "caption": "a black mirror with a black frame",
+    "candidate_materials_density": "(glass: 2200-2800 kg/m^3);(metal: 6000-8000 kg/m^3);(plastic: 800-1500 kg/m^3);(wood: 400-800 kg/m^3);(paint: 900-1600 kg/m^3)",
+    "thickness": "(glass: 0.2-0.5 cm);(metal: 0.1-0.2 cm);(plastic: 0.1-0.3 cm);(wood: 1.0-1.5 cm);(paint: 0.02-0.05 cm)"
+}

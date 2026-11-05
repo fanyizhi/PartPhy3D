@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 Construction-aware physical inference and part editing. **Research prototype,
-version 0.6.0; no peer-reviewed performance or acceptance claim.**
+version 0.6.1; no peer-reviewed performance or acceptance claim.**
 
 [中文](README_zh.md) · [Complete methods and reproduction](docs/METHODS_AND_REPRODUCTION_zh.md) ·
 [Status](docs/IMPLEMENTATION_STATUS.md) · [Data](docs/DATA.md) · [Evidence](docs/results/README.md)
@@ -12,29 +12,36 @@ version 0.6.0; no peer-reviewed performance or acceptance claim.**
 As of 2026-11-05, the current real-object pilot uses **five development objects**,
 the first five IDs of the previously frozen ten-object cohort. Use
 `scripts/run_five_objects.py`; historical ten-object results are retained.
-The pilot now defaults to `data/abo500_five/`. Build this portable subset with
-`scripts/prepare_five_objects.py`: original views, cameras, separate reference GLBs,
-five evaluation labels and SHA-256 checks. See [data preparation](docs/DATA.md).
+The repository includes `data/abo500_five/`: 150 original views, cameras, separate
+reference GLBs, five evaluation labels, attribution and SHA-256 checks. The pilot
+uses it by default. See [server setup](docs/SERVER_SETUP_zh.md) and [data](docs/DATA.md).
 
 **New Mesh-native path:** disjoint closed material regions, signed boundary
 integration, cached mass/COM/full inertia and fixed-construction material edits.
 No voxelization is called by this path. The voxel prototype remains available.
 See [the detailed implementation guide](docs/mesh_native_v0.6_zh.md).
 
-## Reproduce on CPU
+## Install and reproduce
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
-python -m pip install -e ".[dev,figures]"
+python -m pip install -r requirements.txt
+python scripts/check_installation.py --training
 python -m pytest -q
 python scripts/reproduce_mesh_native.py --output outputs/mesh_first
 ```
 
 Linux CI checks Python 3.10; development also uses Python 3.13. On Windows activate
-with `.venv\Scripts\Activate.ps1`. No GPU, torch, dataset download or SSH is used
-by the default suite. Output directories are never overwritten.
+with `.venv\Scripts\Activate.ps1`. The unified installer includes vision/training
+packages and installs the project itself. The diagnostic suite executes on CPU
+without model weights or SSH. Output directories are never overwritten.
+
+For one transferable archive including the five objects, run
+`python scripts/package_server.py --output outputs/server_bundle`. Extract
+`PartPhy3D-with-data.zip` on the server and use the same requirements command.
+Python dependencies are downloaded by pip; pretrained weights are prepared separately.
 
 The suite generates 384 analytic objects, splits **by object family** into
 246 training, 66 calibration and 72 test objects, trains three small NumPy models

@@ -1,0 +1,6 @@
+{
+    "idx_to_caption": "10",
+    "caption": "a step ladder with blue steps",
+    "candidate_materials_density": "(plastic: 100-1500 kg/m^3);(aluminum: 2700-2800 kg/m^3);(wood: 400-900 kg/m^3);(steel: 7800-8000 kg/m^3);(fiberglass: 1500-2000 kg/m^3)",
+    "thickness": "(plastic: 0.2-0.5 cm);(aluminum: 0.1-0.3 cm);(wood: 1.0-2.0 cm);(steel: 0.2-0.5 cm);(fiberglass: 0.5-1.0 cm)"
+}

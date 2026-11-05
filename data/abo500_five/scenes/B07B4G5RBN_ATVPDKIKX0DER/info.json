@@ -1,0 +1,6 @@
+{
+    "idx_to_caption": "3",
+    "caption": "a chaise lounge with a wooden frame",
+    "candidate_materials_density": "(wood: 300-700 kg/m^3); (upholstery foam: 20-60 kg/m^3); (fabric: 100-300 kg/m^3); (metal screws: 7000-8000 kg/m^3); (polyester batting: 10-50 kg/m^3)",
+    "thickness": "(wood: 2.0-4.0 cm);(upholstery foam: 5.0-10.0 cm);(fabric: 0.2-0.5 cm);(metal screws: 0.1-0.2 cm);(polyester batting: 0.2-0.5 cm)"
+}

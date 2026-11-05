@@ -1,3 +1,6 @@
 * text=auto eol=lf
 *.png binary
+*.jpg binary
+*.glb binary
+data/abo500_five/** -text whitespace=cr-at-eol
 *.md whitespace=-blank-at-eol

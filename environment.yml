@@ -1,20 +1,8 @@
 name: partphy3d
 channels:
-  - pytorch
-  - nvidia
   - conda-forge
 dependencies:
   - python=3.10
   - pip
-  - numpy
-  - pillow
-  - pyyaml
-  - scipy
-  - trimesh
-  - tqdm
-  - pytest
-  - pytorch
-  - torchvision
-  - pytorch-cuda=12.1
   - pip:
-      - -e ".[vision,train,figures]"
+      - -r requirements.txt

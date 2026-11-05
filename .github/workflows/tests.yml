@@ -30,6 +30,10 @@ jobs:
           scripts/train_mesh_state.py scripts/reproduce_mesh_native.py
           tests/test_mesh_native.py tests/test_training_split_guard.py
       - run: python -m pytest -q
+      - run: python scripts/check_installation.py
+      - run: >-
+          python -m black --check scripts/package_server.py scripts/check_installation.py
+          src/tactile3d/utils/preflight.py tests/test_installation_contract.py
       - run: >-
           python -m black --check src/tactile3d/abo500/subset.py
           src/tactile3d/experiments/five_object_pilot.py
@@ -40,6 +44,7 @@ jobs:
       - run: python scripts/reproduce_all.py --output outputs/ci-reproduction
       - run: python scripts/reproduce_mesh_native.py --output outputs/ci-mesh
       - run: python scripts/package_project.py --output outputs/ci-release
+      - run: python scripts/package_server.py --output outputs/ci-server-bundle
       - uses: actions/upload-artifact@v4
         with:
           name: cpu-edit-demo
@@ -50,5 +55,25 @@ jobs:
             outputs/ci-reproduction
             outputs/ci-mesh
             outputs/ci-release/dist
+            outputs/ci-server-bundle/PartPhy3D-with-data.zip
+            outputs/ci-server-bundle/PartPhy3D-with-data.zip.sha256
           if-no-files-found: error
           retention-days: 14
+
+  full-install:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    env:
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: pip
+      - run: python -m pip install --upgrade pip
+      - run: >-
+          python -m pip install -r requirements.txt
+          --extra-index-url https://download.pytorch.org/whl/cpu
+      - run: python scripts/check_installation.py --training
+      - run: python -m pytest -q

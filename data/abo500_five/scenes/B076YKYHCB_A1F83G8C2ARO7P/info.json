@@ -1,0 +1,6 @@
+{
+    "idx_to_caption": "18",
+    "caption": "a black usb port with four ports",
+    "candidate_materials_density": "(plastic: 1000-2000 kg/m^3);(metal: 6000-8000 kg/m^3);(circuit board: 1500-2000 kg/m^3);(solder: 7000-9000 kg/m^3);(copper: 8000-9000 kg/m^3)",
+    "thickness": "(plastic: 0.2-0.5 cm);(metal: 0.1-0.2 cm);(circuit board: 0.2-0.3 cm);(solder: 0.1-0.2 cm);(copper: 0.1-0.2 cm)"
+}

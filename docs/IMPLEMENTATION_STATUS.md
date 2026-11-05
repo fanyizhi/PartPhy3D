@@ -3,6 +3,11 @@
 Updated 2026-11-05. Runnable software, executed experiments and validated research
 claims are tracked separately.
 
+Version 0.6.1 includes the fixed five-object subset in the GitHub repository,
+unified requirements installation (including the project itself), a read-only
+installation/data check, and a code-plus-data server archive builder. Dependency
+import validation and CPU tests do not establish GPU training compatibility.
+
 | Component | Current evidence | Remaining work |
 | --- | --- | --- |
 | Mesh-native physical mainline (v0.6.0) | Direct closed-boundary moments, Mesh CSG shells, disjoint regions, replay and material edits run without voxelization | Evidence-backed regions from real images and independent physical measurements |
