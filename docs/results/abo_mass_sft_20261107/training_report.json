@@ -1,0 +1,15 @@
+{
+  "scope": "research",
+  "optimizer_steps": 225,
+  "metrics": {
+    "train_runtime": 789.6003,
+    "train_samples_per_second": 1.14,
+    "train_steps_per_second": 0.285,
+    "total_flos": 9951103630746720.0,
+    "train_loss": 0.9079096550411648
+  },
+  "nonzero_lora_B_tensors": 252,
+  "loss_supervision": "assistant_tokens_only",
+  "qlora": true,
+  "real_material_accuracy_established": false
+}

@@ -30,6 +30,8 @@ integration, cached mass/COM/full inertia and fixed-construction material edits.
 No voxelization is called by this path. The voxel prototype remains available.
 See [the detailed implementation guide](docs/mesh_native_v0.6_zh.md).
 
+Real ABO mass-supervision preparation, object-disjoint splits and matched NF4 base/adapter evaluation are described in [the training guide](docs/ABO_MASS_TRAINING_zh.md). This task trains mass from metadata and does not provide material or internal-structure truth.
+
 ## Install and reproduce
 
 ```bash

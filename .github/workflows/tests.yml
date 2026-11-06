@@ -44,6 +44,8 @@ jobs:
           scripts/download_model_snapshot.py scripts/smoke_qlora.py
           tests/test_local_vlm_pilot.py tests/test_mesh_frames.py
           tests/test_training_contract.py tests/test_observed_cameras.py
+          scripts/prepare_abo_mass_sft.py scripts/evaluate_mass_sft.py
+          scripts/summarize_mass_sft.py tests/test_abo_mass_sft.py
       - run: python scripts/check_installation.py
       - run: >-
           python -m black --check scripts/package_server.py scripts/check_installation.py

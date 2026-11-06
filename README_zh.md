@@ -26,6 +26,8 @@
 质量标签和数据许可。默认路径已连接真实先导入口。
 [统一安装与服务器迁移](docs/SERVER_SETUP_zh.md) · [数据结构](docs/DATA.md)。
 
+新增[完整ABO-500质量监督训练流程](docs/ABO_MASS_TRAINING_zh.md)：官方300/100/100对象划分、真实质量标签、8B QLoRA和相同NF4条件下的训练前后评价；该任务不提供内部材料或其它物性真值。
+
 ## Linux统一安装与验收
 
 在MobaXterm终端中：

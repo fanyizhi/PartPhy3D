@@ -1,0 +1,61 @@
+{
+  "scope": "real_ABO_metadata_mass_only_finetuning",
+  "metrics": {
+    "all_test": {
+      "before": {
+        "num_scenes": 100,
+        "ade_kg": 6.394292338150881,
+        "alde": 0.9738724085571367,
+        "ape": 0.5687929550103619,
+        "mnre": 0.5167074812330738,
+        "rmse_kg": 11.08535009291911
+      },
+      "after": {
+        "num_scenes": 100,
+        "ade_kg": 5.8833143734408795,
+        "alde": 0.9169903010650476,
+        "ape": 0.6047822573832179,
+        "mnre": 0.5809693264150882,
+        "rmse_kg": 10.29262159660651
+      }
+    },
+    "outside_five_95": {
+      "before": {
+        "num_scenes": 95,
+        "ade_kg": 6.607339113211454,
+        "alde": 0.9714697353990399,
+        "ape": 0.5750298688941663,
+        "mnre": 0.5149687358055891,
+        "rmse_kg": 11.34075635249761
+      },
+      "after": {
+        "num_scenes": 95,
+        "ade_kg": 5.945805670779873,
+        "alde": 0.9239427904537262,
+        "ape": 0.6112225108066468,
+        "mnre": 0.5822516521235195,
+        "rmse_kg": 10.408417639886864
+      }
+    },
+    "outside_historical_ten_90": {
+      "before": {
+        "num_scenes": 90,
+        "ade_kg": 6.621706466226935,
+        "alde": 0.9732099623818572,
+        "ape": 0.5749503000900763,
+        "mnre": 0.5163205704894279,
+        "rmse_kg": 11.441431857218209
+      },
+      "after": {
+        "num_scenes": 90,
+        "ade_kg": 6.015826339215822,
+        "alde": 0.9312341511616388,
+        "ape": 0.6166394366234209,
+        "mnre": 0.5853235250159463,
+        "rmse_kg": 10.595686096236687
+      }
+    }
+  },
+  "real_internal_material_accuracy": false,
+  "three_dimensional_physics_method_validated": false
+}

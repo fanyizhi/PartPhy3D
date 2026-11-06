@@ -84,6 +84,8 @@ class LocalVLM:
         model_path: Path,
         max_tokens: int = DEFAULT_MAX_TOKENS,
         max_pixels: int = DEFAULT_MAX_PIXELS,
+        quantized: bool = False,
+        adapter_path: Path | None = None,
     ) -> None:
         self.path = model_path.expanduser().resolve()
         if not (self.path / "config.json").is_file():
@@ -107,13 +109,32 @@ class LocalVLM:
             str(self.path), local_files_only=True, max_pixels=max_pixels
         )
         pixel_budget = configure_qwen_pixels(self.processor, max_pixels)
+        quantization = None
+        if quantized:
+            from transformers import BitsAndBytesConfig
+
+            quantization = BitsAndBytesConfig(
+                load_in_4bit=True,
+                bnb_4bit_quant_type="nf4",
+                bnb_4bit_compute_dtype=torch.bfloat16,
+                bnb_4bit_use_double_quant=True,
+            )
         self.model = AutoModelForImageTextToText.from_pretrained(
             str(self.path),
             local_files_only=True,
             torch_dtype=torch.bfloat16,
             device_map={"": 0},
             attn_implementation="sdpa",
+            quantization_config=quantization,
         ).eval()
+        if adapter_path is not None:
+            from peft import PeftModel
+
+            if not (adapter_path / "adapter_model.safetensors").is_file():
+                raise FileNotFoundError(f"适配器不存在：{adapter_path}")
+            self.model = PeftModel.from_pretrained(
+                self.model, str(adapter_path), is_trainable=False
+            ).eval()
         torch.cuda.synchronize()
         self.provenance = {
             "path": str(self.path),
@@ -125,6 +146,8 @@ class LocalVLM:
             "effective_image_pixel_budget": pixel_budget,
             "max_new_tokens": max_tokens,
             "seed": DEFAULT_SEED,
+            "quantization": "NF4_double_quant" if quantized else None,
+            "adapter_path": str(adapter_path) if adapter_path else None,
             "load_seconds": time.perf_counter() - start,
         }
 
