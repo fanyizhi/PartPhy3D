@@ -1,0 +1,20 @@
+{
+  "model": "facebook/sam2.1-hiera-small",
+  "source": "https://huggingface.co/facebook/sam2.1-hiera-small/tree/ee5bba1d82bb8749febdf90f45e84b687142ba03",
+  "selection": {
+    "full_repository": false,
+    "paths": [
+      "sam2.1_hiera_small.pt"
+    ]
+  },
+  "files": [
+    {
+      "Path": "sam2.1_hiera_small.pt",
+      "Type": "blob",
+      "Size": 184416285,
+      "Sha256": "6d1aa6f30de5c92224f8172114de081d104bbd23dd9dc5c58996f0cad5dc4d38",
+      "Revision": "ee5bba1d82bb8749febdf90f45e84b687142ba03",
+      "DownloadURL": "https://huggingface.co/facebook/sam2.1-hiera-small/resolve/ee5bba1d82bb8749febdf90f45e84b687142ba03/sam2.1_hiera_small.pt"
+    }
+  ]
+}

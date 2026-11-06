@@ -1,0 +1,4 @@
+part_id,name,material_hypothesis,interior_hypothesis,labeled_faces,density_prior_kg_m3,youngs_prior_pa
+outer_felt_cover,Outer felt cover,fabric,unknown,9857,350.0,100000000.0
+leather_patch,Leather patch,leather,unknown,356,860.0,300000000.0
+flap,Flap,fabric,unknown,5771,350.0,100000000.0

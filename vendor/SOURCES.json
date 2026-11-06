@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/facebookresearch/sam2",
+  "commit": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+  "source_archive_sha256": "fe93082a71a885a427894b1eab76341768781b6b58a298a0717e03862097d137",
+  "wheel": "wheels/sam_2-1.0-py3-none-any.whl",
+  "wheel_sha256": "7d88f9df712bf39fce96af4dfd6cf238f812b5c992affffba7296a2671cccaee",
+  "build_environment": "Linux, Python 3.10, torch 2.6.0",
+  "SAM2_BUILD_CUDA": "0",
+  "contains_native_extensions": false,
+  "contains_model_weights": false,
+  "prediction_postprocessing": false
+}

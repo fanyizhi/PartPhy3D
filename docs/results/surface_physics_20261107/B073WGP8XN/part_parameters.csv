@@ -1,0 +1,7 @@
+part_id,name,material_hypothesis,interior_hypothesis,labeled_faces,density_prior_kg_m3,youngs_prior_pa
+1,outer frame,plastic,void,457,1050.0,2200000000.0
+2,wireframe support structure,steel,void,0,7850.0,200000000000.0
+3,display panel,glass,void,5234,2500.0,70000000000.0
+4,side mounting bracket,steel,void,0,7850.0,200000000000.0
+5,top mounting bracket,steel,void,0,7850.0,200000000000.0
+6,bottom mounting bracket,steel,void,0,7850.0,200000000000.0

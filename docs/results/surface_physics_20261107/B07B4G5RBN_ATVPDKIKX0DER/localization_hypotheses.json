@@ -1,0 +1,343 @@
+{
+  "parts": [
+    {
+      "part_id": "1",
+      "name": "upholstered seat cushion",
+      "surface_material": "fabric",
+      "interior_material": "foam",
+      "construction": "layered",
+      "alternative": "void",
+      "bbox_first_view_1000": [
+        242,
+        238,
+        783,
+        825
+      ]
+    },
+    {
+      "part_id": "2",
+      "name": "headrest pillow",
+      "surface_material": "fabric",
+      "interior_material": "foam",
+      "construction": "layered",
+      "alternative": "void",
+      "bbox_first_view_1000": [
+        295,
+        255,
+        512,
+        458
+      ]
+    },
+    {
+      "part_id": "3",
+      "name": "wooden frame",
+      "surface_material": "wood",
+      "interior_material": "void",
+      "construction": "frame",
+      "alternative": "steel",
+      "bbox_first_view_1000": [
+        275,
+        458,
+        775,
+        825
+      ]
+    },
+    {
+      "part_id": "4",
+      "name": "wooden leg",
+      "surface_material": "wood",
+      "interior_material": "void",
+      "construction": "solid",
+      "alternative": "aluminum",
+      "bbox_first_view_1000": [
+        275,
+        458,
+        295,
+        580
+      ]
+    },
+    {
+      "part_id": "5",
+      "name": "wooden leg",
+      "surface_material": "wood",
+      "interior_material": "void",
+      "construction": "solid",
+      "alternative": "aluminum",
+      "bbox_first_view_1000": [
+        525,
+        760,
+        545,
+        825
+      ]
+    },
+    {
+      "part_id": "6",
+      "name": "wooden leg",
+      "surface_material": "wood",
+      "interior_material": "void",
+      "construction": "solid",
+      "alternative": "aluminum",
+      "bbox_first_view_1000": [
+        745,
+        660,
+        775,
+        710
+      ]
+    }
+  ],
+  "views": [
+    {
+      "view": 0,
+      "image_sha256": "50de9c062090ee02a93767cc3841bf313d90ef1c94650f403a0cb6dd21f17046",
+      "parts": [
+        {
+          "part_id": "1",
+          "box": [
+            242,
+            233,
+            783,
+            783
+          ],
+          "point": [
+            500,
+            500
+          ]
+        },
+        {
+          "part_id": "2",
+          "box": [
+            288,
+            242,
+            607,
+            455
+          ],
+          "point": [
+            400,
+            300
+          ]
+        },
+        {
+          "part_id": "3",
+          "box": [
+            242,
+            233,
+            783,
+            817
+          ],
+          "point": [
+            500,
+            500
+          ]
+        },
+        {
+          "part_id": "4",
+          "box": [
+            517,
+            733,
+            550,
+            817
+          ],
+          "point": [
+            525,
+            775
+          ]
+        },
+        {
+          "part_id": "5",
+          "box": [
+            275,
+            433,
+            308,
+            500
+          ],
+          "point": [
+            285,
+            460
+          ]
+        },
+        {
+          "part_id": "6",
+          "box": [
+            733,
+            650,
+            767,
+            700
+          ],
+          "point": [
+            745,
+            675
+          ]
+        }
+      ]
+    },
+    {
+      "view": 10,
+      "image_sha256": "b3d221511e978a1b091ee5ea122b79d869dc61a18b0ae1e4f3a038a17caa4c27",
+      "parts": [
+        {
+          "part_id": "1",
+          "box": [
+            310,
+            333,
+            783,
+            660
+          ],
+          "point": [
+            500,
+            530
+          ]
+        },
+        {
+          "part_id": "2",
+          "box": [
+            310,
+            333,
+            615,
+            483
+          ],
+          "point": [
+            430,
+            380
+          ]
+        },
+        {
+          "part_id": "3",
+          "box": [
+            275,
+            333,
+            783,
+            733
+          ],
+          "point": [
+            500,
+            530
+          ]
+        },
+        {
+          "part_id": "4",
+          "box": [
+            494,
+            633,
+            525,
+            733
+          ],
+          "point": [
+            500,
+            680
+          ]
+        },
+        {
+          "part_id": "5",
+          "box": [
+            285,
+            517,
+            315,
+            583
+          ],
+          "point": [
+            295,
+            550
+          ]
+        },
+        {
+          "part_id": "6",
+          "box": [
+            744,
+            600,
+            775,
+            683
+          ],
+          "point": [
+            750,
+            640
+          ]
+        }
+      ]
+    },
+    {
+      "view": 20,
+      "image_sha256": "59382554f398eda0b8212ecba43b286e8fdd6fe2c8c0caa6b4fe7ef6e876b10c",
+      "parts": [
+        {
+          "part_id": "1",
+          "box": [
+            200,
+            484,
+            800,
+            583
+          ],
+          "point": [
+            500,
+            520
+          ]
+        },
+        {
+          "part_id": "2",
+          "box": [
+            250,
+            358,
+            480,
+            484
+          ],
+          "point": [
+            300,
+            400
+          ]
+        },
+        {
+          "part_id": "3",
+          "box": [
+            180,
+            575,
+            800,
+            625
+          ],
+          "point": [
+            490,
+            590
+          ]
+        },
+        {
+          "part_id": "4",
+          "box": [
+            200,
+            575,
+            240,
+            650
+          ],
+          "point": [
+            210,
+            600
+          ]
+        },
+        {
+          "part_id": "5",
+          "box": [
+            760,
+            575,
+            800,
+            650
+          ],
+          "point": [
+            770,
+            600
+          ]
+        },
+        {
+          "part_id": "6",
+          "box": [
+            250,
+            575,
+            290,
+            650
+          ],
+          "point": [
+            260,
+            600
+          ]
+        }
+      ]
+    }
+  ],
+  "materials_source": "cached_VLM_hypotheses_not_ground_truth"
+}

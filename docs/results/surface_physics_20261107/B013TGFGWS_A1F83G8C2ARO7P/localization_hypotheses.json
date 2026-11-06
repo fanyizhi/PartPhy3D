@@ -1,0 +1,184 @@
+{
+  "parts": [
+    {
+      "part_id": "outer_felt_cover",
+      "name": "Outer felt cover",
+      "surface_material": "fabric",
+      "interior_material": "unknown",
+      "construction": "flexible",
+      "alternative": "may contain foam padding",
+      "bbox_first_view_1000": [
+        210,
+        260,
+        750,
+        725
+      ]
+    },
+    {
+      "part_id": "leather_patch",
+      "name": "Leather patch",
+      "surface_material": "leather",
+      "interior_material": "unknown",
+      "construction": "solid",
+      "alternative": "may be stitched to fabric",
+      "bbox_first_view_1000": [
+        475,
+        440,
+        570,
+        515
+      ]
+    },
+    {
+      "part_id": "flap",
+      "name": "Flap",
+      "surface_material": "fabric",
+      "interior_material": "unknown",
+      "construction": "flexible",
+      "alternative": "may be lined with foam",
+      "bbox_first_view_1000": [
+        210,
+        260,
+        750,
+        565
+      ]
+    }
+  ],
+  "views": [
+    {
+      "view": 0,
+      "image_sha256": "02226ff0c5796fcd0a3e009bce63b678b01014551ef4281b24dcb77bd8a01047",
+      "parts": [
+        {
+          "part_id": "outer_felt_cover",
+          "box": [
+            210,
+            263,
+            752,
+            725
+          ],
+          "point": [
+            420,
+            500
+          ]
+        },
+        {
+          "part_id": "leather_patch",
+          "box": [
+            475,
+            437,
+            575,
+            513
+          ],
+          "point": [
+            500,
+            475
+          ]
+        },
+        {
+          "part_id": "flap",
+          "box": [
+            210,
+            263,
+            752,
+            540
+          ],
+          "point": [
+            420,
+            400
+          ]
+        }
+      ]
+    },
+    {
+      "view": 10,
+      "image_sha256": "7f59f6b12b63435d74adeeb98a87985c1ab4237806db972cda58581d245ff867",
+      "parts": [
+        {
+          "part_id": "outer_felt_cover",
+          "box": [
+            214,
+            304,
+            745,
+            714
+          ],
+          "point": [
+            420,
+            500
+          ]
+        },
+        {
+          "part_id": "leather_patch",
+          "box": [
+            470,
+            414,
+            572,
+            477
+          ],
+          "point": [
+            500,
+            440
+          ]
+        },
+        {
+          "part_id": "flap",
+          "box": [
+            214,
+            304,
+            745,
+            492
+          ],
+          "point": [
+            420,
+            375
+          ]
+        }
+      ]
+    },
+    {
+      "view": 20,
+      "image_sha256": "2986b5f266311a1cf0615d748a21fc98262a20568d3136f5e3a498153b7b1bdd",
+      "parts": [
+        {
+          "part_id": "outer_felt_cover",
+          "box": [
+            448,
+            300,
+            548,
+            748
+          ],
+          "point": [
+            483,
+            500
+          ]
+        },
+        {
+          "part_id": "leather_patch",
+          "box": [
+            500,
+            300,
+            548,
+            466
+          ],
+          "point": [
+            518,
+            375
+          ]
+        },
+        {
+          "part_id": "flap",
+          "box": [
+            483,
+            300,
+            548,
+            466
+          ],
+          "point": [
+            518,
+            375
+          ]
+        }
+      ]
+    }
+  ],
+  "materials_source": "cached_VLM_hypotheses_not_ground_truth"
+}

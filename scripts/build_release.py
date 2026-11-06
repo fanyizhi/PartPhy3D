@@ -1,4 +1,4 @@
-"""构建可审查源码包，不含数据、权重、运行目录或本机SSH设置。"""
+"""构建源码与固定重放资产包，不含完整数据、模型权重或本机SSH设置。"""
 
 from __future__ import annotations
 
@@ -35,7 +35,25 @@ ROOT_FILES = (
     ".gitignore",
     ".gitattributes",
     "MANIFEST.in",
+    "vendor/README.md",
+    "vendor/SOURCES.json",
+    "vendor/LICENSE.txt",
+    "vendor/LICENSE_cctorch.txt",
 )
+BINARY_FILES = {
+    "vendor/wheels/sam_2-1.0-py3-none-any.whl": (
+        "7d88f9df712bf39fce96af4dfd6cf238f812b5c992affffba7296a2671cccaee"
+    ),
+    "examples/observed_surface_demo/generated_camera_space.ply": (
+        "96e1895cdd28b4e84e8210c501572ddea934f3efc2dc564d2e52bb845b16fe0c"
+    ),
+    "examples/observed_surface_demo/B013TGFGWS_A1F83G8C2ARO7P/"
+    "surface_fields.npz": (
+        "ca2086a8452e8e8b8f752fe3b0662c8e4b1b776efc0af0429f4c5fdce0c12d9c"
+    ),
+    "examples/observed_surface_demo/B013TGFGWS_A1F83G8C2ARO7P/"
+    "view_00.npz": ("5d7d326eb49dd890e32f59e0450529aabb6429c2ec59640d21a364539e523ed4"),
+}
 ALLOWED_SUFFIXES = {
     ".py",
     ".md",
@@ -73,7 +91,7 @@ def release_files(root: Path) -> list[Path]:
     Returns:
         按相对路径排序、无符号链接的源码与文档文件。
     """
-    files = [root / name for name in ROOT_FILES]
+    files = [root / name for name in (*ROOT_FILES, *BINARY_FILES)]
     for directory in SOURCE_DIRECTORIES:
         files.extend(
             path
@@ -92,7 +110,10 @@ def release_files(root: Path) -> list[Path]:
             raise ValueError(f"发布不接受外部路径或符号链接：{relative}")
         if not path.is_file() or path.stat().st_size > MAX_FILE_BYTES:
             raise ValueError(f"发布文件缺失或超过大小预算：{relative}")
-        if path.suffix not in {".png"}:
+        if relative in BINARY_FILES:
+            if digest(path) != BINARY_FILES[relative]:
+                raise ValueError(f"固定二进制资产校验失败：{relative}")
+        elif path.suffix != ".png":
             content = path.read_text(encoding="utf-8-sig")
             if SECRET_PATTERN.search(content):
                 raise ValueError(f"检测到疑似凭据，停止发布：{relative}")
@@ -139,7 +160,7 @@ def build_release(root: Path, output: Path) -> dict[str, Any]:
         relative = source.relative_to(root)
         target = destination / relative
         target.parent.mkdir(parents=True, exist_ok=True)
-        if source.suffix == ".png":
+        if source.suffix == ".png" or relative.as_posix() in BINARY_FILES:
             shutil.copy2(source, target)
         else:
             # 统一导出换行，避免Git规范化后与发布哈希不一致。

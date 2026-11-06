@@ -1,0 +1,7 @@
+part_id,name,material_hypothesis,interior_hypothesis,labeled_faces,density_prior_kg_m3,youngs_prior_pa
+1,Top surface with ports and branding,plastic,unknown,5570,1050.0,2200000000.0
+2,USB port 1 (Type-C),plastic,unknown,11,1050.0,2200000000.0
+3,USB port 2 (Type-A),plastic,unknown,20,1050.0,2200000000.0
+4,USB port 3 (Type-A),plastic,unknown,0,1050.0,2200000000.0
+5,USB port 4 (Type-A),plastic,unknown,12,1050.0,2200000000.0
+6,USB port 5 (Type-A),plastic,unknown,8,1050.0,2200000000.0

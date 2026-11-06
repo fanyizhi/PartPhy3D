@@ -1,0 +1,20 @@
+{
+  "model": "laion/CLIP-ViT-B-16-DataComp.XL-s13B-b90K",
+  "source": "https://huggingface.co/laion/CLIP-ViT-B-16-DataComp.XL-s13B-b90K/tree/d110532e8d4ff91c574ee60a342323f28468b287",
+  "selection": {
+    "full_repository": false,
+    "paths": [
+      "open_clip_pytorch_model.bin"
+    ]
+  },
+  "files": [
+    {
+      "Path": "open_clip_pytorch_model.bin",
+      "Type": "blob",
+      "Size": 598599013,
+      "Sha256": "80905176486d952914c1deb3b753b8e653ab54aa4ffb14208bc5007cf7643a16",
+      "Revision": "d110532e8d4ff91c574ee60a342323f28468b287",
+      "DownloadURL": "https://huggingface.co/laion/CLIP-ViT-B-16-DataComp.XL-s13B-b90K/resolve/d110532e8d4ff91c574ee60a342323f28468b287/open_clip_pytorch_model.bin"
+    }
+  ]
+}

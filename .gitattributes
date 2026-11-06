@@ -4,3 +4,6 @@
 *.glb binary
 data/abo500_five/** -text whitespace=cr-at-eol
 *.md whitespace=-blank-at-eol
+*.whl binary
+*.npz binary
+*.ply binary

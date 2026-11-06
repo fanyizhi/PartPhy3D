@@ -1,0 +1,28 @@
+{
+  "upstream_commit": "7311210f62b120f6896b3112b231c26003ce70e3",
+  "scope": "released_cached_intermediates_official_property_stage",
+  "fresh_NeRF_reconstruction": false,
+  "fresh_LLM_proposals": false,
+  "PUGS_reproduced": false,
+  "original_input_views": 30,
+  "settings": {
+    "mats_load_name": "info",
+    "property_name": "density",
+    "feature_load_name": "ps56",
+    "device": "cuda",
+    "temperature": 0.1,
+    "sample_voxel_size": 0.005,
+    "volume_method": "thickness",
+    "correction_factor": 0.6,
+    "show_mat_seg": false
+  },
+  "clip_sha256": "80905176486d952914c1deb3b753b8e653ab54aa4ffb14208bc5007cf7643a16",
+  "source_predict_sha256": "e8ede6aaddf71cb56e8330c9190303b28b2508d1724eb42f33ba63d67d81baeb",
+  "cohort": [
+    "B076YKYHCB_A1F83G8C2ARO7P",
+    "B07WTFJGRG",
+    "B073WGP8XN",
+    "B013TGFGWS_A1F83G8C2ARO7P"
+  ],
+  "target_mass_passed_to_inference": false
+}

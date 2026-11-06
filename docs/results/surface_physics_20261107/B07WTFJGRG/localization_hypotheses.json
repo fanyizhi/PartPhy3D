@@ -1,0 +1,343 @@
+{
+  "parts": [
+    {
+      "part_id": "step_ladder_frame",
+      "name": "Main ladder frame",
+      "surface_material": "aluminum",
+      "interior_material": "unknown",
+      "construction": "frame",
+      "alternative": "hollow aluminum tubes",
+      "bbox_first_view_1000": [
+        360,
+        225,
+        640,
+        815
+      ]
+    },
+    {
+      "part_id": "top_platform",
+      "name": "Top platform",
+      "surface_material": "aluminum",
+      "interior_material": "unknown",
+      "construction": "solid",
+      "alternative": "layered aluminum with foam padding",
+      "bbox_first_view_1000": [
+        410,
+        415,
+        570,
+        525
+      ]
+    },
+    {
+      "part_id": "top_handle",
+      "name": "Top handle",
+      "surface_material": "aluminum",
+      "interior_material": "unknown",
+      "construction": "solid",
+      "alternative": "hollow aluminum tube",
+      "bbox_first_view_1000": [
+        410,
+        225,
+        570,
+        415
+      ]
+    },
+    {
+      "part_id": "step_rungs",
+      "name": "Step rungs",
+      "surface_material": "aluminum",
+      "interior_material": "unknown",
+      "construction": "solid",
+      "alternative": "hollow aluminum with textured surface",
+      "bbox_first_view_1000": [
+        450,
+        535,
+        630,
+        815
+      ]
+    },
+    {
+      "part_id": "foot_caps",
+      "name": "Foot caps",
+      "surface_material": "plastic",
+      "interior_material": "unknown",
+      "construction": "solid",
+      "alternative": "rubber or silicone",
+      "bbox_first_view_1000": [
+        360,
+        615,
+        640,
+        815
+      ]
+    },
+    {
+      "part_id": "joint_covers",
+      "name": "Joint covers",
+      "surface_material": "plastic",
+      "interior_material": "unknown",
+      "construction": "solid",
+      "alternative": "rubber or silicone",
+      "bbox_first_view_1000": [
+        360,
+        465,
+        640,
+        615
+      ]
+    }
+  ],
+  "views": [
+    {
+      "view": 0,
+      "image_sha256": "fc8a6644ab803565848c26e980edca968c6867e7c0b2aae570544dd39d5b1c66",
+      "parts": [
+        {
+          "part_id": "step_ladder_frame",
+          "box": [
+            363,
+            225,
+            657,
+            812
+          ],
+          "point": [
+            500,
+            400
+          ]
+        },
+        {
+          "part_id": "top_platform",
+          "box": [
+            410,
+            390,
+            580,
+            512
+          ],
+          "point": [
+            480,
+            440
+          ]
+        },
+        {
+          "part_id": "top_handle",
+          "box": [
+            410,
+            225,
+            580,
+            390
+          ],
+          "point": [
+            490,
+            275
+          ]
+        },
+        {
+          "part_id": "step_rungs",
+          "box": [
+            410,
+            400,
+            650,
+            780
+          ],
+          "point": [
+            500,
+            600
+          ]
+        },
+        {
+          "part_id": "foot_caps",
+          "box": [
+            490,
+            760,
+            630,
+            812
+          ],
+          "point": [
+            550,
+            780
+          ]
+        },
+        {
+          "part_id": "joint_covers",
+          "box": [
+            410,
+            512,
+            650,
+            600
+          ],
+          "point": [
+            500,
+            550
+          ]
+        }
+      ]
+    },
+    {
+      "view": 10,
+      "image_sha256": "c1b2e457c5e02a36dff45b9b724b1544d9cd5a66f5065fb67105816724ea41db",
+      "parts": [
+        {
+          "part_id": "step_ladder_frame",
+          "box": [
+            363,
+            212,
+            667,
+            840
+          ],
+          "point": [
+            500,
+            480
+          ]
+        },
+        {
+          "part_id": "top_platform",
+          "box": [
+            417,
+            430,
+            583,
+            480
+          ],
+          "point": [
+            500,
+            440
+          ]
+        },
+        {
+          "part_id": "top_handle",
+          "box": [
+            425,
+            212,
+            575,
+            430
+          ],
+          "point": [
+            500,
+            250
+          ]
+        },
+        {
+          "part_id": "step_rungs",
+          "box": [
+            417,
+            430,
+            650,
+            800
+          ],
+          "point": [
+            500,
+            600
+          ]
+        },
+        {
+          "part_id": "foot_caps",
+          "box": [
+            363,
+            690,
+            667,
+            840
+          ],
+          "point": [
+            500,
+            800
+          ]
+        },
+        {
+          "part_id": "joint_covers",
+          "box": [
+            363,
+            430,
+            667,
+            700
+          ],
+          "point": [
+            500,
+            550
+          ]
+        }
+      ]
+    },
+    {
+      "view": 20,
+      "image_sha256": "b625e2f5bfed01748c545163ab558fc12771ebaaf44f575870aa2e2f8380ab34",
+      "parts": [
+        {
+          "part_id": "step_ladder_frame",
+          "box": [
+            320,
+            208,
+            678,
+            800
+          ],
+          "point": [
+            500,
+            400
+          ]
+        },
+        {
+          "part_id": "top_platform",
+          "box": [
+            430,
+            400,
+            570,
+            480
+          ],
+          "point": [
+            500,
+            440
+          ]
+        },
+        {
+          "part_id": "top_handle",
+          "box": [
+            430,
+            208,
+            570,
+            300
+          ],
+          "point": [
+            500,
+            250
+          ]
+        },
+        {
+          "part_id": "step_rungs",
+          "box": [
+            320,
+            208,
+            678,
+            800
+          ],
+          "point": [
+            500,
+            500
+          ]
+        },
+        {
+          "part_id": "foot_caps",
+          "box": [
+            320,
+            750,
+            678,
+            800
+          ],
+          "point": [
+            500,
+            775
+          ]
+        },
+        {
+          "part_id": "joint_covers",
+          "box": [
+            430,
+            400,
+            570,
+            480
+          ],
+          "point": [
+            500,
+            440
+          ]
+        }
+      ]
+    }
+  ],
+  "materials_source": "cached_VLM_hypotheses_not_ground_truth"
+}

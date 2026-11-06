@@ -1,0 +1,343 @@
+{
+  "parts": [
+    {
+      "part_id": "1",
+      "name": "outer frame",
+      "surface_material": "plastic",
+      "interior_material": "void",
+      "construction": "frame",
+      "alternative": "metal frame",
+      "bbox_first_view_1000": [
+        410,
+        275,
+        580,
+        680
+      ]
+    },
+    {
+      "part_id": "2",
+      "name": "wireframe support structure",
+      "surface_material": "steel",
+      "interior_material": "void",
+      "construction": "frame",
+      "alternative": "aluminum frame",
+      "bbox_first_view_1000": [
+        360,
+        220,
+        620,
+        750
+      ]
+    },
+    {
+      "part_id": "3",
+      "name": "display panel",
+      "surface_material": "glass",
+      "interior_material": "void",
+      "construction": "solid",
+      "alternative": "LED screen",
+      "bbox_first_view_1000": [
+        420,
+        280,
+        570,
+        670
+      ]
+    },
+    {
+      "part_id": "4",
+      "name": "side mounting bracket",
+      "surface_material": "steel",
+      "interior_material": "void",
+      "construction": "frame",
+      "alternative": "plastic bracket",
+      "bbox_first_view_1000": [
+        450,
+        275,
+        470,
+        680
+      ]
+    },
+    {
+      "part_id": "5",
+      "name": "top mounting bracket",
+      "surface_material": "steel",
+      "interior_material": "void",
+      "construction": "frame",
+      "alternative": "plastic bracket",
+      "bbox_first_view_1000": [
+        450,
+        220,
+        470,
+        275
+      ]
+    },
+    {
+      "part_id": "6",
+      "name": "bottom mounting bracket",
+      "surface_material": "steel",
+      "interior_material": "void",
+      "construction": "frame",
+      "alternative": "plastic bracket",
+      "bbox_first_view_1000": [
+        450,
+        680,
+        470,
+        750
+      ]
+    }
+  ],
+  "views": [
+    {
+      "view": 0,
+      "image_sha256": "1179b46a13d5965cb92dd3369bd32703443d6a0ab856e68999746966c387aa97",
+      "parts": [
+        {
+          "part_id": "1",
+          "box": [
+            418,
+            288,
+            582,
+            694
+          ],
+          "point": [
+            481,
+            494
+          ]
+        },
+        {
+          "part_id": "2",
+          "box": [
+            356,
+            220,
+            625,
+            725
+          ],
+          "point": [
+            481,
+            494
+          ]
+        },
+        {
+          "part_id": "3",
+          "box": [
+            418,
+            288,
+            582,
+            694
+          ],
+          "point": [
+            481,
+            494
+          ]
+        },
+        {
+          "part_id": "4",
+          "box": [
+            356,
+            220,
+            625,
+            725
+          ],
+          "point": [
+            481,
+            494
+          ]
+        },
+        {
+          "part_id": "5",
+          "box": [
+            356,
+            220,
+            625,
+            725
+          ],
+          "point": [
+            481,
+            494
+          ]
+        },
+        {
+          "part_id": "6",
+          "box": [
+            356,
+            220,
+            625,
+            725
+          ],
+          "point": [
+            481,
+            494
+          ]
+        }
+      ]
+    },
+    {
+      "view": 10,
+      "image_sha256": "d5bea49268833bec64ff8c5bd0fa8cd20e7078f70b8aa118ce642d2284b10b1c",
+      "parts": [
+        {
+          "part_id": "1",
+          "box": [
+            375,
+            212,
+            625,
+            788
+          ],
+          "point": [
+            500,
+            500
+          ]
+        },
+        {
+          "part_id": "2",
+          "box": [
+            350,
+            212,
+            650,
+            788
+          ],
+          "point": [
+            500,
+            500
+          ]
+        },
+        {
+          "part_id": "3",
+          "box": [
+            412,
+            262,
+            588,
+            738
+          ],
+          "point": [
+            500,
+            500
+          ]
+        },
+        {
+          "part_id": "4",
+          "box": [
+            375,
+            212,
+            625,
+            788
+          ],
+          "point": [
+            500,
+            500
+          ]
+        },
+        {
+          "part_id": "5",
+          "box": [
+            375,
+            212,
+            625,
+            788
+          ],
+          "point": [
+            500,
+            500
+          ]
+        },
+        {
+          "part_id": "6",
+          "box": [
+            375,
+            212,
+            625,
+            788
+          ],
+          "point": [
+            500,
+            500
+          ]
+        }
+      ]
+    },
+    {
+      "view": 20,
+      "image_sha256": "e88a2749c7942dfc94b38c20d5caff4aa3a77c8399acdd3aa5d773d540409f2d",
+      "parts": [
+        {
+          "part_id": "1",
+          "box": [
+            475,
+            194,
+            500,
+            800
+          ],
+          "point": [
+            487,
+            499
+          ]
+        },
+        {
+          "part_id": "2",
+          "box": [
+            475,
+            194,
+            500,
+            800
+          ],
+          "point": [
+            487,
+            499
+          ]
+        },
+        {
+          "part_id": "3",
+          "box": [
+            475,
+            194,
+            500,
+            800
+          ],
+          "point": [
+            487,
+            499
+          ]
+        },
+        {
+          "part_id": "4",
+          "box": [
+            475,
+            194,
+            500,
+            800
+          ],
+          "point": [
+            487,
+            499
+          ]
+        },
+        {
+          "part_id": "5",
+          "box": [
+            475,
+            194,
+            500,
+            800
+          ],
+          "point": [
+            487,
+            499
+          ]
+        },
+        {
+          "part_id": "6",
+          "box": [
+            475,
+            194,
+            500,
+            800
+          ],
+          "point": [
+            487,
+            499
+          ]
+        }
+      ]
+    }
+  ],
+  "materials_source": "cached_VLM_hypotheses_not_ground_truth"
+}

@@ -1,0 +1,22 @@
+{
+  "B07B4G5RBN_ATVPDKIKX0DER": {
+    "part_id": "1",
+    "new_material": "leather"
+  },
+  "B076YKYHCB_A1F83G8C2ARO7P": {
+    "part_id": "1",
+    "new_material": "aluminum"
+  },
+  "B07WTFJGRG": {
+    "part_id": "top_platform",
+    "new_material": "plastic"
+  },
+  "B073WGP8XN": {
+    "part_id": "3",
+    "new_material": "steel"
+  },
+  "B013TGFGWS_A1F83G8C2ARO7P": {
+    "part_id": "leather_patch",
+    "new_material": "steel"
+  }
+}

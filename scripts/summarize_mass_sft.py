@@ -16,6 +16,7 @@ from tactile3d.models.calibration import mass_metrics
 from tactile3d.physics.part_io import file_sha256, write_json
 
 COLORS = ("#5A76A8", "#B0764F")
+PUBLISHED_MASS_BOUNDS_KG = (0.01, 100.0)
 
 
 def plot_results(
@@ -108,20 +109,28 @@ def summarize(run: Path, dataset: Path, output: Path) -> dict[str, Any]:
     if predictions["before"].keys() != predictions["after"].keys():
         raise ValueError("测试对象不一致")
     labels = json.loads((dataset / "evaluation_labels.json").read_text())
+    manifest_path = dataset / "dataset_manifest.json"
+    if file_sha256(manifest_path) != protocols["before"]["dataset_manifest_sha256"]:
+        raise ValueError("数据清单与原始推理协议不一致")
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    test_ids = [r["scene_id"] for r in manifest["images"] if r["split"] == "test"]
+    historical_ten = set(test_ids[:10])
     old_five = set(
         json.loads(Path("configs/five_object_pilot.json").read_text())["object_ids"]
     )
+    if set(test_ids) != set(predictions["before"]) or set(test_ids[:5]) != old_five:
+        raise ValueError("官方测试顺序、预测集合与历史开发队列不一致")
     rows = [
         {
             "scene_id": scene,
             "target_mass_kg": labels[scene],
-            "prior_development": scene in list(predictions["before"])[:10],
+            "prior_development": scene in historical_ten,
             "before": mass,
             "after": predictions["after"][scene],
         }
         for scene, mass in predictions["before"].items()
     ]
-    results = {}
+    results, clipped_results = {}, {}
     for subset, selected in (
         ("all_test", rows),
         ("outside_five_95", [r for r in rows if r["scene_id"] not in old_five]),
@@ -133,10 +142,24 @@ def summarize(run: Path, dataset: Path, output: Path) -> dict[str, Any]:
             )
             for phase in ("before", "after")
         }
+        clipped_results[subset] = {
+            phase: mass_metrics(
+                [r["target_mass_kg"] for r in selected],
+                np.clip(
+                    [r[phase] for r in selected], *PUBLISHED_MASS_BOUNDS_KG
+                ).tolist(),
+            )
+            for phase in ("before", "after")
+        }
     output.mkdir(parents=True, exist_ok=False)
     result = {
         "scope": "real_ABO_metadata_mass_only_finetuning",
         "metrics": results,
+        "metrics_published_mass_clipping": clipped_results,
+        "published_clipping_bounds_kg": list(PUBLISHED_MASS_BOUNDS_KG),
+        "clipping_reference": "https://arxiv.org/html/2404.04242v1#S4.SS2",
+        "raw_predictions_modified": False,
+        "historical_development_ids": sorted(historical_ten),
         "real_internal_material_accuracy": False,
         "three_dimensional_physics_method_validated": False,
     }

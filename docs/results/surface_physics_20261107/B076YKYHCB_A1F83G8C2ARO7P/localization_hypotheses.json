@@ -1,0 +1,343 @@
+{
+  "parts": [
+    {
+      "part_id": "1",
+      "name": "Top surface with ports and branding",
+      "surface_material": "plastic",
+      "interior_material": "unknown",
+      "construction": "solid",
+      "alternative": "hollow with internal circuitry",
+      "bbox_first_view_1000": [
+        275,
+        295,
+        765,
+        765
+      ]
+    },
+    {
+      "part_id": "2",
+      "name": "USB port 1 (Type-C)",
+      "surface_material": "plastic",
+      "interior_material": "unknown",
+      "construction": "solid",
+      "alternative": "hollow with internal contacts",
+      "bbox_first_view_1000": [
+        410,
+        340,
+        500,
+        380
+      ]
+    },
+    {
+      "part_id": "3",
+      "name": "USB port 2 (Type-A)",
+      "surface_material": "plastic",
+      "interior_material": "unknown",
+      "construction": "solid",
+      "alternative": "hollow with internal contacts",
+      "bbox_first_view_1000": [
+        440,
+        375,
+        530,
+        415
+      ]
+    },
+    {
+      "part_id": "4",
+      "name": "USB port 3 (Type-A)",
+      "surface_material": "plastic",
+      "interior_material": "unknown",
+      "construction": "solid",
+      "alternative": "hollow with internal contacts",
+      "bbox_first_view_1000": [
+        470,
+        410,
+        560,
+        450
+      ]
+    },
+    {
+      "part_id": "5",
+      "name": "USB port 4 (Type-A)",
+      "surface_material": "plastic",
+      "interior_material": "unknown",
+      "construction": "solid",
+      "alternative": "hollow with internal contacts",
+      "bbox_first_view_1000": [
+        500,
+        445,
+        590,
+        485
+      ]
+    },
+    {
+      "part_id": "6",
+      "name": "USB port 5 (Type-A)",
+      "surface_material": "plastic",
+      "interior_material": "unknown",
+      "construction": "solid",
+      "alternative": "hollow with internal contacts",
+      "bbox_first_view_1000": [
+        530,
+        480,
+        620,
+        520
+      ]
+    }
+  ],
+  "views": [
+    {
+      "view": 0,
+      "image_sha256": "a66cee455e8ed1c459eda9e5ab5f851eb9a54914a796d9fe48d738eb5dcac5ad",
+      "parts": [
+        {
+          "part_id": "1",
+          "box": [
+            278,
+            300,
+            765,
+            765
+          ],
+          "point": [
+            440,
+            380
+          ]
+        },
+        {
+          "part_id": "2",
+          "box": [
+            410,
+            340,
+            520,
+            400
+          ],
+          "point": [
+            450,
+            360
+          ]
+        },
+        {
+          "part_id": "3",
+          "box": [
+            420,
+            380,
+            530,
+            440
+          ],
+          "point": [
+            460,
+            390
+          ]
+        },
+        {
+          "part_id": "4",
+          "box": [
+            430,
+            420,
+            540,
+            480
+          ],
+          "point": [
+            470,
+            420
+          ]
+        },
+        {
+          "part_id": "5",
+          "box": [
+            440,
+            460,
+            550,
+            520
+          ],
+          "point": [
+            480,
+            460
+          ]
+        },
+        {
+          "part_id": "6",
+          "box": [
+            450,
+            500,
+            560,
+            560
+          ],
+          "point": [
+            490,
+            500
+          ]
+        }
+      ]
+    },
+    {
+      "view": 10,
+      "image_sha256": "5245da330e858dbe1ab5a9eccfc40c62f7985eab12d49bd76797215bc5d95c6b",
+      "parts": [
+        {
+          "part_id": "1",
+          "box": [
+            300,
+            395,
+            750,
+            500
+          ],
+          "point": [
+            450,
+            425
+          ]
+        },
+        {
+          "part_id": "2",
+          "box": [
+            450,
+            425,
+            550,
+            450
+          ],
+          "point": [
+            480,
+            435
+          ]
+        },
+        {
+          "part_id": "3",
+          "box": [
+            400,
+            425,
+            450,
+            450
+          ],
+          "point": [
+            420,
+            435
+          ]
+        },
+        {
+          "part_id": "4",
+          "box": [
+            350,
+            425,
+            400,
+            450
+          ],
+          "point": [
+            370,
+            435
+          ]
+        },
+        {
+          "part_id": "5",
+          "box": [
+            300,
+            425,
+            350,
+            450
+          ],
+          "point": [
+            320,
+            435
+          ]
+        },
+        {
+          "part_id": "6",
+          "box": [
+            250,
+            425,
+            300,
+            450
+          ],
+          "point": [
+            270,
+            435
+          ]
+        }
+      ]
+    },
+    {
+      "view": 20,
+      "image_sha256": "a98b4b499702f405f667e346037dc0a91ac07a36581a8f67b94b73454956706e",
+      "parts": [
+        {
+          "part_id": "1",
+          "box": [
+            196,
+            433,
+            794,
+            475
+          ],
+          "point": [
+            320,
+            445
+          ]
+        },
+        {
+          "part_id": "2",
+          "box": [
+            250,
+            433,
+            300,
+            475
+          ],
+          "point": [
+            270,
+            450
+          ]
+        },
+        {
+          "part_id": "3",
+          "box": [
+            300,
+            433,
+            350,
+            475
+          ],
+          "point": [
+            320,
+            450
+          ]
+        },
+        {
+          "part_id": "4",
+          "box": [
+            350,
+            433,
+            400,
+            475
+          ],
+          "point": [
+            370,
+            450
+          ]
+        },
+        {
+          "part_id": "5",
+          "box": [
+            400,
+            433,
+            450,
+            475
+          ],
+          "point": [
+            420,
+            450
+          ]
+        },
+        {
+          "part_id": "6",
+          "box": [
+            450,
+            433,
+            500,
+            475
+          ],
+          "point": [
+            470,
+            450
+          ]
+        }
+      ]
+    }
+  ],
+  "materials_source": "cached_VLM_hypotheses_not_ground_truth"
+}

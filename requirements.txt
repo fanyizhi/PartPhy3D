@@ -26,6 +26,13 @@ matplotlib>=3.8
 einops==0.8.2
 omegaconf==2.3.0
 antlr4-python3-runtime==4.9.3
+hydra-core==1.3.2
+iopath==0.1.10
+portalocker==3.2.0
+./vendor/wheels/sam_2-1.0-py3-none-any.whl
+# 官方NeRF2Physics缓存属性阶段；Python 3.10的Linux服务器已验证。
+open3d==0.19.0; platform_system == "Linux" and python_version < "3.13"
+openai==0.28.1
 xatlas==0.0.11
 opencv-python-headless==4.10.0.84
 nvdiffrast @ https://codeload.github.com/NVlabs/nvdiffrast/zip/refs/tags/v0.3.3#sha256=ad37393412e35eaccde53a87686aeceb805e8d8c644daff10459675b42438a5d

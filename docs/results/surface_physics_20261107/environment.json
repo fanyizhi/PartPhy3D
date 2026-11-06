@@ -1,0 +1,20 @@
+{
+  "python": "3.10.22",
+  "platform": "Linux",
+  "versions": {
+    "torch": "2.6.0",
+    "torchvision": "0.21.0",
+    "transformers": "4.57.6",
+    "peft": "0.17.1",
+    "trl": "0.29.0",
+    "bitsandbytes": "0.46.1",
+    "numpy": "2.2.6",
+    "trimesh": "5.2.0",
+    "matplotlib": "3.10.9",
+    "sam-2": "1.0",
+    "open_clip_torch": "2.32.0",
+    "open3d": "0.19.0",
+    "openai": "0.28.1",
+    "hydra-core": "1.3.2"
+  }
+}

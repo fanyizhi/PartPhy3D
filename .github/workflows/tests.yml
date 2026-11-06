@@ -31,6 +31,28 @@ jobs:
           tests/test_mesh_native.py tests/test_training_split_guard.py
       - run: python -m pytest -q
       - run: >-
+          python -m black --check src/tactile3d/vision/part_lifting.py
+          scripts/run_part_surface_maps.py scripts/refine_surface_conflicts.py
+          scripts/observe_part_points.py scripts/render_surface_maps.py
+          scripts/run_nerf_cached_baseline.py scripts/compare_available_baselines.py
+          scripts/build_release.py tests/test_part_lifting.py
+          src/tactile3d/physics/surface_edit.py tests/test_surface_edit.py
+          scripts/run_observed_surface_pipeline.py
+      - run: >-
+          python -m ruff check --select E501 --line-length 88
+          src/tactile3d/vision/part_lifting.py scripts/run_part_surface_maps.py
+          scripts/refine_surface_conflicts.py scripts/observe_part_points.py
+          scripts/render_surface_maps.py scripts/run_nerf_cached_baseline.py
+          scripts/compare_available_baselines.py scripts/build_release.py
+          tests/test_part_lifting.py
+          src/tactile3d/physics/surface_edit.py tests/test_surface_edit.py
+          scripts/run_observed_surface_pipeline.py
+      - run: >-
+          python scripts/render_surface_maps.py
+          --fields examples/observed_surface_demo
+          --edit-spec examples/observed_surface_demo/edit_spec.json
+          --output outputs/ci-surface-replay
+      - run: >-
           python -m black --check
           src/tactile3d/vision/local_vlm.py src/tactile3d/vision/silhouette.py
           src/tactile3d/mesh/frames.py src/tactile3d/research/observed_cameras.py
@@ -70,6 +92,7 @@ jobs:
             outputs/ci-observability
             outputs/ci-reproduction
             outputs/ci-mesh
+            outputs/ci-surface-replay
             outputs/ci-release/dist
             outputs/ci-server-bundle/PartPhy3D-with-data.zip
             outputs/ci-server-bundle/PartPhy3D-with-data.zip.sha256
@@ -92,4 +115,7 @@ jobs:
           python -m pip install -r requirements.txt
           --extra-index-url https://download.pytorch.org/whl/cpu
       - run: python scripts/check_installation.py --training --frontend
+      - run: >-
+          python -c "from sam2.build_sam import build_sam2;
+          from sam2.sam2_image_predictor import SAM2ImagePredictor"
       - run: python -m pytest -q

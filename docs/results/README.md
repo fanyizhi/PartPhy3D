@@ -1,5 +1,13 @@
 # Recorded evidence
 
+2026-11-07 adds [executed real-Mesh surface mapping and material edits, plus
+the official NeRF2Physics released-cache property stage](surface_physics_20261107/README_zh.md).
+The [idea audit](../RESEARCH_IDEA_AUDIT_20261107_zh.md) distinguishes every
+implemented mechanism from missing evidence. PUGS and full-method mass remain
+unscored; the mixed 300/100/100 QLoRA result is recorded in
+[the mass-training report](abo_mass_sft_20261107/README_zh.md).
+Historical status statements below describe their respective experiments.
+
 2026-11-06 adds [real five-object GPU diagnostics](server_pilot_20261106/README_zh.md):
 2B/8B view-count mass baselines, observed-view frozen reconstruction, coordinate
 audits and a two-step QLoRA integration test. Raw numbers and adverse cases are

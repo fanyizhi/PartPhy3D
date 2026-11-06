@@ -1,0 +1,13 @@
+{
+  "scene_id": "B076YKYHCB_A1F83G8C2ARO7P",
+  "part_id": "1",
+  "new_material": "aluminum",
+  "changed_faces": 5570,
+  "new_density_prior_kg_m3": 2700.0,
+  "new_youngs_prior_pa": 69000000000.0,
+  "geometry_unchanged": true,
+  "unselected_faces_changed": 0,
+  "mass_recomputed": false,
+  "mass_blocker": "no_verified_metric_scale_or_closed_material_regions",
+  "selection": "user_spec"
+}

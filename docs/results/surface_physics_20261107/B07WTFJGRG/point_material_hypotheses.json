@@ -1,0 +1,113 @@
+{
+  "views": [
+    {
+      "view": 0,
+      "image_sha256": "fc8a6644ab803565848c26e980edca968c6867e7c0b2aae570544dd39d5b1c66",
+      "parts": [
+        {
+          "part_id": "step_ladder_frame",
+          "marker": 1,
+          "observed_material": "aluminum"
+        },
+        {
+          "part_id": "top_platform",
+          "marker": 2,
+          "observed_material": "aluminum"
+        },
+        {
+          "part_id": "top_handle",
+          "marker": 3,
+          "observed_material": "aluminum"
+        },
+        {
+          "part_id": "step_rungs",
+          "marker": 4,
+          "observed_material": "aluminum"
+        },
+        {
+          "part_id": "foot_caps",
+          "marker": 5,
+          "observed_material": "aluminum"
+        },
+        {
+          "part_id": "joint_covers",
+          "marker": 6,
+          "observed_material": "aluminum"
+        }
+      ]
+    },
+    {
+      "view": 10,
+      "image_sha256": "c1b2e457c5e02a36dff45b9b724b1544d9cd5a66f5065fb67105816724ea41db",
+      "parts": [
+        {
+          "part_id": "step_ladder_frame",
+          "marker": 1,
+          "observed_material": "aluminum"
+        },
+        {
+          "part_id": "top_platform",
+          "marker": 2,
+          "observed_material": "aluminum"
+        },
+        {
+          "part_id": "top_handle",
+          "marker": 3,
+          "observed_material": "aluminum"
+        },
+        {
+          "part_id": "step_rungs",
+          "marker": 4,
+          "observed_material": "aluminum"
+        },
+        {
+          "part_id": "foot_caps",
+          "marker": 5,
+          "observed_material": "aluminum"
+        },
+        {
+          "part_id": "joint_covers",
+          "marker": 6,
+          "observed_material": "aluminum"
+        }
+      ]
+    },
+    {
+      "view": 20,
+      "image_sha256": "b625e2f5bfed01748c545163ab558fc12771ebaaf44f575870aa2e2f8380ab34",
+      "parts": [
+        {
+          "part_id": "step_ladder_frame",
+          "marker": 1,
+          "observed_material": "aluminum"
+        },
+        {
+          "part_id": "top_platform",
+          "marker": 2,
+          "observed_material": "aluminum"
+        },
+        {
+          "part_id": "top_handle",
+          "marker": 3,
+          "observed_material": "aluminum"
+        },
+        {
+          "part_id": "step_rungs",
+          "marker": 4,
+          "observed_material": "aluminum"
+        },
+        {
+          "part_id": "foot_caps",
+          "marker": 5,
+          "observed_material": "aluminum"
+        },
+        {
+          "part_id": "joint_covers",
+          "marker": 2,
+          "observed_material": "aluminum"
+        }
+      ]
+    }
+  ],
+  "source": "VLM_visible_point_hypotheses_not_measured_labels"
+}

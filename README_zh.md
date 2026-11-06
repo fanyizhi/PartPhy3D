@@ -1,6 +1,15 @@
 # PartPhy3D
 
-面向部件构造、物理属性推断和物理一致编辑的研究工程，当前版本 **0.6.2**。
+**2026-11-07 更新**：已在五个真实生成 Mesh 上执行 Qwen 定位、SAM2 分割、
+遮挡检查、表面密度/E 先验图和局部换材；已运行 NeRF2Physics 发布缓存属性阶段。
+[逐条想法、实现和缺口](docs/RESEARCH_IDEA_AUDIT_20261107_zh.md) ·
+[论文任务、模块与验证架构](docs/PAPER_ARCHITECTURE_zh.md) ·
+[实际结果、失败和重放命令](docs/results/surface_physics_20261107/README_zh.md)。
+精细分割仍不完整，物性图是条件先验，完整方法质量尚未验证。
+
+![五物体真实表面属性与局部编辑](docs/results/surface_physics_20261107/surface_properties_and_edits.png)
+
+面向部件构造、物理属性推断和物理一致编辑的研究工程，当前版本 **0.6.3**。
 源码包含可执行程序和研究设计；尚未完成真实联合模型，不能据此宣称优于论文方法。
 
 [English](README.md) · [完整方法、程序与复现](docs/METHODS_AND_REPRODUCTION_zh.md) ·

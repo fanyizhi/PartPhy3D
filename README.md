@@ -1,10 +1,20 @@
 # PartPhy3D
 
+**2026-11-07:** executed Qwen localization, SAM2 masks, occlusion-aware face
+correspondence, conditional density/E maps and local material edits on five
+generated Meshes; ran the official NeRF2Physics released-cache property stage.
+[Idea-by-idea audit](docs/RESEARCH_IDEA_AUDIT_20261107_zh.md) and
+[actual results, failures and replay](docs/results/surface_physics_20261107/README_zh.md).
+Part coverage remains incomplete; property maps are configuration priors and
+full-method mass accuracy is not established.
+
+![Actual generated-Mesh property and edit outputs](docs/results/surface_physics_20261107/surface_properties_and_edits.png)
+
 [![CPU tests](https://github.com/fanyizhi/PartPhy3D/actions/workflows/tests.yml/badge.svg)](https://github.com/fanyizhi/PartPhy3D/actions/workflows/tests.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 Construction-aware physical inference and part editing. **Research prototype,
-version 0.6.2; no peer-reviewed performance or acceptance claim.**
+version 0.6.3; no peer-reviewed performance or acceptance claim.**
 
 [中文](README_zh.md) · [Complete methods and reproduction](docs/METHODS_AND_REPRODUCTION_zh.md) ·
 [Status](docs/IMPLEMENTATION_STATUS.md) · [Data](docs/DATA.md) · [Evidence](docs/results/README.md)

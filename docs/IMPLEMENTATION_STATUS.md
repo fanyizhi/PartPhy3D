@@ -1,7 +1,17 @@
 # Implementation status
 
-Updated 2026-11-06. Runnable software, executed experiments and validated research
+Updated 2026-11-07. Runnable software, executed experiments and validated research
 claims are tracked separately.
+
+Version 0.6.3 executes Qwen/SAM2 visible-surface correspondence and schematic
+material/conditional-prior edits on five generated Meshes, plus the official
+NeRF2Physics released-cache property stage. Unknown surfaces remain unknown;
+real closed material regions and full-method mass accuracy are still missing.
+See the [complete idea audit](RESEARCH_IDEA_AUDIT_20261107_zh.md) and
+[actual outputs and replay](results/surface_physics_20261107/README_zh.md).
+The 8B mass-answer QLoRA experiment now covers 300/100/100 objects, rather than
+only the earlier two-step integration test: ADE improved but APE worsened.
+This does not validate interior-material learning or general physical inference.
 
 Version 0.6.1 includes the fixed five-object subset in the GitHub repository,
 unified requirements installation (including the project itself), a read-only

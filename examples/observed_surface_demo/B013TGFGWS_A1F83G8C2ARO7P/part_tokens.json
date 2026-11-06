@@ -1,0 +1,108 @@
+{
+  "parts": [
+    {
+      "part_index": 1,
+      "part_id": "outer_felt_cover",
+      "name": "Outer felt cover",
+      "surface_material": "fabric",
+      "interior_material": "unknown",
+      "construction": "flexible",
+      "alternative": "may contain foam padding",
+      "bbox_first_view_1000": [
+        210,
+        260,
+        750,
+        725
+      ]
+    },
+    {
+      "part_index": 2,
+      "part_id": "leather_patch",
+      "name": "Leather patch",
+      "surface_material": "leather",
+      "interior_material": "unknown",
+      "construction": "solid",
+      "alternative": "may be stitched to fabric",
+      "bbox_first_view_1000": [
+        475,
+        440,
+        570,
+        515
+      ]
+    },
+    {
+      "part_index": 3,
+      "part_id": "flap",
+      "name": "Flap",
+      "surface_material": "fabric",
+      "interior_material": "unknown",
+      "construction": "flexible",
+      "alternative": "may be lined with foam",
+      "bbox_first_view_1000": [
+        210,
+        260,
+        750,
+        565
+      ]
+    }
+  ],
+  "material_priors": {
+    "foam": {
+      "density_mean_kg_m3": 65.0,
+      "youngs_mean_pa": 2000000.0
+    },
+    "rubber": {
+      "density_mean_kg_m3": 1100.0,
+      "youngs_mean_pa": 8000000.0
+    },
+    "plastic": {
+      "density_mean_kg_m3": 1050.0,
+      "youngs_mean_pa": 2200000000.0
+    },
+    "wood": {
+      "density_mean_kg_m3": 650.0,
+      "youngs_mean_pa": 10000000000.0
+    },
+    "aluminum": {
+      "density_mean_kg_m3": 2700.0,
+      "youngs_mean_pa": 69000000000.0
+    },
+    "steel": {
+      "density_mean_kg_m3": 7850.0,
+      "youngs_mean_pa": 200000000000.0
+    },
+    "glass": {
+      "density_mean_kg_m3": 2500.0,
+      "youngs_mean_pa": 70000000000.0
+    },
+    "ceramic": {
+      "density_mean_kg_m3": 2600.0,
+      "youngs_mean_pa": 80000000000.0
+    },
+    "silicone": {
+      "density_mean_kg_m3": 1100.0,
+      "youngs_mean_pa": 2500000.0
+    },
+    "paper_cardboard": {
+      "density_mean_kg_m3": 550.0,
+      "youngs_mean_pa": 1500000000.0
+    },
+    "fabric": {
+      "density_mean_kg_m3": 350.0,
+      "youngs_mean_pa": 100000000.0
+    },
+    "leather": {
+      "density_mean_kg_m3": 860.0,
+      "youngs_mean_pa": 300000000.0
+    },
+    "stone": {
+      "density_mean_kg_m3": 2700.0,
+      "youngs_mean_pa": 50000000000.0
+    }
+  },
+  "physics_source": "configured_material_priors_conditioned_on_VLM_hypotheses",
+  "closed_material_volumes_established": false,
+  "camera_unit_to_meter": null,
+  "mesh": "examples/observed_surface_demo/generated_camera_space.ply",
+  "mesh_sha256": "96e1895cdd28b4e84e8210c501572ddea934f3efc2dc564d2e52bb845b16fe0c"
+}

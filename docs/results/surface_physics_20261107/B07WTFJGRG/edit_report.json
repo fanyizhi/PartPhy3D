@@ -1,0 +1,13 @@
+{
+  "scene_id": "B07WTFJGRG",
+  "part_id": "top_platform",
+  "new_material": "plastic",
+  "changed_faces": 1142,
+  "new_density_prior_kg_m3": 1050.0,
+  "new_youngs_prior_pa": 2200000000.0,
+  "geometry_unchanged": true,
+  "unselected_faces_changed": 0,
+  "mass_recomputed": false,
+  "mass_blocker": "no_verified_metric_scale_or_closed_material_regions",
+  "selection": "user_spec"
+}

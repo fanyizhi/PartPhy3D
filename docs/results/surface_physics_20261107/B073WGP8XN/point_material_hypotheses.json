@@ -1,0 +1,113 @@
+{
+  "views": [
+    {
+      "view": 0,
+      "image_sha256": "1179b46a13d5965cb92dd3369bd32703443d6a0ab856e68999746966c387aa97",
+      "parts": [
+        {
+          "part_id": "1",
+          "marker": 1,
+          "observed_material": "glass"
+        },
+        {
+          "part_id": "2",
+          "marker": 1,
+          "observed_material": "glass"
+        },
+        {
+          "part_id": "3",
+          "marker": 1,
+          "observed_material": "glass"
+        },
+        {
+          "part_id": "4",
+          "marker": 1,
+          "observed_material": "glass"
+        },
+        {
+          "part_id": "5",
+          "marker": 1,
+          "observed_material": "glass"
+        },
+        {
+          "part_id": "6",
+          "marker": 1,
+          "observed_material": "glass"
+        }
+      ]
+    },
+    {
+      "view": 10,
+      "image_sha256": "d5bea49268833bec64ff8c5bd0fa8cd20e7078f70b8aa118ce642d2284b10b1c",
+      "parts": [
+        {
+          "part_id": "1",
+          "marker": 1,
+          "observed_material": "glass"
+        },
+        {
+          "part_id": "2",
+          "marker": 1,
+          "observed_material": "glass"
+        },
+        {
+          "part_id": "3",
+          "marker": 1,
+          "observed_material": "glass"
+        },
+        {
+          "part_id": "4",
+          "marker": 1,
+          "observed_material": "glass"
+        },
+        {
+          "part_id": "5",
+          "marker": 1,
+          "observed_material": "glass"
+        },
+        {
+          "part_id": "6",
+          "marker": 1,
+          "observed_material": "glass"
+        }
+      ]
+    },
+    {
+      "view": 20,
+      "image_sha256": "e88a2749c7942dfc94b38c20d5caff4aa3a77c8399acdd3aa5d773d540409f2d",
+      "parts": [
+        {
+          "part_id": "1",
+          "marker": 1,
+          "observed_material": "plastic"
+        },
+        {
+          "part_id": "2",
+          "marker": 1,
+          "observed_material": "plastic"
+        },
+        {
+          "part_id": "3",
+          "marker": 1,
+          "observed_material": "plastic"
+        },
+        {
+          "part_id": "4",
+          "marker": 1,
+          "observed_material": "plastic"
+        },
+        {
+          "part_id": "5",
+          "marker": 1,
+          "observed_material": "plastic"
+        },
+        {
+          "part_id": "6",
+          "marker": 1,
+          "observed_material": "plastic"
+        }
+      ]
+    }
+  ],
+  "source": "VLM_visible_point_hypotheses_not_measured_labels"
+}

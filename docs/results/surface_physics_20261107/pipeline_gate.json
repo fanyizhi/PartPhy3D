@@ -1,0 +1,117 @@
+{
+  "scope": "observed_surface_pipeline_not_complete_physical_inference",
+  "objects": [
+    "B07B4G5RBN_ATVPDKIKX0DER"
+  ],
+  "mesh_manifest_sha256": "b1075d64031386febd687df9989715a1d5ad73d083c4f8005793f27a3b8290ac",
+  "prediction_sha256": {
+    "B07B4G5RBN_ATVPDKIKX0DER": "01da3f8e0bbf285437dbcc43884768aa13cd1f2e49284b5083f8caf7a747dad7"
+  },
+  "steps": [
+    {
+      "name": "locate",
+      "command": [
+        "/root/autodl-tmp/partphy3d-env/bin/python",
+        "/root/autodl-tmp/PartPhy3D/scripts/run_part_surface_maps.py",
+        "--phase",
+        "locate",
+        "--model",
+        "/root/autodl-tmp/models/Qwen3-VL-8B-Instruct",
+        "--root",
+        "/root/autodl-tmp/PartPhy3D/data/abo500_five",
+        "--predictions",
+        "/root/autodl-tmp/PartPhy3D/outputs/server_qwen8b_five_20261106_v1",
+        "--output",
+        "/root/autodl-tmp/PartPhy3D/outputs/observed_surface_pipeline_gate_20261107/parts",
+        "--limit",
+        "1"
+      ],
+      "status": "complete",
+      "seconds": 74.77111783996224,
+      "returncode": 0
+    },
+    {
+      "name": "segment",
+      "command": [
+        "/root/autodl-tmp/partphy3d-env/bin/python",
+        "/root/autodl-tmp/PartPhy3D/scripts/run_part_surface_maps.py",
+        "--phase",
+        "segment",
+        "--sam-checkpoint",
+        "/root/autodl-tmp/models/sam2.1-hiera-small/sam2.1_hiera_small.pt",
+        "--mesh-manifest",
+        "/root/autodl-tmp/PartPhy3D/outputs/part_surface_maps_20261107/mesh_manifest.json",
+        "--root",
+        "/root/autodl-tmp/PartPhy3D/data/abo500_five",
+        "--predictions",
+        "/root/autodl-tmp/PartPhy3D/outputs/server_qwen8b_five_20261106_v1",
+        "--output",
+        "/root/autodl-tmp/PartPhy3D/outputs/observed_surface_pipeline_gate_20261107/parts",
+        "--limit",
+        "1"
+      ],
+      "status": "complete",
+      "seconds": 20.19593432545662,
+      "returncode": 0
+    },
+    {
+      "name": "observe",
+      "command": [
+        "/root/autodl-tmp/partphy3d-env/bin/python",
+        "/root/autodl-tmp/PartPhy3D/scripts/observe_part_points.py",
+        "--locations",
+        "/root/autodl-tmp/PartPhy3D/outputs/observed_surface_pipeline_gate_20261107/parts/locations",
+        "--model",
+        "/root/autodl-tmp/models/Qwen3-VL-8B-Instruct",
+        "--root",
+        "/root/autodl-tmp/PartPhy3D/data/abo500_five",
+        "--output",
+        "/root/autodl-tmp/PartPhy3D/outputs/observed_surface_pipeline_gate_20261107/point_materials"
+      ],
+      "status": "complete",
+      "seconds": 39.80871105566621,
+      "returncode": 0
+    },
+    {
+      "name": "refine",
+      "command": [
+        "/root/autodl-tmp/partphy3d-env/bin/python",
+        "/root/autodl-tmp/PartPhy3D/scripts/refine_surface_conflicts.py",
+        "--source",
+        "/root/autodl-tmp/PartPhy3D/outputs/observed_surface_pipeline_gate_20261107/parts/fields",
+        "--root",
+        "/root/autodl-tmp/PartPhy3D/data/abo500_five",
+        "--checkpoint",
+        "/root/autodl-tmp/models/clip_datacomp.bin",
+        "--point-evidence",
+        "/root/autodl-tmp/PartPhy3D/outputs/observed_surface_pipeline_gate_20261107/point_materials",
+        "--output",
+        "/root/autodl-tmp/PartPhy3D/outputs/observed_surface_pipeline_gate_20261107/refined_fields"
+      ],
+      "status": "complete",
+      "seconds": 23.108966398984194,
+      "returncode": 0
+    },
+    {
+      "name": "render_edit",
+      "command": [
+        "/root/autodl-tmp/partphy3d-env/bin/python",
+        "/root/autodl-tmp/PartPhy3D/scripts/render_surface_maps.py",
+        "--fields",
+        "/root/autodl-tmp/PartPhy3D/outputs/observed_surface_pipeline_gate_20261107/refined_fields",
+        "--root",
+        "/root/autodl-tmp/PartPhy3D/data/abo500_five",
+        "--output",
+        "/root/autodl-tmp/PartPhy3D/outputs/observed_surface_pipeline_gate_20261107/figures",
+        "--edit-spec",
+        "/root/autodl-tmp/PartPhy3D/outputs/part_surface_maps_20261107/demonstration_edits.json"
+      ],
+      "status": "complete",
+      "seconds": 7.961071614176035,
+      "returncode": 0
+    }
+  ],
+  "mass_integration_executed": false,
+  "physics_accuracy_established": false,
+  "status": "complete"
+}

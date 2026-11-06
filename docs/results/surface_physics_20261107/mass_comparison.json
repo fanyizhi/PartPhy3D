@@ -1,0 +1,53 @@
+{
+  "metrics": {
+    "NeRF2Physics cached (30 views)": {
+      "num_scenes": 5,
+      "ade_kg": 2.9597538168729,
+      "alde": 0.5122259238209024,
+      "ape": 0.4773862160099621,
+      "mnre": 0.6226054461668057,
+      "rmse_kg": 4.289701792140246
+    },
+    "Qwen BF16 (1 view)": {
+      "num_scenes": 5,
+      "ade_kg": 2.226529468,
+      "alde": 0.6019903074429565,
+      "ape": 0.34757040559746477,
+      "mnre": 0.6552485661732541,
+      "rmse_kg": 3.372757403853928
+    },
+    "Qwen NF4 (1 view)": {
+      "num_scenes": 5,
+      "ade_kg": 2.346403612,
+      "alde": 1.0195231985609727,
+      "ape": 0.45029159121807594,
+      "mnre": 0.5497436443552823,
+      "rmse_kg": 3.7493193200968475
+    },
+    "QLoRA NF4 (1 view)": {
+      "num_scenes": 5,
+      "ade_kg": 4.695979724,
+      "alde": 0.7848930026801583,
+      "ape": 0.4824174423380672,
+      "mnre": 0.556605137954896,
+      "rmse_kg": 7.771305492564469
+    }
+  },
+  "object_ids": [
+    "B07B4G5RBN_ATVPDKIKX0DER",
+    "B076YKYHCB_A1F83G8C2ARO7P",
+    "B07WTFJGRG",
+    "B073WGP8XN",
+    "B013TGFGWS_A1F83G8C2ARO7P"
+  ],
+  "input_budgets_equal": false,
+  "PUGS": {
+    "status": "not_reproduced",
+    "score": null
+  },
+  "full_PartPhy3D": {
+    "status": "not_complete",
+    "score": null
+  },
+  "density_accuracy_established": false
+}

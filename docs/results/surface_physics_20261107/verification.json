@@ -1,0 +1,19 @@
+{
+  "cpu_tests": 189,
+  "cpu_test_seconds": 24.37,
+  "surface_edit_unselected_faces_changed": 0,
+  "full_method_mass_accuracy_established": false,
+  "held_out_part_mask_accuracy_established": false,
+  "real_local_physics_accuracy_established": false,
+  "GPU_idle_after_runs": true,
+  "linux_server_tests": 189,
+  "linux_server_test_seconds": 16.57,
+  "local_python": "3.13",
+  "server_python": "3.10",
+  "pip_check_local": "passed",
+  "pip_check_server": "passed",
+  "sam2_runtime_import": "passed",
+  "real_patch_edit_faces": 356,
+  "pipeline_gate_steps": 5,
+  "pipeline_gate_seconds": 165.8458012342453
+}

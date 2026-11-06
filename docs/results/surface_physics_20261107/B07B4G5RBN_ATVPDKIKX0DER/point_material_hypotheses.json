@@ -1,0 +1,113 @@
+{
+  "views": [
+    {
+      "view": 0,
+      "image_sha256": "50de9c062090ee02a93767cc3841bf313d90ef1c94650f403a0cb6dd21f17046",
+      "parts": [
+        {
+          "part_id": "1",
+          "marker": 1,
+          "observed_material": "fabric"
+        },
+        {
+          "part_id": "2",
+          "marker": 2,
+          "observed_material": "fabric"
+        },
+        {
+          "part_id": "3",
+          "marker": 1,
+          "observed_material": "fabric"
+        },
+        {
+          "part_id": "4",
+          "marker": 3,
+          "observed_material": "fabric"
+        },
+        {
+          "part_id": "5",
+          "marker": 4,
+          "observed_material": "fabric"
+        },
+        {
+          "part_id": "6",
+          "marker": 5,
+          "observed_material": "fabric"
+        }
+      ]
+    },
+    {
+      "view": 10,
+      "image_sha256": "b3d221511e978a1b091ee5ea122b79d869dc61a18b0ae1e4f3a038a17caa4c27",
+      "parts": [
+        {
+          "part_id": "1",
+          "marker": 1,
+          "observed_material": "fabric"
+        },
+        {
+          "part_id": "2",
+          "marker": 2,
+          "observed_material": "fabric"
+        },
+        {
+          "part_id": "3",
+          "marker": 1,
+          "observed_material": "fabric"
+        },
+        {
+          "part_id": "4",
+          "marker": 3,
+          "observed_material": "wood"
+        },
+        {
+          "part_id": "5",
+          "marker": 4,
+          "observed_material": "wood"
+        },
+        {
+          "part_id": "6",
+          "marker": 5,
+          "observed_material": "wood"
+        }
+      ]
+    },
+    {
+      "view": 20,
+      "image_sha256": "59382554f398eda0b8212ecba43b286e8fdd6fe2c8c0caa6b4fe7ef6e876b10c",
+      "parts": [
+        {
+          "part_id": "1",
+          "marker": 1,
+          "observed_material": "fabric"
+        },
+        {
+          "part_id": "2",
+          "marker": 2,
+          "observed_material": "fabric"
+        },
+        {
+          "part_id": "3",
+          "marker": 3,
+          "observed_material": "wood"
+        },
+        {
+          "part_id": "4",
+          "marker": 4,
+          "observed_material": "wood"
+        },
+        {
+          "part_id": "5",
+          "marker": 5,
+          "observed_material": "wood"
+        },
+        {
+          "part_id": "6",
+          "marker": 6,
+          "observed_material": "wood"
+        }
+      ]
+    }
+  ],
+  "source": "VLM_visible_point_hypotheses_not_measured_labels"
+}

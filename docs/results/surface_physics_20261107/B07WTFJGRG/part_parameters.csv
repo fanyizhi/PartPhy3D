@@ -1,0 +1,7 @@
+part_id,name,material_hypothesis,interior_hypothesis,labeled_faces,density_prior_kg_m3,youngs_prior_pa
+step_ladder_frame,Main ladder frame,aluminum,unknown,1288,2700.0,69000000000.0
+top_platform,Top platform,aluminum,unknown,1142,2700.0,69000000000.0
+top_handle,Top handle,aluminum,unknown,22,2700.0,69000000000.0
+step_rungs,Step rungs,aluminum,unknown,398,2700.0,69000000000.0
+foot_caps,Foot caps,plastic,unknown,0,1050.0,2200000000.0
+joint_covers,Joint covers,plastic,unknown,0,1050.0,2200000000.0

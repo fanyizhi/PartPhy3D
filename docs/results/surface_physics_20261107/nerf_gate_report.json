@@ -1,0 +1,23 @@
+{
+  "scope": "released_cached_intermediates_official_property_stage",
+  "objects": [
+    {
+      "scene_id": "B07B4G5RBN_ATVPDKIKX0DER",
+      "mass_interval_kg": [
+        8.375589370727539,
+        32.82023239135742
+      ],
+      "mass_kg": 20.59791088104248
+    }
+  ],
+  "metrics": {
+    "num_scenes": 1,
+    "ade_kg": 8.43197711895752,
+    "alde": 0.34313626284003806,
+    "ape": 0.2904584791700719,
+    "mnre": 0.7095415208299282,
+    "rmse_kg": 8.43197711895752
+  },
+  "comparison_input_budgets_identical": false,
+  "density_ground_truth_available": false
+}

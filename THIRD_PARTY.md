@@ -7,6 +7,7 @@ bundled. The project MIT license applies to our code, not a relicensing of the d
 
 | Resource | Role |
 | --- | --- |
+| [SAM2](https://github.com/facebookresearch/sam2) | Executed SAM2.1 small mask proposals; pinned pure-Python runtime and Apache/BSD notices in vendor; neural weights downloaded separately |
 | [ABO](https://amazon-berkeley-objects.s3.amazonaws.com/index.html) | Product data and geometry |
 | [NeRF2Physics](https://github.com/ajzhai/NeRF2Physics) | Evaluation/data conventions and comparison |
 | [PUGS](https://github.com/EverNorif/PUGS) | Physical-grounding comparison |

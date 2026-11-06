@@ -1,0 +1,7 @@
+part_id,name,material_hypothesis,interior_hypothesis,labeled_faces,density_prior_kg_m3,youngs_prior_pa
+1,upholstered seat cushion,fabric,foam,10303,350.0,100000000.0
+2,headrest pillow,fabric,foam,4686,350.0,100000000.0
+3,wooden frame,wood,void,30,650.0,10000000000.0
+4,wooden leg,wood,void,27,650.0,10000000000.0
+5,wooden leg,wood,void,14,650.0,10000000000.0
+6,wooden leg,wood,void,51,650.0,10000000000.0
