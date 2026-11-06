@@ -4,10 +4,19 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 Construction-aware physical inference and part editing. **Research prototype,
-version 0.6.1; no peer-reviewed performance or acceptance claim.**
+version 0.6.2; no peer-reviewed performance or acceptance claim.**
 
 [中文](README_zh.md) · [Complete methods and reproduction](docs/METHODS_AND_REPRODUCTION_zh.md) ·
 [Status](docs/IMPLEMENTATION_STATUS.md) · [Data](docs/DATA.md) · [Evidence](docs/results/README.md)
+
+**Executed on 2026-11-06:** fixed-five-object Qwen3-VL 2B/8B one/three-view mass
+baselines, a frozen InstantMesh adapter using six calibrated observed images, and
+a two-step synthetic QLoRA integration check. Mean APE is 34.76% for 8B one-view
+and 46.53% for three-view; mean held-out silhouette IoU is 0.6675 for reconstructed
+Meshes. These are development diagnostics, not the complete proposed method or
+published-method comparisons. See [results and reproduction](docs/results/server_pilot_20261106/README_zh.md).
+
+![Actual five-object observed-view reconstruction diagnostic](docs/results/server_pilot_20261106/reconstruction.png)
 
 As of 2026-11-05, the current real-object pilot uses **five development objects**,
 the first five IDs of the previously frozen ten-object cohort. Use
@@ -28,7 +37,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
-python scripts/check_installation.py --training
+python scripts/check_installation.py --training --frontend
 python -m pytest -q
 python scripts/reproduce_mesh_native.py --output outputs/mesh_first
 ```

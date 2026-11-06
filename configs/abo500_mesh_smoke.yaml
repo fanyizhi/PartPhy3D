@@ -18,6 +18,7 @@ segmentation:
   voxel_resolution: 16
 
 views:
+  allow_global_fallback: true
   max_views: 2
   crop_padding: 0.1
   zbuffer_size: 64

@@ -34,21 +34,31 @@ TRAINING_MODULES = {
     "peft": "peft",
     "trl": "trl",
 }
+FRONTEND_MODULES = {
+    "einops": "einops",
+    "omegaconf": "omegaconf",
+    "xatlas": "xatlas",
+    "opencv-python-headless": "cv2",
+    "nvdiffrast": "nvdiffrast.torch",
+}
 
 
 def check_installation(
-    data_root: Path | None, training: bool = False
+    data_root: Path | None, training: bool = False, frontend: bool = False
 ) -> dict[str, Any]:
     """检查实际可导入的模块、训练API及包依赖一致性。
 
     Args:
         data_root: 五物体目录；None只检查软件。
         training: 是否同时导入训练库；不执行模型推理或GPU测试。
+        frontend: 是否导入重建依赖；不创建光栅器或编译CUDA插件。
 
     Returns:
         软件、数据检查及错误清单。GPU训练能力需在服务器另行验收。
     """
     modules = {**CORE_MODULES, **(TRAINING_MODULES if training else {})}
+    if frontend:
+        modules.update(FRONTEND_MODULES)
     if training and sys.platform.startswith("linux"):
         modules["bitsandbytes"] = "bitsandbytes"
     report: dict[str, Any] = {
@@ -105,11 +115,12 @@ def check_installation(
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--training", action="store_true")
+    parser.add_argument("--frontend", action="store_true")
     parser.add_argument("--data-root", type=Path, default=Path("data/abo500_five"))
     parser.add_argument("--skip-data", action="store_true")
     args = parser.parse_args()
     report = check_installation(
-        None if args.skip_data else args.data_root, args.training
+        None if args.skip_data else args.data_root, args.training, args.frontend
     )
     print(json.dumps(report, ensure_ascii=False, indent=2))
     if report["status"] != "passed":

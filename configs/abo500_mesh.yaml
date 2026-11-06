@@ -6,6 +6,7 @@ dataset:
   mesh_unit_to_meter: null
 
 mesh:
+  coordinate_frame: gltf_y_up
   repair_strategy: fill_only
   require_watertight: true
 

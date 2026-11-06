@@ -1,0 +1,28 @@
+figure_part_index,scene_id,model_part_id,name,surface_material_hypothesis,interior_material_hypothesis,parameter_source
+01:01,B07B4G5RBN_ATVPDKIKX0DER,1,upholstered seat cushion,fabric,foam,configuration_prior_not_measurement
+01:02,B07B4G5RBN_ATVPDKIKX0DER,2,headrest pillow,fabric,foam,configuration_prior_not_measurement
+01:03,B07B4G5RBN_ATVPDKIKX0DER,3,wooden frame,wood,void,configuration_prior_not_measurement
+01:04,B07B4G5RBN_ATVPDKIKX0DER,4,wooden leg,wood,void,configuration_prior_not_measurement
+01:05,B07B4G5RBN_ATVPDKIKX0DER,5,wooden leg,wood,void,configuration_prior_not_measurement
+01:06,B07B4G5RBN_ATVPDKIKX0DER,6,wooden leg,wood,void,configuration_prior_not_measurement
+02:01,B076YKYHCB_A1F83G8C2ARO7P,1,Top surface with ports and branding,plastic,unknown,configuration_prior_not_measurement
+02:02,B076YKYHCB_A1F83G8C2ARO7P,2,USB port 1 (Type-C),plastic,unknown,configuration_prior_not_measurement
+02:03,B076YKYHCB_A1F83G8C2ARO7P,3,USB port 2 (Type-A),plastic,unknown,configuration_prior_not_measurement
+02:04,B076YKYHCB_A1F83G8C2ARO7P,4,USB port 3 (Type-A),plastic,unknown,configuration_prior_not_measurement
+02:05,B076YKYHCB_A1F83G8C2ARO7P,5,USB port 4 (Type-A),plastic,unknown,configuration_prior_not_measurement
+02:06,B076YKYHCB_A1F83G8C2ARO7P,6,USB port 5 (Type-A),plastic,unknown,configuration_prior_not_measurement
+03:01,B07WTFJGRG,step_ladder_frame,Main ladder frame,aluminum,unknown,configuration_prior_not_measurement
+03:02,B07WTFJGRG,top_platform,Top platform,aluminum,unknown,configuration_prior_not_measurement
+03:03,B07WTFJGRG,top_handle,Top handle,aluminum,unknown,configuration_prior_not_measurement
+03:04,B07WTFJGRG,step_rungs,Step rungs,aluminum,unknown,configuration_prior_not_measurement
+03:05,B07WTFJGRG,foot_caps,Foot caps,plastic,unknown,configuration_prior_not_measurement
+03:06,B07WTFJGRG,joint_covers,Joint covers,plastic,unknown,configuration_prior_not_measurement
+04:01,B073WGP8XN,1,outer frame,plastic,void,configuration_prior_not_measurement
+04:02,B073WGP8XN,2,wireframe support structure,steel,void,configuration_prior_not_measurement
+04:03,B073WGP8XN,3,display panel,glass,void,configuration_prior_not_measurement
+04:04,B073WGP8XN,4,side mounting bracket,steel,void,configuration_prior_not_measurement
+04:05,B073WGP8XN,5,top mounting bracket,steel,void,configuration_prior_not_measurement
+04:06,B073WGP8XN,6,bottom mounting bracket,steel,void,configuration_prior_not_measurement
+05:01,B013TGFGWS_A1F83G8C2ARO7P,outer_felt_cover,Outer felt cover,fabric,unknown,configuration_prior_not_measurement
+05:02,B013TGFGWS_A1F83G8C2ARO7P,leather_patch,Leather patch,leather,unknown,configuration_prior_not_measurement
+05:03,B013TGFGWS_A1F83G8C2ARO7P,flap,Flap,fabric,unknown,configuration_prior_not_measurement

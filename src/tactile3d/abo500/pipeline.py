@@ -10,6 +10,7 @@ from tqdm import tqdm
 
 from tactile3d.abo500.dataset import ABO500Dataset, ABOScene
 from tactile3d.config import resolve_config_path
+from tactile3d.mesh.frames import mesh_in_camera_frame
 from tactile3d.mesh.io import load_triangle_mesh
 from tactile3d.mesh.repair import repair_mesh
 from tactile3d.mesh.segmentation import PartSegmentation, segment_mesh
@@ -51,11 +52,15 @@ class ABO500MeshPipeline:
     def infer_scene(self, scene: ABOScene, output_dir: str | Path) -> tuple[dict, dict]:
         output_dir = ensure_dir(output_dir)
         mesh = _load_mesh(scene.mesh_path)
+        mesh, frame_report = mesh_in_camera_frame(
+            mesh, str(self.cfg.get("mesh", {}).get("coordinate_frame", "camera"))
+        )
         mesh, repair_report = repair_mesh(
             mesh,
             strategy=str(self.cfg.get("mesh", {}).get("repair_strategy", "fill_only")),
         )
         require_watertight = bool(self.cfg.get("mesh", {}).get("require_watertight", True))
+        repair_report.update(frame_report)
         if require_watertight and not mesh.is_watertight:
             raise ValueError(f"Mesh for {scene.scene_id} is not watertight after repair")
         if not mesh.is_volume or abs(float(mesh.volume)) <= 0:
@@ -75,6 +80,7 @@ class ABO500MeshPipeline:
             max_views=int(view_cfg.get("max_views", 12)),
             crop_padding=float(view_cfg.get("crop_padding", 0.12)),
             zbuffer_size=int(view_cfg.get("zbuffer_size", 256)),
+            allow_global_fallback=bool(view_cfg.get("allow_global_fallback", False)),
         )
         evidence = {
             part_id: self.encoder.encode(part_observations)
@@ -114,6 +120,14 @@ class ABO500MeshPipeline:
         feature_row = self._feature_row(
             scene, part_volumes, part_areas, evidence, proposals
         )
+        prediction["observation_audit"] = {
+            str(part): [
+                {"image_path": str(view.image_path),
+                 "visible_faces": view.visible_faces,
+                 "is_global_context": view.is_global_context}
+                for view in views
+            ] for part, views in observations.items()
+        }
         self._save_artifacts(output_dir, mesh, scene, segmentation, observations, prediction)
         return prediction, feature_row
 

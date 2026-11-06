@@ -1,12 +1,14 @@
 # Implementation status
 
-Updated 2026-11-05. Runnable software, executed experiments and validated research
+Updated 2026-11-06. Runnable software, executed experiments and validated research
 claims are tracked separately.
 
 Version 0.6.1 includes the fixed five-object subset in the GitHub repository,
 unified requirements installation (including the project itself), a read-only
 installation/data check, and a code-plus-data server archive builder. Dependency
-import validation and CPU tests do not establish GPU training compatibility.
+import validation and CPU tests alone do not establish GPU training compatibility.
+Version 0.6.2 adds executed five-object GPU diagnostics and a two-step QLoRA
+integration test. See [actual results and limitations](results/server_pilot_20261106/README_zh.md).
 
 | Component | Current evidence | Remaining work |
 | --- | --- | --- |
@@ -19,7 +21,9 @@ import validation and CPU tests do not establish GPU training compatibility.
 | Bound region material editing | Known-design multiview colors and physical fields synchronize; analytic and replay checks | Checked real segmentation-to-volume correspondence and independent measurements |
 | Ten-object rule baseline | Executed on reference geometry | Real models and held-out evaluation |
 | Fixed-cohort comparison | Implemented; missing methods have no scores | Actual published baseline reproduction |
-| InstantMesh and Qwen path | External command adapter and HTTP backend exist; real weights not executed | GPU compatibility, inference, correspondence and logs |
+| InstantMesh and Qwen path | Five real observed-view reconstructions; 2B/8B one/three-view mass baselines, sealed predictions and logs | Fine part correspondence, metric scale and learned physics; adapter is not the official single-image pipeline |
+| QLoRA | Two actual optimization steps, answer-only loss, separate saved adapter and unchanged 2B base weights | Credible real material supervision and independent generalization evaluation |
+| Mesh-camera coordinates | Explicit glTF-to-camera rigid rotation; five reference assets / 15 view audit | Per-dataset scale verification and generated geometry quality |
 | Shared-state response learning | CPU NumPy training and held-out synthetic evaluation run | Real pixel/part encoders, independent edited references and strong controls |
 | Part refinement and multimodal fusion | Research target | Labels, training and controlled ablations |
 | Final surface construction | Conforming field-projected refinement runs on analytic field | Global accuracy constraints and real decoder integration |

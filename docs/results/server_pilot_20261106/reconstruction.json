@@ -1,0 +1,49 @@
+{
+  "scope": "five_object_observed_multiview_frontend_diagnostic",
+  "our_complete_method_evaluated": false,
+  "official_single_image_InstantMesh_pipeline": false,
+  "reference_glb_rendered_as_generated_result": false,
+  "rows": [
+    {
+      "scene_id": "B07B4G5RBN_ATVPDKIKX0DER",
+      "mesh_sha256": "a919650139b8ee9cee740de9e2e30fc83076b16756903b43a8ab988c46f13008",
+      "faces": 51228,
+      "is_watertight": true,
+      "mean_iou_heldout": 0.7355778635110092,
+      "metric_scale_established": false
+    },
+    {
+      "scene_id": "B076YKYHCB_A1F83G8C2ARO7P",
+      "mesh_sha256": "ffda9f7dddfa2da097b4266f21e9042b80e09acd3af4e2ff9ea103f5ed99e24c",
+      "faces": 39156,
+      "is_watertight": true,
+      "mean_iou_heldout": 0.7406382109570616,
+      "metric_scale_established": false
+    },
+    {
+      "scene_id": "B07WTFJGRG",
+      "mesh_sha256": "17df03e2f9f326a123f5c8c514ca7c497943964085082d734d4ab5355a5c77fd",
+      "faces": 18156,
+      "is_watertight": true,
+      "mean_iou_heldout": 0.44594135736591084,
+      "metric_scale_established": false
+    },
+    {
+      "scene_id": "B073WGP8XN",
+      "mesh_sha256": "26b9dd998299606c55b6f4dbab7df228b4f778854de3c3d6e30ab6b976c585a7",
+      "faces": 19528,
+      "is_watertight": true,
+      "mean_iou_heldout": 0.6899792723267119,
+      "metric_scale_established": false
+    },
+    {
+      "scene_id": "B013TGFGWS_A1F83G8C2ARO7P",
+      "mesh_sha256": "17299c4f0496ccfdb7cb58756bc99d8e20cf00cc997b2764dea12ef954bfc14c",
+      "faces": 50148,
+      "is_watertight": true,
+      "mean_iou_heldout": 0.7251225806373128,
+      "metric_scale_established": false
+    }
+  ],
+  "mean_heldout_silhouette_iou": 0.6674518569596012
+}

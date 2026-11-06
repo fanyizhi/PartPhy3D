@@ -1,0 +1,20 @@
+{
+  "scope": "integration_smoke",
+  "optimizer_steps": 2,
+  "metrics": {
+    "train_runtime": 3.5975,
+    "train_samples_per_second": 0.556,
+    "train_steps_per_second": 0.556,
+    "total_flos": 2471613874176.0,
+    "train_loss": 0.8701262176036835
+  },
+  "nonzero_lora_B_tensors": 196,
+  "loss_supervision": "assistant_tokens_only",
+  "qlora": true,
+  "real_material_accuracy_established": false,
+  "seconds": 17.311348151415586,
+  "peak_gpu_bytes": 2127532032,
+  "base_weights_unchanged": true,
+  "adapter_bytes": 17490168,
+  "valid_finetuning_accuracy_experiment": false
+}

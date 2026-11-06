@@ -48,7 +48,10 @@ ALLOWED_SUFFIXES = {
     ".txt",
     ".csv",
 }
-EXCLUDED_FILES = {"scripts/verify_server_preflight.py"}
+EXCLUDED_FILES = {
+    "scripts/verify_server_preflight.py",
+    "scripts/build_visio_figures.py",
+}
 MAX_FILE_BYTES = 5 * 1024 * 1024
 SECRET_PATTERN = re.compile(
     r"(?:gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{30,}"

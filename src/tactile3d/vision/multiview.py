@@ -20,6 +20,7 @@ class ViewObservation:
     std_rgb: np.ndarray
     saturation: float
     texture: float
+    is_global_context: bool = False
 
 
 def collect_part_observations(
@@ -29,6 +30,7 @@ def collect_part_observations(
     max_views: int = 12,
     crop_padding: float = 0.12,
     zbuffer_size: int = 256,
+    allow_global_fallback: bool = False,
 ) -> dict[int, list[ViewObservation]]:
     part_ids = sorted(int(x) for x in np.unique(face_labels))
     observations: dict[int, list[ViewObservation]] = {part_id: [] for part_id in part_ids}
@@ -91,6 +93,11 @@ def collect_part_observations(
         observations[part_id].sort(key=lambda item: item.quality, reverse=True)
         observations[part_id] = observations[part_id][:max_views]
         if not observations[part_id]:
+            if not allow_global_fallback:
+                raise ValueError(
+                    f"部件{part_id}没有可见面；检查坐标、相机或视角覆盖。"
+                    "全局图像不能静默替代部件观测。"
+                )
             observations[part_id] = _fallback_observations(views, max_views)
     return observations
 
@@ -180,6 +187,7 @@ def _fallback_observations(
                 crop=crop,
                 quality=1e-3,
                 visible_faces=0,
+                is_global_context=True,
                 mean_rgb=pixels.mean(axis=0),
                 std_rgb=pixels.std(axis=0),
                 saturation=float((pixels.max(axis=1) - pixels.min(axis=1)).mean()),

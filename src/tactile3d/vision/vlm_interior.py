@@ -54,6 +54,7 @@ class InteriorVLMEstimator:
         self.material_names = tuple(material_names)
         self.cfg = cfg
         self.backend = str(cfg.get("backend", "surface_only"))
+        self._local_vlm = None
 
     def propose(
         self,
@@ -72,6 +73,8 @@ class InteriorVLMEstimator:
             payload = self._load_file(scene_id, part_id)
         elif self.backend == "openai_compatible":
             payload = self._request_vlm(scene_id, part_id, observations, geometry)
+        elif self.backend == "transformers_local":
+            payload = self._request_local(scene_id, part_id, observations, geometry)
         else:
             raise ValueError(f"Unknown interior VLM backend: {self.backend}")
         return parse_part_proposal(
@@ -81,6 +84,39 @@ class InteriorVLMEstimator:
             surface_probabilities,
             source=self.backend,
         )
+
+    def _request_local(
+        self,
+        scene_id: str,
+        part_id: int,
+        observations: list[ViewObservation],
+        geometry: dict[str, float],
+    ) -> dict[str, Any]:
+        """复用本地权重，以相同结构化提示替代额外的HTTP服务。"""
+        from tactile3d.vision.local_vlm import LocalVLM
+
+        if not observations:
+            raise ValueError("本地VLM缺少部件图像观测")
+        if self._local_vlm is None:
+            self._local_vlm = LocalVLM(
+                Path(str(self.cfg.get("model_path", ""))),
+                max_tokens=int(self.cfg.get("max_tokens", 1800)),
+                max_pixels=int(self.cfg.get("max_pixels", 192 * 32 * 32)),
+            )
+        budget = int(self.cfg.get("max_images_per_part", 4))
+        if not 1 <= budget <= 6:
+            raise ValueError("本地VLM每部件图像预算必须在1到6之间")
+        images = []
+        if budget > 1:
+            with Image.open(observations[0].image_path) as image:
+                images.append(image.copy())
+        images.extend(item.crop for item in observations[: budget-len(images)])
+        response = self._local_vlm.generate(
+            _prompt(scene_id, part_id, geometry, self.material_names), images,
+            "Return strict JSON. Distinguish observed surfaces from hidden "
+            "construction hypotheses. State uncertainty rather than invent evidence.",
+        )
+        return _parse_response_content(response.text)
 
     def _load_file(self, scene_id: str, part_id: int) -> dict[str, Any]:
         root = Path(str(self.cfg.get("response_root", "vlm_responses"))).expanduser()

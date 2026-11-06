@@ -1,10 +1,18 @@
 # PartPhy3D
 
-面向部件构造、物理属性推断和物理一致编辑的研究工程，当前版本 **0.6.1**。
+面向部件构造、物理属性推断和物理一致编辑的研究工程，当前版本 **0.6.2**。
 源码包含可执行程序和研究设计；尚未完成真实联合模型，不能据此宣称优于论文方法。
 
 [English](README.md) · [完整方法、程序与复现](docs/METHODS_AND_REPRODUCTION_zh.md) ·
 [实现状态](docs/IMPLEMENTATION_STATUS.md) · [运行结果和不足](docs/results/reproduction_v0.5.0_zh.md)
+
+**2026-11-06真实服务器先导实验**：5个物体的Qwen 2B/8B单/三视角质量估计、
+真实六视角冻结InstantMesh适配诊断、两步QLoRA工程验收已经执行。
+8B单视角APE为34.76%，三视角为46.53%；五物体生成Mesh的未输入视角轮廓IoU
+均值为0.6675。完整物理推断、精细分割和生成预算创新仍待实现。
+[结果图、逐物体数值、失败与复现命令](docs/results/server_pilot_20261106/README_zh.md)。
+
+![五物体真实生成Mesh诊断](docs/results/server_pilot_20261106/reconstruction.png)
 
 **本版新增Mesh原生主线**：用互斥封闭材料域的三角边界直接积分质量、质心和
 完整惯量，换材时复用几何矩；新路径不调用体素化。旧体素原型保留作对照。
@@ -29,7 +37,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
-python scripts/check_installation.py --training
+python scripts/check_installation.py --training --frontend
 python -m pytest -q
 python scripts/reproduce_mesh_native.py --output outputs/mesh_first
 ```

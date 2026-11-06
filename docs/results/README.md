@@ -1,10 +1,17 @@
 # Recorded evidence
 
+2026-11-06 adds [real five-object GPU diagnostics](server_pilot_20261106/README_zh.md):
+2B/8B view-count mass baselines, observed-view frozen reconstruction, coordinate
+audits and a two-step QLoRA integration test. Raw numbers and adverse cases are
+retained. These do not establish the full learned physical method or reproduce
+published comparison methods.
+
 Version 0.6.0 adds the Mesh-native physical path and Mesh-basis response learning.
 See [executed checks, full metrics and limitations](mesh_native_v0.6_zh.md),
 [material sections](mesh_native_v0.6_sections.png) and
 [local validation record](mesh_native_v0.6_validation.json). These are known-design
-and synthetic checks; real five-object model results and published baselines remain pending.
+and synthetic checks; the newer five-object diagnostics are recorded above.
+Published baselines remain pending.
 
 Version 0.5.1 adds a fixed-geometry, fixed-occupancy material edit on a known stool.
 The [three views](material_edit_v1_views.png), [physical changes](material_edit_v1_physics.png),

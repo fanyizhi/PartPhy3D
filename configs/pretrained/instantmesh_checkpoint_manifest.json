@@ -1,0 +1,56 @@
+{
+  "model": "TencentARC/InstantMesh",
+  "source": "https://modelscope.cn/api/v1/models/TencentARC/InstantMesh/repo/files?Revision=master&Recursive=true",
+  "selection": {
+    "paths": [
+      "README.md",
+      "configuration.json",
+      "instant_mesh_large.ckpt"
+    ],
+    "full_repository": false
+  },
+  "files": [
+    {
+      "CommitMessage": "update readme",
+      "CommittedDate": 1724999533,
+      "CommitterName": "ai-modelscope",
+      "InCheck": false,
+      "IsLFS": false,
+      "Mode": "33188",
+      "Name": "README.md",
+      "Path": "README.md",
+      "Revision": "182029b4e83732353247b610835d15e6cd22a4cb",
+      "Sha256": "6126e8d1695a7efbe86d71a4105455bb0cd38cdfee87ae5d730d87925ef1fd00",
+      "Size": 1288,
+      "Type": "blob"
+    },
+    {
+      "CommitMessage": "update readme",
+      "CommittedDate": 1724999533,
+      "CommitterName": "ai-modelscope",
+      "InCheck": false,
+      "IsLFS": false,
+      "Mode": "33188",
+      "Name": "configuration.json",
+      "Path": "configuration.json",
+      "Revision": "182029b4e83732353247b610835d15e6cd22a4cb",
+      "Sha256": "6d80064d04ac3e754239585b56ba38b8122d1f4325f65a22c8ae969b0dce17d2",
+      "Size": 69,
+      "Type": "blob"
+    },
+    {
+      "CommitMessage": "update readme",
+      "CommittedDate": 1724999533,
+      "CommitterName": "ai-modelscope",
+      "InCheck": false,
+      "IsLFS": true,
+      "Mode": "33188",
+      "Name": "instant_mesh_large.ckpt",
+      "Path": "instant_mesh_large.ckpt",
+      "Revision": "182029b4e83732353247b610835d15e6cd22a4cb",
+      "Sha256": "329f7aae9b583fd7c1b27d0221463db7b808a03c48a1f7aa26649af6a03b91a1",
+      "Size": 1514818077,
+      "Type": "blob"
+    }
+  ]
+}

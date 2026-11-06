@@ -1,0 +1,307 @@
+{
+  "scope": "posthoc_audit_no_predictions_changed",
+  "runs": [
+    {
+      "run": "server_qwen2b_typed_five_20261106_v4",
+      "objects": [
+        {
+          "scene_id": "B07B4G5RBN_ATVPDKIKX0DER",
+          "flags": {
+            "matches_numeric_example": false,
+            "identical_part_boxes": true,
+            "localized_part_count": 6,
+            "unique_box_count": 1,
+            "fine_segmentation_established": false,
+            "physical_properties_measured": false,
+            "solid_with_void_interior": [],
+            "unmapped_materials": []
+          }
+        },
+        {
+          "scene_id": "B076YKYHCB_A1F83G8C2ARO7P",
+          "flags": {
+            "matches_numeric_example": false,
+            "identical_part_boxes": false,
+            "localized_part_count": 7,
+            "unique_box_count": 7,
+            "fine_segmentation_established": false,
+            "physical_properties_measured": false,
+            "solid_with_void_interior": [],
+            "unmapped_materials": []
+          }
+        },
+        {
+          "scene_id": "B07WTFJGRG",
+          "flags": {
+            "matches_numeric_example": false,
+            "identical_part_boxes": false,
+            "localized_part_count": 6,
+            "unique_box_count": 6,
+            "fine_segmentation_established": false,
+            "physical_properties_measured": false,
+            "solid_with_void_interior": [],
+            "unmapped_materials": []
+          }
+        },
+        {
+          "scene_id": "B073WGP8XN",
+          "flags": {
+            "matches_numeric_example": false,
+            "identical_part_boxes": false,
+            "localized_part_count": 3,
+            "unique_box_count": 2,
+            "fine_segmentation_established": false,
+            "physical_properties_measured": false,
+            "solid_with_void_interior": [],
+            "unmapped_materials": []
+          }
+        },
+        {
+          "scene_id": "B013TGFGWS_A1F83G8C2ARO7P",
+          "flags": {
+            "matches_numeric_example": false,
+            "identical_part_boxes": false,
+            "localized_part_count": 3,
+            "unique_box_count": 2,
+            "fine_segmentation_established": false,
+            "physical_properties_measured": false,
+            "solid_with_void_interior": [],
+            "unmapped_materials": [
+              "felt"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "run": "server_qwen2b_oneview_five_20261106_v4",
+      "objects": [
+        {
+          "scene_id": "B07B4G5RBN_ATVPDKIKX0DER",
+          "flags": {
+            "matches_numeric_example": false,
+            "identical_part_boxes": false,
+            "localized_part_count": 6,
+            "unique_box_count": 4,
+            "fine_segmentation_established": false,
+            "physical_properties_measured": false,
+            "solid_with_void_interior": [],
+            "unmapped_materials": []
+          }
+        },
+        {
+          "scene_id": "B076YKYHCB_A1F83G8C2ARO7P",
+          "flags": {
+            "matches_numeric_example": false,
+            "identical_part_boxes": false,
+            "localized_part_count": 8,
+            "unique_box_count": 8,
+            "fine_segmentation_established": false,
+            "physical_properties_measured": false,
+            "solid_with_void_interior": [],
+            "unmapped_materials": []
+          }
+        },
+        {
+          "scene_id": "B07WTFJGRG",
+          "flags": {
+            "matches_numeric_example": false,
+            "identical_part_boxes": false,
+            "localized_part_count": 6,
+            "unique_box_count": 6,
+            "fine_segmentation_established": false,
+            "physical_properties_measured": false,
+            "solid_with_void_interior": [],
+            "unmapped_materials": []
+          }
+        },
+        {
+          "scene_id": "B073WGP8XN",
+          "flags": {
+            "matches_numeric_example": false,
+            "identical_part_boxes": false,
+            "localized_part_count": 3,
+            "unique_box_count": 2,
+            "fine_segmentation_established": false,
+            "physical_properties_measured": false,
+            "solid_with_void_interior": [],
+            "unmapped_materials": []
+          }
+        },
+        {
+          "scene_id": "B013TGFGWS_A1F83G8C2ARO7P",
+          "flags": {
+            "matches_numeric_example": false,
+            "identical_part_boxes": false,
+            "localized_part_count": 2,
+            "unique_box_count": 2,
+            "fine_segmentation_established": false,
+            "physical_properties_measured": false,
+            "solid_with_void_interior": [],
+            "unmapped_materials": [
+              "felt"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "run": "server_qwen8b_five_20261106_v1",
+      "objects": [
+        {
+          "scene_id": "B07B4G5RBN_ATVPDKIKX0DER",
+          "flags": {
+            "matches_numeric_example": false,
+            "identical_part_boxes": false,
+            "localized_part_count": 6,
+            "unique_box_count": 6,
+            "fine_segmentation_established": false,
+            "physical_properties_measured": false,
+            "solid_with_void_interior": [
+              "4",
+              "5",
+              "6"
+            ],
+            "unmapped_materials": []
+          }
+        },
+        {
+          "scene_id": "B076YKYHCB_A1F83G8C2ARO7P",
+          "flags": {
+            "matches_numeric_example": false,
+            "identical_part_boxes": false,
+            "localized_part_count": 6,
+            "unique_box_count": 6,
+            "fine_segmentation_established": false,
+            "physical_properties_measured": false,
+            "solid_with_void_interior": [],
+            "unmapped_materials": []
+          }
+        },
+        {
+          "scene_id": "B07WTFJGRG",
+          "flags": {
+            "matches_numeric_example": false,
+            "identical_part_boxes": false,
+            "localized_part_count": 6,
+            "unique_box_count": 6,
+            "fine_segmentation_established": false,
+            "physical_properties_measured": false,
+            "solid_with_void_interior": [],
+            "unmapped_materials": []
+          }
+        },
+        {
+          "scene_id": "B073WGP8XN",
+          "flags": {
+            "matches_numeric_example": false,
+            "identical_part_boxes": false,
+            "localized_part_count": 6,
+            "unique_box_count": 6,
+            "fine_segmentation_established": false,
+            "physical_properties_measured": false,
+            "solid_with_void_interior": [
+              "3"
+            ],
+            "unmapped_materials": []
+          }
+        },
+        {
+          "scene_id": "B013TGFGWS_A1F83G8C2ARO7P",
+          "flags": {
+            "matches_numeric_example": false,
+            "identical_part_boxes": false,
+            "localized_part_count": 3,
+            "unique_box_count": 3,
+            "fine_segmentation_established": false,
+            "physical_properties_measured": false,
+            "solid_with_void_interior": [],
+            "unmapped_materials": []
+          }
+        }
+      ]
+    },
+    {
+      "run": "server_qwen8b_oneview_five_20261106_v1",
+      "objects": [
+        {
+          "scene_id": "B07B4G5RBN_ATVPDKIKX0DER",
+          "flags": {
+            "matches_numeric_example": false,
+            "identical_part_boxes": false,
+            "localized_part_count": 6,
+            "unique_box_count": 5,
+            "fine_segmentation_established": false,
+            "physical_properties_measured": false,
+            "solid_with_void_interior": [
+              "3",
+              "4",
+              "5"
+            ],
+            "unmapped_materials": []
+          }
+        },
+        {
+          "scene_id": "B076YKYHCB_A1F83G8C2ARO7P",
+          "flags": {
+            "matches_numeric_example": false,
+            "identical_part_boxes": false,
+            "localized_part_count": 7,
+            "unique_box_count": 7,
+            "fine_segmentation_established": false,
+            "physical_properties_measured": false,
+            "solid_with_void_interior": [],
+            "unmapped_materials": []
+          }
+        },
+        {
+          "scene_id": "B07WTFJGRG",
+          "flags": {
+            "matches_numeric_example": false,
+            "identical_part_boxes": false,
+            "localized_part_count": 6,
+            "unique_box_count": 5,
+            "fine_segmentation_established": false,
+            "physical_properties_measured": false,
+            "solid_with_void_interior": [
+              "top_platform",
+              "step_rungs",
+              "foot_caps",
+              "rung_caps"
+            ],
+            "unmapped_materials": []
+          }
+        },
+        {
+          "scene_id": "B073WGP8XN",
+          "flags": {
+            "matches_numeric_example": false,
+            "identical_part_boxes": false,
+            "localized_part_count": 6,
+            "unique_box_count": 6,
+            "fine_segmentation_established": false,
+            "physical_properties_measured": false,
+            "solid_with_void_interior": [
+              "frame",
+              "display_panel"
+            ],
+            "unmapped_materials": []
+          }
+        },
+        {
+          "scene_id": "B013TGFGWS_A1F83G8C2ARO7P",
+          "flags": {
+            "matches_numeric_example": false,
+            "identical_part_boxes": false,
+            "localized_part_count": 3,
+            "unique_box_count": 3,
+            "fine_segmentation_established": false,
+            "physical_properties_measured": false,
+            "solid_with_void_interior": [],
+            "unmapped_materials": []
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "scope": "fixed_five_object_development_diagnostic",
+  "statistical_generalization_established": false,
+  "our_complete_method_evaluated": false,
+  "published_external_baselines_evaluated": false,
+  "object_ids": [
+    "B07B4G5RBN_ATVPDKIKX0DER",
+    "B076YKYHCB_A1F83G8C2ARO7P",
+    "B07WTFJGRG",
+    "B073WGP8XN",
+    "B013TGFGWS_A1F83G8C2ARO7P"
+  ],
+  "runs": [
+    {
+      "method": "Qwen 2B / 1 view",
+      "directory": "/root/autodl-tmp/PartPhy3D/outputs/server_qwen2b_oneview_five_20261106_v4",
+      "prediction_seal": "44f98b03ea58616460a6809a8bcd6c4cc81c1e804f256280e6a907613096d4f0",
+      "report_sha256": "a84f7b36f51452598d88b20b0053a6c4e55be074a43b4c33d8e02ef605f0a85b",
+      "metrics": {
+        "num_scenes": 5,
+        "ade_kg": 7.612669883999999,
+        "alde": 1.6579891220777003,
+        "ape": 0.7081765943565591,
+        "mnre": 0.2918234056434409,
+        "rmse_kg": 12.810648773752696
+      },
+      "views": [
+        0
+      ]
+    },
+    {
+      "method": "Qwen 2B / 3 views",
+      "directory": "/root/autodl-tmp/PartPhy3D/outputs/server_qwen2b_typed_five_20261106_v4",
+      "prediction_seal": "85b0abdc40530292b8697f54bd94d0bf813adb149588082ae51f492d8dd727f6",
+      "report_sha256": "bda6343a56783861960ab8dfeef81fa415a7b111808d5d361d6ece883f242b9b",
+      "metrics": {
+        "num_scenes": 5,
+        "ade_kg": 7.612669883999999,
+        "alde": 1.6579891220777003,
+        "ape": 0.7081765943565591,
+        "mnre": 0.2918234056434409,
+        "rmse_kg": 12.810648773752696
+      },
+      "views": [
+        0,
+        10,
+        20
+      ]
+    },
+    {
+      "method": "Qwen 8B / 1 view",
+      "directory": "/root/autodl-tmp/PartPhy3D/outputs/server_qwen8b_oneview_five_20261106_v1",
+      "prediction_seal": "c2ccc1262869cb155c1f193af0dfe166ae5d6ac447ea78d4a5453335a2a91531",
+      "report_sha256": "9934774668304adc9aed7589d5104048905bca95431eb16aa6e9abcf70e5353a",
+      "metrics": {
+        "num_scenes": 5,
+        "ade_kg": 2.226529468,
+        "alde": 0.6019903074429565,
+        "ape": 0.34757040559746477,
+        "mnre": 0.6552485661732541,
+        "rmse_kg": 3.372757403853928
+      },
+      "views": [
+        0
+      ]
+    },
+    {
+      "method": "Qwen 8B / 3 views",
+      "directory": "/root/autodl-tmp/PartPhy3D/outputs/server_qwen8b_five_20261106_v1",
+      "prediction_seal": "44aeedc47900f5cf76b151e8c325c5f7be15e56aa4e2a45ed992286be308fe2a",
+      "report_sha256": "374a22c1af9403aedcae4f758a1032c3ac665bb96fc4fde9be5ffbc98d4f062a",
+      "metrics": {
+        "num_scenes": 5,
+        "ade_kg": 2.32279574,
+        "alde": 0.8220376991130051,
+        "ape": 0.46533906699394983,
+        "mnre": 0.5515734954525687,
+        "rmse_kg": 3.3904007995591745
+      },
+      "views": [
+        0,
+        10,
+        20
+      ]
+    }
+  ]
+}
