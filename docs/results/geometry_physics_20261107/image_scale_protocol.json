@@ -1,0 +1,23 @@
+{
+  "scope": "image_only_scale_baseline_catalog_supervised_training",
+  "dataset_sha256": "eaa92cb5d6b4757102624b3b080c0108f2e7d611ce578fb9b17cbf1c8106e0f6",
+  "catalog_sha256": "68d24d605e4bfb40d0e1d7170964e0acad2e518c5297b123e2bdce37578699d1",
+  "checkpoint_sha256": "80905176486d952914c1deb3b753b8e653ab54aa4ffb14208bc5007cf7643a16",
+  "alphas": [
+    0.001,
+    0.01,
+    0.1,
+    1.0,
+    10.0,
+    100.0
+  ],
+  "validation_selection": "mean_absolute_log_error",
+  "seed": 17,
+  "image_views": 1,
+  "mass_labels_used": false,
+  "test_labels_passed_to_fitting": false,
+  "part_latent_training": false,
+  "validation_tuning_objects": 50,
+  "independent_calibration_objects": 50,
+  "nominal_scale_interval_coverage": 0.9
+}

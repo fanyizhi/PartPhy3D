@@ -1,0 +1,295 @@
+{
+  "scope": "conditional_fragment_free_flight_numerical_consistency",
+  "source_sha256": "89a1eb2c3f9df7d02871dd416492b254d06f5fd0028e863b47108217a57f834e",
+  "contact_simulated": false,
+  "deformation_simulated": false,
+  "real_response_accuracy_established": false,
+  "objects": [
+    {
+      "scene_id": "B07B4G5RBN_ATVPDKIKX0DER",
+      "before": {
+        "relative_angular_momentum_drift": 4.021505430163688e-16,
+        "relative_energy_drift": 4.015776657258098e-16,
+        "quaternion_norm_error": 1.1102230246251565e-16,
+        "mass_kg": 1.3029591978691326,
+        "impulse_ns": [
+          0.0,
+          0.001,
+          0.0
+        ],
+        "impulse_point_m": [
+          0.3897855098380549,
+          0.7432935058449279,
+          0.6040135995514331
+        ],
+        "initial_velocity_m_s": [
+          0.0,
+          0.00076748374134463,
+          0.0
+        ],
+        "initial_omega_rad_s": [
+          -0.0014600141703855927,
+          0.0005211639430831352,
+          0.001970093412084621
+        ],
+        "numerical_checks_passed": true
+      },
+      "after": {
+        "relative_angular_momentum_drift": 4.019380164693027e-16,
+        "relative_energy_drift": 2.4668342323156887e-16,
+        "quaternion_norm_error": 1.1102230246251565e-16,
+        "mass_kg": 3.2015568861927255,
+        "impulse_ns": [
+          0.0,
+          0.001,
+          0.0
+        ],
+        "impulse_point_m": [
+          0.3897855098380549,
+          0.7432935058449279,
+          0.6040135995514331
+        ],
+        "initial_velocity_m_s": [
+          0.0,
+          0.00031234803426816345,
+          0.0
+        ],
+        "initial_omega_rad_s": [
+          -0.0005941918135290202,
+          0.0002121016047431364,
+          0.0008017822025925783
+        ],
+        "numerical_checks_passed": true
+      }
+    },
+    {
+      "scene_id": "B076YKYHCB_A1F83G8C2ARO7P",
+      "before": {
+        "relative_angular_momentum_drift": 2.753761325140611e-12,
+        "relative_energy_drift": 1.036803254495026e-14,
+        "quaternion_norm_error": 7.389644451905042e-13,
+        "mass_kg": 0.0005704962062959911,
+        "impulse_ns": [
+          0.0,
+          0.001,
+          0.0
+        ],
+        "impulse_point_m": [
+          -0.018018625460649626,
+          0.04523943919526428,
+          0.021124466088811585
+        ],
+        "initial_velocity_m_s": [
+          0.0,
+          1.752860034762736,
+          0.0
+        ],
+        "initial_omega_rad_s": [
+          -0.2224643421488395,
+          0.32869464759578854,
+          -22.959658362833032
+        ],
+        "numerical_checks_passed": true
+      },
+      "after": {
+        "relative_angular_momentum_drift": 2.5098138379127025e-12,
+        "relative_energy_drift": 9.793710042460307e-15,
+        "quaternion_norm_error": 6.410427744185654e-13,
+        "mass_kg": 0.00146699024476112,
+        "impulse_ns": [
+          0.0,
+          0.001,
+          0.0
+        ],
+        "impulse_point_m": [
+          -0.018018625460649626,
+          0.04523943919526428,
+          0.021124466088811585
+        ],
+        "initial_velocity_m_s": [
+          0.0,
+          0.6816677912966196,
+          0.0
+        ],
+        "initial_omega_rad_s": [
+          -0.08651391083565979,
+          0.12782569628725093,
+          -8.928756029990621
+        ],
+        "numerical_checks_passed": true
+      }
+    },
+    {
+      "scene_id": "B07WTFJGRG",
+      "before": {
+        "relative_angular_momentum_drift": 4.986551449212363e-16,
+        "relative_energy_drift": 3.72679452027159e-16,
+        "quaternion_norm_error": 0.0,
+        "mass_kg": 0.5141428738663745,
+        "impulse_ns": [
+          0.0,
+          0.001,
+          0.0
+        ],
+        "impulse_point_m": [
+          0.15032532963316347,
+          0.1396427600504176,
+          0.6442259658033054
+        ],
+        "initial_velocity_m_s": [
+          0.0,
+          0.001944984654712728,
+          0.0
+        ],
+        "initial_omega_rad_s": [
+          0.019534218694676635,
+          0.001904175403121431,
+          0.02488092536498062
+        ],
+        "numerical_checks_passed": true
+      },
+      "after": {
+        "relative_angular_momentum_drift": 3.5402384633062433e-16,
+        "relative_energy_drift": 3.8648239469483156e-16,
+        "quaternion_norm_error": 0.0,
+        "mass_kg": 0.19994445094803454,
+        "impulse_ns": [
+          0.0,
+          0.001,
+          0.0
+        ],
+        "impulse_point_m": [
+          0.15032532963316347,
+          0.1396427600504176,
+          0.6442259658033054
+        ],
+        "initial_velocity_m_s": [
+          0.0,
+          0.005001389112118443,
+          0.0
+        ],
+        "initial_omega_rad_s": [
+          0.05023084807202565,
+          0.004896451036597967,
+          0.06397952236709303
+        ],
+        "numerical_checks_passed": true
+      }
+    },
+    {
+      "scene_id": "B073WGP8XN",
+      "before": {
+        "relative_angular_momentum_drift": 4.86338108326033e-16,
+        "relative_energy_drift": 5.72999842798943e-16,
+        "quaternion_norm_error": 1.1102230246251565e-16,
+        "mass_kg": 1.5465293270516212,
+        "impulse_ns": [
+          0.0,
+          0.001,
+          0.0
+        ],
+        "impulse_point_m": [
+          0.14919494198743463,
+          -0.026673900740670588,
+          -0.41730754725620955
+        ],
+        "initial_velocity_m_s": [
+          0.0,
+          0.0006466091411964677,
+          0.0
+        ],
+        "initial_omega_rad_s": [
+          0.004766585809730357,
+          1.4360464810303541e-05,
+          0.011828469333044708
+        ],
+        "numerical_checks_passed": true
+      },
+      "after": {
+        "relative_angular_momentum_drift": 3.844843035549092e-16,
+        "relative_energy_drift": 1.4993495886572338e-16,
+        "quaternion_norm_error": 1.1102230246251565e-16,
+        "mass_kg": 4.856102086942091,
+        "impulse_ns": [
+          0.0,
+          0.001,
+          0.0
+        ],
+        "impulse_point_m": [
+          0.14919494198743463,
+          -0.026673900740670588,
+          -0.41730754725620955
+        ],
+        "initial_velocity_m_s": [
+          0.0,
+          0.00020592647808804706,
+          0.0
+        ],
+        "initial_omega_rad_s": [
+          0.0015180209585128523,
+          4.573396436402405e-06,
+          0.003767028450014241
+        ],
+        "numerical_checks_passed": true
+      }
+    },
+    {
+      "scene_id": "B013TGFGWS_A1F83G8C2ARO7P",
+      "before": {
+        "relative_angular_momentum_drift": 2.9437828661811157e-10,
+        "relative_energy_drift": 2.535844744132044e-10,
+        "quaternion_norm_error": 3.481437360619566e-11,
+        "mass_kg": 0.0007271362332575075,
+        "impulse_ns": [
+          0.0,
+          0.001,
+          0.0
+        ],
+        "impulse_point_m": [
+          -0.029839689446571484,
+          -0.031434133848563396,
+          0.1410515058515429
+        ],
+        "initial_velocity_m_s": [
+          0.0,
+          1.375258107438941,
+          0.0
+        ],
+        "initial_omega_rad_s": [
+          -308.42320652549415,
+          -8.079685517258413,
+          -144.8594963040848
+        ],
+        "numerical_checks_passed": true
+      },
+      "after": {
+        "relative_angular_momentum_drift": 2.137434711366597e-10,
+        "relative_energy_drift": 1.103281349078828e-10,
+        "quaternion_norm_error": 1.979394426143699e-11,
+        "mass_kg": 0.00663723189659469,
+        "impulse_ns": [
+          0.0,
+          0.001,
+          0.0
+        ],
+        "impulse_point_m": [
+          -0.029839689446571484,
+          -0.031434133848563396,
+          0.1410515058515429
+        ],
+        "initial_velocity_m_s": [
+          0.0,
+          0.1506652194136929,
+          0.0
+        ],
+        "initial_omega_rad_s": [
+          -33.78903918623245,
+          -0.8851629993429593,
+          -15.869957556880625
+        ],
+        "numerical_checks_passed": true
+      }
+    }
+  ],
+  "missing": []
+}

@@ -22,3 +22,6 @@ SAM2_BUILD_CUDA=0 python -m pip wheel --no-deps --no-build-isolation \
 
 Wheel archive metadata can vary between builds; verify the shipped wheel against
 the published SHA256 instead of assuming bitwise reproducibility of a rebuild.
+
+`InstantMesh_LICENSE.txt` retains the Apache-2.0 license of the frozen front end
+whose decoder interface is used by the inference-only sparse weight adapter.

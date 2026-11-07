@@ -1,0 +1,37 @@
+{
+  "status": "complete",
+  "backend": "frozen_InstantMesh_observed_calibrated_views_diagnostic",
+  "vertices": 25084,
+  "faces": 50148,
+  "is_watertight": true,
+  "is_winding_consistent": true,
+  "is_volume": true,
+  "bounds_camera_units": [
+    [
+      -0.1929403618157541,
+      -0.03951218494184845,
+      -0.016122322685612284
+    ],
+    [
+      0.1919632926403845,
+      0.030508520519653623,
+      0.23594399153481618
+    ]
+  ],
+  "volume_camera_units_cubed": 0.0040476575672825634,
+  "camera_unit_to_meter": null,
+  "inference_seconds": 0.44766291603446007,
+  "total_seconds_including_load": 14.264344815164804,
+  "peak_gpu_bytes": 4970943488,
+  "mesh_sha256": "abd01a7f5a1f74e46fc1c198e1ab84a7d9ca041484c72a88807a43f39c159085",
+  "surface_weight_pruning_counts": [
+    {
+      "sdf_vertices_queried": 2146689,
+      "full_weight_cells": 2097152,
+      "evaluated_weight_cells": 25052,
+      "weight_cell_fraction": 0.011945724487304688,
+      "geometry_resolution_changed": false,
+      "trained": false
+    }
+  ]
+}

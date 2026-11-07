@@ -1,0 +1,47 @@
+{
+  "scope": "image_only_scale_baseline_catalog_supervised_training",
+  "selected_alpha": 1.0,
+  "train_objects": 300,
+  "validation_objects": 100,
+  "test_objects": 100,
+  "test_metrics": {
+    "train_geometric_mean": {
+      "mae_m": 0.5939577544168708,
+      "ape": 0.8416735569406216,
+      "mean_absolute_log_error": 0.6688521738056191,
+      "within_factor_1_25": 0.28
+    },
+    "CLIP_ridge": {
+      "mae_m": 0.3114784731696544,
+      "ape": 0.36688971712891666,
+      "mean_absolute_log_error": 0.36494808377440896,
+      "within_factor_1_25": 0.43
+    }
+  },
+  "outside_historical_ten_90": {
+    "train_geometric_mean": {
+      "mae_m": 0.6087100138078834,
+      "ape": 0.791124111061486,
+      "mean_absolute_log_error": 0.6616257801604534,
+      "within_factor_1_25": 0.28888888888888886
+    },
+    "CLIP_ridge": {
+      "mae_m": 0.32092677805580194,
+      "ape": 0.3698103944585151,
+      "mean_absolute_log_error": 0.367733407086118,
+      "within_factor_1_25": 0.43333333333333335
+    }
+  },
+  "seconds_including_feature_encoding": 20.890063662081957,
+  "target_is_catalog_dimension_not_lab_measurement": true,
+  "split_conformal": {
+    "calibration_objects": 50,
+    "log_radius": 0.690202044486227,
+    "nominal_coverage": 0.9,
+    "test_coverage": 0.9,
+    "mean_interval_width_m": 1.320256340877127,
+    "requires_exchangeability": true,
+    "is_full_physics_confidence_interval": false
+  },
+  "full_mass_accuracy_established": false
+}

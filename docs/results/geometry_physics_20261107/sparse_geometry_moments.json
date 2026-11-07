@@ -1,0 +1,44 @@
+{
+  "scope": "numerical_moment_drift_vs_dense_not_ground_truth_accuracy",
+  "units": "dimensionless_relative_errors_in_same_model_coordinate_system",
+  "reference_is_ground_truth": false,
+  "real_mass_accuracy_established": false,
+  "source_report_sha256": "2d7c33494b7f9d0a3bdab6aab2f2c6195bc3e50c3cf31ef6c29d1a3c8e9adf3d",
+  "objects": [
+    {
+      "scene_id": "B07B4G5RBN_ATVPDKIKX0DER",
+      "arrays_sha256": "3ab5529bb076bb853382e6509084ba16ede5274cc43369149baafe0f5dc882fd",
+      "relative_volume_difference": 5.628428834114629e-10,
+      "COM_difference_over_bbox_diagonal": 5.064239728142277e-10,
+      "uniform_unit_density_inertia_relative_difference": 2.333514281807426e-09
+    },
+    {
+      "scene_id": "B076YKYHCB_A1F83G8C2ARO7P",
+      "arrays_sha256": "1c3888001aa7c3b436c2a17fb32ed13cc52d58a457f1ecfa7d5c66639fed64ac",
+      "relative_volume_difference": 1.6634249533353795e-09,
+      "COM_difference_over_bbox_diagonal": 5.792638728488313e-10,
+      "uniform_unit_density_inertia_relative_difference": 2.840822670569825e-09
+    },
+    {
+      "scene_id": "B07WTFJGRG",
+      "arrays_sha256": "51cc2248a545133390d0979cd37fb239d5836deba576f806753b8e4596e18c13",
+      "relative_volume_difference": 1.0784514503647813e-08,
+      "COM_difference_over_bbox_diagonal": 3.936861872826162e-09,
+      "uniform_unit_density_inertia_relative_difference": 2.7303877157270538e-08
+    },
+    {
+      "scene_id": "B073WGP8XN",
+      "arrays_sha256": "ca4b1dc95c720ad1841f6a08b4f76986605ce5b95b7271f2ab072fe69ec0146c",
+      "relative_volume_difference": 5.294548133250032e-10,
+      "COM_difference_over_bbox_diagonal": 2.028685425012478e-09,
+      "uniform_unit_density_inertia_relative_difference": 2.2849375019184397e-09
+    },
+    {
+      "scene_id": "B013TGFGWS_A1F83G8C2ARO7P",
+      "arrays_sha256": "94f48a15004b06cec10a4adfa07db07354628a084584070f49a808407649477c",
+      "relative_volume_difference": 1.758628798143036e-10,
+      "COM_difference_over_bbox_diagonal": 7.357605139300666e-11,
+      "uniform_unit_density_inertia_relative_difference": 1.3920465881358938e-09
+    }
+  ]
+}

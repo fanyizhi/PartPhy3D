@@ -1,5 +1,10 @@
 # Recorded evidence
 
+Version 0.6.4 adds [generation-stage sparse decoding, catalog/image-scale
+experiments, conditional closed layers and numerical rigid responses](geometry_physics_20261107/README_zh.md).
+Independent part-mask evaluation remains pending human annotations; whole-object
+physical accuracy is not established by these component experiments.
+
 2026-11-07 adds [executed real-Mesh surface mapping and material edits, plus
 the official NeRF2Physics released-cache property stage](surface_physics_20261107/README_zh.md).
 The [idea audit](../RESEARCH_IDEA_AUDIT_20261107_zh.md) distinguishes every

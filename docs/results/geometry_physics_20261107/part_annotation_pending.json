@@ -1,0 +1,26 @@
+{
+  "scope": "independent_human_mask_evaluation",
+  "prediction_source": "mesh_projection",
+  "source_report_sha256": "bee429e01f93b3f844694c81ba9ebefd38f26c217cfda9ead4dbab8b0fb7a348",
+  "status": "pending_annotations",
+  "expected_cases": 3,
+  "evaluated_cases": 0,
+  "cases": [],
+  "pending": [
+    {
+      "case_id": "B013TGFGWS_A1F83G8C2ARO7P_00",
+      "reason": "missing_human_mask_or_record"
+    },
+    {
+      "case_id": "B013TGFGWS_A1F83G8C2ARO7P_10",
+      "reason": "missing_human_mask_or_record"
+    },
+    {
+      "case_id": "B013TGFGWS_A1F83G8C2ARO7P_20",
+      "reason": "missing_human_mask_or_record"
+    }
+  ],
+  "macro_case_mean_iou": null,
+  "complete_foreground_annotation": false,
+  "automatic_predictions_used_as_ground_truth": false
+}

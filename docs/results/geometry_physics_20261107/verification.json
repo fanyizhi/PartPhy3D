@@ -1,0 +1,47 @@
+{
+  "scope": "software_and_conditional_geometry_validation_not_accuracy_ground_truth",
+  "version": "0.6.4",
+  "date": "2026-11-07",
+  "local_tests": {
+    "passed": 205,
+    "failed": 0,
+    "seconds": 26.42,
+    "python": "3.13",
+    "command": "python -m pytest -q -p no:cacheprovider --basetemp outputs/pytest_v064_final_20261107",
+    "log": "outputs/pytest_v064_final_20261107.log",
+    "environment_note": "The first invocation could not access the Windows shared temporary directory. A fresh workspace-local temporary directory resolved the fixture permission errors; no scientific checks were disabled."
+  },
+  "server_tests": {
+    "passed": 205,
+    "failed": 0,
+    "seconds": 17.22,
+    "python": "3.10.22",
+    "warning": "An installed Dash plugin uses a pytest hook syntax scheduled for removal; the project tests passed.",
+    "log": "outputs/v064_final_server_tests_20261107.log"
+  },
+  "server_preflight": {
+    "status": "passed",
+    "fixed_objects": 5,
+    "original_views": 150,
+    "data_sha256": "passed",
+    "training_imports": "passed",
+    "frontend_imports": "passed"
+  },
+  "cli_replay": {
+    "conditional_patch": "passed",
+    "rigid_response": "passed",
+    "annotation_pack": "passed",
+    "missing_human_annotations": "pending_with_null_scores"
+  },
+  "image_generated_mesh_manifest": {
+    "verified_objects": 5,
+    "reference_mesh_read": false,
+    "mass_labels_read": false
+  },
+  "scientific_pipeline_complete": false,
+  "independent_part_segmentation_accuracy_available": false,
+  "whole_object_mass_accuracy_established": false,
+  "internal_structure_ground_truth_available": false,
+  "joint_physics_aware_adaptive_generation_validated": false,
+  "robot_or_contact_simulation_completed": false
+}

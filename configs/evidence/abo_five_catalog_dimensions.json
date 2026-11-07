@@ -1,0 +1,246 @@
+{
+  "scope": "catalog_dimension_assisted_input_no_mass_labels",
+  "source_url": "https://amazon-berkeley-objects.s3.amazonaws.com/archives/abo-listings.tar",
+  "source_archive_sha256": "b7f7ceacb328fa5ab6e143b88e1f948443a877cfc95b67ff09c8ebabd50644e3",
+  "source_credit": "Amazon.com; ABO, Collins et al., CVPR 2022",
+  "license": "CC-BY-4.0",
+  "mass_labels_included": false,
+  "item_weight_passed_to_inference": false,
+  "objects": {
+    "B07B4G5RBN_ATVPDKIKX0DER": {
+      "status": "available",
+      "preferred_domain": "amazon.com",
+      "candidates": [
+        {
+          "item_id": "B07B4G5RBN",
+          "domain_name": "amazon.com",
+          "3dmodel_id": "B07B4G5RBN",
+          "source_archive_member": "listings/metadata/listings_2.json.gz",
+          "source_record_sha256": "749204222e3397efc91c85f940e55fc04a2eff98721cc8d4b0ccbc71a6e451fa",
+          "item_dimensions": {
+            "height": {
+              "normalized_value": {
+                "unit": "inches",
+                "value": 68.69
+              },
+              "unit": "inches",
+              "value": 68.69
+            },
+            "length": {
+              "normalized_value": {
+                "unit": "inches",
+                "value": 34.04
+              },
+              "unit": "inches",
+              "value": 34.04
+            },
+            "width": {
+              "normalized_value": {
+                "unit": "inches",
+                "value": 26.5
+              },
+              "unit": "inches",
+              "value": 26.5
+            }
+          },
+          "dimensions_m": {
+            "length": 0.8646159999999999,
+            "width": 0.6730999999999999,
+            "height": 1.7447259999999998
+          }
+        }
+      ],
+      "max_dimension_m": 1.7447259999999998,
+      "source": "ABO_catalog_dimensions_not_independent_lab_measurement",
+      "RGB_only_input": false
+    },
+    "B076YKYHCB_A1F83G8C2ARO7P": {
+      "status": "available",
+      "preferred_domain": "amazon.co.uk",
+      "candidates": [
+        {
+          "item_id": "B076YKYHCB",
+          "domain_name": "amazon.co.uk",
+          "3dmodel_id": "B076YKYHCB",
+          "source_archive_member": "listings/metadata/listings_b.json.gz",
+          "source_record_sha256": "5ce46e614a992b57fd7a4ecf8fc77e6345dbf825ae7782ed018512db1f176912",
+          "item_dimensions": {
+            "height": {
+              "normalized_value": {
+                "unit": "inches",
+                "value": 0.95
+              },
+              "unit": "inches",
+              "value": 0.95
+            },
+            "length": {
+              "normalized_value": {
+                "unit": "inches",
+                "value": 4.3
+              },
+              "unit": "inches",
+              "value": 4.3
+            },
+            "width": {
+              "normalized_value": {
+                "unit": "inches",
+                "value": 1.75
+              },
+              "unit": "inches",
+              "value": 1.75
+            }
+          },
+          "dimensions_m": {
+            "length": 0.10922,
+            "width": 0.044449999999999996,
+            "height": 0.02413
+          }
+        }
+      ],
+      "max_dimension_m": 0.10922,
+      "source": "ABO_catalog_dimensions_not_independent_lab_measurement",
+      "RGB_only_input": false
+    },
+    "B07WTFJGRG": {
+      "status": "available",
+      "preferred_domain": "amazon.com",
+      "candidates": [
+        {
+          "item_id": "B07WTFJGRG",
+          "domain_name": "amazon.de",
+          "3dmodel_id": "B07WTFJGRG",
+          "source_archive_member": "listings/metadata/listings_5.json.gz",
+          "source_record_sha256": "2a20526260dc9d6e1debead79b68d3abb3970f8563379a2a7a62e93ad08cfe06",
+          "item_dimensions": {
+            "height": {
+              "normalized_value": {
+                "unit": "inches",
+                "value": 56.45
+              },
+              "unit": "inches",
+              "value": 56.45
+            },
+            "length": {
+              "normalized_value": {
+                "unit": "inches",
+                "value": 17.51
+              },
+              "unit": "inches",
+              "value": 17.51
+            },
+            "width": {
+              "normalized_value": {
+                "unit": "inches",
+                "value": 33.14
+              },
+              "unit": "inches",
+              "value": 33.14
+            }
+          },
+          "dimensions_m": {
+            "length": 0.44475400000000004,
+            "width": 0.841756,
+            "height": 1.43383
+          }
+        }
+      ],
+      "max_dimension_m": 1.43383,
+      "source": "ABO_catalog_dimensions_not_independent_lab_measurement",
+      "RGB_only_input": false
+    },
+    "B073WGP8XN": {
+      "status": "available",
+      "preferred_domain": "amazon.com",
+      "candidates": [
+        {
+          "item_id": "B073WGP8XN",
+          "domain_name": "amazon.com",
+          "3dmodel_id": "B073WGP8XN",
+          "source_archive_member": "listings/metadata/listings_5.json.gz",
+          "source_record_sha256": "fbf28194c92343fd7dbae94c8518e44e8652b75f3c441a6e93c57fc94edf392e",
+          "item_dimensions": {
+            "height": {
+              "normalized_value": {
+                "unit": "inches",
+                "value": 47.0
+              },
+              "unit": "inches",
+              "value": 47.0
+            },
+            "length": {
+              "normalized_value": {
+                "unit": "inches",
+                "value": 22.75
+              },
+              "unit": "inches",
+              "value": 22.75
+            },
+            "width": {
+              "normalized_value": {
+                "unit": "inches",
+                "value": 1.75
+              },
+              "unit": "inches",
+              "value": 1.75
+            }
+          },
+          "dimensions_m": {
+            "length": 0.57785,
+            "width": 0.044449999999999996,
+            "height": 1.1938
+          }
+        }
+      ],
+      "max_dimension_m": 1.1938,
+      "source": "ABO_catalog_dimensions_not_independent_lab_measurement",
+      "RGB_only_input": false
+    },
+    "B013TGFGWS_A1F83G8C2ARO7P": {
+      "status": "available",
+      "preferred_domain": "amazon.co.uk",
+      "candidates": [
+        {
+          "item_id": "B013TGFGWS",
+          "domain_name": "amazon.co.uk",
+          "3dmodel_id": "B013TGFGWS",
+          "source_archive_member": "listings/metadata/listings_6.json.gz",
+          "source_record_sha256": "140c2b7483092864cbed96378e368c23ca46c04942f51c34e822decc9c71e192",
+          "item_dimensions": {
+            "height": {
+              "normalized_value": {
+                "unit": "inches",
+                "value": 0.4
+              },
+              "unit": "inches",
+              "value": 0.4
+            },
+            "length": {
+              "normalized_value": {
+                "unit": "inches",
+                "value": 13.2
+              },
+              "unit": "inches",
+              "value": 13.2
+            },
+            "width": {
+              "normalized_value": {
+                "unit": "inches",
+                "value": 8.7
+              },
+              "unit": "inches",
+              "value": 8.7
+            }
+          },
+          "dimensions_m": {
+            "length": 0.33527999999999997,
+            "width": 0.22097999999999998,
+            "height": 0.01016
+          }
+        }
+      ],
+      "max_dimension_m": 0.33527999999999997,
+      "source": "ABO_catalog_dimensions_not_independent_lab_measurement",
+      "RGB_only_input": false
+    }
+  }
+}

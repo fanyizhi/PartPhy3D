@@ -1,5 +1,12 @@
 # PartPhy3D
 
+**v0.6.4:** executed generation-stage sparse weight decoding, image-scale training
+with independent calibration, conditional closed part layers, local material edits
+and numerical rigid responses. Independent annotation and Mesh-projection metric
+tools are included. [Current methods and reproduction](docs/METHODS_V064_zh.md) ·
+[actual results and limitations](docs/results/geometry_physics_20261107/README_zh.md).
+Whole-object physical accuracy and true interior inference remain unvalidated.
+
 **2026-11-07:** executed Qwen localization, SAM2 masks, occlusion-aware face
 correspondence, conditional density/E maps and local material edits on five
 generated Meshes; ran the official NeRF2Physics released-cache property stage.
@@ -14,7 +21,7 @@ full-method mass accuracy is not established.
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 Construction-aware physical inference and part editing. **Research prototype,
-version 0.6.3; no peer-reviewed performance or acceptance claim.**
+version 0.6.4; no peer-reviewed performance or acceptance claim.**
 
 [中文](README_zh.md) · [Complete methods and reproduction](docs/METHODS_AND_REPRODUCTION_zh.md) ·
 [Status](docs/IMPLEMENTATION_STATUS.md) · [Data](docs/DATA.md) · [Evidence](docs/results/README.md)

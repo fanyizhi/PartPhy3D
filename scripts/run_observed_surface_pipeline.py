@@ -52,6 +52,16 @@ def run_pipeline(args: argparse.Namespace) -> dict[str, Any]:
         args.edit_spec = args.edit_spec.resolve()
         if not args.edit_spec.is_file():
             raise ValueError("编辑规格文件不存在")
+    if args.conditional_layer_physics and args.edit_spec is None:
+        raise ValueError("条件局部域计算需要显式--edit-spec，不能自动更换目标")
+    if args.catalog_dimensions is not None:
+        args.catalog_dimensions = args.catalog_dimensions.resolve()
+        if not args.catalog_dimensions.is_file():
+            raise ValueError("商品尺寸证据文件不存在")
+    if args.scale_predictions is not None:
+        args.scale_predictions = args.scale_predictions.resolve()
+        if not args.scale_predictions.is_file() or args.catalog_dimensions is not None:
+            raise ValueError("学习尺度预测文件不存在，或与商品辅助尺度同时指定")
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=False)
     report: dict[str, Any] = {
@@ -61,7 +71,10 @@ def run_pipeline(args: argparse.Namespace) -> dict[str, Any]:
         "prediction_sha256": prediction_hashes,
         "steps": [],
         "mass_integration_executed": False,
+        "whole_object_mass_integration_executed": False,
+        "conditional_local_mass_integration_executed": False,
         "physics_accuracy_established": False,
+        "scientific_pipeline_complete": False,
         "status": "running",
     }
     common = [
@@ -143,6 +156,46 @@ def run_pipeline(args: argparse.Namespace) -> dict[str, Any]:
             ],
         ),
     ]
+    if args.conditional_layer_physics:
+        steps.extend(
+            [
+                (
+                    "conditional_local_physics",
+                    "run_conditional_patch_physics.py",
+                    [
+                        "--fields",
+                        output / "refined_fields",
+                        "--edit-spec",
+                        args.edit_spec,
+                        "--piecewise",
+                        "--assumed-max-length-m",
+                        str(args.assumed_max_length_m),
+                        "--output",
+                        output / "conditional_physics",
+                        *(
+                            ["--catalog-dimensions", args.catalog_dimensions]
+                            if args.catalog_dimensions
+                            else []
+                        ),
+                        *(
+                            ["--scale-predictions", args.scale_predictions]
+                            if args.scale_predictions
+                            else []
+                        ),
+                    ],
+                ),
+                (
+                    "conditional_rigid_response",
+                    "validate_conditional_rigid_response.py",
+                    [
+                        "--source",
+                        output / "conditional_physics",
+                        "--output",
+                        output / "conditional_rigid_response",
+                    ],
+                ),
+            ]
+        )
     try:
         for name, script, options in steps:
             command = [sys.executable, str(ROOT / "scripts" / script)]
@@ -167,6 +220,17 @@ def run_pipeline(args: argparse.Namespace) -> dict[str, Any]:
                 step["status"] = "failed"
                 raise RuntimeError(f"{name}失败；请检查{output / (name + '.log')}")
             step["status"] = "complete"
+            if name == "conditional_local_physics":
+                report["conditional_local_mass_integration_executed"] = True
+                child = json.loads(
+                    (output / "conditional_physics/report.json").read_text(
+                        encoding="utf-8"
+                    )
+                )
+                step["accepted_geometry_candidates"] = sum(
+                    r["status"] == "complete" for r in child["records"]
+                )
+                step["rejected_geometry_candidates"] = len(child["failures"])
             print(f"COMPLETED {name}", flush=True)
         report["status"] = "complete"
     except (OSError, RuntimeError) as error:
@@ -191,6 +255,10 @@ def main() -> None:
     ):
         parser.add_argument("--" + name, type=Path, required=True)
     parser.add_argument("--edit-spec", type=Path)
+    parser.add_argument("--conditional-layer-physics", action="store_true")
+    parser.add_argument("--assumed-max-length-m", type=float, default=1.0)
+    parser.add_argument("--catalog-dimensions", type=Path)
+    parser.add_argument("--scale-predictions", type=Path)
     args = parser.parse_args()
     try:
         result = run_pipeline(args)

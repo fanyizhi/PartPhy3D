@@ -1,5 +1,15 @@
 # Implementation status
 
+Version 0.6.4 adds executed five-object generation-stage sparse weight decoding,
+catalog dimension extraction for all 500 objects, a 300/50/50/100 image-scale
+baseline with independent scale calibration, conditional closed local layers,
+material edits and numerical rigid responses. Human annotation and Mesh-projection
+evaluation tools are implemented; independent part masks remain missing.
+See [current methods](METHODS_V064_zh.md) and
+[actual evidence](results/geometry_physics_20261107/README_zh.md).
+These do not complete real interior inference, shared latent training,
+interface/physics-aware generation budgets or whole-object physical accuracy.
+
 Updated 2026-11-07. Runnable software, executed experiments and validated research
 claims are tracked separately.
 

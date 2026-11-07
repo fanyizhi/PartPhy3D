@@ -8,6 +8,7 @@ import shutil
 import sys
 import time
 import traceback
+from contextlib import nullcontext
 from pathlib import Path
 from typing import Any
 
@@ -19,6 +20,7 @@ sys.path.insert(0, str(PROJECT / "src"))
 
 from tactile3d.physics.part_io import file_sha256, write_json
 from tactile3d.research.observed_cameras import calibrated_observed_cameras
+from tactile3d.research.sparse_decoder import sparse_weight_decoder
 
 CHECKPOINT_SHA256 = "329f7aae9b583fd7c1b27d0221463db7b808a03c48a1f7aa26649af6a03b91a1"
 IMAGE_SIZE = 320
@@ -131,6 +133,10 @@ def run_reconstruction(args: argparse.Namespace) -> dict[str, Any]:
         "official_single_image_pipeline_executed": False,
         "zero123_executed": False,
         "our_adaptive_generation_executed": False,
+        "surface_weight_pruning": args.sparse_surface_weights,
+        "sparse_adapter_sha256": file_sha256(
+            PROJECT / "src/tactile3d/research/sparse_decoder.py"
+        ),
         "observed_views": 6,
         "camera_file": str(camera_path),
         "camera_sha256": file_sha256(camera_path),
@@ -172,7 +178,12 @@ def run_reconstruction(args: argparse.Namespace) -> dict[str, Any]:
         torch.cuda.reset_peak_memory_stats()
         torch.cuda.synchronize()
         inference_start = time.perf_counter()
-        with torch.no_grad():
+        context = (
+            sparse_weight_decoder(model)
+            if args.sparse_surface_weights
+            else nullcontext([])
+        )
+        with torch.no_grad(), context as sparse_stats:
             planes = model.forward_planes(tensor, camera_tensor)
             vertices, faces, colors = model.extract_mesh(planes, use_texture_map=False)
         torch.cuda.synchronize()
@@ -205,6 +216,7 @@ def run_reconstruction(args: argparse.Namespace) -> dict[str, Any]:
             "total_seconds_including_load": time.perf_counter() - start,
             "peak_gpu_bytes": int(torch.cuda.max_memory_allocated()),
             "mesh_sha256": file_sha256(output / "camera_space.ply"),
+            "surface_weight_pruning_counts": sparse_stats,
         }
         write_json(output / "report.json", result)
         return result
@@ -228,6 +240,7 @@ def main() -> None:
     parser.add_argument("--checkpoint", type=Path, required=True)
     parser.add_argument("--encoder-config", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--sparse-surface-weights", action="store_true")
     result = run_reconstruction(parser.parse_args())
     print(json.dumps(result, ensure_ascii=False, indent=2))
 

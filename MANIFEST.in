@@ -1,6 +1,7 @@
 include README.md README_zh.md LICENSE CITATION.cff THIRD_PARTY.md CONTRIBUTING.md
 include requirements.txt environment.yml
 recursive-include configs *.yaml *.yml *.json
+recursive-include configs *.html
 recursive-include examples *.json *.md
 include examples/observed_surface_demo/generated_camera_space.ply
 recursive-include examples/observed_surface_demo *.npz

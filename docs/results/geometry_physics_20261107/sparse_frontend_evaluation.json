@@ -1,0 +1,194 @@
+{
+  "scope": "observed_view_adaptation_geometry_diagnostic",
+  "reference_mesh_used": false,
+  "mass_labels_used": false,
+  "posthoc_alignment": false,
+  "reconstruction_protocol_sha256": "4795d650a4530e3f9b480f1d2f87e1068ee1db66dc63f42407962f20f1030f28",
+  "resolution": 256,
+  "input_views": 6,
+  "heldout_views": 24,
+  "mean_iou_input": 0.7321734997533516,
+  "mean_iou_heldout": 0.7251225806373128,
+  "rows": [
+    {
+      "frame_index": 0,
+      "used_for_reconstruction": false,
+      "silhouette_iou": 0.7574094401756312,
+      "image_sha256": "02226ff0c5796fcd0a3e009bce63b678b01014551ef4281b24dcb77bd8a01047"
+    },
+    {
+      "frame_index": 1,
+      "used_for_reconstruction": false,
+      "silhouette_iou": 0.746866897147796,
+      "image_sha256": "5e8963e1de92f9b206b1a1eeaab9bd2beb66e301416a0cece2d008e9098bbec0"
+    },
+    {
+      "frame_index": 2,
+      "used_for_reconstruction": false,
+      "silhouette_iou": 0.695528560351512,
+      "image_sha256": "1367d75a23b633246b09c866cdc19467a1a5d8912a12d8b07b019e2d35fc949c"
+    },
+    {
+      "frame_index": 3,
+      "used_for_reconstruction": false,
+      "silhouette_iou": 0.7216494845360825,
+      "image_sha256": "c2de012e32b96c58e91605b29c46bf9ec764f14f4887d63333e6f63a05d4e3fb"
+    },
+    {
+      "frame_index": 4,
+      "used_for_reconstruction": false,
+      "silhouette_iou": 0.7554086106519083,
+      "image_sha256": "13543ebcb517492bc101991866d4184b184b49938575de17f3f49dd82dbe4ca6"
+    },
+    {
+      "frame_index": 5,
+      "used_for_reconstruction": true,
+      "silhouette_iou": 0.756004529471363,
+      "image_sha256": "f0b3decc27e12ec57fc8ba60f41348fef4f20275329a1df6a8c3e134466ecf0b"
+    },
+    {
+      "frame_index": 6,
+      "used_for_reconstruction": false,
+      "silhouette_iou": 0.7077664887205097,
+      "image_sha256": "fc0e4ae3e88a492912d851412cf75026ea67067b67b5071c1f33b126f4a34cc4"
+    },
+    {
+      "frame_index": 7,
+      "used_for_reconstruction": false,
+      "silhouette_iou": 0.6603739002932552,
+      "image_sha256": "79ce9c05e7bedffd2646dbe95a603d650e023b83b7aac67709a5d81012649790"
+    },
+    {
+      "frame_index": 8,
+      "used_for_reconstruction": false,
+      "silhouette_iou": 0.7241503976861895,
+      "image_sha256": "7a54d0fffdea2882b2e499ca8f1d30e6f50a1c23b9281caba66833579dd443dc"
+    },
+    {
+      "frame_index": 9,
+      "used_for_reconstruction": true,
+      "silhouette_iou": 0.7610286574105738,
+      "image_sha256": "ede1f3588e1c7e249d0af5b65d40a8da4686889ac4a009a93561d3003c44c211"
+    },
+    {
+      "frame_index": 10,
+      "used_for_reconstruction": false,
+      "silhouette_iou": 0.7575389726552517,
+      "image_sha256": "7f59f6b12b63435d74adeeb98a87985c1ab4237806db972cda58581d245ff867"
+    },
+    {
+      "frame_index": 11,
+      "used_for_reconstruction": true,
+      "silhouette_iou": 0.729596952075396,
+      "image_sha256": "e10be79e478804622f117088456adc8fce04eae46372960dbe93c24ea52cac54"
+    },
+    {
+      "frame_index": 12,
+      "used_for_reconstruction": false,
+      "silhouette_iou": 0.7513297040235279,
+      "image_sha256": "14027d578df162c5bf276182e55ae4afb5864a333f18a09b9b8689ee90f226e5"
+    },
+    {
+      "frame_index": 13,
+      "used_for_reconstruction": true,
+      "silhouette_iou": 0.7109984399375975,
+      "image_sha256": "f5da3a9285259df4b6f682d472ba3ebbe755243ca34b1c8d44a48d2c513c4f93"
+    },
+    {
+      "frame_index": 14,
+      "used_for_reconstruction": false,
+      "silhouette_iou": 0.7607858861267041,
+      "image_sha256": "89750096877c18aacb05ebeb4df24c49e0be97a1c7c46010d8ff9e6dd2d90e1f"
+    },
+    {
+      "frame_index": 15,
+      "used_for_reconstruction": false,
+      "silhouette_iou": 0.7045117559839017,
+      "image_sha256": "8974cf8f5c31ceac5e2fbf926b3793a4039a018610c69e6539853794455e49bf"
+    },
+    {
+      "frame_index": 16,
+      "used_for_reconstruction": false,
+      "silhouette_iou": 0.7325562305040223,
+      "image_sha256": "7ebf57647434c69c31e6b3f06bc744f36d6ba6e080551500525b98f77e477b2a"
+    },
+    {
+      "frame_index": 17,
+      "used_for_reconstruction": false,
+      "silhouette_iou": 0.7543319446960092,
+      "image_sha256": "65676bc747a78f89f453ee88b04b5b20e5158268b842edb8f535c5ca6b169a5e"
+    },
+    {
+      "frame_index": 18,
+      "used_for_reconstruction": false,
+      "silhouette_iou": 0.7010832304949952,
+      "image_sha256": "695d732e8d9a22622d657823862f25bce416fdb684846ab014a91379cd2bd96a"
+    },
+    {
+      "frame_index": 19,
+      "used_for_reconstruction": false,
+      "silhouette_iou": 0.7547729618163055,
+      "image_sha256": "1a73fcccb22a04bf4e03c874b013838a25a9c74522fc3942504e4ea2dd061c5f"
+    },
+    {
+      "frame_index": 20,
+      "used_for_reconstruction": false,
+      "silhouette_iou": 0.6459402354361605,
+      "image_sha256": "2986b5f266311a1cf0615d748a21fc98262a20568d3136f5e3a498153b7b1bdd"
+    },
+    {
+      "frame_index": 21,
+      "used_for_reconstruction": false,
+      "silhouette_iou": 0.7558886509635975,
+      "image_sha256": "bab47056a5deade2de3c35c9223c47dabdc4e1efaa4b8f1c66948690956a5c70"
+    },
+    {
+      "frame_index": 22,
+      "used_for_reconstruction": true,
+      "silhouette_iou": 0.6963470319634704,
+      "image_sha256": "9b669549ab604a5b1f41966f274e2c1ee5d7329b5d1bbf107b0d3c6aa1722619"
+    },
+    {
+      "frame_index": 23,
+      "used_for_reconstruction": false,
+      "silhouette_iou": 0.6689443115818244,
+      "image_sha256": "d005a7d99750c37c8dc0ba7c725bf87538df21cba3f1aed0510348ce20b413f0"
+    },
+    {
+      "frame_index": 24,
+      "used_for_reconstruction": false,
+      "silhouette_iou": 0.6948654500463965,
+      "image_sha256": "c1d47ce8534c9aee5fd3414e51363a1799515cc38201c0342844f345306085a8"
+    },
+    {
+      "frame_index": 25,
+      "used_for_reconstruction": false,
+      "silhouette_iou": 0.7516169801501748,
+      "image_sha256": "f7f1d52accb3d1e35a9a4e3a28837759da617518b994d909dc27c85cefd57f5c"
+    },
+    {
+      "frame_index": 26,
+      "used_for_reconstruction": false,
+      "silhouette_iou": 0.7593617145186652,
+      "image_sha256": "b9c88af135632de7e2ad2fd63f04927ca6186cc650c3633d8834235a8fe264c5"
+    },
+    {
+      "frame_index": 27,
+      "used_for_reconstruction": false,
+      "silhouette_iou": 0.7452305246422893,
+      "image_sha256": "5c182dd3db2dc9870e7d2df1f12651c26c8dd412399d2f2fa27fd505cadd91e8"
+    },
+    {
+      "frame_index": 28,
+      "used_for_reconstruction": false,
+      "silhouette_iou": 0.6950296020927991,
+      "image_sha256": "719ed65f80a586154d88ddff57b522887274bffc9d22ce50a881b26849559b5c"
+    },
+    {
+      "frame_index": 29,
+      "used_for_reconstruction": true,
+      "silhouette_iou": 0.739065387661709,
+      "image_sha256": "385417a3909be66a3feecf9840aa875a5208806731e7ac1f5db146f7e4dbd60c"
+    }
+  ]
+}

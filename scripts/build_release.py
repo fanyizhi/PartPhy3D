@@ -39,6 +39,7 @@ ROOT_FILES = (
     "vendor/SOURCES.json",
     "vendor/LICENSE.txt",
     "vendor/LICENSE_cctorch.txt",
+    "vendor/InstantMesh_LICENSE.txt",
 )
 BINARY_FILES = {
     "vendor/wheels/sam_2-1.0-py3-none-any.whl": (
@@ -65,6 +66,7 @@ ALLOWED_SUFFIXES = {
     ".svg",
     ".txt",
     ".csv",
+    ".html",
 }
 EXCLUDED_FILES = {
     "scripts/verify_server_preflight.py",

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8">
+<title>PartPhy3D 人工部件核验</title>
+<style>
+body{font:16px system-ui;margin:24px;color:#18324b;background:#f4f7fa}
+button,select,input{font:inherit;margin:5px;padding:7px}
+.stage{position:relative;width:min(75vh,90vw);background:white}
+.stage img{width:100%;display:block}.stage canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none}
+section{display:flex;gap:24px;flex-wrap:wrap}aside{max-width:400px}p{line-height:1.6}
+</style>
+<h1>人工部件核验</h1>
+<p>原始图像与固定标签字典。没有加载模型预测。255 为未标注；只对亲自核验的区域作标注。</p>
+<select id="cases"></select><button id="previous">上一张</button><button id="next">下一张</button>
+<section><div class="stage"><img id="image" alt="原始 ABO 图像"><canvas id="overlay"></canvas></div>
+<aside><h2 id="title"></h2><select id="label"></select>
+<p>笔刷半径（原图像素）<input id="radius" type="range" min="1" max="50" value="8"></p>
+<button id="undo">撤销本次笔画</button><button id="clear">重置当前图</button>
+<p><label><input id="show" type="checkbox" checked>显示彩色标注</label></p>
+<p><input id="annotator" placeholder="标注者代号" aria-label="标注者代号"></p>
+<p><label><input id="review" type="checkbox">我已人工核验当前图中的已标注区域</label></p>
+<button id="saveMask">导出标签 PNG</button><button id="saveMeta">导出核验 JSON</button>
+<p id="status"></p><p>每张图都需保存 PNG 和同名 JSON。关闭页面前导出；未标注像素将被排除，不能据此宣称完整分割准确率。</p>
+<p>部件名称只是当前固定评价字典，若定义不合理，应先修订字典，再重新进行统一标注。</p>
+</aside></section>
+<script>
+const project=__PROJECT_JSON__;
+const $=id=>document.getElementById(id);
+const palette=[[0,0,0],[90,118,168],[201,106,106],[79,163,143],[133,115,181],[209,161,75],[116,168,198],[140,109,91]];
+const masks=new Map(),histories=new Map(),reviews=new Map();let current=0,painting=false,last=null;
+project.cases.forEach((c,i)=>{const o=document.createElement('option');o.value=i;o.textContent=c.case_id;$('cases').append(o)});
+function selected(){return project.cases[current]}
+function render(){const c=selected(),mask=masks.get(c.case_id);if(!mask)return;
+ const ctx=$('overlay').getContext('2d'),out=ctx.createImageData(c.width,c.height);
+ if($('show').checked)mask.forEach((v,i)=>{if(v!==0&&v!==255){const color=palette[v%palette.length];out.data.set([...color,125],4*i)}});
+ ctx.putImageData(out,0,0);const count=mask.reduce((n,v)=>n+(v!==255),0);
+ $('status').textContent=`已定义 ${count}/${mask.length} 像素（含已知背景）；未标注 ${mask.length-count}`;
+}
+function load(index){reviews.set(selected().case_id,$('review').checked);current=Math.max(0,Math.min(project.cases.length-1,index));
+ const c=selected();$('cases').value=current;$('title').textContent=c.case_id;$('label').replaceChildren();
+ [{index:255,name:'未标注 / 无法确定'},...c.parts,{index:0,name:'背景'}].forEach(p=>{
+  const o=document.createElement('option');o.value=p.index;o.textContent=`${p.index}: ${p.name}`;$('label').append(o)});
+ $('label').value=c.parts[0].index;$('review').checked=reviews.get(c.case_id)||false;
+ $('image').onload=()=>{$('overlay').width=c.width;$('overlay').height=c.height;
+  if(!masks.has(c.case_id)){const off=document.createElement('canvas');off.width=c.width;off.height=c.height;
+   const ctx=off.getContext('2d');ctx.drawImage($('image'),0,0);const rgba=ctx.getImageData(0,0,c.width,c.height).data;
+   masks.set(c.case_id,Uint8Array.from({length:c.width*c.height},(_,i)=>rgba[4*i+3]<128?0:255));histories.set(c.case_id,[])}render()};
+ $('image').src=c.image_data;
+}
+function point(event){const box=$('overlay').getBoundingClientRect(),c=selected();return[(event.clientX-box.left)*c.width/box.width,(event.clientY-box.top)*c.height/box.height]}
+function disc(x,y){const c=selected(),r=Number($('radius').value),mask=masks.get(c.case_id),value=Number($('label').value);
+ for(let py=Math.max(0,Math.floor(y-r));py<Math.min(c.height,Math.ceil(y+r+1));py++)
+  for(let px=Math.max(0,Math.floor(x-r));px<Math.min(c.width,Math.ceil(x+r+1));px++)
+   if((px-x)**2+(py-y)**2<=r*r)mask[py*c.width+px]=value;
+}
+function stroke(event){const p=point(event),r=Number($('radius').value),steps=last?Math.max(1,Math.ceil(Math.hypot(p[0]-last[0],p[1]-last[1])/Math.max(r/2,1))):1;
+ for(let i=1;i<=steps;i++){const a=i/steps;disc(last?last[0]+(p[0]-last[0])*a:p[0],last?last[1]+(p[1]-last[1])*a:p[1])}last=p;$('review').checked=false;render()}
+const canvas=$('overlay');canvas.onpointerdown=e=>{if(!masks.has(selected().case_id))return;painting=true;last=null;
+ const history=histories.get(selected().case_id);history.push(masks.get(selected().case_id).slice());if(history.length>20)history.shift();canvas.setPointerCapture(e.pointerId);stroke(e)};
+canvas.onpointermove=e=>{if(painting)stroke(e)};canvas.onpointerup=canvas.onpointercancel=()=>{painting=false;last=null};
+$('undo').onclick=()=>{const h=histories.get(selected().case_id);if(h.length)masks.set(selected().case_id,h.pop());$('review').checked=false;render()};
+$('clear').onclick=()=>{if(confirm('重置当前图？')){masks.delete(selected().case_id);reviews.delete(selected().case_id);$('review').checked=false;load(current)}};
+$('show').onchange=render;$('cases').onchange=e=>load(Number(e.target.value));$('next').onclick=()=>load(current+1);$('previous').onclick=()=>load(current-1);
+function download(blob,name){const a=document.createElement('a'),url=URL.createObjectURL(blob);a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+$('saveMask').onclick=()=>{const c=selected(),off=document.createElement('canvas');off.width=c.width;off.height=c.height;
+ const ctx=off.getContext('2d'),data=ctx.createImageData(c.width,c.height);masks.get(c.case_id).forEach((v,i)=>data.data.set([v,v,v,255],4*i));ctx.putImageData(data,0,0);
+ off.toBlob(blob=>download(blob,`${c.case_id}_gt.png`),'image/png')};
+$('saveMeta').onclick=()=>{const c=selected(),author=$('annotator').value.trim();if(!author){alert('请填写标注者代号');return}
+ const meta={schema:'partphy3d_human_mask_v1',case_id:c.case_id,scene_id:c.scene_id,view:c.view,image_sha256:c.image_sha256,
+ width:c.width,height:c.height,parts:c.parts,ignore_label:255,background_label:0,human_reviewed:$('review').checked,annotator:author,
+ prediction_used_as_reference:false,created_at:new Date().toISOString()};
+ download(new Blob([JSON.stringify(meta,null,2)],{type:'application/json'}),`${c.case_id}_gt.json`)};
+load(0);
+</script></html>

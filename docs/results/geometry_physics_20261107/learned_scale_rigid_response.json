@@ -1,0 +1,295 @@
+{
+  "scope": "conditional_fragment_free_flight_numerical_consistency",
+  "source_sha256": "88f2fac9cd097455fb762a82bef0e0d5269452d0033f9bfaa002edbd4663b0d1",
+  "contact_simulated": false,
+  "deformation_simulated": false,
+  "real_response_accuracy_established": false,
+  "objects": [
+    {
+      "scene_id": "B07B4G5RBN_ATVPDKIKX0DER",
+      "before": {
+        "relative_angular_momentum_drift": 3.647303102872094e-16,
+        "relative_energy_drift": 2.1580876125324402e-16,
+        "quaternion_norm_error": 1.1102230246251565e-16,
+        "mass_kg": 0.7002132699472707,
+        "impulse_ns": [
+          0.0,
+          0.001,
+          0.0
+        ],
+        "impulse_point_m": [
+          0.316902401734379,
+          0.604310553498229,
+          0.49107356622262216
+        ],
+        "initial_velocity_m_s": [
+          0.0,
+          0.0014281363163473103,
+          0.0
+        ],
+        "initial_omega_rad_s": [
+          -0.003341624986623324,
+          0.0011928202408294237,
+          0.004509074983885561
+        ],
+        "numerical_checks_passed": true
+      },
+      "after": {
+        "relative_angular_momentum_drift": 3.002691971405813e-16,
+        "relative_energy_drift": 2.651364781111284e-16,
+        "quaternion_norm_error": 1.1102230246251565e-16,
+        "mass_kg": 1.7205240347275794,
+        "impulse_ns": [
+          0.0,
+          0.001,
+          0.0
+        ],
+        "impulse_point_m": [
+          0.316902401734379,
+          0.604310553498229,
+          0.49107356622262216
+        ],
+        "initial_velocity_m_s": [
+          0.0,
+          0.0005812182682808821,
+          0.0
+        ],
+        "initial_omega_rad_s": [
+          -0.0013599636573467017,
+          0.00048545009801197485,
+          0.0018350886562324958
+        ],
+        "numerical_checks_passed": true
+      }
+    },
+    {
+      "scene_id": "B076YKYHCB_A1F83G8C2ARO7P",
+      "before": {
+        "relative_angular_momentum_drift": 2.6265542353501305e-12,
+        "relative_energy_drift": 9.575086306329043e-15,
+        "quaternion_norm_error": 6.392664175791651e-13,
+        "mass_kg": 0.0011473942473879295,
+        "impulse_ns": [
+          0.0,
+          0.001,
+          0.0
+        ],
+        "impulse_point_m": [
+          -0.022744424924004147,
+          0.05710452390654455,
+          0.026664843778784246
+        ],
+        "initial_velocity_m_s": [
+          0.0,
+          0.8715400153665787,
+          0.0
+        ],
+        "initial_omega_rad_s": [
+          -0.08762886767712548,
+          0.12947306297329328,
+          -9.043826283146528
+        ],
+        "numerical_checks_passed": true
+      },
+      "after": {
+        "relative_angular_momentum_drift": 2.5768422721877344e-12,
+        "relative_energy_drift": 1.0806168831428497e-14,
+        "quaternion_norm_error": 6.484812686835539e-13,
+        "mass_kg": 0.0029504423504261045,
+        "impulse_ns": [
+          0.0,
+          0.001,
+          0.0
+        ],
+        "impulse_point_m": [
+          -0.022744424924004147,
+          0.05710452390654455,
+          0.026664843778784246
+        ],
+        "initial_velocity_m_s": [
+          0.0,
+          0.3389322281981139,
+          0.0
+        ],
+        "initial_omega_rad_s": [
+          -0.034077892985548794,
+          0.05035063560072514,
+          -3.5170435545569827
+        ],
+        "numerical_checks_passed": true
+      }
+    },
+    {
+      "scene_id": "B07WTFJGRG",
+      "before": {
+        "relative_angular_momentum_drift": 5.936489692784379e-16,
+        "relative_energy_drift": 3.0356909069696254e-16,
+        "quaternion_norm_error": 1.1102230246251565e-16,
+        "mass_kg": 0.3140994570380131,
+        "impulse_ns": [
+          0.0,
+          0.001,
+          0.0
+        ],
+        "impulse_point_m": [
+          0.12755376625765397,
+          0.11848941238652777,
+          0.5466374060826128
+        ],
+        "initial_velocity_m_s": [
+          0.0,
+          0.003183704962211945,
+          0.0
+        ],
+        "initial_omega_rad_s": [
+          0.037683528307845,
+          0.0036733513035861055,
+          0.04799787849063787
+        ],
+        "numerical_checks_passed": true
+      },
+      "after": {
+        "relative_angular_momentum_drift": 3.9495161375149804e-16,
+        "relative_energy_drift": 2.361092927643042e-16,
+        "quaternion_norm_error": 1.1102230246251565e-16,
+        "mass_kg": 0.12214978884811621,
+        "impulse_ns": [
+          0.0,
+          0.001,
+          0.0
+        ],
+        "impulse_point_m": [
+          0.12755376625765397,
+          0.11848941238652777,
+          0.5466374060826128
+        ],
+        "initial_velocity_m_s": [
+          0.0,
+          0.008186669902830715,
+          0.0
+        ],
+        "initial_omega_rad_s": [
+          0.09690050136303004,
+          0.009445760494935704,
+          0.12342311611878312
+        ],
+        "numerical_checks_passed": true
+      }
+    },
+    {
+      "scene_id": "B073WGP8XN",
+      "before": {
+        "relative_angular_momentum_drift": 3.6777099214495705e-16,
+        "relative_energy_drift": 3.9723220782527496e-16,
+        "quaternion_norm_error": 1.1102230246251565e-16,
+        "mass_kg": 0.2010246818034947,
+        "impulse_ns": [
+          0.0,
+          0.001,
+          0.0
+        ],
+        "impulse_point_m": [
+          0.07557610534387443,
+          -0.013511916057306773,
+          -0.21139107487226577
+        ],
+        "initial_velocity_m_s": [
+          0.0,
+          0.004974513532509994,
+          0.0
+        ],
+        "initial_omega_rad_s": [
+          0.0723912014666407,
+          0.00021809558093240084,
+          0.17964160107690544
+        ],
+        "numerical_checks_passed": true
+      },
+      "after": {
+        "relative_angular_momentum_drift": 3.795053880936488e-16,
+        "relative_energy_drift": 3.1182728314284086e-16,
+        "quaternion_norm_error": 1.1102230246251565e-16,
+        "mass_kg": 0.6312175008629733,
+        "impulse_ns": [
+          0.0,
+          0.001,
+          0.0
+        ],
+        "impulse_point_m": [
+          0.07557610534387443,
+          -0.013511916057306773,
+          -0.21139107487226577
+        ],
+        "initial_velocity_m_s": [
+          0.0,
+          0.0015842399785063676,
+          0.0
+        ],
+        "initial_omega_rad_s": [
+          0.023054522760076655,
+          6.945719137974546e-05,
+          0.057210700979906166
+        ],
+        "numerical_checks_passed": true
+      }
+    },
+    {
+      "scene_id": "B013TGFGWS_A1F83G8C2ARO7P",
+      "before": {
+        "relative_angular_momentum_drift": 2.2896276729844773e-10,
+        "relative_energy_drift": 1.4033208483104586e-10,
+        "quaternion_norm_error": 2.440181390284124e-11,
+        "mass_kg": 0.004341949442163919,
+        "impulse_ns": [
+          0.0,
+          0.001,
+          0.0
+        ],
+        "impulse_point_m": [
+          -0.05413572503820866,
+          -0.05702839601890021,
+          0.2558982911225223
+        ],
+        "initial_velocity_m_s": [
+          0.0,
+          0.23031129526501928,
+          0.0
+        ],
+        "initial_omega_rad_s": [
+          -28.470062018828095,
+          -0.7458230862727251,
+          -13.37175269738532
+        ],
+        "numerical_checks_passed": true
+      },
+      "after": {
+        "relative_angular_momentum_drift": 3.0212122965737056e-10,
+        "relative_energy_drift": 5.411397319517467e-11,
+        "quaternion_norm_error": 9.9271701969883e-12,
+        "mass_kg": 0.03963291060579856,
+        "impulse_ns": [
+          0.0,
+          0.001,
+          0.0
+        ],
+        "impulse_point_m": [
+          -0.05413572503820866,
+          -0.05702839601890021,
+          0.2558982911225223
+        ],
+        "initial_velocity_m_s": [
+          0.0,
+          0.02523155591438428,
+          0.0
+        ],
+        "initial_omega_rad_s": [
+          -3.119013163846138,
+          -0.08170800690376363,
+          -1.464930868758137
+        ],
+        "numerical_checks_passed": true
+      }
+    }
+  ],
+  "missing": []
+}

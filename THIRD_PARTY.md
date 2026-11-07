@@ -23,6 +23,13 @@ bundled. The project MIT license applies to our code, not a relicensing of the d
 | [Qwen3-VL](https://github.com/QwenLM/Qwen3-VL) | Actual 2B/8B image-only development baselines and 2B QLoRA integration check; weights are not redistributed |
 
 Optional Qwen, CLIP and SAM-family models require model/version and license records.
+
+The inference-only sparse weight adapter follows the frozen InstantMesh decoder
+interface at commit `08822c52fdc399b93ea00e4fa9e596344ed52ccc` and changes which
+cell-weight MLP queries are evaluated. Its upstream Apache-2.0 text is retained
+in `vendor/InstantMesh_LICENSE.txt`. Active-cell selection is standard surface
+extraction logic; this engineering optimization alone does not establish a new
+physics-aware adaptive generation method.
 Their methods are not PartPhy3D's original contributions. Describing a related
 method does not mean it has been executed or reproduced here. Project licensing
 does not grant rights to third-party assets.

@@ -38,6 +38,12 @@ jobs:
           scripts/build_release.py tests/test_part_lifting.py
           src/tactile3d/physics/surface_edit.py tests/test_surface_edit.py
           scripts/run_observed_surface_pipeline.py
+          src/tactile3d/physics/patch_volume.py src/tactile3d/physics/rigid_response.py
+          src/tactile3d/research/sparse_decoder.py scripts/benchmark_sparse_decoder.py
+          scripts/run_conditional_patch_physics.py scripts/validate_conditional_rigid_response.py
+          scripts/audit_abo_physics_evidence.py scripts/prepare_catalog_dimensions.py
+          scripts/plot_sparse_decoder_results.py tests/test_patch_volume.py
+          tests/test_rigid_response.py tests/test_sparse_decoder.py tests/test_catalog_dimensions.py
       - run: >-
           python -m ruff check --select E501 --line-length 88
           src/tactile3d/vision/part_lifting.py scripts/run_part_surface_maps.py
@@ -47,11 +53,42 @@ jobs:
           tests/test_part_lifting.py
           src/tactile3d/physics/surface_edit.py tests/test_surface_edit.py
           scripts/run_observed_surface_pipeline.py
+          src/tactile3d/physics/patch_volume.py src/tactile3d/physics/rigid_response.py
+          src/tactile3d/research/sparse_decoder.py scripts/benchmark_sparse_decoder.py
+          scripts/run_conditional_patch_physics.py scripts/validate_conditional_rigid_response.py
+          scripts/audit_abo_physics_evidence.py scripts/prepare_catalog_dimensions.py
+          scripts/plot_sparse_decoder_results.py tests/test_patch_volume.py
+          tests/test_rigid_response.py tests/test_sparse_decoder.py tests/test_catalog_dimensions.py
       - run: >-
           python scripts/render_surface_maps.py
           --fields examples/observed_surface_demo
           --edit-spec examples/observed_surface_demo/edit_spec.json
           --output outputs/ci-surface-replay
+      - run: >-
+          python scripts/run_conditional_patch_physics.py --piecewise
+          --catalog-dimensions configs/evidence/abo_five_catalog_dimensions.json
+          --output outputs/ci-conditional-patch
+      - run: >-
+          python scripts/validate_conditional_rigid_response.py
+          --source outputs/ci-conditional-patch --output outputs/ci-rigid-response
+      - run: >-
+          python -m black --check src/tactile3d/models/scale_ridge.py
+          src/tactile3d/vision/part_metrics.py scripts/train_image_scale.py
+          scripts/plot_image_scale.py scripts/build_annotation_pack.py
+          scripts/evaluate_part_annotations.py scripts/build_generated_mesh_manifest.py
+          scripts/audit_sparse_geometry.py tests/test_scale_ridge.py
+          tests/test_catalog_dimensions.py tests/test_part_metrics.py
+      - run: >-
+          python -m ruff check --select E501 --line-length 88
+          src/tactile3d/models/scale_ridge.py src/tactile3d/vision/part_metrics.py
+          scripts/train_image_scale.py scripts/plot_image_scale.py
+          scripts/build_annotation_pack.py scripts/evaluate_part_annotations.py
+          scripts/build_generated_mesh_manifest.py scripts/audit_sparse_geometry.py
+          tests/test_scale_ridge.py tests/test_catalog_dimensions.py tests/test_part_metrics.py
+      - run: python scripts/build_annotation_pack.py --output outputs/ci-annotation
+      - run: >-
+          python scripts/evaluate_part_annotations.py --fields examples/observed_surface_demo
+          --annotations outputs/ci-annotation --output outputs/ci-annotation/pending.json
       - run: >-
           python -m black --check
           src/tactile3d/vision/local_vlm.py src/tactile3d/vision/silhouette.py
@@ -93,6 +130,9 @@ jobs:
             outputs/ci-reproduction
             outputs/ci-mesh
             outputs/ci-surface-replay
+            outputs/ci-conditional-patch
+            outputs/ci-rigid-response
+            outputs/ci-annotation
             outputs/ci-release/dist
             outputs/ci-server-bundle/PartPhy3D-with-data.zip
             outputs/ci-server-bundle/PartPhy3D-with-data.zip.sha256
