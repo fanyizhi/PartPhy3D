@@ -18,5 +18,6 @@
     "submodules/simple-knn": "86710c2d4b46680c02301765dd79e465819c8f19"
   },
   "sam_vit_h_sha256": "a7bf3b02f3ebf1267aba913ff637d9a2d5c33d3173bb679e46d9f338c26f262e",
-  "scope": "official_source_locked; reconstruction_not_yet_completed"
+  "scope": "official_source_and_checkpoint_lock_not_a_result",
+  "clip_sha256": "80905176486d952914c1deb3b753b8e653ab54aa4ffb14208bc5007cf7643a16"
 }

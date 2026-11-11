@@ -105,3 +105,56 @@ optional and adds a separate generated-mesh field query. Upstream dependencies
 include OpenCLIP, Open3D, OpenAI (import only), PyTorch and Matplotlib; no API calls
 are made in this cached mode. PUGS source and SAM hashes are separately recorded
 in `configs/pugs_lock.json`; this lock alone does not indicate a completed run.
+
+
+### PUGS with the existing local VLM
+
+`scripts/run_pugs_baseline.py` provides `prepare`, `reconstruct`, `propose` and
+`integrate` stages. Use the PUGS environment for reconstruction/integration and
+the existing local-Qwen environment for proposal generation. All stages require
+`--repository`, `--scene` (the original 30-view scene directory), and `--output`.
+
+- `prepare` exports the dimension-only catalog to the upstream
+  `filtered_metadata.json` layout. Meters become centimeters; preferred-domain
+  records are used when available, otherwise a unique available record is used.
+  Existing inconsistent metadata is rejected. No mass labels are exported.
+- `reconstruct --sam-checkpoint PATH` runs the official 30,000-step Gaussian
+  reconstruction, SAM ViT-H masks, mask scales and 10,000-step contrastive feature
+  training. The five CUDA extensions and PyTorch3D 0.7.7 must be built first.
+- `propose --model PATH` uses the exact enhanced density/pure-volume system
+  prompt from the locked upstream file. This local variant uses one fixed view
+  (index 8), NF4 Qwen3-VL-8B, greedy decoding, seed 100, at most 300 output tokens
+  and 1024-squared pixels. The minimal user text is `Analyze the image.`.
+  Raw responses and model settings are saved before parsing; `info_qwen.json`
+  preserves the original cached `info.json`. Candidate count follows the upstream
+  parser, which accepts variable counts despite the five-entry schema example.
+- `integrate --clip-checkpoint PATH` calls the official CLIP feature-fusion and
+  Gaussian-volume integration functions. Native ranges are sealed before labels
+  are opened. It is recorded as **PUGS-Qwen3-VL-8B-NF4**, never official GPT-4o.
+
+The initial PUGS environment uses PyTorch 2.1.2+cu118, CUDA toolkit 11.8,
+PyTorch3D 0.7.7 and NumPy 1.26.4. Python is 3.10 rather than the upstream 3.9;
+OpenCLIP is 2.24.0. These environment differences are recorded with the results.
+Official GPT-4o remains unexecuted without API configuration. The local variant
+uses existing weights and makes no paid model calls. One development object is
+an integration check; it cannot supply a full-cohort comparison score.
+
+
+### Executed mass results
+
+The 2026-11-11 NeRF2Physics released-cache property run completed all 100 published
+test objects. All ten batches matched the author's four evaluation functions to
+numerical tolerance. Full source data and 2,000-resample, seed-17 percentile
+bootstrap intervals are in [the result record](results/mass_reproduction_20261111.json).
+
+| Cohort | N | ADE kg ↓ | ALDE ↓ | APE % ↓ | MnRE ↑ |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Published test split | 100 | 9.8709 | 0.7787 | 114.7926 | 0.5511 |
+| Excluding the ten previously exposed development objects | 90 | 10.4775 | 0.7850 | 122.0956 | 0.5492 |
+
+For the full 100-object cohort, the ADE 95% interval is [6.6999, 13.5138] kg.
+The released mass ranges are not q05/q95 intervals. Runtime records cover only
+the property stage and include periods with concurrent development jobs, so they
+are not an end-to-end speed comparison. These are rerun results, not copied
+published numbers. PUGS-Qwen currently has one development object; its complete
+100-object comparison remains pending.

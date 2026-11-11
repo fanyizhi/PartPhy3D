@@ -1,5 +1,7 @@
 # Recorded evidence
 
+2026-11-11: [100-object official NeRF2Physics cached-property rerun and PUGS-Qwen setup](../baseline_mapping.md#executed-mass-results), with [predictions, metrics and bootstrap intervals](mass_reproduction_20261111.json).
+
 Version 0.6.4 adds [generation-stage sparse decoding, catalog/image-scale
 experiments, conditional closed layers and numerical rigid responses](geometry_physics_20261107/README_zh.md).
 Independent part-mask evaluation remains pending human annotations; whole-object
