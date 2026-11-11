@@ -1,0 +1,26 @@
+{
+  "scene_id": "B07B4G5RBN_ATVPDKIKX0DER",
+  "scope": "single-reviewer coarse visible-material development annotation",
+  "source": "inspection of original product RGB and numbered artist-mesh components",
+  "not_a_physical_measurement": true,
+  "unknown_policy": "exclude unresolved underside from known-material accuracy; report coverage",
+  "component_materials": {
+    "0": "fabric",
+    "1": "fabric",
+    "2": "fabric",
+    "3": "fabric",
+    "4": "fabric",
+    "5": "fabric",
+    "6": "wood",
+    "7": "wood",
+    "8": "wood",
+    "9": "wood",
+    "10": "wood",
+    "11": "wood",
+    "12": "wood",
+    "13": "wood",
+    "14": "unknown"
+  },
+  "interior_ground_truth": null,
+  "mechanical_property_ground_truth": null
+}

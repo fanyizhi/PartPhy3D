@@ -17,7 +17,7 @@ def render_mesh(
     vertices: np.ndarray,
     faces: np.ndarray,
     colors: np.ndarray,
-    azimuth: float = -55,
+    azimuth: float = 55,
     resolution: int = 400,
 ) -> np.ndarray:
     """Render face RGB values using one fixed orthographic light and camera."""

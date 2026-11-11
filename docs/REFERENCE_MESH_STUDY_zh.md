@@ -12,6 +12,8 @@
    同题重复组每次独立询问，分轮组依次进行整体判断、几何检查和冲突修订。
    三个随机试验，每组每试验三次调用。分轮问题选择依赖上一轮回答，不读取质量标签。
    记录全部提示、回答、token、随机种子、耗时、峰值 GPU 分配与格式失败。
+   材料与构造分别聚合，构造票数并列时保留未知。可见材料以单人复核的粗粒度
+   开发标注评价，不将其当作内部构造或物性真值。
 3. 固定参考面数预算 2400、1200、600，比较全局 QEM、按连通区域保护的 QEM、
    薄结构与物理敏感度引导的区域预算分配。QEM 核心使用同一实现。
    敏感度是排序代理，尚无物理误差上界，也未实现逐边的接口保护。
@@ -24,6 +26,11 @@
 
 ## 图件约定
 
+结构回答封存后，另做三次共享材料参数查询，明确木材模量方向、织物面内模量、
+干燥不锈钢滑块接触条件与 Shore D 硬度量表。该阶段与两组结构对照分开计费。
+保留 VLM 缺失输出，密度与模量可绑定现有材料库先验，逐字段记录来源；
+共享参数查询的完整结果另外保存，不改写原始结构回答。
+
 使用 Python 和 Matplotlib，导出 PNG、可编辑文字 SVG、PDF、600 dpi TIFF 与数值源数据。
 图包括原始观测、参考渲染、部件材质、物性先验、减面可视化、误差与成本、局部编辑。
 渲染使用统一相机、逐像素深度测试与插值法向。未知属性保留灰色。
@@ -35,6 +42,9 @@
 ```bash
 python scripts/run_reference_mesh_study.py prepare --output outputs/chaise_reference_20261111
 python scripts/run_reference_mesh_study.py vlm --output outputs/chaise_reference_20261111
+python scripts/run_reference_mesh_study.py finalize --output outputs/chaise_reference_20261111
+python scripts/evaluate_reference_vlm.py --source outputs/chaise_reference_20261111
+python scripts/query_reference_material_priors.py --source outputs/chaise_reference_20261111
 python scripts/run_reference_mesh_study.py benchmark --output outputs/chaise_reference_20261111
 python scripts/run_reference_mesh_study.py figures --output outputs/chaise_reference_20261111
 ```

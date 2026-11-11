@@ -5,7 +5,6 @@ from __future__ import annotations
 import json
 from typing import Any
 
-
 OUTPUT_SCHEMA = {
     "object": "object name",
     "components": [
@@ -108,5 +107,5 @@ def validate_answer(answer: dict, count: int) -> dict:
         if item.get("construction") not in {"solid", "shell", "upholstered", "unknown"}:
             raise ValueError("Unsupported construction label")
     if not isinstance(answer.get("materials"), list):
-        raise ValueError("Material prior records required")
+        raise TypeError("Material prior records required")
     return answer

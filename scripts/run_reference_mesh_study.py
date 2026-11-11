@@ -7,12 +7,12 @@ Closed wooden components support conditional physical-integral comparisons.
 from __future__ import annotations
 
 import argparse
-from collections import Counter
-from dataclasses import asdict
 import hashlib
 import json
-from pathlib import Path
 import sys
+from collections import Counter
+from dataclasses import asdict
+from pathlib import Path
 from time import perf_counter
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
@@ -21,16 +21,17 @@ import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+import numpy as np
+import trimesh
 from matplotlib.colors import LogNorm, Normalize
 from matplotlib.patches import Patch
-import numpy as np
 from PIL import Image
 from scipy.spatial import cKDTree
-import trimesh
 
 from tactile3d.figures.mesh_fields import render_mesh
 from tactile3d.mesh.assembly import texture_face_rgb
 from tactile3d.mesh.task_lod import simplify_components
+from tactile3d.physics.materials import load_material_priors
 from tactile3d.physics.part_io import write_json
 from tactile3d.vision.progressive import make_prompt, validate_answer
 
@@ -52,6 +53,17 @@ def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def active_states(output):
+    marker = output / "active_state.json"
+    if marker.is_file():
+        reference = read(marker)
+        path = output / reference["path"]
+        if digest(path) != reference["sha256"]:
+            raise ValueError("Active state hash mismatch")
+        return read(path)
+    return read(output / "consensus_states.json")
+
+
 def savefig(fig, path):
     for suffix in ("png", "svg", "pdf", "tiff"):
         fig.savefig(
@@ -59,6 +71,7 @@ def savefig(fig, path):
             dpi=600 if suffix == "tiff" else 250,
             facecolor="white",
             bbox_inches="tight",
+            **({"pil_kwargs": {"compression": "tiff_lzw"}} if suffix == "tiff" else {}),
         )
     plt.close(fig)
 
@@ -223,12 +236,23 @@ def run_vlm(args):
                     flush=True,
                 )
     write_json(directory / "records.json", records)
+    finalize_vlm(args)
+
+
+def finalize_vlm(args):
+    """Aggregate sealed predictions on CPU, retaining property-source provenance."""
+    directory = args.output / "vlm"
+    manifest = read(args.output / "input_manifest.json")
+    records = read(directory / "records.json")
     # Seal every answer before subsequent geometry/edit evaluation.
     write_json(
         directory / "seal.json",
         {"sha256": digest(directory / "records.json"), "mass_labels_read": False},
     )
     states = {}
+    library = {
+        p.name: p for p in load_material_priors(Path("configs/material_priors.yaml"))
+    }
     for arm in ("repeated", "progressive"):
         valid = [
             r
@@ -250,9 +274,21 @@ def run_vlm(args):
             counts = Counter(c["surface_material"] for c in candidates)
             winner, support = counts.most_common(1)[0]
             selected = next(c for c in candidates if c["surface_material"] == winner)
+            construction_votes = Counter(
+                c["construction"] for c in candidates if c["surface_material"] == winner
+            )
+            construction_order = construction_votes.most_common()
+            construction = construction_order[0][0]
+            if (
+                len(construction_order) > 1
+                and construction_order[0][1] == construction_order[1][1]
+            ):
+                construction = "unknown"
             assignments.append(
                 {
                     **selected,
+                    "construction": construction,
+                    "construction_votes": dict(construction_votes),
                     "support": support,
                     "samples": len(candidates),
                     "material_votes": dict(counts),
@@ -277,6 +313,21 @@ def run_vlm(args):
                     and r[key] > 0
                 ]
                 priors[name][key] = float(np.median(values)) if values else None
+                if (
+                    key in ("density_kg_m3", "youngs_modulus_pa")
+                    and not values
+                    and name in library
+                ):
+                    prior = getattr(library[name], key)
+                    priors[name][key] = prior.mean
+                    priors[name][
+                        f"{key}_source"
+                    ] = "existing material library nominal prior"
+                    priors[name][f"{key}_range"] = [prior.min, prior.max]
+                else:
+                    priors[name][f"{key}_source"] = (
+                        "VLM prior" if values else "unresolved"
+                    )
             priors[name]["hardness_records"] = [
                 {"value": r.get("hardness_value"), "scale": r.get("hardness_scale")}
                 for r in rows
@@ -288,6 +339,14 @@ def run_vlm(args):
             "valid_outputs_for_aggregation": len(valid),
         }
     write_json(args.output / "consensus_states.json", states)
+    write_json(
+        args.output / "parameter_binding.json",
+        {
+            "material_library_sha256": digest(Path("configs/material_priors.yaml")),
+            "policy": "keep valid VLM priors; bind missing density/modulus to existing library; no invented contact/hardness values",
+            "states": states,
+        },
+    )
 
 
 def closed_properties(pieces, ids, density):
@@ -319,8 +378,8 @@ def closed_properties(pieces, ids, density):
 
 def benchmark(args):
     output = args.output
-    mesh, labels, pieces, colors = load_prepared(output)
-    state = read(output / "consensus_states.json")["progressive"]
+    mesh, labels, pieces, _colors = load_prepared(output)
+    state = active_states(output)["progressive"]
     names = {c["component_id"]: c["surface_material"] for c in state["components"]}
     wood = [i for i, p in enumerate(pieces) if names[i] == "wood" and p.is_volume]
     if not wood:
@@ -333,7 +392,9 @@ def benchmark(args):
     directory = output / "lod"
     directory.mkdir(exist_ok=False)
     tree = cKDTree(mesh.triangles_center)
-    surface_points, _ = trimesh.sample.sample_surface(mesh, 12000, seed=711)
+    surface_points, reference_sample_faces = trimesh.sample.sample_surface(
+        mesh, 12000, seed=711
+    )
     rows = []
     # Warm up the QEM extension before timed runs.
     pieces[0].simplify_quadric_decimation(face_count=100)
@@ -374,7 +435,19 @@ def benchmark(args):
             props = closed_properties(split, wood, rho)
             sample_start = perf_counter()
             # Exact point-to-triangle distances if trimesh's spatial index is available.
-            _, distances, _ = trimesh.proximity.closest_point(reduced, surface_points)
+            _, distances, hit_faces = trimesh.proximity.closest_point(
+                reduced, surface_points
+            )
+            reverse_points, _ = trimesh.sample.sample_surface(reduced, 12000, seed=712)
+            _, reverse_distances, _ = trimesh.proximity.closest_point(
+                mesh, reverse_points
+            )
+            cosine = np.einsum(
+                "ij,ij->i",
+                mesh.face_normals[reference_sample_faces],
+                reduced.face_normals[hit_faces],
+            )
+            normal_error = np.rad2deg(np.arccos(np.clip(cosine, -1, 1)))
             errors = None
             if props:
                 errors = {
@@ -403,6 +476,14 @@ def benchmark(args):
                 "component_budgets": budgets,
                 "surface_mean_mm": float(distances.mean() * 1000),
                 "surface_p95_mm": float(np.quantile(distances, 0.95) * 1000),
+                "reverse_surface_mean_mm": float(reverse_distances.mean() * 1000),
+                "reverse_surface_p95_mm": float(
+                    np.quantile(reverse_distances, 0.95) * 1000
+                ),
+                "symmetric_mean_distance_mm": float(
+                    (distances.mean() + reverse_distances.mean()) * 500
+                ),
+                "mean_normal_error_degrees": float(normal_error.mean()),
                 "closed_wood_regions": int(sum(split[i].is_volume for i in wood)),
                 "wood_region_count": len(wood),
                 "wood_physics": props,
@@ -450,9 +531,7 @@ def benchmark(args):
         + origin(new_part)
         - mass * (np.dot(center, center) * np.eye(3) - np.outer(center, center))
     )
-    # Full recomputation through equivalent density scaling of independent components.
-    scaled = [p.copy() for p in pieces]
-    scaled[chosen].density = after_density / rho
+    # Full recomputation from every component's geometry and edited density.
     full_mass, full_first, full_origin = 0.0, np.zeros(3), np.zeros((3, 3))
     for i in wood:
         p = closed_properties(pieces, [i], after_density if i == chosen else rho)
@@ -517,8 +596,8 @@ def figures(args):
     out = args.output
     dest = args.figures
     dest.mkdir(parents=True, exist_ok=False)
-    mesh, labels, pieces, texture = load_prepared(out)
-    states = read(out / "consensus_states.json")
+    mesh, labels, _pieces, _texture = load_prepared(out)
+    states = active_states(out)
     state = states["progressive"]
     lookup = {c["component_id"]: c["surface_material"] for c in state["components"]}
     material = np.array([to_rgb(MATERIAL_COLORS[lookup[int(i)]]) for i in labels])
@@ -532,14 +611,36 @@ def figures(args):
                 for i in labels
             ]
         )
-    fig, axes = plt.subplots(2, 3, figsize=(10.8, 6.4), layout="constrained")
+    # Hardness is comparable only on an explicitly shared scale.
+    hardness_records = [
+        (name, r)
+        for name, values in state["materials"].items()
+        for r in values.get("hardness_records", [])
+        if type(r.get("value")) in (int, float)
+        and np.isfinite(r["value"])
+        and r["value"] >= 0
+        and isinstance(r.get("scale"), str)
+        and r["scale"].strip()
+    ]
+    scales = Counter(r["scale"].strip().lower() for _, r in hardness_records)
+    hardness_scale = scales.most_common(1)[0][0] if scales else None
+    hardness = {}
+    for name in state["materials"]:
+        values = [
+            r["value"]
+            for mat, r in hardness_records
+            if mat == name and r["scale"].strip().lower() == hardness_scale
+        ]
+        hardness[name] = float(np.median(values)) if values else np.nan
+    fields["hardness"] = np.array(
+        [hardness.get(lookup[int(i)], np.nan) for i in labels]
+    )
+    fig, axes = plt.subplots(2, 3, figsize=(7.2, 5.2), layout="constrained")
     axes[0, 0].imshow(Image.open(out / "observation_00.png"))
     axes[0, 0].set_title("a  Original observation")
-    axes[0, 1].imshow(render_mesh(mesh.vertices, mesh.faces, texture, resolution=600))
-    axes[0, 1].set_title("b  Textured reference geometry")
-    axes[0, 2].imshow(rendered)
-    axes[0, 2].set_title("c  VLM + mesh component grounding")
-    axes[0, 2].legend(
+    axes[0, 1].imshow(rendered)
+    axes[0, 1].set_title("b  Material grounding")
+    axes[0, 1].legend(
         handles=[
             Patch(color=color, label=name)
             for name, color in MATERIAL_COLORS.items()
@@ -550,15 +651,16 @@ def figures(args):
         fontsize=7,
     )
     for ax, key, title, unit, factor in zip(
-        axes[1],
+        (axes[0, 2], *axes[1]),
         fields,
         (
-            "d  Surface-material density prior",
-            "e  Material modulus prior",
-            "f  Friction prior",
+            "c  Surface density prior",
+            "d  Material modulus prior",
+            "e  Friction prior",
+            "f  Hardness prior",
         ),
-        ("kg m$^{-3}$", "GPa", "dimensionless"),
-        (1, 1e-9, 1),
+        ("kg m$^{-3}$", "GPa", "dimensionless", hardness_scale or "unresolved scale"),
+        (1, 1e-9, 1, 1),
     ):
         values = fields[key] * factor
         finite = np.isfinite(values)
@@ -582,7 +684,11 @@ def figures(args):
             ax.text(
                 0.5,
                 0.02,
-                "Unresolved contact pair",
+                (
+                    "Unresolved contact pair"
+                    if key == "friction_coefficient"
+                    else "No supported hardness scale"
+                ),
                 transform=ax.transAxes,
                 ha="center",
                 fontsize=8,
@@ -590,12 +696,12 @@ def figures(args):
     for ax in axes.flat:
         ax.axis("off")
     fig.suptitle(
-        "Reference-geometry-assisted chaise study · property values are VLM priors",
-        fontsize=11,
+        "Reference geometry · VLM material labels + explicit property priors",
+        fontsize=9,
     )
     savefig(fig, dest / "dense_property_maps")
     rows = read(out / "lod" / "metrics.json")
-    fig, axes = plt.subplots(3, 3, figsize=(10.8, 9), layout="constrained")
+    fig, axes = plt.subplots(3, 3, figsize=(7.2, 7.2), layout="constrained")
     for ax, row in zip(axes.flat, rows):
         data = np.load(out / "lod" / f"{row['method']}_{row['target_faces']}.npz")
         cols = np.array(
@@ -609,7 +715,7 @@ def figures(args):
         )
         ax.axis("off")
     savefig(fig, dest / "qem_mesh_comparison")
-    fig, axes = plt.subplots(1, 3, figsize=(10.8, 3.2), layout="constrained")
+    fig, axes = plt.subplots(1, 3, figsize=(7.2, 2.8), layout="constrained")
     for method, color in zip(
         ("global_qem", "component_qem", "sensitivity_qem"),
         ("#8e969e", "#588cb2", "#bd805c"),
@@ -642,7 +748,8 @@ def figures(args):
     axes[0].legend(fontsize=7)
     savefig(fig, dest / "qem_accuracy_cost")
     edit = read(out / "edit.json")
-    fig, axes = plt.subplots(1, 4, figsize=(10.8, 3), layout="constrained")
+    fig, axes = plt.subplots(2, 3, figsize=(7.2, 5), layout="constrained")
+    axes = axes.ravel()
     edited = material.copy()
     edited[labels == edit["component_id"]] = to_rgb("#c0c6ce")
     axes[0].imshow(rendered)
@@ -669,6 +776,25 @@ def figures(args):
         xticklabels=["I1", "I2", "I3"],
     )
     axes[3].legend(fontsize=7)
+    centers = (
+        np.array([edit[k]["center_of_mass_m"] for k in ("before", "after")]) * 1000
+    )
+    for i, name in enumerate(("Before", "After")):
+        axes[4].bar(np.arange(3) + (i - 0.5) * 0.35, centers[i], 0.35, label=name)
+    axes[4].set(
+        title="Frame center of mass",
+        ylabel="Coordinate (mm)",
+        xticks=range(3),
+        xticklabels=["x", "y", "z"],
+    )
+    displacement = centers[1] - centers[0]
+    axes[5].bar(range(3), displacement, color="#bd805c")
+    axes[5].set(
+        title="Center-of-mass displacement",
+        ylabel="After − before (mm)",
+        xticks=range(3),
+        xticklabels=["x", "y", "z"],
+    )
     savefig(fig, dest / "local_material_edit")
     np.savez_compressed(dest / "surface_fields.npz", component_ids=labels, **fields)
     write_json(
@@ -687,6 +813,8 @@ def figures(args):
         "Artist reference geometry is an additional input, not reconstructed geometry. "
         "Component assignments and surface property fields are VLM predictions/priors. "
         "Density maps describe surface material and do not assert homogeneous upholstery. "
+        "Missing VLM density/modulus values bind to the existing configured material library; "
+        "per-parameter provenance is recorded in source_data.json. "
         "Unknown properties remain gray. Hardness is not pooled across incompatible scales.\n\n"
         "QEM comparison uses common requested budgets and reports actual face counts. "
         "Distances are one-way original-surface samples to reduced triangles. "
@@ -702,7 +830,7 @@ def figures(args):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "stage", choices=["prepare", "vlm", "benchmark", "figures", "all"]
+        "stage", choices=["prepare", "vlm", "finalize", "benchmark", "figures", "all"]
     )
     parser.add_argument("--root", type=Path, default=Path("data/abo500_five"))
     parser.add_argument("--output", type=Path, required=True)
@@ -734,6 +862,8 @@ def main():
     ):
         if args.stage in (name, "all"):
             function(args)
+    if args.stage == "finalize":
+        finalize_vlm(args)
 
 
 if __name__ == "__main__":
