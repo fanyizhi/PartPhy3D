@@ -1,0 +1,22 @@
+{
+  "repository": "https://github.com/EverNorif/PUGS",
+  "commit": "ef7fd8c52543ab0fe6eb2a7a99e5267523133a09",
+  "source_zip_sha256": "de457fe3aa5128d008ba0e43dfb64bb1a4a8dbb49106cf5321b99db008121483",
+  "files": {
+    "predict_property.py": "d34617129fc27a4e4fa180f29d2454b06b01e37f03fc12e6eee52c9b0c2caaab",
+    "evaluation.py": "645c9dbc0050f86bb1230731ed175954a1d5225abf1e5976a4e5391d65165bff",
+    "settings.py": "a90c373cdab55fc251583b9c9f0193be806baae0a04e81c57399a75996b01272",
+    "gs_reconstruction.py": "93fe9223d2295b37d9b33a31acef04da49f40dc6c78f753f1ee257b3dd531a18",
+    "material_proposal.py": "4be13b54fc8a6b2d61831ff402d775e4a11c9fd62b650fd0df94527dc1602633",
+    "clip_feature_fusion.py": "99d1a4a18c66e4c33d4e1dcf74f45856d64c1696c8113c0daf3b80fdd381b7ed",
+    "utils/enhance_utils.py": "e663536cd8fd0423d8881a8d7d762e26b6c485567094f7609b33094bb7d11833",
+    "utils/gpt_inference_utils.py": "14e288864a0622140f2d24e89890f93ea1fd86605f59691213923fadccebc08e",
+    ".gitmodules": "75254db217250ba7f419226a4d420064cf73959a49abf7062732b44c9b759d70"
+  },
+  "gitlinks": {
+    "submodules/segment-anything": "dca509fe793f601edb92606367a655c15ac00fdf",
+    "submodules/simple-knn": "86710c2d4b46680c02301765dd79e465819c8f19"
+  },
+  "sam_vit_h_sha256": "a7bf3b02f3ebf1267aba913ff637d9a2d5c33d3173bb679e46d9f338c26f262e",
+  "scope": "official_source_locked; reconstruction_not_yet_completed"
+}

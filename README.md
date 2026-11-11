@@ -6,6 +6,7 @@ multi-view VLM evidence and geometric constraints.
 [Latest figures](paper_assets/chaise_reference_20261111_final/README.md) ·
 [Results](docs/results/chaise_reference_20261111_zh.md) ·
 [Reproduction](docs/REFERENCE_MESH_STUDY_zh.md) ·
+[Mass baselines](docs/baseline_mapping.md) ·
 [Server setup](docs/SERVER_SETUP_zh.md) · [Data](docs/DATA.md) · [中文](README_zh.md)
 
 ## Run

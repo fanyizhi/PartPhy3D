@@ -1,0 +1,16 @@
+{
+  "repository": "https://github.com/ajzhai/NeRF2Physics",
+  "commit": "7311210f62b120f6896b3112b231c26003ce70e3",
+  "files": {
+    "arguments.py": "631e6b017c22e2d12f91270735c158c36d22d976e3539983e2e37c8e8da60d80",
+    "carving.py": "13cc13b56809adaaa95bc0a2445c533fa318f82de04162f8e495a11bd089282b",
+    "evaluation.py": "d0dfdb880a1c195d91f9f6bfea1a544c7410e3222889b7a021bde0224f4f6cbd",
+    "feature_fusion.py": "594f05613386e8cf08e726397f279aeb7d02e319ed77fe85f160d7472ebd79f8",
+    "gpt_inference.py": "eab204be102272b9a9640f4718d68c8781ad70b4e023e14baa855a6beb51d3e5",
+    "LICENSE": "32dcb4ed82e531e3e88d07f5bf10aa98f5f977dc1e0e9e2726e306179e206e73",
+    "predict_property.py": "e8ede6aaddf71cb56e8330c9190303b28b2508d1724eb42f33ba63d67d81baeb",
+    "README.md": "c94143af35548e9bfa70bf6b28faf49e86b1a6a226ee9680a62e5dcce88d84ce",
+    "utils.py": "bae0d235051898f6642ac8f91d5ab841e8ee11c4732777fed1953102f492ec62"
+  },
+  "clip_sha256": "80905176486d952914c1deb3b753b8e653ab54aa4ffb14208bc5007cf7643a16"
+}
