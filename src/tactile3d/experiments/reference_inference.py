@@ -1,49 +1,153 @@
-"""Three/four actual-view comparison and measurable geometric contact panels."""
+"""Shared material queries and calibrated-view evidence preparation."""
 
 from __future__ import annotations
 
-import argparse
+import hashlib
 import json
-import sys
 from dataclasses import asdict
 from pathlib import Path
-
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
-import trimesh
 from PIL import Image
-from run_reference_mesh_study import SCENE, load_prepared, savefig
-from scipy.spatial import ConvexHull
 
-from tactile3d.figures.bound_material import ELEVATION_DEGREES, MARGIN_RATIO
+from tactile3d.experiments.reference_study import (
+    SCENE,
+    load_prepared,
+)
+from tactile3d.figures.mesh_fields import project_points as project
 from tactile3d.figures.mesh_fields import render_mesh
-from tactile3d.mesh.contacts import closest_surface_pair
 from tactile3d.physics.part_io import write_json
+from tactile3d.vision.local_vlm import LocalVLM
 from tactile3d.vision.view_selection import select_azimuth_views
+from tactile3d.vision.vlm_interior import _parse_response_content
 
 
-def project(vertices, points, azimuth, resolution=600):
-    az, el = np.deg2rad([azimuth, ELEVATION_DEGREES])
-    camera = np.array([np.cos(el) * np.cos(az), np.cos(el) * np.sin(az), np.sin(el)])
-    right = np.array([-np.sin(az), np.cos(az), 0.0])
-    up = np.cross(camera, right)
-    center = (vertices.min(0) + vertices.max(0)) / 2
-    plane = (vertices - center) @ np.column_stack((right, up))
-    uv = (points - center) @ np.column_stack((right, up))
-    uv *= resolution * (1 - 2 * MARGIN_RATIO) / np.ptp(plane, axis=0).max()
-    uv[:, 1] *= -1
-    return uv + resolution / 2
+def query_properties(args):
+    out = args.output
+    states = json.loads((out / "consensus_states.json").read_text())
+    names = sorted(
+        {c["surface_material"] for c in states["progressive"]["components"]}
+        - {"unknown"}
+    )
+    directory = out / "property_queries"
+    directory.mkdir(exist_ok=False)
+    model = LocalVLM(args.model, max_tokens=1100, max_pixels=384**2, quantized=True)
+    write_json(directory / "model.json", model.provenance)
+    image = Image.open(out / "observation_00.png").convert("RGB")
+    prompt = (
+        "Estimate typical material-property PRIORS for these already identified surface "
+        f"materials: {json.dumps(names)}. These are conditional nominal estimates, not "
+        "measurements and not whole-upholstery effective properties. Give reasonable "
+        "numeric central values and broad ranges for density and Young's modulus when "
+        "a material-level value is meaningful. For wood use longitudinal modulus, unknown "
+        "species. For textile use an explicitly assumed effective in-plane tensile modulus. "
+        "Define friction as static friction for a clean DRY stainless-steel slider against "
+        "this material under light contact at room temperature. State that exact surface "
+        "finish is unresolved. Define hardness using Shore D only when meaningful; "
+        "textile has no useful bulk Shore D hardness and must be null. Do not copy null "
+        "schema examples for all other properties. Return JSON {materials:[{name:string, "
+        "density_kg_m3:number, density_range:[low,high], youngs_modulus_pa:number or null, "
+        "modulus_direction:string, friction_coefficient:number or null, "
+        "friction_contact_pair:'dry stainless steel slider / material', "
+        "hardness_value:number or null, hardness_scale:'Shore D' or null, "
+        "assumptions:string}]}. Do not fabricate a literature citation."
+    )
+    records = []
+    for index in range(3):
+        response = model.generate(
+            prompt,
+            [image],
+            "Return conditional material priors as JSON.",
+            seed=891 + index,
+            do_sample=True,
+            temperature=0.7,
+            top_p=0.9,
+        )
+        record = {"prompt": prompt, "response": asdict(response), "valid": False}
+        try:
+            answer = _parse_response_content(response.text)
+            rows = answer["materials"]
+            if not isinstance(rows, list) or {r["name"] for r in rows} != set(names):
+                raise ValueError("Property material names do not match fixed state")
+            record["answer"] = answer
+            record["valid"] = True
+        except (KeyError, ValueError, TypeError) as error:
+            record["error"] = str(error)
+        records.append(record)
+        write_json(directory / f"query_{index}.json", record)
+        print(
+            f"Property query {index}: valid={record['valid']}, {response.seconds:.1f}s",
+            flush=True,
+        )
+    for arm in states:
+        for name in names:
+            rows = [
+                r
+                for record in records
+                if record["valid"]
+                for r in record["answer"]["materials"]
+                if r["name"] == name
+            ]
+            bound = states[arm]["materials"].setdefault(name, {})
+            for key in ("density_kg_m3", "youngs_modulus_pa", "friction_coefficient"):
+                values = [
+                    r[key]
+                    for r in rows
+                    if type(r.get(key)) in (int, float)
+                    and np.isfinite(r[key])
+                    and r[key] > 0
+                    and (
+                        key != "friction_coefficient"
+                        or isinstance(r.get("friction_contact_pair"), str)
+                    )
+                ]
+                if values:
+                    bound[key] = float(np.median(values))
+                    bound[f"{key}_source"] = (
+                        "separate shared VLM conditional material-prior query"
+                    )
+            bound["hardness_records"] = [
+                {"value": r["hardness_value"], "scale": "Shore D"}
+                for r in rows
+                if name != "fabric"
+                and type(r.get("hardness_value")) in (int, float)
+                and 0 <= r["hardness_value"] <= 100
+                and str(r.get("hardness_scale", "")).lower() == "shore d"
+            ]
+            bound["friction_contact_pair"] = (
+                "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved"
+            )
+            bound["assumptions"] = [r.get("assumptions") for r in rows]
+    write_json(directory / "records.json", records)
+    write_json(
+        directory / "seal.json",
+        {
+            "sha256": hashlib.sha256(
+                (directory / "records.json").read_bytes()
+            ).hexdigest(),
+            "shared_between_structural_arms": True,
+            "separate_from_18_call_structure_comparison": True,
+        },
+    )
+    state_path = out / "consensus_states_with_properties.json"
+    write_json(state_path, states)
+    write_json(
+        out / "active_state.json",
+        {
+            "path": state_path.name,
+            "sha256": hashlib.sha256(state_path.read_bytes()).hexdigest(),
+        },
+    )
 
 
-def prepare(args):
-    out = args.source / "views_contacts"
+def prepare_views(args):
+    out = args.output / "views_contacts"
     out.mkdir(exist_ok=False)
-    mesh, _labels, pieces, texture = load_prepared(args.source)
+    mesh, _labels, pieces, texture = load_prepared(args.output)
     centers = np.array(
         [np.average(p.triangles_center, weights=p.area_faces, axis=0) for p in pieces]
     )
@@ -129,11 +233,11 @@ def prepare(args):
     )
 
 
-def run(args):
+def infer_views(args):
     from tactile3d.vision.local_vlm import LocalVLM
     from tactile3d.vision.vlm_interior import _parse_response_content
 
-    out = args.source / "views_contacts"
+    out = args.output / "views_contacts"
     selections = json.loads((out / "view_selection.json").read_text())
     roles = json.loads((out / "role_review.json").read_text())["roles"]
     material_review = json.loads(
@@ -161,7 +265,7 @@ def run(args):
                 for row in selections[str(count)]
             ]
             paths += [
-                args.source / "component_sheet.png",
+                args.output / "component_sheet.png",
                 out / "global_component_positions.png",
             ]
             response = model.generate(
@@ -250,158 +354,76 @@ def run(args):
     )
 
 
-def contacts(args):
-    out = args.source / "views_contacts"
-    mesh, _labels, pieces, texture = load_prepared(args.source)
-    leg_ids = [6, 7, 8, 9]
-    rail_ids = [10, 11, 12, 13]
-    rails = trimesh.util.concatenate([pieces[i] for i in rail_ids])
-    points, summaries, arrays = [], [], {}
-    for index in leg_ids:
-        leg = pieces[index]
-        ground = leg.vertices[np.abs(leg.vertices[:, 2] - leg.bounds[0, 2]) < 1e-7]
-        hull = ConvexHull(ground[:, :2])
-        footprint = ground[hull.vertices]
-        center = footprint.mean(0)
-        points.append(center)
-        band = leg.slice_plane([0, 0, leg.bounds[1, 2] - 0.05], [0, 0, 1], cap=False)
-        samples, _ = trimesh.sample.sample_surface(band, 4096, seed=1400 + index)
-        paired, distance, _ = trimesh.proximity.closest_point(rails, samples)
-        nearest = int(np.argmin(distance))
-        exact = closest_surface_pair(leg, rails)
-        summaries.append(
-            {
-                "leg_component_id": index,
-                "ground_contact_center_m": center.tolist(),
-                "ground_footprint_area_m2": float(hull.volume),
-                "ground_footprint_vertices_m": footprint.tolist(),
-                "interface_sample_count": len(samples),
-                "exact_surface_pair": exact,
-                "interface_min_sample_distance_mm": float(distance.min() * 1000),
-                "interface_p05_distance_mm": float(np.quantile(distance, 0.05) * 1000),
-                "near_surface_fraction_1mm": float(np.mean(distance <= 0.001)),
-                "near_surface_fraction_3mm": float(np.mean(distance <= 0.003)),
-                "closest_sample_on_leg_m": samples[nearest].tolist(),
-                "paired_point_on_frame_m": paired[nearest].tolist(),
-            }
-        )
-        arrays[f"leg_{index}_samples"] = samples
-        arrays[f"leg_{index}_paired_points"] = paired
-        arrays[f"leg_{index}_distances_m"] = distance
-    points = np.array(points)
-    fig = plt.figure(figsize=(7.2, 5.8), layout="constrained")
-    grid = fig.add_gridspec(2, 3)
-    ax = fig.add_subplot(grid[:, 0])
-    az = 55
-    ax.imshow(
-        render_mesh(mesh.vertices, mesh.faces, texture, azimuth=az, resolution=600)
+def infer_color(args):
+    out = args.output / "views_contacts"
+    directory = out / "color_control"
+    directory.mkdir(exist_ok=False)
+    selected = json.loads((out / "view_count_results.json").read_text())[
+        "selected_views"
+    ]
+    views = json.loads((out / "view_selection.json").read_text())[str(selected)]
+    manifest = json.loads((args.output / "input_manifest.json").read_text())
+    # Only sampled RGB is added here; no geometry dimensions or evaluation labels.
+    table = [
+        {"component_id": r["component_id"], "mean_texture_rgb": r["mean_texture_rgb"]}
+        for r in manifest["components"]
+    ]
+    prompt = (
+        "Assign all 15 numbered regions. Per-component sampled RGB below is visual "
+        "evidence from the reference texture and helps bind the correct isolated component "
+        "to its number. It is not a material label. Use images and color jointly. "
+        "Return JSON {components:[{component_id:integer,functional_role:string,surface_material:string}]}. "
+        "Role vocabulary: cushion, seat, backrest, armrest, leg, frame_rail, underside, unknown. "
+        "Material vocabulary: wood, fabric, metal, plastic, unknown. Use each ID exactly once. "
+        "Visual color observations: " + json.dumps(table)
     )
-    projected = project(mesh.vertices, points, az)
-    order = ConvexHull(points[:, :2]).vertices
-    polygon = projected[np.r_[order, order[0]]]
-    ax.plot(polygon[:, 0], polygon[:, 1], "--", color="#d28b45", lw=1.5)
-    ax.scatter(
-        projected[:, 0],
-        projected[:, 1],
-        s=35,
-        c="#d05a42",
-        edgecolors="white",
-        zorder=4,
-    )
-    for uv, index in zip(projected, leg_ids):
-        ax.annotate(
-            f"Leg {index}",
-            uv,
-            xytext=(0, -12),
-            textcoords="offset points",
-            ha="center",
-            fontsize=7,
+    paths = [out / f"view_{r['frame_index']:02d}.png" for r in views]
+    paths += [
+        args.output / "component_sheet.png",
+        out / "global_component_positions.png",
+    ]
+    images = [Image.open(p).convert("RGB") for p in paths]
+    model = LocalVLM(args.model, max_tokens=1400, max_pixels=768**2, quantized=True)
+    write_json(directory / "model.json", model.provenance)
+    records = []
+    for trial in range(3):
+        response = model.generate(
+            prompt,
+            images,
+            "Bind component identity to its own visual evidence; JSON only.",
+            seed=1201 + trial,
+            do_sample=True,
+            temperature=0.7,
+            top_p=0.9,
         )
-    ax.axis("off")
-    ax.set_title("a  Ground footprints\nand support polygon", fontsize=8)
-    for k, index in enumerate(leg_ids):
-        ax = fig.add_subplot(grid[k // 2, 1 + k % 2], projection="3d")
-        leg = pieces[index]
-        samples = arrays[f"leg_{index}_samples"]
-        paired = arrays[f"leg_{index}_paired_points"]
-        distance = arrays[f"leg_{index}_distances_m"]
-        # Crop triangle centroids to the upper interface neighborhood.
-        center = (leg.bounds[0] + leg.bounds[1]) / 2
-        center[2] = leg.bounds[1, 2] - 0.02
-        from mpl_toolkits.mplot3d.art3d import Poly3DCollection
-
-        for part, color in [(leg, "#bd8656"), (rails, "#8d9ba7")]:
-            near = np.all(
-                np.abs(part.triangles_center - center) < [0.11, 0.11, 0.08], axis=1
-            )
-            ax.add_collection3d(
-                Poly3DCollection(
-                    part.triangles[near], facecolor=color, edgecolor="none", alpha=0.23
-                )
-            )
-        visible = distance <= 0.003
-        chosen = np.flatnonzero(visible)[:: max(int(visible.sum() / 180), 1)]
-        ax.scatter(
-            *samples[chosen].T,
-            s=3,
-            c=distance[chosen] * 1000,
-            cmap="viridis_r",
-            vmin=0,
-            vmax=3,
-            depthshade=False,
+        record = {
+            "trial": trial,
+            "view_count": selected,
+            "prompt": prompt,
+            "images": [p.name for p in paths],
+            "response": asdict(response),
+            "valid": False,
+        }
+        try:
+            answer = _parse_response_content(response.text)
+            if sorted(r["component_id"] for r in answer["components"]) != list(
+                range(15)
+            ):
+                raise ValueError("Incomplete component identities")
+            record.update(answer=answer, valid=True)
+        except (KeyError, ValueError, TypeError) as error:
+            record["error"] = str(error)
+        records.append(record)
+        write_json(directory / f"trial_{trial}.json", record)
+        print(
+            f"Color evidence trial {trial}: valid={record['valid']}, {response.seconds:.1f}s",
+            flush=True,
         )
-        exact = summaries[k]["exact_surface_pair"]
-        line = np.array([exact["point_first_m"], exact["point_second_m"]])
-        ax.plot(*line.T, color="#c4473d", lw=2)
-        ax.scatter(*line.T, s=12, c="#c4473d", depthshade=False)
-        ax.set(
-            xlim=(center[0] - 0.07, center[0] + 0.07),
-            ylim=(center[1] - 0.07, center[1] + 0.07),
-            zlim=(center[2] - 0.05, center[2] + 0.05),
-            xlabel="x (m)",
-            ylabel="y (m)",
-            zlabel="z (m)",
-        )
-        ax.set_title(
-            f"{chr(98+k)}  Leg {index} — frame\nminimum surface gap {exact['distance_m']*1000:.4f} mm",
-            fontsize=7,
-        )
-        ax.tick_params(labelsize=5, pad=0)
-        ax.view_init(elev=24, azim=45 if center[0] < 0 else 135)
-        ax.set_box_aspect([1, 1, 0.8])
-    savefig(fig, out / "contact_geometry")
-    np.savez_compressed(out / "contact_points.npz", **arrays)
     write_json(
-        out / "contact_geometry.json",
+        directory / "answers.json",
         {
-            "scope": "reference-mesh geometric proximity and horizontal-ground footprints",
-            "reference_unit": "glTF meters, not laboratory calibration",
-            "sampled_min_is_not_exact_surface_min": True,
-            "frame_interfaces_force_or_bond_strength_evaluated": False,
-            "ground_plane_z_m": 0.0,
-            "legs": summaries,
+            "selected_views": selected,
+            "records": records,
+            "scope": "additional visual-evidence control; geometry-only descriptors excluded from VLM prompt",
         },
     )
-    print(
-        "Saved ground footprints and four measured geometric interface panels",
-        flush=True,
-    )
-
-
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("stage", choices=["prepare", "run", "contacts"])
-    parser.add_argument("--source", type=Path, required=True)
-    parser.add_argument("--root", type=Path, default=Path("data/abo500_five"))
-    parser.add_argument(
-        "--model",
-        type=Path,
-        default=Path("/root/autodl-tmp/models/Qwen3-VL-8B-Instruct"),
-    )
-    args = parser.parse_args()
-    plt.rcParams.update({"svg.fonttype": "none", "pdf.fonttype": 42, "font.size": 7})
-    {"prepare": prepare, "run": run, "contacts": contacts}[args.stage](args)
-
-
-if __name__ == "__main__":
-    main()

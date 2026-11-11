@@ -64,3 +64,16 @@ def render_mesh(
     result = np.ones((resolution, resolution, 3), dtype=float)
     result[y, x] = np.clip(colors[ids[y, x]] * shade[:, None], 0, 1)
     return np.rint(result * 255).astype(np.uint8)
+
+
+def project_points(vertices, points, azimuth, resolution=600):
+    az, el = np.deg2rad([azimuth, ELEVATION_DEGREES])
+    camera = np.array([np.cos(el) * np.cos(az), np.cos(el) * np.sin(az), np.sin(el)])
+    right = np.array([-np.sin(az), np.cos(az), 0.0])
+    up = np.cross(camera, right)
+    center = (vertices.min(0) + vertices.max(0)) / 2
+    plane = (vertices - center) @ np.column_stack((right, up))
+    uv = (points - center) @ np.column_stack((right, up))
+    uv *= resolution * (1 - 2 * MARGIN_RATIO) / np.ptp(plane, axis=0).max()
+    uv[:, 1] *= -1
+    return uv + resolution / 2

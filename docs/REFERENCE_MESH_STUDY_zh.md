@@ -66,21 +66,15 @@
 
 ```bash
 python scripts/run_reference_mesh_study.py prepare --output outputs/chaise_reference_20261111
-python scripts/run_reference_mesh_study.py vlm --output outputs/chaise_reference_20261111
-python scripts/run_reference_mesh_study.py finalize --output outputs/chaise_reference_20261111
-python scripts/evaluate_reference_vlm.py --source outputs/chaise_reference_20261111
-python scripts/query_reference_material_priors.py --source outputs/chaise_reference_20261111
-python scripts/run_reference_mesh_study.py benchmark --output outputs/chaise_reference_20261111
-python scripts/run_reference_mesh_study.py figures --output outputs/chaise_reference_20261111
-python scripts/compare_matched_qem.py --source outputs/chaise_reference_20261111
-python scripts/run_view_and_contact_study.py prepare --source outputs/chaise_reference_20261111
-python scripts/run_view_and_contact_study.py run --source outputs/chaise_reference_20261111
-python scripts/run_view_and_contact_study.py contacts --source outputs/chaise_reference_20261111
-python scripts/check_geometric_roles.py --source outputs/chaise_reference_20261111
-python scripts/ablate_reference_grounding.py --source outputs/chaise_reference_20261111 --output paper_assets/chaise_reference_20261111
-python scripts/polish_reference_contacts.py --source outputs/chaise_reference_20261111 --output paper_assets/chaise_reference_20261111
+python scripts/run_reference_mesh_study.py infer --output outputs/chaise_reference_20261111
+python scripts/run_reference_mesh_study.py evaluate --output outputs/chaise_reference_20261111
+python scripts/run_reference_mesh_study.py figures --output outputs/chaise_reference_20261111 --figures paper_assets/chaise_reference_20261111_final
 ```
 
-代码模块分别为 `vision/progressive.py`、`mesh/task_lod.py`、`figures/mesh_fields.py`。
-新输出目录禁止覆盖，VLM 原始结果先封存，再进行几何和编辑评价。
+`all` 可顺序执行四步，`--resume` 复用已完成阶段。默认图件存入实验目录的 `figures/`，
+定稿时再通过 `--figures` 导出到论文图目录。
+
+唯一脚本入口为 `scripts/run_reference_mesh_study.py`。内部按实验状态、推理、评价和出图
+组织为四个模块，通用几何与 VLM 算法继续放在 `mesh/`、`vision/` 中。
+VLM 原始结果先封存，再进行几何和编辑评价。一次性诊断脚本保留在 Git 历史中。
 本轮原型检验的是参考几何条件下的机制，不声称减少首次重建成本，也不声称物性实测准确性。
