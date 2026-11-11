@@ -482,5 +482,191 @@
     "objects/B07WTFJGRG/physical_field.npz": "bc306bd89f24f641423736ffe3c3905128d21e9ffa117fd5fe89a9fca85f3c59",
     "predictions.json": "4dc50c8c4086939197f85d29fb17fccd6210c9146428822b63b209a001e2bf43"
   },
-  "interpretation": "Condition material density and shell thickness jointly. Nearest-triangle surface assignment lowers ADE slightly but does not uniformly improve all metrics. Geometry, material priors, construction fractions and Monte Carlo seed are held fixed. This is not the complete multi-round VLM method."
+  "interpretation": "Condition material density and shell thickness jointly. Nearest-triangle surface assignment lowers ADE slightly but does not uniformly improve all metrics. Geometry, material priors, construction fractions and Monte Carlo seed are held fixed. This is not the complete multi-round VLM method.",
+  "vlm_construction_pilot": {
+    "scope": "fixed-five development, reference cells; unconstrained VLM numerical-parameter diagnostic, not selected full method",
+    "protocol": {
+      "cohort": [
+        "B07B4G5RBN_ATVPDKIKX0DER",
+        "B076YKYHCB_A1F83G8C2ARO7P",
+        "B07WTFJGRG",
+        "B073WGP8XN",
+        "B013TGFGWS_A1F83G8C2ARO7P"
+      ],
+      "rounds": 3,
+      "surface_hints": true,
+      "seed": 1200,
+      "geometry_source": "outputs/shell_coupling_surface_20261112",
+      "model": "/root/autodl-tmp/models/Qwen3-VL-8B-Instruct",
+      "code_sha256": "195e392c6cd212e05363906131f67b8042bffe303be92973cf4b083a295e61fd",
+      "mass_labels_used_for_inference": false,
+      "aggregation": "equal mean of three whole-object construction integrals",
+      "uncertainty": "correlated self-check rounds, not calibrated posterior samples"
+    },
+    "predictions": [
+      {
+        "scene_id": "B07B4G5RBN_ATVPDKIKX0DER",
+        "mass_kg": 58.34994945545291,
+        "round_masses_kg": [
+          58.34994945545291,
+          58.34994945545291,
+          58.34994945545291
+        ]
+      },
+      {
+        "scene_id": "B076YKYHCB_A1F83G8C2ARO7P",
+        "mass_kg": 0.16151812815479938,
+        "round_masses_kg": [
+          0.16151812815479938,
+          0.16151812815479938,
+          0.16151812815479938
+        ]
+      },
+      {
+        "scene_id": "B07WTFJGRG",
+        "mass_kg": 28.015856907327727,
+        "round_masses_kg": [
+          28.015856907327727,
+          28.015856907327727,
+          28.015856907327727
+        ]
+      },
+      {
+        "scene_id": "B073WGP8XN",
+        "mass_kg": 37.00286118365495,
+        "round_masses_kg": [
+          37.00286118365495,
+          37.00286118365495,
+          37.00286118365495
+        ]
+      },
+      {
+        "scene_id": "B013TGFGWS_A1F83G8C2ARO7P",
+        "mass_kg": 0.1546925203657824,
+        "round_masses_kg": [
+          0.1546925203657824,
+          0.1546925203657824,
+          0.1546925203657824
+        ]
+      }
+    ],
+    "diagnostic_report": {
+      "metrics": {
+        "num_scenes": 5,
+        "ade_kg": 16.43808601572931,
+        "alde": 0.9458970710245698,
+        "ape": 2.1044218213317736,
+        "mnre": 0.476289178970946,
+        "rmse_kg": 21.286285404676704
+      },
+      "scope": "five exposed development objects; reference geometry; VLM construction inference"
+    },
+    "library_thickness_ablation": {
+      "metrics": {
+        "num_scenes": 5,
+        "ade_kg": 12.776373864663036,
+        "alde": 0.9694689388332305,
+        "ape": 2.0022151294945703,
+        "mnre": 0.43025005514181347,
+        "rmse_kg": 16.565386636488547
+      },
+      "scope": "same VLM answers; positive shell thicknesses replaced by supplied material prior means",
+      "additional_VLM_calls": 0
+    },
+    "library_predictions": [
+      {
+        "scene_id": "B07B4G5RBN_ATVPDKIKX0DER",
+        "mass_kg": 46.41945342325355,
+        "round_masses_kg": [
+          46.41945342325356,
+          46.41945342325356,
+          46.41945342325356
+        ]
+      },
+      {
+        "scene_id": "B076YKYHCB_A1F83G8C2ARO7P",
+        "mass_kg": 0.15991837301820344,
+        "round_masses_kg": [
+          0.15991837301820344,
+          0.15991837301820344,
+          0.15991837301820344
+        ]
+      },
+      {
+        "scene_id": "B07WTFJGRG",
+        "mass_kg": 28.015856907327727,
+        "round_masses_kg": [
+          28.015856907327727,
+          28.015856907327727,
+          28.015856907327727
+        ]
+      },
+      {
+        "scene_id": "B073WGP8XN",
+        "mass_kg": 30.515230898893282,
+        "round_masses_kg": [
+          30.515230898893286,
+          30.515230898893286,
+          30.515230898893286
+        ]
+      },
+      {
+        "scene_id": "B013TGFGWS_A1F83G8C2ARO7P",
+        "mass_kg": 0.26265832685882573,
+        "round_masses_kg": [
+          0.26265832685882573,
+          0.26265832685882573,
+          0.26265832685882573
+        ]
+      }
+    ],
+    "raw_record_sha256": {
+      "library_predictions.json": "5106805abebc98d38acfa173b94608459311c2ddb4ad29a607d8c308a3a026d9",
+      "library_prediction_seal.json": "b1a6dc18533e40be07a09e986128587a49f6b49a3ac34be82830f860d873fd82",
+      "library_report.json": "5bb8c6c7441bab5d7f540f651994f49f6a67979c2bfe48c968e5babba7fa607c",
+      "model.json": "578caa7f8f0471cadb29abc8cf81fe15a0ec8db3cb0e7a93e11e0c8b5b02b6d0",
+      "predictions.json": "dd3aa51cdc091d3200d2a2c9d1fe64037b268db0e1d8c22766e24cd0b9b4c043",
+      "prediction_seal.json": "98144fa905fdf01a2ab283782bfe1c6d76a0f67a51946f92522bf31395f98bb8",
+      "protocol.json": "58bbc9bcfe86f11228bf602530c4006250895802fd677459aba8366ff576e76b",
+      "report.json": "1d6b0c0f5da1ca2d8fc42b42cff81d01050ef42863a3fcd68551ed740f626dbf",
+      "B013TGFGWS_A1F83G8C2ARO7P\\evidence.json": "5b6d3000f4a30d422bebf6111fa346db528249f1a24300f82bc4a3bc9e16585b",
+      "B013TGFGWS_A1F83G8C2ARO7P\\raw_0_0.json": "f24ca6b9f897a816d4816f6cf362ab50419ed17836ac1453fdeb344d134adbc7",
+      "B013TGFGWS_A1F83G8C2ARO7P\\raw_1_0.json": "3a928f49683d3a29cad9be4e05b1e701a79089c3ad5db637700b0a3aeec7364b",
+      "B013TGFGWS_A1F83G8C2ARO7P\\raw_2_0.json": "bcf03eeb724f94456c2999783173eed1df3af144926318de36eadc7cd4f25920",
+      "B013TGFGWS_A1F83G8C2ARO7P\\round_0.json": "de87818fc17845539db3499acba87b5b746ab0c2d43e833306197d37f1085699",
+      "B013TGFGWS_A1F83G8C2ARO7P\\round_1.json": "3efa6285e10101ddaaea40a649f950e8de3fba8d21cd2a1a16994f70e7f0e91f",
+      "B013TGFGWS_A1F83G8C2ARO7P\\round_2.json": "cf3ed833af288ffbb69f5efecd1bf5b0ac34231c41fdaef10d1840b3e03e7502",
+      "B073WGP8XN\\evidence.json": "0210284c1b64b5e2382237de9782fd2a741d8502db8f3c6d12a837939864c607",
+      "B073WGP8XN\\raw_0_0.json": "710b647e4737f0ad070e042dfe202975dd562507e0c71baadf7da232fd1b3ed2",
+      "B073WGP8XN\\raw_1_0.json": "d1d88db137818b6350d632bf2337c545608edd778311a7ac663aaa7f4031ff07",
+      "B073WGP8XN\\raw_2_0.json": "9c47f4ac308ee42b887f9a274955a5b988c0f8393913d02e482d07db4bc9d571",
+      "B073WGP8XN\\round_0.json": "721c84fec2a653007a6c2864cbefd949b6a647a068f28ef32c31971dfbee35b7",
+      "B073WGP8XN\\round_1.json": "99948b9f2e203e8d8e66493c13babc98c5391e29781879dc268961d61563e729",
+      "B073WGP8XN\\round_2.json": "c6f5866844c260a2f5aa2c105a1fe310867ba8ffa688050bc70f13beabc44e35",
+      "B076YKYHCB_A1F83G8C2ARO7P\\evidence.json": "e9d7d1045fadb44daa40a129005347c42c0727714e0c3c9c9ee13d2c5943435c",
+      "B076YKYHCB_A1F83G8C2ARO7P\\raw_0_0.json": "956a9ac752965b4abde815e5c3217289a9d2e2ef340939a282c003900cae8a72",
+      "B076YKYHCB_A1F83G8C2ARO7P\\raw_1_0.json": "84187b08aa82f3989abb3d42d19ac544dafcd41d29fea0a5c1c850c367c49455",
+      "B076YKYHCB_A1F83G8C2ARO7P\\raw_2_0.json": "2bd6f8eaa91fb610d4fbab392f076b3437efb047e0a4fc4bd13cdc130aaf0302",
+      "B076YKYHCB_A1F83G8C2ARO7P\\round_0.json": "059ea753ff4fa979ebfe2178fe21f42e8e12d4026e5b1eb8f5ac32930196cd7f",
+      "B076YKYHCB_A1F83G8C2ARO7P\\round_1.json": "6714e365b92a852160c308f2e5df77e83d25764c610485397d17782bfcc2f292",
+      "B076YKYHCB_A1F83G8C2ARO7P\\round_2.json": "c7083a5f335ce0e6e28bb6ce07301ed7dcb16af48d73130eba69abe9937ed44a",
+      "B07B4G5RBN_ATVPDKIKX0DER\\evidence.json": "d5f66d7348c8bfdc7ca76b14b15c9ebe4e4fb0bb14c2c552d24c5d7757acc582",
+      "B07B4G5RBN_ATVPDKIKX0DER\\raw_0_0.json": "5d2aa9b1f22e6f62d926c1a5efb236193439e45f908ad59b0db87845ca89a8a2",
+      "B07B4G5RBN_ATVPDKIKX0DER\\raw_1_0.json": "df1d7ef288e1e8bcdd929de4c4997e3271bc0d04b91f46c73bc78ea26fc3254f",
+      "B07B4G5RBN_ATVPDKIKX0DER\\raw_2_0.json": "548ac197c834e9c4e6cfcc8012da8903585ebda05997c495d96528a2f6b1e6b1",
+      "B07B4G5RBN_ATVPDKIKX0DER\\round_0.json": "ca1e98130e98461b609c786eb11e51fc557f4421f7766327960e37189668af9a",
+      "B07B4G5RBN_ATVPDKIKX0DER\\round_1.json": "659b91f0081a5a95a8594017de575b8a44ac4303910a66a6bd60b327bec56e97",
+      "B07B4G5RBN_ATVPDKIKX0DER\\round_2.json": "8c1dbbf0c83ccb69f99faaccc11a97c1b28a4595d651db3b96b3985e4d040c12",
+      "B07WTFJGRG\\evidence.json": "95f5cf41b265440518dd3053959f47bf90ff5819a6e4f2bae93bba95037ad49e",
+      "B07WTFJGRG\\raw_0_0.json": "69a6ca06944dc06a1146774366fadd024732405c1ec0fa9ca09b37f254ad7973",
+      "B07WTFJGRG\\raw_1_0.json": "8b2830d5dfc8bce7e0c38ba3420a75637c1a869cae32b035a04b380bf324a22c",
+      "B07WTFJGRG\\raw_2_0.json": "87f0a626304c28e05bcc17264175a764f0ca9f2462fc8987ca7e7957d45db02c",
+      "B07WTFJGRG\\round_0.json": "a8062a797d7dbc1d6deb93e0bc425ebe361b6918a224d07ea98cbc415d6946f3",
+      "B07WTFJGRG\\round_1.json": "1dc0e158f66b7e74b8f37ecdf64dc9a1d13b128ca9af42e52e12297426aefc5f",
+      "B07WTFJGRG\\round_2.json": "075c9aa3f7634f893a2e85946168e8128fda6e8e7c6b652cd606b9eab1532f43"
+    },
+    "physical_validation_replay": "fabric shell thickness 0.02 m outside material bounds [0.002, 0.005] m",
+    "selected_for_main_method": false,
+    "interpretation": "Repeated self-check answers were correlated; voting is not evidence of calibrated correctness. Material bounds are now validated by default. Part identity and core occupancy still need improved grounding."
+  }
 }

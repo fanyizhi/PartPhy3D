@@ -206,3 +206,42 @@ python -m tactile3d.experiments.ten_objects \
 The reference-mesh folder must contain `<scene_id>/model.glb`. The stage seals
 all predictions and fields before opening mass labels, retains unsuccessful
 objects in the requested cohort, and reports aggregate scores only when complete.
+
+
+### VLM construction integration pilot (2026-11-12)
+
+`python -m tactile3d.experiments.vlm_mass` integrates VLM structure proposals over
+fixed metric cells. It uses four actual azimuth-selected views plus two region
+evidence sheets, three saved self-check rounds, explicit per-region shell/core
+material volumes, and fixed density priors. Regions are geometric clusters,
+not established manufacturing parts. The surface-hints option supplies the old
+uncalibrated texture/material evidence separately from volumetric fractions.
+
+The exploratory unconstrained five-object run completed 15 valid-JSON queries.
+It did **not** improve accuracy: ADE was 16.4381 kg; replacing positive shell
+thicknesses with the existing material-prior means gave 12.7764 kg on exactly
+the same answers. Neither is selected as the full method. Records are appended
+to [the development audit](results/mass_integration_audit_20261112.json).
+Self-check repetition did not supply independent evidence of correctness.
+
+The run exposed a cloth-cover thickness of 0.02 m against its supplied material
+range [0.002, 0.005] m. The integrator now rejects such out-of-range positive
+thicknesses by default, retains the raw response and validation error, and allows
+one schema/physical-bound repair request. It never silently accepts or clips
+that value into a valid prediction. Remaining invalid hypotheses stop the run;
+a complete-cohort score is not produced by dropping objects. Explicit
+`--allow-unconstrained-thickness` is reserved for the diagnostic ablation.
+`--stage library` replays the same saved answers with library thickness means;
+it is a separate parameter-source ablation, not a measured-thickness correction.
+
+```bash
+python -m tactile3d.experiments.vlm_mass \
+  --root /path/to/abo_500 --assets /path/to/reference_meshes \
+  --geometry outputs/material_geometry_audit \
+  --model /path/to/Qwen3-VL-8B-Instruct \
+  --output outputs/vlm_construction --surface-hints
+```
+
+The next structural change must improve physical-part binding and distinguish
+upholstery volume from wood-frame domains, rather than treating repeated names
+or unconstrained numerical VLM outputs as physical ground truth.
