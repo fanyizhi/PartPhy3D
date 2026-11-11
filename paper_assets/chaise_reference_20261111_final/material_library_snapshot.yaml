@@ -1,0 +1,40 @@
+materials:
+  foam:
+    density_kg_m3: {mean: 65.0, std: 30.0, min: 15.0, max: 180.0}
+    youngs_modulus_pa: {mean: 2.0e6, std: 1.0e6, min: 1.0e5, max: 8.0e6}
+  rubber:
+    density_kg_m3: {mean: 1100.0, std: 180.0, min: 850.0, max: 1500.0}
+    youngs_modulus_pa: {mean: 8.0e6, std: 4.0e6, min: 1.0e6, max: 3.0e7}
+  plastic:
+    density_kg_m3: {mean: 1050.0, std: 120.0, min: 850.0, max: 1350.0}
+    youngs_modulus_pa: {mean: 2.2e9, std: 8.0e8, min: 5.0e8, max: 4.5e9}
+  wood:
+    density_kg_m3: {mean: 650.0, std: 180.0, min: 300.0, max: 950.0}
+    youngs_modulus_pa: {mean: 1.0e10, std: 4.0e9, min: 2.0e9, max: 1.8e10}
+  aluminum:
+    density_kg_m3: {mean: 2700.0, std: 80.0, min: 2500.0, max: 2850.0}
+    youngs_modulus_pa: {mean: 6.9e10, std: 5.0e9, min: 5.5e10, max: 8.0e10}
+  steel:
+    density_kg_m3: {mean: 7850.0, std: 180.0, min: 7400.0, max: 8200.0}
+    youngs_modulus_pa: {mean: 2.0e11, std: 1.5e10, min: 1.6e11, max: 2.2e11}
+  glass:
+    density_kg_m3: {mean: 2500.0, std: 180.0, min: 2100.0, max: 2900.0}
+    youngs_modulus_pa: {mean: 7.0e10, std: 1.2e10, min: 4.0e10, max: 9.5e10}
+  ceramic:
+    density_kg_m3: {mean: 2600.0, std: 450.0, min: 1700.0, max: 4200.0}
+    youngs_modulus_pa: {mean: 8.0e10, std: 3.0e10, min: 2.0e10, max: 1.8e11}
+  silicone:
+    density_kg_m3: {mean: 1100.0, std: 120.0, min: 850.0, max: 1350.0}
+    youngs_modulus_pa: {mean: 2.5e6, std: 2.0e6, min: 1.0e5, max: 1.2e7}
+  paper_cardboard:
+    density_kg_m3: {mean: 550.0, std: 220.0, min: 120.0, max: 1100.0}
+    youngs_modulus_pa: {mean: 1.5e9, std: 1.0e9, min: 1.0e8, max: 6.0e9}
+  fabric:
+    density_kg_m3: {mean: 350.0, std: 220.0, min: 60.0, max: 1200.0}
+    youngs_modulus_pa: {mean: 1.0e8, std: 1.2e8, min: 1.0e6, max: 8.0e8}
+  leather:
+    density_kg_m3: {mean: 860.0, std: 140.0, min: 550.0, max: 1200.0}
+    youngs_modulus_pa: {mean: 3.0e8, std: 2.0e8, min: 2.0e7, max: 1.2e9}
+  stone:
+    density_kg_m3: {mean: 2700.0, std: 350.0, min: 1900.0, max: 3600.0}
+    youngs_modulus_pa: {mean: 5.0e10, std: 2.0e10, min: 1.0e10, max: 1.1e11}

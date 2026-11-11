@@ -1,0 +1,173 @@
+[
+  {
+    "prompt": "Estimate typical material-property PRIORS for these already identified surface materials: [\"fabric\", \"wood\"]. These are conditional nominal estimates, not measurements and not whole-upholstery effective properties. Give reasonable numeric central values and broad ranges for density and Young's modulus when a material-level value is meaningful. For wood use longitudinal modulus, unknown species. For textile use an explicitly assumed effective in-plane tensile modulus. Define friction as static friction for a clean DRY stainless-steel slider against this material under light contact at room temperature. State that exact surface finish is unresolved. Define hardness using Shore D only when meaningful; textile has no useful bulk Shore D hardness and must be null. Do not copy null schema examples for all other properties. Return JSON {materials:[{name:string, density_kg_m3:number, density_range:[low,high], youngs_modulus_pa:number or null, modulus_direction:string, friction_coefficient:number or null, friction_contact_pair:'dry stainless steel slider / material', hardness_value:number or null, hardness_scale:'Shore D' or null, assumptions:string}]}. Do not fabricate a literature citation.",
+    "response": {
+      "text": "{\n  \"materials\": [\n    {\n      \"name\": \"fabric\",\n      \"density_kg_m3\": 500,\n      \"density_range\": [300, 700],\n      \"youngs_modulus_pa\": 200000000,\n      \"modulus_direction\": \"in-plane tensile\",\n      \"friction_coefficient\": 0.4,\n      \"friction_contact_pair\": \"dry stainless steel slider / material\",\n      \"hardness_value\": null,\n      \"hardness_scale\": null,\n      \"assumptions\": \"Assumed effective in-plane tensile modulus for woven textile; friction coefficient for dry slider on textile surface under light contact; surface finish unresolved.\"\n    },\n    {\n      \"name\": \"wood\",\n      \"density_kg_m3\": 600,\n      \"density_range\": [400, 800],\n      \"youngs_modulus_pa\": 10000000000,\n      \"modulus_direction\": \"longitudinal\",\n      \"friction_coefficient\": 0.5,\n      \"friction_contact_pair\": \"dry stainless steel slider / material\",\n      \"hardness_value\": null,\n      \"hardness_scale\": null,\n      \"assumptions\": \"Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.\"\n    }\n  ]\n}",
+      "seconds": 16.191389332991093,
+      "input_tokens": 395,
+      "output_tokens": 304,
+      "peak_gpu_bytes": 6590391296,
+      "preprocess_seconds": 0.07487864512950182,
+      "image_grid_thw": [
+        [
+          1,
+          24,
+          24
+        ]
+      ],
+      "generation_seed": 891,
+      "do_sample": true,
+      "temperature": 0.7,
+      "top_p": 0.9
+    },
+    "valid": true,
+    "answer": {
+      "materials": [
+        {
+          "name": "fabric",
+          "density_kg_m3": 500,
+          "density_range": [
+            300,
+            700
+          ],
+          "youngs_modulus_pa": 200000000,
+          "modulus_direction": "in-plane tensile",
+          "friction_coefficient": 0.4,
+          "friction_contact_pair": "dry stainless steel slider / material",
+          "hardness_value": null,
+          "hardness_scale": null,
+          "assumptions": "Assumed effective in-plane tensile modulus for woven textile; friction coefficient for dry slider on textile surface under light contact; surface finish unresolved."
+        },
+        {
+          "name": "wood",
+          "density_kg_m3": 600,
+          "density_range": [
+            400,
+            800
+          ],
+          "youngs_modulus_pa": 10000000000,
+          "modulus_direction": "longitudinal",
+          "friction_coefficient": 0.5,
+          "friction_contact_pair": "dry stainless steel slider / material",
+          "hardness_value": null,
+          "hardness_scale": null,
+          "assumptions": "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved."
+        }
+      ]
+    }
+  },
+  {
+    "prompt": "Estimate typical material-property PRIORS for these already identified surface materials: [\"fabric\", \"wood\"]. These are conditional nominal estimates, not measurements and not whole-upholstery effective properties. Give reasonable numeric central values and broad ranges for density and Young's modulus when a material-level value is meaningful. For wood use longitudinal modulus, unknown species. For textile use an explicitly assumed effective in-plane tensile modulus. Define friction as static friction for a clean DRY stainless-steel slider against this material under light contact at room temperature. State that exact surface finish is unresolved. Define hardness using Shore D only when meaningful; textile has no useful bulk Shore D hardness and must be null. Do not copy null schema examples for all other properties. Return JSON {materials:[{name:string, density_kg_m3:number, density_range:[low,high], youngs_modulus_pa:number or null, modulus_direction:string, friction_coefficient:number or null, friction_contact_pair:'dry stainless steel slider / material', hardness_value:number or null, hardness_scale:'Shore D' or null, assumptions:string}]}. Do not fabricate a literature citation.",
+    "response": {
+      "text": "{\n  \"materials\": [\n    {\n      \"name\": \"fabric\",\n      \"density_kg_m3\": 500,\n      \"density_range\": [300, 800],\n      \"youngs_modulus_pa\": 10000000,\n      \"modulus_direction\": \"in-plane\",\n      \"friction_coefficient\": 0.4,\n      \"friction_contact_pair\": \"dry stainless steel slider / material\",\n      \"hardness_value\": null,\n      \"hardness_scale\": null,\n      \"assumptions\": \"Assumed effective in-plane tensile modulus for woven upholstery fabric; friction coefficient for dry slider on fabric surface under light contact; surface finish unresolved.\"\n    },\n    {\n      \"name\": \"wood\",\n      \"density_kg_m3\": 600,\n      \"density_range\": [400, 850],\n      \"youngs_modulus_pa\": 10000000000,\n      \"modulus_direction\": \"longitudinal\",\n      \"friction_coefficient\": 0.3,\n      \"friction_contact_pair\": \"dry stainless steel slider / material\",\n      \"hardness_value\": null,\n      \"hardness_scale\": null,\n      \"assumptions\": \"Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.\"\n    }\n  ]\n}",
+      "seconds": 15.562259619124234,
+      "input_tokens": 395,
+      "output_tokens": 302,
+      "peak_gpu_bytes": 6591484928,
+      "preprocess_seconds": 0.03165845666080713,
+      "image_grid_thw": [
+        [
+          1,
+          24,
+          24
+        ]
+      ],
+      "generation_seed": 892,
+      "do_sample": true,
+      "temperature": 0.7,
+      "top_p": 0.9
+    },
+    "valid": true,
+    "answer": {
+      "materials": [
+        {
+          "name": "fabric",
+          "density_kg_m3": 500,
+          "density_range": [
+            300,
+            800
+          ],
+          "youngs_modulus_pa": 10000000,
+          "modulus_direction": "in-plane",
+          "friction_coefficient": 0.4,
+          "friction_contact_pair": "dry stainless steel slider / material",
+          "hardness_value": null,
+          "hardness_scale": null,
+          "assumptions": "Assumed effective in-plane tensile modulus for woven upholstery fabric; friction coefficient for dry slider on fabric surface under light contact; surface finish unresolved."
+        },
+        {
+          "name": "wood",
+          "density_kg_m3": 600,
+          "density_range": [
+            400,
+            850
+          ],
+          "youngs_modulus_pa": 10000000000,
+          "modulus_direction": "longitudinal",
+          "friction_coefficient": 0.3,
+          "friction_contact_pair": "dry stainless steel slider / material",
+          "hardness_value": null,
+          "hardness_scale": null,
+          "assumptions": "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved."
+        }
+      ]
+    }
+  },
+  {
+    "prompt": "Estimate typical material-property PRIORS for these already identified surface materials: [\"fabric\", \"wood\"]. These are conditional nominal estimates, not measurements and not whole-upholstery effective properties. Give reasonable numeric central values and broad ranges for density and Young's modulus when a material-level value is meaningful. For wood use longitudinal modulus, unknown species. For textile use an explicitly assumed effective in-plane tensile modulus. Define friction as static friction for a clean DRY stainless-steel slider against this material under light contact at room temperature. State that exact surface finish is unresolved. Define hardness using Shore D only when meaningful; textile has no useful bulk Shore D hardness and must be null. Do not copy null schema examples for all other properties. Return JSON {materials:[{name:string, density_kg_m3:number, density_range:[low,high], youngs_modulus_pa:number or null, modulus_direction:string, friction_coefficient:number or null, friction_contact_pair:'dry stainless steel slider / material', hardness_value:number or null, hardness_scale:'Shore D' or null, assumptions:string}]}. Do not fabricate a literature citation.",
+    "response": {
+      "text": "{\n  \"materials\": [\n    {\n      \"name\": \"fabric\",\n      \"density_kg_m3\": 600,\n      \"density_range\": [400, 800],\n      \"youngs_modulus_pa\": 150000000,\n      \"modulus_direction\": \"in-plane tensile\",\n      \"friction_coefficient\": 0.4,\n      \"friction_contact_pair\": \"dry stainless steel slider / material\",\n      \"hardness_value\": null,\n      \"hardness_scale\": null,\n      \"assumptions\": \"Assumed effective in-plane tensile modulus for woven textile under light contact; friction coefficient for dry slider on fabric surface; surface finish unresolved.\"\n    },\n    {\n      \"name\": \"wood\",\n      \"density_kg_m3\": 500,\n      \"density_range\": [300, 700],\n      \"youngs_modulus_pa\": 11000000000,\n      \"modulus_direction\": \"longitudinal\",\n      \"friction_coefficient\": 0.3,\n      \"friction_contact_pair\": \"dry stainless steel slider / material\",\n      \"hardness_value\": null,\n      \"hardness_scale\": null,\n      \"assumptions\": \"Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface; surface finish unresolved.\"\n    }\n  ]\n}",
+      "seconds": 15.525177176110446,
+      "input_tokens": 395,
+      "output_tokens": 301,
+      "peak_gpu_bytes": 6591484928,
+      "preprocess_seconds": 0.029647905845195055,
+      "image_grid_thw": [
+        [
+          1,
+          24,
+          24
+        ]
+      ],
+      "generation_seed": 893,
+      "do_sample": true,
+      "temperature": 0.7,
+      "top_p": 0.9
+    },
+    "valid": true,
+    "answer": {
+      "materials": [
+        {
+          "name": "fabric",
+          "density_kg_m3": 600,
+          "density_range": [
+            400,
+            800
+          ],
+          "youngs_modulus_pa": 150000000,
+          "modulus_direction": "in-plane tensile",
+          "friction_coefficient": 0.4,
+          "friction_contact_pair": "dry stainless steel slider / material",
+          "hardness_value": null,
+          "hardness_scale": null,
+          "assumptions": "Assumed effective in-plane tensile modulus for woven textile under light contact; friction coefficient for dry slider on fabric surface; surface finish unresolved."
+        },
+        {
+          "name": "wood",
+          "density_kg_m3": 500,
+          "density_range": [
+            300,
+            700
+          ],
+          "youngs_modulus_pa": 11000000000,
+          "modulus_direction": "longitudinal",
+          "friction_coefficient": 0.3,
+          "friction_contact_pair": "dry stainless steel slider / material",
+          "hardness_value": null,
+          "hardness_scale": null,
+          "assumptions": "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface; surface finish unresolved."
+        }
+      ]
+    }
+  }
+]

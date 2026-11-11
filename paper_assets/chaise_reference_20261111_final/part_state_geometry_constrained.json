@@ -1,0 +1,881 @@
+{
+  "schema": "object/part/construction_region/mesh_support",
+  "version": 2,
+  "geometry_sha256": "a7e24feda7bc9c864edd3a511e7b00dc45ce09974b5f3baba1a739673e9cb3a7",
+  "parts": [
+    {
+      "component_id": 0,
+      "part_name": "cushion_0",
+      "surface_material": "fabric",
+      "construction": "upholstered",
+      "contains_macroscopic_cavity": "no",
+      "evidence": "Visible in top view as the curved backrest, covered in gray fabric, matching the seat upholstery.",
+      "construction_votes": {
+        "upholstered": 3
+      },
+      "support": 3,
+      "samples": 3,
+      "material_votes": {
+        "fabric": 3
+      },
+      "part_id": "part_000",
+      "instance_version": 2,
+      "functional_role": "cushion",
+      "vlm_original_part_name": "Headrest Back Panel",
+      "role_evidence": [
+        "separate closed upholstered region",
+        "upright cushion proportions"
+      ],
+      "role_source": "category-conditioned geometric constraints",
+      "anchor_m": [
+        0.002958133816719055,
+        -0.5911235213279724,
+        0.6322400569915771
+      ],
+      "material_parameters": {
+        "source": "VLM typical-material prior, not measured",
+        "density_kg_m3": 500.0,
+        "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+        "youngs_modulus_pa": 150000000.0,
+        "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+        "friction_coefficient": 0.4,
+        "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+        "hardness_records": [],
+        "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+        "assumptions": [
+          "Assumed effective in-plane tensile modulus for woven textile; friction coefficient for dry slider on textile surface under light contact; surface finish unresolved.",
+          "Assumed effective in-plane tensile modulus for woven upholstery fabric; friction coefficient for dry slider on fabric surface under light contact; surface finish unresolved.",
+          "Assumed effective in-plane tensile modulus for woven textile under light contact; friction coefficient for dry slider on fabric surface; surface finish unresolved."
+        ]
+      }
+    },
+    {
+      "component_id": 1,
+      "part_name": "seat_1",
+      "surface_material": "fabric",
+      "construction": "upholstered",
+      "contains_macroscopic_cavity": "no",
+      "evidence": "The separate, rectangular pillow with a visible seam, placed against the headrest back.",
+      "construction_votes": {
+        "upholstered": 3
+      },
+      "support": 3,
+      "samples": 3,
+      "material_votes": {
+        "fabric": 3
+      },
+      "part_id": "part_001",
+      "instance_version": 2,
+      "functional_role": "seat",
+      "vlm_original_part_name": "Headrest Pillow",
+      "role_evidence": [
+        "broad horizontal support"
+      ],
+      "role_source": "category-conditioned geometric constraints",
+      "anchor_m": [
+        0.0,
+        0.11396780610084534,
+        0.33559881150722504
+      ],
+      "material_parameters": {
+        "source": "VLM typical-material prior, not measured",
+        "density_kg_m3": 500.0,
+        "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+        "youngs_modulus_pa": 150000000.0,
+        "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+        "friction_coefficient": 0.4,
+        "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+        "hardness_records": [],
+        "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+        "assumptions": [
+          "Assumed effective in-plane tensile modulus for woven textile; friction coefficient for dry slider on textile surface under light contact; surface finish unresolved.",
+          "Assumed effective in-plane tensile modulus for woven upholstery fabric; friction coefficient for dry slider on fabric surface under light contact; surface finish unresolved.",
+          "Assumed effective in-plane tensile modulus for woven textile under light contact; friction coefficient for dry slider on fabric surface; surface finish unresolved."
+        ]
+      }
+    },
+    {
+      "component_id": 2,
+      "part_name": "backrest_2",
+      "surface_material": "fabric",
+      "construction": "upholstered",
+      "contains_macroscopic_cavity": "no",
+      "evidence": "The curved panel forming the back of the armrest, upholstered in gray fabric.",
+      "construction_votes": {
+        "upholstered": 3
+      },
+      "support": 3,
+      "samples": 3,
+      "material_votes": {
+        "fabric": 3
+      },
+      "part_id": "part_002",
+      "instance_version": 2,
+      "functional_role": "backrest",
+      "vlm_original_part_name": "Armrest Back Panel",
+      "role_evidence": [
+        "wide upright panel"
+      ],
+      "role_source": "category-conditioned geometric constraints",
+      "anchor_m": [
+        0.0,
+        -0.7432918548583984,
+        0.6026380658149719
+      ],
+      "material_parameters": {
+        "source": "VLM typical-material prior, not measured",
+        "density_kg_m3": 500.0,
+        "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+        "youngs_modulus_pa": 150000000.0,
+        "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+        "friction_coefficient": 0.4,
+        "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+        "hardness_records": [],
+        "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+        "assumptions": [
+          "Assumed effective in-plane tensile modulus for woven textile; friction coefficient for dry slider on textile surface under light contact; surface finish unresolved.",
+          "Assumed effective in-plane tensile modulus for woven upholstery fabric; friction coefficient for dry slider on fabric surface under light contact; surface finish unresolved.",
+          "Assumed effective in-plane tensile modulus for woven textile under light contact; friction coefficient for dry slider on fabric surface; surface finish unresolved."
+        ]
+      }
+    },
+    {
+      "component_id": 3,
+      "part_name": "armrest_3",
+      "surface_material": "fabric",
+      "construction": "upholstered",
+      "contains_macroscopic_cavity": "no",
+      "evidence": "The side panel of the armrest, upholstered in gray fabric, visible from the side view.",
+      "construction_votes": {
+        "upholstered": 3
+      },
+      "support": 3,
+      "samples": 3,
+      "material_votes": {
+        "fabric": 3
+      },
+      "part_id": "part_003",
+      "instance_version": 2,
+      "functional_role": "armrest",
+      "vlm_original_part_name": "Armrest Side Panel",
+      "role_evidence": [
+        "lateral placement",
+        "narrow transverse extent"
+      ],
+      "role_source": "category-conditioned geometric constraints",
+      "anchor_m": [
+        -0.3742799162864685,
+        -0.4794917069375515,
+        0.4143471121788025
+      ],
+      "material_parameters": {
+        "source": "VLM typical-material prior, not measured",
+        "density_kg_m3": 500.0,
+        "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+        "youngs_modulus_pa": 150000000.0,
+        "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+        "friction_coefficient": 0.4,
+        "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+        "hardness_records": [],
+        "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+        "assumptions": [
+          "Assumed effective in-plane tensile modulus for woven textile; friction coefficient for dry slider on textile surface under light contact; surface finish unresolved.",
+          "Assumed effective in-plane tensile modulus for woven upholstery fabric; friction coefficient for dry slider on fabric surface under light contact; surface finish unresolved.",
+          "Assumed effective in-plane tensile modulus for woven textile under light contact; friction coefficient for dry slider on fabric surface; surface finish unresolved."
+        ]
+      }
+    },
+    {
+      "component_id": 4,
+      "part_name": "armrest_4",
+      "surface_material": "fabric",
+      "construction": "upholstered",
+      "contains_macroscopic_cavity": "no",
+      "evidence": "The front panel of the armrest, upholstered in gray fabric, forming the transition to the seat.",
+      "construction_votes": {
+        "upholstered": 3
+      },
+      "support": 3,
+      "samples": 3,
+      "material_votes": {
+        "fabric": 3
+      },
+      "part_id": "part_004",
+      "instance_version": 2,
+      "functional_role": "armrest",
+      "vlm_original_part_name": "Armrest Front Panel",
+      "role_evidence": [
+        "lateral placement",
+        "narrow transverse extent"
+      ],
+      "role_source": "category-conditioned geometric constraints",
+      "anchor_m": [
+        0.37505681812763214,
+        -0.4794917069375515,
+        0.4143471121788025
+      ],
+      "material_parameters": {
+        "source": "VLM typical-material prior, not measured",
+        "density_kg_m3": 500.0,
+        "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+        "youngs_modulus_pa": 150000000.0,
+        "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+        "friction_coefficient": 0.4,
+        "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+        "hardness_records": [],
+        "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+        "assumptions": [
+          "Assumed effective in-plane tensile modulus for woven textile; friction coefficient for dry slider on textile surface under light contact; surface finish unresolved.",
+          "Assumed effective in-plane tensile modulus for woven upholstery fabric; friction coefficient for dry slider on fabric surface under light contact; surface finish unresolved.",
+          "Assumed effective in-plane tensile modulus for woven textile under light contact; friction coefficient for dry slider on fabric surface; surface finish unresolved."
+        ]
+      }
+    },
+    {
+      "component_id": 5,
+      "part_name": "backrest_5",
+      "surface_material": "fabric",
+      "construction": "upholstered",
+      "contains_macroscopic_cavity": "no",
+      "evidence": "The large, flat back panel of the seat, upholstered in gray fabric, visible in side and top views.",
+      "construction_votes": {
+        "upholstered": 3
+      },
+      "support": 3,
+      "samples": 3,
+      "material_votes": {
+        "fabric": 3
+      },
+      "part_id": "part_005",
+      "instance_version": 2,
+      "functional_role": "backrest",
+      "vlm_original_part_name": "Seat Back Panel",
+      "role_evidence": [
+        "wide upright panel"
+      ],
+      "role_source": "category-conditioned geometric constraints",
+      "anchor_m": [
+        -0.0003403276205062866,
+        -0.8742398619651794,
+        0.5214746370911598
+      ],
+      "material_parameters": {
+        "source": "VLM typical-material prior, not measured",
+        "density_kg_m3": 500.0,
+        "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+        "youngs_modulus_pa": 150000000.0,
+        "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+        "friction_coefficient": 0.4,
+        "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+        "hardness_records": [],
+        "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+        "assumptions": [
+          "Assumed effective in-plane tensile modulus for woven textile; friction coefficient for dry slider on textile surface under light contact; surface finish unresolved.",
+          "Assumed effective in-plane tensile modulus for woven upholstery fabric; friction coefficient for dry slider on fabric surface under light contact; surface finish unresolved.",
+          "Assumed effective in-plane tensile modulus for woven textile under light contact; friction coefficient for dry slider on fabric surface; surface finish unresolved."
+        ]
+      }
+    },
+    {
+      "component_id": 6,
+      "part_name": "leg_6",
+      "surface_material": "wood",
+      "construction": "solid",
+      "contains_macroscopic_cavity": "no",
+      "evidence": "The small, cylindrical wooden leg at the front left corner, visible in all views.",
+      "construction_votes": {
+        "solid": 3
+      },
+      "support": 3,
+      "samples": 3,
+      "material_votes": {
+        "wood": 3
+      },
+      "part_id": "part_006",
+      "instance_version": 2,
+      "functional_role": "leg",
+      "vlm_original_part_name": "Left Front Leg",
+      "role_evidence": [
+        "reaches common ground plane",
+        "elongated vertically"
+      ],
+      "role_source": "category-conditioned geometric constraints",
+      "anchor_m": [
+        -0.3998534381389618,
+        0.8049352765083313,
+        0.11462974548339844
+      ],
+      "material_parameters": {
+        "source": "VLM typical-material prior, not measured",
+        "density_kg_m3": 600.0,
+        "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+        "youngs_modulus_pa": 10000000000.0,
+        "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+        "friction_coefficient": 0.3,
+        "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+        "hardness_records": [],
+        "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+        "assumptions": [
+          "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+          "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+          "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface; surface finish unresolved."
+        ]
+      }
+    },
+    {
+      "component_id": 7,
+      "part_name": "leg_7",
+      "surface_material": "wood",
+      "construction": "solid",
+      "contains_macroscopic_cavity": "no",
+      "evidence": "The small, cylindrical wooden leg at the rear left corner, visible in all views.",
+      "construction_votes": {
+        "solid": 3
+      },
+      "support": 3,
+      "samples": 3,
+      "material_votes": {
+        "wood": 3
+      },
+      "part_id": "part_007",
+      "instance_version": 2,
+      "functional_role": "leg",
+      "vlm_original_part_name": "Left Rear Leg",
+      "role_evidence": [
+        "reaches common ground plane",
+        "elongated vertically"
+      ],
+      "role_source": "category-conditioned geometric constraints",
+      "anchor_m": [
+        -0.3998534381389618,
+        -0.8049354553222656,
+        0.11462974548339844
+      ],
+      "material_parameters": {
+        "source": "VLM typical-material prior, not measured",
+        "density_kg_m3": 600.0,
+        "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+        "youngs_modulus_pa": 10000000000.0,
+        "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+        "friction_coefficient": 0.3,
+        "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+        "hardness_records": [],
+        "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+        "assumptions": [
+          "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+          "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+          "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface; surface finish unresolved."
+        ]
+      }
+    },
+    {
+      "component_id": 8,
+      "part_name": "leg_8",
+      "surface_material": "wood",
+      "construction": "solid",
+      "contains_macroscopic_cavity": "no",
+      "evidence": "The small, cylindrical wooden leg at the front right corner, visible in all views.",
+      "construction_votes": {
+        "solid": 3
+      },
+      "support": 3,
+      "samples": 3,
+      "material_votes": {
+        "wood": 3
+      },
+      "part_id": "part_008",
+      "instance_version": 2,
+      "functional_role": "leg",
+      "vlm_original_part_name": "Right Front Leg",
+      "role_evidence": [
+        "reaches common ground plane",
+        "elongated vertically"
+      ],
+      "role_source": "category-conditioned geometric constraints",
+      "anchor_m": [
+        0.3998534381389618,
+        0.8049352765083313,
+        0.11462974548339844
+      ],
+      "material_parameters": {
+        "source": "VLM typical-material prior, not measured",
+        "density_kg_m3": 600.0,
+        "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+        "youngs_modulus_pa": 10000000000.0,
+        "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+        "friction_coefficient": 0.3,
+        "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+        "hardness_records": [],
+        "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+        "assumptions": [
+          "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+          "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+          "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface; surface finish unresolved."
+        ]
+      }
+    },
+    {
+      "component_id": 9,
+      "part_name": "leg_9",
+      "surface_material": "wood",
+      "construction": "solid",
+      "contains_macroscopic_cavity": "no",
+      "evidence": "The small, cylindrical wooden leg at the rear right corner, visible in all views.",
+      "construction_votes": {
+        "solid": 3
+      },
+      "support": 3,
+      "samples": 3,
+      "material_votes": {
+        "wood": 3
+      },
+      "part_id": "part_009",
+      "instance_version": 2,
+      "functional_role": "leg",
+      "vlm_original_part_name": "Right Rear Leg",
+      "role_evidence": [
+        "reaches common ground plane",
+        "elongated vertically"
+      ],
+      "role_source": "category-conditioned geometric constraints",
+      "anchor_m": [
+        0.3998534381389618,
+        -0.8049354553222656,
+        0.11462974548339844
+      ],
+      "material_parameters": {
+        "source": "VLM typical-material prior, not measured",
+        "density_kg_m3": 600.0,
+        "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+        "youngs_modulus_pa": 10000000000.0,
+        "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+        "friction_coefficient": 0.3,
+        "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+        "hardness_records": [],
+        "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+        "assumptions": [
+          "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+          "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+          "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface; surface finish unresolved."
+        ]
+      }
+    },
+    {
+      "component_id": 10,
+      "part_name": "frame_rail_10",
+      "surface_material": "wood",
+      "construction": "solid",
+      "contains_macroscopic_cavity": "no",
+      "evidence": "The long, flat wooden panel forming the base of the seat, visible from the side.",
+      "construction_votes": {
+        "solid": 2
+      },
+      "support": 2,
+      "samples": 3,
+      "material_votes": {
+        "wood": 2,
+        "fabric": 1
+      },
+      "part_id": "part_010",
+      "instance_version": 2,
+      "functional_role": "frame_rail",
+      "vlm_original_part_name": "Seat Frame Panel",
+      "role_evidence": [
+        "horizontal elongated support",
+        "does not reach ground"
+      ],
+      "role_source": "category-conditioned geometric constraints",
+      "anchor_m": [
+        -0.4114099144935608,
+        -8.940696716308594e-08,
+        0.2025512084364891
+      ],
+      "material_parameters": {
+        "source": "VLM typical-material prior, not measured",
+        "density_kg_m3": 600.0,
+        "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+        "youngs_modulus_pa": 10000000000.0,
+        "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+        "friction_coefficient": 0.3,
+        "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+        "hardness_records": [],
+        "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+        "assumptions": [
+          "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+          "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+          "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface; surface finish unresolved."
+        ]
+      }
+    },
+    {
+      "component_id": 11,
+      "part_name": "frame_rail_11",
+      "surface_material": "wood",
+      "construction": "solid",
+      "contains_macroscopic_cavity": "no",
+      "evidence": "The wooden side frame piece on the left, visible in side view.",
+      "construction_votes": {
+        "solid": 3
+      },
+      "support": 3,
+      "samples": 3,
+      "material_votes": {
+        "wood": 3
+      },
+      "part_id": "part_011",
+      "instance_version": 2,
+      "functional_role": "frame_rail",
+      "vlm_original_part_name": "Left Side Frame",
+      "role_evidence": [
+        "horizontal elongated support",
+        "does not reach ground"
+      ],
+      "role_source": "category-conditioned geometric constraints",
+      "anchor_m": [
+        -1.4901161193847656e-08,
+        0.8194272518157959,
+        0.2025512084364891
+      ],
+      "material_parameters": {
+        "source": "VLM typical-material prior, not measured",
+        "density_kg_m3": 600.0,
+        "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+        "youngs_modulus_pa": 10000000000.0,
+        "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+        "friction_coefficient": 0.3,
+        "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+        "hardness_records": [],
+        "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+        "assumptions": [
+          "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+          "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+          "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface; surface finish unresolved."
+        ]
+      }
+    },
+    {
+      "component_id": 12,
+      "part_name": "frame_rail_12",
+      "surface_material": "wood",
+      "construction": "solid",
+      "contains_macroscopic_cavity": "no",
+      "evidence": "The wooden side frame piece on the right, visible in side view.",
+      "construction_votes": {
+        "solid": 3
+      },
+      "support": 3,
+      "samples": 3,
+      "material_votes": {
+        "wood": 3
+      },
+      "part_id": "part_012",
+      "instance_version": 2,
+      "functional_role": "frame_rail",
+      "vlm_original_part_name": "Right Side Frame",
+      "role_evidence": [
+        "horizontal elongated support",
+        "does not reach ground"
+      ],
+      "role_source": "category-conditioned geometric constraints",
+      "anchor_m": [
+        -1.4901161193847656e-08,
+        -0.8206296563148499,
+        0.2025512084364891
+      ],
+      "material_parameters": {
+        "source": "VLM typical-material prior, not measured",
+        "density_kg_m3": 600.0,
+        "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+        "youngs_modulus_pa": 10000000000.0,
+        "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+        "friction_coefficient": 0.3,
+        "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+        "hardness_records": [],
+        "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+        "assumptions": [
+          "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+          "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+          "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface; surface finish unresolved."
+        ]
+      }
+    },
+    {
+      "component_id": 13,
+      "part_name": "frame_rail_13",
+      "surface_material": "wood",
+      "construction": "solid",
+      "contains_macroscopic_cavity": "no",
+      "evidence": "The wooden frame piece at the front, visible in side view.",
+      "construction_votes": {
+        "solid": 3
+      },
+      "support": 3,
+      "samples": 3,
+      "material_votes": {
+        "wood": 3
+      },
+      "part_id": "part_013",
+      "instance_version": 2,
+      "functional_role": "frame_rail",
+      "vlm_original_part_name": "Front Leg Frame",
+      "role_evidence": [
+        "horizontal elongated support",
+        "does not reach ground"
+      ],
+      "role_source": "category-conditioned geometric constraints",
+      "anchor_m": [
+        0.41225358843803406,
+        -8.940696716308594e-08,
+        0.2025512084364891
+      ],
+      "material_parameters": {
+        "source": "VLM typical-material prior, not measured",
+        "density_kg_m3": 600.0,
+        "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+        "youngs_modulus_pa": 10000000000.0,
+        "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+        "friction_coefficient": 0.3,
+        "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+        "hardness_records": [],
+        "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+        "assumptions": [
+          "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+          "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+          "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface; surface finish unresolved."
+        ]
+      }
+    },
+    {
+      "component_id": 14,
+      "part_name": "underside_14",
+      "surface_material": "wood",
+      "construction": "solid",
+      "contains_macroscopic_cavity": "no",
+      "evidence": "The wooden frame piece at the back, visible in side view.",
+      "construction_votes": {
+        "solid": 3
+      },
+      "support": 3,
+      "samples": 3,
+      "material_votes": {
+        "wood": 3
+      },
+      "part_id": "part_014",
+      "instance_version": 2,
+      "functional_role": "underside",
+      "vlm_original_part_name": "Back Leg Frame",
+      "role_evidence": [
+        "near-planar horizontal sheet"
+      ],
+      "role_source": "category-conditioned geometric constraints",
+      "anchor_m": [
+        0.0,
+        0.0004528164863586426,
+        0.21932004392147064
+      ],
+      "material_parameters": {
+        "source": "VLM typical-material prior, not measured",
+        "density_kg_m3": 600.0,
+        "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+        "youngs_modulus_pa": 10000000000.0,
+        "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+        "friction_coefficient": 0.3,
+        "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+        "hardness_records": [],
+        "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+        "assumptions": [
+          "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+          "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+          "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface; surface finish unresolved."
+        ]
+      }
+    }
+  ],
+  "connections": [
+    {
+      "part_ids": [
+        "part_006",
+        "part_010"
+      ],
+      "relation": "geometric interface within 1 mm",
+      "surface_pair": {
+        "point_first_m": [
+          -0.42179393768310547,
+          0.7770248055458069,
+          0.22724983096122742
+        ],
+        "point_second_m": [
+          -0.42179393768310547,
+          0.7770248055458069,
+          0.22724983096122742
+        ],
+        "distance_m": 0.0,
+        "triangle_pair_candidates": 32,
+        "method": "triangle intersection / boundary minimum"
+      },
+      "mechanical_connection_verified": false
+    },
+    {
+      "part_ids": [
+        "part_006",
+        "part_011"
+      ],
+      "relation": "geometric interface within 1 mm",
+      "surface_pair": {
+        "point_first_m": [
+          -0.371942937374115,
+          0.8090431988239288,
+          0.22724983096122742
+        ],
+        "point_second_m": [
+          -0.371942937374115,
+          0.8090431988239288,
+          0.22724983096122742
+        ],
+        "distance_m": 0.0,
+        "triangle_pair_candidates": 41,
+        "method": "triangle intersection / boundary minimum"
+      },
+      "mechanical_connection_verified": false
+    },
+    {
+      "part_ids": [
+        "part_007",
+        "part_010"
+      ],
+      "relation": "geometric interface within 1 mm",
+      "surface_pair": {
+        "point_first_m": [
+          -0.42179393768310547,
+          -0.7770249843597412,
+          0.22724983096122742
+        ],
+        "point_second_m": [
+          -0.42179393768310547,
+          -0.7770249843597412,
+          0.22724983096122742
+        ],
+        "distance_m": 0.0,
+        "triangle_pair_candidates": 32,
+        "method": "triangle intersection / boundary minimum"
+      },
+      "mechanical_connection_verified": false
+    },
+    {
+      "part_ids": [
+        "part_007",
+        "part_012"
+      ],
+      "relation": "geometric interface within 1 mm",
+      "surface_pair": {
+        "point_first_m": [
+          -0.371942937374115,
+          -0.8102456033229828,
+          0.22724983096122742
+        ],
+        "point_second_m": [
+          -0.371942937374115,
+          -0.8102456033229828,
+          0.22724983096122742
+        ],
+        "distance_m": 0.0,
+        "triangle_pair_candidates": 35,
+        "method": "triangle intersection / boundary minimum"
+      },
+      "mechanical_connection_verified": false
+    },
+    {
+      "part_ids": [
+        "part_008",
+        "part_011"
+      ],
+      "relation": "geometric interface within 1 mm",
+      "surface_pair": {
+        "point_first_m": [
+          0.371942937374115,
+          0.8298112154006958,
+          0.22724983096122742
+        ],
+        "point_second_m": [
+          0.371942937374115,
+          0.8298112154006958,
+          0.22724983096122742
+        ],
+        "distance_m": 0.0,
+        "triangle_pair_candidates": 41,
+        "method": "triangle intersection / boundary minimum"
+      },
+      "mechanical_connection_verified": false
+    },
+    {
+      "part_ids": [
+        "part_008",
+        "part_013"
+      ],
+      "relation": "geometric interface within 1 mm",
+      "surface_pair": {
+        "point_first_m": [
+          0.42263761162757874,
+          0.7770248055458069,
+          0.22724983096122742
+        ],
+        "point_second_m": [
+          0.42263761162757874,
+          0.7770248055458069,
+          0.22724983096122742
+        ],
+        "distance_m": 0.0,
+        "triangle_pair_candidates": 32,
+        "method": "triangle intersection / boundary minimum"
+      },
+      "mechanical_connection_verified": false
+    },
+    {
+      "part_ids": [
+        "part_009",
+        "part_012"
+      ],
+      "relation": "geometric interface within 1 mm",
+      "surface_pair": {
+        "point_first_m": [
+          0.371942937374115,
+          -0.8308361768722534,
+          0.17767518758773804
+        ],
+        "point_second_m": [
+          0.371942937374115,
+          -0.8308361768722534,
+          0.17767518758773804
+        ],
+        "distance_m": 0.0,
+        "triangle_pair_candidates": 35,
+        "method": "triangle intersection / boundary minimum"
+      },
+      "mechanical_connection_verified": false
+    },
+    {
+      "part_ids": [
+        "part_009",
+        "part_013"
+      ],
+      "relation": "geometric interface within 1 mm",
+      "surface_pair": {
+        "point_first_m": [
+          0.42263761162757874,
+          -0.7770249843597412,
+          0.22724983096122742
+        ],
+        "point_second_m": [
+          0.42263761162757874,
+          -0.7770249843597412,
+          0.22724983096122742
+        ],
+        "distance_m": 0.0,
+        "triangle_pair_candidates": 32,
+        "method": "triangle intersection / boundary minimum"
+      },
+      "mechanical_connection_verified": false
+    }
+  ],
+  "role_predictions_use_evaluation_annotations": false
+}

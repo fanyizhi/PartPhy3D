@@ -1,0 +1,373 @@
+{
+  "scope": "one previously exposed reference object; development ablation",
+  "original_views": 4,
+  "vlm_calls": 3,
+  "vlm_and_fusion_reuse_identical_raw_answers": true,
+  "mesh_geometry_receives_rgb_or_vlm_materials": false,
+  "geometry_baseline": "same geometry rules with appearance gating removed",
+  "metrics": [
+    {
+      "method": "mesh_geometry",
+      "role_accuracy": 0.8666666666666667,
+      "component_count": 15,
+      "correct_components": 13
+    },
+    {
+      "method": "vlm",
+      "role_accuracy": 0.5333333333333333,
+      "component_count": 15,
+      "correct_components": 8
+    },
+    {
+      "method": "fusion",
+      "role_accuracy": 1.0,
+      "component_count": 15,
+      "correct_components": 15
+    }
+  ],
+  "predictions": {
+    "mesh_geometry": [
+      {
+        "component_id": 0,
+        "role": "cushion",
+        "surface_material": null,
+        "evidence": [
+          "separate closed upholstered region",
+          "upright cushion proportions"
+        ]
+      },
+      {
+        "component_id": 1,
+        "role": "seat",
+        "surface_material": null,
+        "evidence": [
+          "broad horizontal support"
+        ]
+      },
+      {
+        "component_id": 2,
+        "role": "backrest",
+        "surface_material": null,
+        "evidence": [
+          "wide upright panel"
+        ]
+      },
+      {
+        "component_id": 3,
+        "role": "frame_rail",
+        "surface_material": null,
+        "evidence": [
+          "horizontal elongated support",
+          "does not reach ground"
+        ]
+      },
+      {
+        "component_id": 4,
+        "role": "frame_rail",
+        "surface_material": null,
+        "evidence": [
+          "horizontal elongated support",
+          "does not reach ground"
+        ]
+      },
+      {
+        "component_id": 5,
+        "role": "backrest",
+        "surface_material": null,
+        "evidence": [
+          "wide upright panel"
+        ]
+      },
+      {
+        "component_id": 6,
+        "role": "leg",
+        "surface_material": null,
+        "evidence": [
+          "reaches common ground plane",
+          "elongated vertically"
+        ]
+      },
+      {
+        "component_id": 7,
+        "role": "leg",
+        "surface_material": null,
+        "evidence": [
+          "reaches common ground plane",
+          "elongated vertically"
+        ]
+      },
+      {
+        "component_id": 8,
+        "role": "leg",
+        "surface_material": null,
+        "evidence": [
+          "reaches common ground plane",
+          "elongated vertically"
+        ]
+      },
+      {
+        "component_id": 9,
+        "role": "leg",
+        "surface_material": null,
+        "evidence": [
+          "reaches common ground plane",
+          "elongated vertically"
+        ]
+      },
+      {
+        "component_id": 10,
+        "role": "frame_rail",
+        "surface_material": null,
+        "evidence": [
+          "horizontal elongated support",
+          "does not reach ground"
+        ]
+      },
+      {
+        "component_id": 11,
+        "role": "frame_rail",
+        "surface_material": null,
+        "evidence": [
+          "horizontal elongated support",
+          "does not reach ground"
+        ]
+      },
+      {
+        "component_id": 12,
+        "role": "frame_rail",
+        "surface_material": null,
+        "evidence": [
+          "horizontal elongated support",
+          "does not reach ground"
+        ]
+      },
+      {
+        "component_id": 13,
+        "role": "frame_rail",
+        "surface_material": null,
+        "evidence": [
+          "horizontal elongated support",
+          "does not reach ground"
+        ]
+      },
+      {
+        "component_id": 14,
+        "role": "underside",
+        "surface_material": null,
+        "evidence": [
+          "near-planar horizontal sheet"
+        ]
+      }
+    ],
+    "vlm": [
+      {
+        "component_id": 0,
+        "role": "backrest",
+        "surface_material": "fabric"
+      },
+      {
+        "component_id": 1,
+        "role": "seat",
+        "surface_material": "fabric"
+      },
+      {
+        "component_id": 2,
+        "role": "backrest",
+        "surface_material": "fabric"
+      },
+      {
+        "component_id": 3,
+        "role": "backrest",
+        "surface_material": "fabric"
+      },
+      {
+        "component_id": 4,
+        "role": "backrest",
+        "surface_material": "fabric"
+      },
+      {
+        "component_id": 5,
+        "role": "backrest",
+        "surface_material": "fabric"
+      },
+      {
+        "component_id": 6,
+        "role": "leg",
+        "surface_material": "wood"
+      },
+      {
+        "component_id": 7,
+        "role": "leg",
+        "surface_material": "wood"
+      },
+      {
+        "component_id": 8,
+        "role": "leg",
+        "surface_material": "wood"
+      },
+      {
+        "component_id": 9,
+        "role": "leg",
+        "surface_material": "wood"
+      },
+      {
+        "component_id": 10,
+        "role": "frame_rail",
+        "surface_material": "wood"
+      },
+      {
+        "component_id": 11,
+        "role": "leg",
+        "surface_material": "wood"
+      },
+      {
+        "component_id": 12,
+        "role": "leg",
+        "surface_material": "wood"
+      },
+      {
+        "component_id": 13,
+        "role": "leg",
+        "surface_material": "wood"
+      },
+      {
+        "component_id": 14,
+        "role": "frame_rail",
+        "surface_material": "wood"
+      }
+    ],
+    "fusion": [
+      {
+        "component_id": 0,
+        "role": "cushion",
+        "surface_material": "fabric",
+        "evidence": [
+          "separate closed upholstered region",
+          "upright cushion proportions"
+        ]
+      },
+      {
+        "component_id": 1,
+        "role": "seat",
+        "surface_material": "fabric",
+        "evidence": [
+          "broad horizontal support"
+        ]
+      },
+      {
+        "component_id": 2,
+        "role": "backrest",
+        "surface_material": "fabric",
+        "evidence": [
+          "wide upright panel"
+        ]
+      },
+      {
+        "component_id": 3,
+        "role": "armrest",
+        "surface_material": "fabric",
+        "evidence": [
+          "lateral placement",
+          "narrow transverse extent"
+        ]
+      },
+      {
+        "component_id": 4,
+        "role": "armrest",
+        "surface_material": "fabric",
+        "evidence": [
+          "lateral placement",
+          "narrow transverse extent"
+        ]
+      },
+      {
+        "component_id": 5,
+        "role": "backrest",
+        "surface_material": "fabric",
+        "evidence": [
+          "wide upright panel"
+        ]
+      },
+      {
+        "component_id": 6,
+        "role": "leg",
+        "surface_material": "wood",
+        "evidence": [
+          "reaches common ground plane",
+          "elongated vertically"
+        ]
+      },
+      {
+        "component_id": 7,
+        "role": "leg",
+        "surface_material": "wood",
+        "evidence": [
+          "reaches common ground plane",
+          "elongated vertically"
+        ]
+      },
+      {
+        "component_id": 8,
+        "role": "leg",
+        "surface_material": "wood",
+        "evidence": [
+          "reaches common ground plane",
+          "elongated vertically"
+        ]
+      },
+      {
+        "component_id": 9,
+        "role": "leg",
+        "surface_material": "wood",
+        "evidence": [
+          "reaches common ground plane",
+          "elongated vertically"
+        ]
+      },
+      {
+        "component_id": 10,
+        "role": "frame_rail",
+        "surface_material": "wood",
+        "evidence": [
+          "horizontal elongated support",
+          "does not reach ground"
+        ]
+      },
+      {
+        "component_id": 11,
+        "role": "frame_rail",
+        "surface_material": "wood",
+        "evidence": [
+          "horizontal elongated support",
+          "does not reach ground"
+        ]
+      },
+      {
+        "component_id": 12,
+        "role": "frame_rail",
+        "surface_material": "wood",
+        "evidence": [
+          "horizontal elongated support",
+          "does not reach ground"
+        ]
+      },
+      {
+        "component_id": 13,
+        "role": "frame_rail",
+        "surface_material": "wood",
+        "evidence": [
+          "horizontal elongated support",
+          "does not reach ground"
+        ]
+      },
+      {
+        "component_id": 14,
+        "role": "underside",
+        "surface_material": "wood",
+        "evidence": [
+          "near-planar horizontal sheet"
+        ]
+      }
+    ]
+  }
+}

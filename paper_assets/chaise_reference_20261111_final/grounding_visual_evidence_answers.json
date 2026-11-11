@@ -1,0 +1,417 @@
+{
+  "selected_views": 4,
+  "records": [
+    {
+      "trial": 0,
+      "view_count": 4,
+      "prompt": "Assign all 15 numbered regions. Per-component sampled RGB below is visual evidence from the reference texture and helps bind the correct isolated component to its number. It is not a material label. Use images and color jointly. Return JSON {components:[{component_id:integer,functional_role:string,surface_material:string}]}. Role vocabulary: cushion, seat, backrest, armrest, leg, frame_rail, underside, unknown. Material vocabulary: wood, fabric, metal, plastic, unknown. Use each ID exactly once. Visual color observations: [{\"component_id\": 0, \"mean_texture_rgb\": [0.5149727028066101, 0.51104652056901, 0.4970834294502129]}, {\"component_id\": 1, \"mean_texture_rgb\": [0.5120786245532675, 0.5079531429429986, 0.4944712751000783]}, {\"component_id\": 2, \"mean_texture_rgb\": [0.5113799482056977, 0.5074546799852011, 0.49349858182266676]}, {\"component_id\": 3, \"mean_texture_rgb\": [0.49868455452356375, 0.4946556587547303, 0.48030409356725107]}, {\"component_id\": 4, \"mean_texture_rgb\": [0.5023955968352247, 0.4984850361197106, 0.48410870313037524]}, {\"component_id\": 5, \"mean_texture_rgb\": [0.517033597064557, 0.5131120284371061, 0.49905400756793944]}, {\"component_id\": 6, \"mean_texture_rgb\": [0.6859305125558997, 0.49896800825593385, 0.3124527003783968]}, {\"component_id\": 7, \"mean_texture_rgb\": [0.6845889232886134, 0.5007739938080494, 0.30902992776057775]}, {\"component_id\": 8, \"mean_texture_rgb\": [0.6951324389404886, 0.5079463364293088, 0.3175954592363259]}, {\"component_id\": 9, \"mean_texture_rgb\": [0.6829721362229102, 0.4998624011007913, 0.3098211214310284]}, {\"component_id\": 10, \"mean_texture_rgb\": [0.7072875816993467, 0.5190522875816997, 0.3242810457516342]}, {\"component_id\": 11, \"mean_texture_rgb\": [0.7120588235294121, 0.5172549019607843, 0.3188888888888891]}, {\"component_id\": 12, \"mean_texture_rgb\": [0.714183006535948, 0.5196732026143792, 0.3214052287581701]}, {\"component_id\": 13, \"mean_texture_rgb\": [0.708137254901961, 0.5196078431372552, 0.3248039215686276]}, {\"component_id\": 14, \"mean_texture_rgb\": [0.5156862745098039, 0.3895424836601307, 0.3156862745098039]}]",
+      "images": [
+        "view_02.png",
+        "view_08.png",
+        "view_20.png",
+        "view_26.png",
+        "component_sheet.png",
+        "global_component_positions.png"
+      ],
+      "response": {
+        "text": "{\n  \"components\": [\n    {\n      \"component_id\": 0,\n      \"functional_role\": \"backrest\",\n      \"surface_material\": \"fabric\"\n    },\n    {\n      \"component_id\": 1,\n      \"functional_role\": \"seat\",\n      \"surface_material\": \"fabric\"\n    },\n    {\n      \"component_id\": 2,\n      \"functional_role\": \"backrest\",\n      \"surface_material\": \"fabric\"\n    },\n    {\n      \"component_id\": 3,\n      \"functional_role\": \"backrest\",\n      \"surface_material\": \"fabric\"\n    },\n    {\n      \"component_id\": 4,\n      \"functional_role\": \"backrest\",\n      \"surface_material\": \"fabric\"\n    },\n    {\n      \"component_id\": 5,\n      \"functional_role\": \"backrest\",\n      \"surface_material\": \"fabric\"\n    },\n    {\n      \"component_id\": 6,\n      \"functional_role\": \"leg\",\n      \"surface_material\": \"wood\"\n    },\n    {\n      \"component_id\": 7,\n      \"functional_role\": \"leg\",\n      \"surface_material\": \"wood\"\n    },\n    {\n      \"component_id\": 8,\n      \"functional_role\": \"leg\",\n      \"surface_material\": \"wood\"\n    },\n    {\n      \"component_id\": 9,\n      \"functional_role\": \"leg\",\n      \"surface_material\": \"wood\"\n    },\n    {\n      \"component_id\": 10,\n      \"functional_role\": \"frame_rail\",\n      \"surface_material\": \"wood\"\n    },\n    {\n      \"component_id\": 11,\n      \"functional_role\": \"leg\",\n      \"surface_material\": \"wood\"\n    },\n    {\n      \"component_id\": 12,\n      \"functional_role\": \"leg\",\n      \"surface_material\": \"wood\"\n    },\n    {\n      \"component_id\": 13,\n      \"functional_role\": \"leg\",\n      \"surface_material\": \"wood\"\n    },\n    {\n      \"component_id\": 14,\n      \"functional_role\": \"frame_rail\",\n      \"surface_material\": \"wood\"\n    }\n  ]\n}",
+        "seconds": 23.960532412864268,
+        "input_tokens": 4607,
+        "output_tokens": 444,
+        "peak_gpu_bytes": 7757913600,
+        "preprocess_seconds": 0.45221942523494363,
+        "image_grid_thw": [
+          [
+            1,
+            48,
+            48
+          ],
+          [
+            1,
+            48,
+            48
+          ],
+          [
+            1,
+            48,
+            48
+          ],
+          [
+            1,
+            48,
+            48
+          ],
+          [
+            1,
+            36,
+            60
+          ],
+          [
+            1,
+            32,
+            66
+          ]
+        ],
+        "generation_seed": 1201,
+        "do_sample": true,
+        "temperature": 0.7,
+        "top_p": 0.9
+      },
+      "valid": true,
+      "answer": {
+        "components": [
+          {
+            "component_id": 0,
+            "functional_role": "backrest",
+            "surface_material": "fabric"
+          },
+          {
+            "component_id": 1,
+            "functional_role": "seat",
+            "surface_material": "fabric"
+          },
+          {
+            "component_id": 2,
+            "functional_role": "backrest",
+            "surface_material": "fabric"
+          },
+          {
+            "component_id": 3,
+            "functional_role": "backrest",
+            "surface_material": "fabric"
+          },
+          {
+            "component_id": 4,
+            "functional_role": "backrest",
+            "surface_material": "fabric"
+          },
+          {
+            "component_id": 5,
+            "functional_role": "backrest",
+            "surface_material": "fabric"
+          },
+          {
+            "component_id": 6,
+            "functional_role": "leg",
+            "surface_material": "wood"
+          },
+          {
+            "component_id": 7,
+            "functional_role": "leg",
+            "surface_material": "wood"
+          },
+          {
+            "component_id": 8,
+            "functional_role": "leg",
+            "surface_material": "wood"
+          },
+          {
+            "component_id": 9,
+            "functional_role": "leg",
+            "surface_material": "wood"
+          },
+          {
+            "component_id": 10,
+            "functional_role": "frame_rail",
+            "surface_material": "wood"
+          },
+          {
+            "component_id": 11,
+            "functional_role": "leg",
+            "surface_material": "wood"
+          },
+          {
+            "component_id": 12,
+            "functional_role": "leg",
+            "surface_material": "wood"
+          },
+          {
+            "component_id": 13,
+            "functional_role": "leg",
+            "surface_material": "wood"
+          },
+          {
+            "component_id": 14,
+            "functional_role": "frame_rail",
+            "surface_material": "wood"
+          }
+        ]
+      }
+    },
+    {
+      "trial": 1,
+      "view_count": 4,
+      "prompt": "Assign all 15 numbered regions. Per-component sampled RGB below is visual evidence from the reference texture and helps bind the correct isolated component to its number. It is not a material label. Use images and color jointly. Return JSON {components:[{component_id:integer,functional_role:string,surface_material:string}]}. Role vocabulary: cushion, seat, backrest, armrest, leg, frame_rail, underside, unknown. Material vocabulary: wood, fabric, metal, plastic, unknown. Use each ID exactly once. Visual color observations: [{\"component_id\": 0, \"mean_texture_rgb\": [0.5149727028066101, 0.51104652056901, 0.4970834294502129]}, {\"component_id\": 1, \"mean_texture_rgb\": [0.5120786245532675, 0.5079531429429986, 0.4944712751000783]}, {\"component_id\": 2, \"mean_texture_rgb\": [0.5113799482056977, 0.5074546799852011, 0.49349858182266676]}, {\"component_id\": 3, \"mean_texture_rgb\": [0.49868455452356375, 0.4946556587547303, 0.48030409356725107]}, {\"component_id\": 4, \"mean_texture_rgb\": [0.5023955968352247, 0.4984850361197106, 0.48410870313037524]}, {\"component_id\": 5, \"mean_texture_rgb\": [0.517033597064557, 0.5131120284371061, 0.49905400756793944]}, {\"component_id\": 6, \"mean_texture_rgb\": [0.6859305125558997, 0.49896800825593385, 0.3124527003783968]}, {\"component_id\": 7, \"mean_texture_rgb\": [0.6845889232886134, 0.5007739938080494, 0.30902992776057775]}, {\"component_id\": 8, \"mean_texture_rgb\": [0.6951324389404886, 0.5079463364293088, 0.3175954592363259]}, {\"component_id\": 9, \"mean_texture_rgb\": [0.6829721362229102, 0.4998624011007913, 0.3098211214310284]}, {\"component_id\": 10, \"mean_texture_rgb\": [0.7072875816993467, 0.5190522875816997, 0.3242810457516342]}, {\"component_id\": 11, \"mean_texture_rgb\": [0.7120588235294121, 0.5172549019607843, 0.3188888888888891]}, {\"component_id\": 12, \"mean_texture_rgb\": [0.714183006535948, 0.5196732026143792, 0.3214052287581701]}, {\"component_id\": 13, \"mean_texture_rgb\": [0.708137254901961, 0.5196078431372552, 0.3248039215686276]}, {\"component_id\": 14, \"mean_texture_rgb\": [0.5156862745098039, 0.3895424836601307, 0.3156862745098039]}]",
+      "images": [
+        "view_02.png",
+        "view_08.png",
+        "view_20.png",
+        "view_26.png",
+        "component_sheet.png",
+        "global_component_positions.png"
+      ],
+      "response": {
+        "text": "{\n  \"components\": [\n    {\n      \"component_id\": 0,\n      \"functional_role\": \"backrest\",\n      \"surface_material\": \"fabric\"\n    },\n    {\n      \"component_id\": 1,\n      \"functional_role\": \"seat\",\n      \"surface_material\": \"fabric\"\n    },\n    {\n      \"component_id\": 2,\n      \"functional_role\": \"backrest\",\n      \"surface_material\": \"fabric\"\n    },\n    {\n      \"component_id\": 3,\n      \"functional_role\": \"backrest\",\n      \"surface_material\": \"fabric\"\n    },\n    {\n      \"component_id\": 4,\n      \"functional_role\": \"backrest\",\n      \"surface_material\": \"fabric\"\n    },\n    {\n      \"component_id\": 5,\n      \"functional_role\": \"backrest\",\n      \"surface_material\": \"fabric\"\n    },\n    {\n      \"component_id\": 6,\n      \"functional_role\": \"leg\",\n      \"surface_material\": \"wood\"\n    },\n    {\n      \"component_id\": 7,\n      \"functional_role\": \"leg\",\n      \"surface_material\": \"wood\"\n    },\n    {\n      \"component_id\": 8,\n      \"functional_role\": \"leg\",\n      \"surface_material\": \"wood\"\n    },\n    {\n      \"component_id\": 9,\n      \"functional_role\": \"leg\",\n      \"surface_material\": \"wood\"\n    },\n    {\n      \"component_id\": 10,\n      \"functional_role\": \"frame_rail\",\n      \"surface_material\": \"wood\"\n    },\n    {\n      \"component_id\": 11,\n      \"functional_role\": \"leg\",\n      \"surface_material\": \"wood\"\n    },\n    {\n      \"component_id\": 12,\n      \"functional_role\": \"leg\",\n      \"surface_material\": \"wood\"\n    },\n    {\n      \"component_id\": 13,\n      \"functional_role\": \"leg\",\n      \"surface_material\": \"wood\"\n    },\n    {\n      \"component_id\": 14,\n      \"functional_role\": \"frame_rail\",\n      \"surface_material\": \"wood\"\n    }\n  ]\n}",
+        "seconds": 24.518647838849574,
+        "input_tokens": 4607,
+        "output_tokens": 444,
+        "peak_gpu_bytes": 7757913600,
+        "preprocess_seconds": 0.3439196441322565,
+        "image_grid_thw": [
+          [
+            1,
+            48,
+            48
+          ],
+          [
+            1,
+            48,
+            48
+          ],
+          [
+            1,
+            48,
+            48
+          ],
+          [
+            1,
+            48,
+            48
+          ],
+          [
+            1,
+            36,
+            60
+          ],
+          [
+            1,
+            32,
+            66
+          ]
+        ],
+        "generation_seed": 1202,
+        "do_sample": true,
+        "temperature": 0.7,
+        "top_p": 0.9
+      },
+      "valid": true,
+      "answer": {
+        "components": [
+          {
+            "component_id": 0,
+            "functional_role": "backrest",
+            "surface_material": "fabric"
+          },
+          {
+            "component_id": 1,
+            "functional_role": "seat",
+            "surface_material": "fabric"
+          },
+          {
+            "component_id": 2,
+            "functional_role": "backrest",
+            "surface_material": "fabric"
+          },
+          {
+            "component_id": 3,
+            "functional_role": "backrest",
+            "surface_material": "fabric"
+          },
+          {
+            "component_id": 4,
+            "functional_role": "backrest",
+            "surface_material": "fabric"
+          },
+          {
+            "component_id": 5,
+            "functional_role": "backrest",
+            "surface_material": "fabric"
+          },
+          {
+            "component_id": 6,
+            "functional_role": "leg",
+            "surface_material": "wood"
+          },
+          {
+            "component_id": 7,
+            "functional_role": "leg",
+            "surface_material": "wood"
+          },
+          {
+            "component_id": 8,
+            "functional_role": "leg",
+            "surface_material": "wood"
+          },
+          {
+            "component_id": 9,
+            "functional_role": "leg",
+            "surface_material": "wood"
+          },
+          {
+            "component_id": 10,
+            "functional_role": "frame_rail",
+            "surface_material": "wood"
+          },
+          {
+            "component_id": 11,
+            "functional_role": "leg",
+            "surface_material": "wood"
+          },
+          {
+            "component_id": 12,
+            "functional_role": "leg",
+            "surface_material": "wood"
+          },
+          {
+            "component_id": 13,
+            "functional_role": "leg",
+            "surface_material": "wood"
+          },
+          {
+            "component_id": 14,
+            "functional_role": "frame_rail",
+            "surface_material": "wood"
+          }
+        ]
+      }
+    },
+    {
+      "trial": 2,
+      "view_count": 4,
+      "prompt": "Assign all 15 numbered regions. Per-component sampled RGB below is visual evidence from the reference texture and helps bind the correct isolated component to its number. It is not a material label. Use images and color jointly. Return JSON {components:[{component_id:integer,functional_role:string,surface_material:string}]}. Role vocabulary: cushion, seat, backrest, armrest, leg, frame_rail, underside, unknown. Material vocabulary: wood, fabric, metal, plastic, unknown. Use each ID exactly once. Visual color observations: [{\"component_id\": 0, \"mean_texture_rgb\": [0.5149727028066101, 0.51104652056901, 0.4970834294502129]}, {\"component_id\": 1, \"mean_texture_rgb\": [0.5120786245532675, 0.5079531429429986, 0.4944712751000783]}, {\"component_id\": 2, \"mean_texture_rgb\": [0.5113799482056977, 0.5074546799852011, 0.49349858182266676]}, {\"component_id\": 3, \"mean_texture_rgb\": [0.49868455452356375, 0.4946556587547303, 0.48030409356725107]}, {\"component_id\": 4, \"mean_texture_rgb\": [0.5023955968352247, 0.4984850361197106, 0.48410870313037524]}, {\"component_id\": 5, \"mean_texture_rgb\": [0.517033597064557, 0.5131120284371061, 0.49905400756793944]}, {\"component_id\": 6, \"mean_texture_rgb\": [0.6859305125558997, 0.49896800825593385, 0.3124527003783968]}, {\"component_id\": 7, \"mean_texture_rgb\": [0.6845889232886134, 0.5007739938080494, 0.30902992776057775]}, {\"component_id\": 8, \"mean_texture_rgb\": [0.6951324389404886, 0.5079463364293088, 0.3175954592363259]}, {\"component_id\": 9, \"mean_texture_rgb\": [0.6829721362229102, 0.4998624011007913, 0.3098211214310284]}, {\"component_id\": 10, \"mean_texture_rgb\": [0.7072875816993467, 0.5190522875816997, 0.3242810457516342]}, {\"component_id\": 11, \"mean_texture_rgb\": [0.7120588235294121, 0.5172549019607843, 0.3188888888888891]}, {\"component_id\": 12, \"mean_texture_rgb\": [0.714183006535948, 0.5196732026143792, 0.3214052287581701]}, {\"component_id\": 13, \"mean_texture_rgb\": [0.708137254901961, 0.5196078431372552, 0.3248039215686276]}, {\"component_id\": 14, \"mean_texture_rgb\": [0.5156862745098039, 0.3895424836601307, 0.3156862745098039]}]",
+      "images": [
+        "view_02.png",
+        "view_08.png",
+        "view_20.png",
+        "view_26.png",
+        "component_sheet.png",
+        "global_component_positions.png"
+      ],
+      "response": {
+        "text": "{\n  \"components\": [\n    {\n      \"component_id\": 0,\n      \"functional_role\": \"backrest\",\n      \"surface_material\": \"fabric\"\n    },\n    {\n      \"component_id\": 1,\n      \"functional_role\": \"cushion\",\n      \"surface_material\": \"fabric\"\n    },\n    {\n      \"component_id\": 2,\n      \"functional_role\": \"backrest\",\n      \"surface_material\": \"fabric\"\n    },\n    {\n      \"component_id\": 3,\n      \"functional_role\": \"backrest\",\n      \"surface_material\": \"fabric\"\n    },\n    {\n      \"component_id\": 4,\n      \"functional_role\": \"backrest\",\n      \"surface_material\": \"fabric\"\n    },\n    {\n      \"component_id\": 5,\n      \"functional_role\": \"backrest\",\n      \"surface_material\": \"fabric\"\n    },\n    {\n      \"component_id\": 6,\n      \"functional_role\": \"leg\",\n      \"surface_material\": \"wood\"\n    },\n    {\n      \"component_id\": 7,\n      \"functional_role\": \"leg\",\n      \"surface_material\": \"wood\"\n    },\n    {\n      \"component_id\": 8,\n      \"functional_role\": \"leg\",\n      \"surface_material\": \"wood\"\n    },\n    {\n      \"component_id\": 9,\n      \"functional_role\": \"leg\",\n      \"surface_material\": \"wood\"\n    },\n    {\n      \"component_id\": 10,\n      \"functional_role\": \"frame_rail\",\n      \"surface_material\": \"wood\"\n    },\n    {\n      \"component_id\": 11,\n      \"functional_role\": \"leg\",\n      \"surface_material\": \"wood\"\n    },\n    {\n      \"component_id\": 12,\n      \"functional_role\": \"leg\",\n      \"surface_material\": \"wood\"\n    },\n    {\n      \"component_id\": 13,\n      \"functional_role\": \"leg\",\n      \"surface_material\": \"wood\"\n    },\n    {\n      \"component_id\": 14,\n      \"functional_role\": \"underside\",\n      \"surface_material\": \"wood\"\n    }\n  ]\n}",
+        "seconds": 24.20331006217748,
+        "input_tokens": 4607,
+        "output_tokens": 445,
+        "peak_gpu_bytes": 7757913600,
+        "preprocess_seconds": 0.45506547298282385,
+        "image_grid_thw": [
+          [
+            1,
+            48,
+            48
+          ],
+          [
+            1,
+            48,
+            48
+          ],
+          [
+            1,
+            48,
+            48
+          ],
+          [
+            1,
+            48,
+            48
+          ],
+          [
+            1,
+            36,
+            60
+          ],
+          [
+            1,
+            32,
+            66
+          ]
+        ],
+        "generation_seed": 1203,
+        "do_sample": true,
+        "temperature": 0.7,
+        "top_p": 0.9
+      },
+      "valid": true,
+      "answer": {
+        "components": [
+          {
+            "component_id": 0,
+            "functional_role": "backrest",
+            "surface_material": "fabric"
+          },
+          {
+            "component_id": 1,
+            "functional_role": "cushion",
+            "surface_material": "fabric"
+          },
+          {
+            "component_id": 2,
+            "functional_role": "backrest",
+            "surface_material": "fabric"
+          },
+          {
+            "component_id": 3,
+            "functional_role": "backrest",
+            "surface_material": "fabric"
+          },
+          {
+            "component_id": 4,
+            "functional_role": "backrest",
+            "surface_material": "fabric"
+          },
+          {
+            "component_id": 5,
+            "functional_role": "backrest",
+            "surface_material": "fabric"
+          },
+          {
+            "component_id": 6,
+            "functional_role": "leg",
+            "surface_material": "wood"
+          },
+          {
+            "component_id": 7,
+            "functional_role": "leg",
+            "surface_material": "wood"
+          },
+          {
+            "component_id": 8,
+            "functional_role": "leg",
+            "surface_material": "wood"
+          },
+          {
+            "component_id": 9,
+            "functional_role": "leg",
+            "surface_material": "wood"
+          },
+          {
+            "component_id": 10,
+            "functional_role": "frame_rail",
+            "surface_material": "wood"
+          },
+          {
+            "component_id": 11,
+            "functional_role": "leg",
+            "surface_material": "wood"
+          },
+          {
+            "component_id": 12,
+            "functional_role": "leg",
+            "surface_material": "wood"
+          },
+          {
+            "component_id": 13,
+            "functional_role": "leg",
+            "surface_material": "wood"
+          },
+          {
+            "component_id": 14,
+            "functional_role": "underside",
+            "surface_material": "wood"
+          }
+        ]
+      }
+    }
+  ],
+  "scope": "additional visual-evidence control; geometry-only descriptors excluded from VLM prompt"
+}

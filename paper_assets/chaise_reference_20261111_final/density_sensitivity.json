@@ -1,0 +1,882 @@
+[
+  {
+    "wood_density_kg_m3": 300.0,
+    "before_mass_kg": 0.6894640107261538,
+    "after_mass_kg": 2.068393444517015,
+    "com_displacement_mm": 601.362808286307,
+    "after_principal_inertia_kg_m2": [
+      0.15778036491769545,
+      0.7951296069224547,
+      0.9359312545688978
+    ]
+  },
+  {
+    "wood_density_kg_m3": 308.2278481012658,
+    "before_mass_kg": 0.7083733612313015,
+    "after_mass_kg": 2.082575452553998,
+    "com_displacement_mm": 595.220028382564,
+    "after_principal_inertia_kg_m2": [
+      0.16173825197695876,
+      0.8130130391475122,
+      0.9576561406676223
+    ]
+  },
+  {
+    "wood_density_kg_m3": 316.45569620253167,
+    "before_mass_kg": 0.7272827117364493,
+    "after_mass_kg": 2.0967574605909807,
+    "com_displacement_mm": 589.1603453134356,
+    "after_principal_inertia_kg_m2": [
+      0.16568665925098092,
+      0.8307509101093022,
+      0.9792259864966457
+    ]
+  },
+  {
+    "wood_density_kg_m3": 324.6835443037975,
+    "before_mass_kg": 0.746192062241597,
+    "after_mass_kg": 2.1109394686279637,
+    "com_displacement_mm": 583.1820842606795,
+    "after_principal_inertia_kg_m2": [
+      0.16962562008633042,
+      0.848346311338893,
+      1.000643916873048
+    ]
+  },
+  {
+    "wood_density_kg_m3": 332.9113924050633,
+    "before_mass_kg": 0.7651014127467446,
+    "after_mass_kg": 2.1251214766649467,
+    "com_displacement_mm": 577.2836151136835,
+    "after_principal_inertia_kg_m2": [
+      0.17355516785280894,
+      0.8658022509263122,
+      1.021912973202249
+    ]
+  },
+  {
+    "wood_density_kg_m3": 341.1392405063291,
+    "before_mass_kg": 0.7840107632518922,
+    "after_mass_kg": 2.139303484701929,
+    "com_displacement_mm": 571.4633509875711,
+    "after_principal_inertia_kg_m2": [
+      0.1774753359411093,
+      0.883121656288163,
+      1.0430361162425155
+    ]
+  },
+  {
+    "wood_density_kg_m3": 349.36708860759495,
+    "before_mass_kg": 0.80292011375704,
+    "after_mass_kg": 2.153485492738912,
+    "com_displacement_mm": 565.7197467998627,
+    "after_principal_inertia_kg_m2": [
+      0.18138615776048275,
+      0.900307376825921,
+      1.064016228760284
+    ]
+  },
+  {
+    "wood_density_kg_m3": 357.59493670886076,
+    "before_mass_kg": 0.8218294642621876,
+    "after_mass_kg": 2.167667500775895,
+    "com_displacement_mm": 560.0512979030117,
+    "after_principal_inertia_kg_m2": [
+      0.18528766673642247,
+      0.9173621864799261,
+      1.084856118081267
+    ]
+  },
+  {
+    "wood_density_kg_m3": 365.82278481012656,
+    "before_mass_kg": 0.8407388147673353,
+    "after_mass_kg": 2.1818495088128778,
+    "com_displacement_mm": 554.4565387702692,
+    "after_principal_inertia_kg_m2": [
+      0.18917989630835638,
+      0.934288786183814,
+      1.1055585185421077
+    ]
+  },
+  {
+    "wood_density_kg_m3": 374.0506329113924,
+    "before_mass_kg": 0.859648165272483,
+    "after_mass_kg": 2.1960315168498603,
+    "com_displacement_mm": 548.934041732471,
+    "after_principal_inertia_kg_m2": [
+      0.19306287992736448,
+      0.9510898062238948,
+      1.126126093847052
+    ]
+  },
+  {
+    "wood_density_kg_m3": 382.27848101265823,
+    "before_mass_kg": 0.8785575157776306,
+    "after_mass_kg": 2.2102135248868433,
+    "com_displacement_mm": 543.4824157634561,
+    "after_principal_inertia_kg_m2": [
+      0.19693665105390845,
+      0.967767808507744,
+      1.146561439333913
+    ]
+  },
+  {
+    "wood_density_kg_m3": 390.50632911392404,
+    "before_mass_kg": 0.8974668662827783,
+    "after_mass_kg": 2.2243955329238263,
+    "com_displacement_mm": 538.1003053119496,
+    "after_principal_inertia_kg_m2": [
+      0.20080124315558728,
+      0.9843252887460611,
+      1.1668670841533666
+    ]
+  },
+  {
+    "wood_density_kg_m3": 398.7341772151899,
+    "before_mass_kg": 0.9163762167879261,
+    "after_mass_kg": 2.238577540960809,
+    "com_displacement_mm": 532.7863891778456,
+    "after_principal_inertia_kg_m2": [
+      0.20465668970490974,
+      1.0007646785516453,
+      1.1870454933654275
+    ]
+  },
+  {
+    "wood_density_kg_m3": 406.9620253164557,
+    "before_mass_kg": 0.9352855672930738,
+    "after_mass_kg": 2.252759548997792,
+    "com_displacement_mm": 527.539379430937,
+    "after_principal_inertia_kg_m2": [
+      0.20850302417709027,
+      1.017088347459134,
+      1.2070990699567443
+    ]
+  },
+  {
+    "wood_density_kg_m3": 415.1898734177215,
+    "before_mass_kg": 0.9541949177982214,
+    "after_mass_kg": 2.266941557034775,
+    "com_displacement_mm": 522.3580203702315,
+    "after_principal_inertia_kg_m2": [
+      0.2123402800478704,
+      1.033298604868979,
+      1.2270301567821833
+    ]
+  },
+  {
+    "wood_density_kg_m3": 423.4177215189873,
+    "before_mass_kg": 0.973104268303369,
+    "after_mass_kg": 2.2811235650717574,
+    "com_displacement_mm": 517.2410875220877,
+    "after_principal_inertia_kg_m2": [
+      0.2161684907913591,
+      1.0493977019189602,
+      1.2468410384339985
+    ]
+  },
+  {
+    "wood_density_kg_m3": 431.6455696202531,
+    "before_mass_kg": 0.9920136188085167,
+    "after_mass_kg": 2.29530557310874,
+    "com_displacement_mm": 512.1873866754929,
+    "after_principal_inertia_kg_m2": [
+      0.2199876898779028,
+      1.06538783328636,
+      1.2665339430417073
+    ]
+  },
+  {
+    "wood_density_kg_m3": 439.873417721519,
+    "before_mass_kg": 1.0109229693136645,
+    "after_mass_kg": 2.309487581145723,
+    "com_displacement_mm": 507.1957529528853,
+    "after_principal_inertia_kg_m2": [
+      0.2237979107719732,
+      1.0812711389237886,
+      1.2861110440056667
+    ]
+  },
+  {
+    "wood_density_kg_m3": 448.1012658227848,
+    "before_mass_kg": 1.0298323198188122,
+    "after_mass_kg": 2.323669589182706,
+    "com_displacement_mm": 502.2650499150025,
+    "after_principal_inertia_kg_m2": [
+      0.22759918693008752,
+      1.097049705731494,
+      1.3055744616671623
+    ]
+  },
+  {
+    "wood_density_kg_m3": 456.3291139240506,
+    "before_mass_kg": 1.0487416703239598,
+    "after_mass_kg": 2.3378515972196885,
+    "com_displacement_mm": 497.39416869831206,
+    "after_principal_inertia_kg_m2": [
+      0.2313915517987473,
+      1.1127255691688411,
+      1.3249262649177234
+    ]
+  },
+  {
+    "wood_density_kg_m3": 464.55696202531647,
+    "before_mass_kg": 1.0676510208291075,
+    "after_mass_kg": 2.3520336052566715,
+    "com_displacement_mm": 492.5820271836459,
+    "after_principal_inertia_kg_m2": [
+      0.23517503881240887,
+      1.1283007148075457,
+      1.3441684727502143
+    ]
+  },
+  {
+    "wood_density_kg_m3": 472.7848101265823,
+    "before_mass_kg": 1.086560371334255,
+    "after_mass_kg": 2.3662156132936545,
+    "com_displacement_mm": 487.82756919473525,
+    "after_principal_inertia_kg_m2": [
+      0.23894968139147255,
+      1.1437770798290856,
+      1.3633030557541543
+    ]
+  },
+  {
+    "wood_density_kg_m3": 481.0126582278481,
+    "before_mass_kg": 1.1054697218394027,
+    "after_mass_kg": 2.380397621330637,
+    "com_displacement_mm": 483.1297637253919,
+    "after_principal_inertia_kg_m2": [
+      0.24271551294030574,
+      1.1591565544686366,
+      1.3823319375575793
+    ]
+  },
+  {
+    "wood_density_kg_m3": 489.24050632911394,
+    "before_mass_kg": 1.1243790723445506,
+    "after_mass_kg": 2.3945796293676196,
+    "com_displacement_mm": 478.4876041941542,
+    "after_principal_inertia_kg_m2": [
+      0.2464725668452841,
+      1.1744409834077323,
+      1.4012569962176866
+    ]
+  },
+  {
+    "wood_density_kg_m3": 497.46835443037975,
+    "before_mass_kg": 1.1432884228496982,
+    "after_mass_kg": 2.4087616374046026,
+    "com_displacement_mm": 473.90010772526233,
+    "after_principal_inertia_kg_m2": [
+      0.25022087647286534,
+      1.1896321671177685,
+      1.4200800655623347
+    ]
+  },
+  {
+    "wood_density_kg_m3": 505.69620253164555,
+    "before_mass_kg": 1.1621977733548459,
+    "after_mass_kg": 2.4229436454415856,
+    "com_displacement_mm": 469.366314454886,
+    "after_principal_inertia_kg_m2": [
+      0.25396047516768583,
+      1.2047318631563675,
+      1.4388029364844472
+    ]
+  },
+  {
+    "wood_density_kg_m3": 513.9240506329114,
+    "before_mass_kg": 1.1811071238599935,
+    "after_mass_kg": 2.437125653478568,
+    "com_displacement_mm": 464.8852868615741,
+    "after_principal_inertia_kg_m2": [
+      0.2576913962506819,
+      1.219741787418515,
+      1.4574273581912198
+    ]
+  },
+  {
+    "wood_density_kg_m3": 522.1518987341772,
+    "before_mass_kg": 1.2000164743651411,
+    "after_mass_kg": 2.451307661515551,
+    "com_displacement_mm": 460.45610911994766,
+    "after_principal_inertia_kg_m2": [
+      0.2614136730172437,
+      1.2346636153443038,
+      1.475955039409968
+    ]
+  },
+  {
+    "wood_density_kg_m3": 530.379746835443,
+    "before_mass_kg": 1.2189258248702888,
+    "after_mass_kg": 2.4654896695525337,
+    "com_displacement_mm": 456.0778864766974,
+    "after_principal_inertia_kg_m2": [
+      0.2651273387353871,
+      1.2494989830850334,
+      1.494387649552353
+    ]
+  },
+  {
+    "wood_density_kg_m3": 538.6075949367089,
+    "before_mass_kg": 1.2378351753754366,
+    "after_mass_kg": 2.4796716775895167,
+    "com_displacement_mm": 451.7497446479966,
+    "after_principal_inertia_kg_m2": [
+      0.2688324266439591,
+      1.2642494886293238,
+      1.5127268198386647
+    ]
+  },
+  {
+    "wood_density_kg_m3": 546.8354430379746,
+    "before_mass_kg": 1.2567445258805843,
+    "after_mass_kg": 2.4938536856264997,
+    "com_displacement_mm": 447.4708292374721,
+    "after_principal_inertia_kg_m2": [
+      0.2725289699508643,
+      1.2789166928908444,
+      1.5309741443837348
+    ]
+  },
+  {
+    "wood_density_kg_m3": 555.0632911392405,
+    "before_mass_kg": 1.275653876385732,
+    "after_mass_kg": 2.5080356936634822,
+    "com_displacement_mm": 443.2403051739249,
+    "after_principal_inertia_kg_m2": [
+      0.27621700183132214,
+      1.2935021207591697,
+      1.549131181246021
+    ]
+  },
+  {
+    "wood_density_kg_m3": 563.2911392405063,
+    "before_mass_kg": 1.2945632268908795,
+    "after_mass_kg": 2.522217701700465,
+    "com_displacement_mm": 439.057356168018,
+    "after_principal_inertia_kg_m2": [
+      0.2798965554261426,
+      1.3080072621152123,
+      1.5671994534412907
+    ]
+  },
+  {
+    "wood_density_kg_m3": 571.5189873417721,
+    "before_mass_kg": 1.3134725773960272,
+    "after_mass_kg": 2.5363997097374478,
+    "com_displacement_mm": 434.921184187193,
+    "after_principal_inertia_kg_m2": [
+      0.2835676638400406,
+      1.3224335728126246,
+      1.585180449922296
+    ]
+  },
+  {
+    "wood_density_kg_m3": 579.746835443038,
+    "before_mass_kg": 1.332381927901175,
+    "after_mass_kg": 2.5505817177744308,
+    "com_displacement_mm": 430.83100894810383,
+    "after_principal_inertia_kg_m2": [
+      0.28723036013996395,
+      1.3367824756264834,
+      1.6030756265257726
+    ]
+  },
+  {
+    "wood_density_kg_m3": 587.9746835443038,
+    "before_mass_kg": 1.3512912784063227,
+    "after_mass_kg": 2.5647637258114138,
+    "com_displacement_mm": 426.7860674258906,
+    "after_principal_inertia_kg_m2": [
+      0.29088467735345397,
+      1.3510553611705338,
+      1.6208864068880167
+    ]
+  },
+  {
+    "wood_density_kg_m3": 596.2025316455696,
+    "before_mass_kg": 1.3702006289114703,
+    "after_mass_kg": 2.5789457338483963,
+    "com_displacement_mm": 422.7856133796442,
+    "after_principal_inertia_kg_m2": [
+      0.29453064846702803,
+      1.3652535887841948,
+      1.6386141833302574
+    ]
+  },
+  {
+    "wood_density_kg_m3": 604.4303797468353,
+    "before_mass_kg": 1.3891099794166177,
+    "after_mass_kg": 2.593127741885379,
+    "com_displacement_mm": 418.82891689344325,
+    "after_principal_inertia_kg_m2": [
+      0.29816830642459435,
+      1.3793784873904806,
+      1.6562603177149646
+    ]
+  },
+  {
+    "wood_density_kg_m3": 612.6582278481012,
+    "before_mass_kg": 1.4080193299217656,
+    "after_mass_kg": 2.6073097499223623,
+    "com_displacement_mm": 414.91526393236916,
+    "after_principal_inertia_kg_m2": [
+      0.30179768412588537,
+      1.3934313563259573,
+      1.6738261422742282
+    ]
+  },
+  {
+    "wood_density_kg_m3": 620.8860759493671,
+    "before_mass_kg": 1.4269286804269132,
+    "after_mass_kg": 2.6214917579593444,
+    "com_displacement_mm": 411.04395591293314,
+    "after_principal_inertia_kg_m2": [
+      0.30541881442491914,
+      1.407413466143775,
+      1.6913129604112354
+    ]
+  },
+  {
+    "wood_density_kg_m3": 629.1139240506329,
+    "before_mass_kg": 1.445838030932061,
+    "after_mass_kg": 2.6356737659963274,
+    "com_displacement_mm": 407.21430928737203,
+    "after_principal_inertia_kg_m2": [
+      0.30903173012848983,
+      1.4213260593908041,
+      1.7087220474758773
+    ]
+  },
+  {
+    "wood_density_kg_m3": 637.3417721518988,
+    "before_mass_kg": 1.464747381437209,
+    "after_mass_kg": 2.6498557740333104,
+    "com_displacement_mm": 403.42565514129194,
+    "after_principal_inertia_kg_m2": [
+      0.3126364639946764,
+      1.43517035135984,
+      1.7260546515154522
+    ]
+  },
+  {
+    "wood_density_kg_m3": 645.5696202531645,
+    "before_mass_kg": 1.4836567319423564,
+    "after_mass_kg": 2.6640377820702934,
+    "com_displacement_mm": 399.6773388041656,
+    "after_principal_inertia_kg_m2": [
+      0.31623304873138025,
+      1.448947530817797,
+      1.7433119940013873
+    ]
+  },
+  {
+    "wood_density_kg_m3": 653.7974683544303,
+    "before_mass_kg": 1.502566082447504,
+    "after_mass_kg": 2.678219790107276,
+    "com_displacement_mm": 395.9687194722024,
+    "after_principal_inertia_kg_m2": [
+      0.31982151699489236,
+      1.4626587607107961,
+      1.7604952705328745
+    ]
+  },
+  {
+    "wood_density_kg_m3": 662.0253164556962,
+    "before_mass_kg": 1.5214754329526516,
+    "after_mass_kg": 2.6924017981442585,
+    "com_displacement_mm": 392.2991698431405,
+    "after_principal_inertia_kg_m2": [
+      0.32340190138847685,
+      1.476305178846981,
+      1.7776056515182657
+    ]
+  },
+  {
+    "wood_density_kg_m3": 670.253164556962,
+    "before_mass_kg": 1.5403847834577995,
+    "after_mass_kg": 2.706583806181242,
+    "com_displacement_mm": 388.6680757625175,
+    "after_principal_inertia_kg_m2": [
+      0.3269742344609834,
+      1.4898878985578918,
+      1.7946442828350455
+    ]
+  },
+  {
+    "wood_density_kg_m3": 678.4810126582279,
+    "before_mass_kg": 1.5592941339629471,
+    "after_mass_kg": 2.7207658142182245,
+    "com_displacement_mm": 385.0748358810066,
+    "after_principal_inertia_kg_m2": [
+      0.3305385487054858,
+      1.5034080093391713,
+      1.8116122864691677
+    ]
+  },
+  {
+    "wood_density_kg_m3": 686.7088607594936,
+    "before_mass_kg": 1.5782034844680948,
+    "after_mass_kg": 2.734947822255207,
+    "com_displacement_mm": 381.5188613224127,
+    "after_principal_inertia_kg_m2": [
+      0.3340948765579414,
+      1.516866577471354,
+      1.828510761134496
+    ]
+  },
+  {
+    "wood_density_kg_m3": 694.9367088607595,
+    "before_mass_kg": 1.5971128349732424,
+    "after_mass_kg": 2.7491298302921896,
+    "com_displacement_mm": 377.99957536194415,
+    "after_principal_inertia_kg_m2": [
+      0.3376432503958782,
+      1.5302646466214591,
+      1.8453407828730748
+    ]
+  },
+  {
+    "wood_density_kg_m3": 703.1645569620252,
+    "before_mass_kg": 1.61602218547839,
+    "after_mass_kg": 2.763311838329173,
+    "com_displacement_mm": 374.516413114394,
+    "after_principal_inertia_kg_m2": [
+      0.341183702537105,
+      1.543603238426073,
+      1.862103405636911
+    ]
+  },
+  {
+    "wood_density_kg_m3": 711.3924050632911,
+    "before_mass_kg": 1.6349315359835377,
+    "after_mass_kg": 2.7774938463661556,
+    "com_displacement_mm": 371.0688212318716,
+    "after_principal_inertia_kg_m2": [
+      0.3447162652384413,
+      1.5568833530565835,
+      1.8787996618519422
+    ]
+  },
+  {
+    "wood_density_kg_m3": 719.620253164557,
+    "before_mass_kg": 1.6538408864886855,
+    "after_mass_kg": 2.791675854403138,
+    "com_displacement_mm": 367.6562576107494,
+    "after_principal_inertia_kg_m2": [
+      0.3482409706944785,
+      1.5701059697672015,
+      1.8954305629648
+    ]
+  },
+  {
+    "wood_density_kg_m3": 727.8481012658228,
+    "before_mass_kg": 1.6727502369938334,
+    "after_mass_kg": 2.8058578624401216,
+    "com_displacement_mm": 364.27819110749556,
+    "after_principal_inertia_kg_m2": [
+      0.3517578510363596,
+      1.5832720474263777,
+      1.9119970999730072
+    ]
+  },
+  {
+    "wood_density_kg_m3": 736.0759493670886,
+    "before_mass_kg": 1.6916595874989808,
+    "after_mass_kg": 2.820039870477104,
+    "com_displacement_mm": 360.93410126308294,
+    "after_principal_inertia_kg_m2": [
+      0.35526693833058187,
+      1.5963825250321935,
+      1.9285002439391676
+    ]
+  },
+  {
+    "wood_density_kg_m3": 744.3037974683543,
+    "before_mass_kg": 1.7105689380041285,
+    "after_mass_kg": 2.8342218785140867,
+    "com_displacement_mm": 357.62347803566956,
+    "after_principal_inertia_kg_m2": [
+      0.35876826457782707,
+      1.6094383222122952,
+      1.9449409464897198
+    ]
+  },
+  {
+    "wood_density_kg_m3": 752.5316455696202,
+    "before_mass_kg": 1.729478288509276,
+    "after_mass_kg": 2.8484038865510692,
+    "com_displacement_mm": 354.34582154126787,
+    "after_principal_inertia_kg_m2": [
+      0.36226186171181046,
+      1.6224403397089033,
+      1.9613201402987932
+    ]
+  },
+  {
+    "wood_density_kg_m3": 760.7594936708861,
+    "before_mass_kg": 1.748387639014424,
+    "after_mass_kg": 2.8625858945880527,
+    "com_displacement_mm": 351.1006418021202,
+    "after_principal_inertia_kg_m2": [
+      0.36574776159815303,
+      1.6353894598494167,
+      1.9776387395576822
+    ]
+  },
+  {
+    "wood_density_kg_m3": 768.9873417721519,
+    "before_mass_kg": 1.7672969895195716,
+    "after_mass_kg": 2.8767679026250352,
+    "com_displacement_mm": 347.88745850251854,
+    "after_principal_inertia_kg_m2": [
+      0.3692259960332792,
+      1.6482865470031063,
+      1.9938976404304307
+    ]
+  },
+  {
+    "wood_density_kg_m3": 777.2151898734177,
+    "before_mass_kg": 1.7862063400247192,
+    "after_mass_kg": 2.890949910662018,
+    "com_displacement_mm": 344.70580075181084,
+    "after_principal_inertia_kg_m2": [
+      0.3726965967433374,
+      1.6611324480243768,
+      2.0100977214960065
+    ]
+  },
+  {
+    "wood_density_kg_m3": 785.4430379746835,
+    "before_mass_kg": 1.8051156905298669,
+    "after_mass_kg": 2.905131918699001,
+    "com_displacement_mm": 341.55520685434914,
+    "after_principal_inertia_kg_m2": [
+      0.37615959538313504,
+      1.6739279926830557,
+      2.0262398441775322
+    ]
+  },
+  {
+    "wood_density_kg_m3": 793.6708860759493,
+    "before_mass_kg": 1.8240250410350145,
+    "after_mass_kg": 2.9193139267359838,
+    "com_displacement_mm": 338.4352240861434,
+    "after_principal_inertia_kg_m2": [
+      0.3796150235351068,
+      1.6866739940821462,
+      2.042324853158992
+    ]
+  },
+  {
+    "wood_density_kg_m3": 801.8987341772151,
+    "before_mass_kg": 1.8429343915401621,
+    "after_mass_kg": 2.9334959347729663,
+    "com_displacement_mm": 335.3454084779938,
+    "after_principal_inertia_kg_m2": [
+      0.38306291270829673,
+      1.6993712490634738,
+      2.0583535767898664
+    ]
+  },
+  {
+    "wood_density_kg_m3": 810.126582278481,
+    "before_mass_kg": 1.86184374204531,
+    "after_mass_kg": 2.9476779428099493,
+    "com_displacement_mm": 332.28532460488276,
+    "after_principal_inertia_kg_m2": [
+      0.3865032943373664,
+      1.7120205386016283,
+      2.0743268274780706
+    ]
+  },
+  {
+    "wood_density_kg_m3": 818.3544303797468,
+    "before_mass_kg": 1.8807530925504576,
+    "after_mass_kg": 2.9618599508469323,
+    "com_displacement_mm": 329.2545453814193,
+    "after_principal_inertia_kg_m2": [
+      0.3899361997816221,
+      1.7246226281865948,
+      2.090245402071612
+    ]
+  },
+  {
+    "wood_density_kg_m3": 826.5822784810126,
+    "before_mass_kg": 1.8996624430556053,
+    "after_mass_kg": 2.976041958883915,
+    "com_displacement_mm": 326.2526518631302,
+    "after_principal_inertia_kg_m2": [
+      0.39336166032406344,
+      1.7371782681954528,
+      2.1061100822293395
+    ]
+  },
+  {
+    "wood_density_kg_m3": 834.8101265822785,
+    "before_mass_kg": 1.9185717935607531,
+    "after_mass_kg": 2.990223966920898,
+    "com_displacement_mm": 323.27923305340715,
+    "after_principal_inertia_kg_m2": [
+      0.3967797071704542,
+      1.749688194253503,
+      2.1219216347811396
+    ]
+  },
+  {
+    "wood_density_kg_m3": 843.0379746835442,
+    "before_mass_kg": 1.9374811440659006,
+    "after_mass_kg": 3.0044059749578804,
+    "com_displacement_mm": 320.33388571592076,
+    "after_principal_inertia_kg_m2": [
+      0.4001903714484145,
+      1.7621531275851692,
+      2.137680812077922
+    ]
+  },
+  {
+    "wood_density_kg_m3": 851.2658227848101,
+    "before_mass_kg": 1.9563904945710484,
+    "after_mass_kg": 3.0185879829948634,
+    "com_displacement_mm": 317.41621419232297,
+    "after_principal_inertia_kg_m2": [
+      0.40359368420653313,
+      1.7745737753550186,
+      2.1533883523317474
+    ]
+  },
+  {
+    "wood_density_kg_m3": 859.493670886076,
+    "before_mass_kg": 1.975299845076196,
+    "after_mass_kg": 3.032769991031846,
+    "com_displacement_mm": 314.5258302250643,
+    "after_principal_inertia_kg_m2": [
+      0.40698967641349787,
+      1.7869508309992121,
+      2.169044979946415
+    ]
+  },
+  {
+    "wood_density_kg_m3": 867.7215189873417,
+    "before_mass_kg": 1.9942091955813437,
+    "after_mass_kg": 3.0469519990688285,
+    "com_displacement_mm": 311.662352785159,
+    "after_principal_inertia_kg_m2": [
+      0.4103783789572486,
+      1.7992849745477075,
+      2.18465140583882
+    ]
+  },
+  {
+    "wood_density_kg_m3": 875.9493670886076,
+    "before_mass_kg": 2.0131185460864915,
+    "after_mass_kg": 3.061134007105812,
+    "com_displacement_mm": 308.8254079047379,
+    "after_principal_inertia_kg_m2": [
+      0.4137598226441534,
+      1.811576872937505,
+      2.2002083277513544
+    ]
+  },
+  {
+    "wood_density_kg_m3": 884.1772151898733,
+    "before_mass_kg": 2.032027896591639,
+    "after_mass_kg": 3.0753160151427945,
+    "com_displacement_mm": 306.014628514235,
+    "after_principal_inertia_kg_m2": [
+      0.41713403819819705,
+      1.823827180317233,
+      2.2157164305556973
+    ]
+  },
+  {
+    "wood_density_kg_m3": 892.4050632911392,
+    "before_mass_kg": 2.050937247096787,
+    "after_mass_kg": 3.089498023179777,
+    "com_displacement_mm": 303.2296542840573,
+    "after_principal_inertia_kg_m2": [
+      0.420501056260196,
+      1.836036538343345,
+      2.23117638654822
+    ]
+  },
+  {
+    "wood_density_kg_m3": 900.632911392405,
+    "before_mass_kg": 2.0698465976019347,
+    "after_mass_kg": 3.1036800312167605,
+    "com_displacement_mm": 300.4701314705964,
+    "after_principal_inertia_kg_m2": [
+      0.42386090738703047,
+      1.8482055764681955,
+      2.246588855737288
+    ]
+  },
+  {
+    "wood_density_kg_m3": 908.8607594936708,
+    "before_mass_kg": 2.088755948107082,
+    "after_mass_kg": 3.117862039253743,
+    "com_displacement_mm": 297.7357127664426,
+    "after_principal_inertia_kg_m2": [
+      0.4272136220508927,
+      1.8603349122202613,
+      2.2619544861227348
+    ]
+  },
+  {
+    "wood_density_kg_m3": 917.0886075949367,
+    "before_mass_kg": 2.10766529861223,
+    "after_mass_kg": 3.132044047290726,
+    "com_displacement_mm": 295.02605715466757,
+    "after_principal_inertia_kg_m2": [
+      0.43055923063856066,
+      1.8724251514767463,
+      2.2772739139677363
+    ]
+  },
+  {
+    "wood_density_kg_m3": 925.3164556962025,
+    "before_mass_kg": 2.1265746491173774,
+    "after_mass_kg": 3.146226055327708,
+    "com_displacement_mm": 292.34082976704923,
+    "after_principal_inertia_kg_m2": [
+      0.4338977634506836,
+      1.8844768887288164,
+      2.292547764063332
+    ]
+  },
+  {
+    "wood_density_kg_m3": 933.5443037974683,
+    "before_mass_kg": 2.1454839996225252,
+    "after_mass_kg": 3.1604080633646916,
+    "com_displacement_mm": 289.67970174611315,
+    "after_principal_inertia_kg_m2": [
+      0.43722925070109164,
+      1.8964907073396904,
+      2.3077766499858225
+    ]
+  },
+  {
+    "wood_density_kg_m3": 941.7721518987341,
+    "before_mass_kg": 2.1643933501276726,
+    "after_mass_kg": 3.174590071401674,
+    "com_displacement_mm": 287.042350110872,
+    "after_principal_inertia_kg_m2": [
+      0.4405537225161226,
+      1.908467179795822,
+      2.322961174347271
+    ]
+  },
+  {
+    "wood_density_kg_m3": 950.0,
+    "before_mass_kg": 2.1833027006328205,
+    "after_mass_kg": 3.1887720794386567,
+    "com_displacement_mm": 284.42845762614746,
+    "after_principal_inertia_kg_m2": [
+      0.44387120893396503,
+      1.9204068679513648,
+      2.338101929039323
+    ]
+  }
+]

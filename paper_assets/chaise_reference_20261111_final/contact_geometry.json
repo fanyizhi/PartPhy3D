@@ -1,0 +1,253 @@
+{
+  "scope": "reference-mesh geometric proximity and horizontal-ground footprints",
+  "reference_unit": "glTF meters, not laboratory calibration",
+  "sampled_min_is_not_exact_surface_min": true,
+  "frame_interfaces_force_or_bond_strength_evaluated": false,
+  "ground_plane_z_m": 0.0,
+  "legs": [
+    {
+      "leg_component_id": 6,
+      "ground_contact_center_m": [
+        -0.4076441377401352,
+        0.8127259612083435,
+        0.0
+      ],
+      "ground_footprint_area_m2": 0.0013180249416784324,
+      "ground_footprint_vertices_m": [
+        [
+          -0.42575427889823914,
+          0.8308359980583191,
+          0.0
+        ],
+        [
+          -0.4258386790752411,
+          0.7945736646652222,
+          0.0
+        ],
+        [
+          -0.3894917964935303,
+          0.7945736646652222,
+          0.0
+        ],
+        [
+          -0.3894917964935303,
+          0.8309205174446106,
+          0.0
+        ]
+      ],
+      "interface_sample_count": 4096,
+      "exact_surface_pair": {
+        "point_first_m": [
+          -0.42179393768310547,
+          0.7770248055458069,
+          0.22724983096122742
+        ],
+        "point_second_m": [
+          -0.42179393768310547,
+          0.7770248055458069,
+          0.22724983096122742
+        ],
+        "distance_m": 0.0,
+        "triangle_pair_candidates": 50,
+        "method": "triangle intersection / boundary minimum"
+      },
+      "interface_min_sample_distance_mm": 0.01682074607856141,
+      "interface_p05_distance_mm": 1.2696550691013495,
+      "near_surface_fraction_1mm": 0.0419921875,
+      "near_surface_fraction_3mm": 0.11962890625,
+      "closest_sample_on_leg_m": [
+        -0.40100210298331945,
+        0.7770248055458069,
+        0.18398711264223638
+      ],
+      "paired_point_on_frame_m": [
+        -0.40101399695020545,
+        0.7770129113854601,
+        0.18398711264223597
+      ]
+    },
+    {
+      "leg_component_id": 7,
+      "ground_contact_center_m": [
+        -0.4076441377401352,
+        -0.8127261102199554,
+        0.0
+      ],
+      "ground_footprint_area_m2": 0.001318027105606135,
+      "ground_footprint_vertices_m": [
+        [
+          -0.3894917964935303,
+          -0.7945737838745117,
+          0.0
+        ],
+        [
+          -0.4258386790752411,
+          -0.7945737838745117,
+          0.0
+        ],
+        [
+          -0.42575427889823914,
+          -0.8308361768722534,
+          0.0
+        ],
+        [
+          -0.3894917964935303,
+          -0.8309206962585449,
+          0.0
+        ]
+      ],
+      "interface_sample_count": 4096,
+      "exact_surface_pair": {
+        "point_first_m": [
+          -0.42179393768310547,
+          -0.7770249843597412,
+          0.22724983096122742
+        ],
+        "point_second_m": [
+          -0.42179393768310547,
+          -0.7770249843597412,
+          0.22724983096122742
+        ],
+        "distance_m": 0.0,
+        "triangle_pair_candidates": 54,
+        "method": "triangle intersection / boundary minimum"
+      },
+      "interface_min_sample_distance_mm": 0.015388462012572377,
+      "interface_p05_distance_mm": 1.4403164107874962,
+      "near_surface_fraction_1mm": 0.037841796875,
+      "near_surface_fraction_3mm": 0.11328125,
+      "closest_sample_on_leg_m": [
+        -0.371942937374115,
+        -0.8102610215584591,
+        0.22485850091167503
+      ],
+      "paired_point_on_frame_m": [
+        -0.3719429671764374,
+        -0.8102456331253052,
+        0.22485850091167503
+      ]
+    },
+    {
+      "leg_component_id": 8,
+      "ground_contact_center_m": [
+        0.4076441377401352,
+        0.8127259612083435,
+        0.0
+      ],
+      "ground_footprint_area_m2": 0.0013180249416784315,
+      "ground_footprint_vertices_m": [
+        [
+          0.3894917964935303,
+          0.7945736646652222,
+          0.0
+        ],
+        [
+          0.4258386790752411,
+          0.7945736646652222,
+          0.0
+        ],
+        [
+          0.42575427889823914,
+          0.8308359980583191,
+          0.0
+        ],
+        [
+          0.3894917964935303,
+          0.8309205174446106,
+          0.0
+        ]
+      ],
+      "interface_sample_count": 4096,
+      "exact_surface_pair": {
+        "point_first_m": [
+          0.371942937374115,
+          0.8298112154006958,
+          0.22724983096122742
+        ],
+        "point_second_m": [
+          0.371942937374115,
+          0.8298112154006958,
+          0.22724983096122742
+        ],
+        "distance_m": 0.0,
+        "triangle_pair_candidates": 73,
+        "method": "triangle intersection / boundary minimum"
+      },
+      "interface_min_sample_distance_mm": 0.004015089374122549,
+      "interface_p05_distance_mm": 1.244242363803428,
+      "near_surface_fraction_1mm": 0.041015625,
+      "near_surface_fraction_3mm": 0.124267578125,
+      "closest_sample_on_leg_m": [
+        0.42264328986760513,
+        0.7770248055458069,
+        0.18620872637205804
+      ],
+      "paired_point_on_frame_m": [
+        0.42264045079377116,
+        0.777021966425794,
+        0.18620872637205801
+      ]
+    },
+    {
+      "leg_component_id": 9,
+      "ground_contact_center_m": [
+        0.4076441377401352,
+        -0.8127261102199554,
+        0.0
+      ],
+      "ground_footprint_area_m2": 0.001318027105606135,
+      "ground_footprint_vertices_m": [
+        [
+          0.4258386790752411,
+          -0.7945737838745117,
+          0.0
+        ],
+        [
+          0.3894917964935303,
+          -0.7945737838745117,
+          0.0
+        ],
+        [
+          0.3894917964935303,
+          -0.8309206962585449,
+          0.0
+        ],
+        [
+          0.42575427889823914,
+          -0.8308361768722534,
+          0.0
+        ]
+      ],
+      "interface_sample_count": 4096,
+      "exact_surface_pair": {
+        "point_first_m": [
+          0.42263761162757874,
+          -0.7770249843597412,
+          0.22724983096122742
+        ],
+        "point_second_m": [
+          0.42263761162757874,
+          -0.7770249843597412,
+          0.22724983096122742
+        ],
+        "distance_m": 0.0,
+        "triangle_pair_candidates": 67,
+        "method": "triangle intersection / boundary minimum"
+      },
+      "interface_min_sample_distance_mm": 0.003867496850248688,
+      "interface_p05_distance_mm": 1.3129975848609452,
+      "near_surface_fraction_1mm": 0.037841796875,
+      "near_surface_fraction_3mm": 0.120361328125,
+      "closest_sample_on_leg_m": [
+        0.4226430810495968,
+        -0.7770249843597412,
+        0.209150318724292
+      ],
+      "paired_point_on_frame_m": [
+        0.42264034629410757,
+        -0.7770222496487326,
+        0.2091503187242925
+      ]
+    }
+  ]
+}

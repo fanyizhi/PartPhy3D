@@ -1,0 +1,83 @@
+{
+  "3": [
+    {
+      "frame_index": 2,
+      "target_azimuth_degrees": 0.0,
+      "actual_azimuth_degrees": 354.1807771254349,
+      "elevation_degrees": 9.686455817531318,
+      "estimated_lookat_center": [
+        -9.841869938845794e-09,
+        0.028389240012334505,
+        0.429474334615675
+      ]
+    },
+    {
+      "frame_index": 8,
+      "target_azimuth_degrees": 120.0,
+      "actual_azimuth_degrees": 97.95690279623524,
+      "elevation_degrees": 57.67259564805305,
+      "estimated_lookat_center": [
+        -9.841869938845794e-09,
+        0.028389240012334505,
+        0.429474334615675
+      ]
+    },
+    {
+      "frame_index": 0,
+      "target_azimuth_degrees": 240.0,
+      "actual_azimuth_degrees": 237.76148986313228,
+      "elevation_degrees": 40.81568684421502,
+      "estimated_lookat_center": [
+        -9.841869938845794e-09,
+        0.028389240012334505,
+        0.429474334615675
+      ]
+    }
+  ],
+  "4": [
+    {
+      "frame_index": 2,
+      "target_azimuth_degrees": 0.0,
+      "actual_azimuth_degrees": 354.1807771254349,
+      "elevation_degrees": 9.686455817531318,
+      "estimated_lookat_center": [
+        -9.841869938845794e-09,
+        0.028389240012334505,
+        0.429474334615675
+      ]
+    },
+    {
+      "frame_index": 8,
+      "target_azimuth_degrees": 90.0,
+      "actual_azimuth_degrees": 97.95690279623524,
+      "elevation_degrees": 57.67259564805305,
+      "estimated_lookat_center": [
+        -9.841869938845794e-09,
+        0.028389240012334505,
+        0.429474334615675
+      ]
+    },
+    {
+      "frame_index": 20,
+      "target_azimuth_degrees": 180.0,
+      "actual_azimuth_degrees": 181.5163842206532,
+      "elevation_degrees": 5.356594585221614,
+      "estimated_lookat_center": [
+        -9.841869938845794e-09,
+        0.028389240012334505,
+        0.429474334615675
+      ]
+    },
+    {
+      "frame_index": 26,
+      "target_azimuth_degrees": 270.0,
+      "actual_azimuth_degrees": 259.09935594305915,
+      "elevation_degrees": -4.616260536803075,
+      "estimated_lookat_center": [
+        -9.841869938845794e-09,
+        0.028389240012334505,
+        0.429474334615675
+      ]
+    }
+  ]
+}

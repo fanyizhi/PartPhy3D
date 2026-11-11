@@ -1,0 +1,3721 @@
+{
+  "input": {
+    "scene": "B07B4G5RBN_ATVPDKIKX0DER",
+    "scope": "reference_geometry_assisted_development",
+    "original_split": "test; previously exposed development object, not held-out",
+    "reference_sha256": "ad7c15bab38147658b76242c316deab8e84bf7ba0c8a1b1c0a5d0458c99fd6bf",
+    "reference_geometry_used_for_inference": true,
+    "target_mass_used_for_inference": false,
+    "views": [
+      0,
+      10,
+      20
+    ],
+    "geometry_unit": "glTF meter convention; not independently measured",
+    "components": [
+      {
+        "component_id": 0,
+        "faces": 3400,
+        "bounds_m": [
+          [
+            -0.3532082140445709,
+            -0.7425143122673035,
+            0.4055314064025879
+          ],
+          [
+            0.35912448167800903,
+            -0.43973273038864136,
+            0.8589487075805664
+          ]
+        ],
+        "watertight": true,
+        "mean_texture_rgb": [
+          0.5149727028066101,
+          0.51104652056901,
+          0.4970834294502129
+        ],
+        "volume_m3": 0.04222247950072166
+      },
+      {
+        "component_id": 1,
+        "faces": 2436,
+        "bounds_m": [
+          [
+            -0.4471714198589325,
+            -0.6333128213882446,
+            0.22398263216018677
+          ],
+          [
+            0.4471714198589325,
+            0.8612484335899353,
+            0.4472149908542633
+          ]
+        ],
+        "watertight": false,
+        "mean_texture_rgb": [
+          0.5120786245532675,
+          0.5079531429429986,
+          0.4944712751000783
+        ],
+        "volume_m3": null
+      },
+      {
+        "component_id": 2,
+        "faces": 1060,
+        "bounds_m": [
+          [
+            -0.4439470171928406,
+            -0.9157153367996216,
+            0.37929338216781616
+          ],
+          [
+            0.4439470171928406,
+            -0.5708683729171753,
+            0.8259827494621277
+          ]
+        ],
+        "watertight": false,
+        "mean_texture_rgb": [
+          0.5113799482056977,
+          0.5074546799852011,
+          0.49349858182266676
+        ],
+        "volume_m3": null
+      },
+      {
+        "component_id": 3,
+        "faces": 950,
+        "bounds_m": [
+          [
+            -0.4379391372203827,
+            -0.8824592232704163,
+            0.22793292999267578
+          ],
+          [
+            -0.3106206953525543,
+            -0.07652419060468674,
+            0.6007612943649292
+          ]
+        ],
+        "watertight": false,
+        "mean_texture_rgb": [
+          0.49868455452356375,
+          0.4946556587547303,
+          0.48030409356725107
+        ],
+        "volume_m3": null
+      },
+      {
+        "component_id": 4,
+        "faces": 950,
+        "bounds_m": [
+          [
+            0.3121744990348816,
+            -0.8824592232704163,
+            0.22793292999267578
+          ],
+          [
+            0.4379391372203827,
+            -0.07652419060468674,
+            0.6007612943649292
+          ]
+        ],
+        "watertight": false,
+        "mean_texture_rgb": [
+          0.5023955968352247,
+          0.4984850361197106,
+          0.48410870313037524
+        ],
+        "volume_m3": null
+      },
+      {
+        "component_id": 5,
+        "faces": 228,
+        "bounds_m": [
+          [
+            -0.43619558215141296,
+            -0.9180271625518799,
+            0.22854889929294586
+          ],
+          [
+            0.4355149269104004,
+            -0.830452561378479,
+            0.8144003748893738
+          ]
+        ],
+        "watertight": false,
+        "mean_texture_rgb": [
+          0.517033597064557,
+          0.5131120284371061,
+          0.49905400756793944
+        ],
+        "volume_m3": null
+      },
+      {
+        "component_id": 6,
+        "faces": 76,
+        "bounds_m": [
+          [
+            -0.4277639389038086,
+            0.7770248055458069,
+            0.0
+          ],
+          [
+            -0.371942937374115,
+            0.8328457474708557,
+            0.22925949096679688
+          ]
+        ],
+        "watertight": true,
+        "mean_texture_rgb": [
+          0.6859305125558997,
+          0.49896800825593385,
+          0.3124527003783968
+        ],
+        "volume_m3": 0.0005745539307461921
+      },
+      {
+        "component_id": 7,
+        "faces": 76,
+        "bounds_m": [
+          [
+            -0.4277639389038086,
+            -0.83284592628479,
+            0.0
+          ],
+          [
+            -0.371942937374115,
+            -0.7770249843597412,
+            0.22925949096679688
+          ]
+        ],
+        "watertight": true,
+        "mean_texture_rgb": [
+          0.6845889232886134,
+          0.5007739938080494,
+          0.30902992776057775
+        ],
+        "volume_m3": 0.0005745532757961078
+      },
+      {
+        "component_id": 8,
+        "faces": 76,
+        "bounds_m": [
+          [
+            0.371942937374115,
+            0.7770248055458069,
+            0.0
+          ],
+          [
+            0.4277639389038086,
+            0.8328457474708557,
+            0.22925949096679688
+          ]
+        ],
+        "watertight": true,
+        "mean_texture_rgb": [
+          0.6951324389404886,
+          0.5079463364293088,
+          0.3175954592363259
+        ],
+        "volume_m3": 0.0005745528740550949
+      },
+      {
+        "component_id": 9,
+        "faces": 76,
+        "bounds_m": [
+          [
+            0.371942937374115,
+            -0.83284592628479,
+            0.0
+          ],
+          [
+            0.4277639389038086,
+            -0.7770249843597412,
+            0.22925949096679688
+          ]
+        ],
+        "watertight": true,
+        "mean_texture_rgb": [
+          0.6829721362229102,
+          0.4998624011007913,
+          0.3098211214310284
+        ],
+        "volume_m3": 0.0005745532884897856
+      },
+      {
+        "component_id": 10,
+        "faces": 40,
+        "bounds_m": [
+          [
+            -0.42362621426582336,
+            -0.7770249843597412,
+            0.17584292590618134
+          ],
+          [
+            -0.3991936147212982,
+            0.7770248055458069,
+            0.22925949096679688
+          ]
+        ],
+        "watertight": false,
+        "mean_texture_rgb": [
+          0.7072875816993467,
+          0.5190522875816997,
+          0.3242810457516342
+        ],
+        "volume_m3": null
+      },
+      {
+        "component_id": 11,
+        "faces": 40,
+        "bounds_m": [
+          [
+            -0.3719429671764374,
+            0.8072109818458557,
+            0.17584292590618134
+          ],
+          [
+            0.371942937374115,
+            0.8316435217857361,
+            0.22925949096679688
+          ]
+        ],
+        "watertight": false,
+        "mean_texture_rgb": [
+          0.7120588235294121,
+          0.5172549019607843,
+          0.3188888888888891
+        ],
+        "volume_m3": null
+      },
+      {
+        "component_id": 12,
+        "faces": 40,
+        "bounds_m": [
+          [
+            -0.3719429671764374,
+            -0.83284592628479,
+            0.17584292590618134
+          ],
+          [
+            0.371942937374115,
+            -0.8084133863449097,
+            0.22925949096679688
+          ]
+        ],
+        "watertight": false,
+        "mean_texture_rgb": [
+          0.714183006535948,
+          0.5196732026143792,
+          0.3214052287581701
+        ],
+        "volume_m3": null
+      },
+      {
+        "component_id": 13,
+        "faces": 40,
+        "bounds_m": [
+          [
+            0.4000372886657715,
+            -0.7770249843597412,
+            0.17584292590618134
+          ],
+          [
+            0.42446988821029663,
+            0.7770248055458069,
+            0.22925949096679688
+          ]
+        ],
+        "watertight": false,
+        "mean_texture_rgb": [
+          0.708137254901961,
+          0.5196078431372552,
+          0.3248039215686276
+        ],
+        "volume_m3": null
+      },
+      {
+        "component_id": 14,
+        "faces": 2,
+        "bounds_m": [
+          [
+            -0.41004815697669983,
+            -0.8186172246932983,
+            0.21932004392147064
+          ],
+          [
+            0.41004815697669983,
+            0.8195228576660156,
+            0.21932004392147064
+          ]
+        ],
+        "watertight": false,
+        "mean_texture_rgb": [
+          0.5156862745098039,
+          0.3895424836601307,
+          0.3156862745098039
+        ],
+        "volume_m3": null
+      }
+    ],
+    "face_budget_targets": [
+      2400,
+      1200,
+      600
+    ],
+    "methods": [
+      "global_qem",
+      "component_qem",
+      "sensitivity_qem"
+    ],
+    "vlm_trials": 3,
+    "vlm_calls_per_arm_per_trial": 3,
+    "input_files": {
+      "observation_00.png": "47dd2d270dcb8f240b98a6feb54946cc77746529fbad33432b2a3ea2717ebc26",
+      "observation_10.png": "9656f674b9979f512c75d9b12423e848d5502b4005768bbdc93df5849446a492",
+      "observation_20.png": "ee42d0a2fef56cb5a5965ed817874c93b90e59e8da854e0fcc6221843535576e"
+    }
+  },
+  "consensus": {
+    "repeated": {
+      "components": [
+        {
+          "component_id": 0,
+          "part_name": "headrest back panel",
+          "surface_material": "fabric",
+          "construction": "upholstered",
+          "contains_macroscopic_cavity": "no",
+          "evidence": "matches shape and position of headrest in product views",
+          "construction_votes": {
+            "upholstered": 9
+          },
+          "support": 9,
+          "samples": 9,
+          "material_votes": {
+            "fabric": 9
+          }
+        },
+        {
+          "component_id": 1,
+          "part_name": "headrest cushion",
+          "surface_material": "fabric",
+          "construction": "upholstered",
+          "contains_macroscopic_cavity": "yes",
+          "evidence": "matches shape and position of headrest cushion in product views",
+          "construction_votes": {
+            "upholstered": 9
+          },
+          "support": 9,
+          "samples": 9,
+          "material_votes": {
+            "fabric": 9
+          }
+        },
+        {
+          "component_id": 2,
+          "part_name": "backrest side panel",
+          "surface_material": "fabric",
+          "construction": "upholstered",
+          "contains_macroscopic_cavity": "no",
+          "evidence": "matches shape and position of side panel in product views",
+          "construction_votes": {
+            "upholstered": 9
+          },
+          "support": 9,
+          "samples": 9,
+          "material_votes": {
+            "fabric": 9
+          }
+        },
+        {
+          "component_id": 3,
+          "part_name": "backrest top panel",
+          "surface_material": "fabric",
+          "construction": "upholstered",
+          "contains_macroscopic_cavity": "no",
+          "evidence": "matches shape and position of top back panel in product views",
+          "construction_votes": {
+            "upholstered": 9
+          },
+          "support": 9,
+          "samples": 9,
+          "material_votes": {
+            "fabric": 9
+          }
+        },
+        {
+          "component_id": 4,
+          "part_name": "backrest side panel (right)",
+          "surface_material": "fabric",
+          "construction": "upholstered",
+          "contains_macroscopic_cavity": "no",
+          "evidence": "matches shape and position of right side panel in product views",
+          "construction_votes": {
+            "upholstered": 9
+          },
+          "support": 9,
+          "samples": 9,
+          "material_votes": {
+            "fabric": 9
+          }
+        },
+        {
+          "component_id": 5,
+          "part_name": "seat back panel",
+          "surface_material": "fabric",
+          "construction": "upholstered",
+          "contains_macroscopic_cavity": "no",
+          "evidence": "matches shape and position of seat back in product views",
+          "construction_votes": {
+            "upholstered": 9
+          },
+          "support": 9,
+          "samples": 9,
+          "material_votes": {
+            "fabric": 9
+          }
+        },
+        {
+          "component_id": 6,
+          "part_name": "front leg (left)",
+          "surface_material": "wood",
+          "construction": "solid",
+          "contains_macroscopic_cavity": "no",
+          "evidence": "matches position and shape of front left leg in product views",
+          "construction_votes": {
+            "solid": 9
+          },
+          "support": 9,
+          "samples": 9,
+          "material_votes": {
+            "wood": 9
+          }
+        },
+        {
+          "component_id": 7,
+          "part_name": "front leg (right)",
+          "surface_material": "wood",
+          "construction": "solid",
+          "contains_macroscopic_cavity": "no",
+          "evidence": "matches position and shape of front right leg in product views",
+          "construction_votes": {
+            "solid": 9
+          },
+          "support": 9,
+          "samples": 9,
+          "material_votes": {
+            "wood": 9
+          }
+        },
+        {
+          "component_id": 8,
+          "part_name": "rear leg (left)",
+          "surface_material": "wood",
+          "construction": "solid",
+          "contains_macroscopic_cavity": "no",
+          "evidence": "matches position and shape of rear left leg in product views",
+          "construction_votes": {
+            "solid": 9
+          },
+          "support": 9,
+          "samples": 9,
+          "material_votes": {
+            "wood": 9
+          }
+        },
+        {
+          "component_id": 9,
+          "part_name": "rear leg (right)",
+          "surface_material": "wood",
+          "construction": "solid",
+          "contains_macroscopic_cavity": "no",
+          "evidence": "matches position and shape of rear right leg in product views",
+          "construction_votes": {
+            "solid": 9
+          },
+          "support": 9,
+          "samples": 9,
+          "material_votes": {
+            "wood": 9
+          }
+        },
+        {
+          "component_id": 10,
+          "part_name": "seat base panel (left)",
+          "surface_material": "wood",
+          "construction": "solid",
+          "contains_macroscopic_cavity": "no",
+          "evidence": "matches position and shape of left side of seat base in product views",
+          "construction_votes": {
+            "solid": 8
+          },
+          "support": 8,
+          "samples": 9,
+          "material_votes": {
+            "wood": 8,
+            "fabric": 1
+          }
+        },
+        {
+          "component_id": 11,
+          "part_name": "seat base panel (right)",
+          "surface_material": "wood",
+          "construction": "solid",
+          "contains_macroscopic_cavity": "no",
+          "evidence": "matches position and shape of right side of seat base in product views",
+          "construction_votes": {
+            "solid": 8
+          },
+          "support": 8,
+          "samples": 9,
+          "material_votes": {
+            "wood": 8,
+            "fabric": 1
+          }
+        },
+        {
+          "component_id": 12,
+          "part_name": "seat base panel (left rear)",
+          "surface_material": "wood",
+          "construction": "solid",
+          "contains_macroscopic_cavity": "no",
+          "evidence": "matches position and shape of left rear of seat base in product views",
+          "construction_votes": {
+            "solid": 8
+          },
+          "support": 8,
+          "samples": 9,
+          "material_votes": {
+            "wood": 8,
+            "fabric": 1
+          }
+        },
+        {
+          "component_id": 13,
+          "part_name": "seat base panel (right rear)",
+          "surface_material": "wood",
+          "construction": "solid",
+          "contains_macroscopic_cavity": "no",
+          "evidence": "matches position and shape of right rear of seat base in product views",
+          "construction_votes": {
+            "solid": 8
+          },
+          "support": 8,
+          "samples": 9,
+          "material_votes": {
+            "wood": 8,
+            "fabric": 1
+          }
+        },
+        {
+          "component_id": 14,
+          "part_name": "seat base panel (front)",
+          "surface_material": "wood",
+          "construction": "solid",
+          "contains_macroscopic_cavity": "no",
+          "evidence": "matches position and shape of front of seat base in product views",
+          "construction_votes": {
+            "solid": 9
+          },
+          "support": 9,
+          "samples": 9,
+          "material_votes": {
+            "wood": 9
+          }
+        }
+      ],
+      "materials": {
+        "fabric": {
+          "source": "VLM typical-material prior, not measured",
+          "density_kg_m3": 500.0,
+          "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+          "density_kg_m3_range": [
+            60.0,
+            1200.0
+          ],
+          "youngs_modulus_pa": 150000000.0,
+          "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+          "youngs_modulus_pa_range": [
+            1000000.0,
+            800000000.0
+          ],
+          "friction_coefficient": 0.4,
+          "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+          "hardness_records": [],
+          "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+          "assumptions": [
+            "Assumed effective in-plane tensile modulus for woven textile; friction coefficient for dry slider on textile surface under light contact; surface finish unresolved.",
+            "Assumed effective in-plane tensile modulus for woven upholstery fabric; friction coefficient for dry slider on fabric surface under light contact; surface finish unresolved.",
+            "Assumed effective in-plane tensile modulus for woven textile under light contact; friction coefficient for dry slider on fabric surface; surface finish unresolved."
+          ]
+        },
+        "wood": {
+          "source": "VLM typical-material prior, not measured",
+          "density_kg_m3": 600.0,
+          "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+          "density_kg_m3_range": [
+            300.0,
+            950.0
+          ],
+          "youngs_modulus_pa": 10000000000.0,
+          "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+          "youngs_modulus_pa_range": [
+            2000000000.0,
+            18000000000.0
+          ],
+          "friction_coefficient": 0.3,
+          "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+          "hardness_records": [],
+          "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+          "assumptions": [
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface; surface finish unresolved."
+          ]
+        }
+      },
+      "valid_outputs_for_aggregation": 9
+    },
+    "progressive": {
+      "components": [
+        {
+          "component_id": 0,
+          "part_name": "Headrest Back Panel",
+          "surface_material": "fabric",
+          "construction": "upholstered",
+          "contains_macroscopic_cavity": "no",
+          "evidence": "Visible in top view as the curved backrest, covered in gray fabric, matching the seat upholstery.",
+          "construction_votes": {
+            "upholstered": 3
+          },
+          "support": 3,
+          "samples": 3,
+          "material_votes": {
+            "fabric": 3
+          }
+        },
+        {
+          "component_id": 1,
+          "part_name": "Headrest Pillow",
+          "surface_material": "fabric",
+          "construction": "upholstered",
+          "contains_macroscopic_cavity": "no",
+          "evidence": "The separate, rectangular pillow with a visible seam, placed against the headrest back.",
+          "construction_votes": {
+            "upholstered": 3
+          },
+          "support": 3,
+          "samples": 3,
+          "material_votes": {
+            "fabric": 3
+          }
+        },
+        {
+          "component_id": 2,
+          "part_name": "Armrest Back Panel",
+          "surface_material": "fabric",
+          "construction": "upholstered",
+          "contains_macroscopic_cavity": "no",
+          "evidence": "The curved panel forming the back of the armrest, upholstered in gray fabric.",
+          "construction_votes": {
+            "upholstered": 3
+          },
+          "support": 3,
+          "samples": 3,
+          "material_votes": {
+            "fabric": 3
+          }
+        },
+        {
+          "component_id": 3,
+          "part_name": "Armrest Side Panel",
+          "surface_material": "fabric",
+          "construction": "upholstered",
+          "contains_macroscopic_cavity": "no",
+          "evidence": "The side panel of the armrest, upholstered in gray fabric, visible from the side view.",
+          "construction_votes": {
+            "upholstered": 3
+          },
+          "support": 3,
+          "samples": 3,
+          "material_votes": {
+            "fabric": 3
+          }
+        },
+        {
+          "component_id": 4,
+          "part_name": "Armrest Front Panel",
+          "surface_material": "fabric",
+          "construction": "upholstered",
+          "contains_macroscopic_cavity": "no",
+          "evidence": "The front panel of the armrest, upholstered in gray fabric, forming the transition to the seat.",
+          "construction_votes": {
+            "upholstered": 3
+          },
+          "support": 3,
+          "samples": 3,
+          "material_votes": {
+            "fabric": 3
+          }
+        },
+        {
+          "component_id": 5,
+          "part_name": "Seat Back Panel",
+          "surface_material": "fabric",
+          "construction": "upholstered",
+          "contains_macroscopic_cavity": "no",
+          "evidence": "The large, flat back panel of the seat, upholstered in gray fabric, visible in side and top views.",
+          "construction_votes": {
+            "upholstered": 3
+          },
+          "support": 3,
+          "samples": 3,
+          "material_votes": {
+            "fabric": 3
+          }
+        },
+        {
+          "component_id": 6,
+          "part_name": "Left Front Leg",
+          "surface_material": "wood",
+          "construction": "solid",
+          "contains_macroscopic_cavity": "no",
+          "evidence": "The small, cylindrical wooden leg at the front left corner, visible in all views.",
+          "construction_votes": {
+            "solid": 3
+          },
+          "support": 3,
+          "samples": 3,
+          "material_votes": {
+            "wood": 3
+          }
+        },
+        {
+          "component_id": 7,
+          "part_name": "Left Rear Leg",
+          "surface_material": "wood",
+          "construction": "solid",
+          "contains_macroscopic_cavity": "no",
+          "evidence": "The small, cylindrical wooden leg at the rear left corner, visible in all views.",
+          "construction_votes": {
+            "solid": 3
+          },
+          "support": 3,
+          "samples": 3,
+          "material_votes": {
+            "wood": 3
+          }
+        },
+        {
+          "component_id": 8,
+          "part_name": "Right Front Leg",
+          "surface_material": "wood",
+          "construction": "solid",
+          "contains_macroscopic_cavity": "no",
+          "evidence": "The small, cylindrical wooden leg at the front right corner, visible in all views.",
+          "construction_votes": {
+            "solid": 3
+          },
+          "support": 3,
+          "samples": 3,
+          "material_votes": {
+            "wood": 3
+          }
+        },
+        {
+          "component_id": 9,
+          "part_name": "Right Rear Leg",
+          "surface_material": "wood",
+          "construction": "solid",
+          "contains_macroscopic_cavity": "no",
+          "evidence": "The small, cylindrical wooden leg at the rear right corner, visible in all views.",
+          "construction_votes": {
+            "solid": 3
+          },
+          "support": 3,
+          "samples": 3,
+          "material_votes": {
+            "wood": 3
+          }
+        },
+        {
+          "component_id": 10,
+          "part_name": "Seat Frame Panel",
+          "surface_material": "wood",
+          "construction": "solid",
+          "contains_macroscopic_cavity": "no",
+          "evidence": "The long, flat wooden panel forming the base of the seat, visible from the side.",
+          "construction_votes": {
+            "solid": 2
+          },
+          "support": 2,
+          "samples": 3,
+          "material_votes": {
+            "wood": 2,
+            "fabric": 1
+          }
+        },
+        {
+          "component_id": 11,
+          "part_name": "Left Side Frame",
+          "surface_material": "wood",
+          "construction": "solid",
+          "contains_macroscopic_cavity": "no",
+          "evidence": "The wooden side frame piece on the left, visible in side view.",
+          "construction_votes": {
+            "solid": 3
+          },
+          "support": 3,
+          "samples": 3,
+          "material_votes": {
+            "wood": 3
+          }
+        },
+        {
+          "component_id": 12,
+          "part_name": "Right Side Frame",
+          "surface_material": "wood",
+          "construction": "solid",
+          "contains_macroscopic_cavity": "no",
+          "evidence": "The wooden side frame piece on the right, visible in side view.",
+          "construction_votes": {
+            "solid": 3
+          },
+          "support": 3,
+          "samples": 3,
+          "material_votes": {
+            "wood": 3
+          }
+        },
+        {
+          "component_id": 13,
+          "part_name": "Front Leg Frame",
+          "surface_material": "wood",
+          "construction": "solid",
+          "contains_macroscopic_cavity": "no",
+          "evidence": "The wooden frame piece at the front, visible in side view.",
+          "construction_votes": {
+            "solid": 3
+          },
+          "support": 3,
+          "samples": 3,
+          "material_votes": {
+            "wood": 3
+          }
+        },
+        {
+          "component_id": 14,
+          "part_name": "Back Leg Frame",
+          "surface_material": "wood",
+          "construction": "solid",
+          "contains_macroscopic_cavity": "no",
+          "evidence": "The wooden frame piece at the back, visible in side view.",
+          "construction_votes": {
+            "solid": 3
+          },
+          "support": 3,
+          "samples": 3,
+          "material_votes": {
+            "wood": 3
+          }
+        }
+      ],
+      "materials": {
+        "fabric": {
+          "source": "VLM typical-material prior, not measured",
+          "density_kg_m3": 500.0,
+          "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+          "youngs_modulus_pa": 150000000.0,
+          "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+          "friction_coefficient": 0.4,
+          "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+          "hardness_records": [],
+          "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+          "assumptions": [
+            "Assumed effective in-plane tensile modulus for woven textile; friction coefficient for dry slider on textile surface under light contact; surface finish unresolved.",
+            "Assumed effective in-plane tensile modulus for woven upholstery fabric; friction coefficient for dry slider on fabric surface under light contact; surface finish unresolved.",
+            "Assumed effective in-plane tensile modulus for woven textile under light contact; friction coefficient for dry slider on fabric surface; surface finish unresolved."
+          ]
+        },
+        "wood": {
+          "source": "VLM typical-material prior, not measured",
+          "density_kg_m3": 600.0,
+          "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+          "youngs_modulus_pa": 10000000000.0,
+          "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+          "friction_coefficient": 0.3,
+          "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+          "hardness_records": [],
+          "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+          "assumptions": [
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface; surface finish unresolved."
+          ]
+        }
+      },
+      "valid_outputs_for_aggregation": 3
+    }
+  },
+  "qem": [
+    {
+      "method": "global_qem",
+      "target_faces": 2400,
+      "actual_faces": 2400,
+      "seconds_samples": [
+        0.02723285974934697,
+        0.02639148011803627,
+        0.027445330750197172
+      ],
+      "median_seconds": 0.02723285974934697,
+      "component_budgets": null,
+      "surface_mean_mm": 19.399719952144554,
+      "surface_p95_mm": 175.2562979097409,
+      "reverse_surface_mean_mm": 0.7976796537415994,
+      "reverse_surface_p95_mm": 2.67733525813408,
+      "symmetric_mean_distance_mm": 10.098699802943075,
+      "mean_normal_error_degrees": 21.15632057211161,
+      "closed_wood_regions": 4,
+      "wood_region_count": 4,
+      "wood_physics": {
+        "mass_kg": 1.3334054104585915,
+        "center_of_mass_m": [
+          0.00099047052467614,
+          0.008543455671537425,
+          0.1275930751535785
+        ],
+        "inertia_kg_m2": [
+          [
+            0.875458254044372,
+            -0.004608656607746971,
+            0.0004175158727027983
+          ],
+          [
+            -0.004608656607746971,
+            0.22177400230984723,
+            0.0004040089967365854
+          ],
+          [
+            0.0004175158727027983,
+            0.0004040089967365854,
+            1.0862980927833705
+          ]
+        ]
+      },
+      "wood_errors": {
+        "mass_relative": 0.03301304367270108,
+        "com_error_mm": 8.603286886310642,
+        "inertia_relative": 0.032697982402306605
+      },
+      "distance_evaluation_seconds": 2.689129340928048,
+      "global_mapping": "verified edge-collapse ancestry",
+      "physical_scope": "conditional VLM wood density on reference closed regions"
+    },
+    {
+      "method": "component_qem",
+      "target_faces": 2400,
+      "actual_faces": 2486,
+      "seconds_samples": [
+        0.024334365967661142,
+        0.02334581408649683,
+        0.025532223284244537
+      ],
+      "median_seconds": 0.024334365967661142,
+      "component_budgets": [
+        848,
+        608,
+        266,
+        238,
+        238,
+        60,
+        22,
+        22,
+        22,
+        22,
+        13,
+        13,
+        13,
+        13,
+        2
+      ],
+      "surface_mean_mm": 1.7149377400153811,
+      "surface_p95_mm": 8.381390701351737,
+      "reverse_surface_mean_mm": 3.8594730347357724,
+      "reverse_surface_p95_mm": 18.787808108292847,
+      "symmetric_mean_distance_mm": 2.787205387375577,
+      "mean_normal_error_degrees": 11.148315152487744,
+      "closed_wood_regions": 3,
+      "wood_region_count": 4,
+      "wood_physics": null,
+      "wood_errors": null,
+      "distance_evaluation_seconds": 3.0521533801220357,
+      "global_mapping": "preserved component identity",
+      "physical_scope": "conditional VLM wood density on reference closed regions"
+    },
+    {
+      "method": "sensitivity_qem",
+      "target_faces": 2400,
+      "actual_faces": 2399,
+      "seconds_samples": [
+        0.025710818823426962,
+        0.01889753621071577,
+        0.018787335138767958
+      ],
+      "median_seconds": 0.01889753621071577,
+      "component_budgets": [
+        411,
+        399,
+        219,
+        343,
+        346,
+        216,
+        76,
+        76,
+        76,
+        76,
+        40,
+        40,
+        40,
+        40,
+        2
+      ],
+      "surface_mean_mm": 2.6414451236576304,
+      "surface_p95_mm": 17.603990892008863,
+      "reverse_surface_mean_mm": 3.4030457507660303,
+      "reverse_surface_p95_mm": 18.89423195850037,
+      "symmetric_mean_distance_mm": 3.02224543721183,
+      "mean_normal_error_degrees": 10.9478088393379,
+      "closed_wood_regions": 4,
+      "wood_region_count": 4,
+      "wood_physics": {
+        "mass_kg": 1.3789280214523079,
+        "center_of_mass_m": [
+          -1.8520153204159444e-07,
+          1.3637300490742065e-08,
+          0.12780460455562245
+        ],
+        "inertia_kg_m2": [
+          [
+            0.9048177808533162,
+            2.2637238676689702e-07,
+            -3.172874232897799e-08
+          ],
+          [
+            2.2637238676689702e-07,
+            0.22912718525548903,
+            4.854471015839456e-08
+          ],
+          [
+            -3.172874232897799e-08,
+            4.854471015839456e-08,
+            1.1226255196854957
+          ]
+        ]
+      },
+      "wood_errors": {
+        "mass_relative": 0.0,
+        "com_error_mm": 0.0,
+        "inertia_relative": 0.0
+      },
+      "distance_evaluation_seconds": 3.2045631683431566,
+      "global_mapping": "preserved component identity",
+      "physical_scope": "conditional VLM wood density on reference closed regions"
+    },
+    {
+      "method": "global_qem",
+      "target_faces": 1200,
+      "actual_faces": 1200,
+      "seconds_samples": [
+        0.025869464967399836,
+        0.024817930068820715,
+        0.024702914990484715
+      ],
+      "median_seconds": 0.024817930068820715,
+      "component_budgets": null,
+      "surface_mean_mm": 23.169211297532897,
+      "surface_p95_mm": 175.15876093353643,
+      "reverse_surface_mean_mm": 4.212425559818265,
+      "reverse_surface_p95_mm": 14.325271918274598,
+      "symmetric_mean_distance_mm": 13.690818428675582,
+      "mean_normal_error_degrees": 32.83709309040446,
+      "closed_wood_regions": 0,
+      "wood_region_count": 4,
+      "wood_physics": null,
+      "wood_errors": null,
+      "distance_evaluation_seconds": 2.7145478618331254,
+      "global_mapping": "verified edge-collapse ancestry",
+      "physical_scope": "conditional VLM wood density on reference closed regions"
+    },
+    {
+      "method": "component_qem",
+      "target_faces": 1200,
+      "actual_faces": 1340,
+      "seconds_samples": [
+        0.027116981334984303,
+        0.026434774044901133,
+        0.025350958108901978
+      ],
+      "median_seconds": 0.026434774044901133,
+      "component_budgets": [
+        417,
+        299,
+        131,
+        118,
+        118,
+        31,
+        13,
+        13,
+        13,
+        13,
+        8,
+        8,
+        8,
+        8,
+        2
+      ],
+      "surface_mean_mm": 4.1185953061583325,
+      "surface_p95_mm": 18.900456550625318,
+      "reverse_surface_mean_mm": 9.236109720535392,
+      "reverse_surface_p95_mm": 40.57135955898824,
+      "symmetric_mean_distance_mm": 6.677352513346863,
+      "mean_normal_error_degrees": 17.31768312118366,
+      "closed_wood_regions": 4,
+      "wood_region_count": 4,
+      "wood_physics": {
+        "mass_kg": 1.1326033223555887,
+        "center_of_mass_m": [
+          0.008557988344034739,
+          0.04576362938416902,
+          0.12914123312756165
+        ],
+        "inertia_kg_m2": [
+          [
+            0.740113557286638,
+            -0.022854277873151453,
+            0.0029117157195033623
+          ],
+          [
+            -0.022854277873151453,
+            0.18757400664920867,
+            -0.0015402802541808194
+          ],
+          [
+            0.0029117157195033623,
+            -0.0015402802541808194,
+            0.9183972817144915
+          ]
+        ]
+      },
+      "wood_errors": {
+        "mass_relative": 0.17863492166711226,
+        "com_error_mm": 46.576146648283355,
+        "inertia_relative": 0.18331821273530147
+      },
+      "distance_evaluation_seconds": 2.796154776122421,
+      "global_mapping": "preserved component identity",
+      "physical_scope": "conditional VLM wood density on reference closed regions"
+    },
+    {
+      "method": "sensitivity_qem",
+      "target_faces": 1200,
+      "actual_faces": 1246,
+      "seconds_samples": [
+        0.03517338400706649,
+        0.03492850670590997,
+        0.03503591055050492
+      ],
+      "median_seconds": 0.03503591055050492,
+      "component_budgets": [
+        156,
+        152,
+        83,
+        130,
+        131,
+        82,
+        76,
+        76,
+        76,
+        76,
+        40,
+        40,
+        40,
+        40,
+        2
+      ],
+      "surface_mean_mm": 6.587999048345469,
+      "surface_p95_mm": 32.40190079252437,
+      "reverse_surface_mean_mm": 11.67190533345637,
+      "reverse_surface_p95_mm": 52.87905103250805,
+      "symmetric_mean_distance_mm": 9.129952190900921,
+      "mean_normal_error_degrees": 19.392875898541416,
+      "closed_wood_regions": 4,
+      "wood_region_count": 4,
+      "wood_physics": {
+        "mass_kg": 1.3789280214523079,
+        "center_of_mass_m": [
+          -1.8520153204159444e-07,
+          1.3637300490742065e-08,
+          0.12780460455562245
+        ],
+        "inertia_kg_m2": [
+          [
+            0.9048177808533162,
+            2.2637238676689702e-07,
+            -3.172874232897799e-08
+          ],
+          [
+            2.2637238676689702e-07,
+            0.22912718525548903,
+            4.854471015839456e-08
+          ],
+          [
+            -3.172874232897799e-08,
+            4.854471015839456e-08,
+            1.1226255196854957
+          ]
+        ]
+      },
+      "wood_errors": {
+        "mass_relative": 0.0,
+        "com_error_mm": 0.0,
+        "inertia_relative": 0.0
+      },
+      "distance_evaluation_seconds": 3.29605283588171,
+      "global_mapping": "preserved component identity",
+      "physical_scope": "conditional VLM wood density on reference closed regions"
+    },
+    {
+      "method": "global_qem",
+      "target_faces": 600,
+      "actual_faces": 599,
+      "seconds_samples": [
+        0.04258557502180338,
+        0.055100020952522755,
+        0.039383438881486654
+      ],
+      "median_seconds": 0.04258557502180338,
+      "component_budgets": null,
+      "surface_mean_mm": 30.858268245223186,
+      "surface_p95_mm": 115.33545552040599,
+      "reverse_surface_mean_mm": 19.75617776978556,
+      "reverse_surface_p95_mm": 64.82740658178481,
+      "symmetric_mean_distance_mm": 25.307223007504373,
+      "mean_normal_error_degrees": 39.968381597031005,
+      "closed_wood_regions": 0,
+      "wood_region_count": 4,
+      "wood_physics": null,
+      "wood_errors": null,
+      "distance_evaluation_seconds": 2.956541028805077,
+      "global_mapping": "verified edge-collapse ancestry",
+      "physical_scope": "conditional VLM wood density on reference closed regions"
+    },
+    {
+      "method": "component_qem",
+      "target_faces": 600,
+      "actual_faces": 873,
+      "seconds_samples": [
+        0.03287777630612254,
+        0.03201354620978236,
+        0.031997526064515114
+      ],
+      "median_seconds": 0.03201354620978236,
+      "component_budgets": [
+        200,
+        145,
+        64,
+        58,
+        58,
+        17,
+        8,
+        8,
+        8,
+        8,
+        6,
+        6,
+        6,
+        6,
+        2
+      ],
+      "surface_mean_mm": 8.402939156021388,
+      "surface_p95_mm": 34.599913908653754,
+      "reverse_surface_mean_mm": 14.388297697711472,
+      "reverse_surface_p95_mm": 56.36439082797883,
+      "symmetric_mean_distance_mm": 11.395618426866431,
+      "mean_normal_error_degrees": 25.302285668480497,
+      "closed_wood_regions": 4,
+      "wood_region_count": 4,
+      "wood_physics": {
+        "mass_kg": 0.8785891536813655,
+        "center_of_mass_m": [
+          0.041495156521849895,
+          0.011875571408252046,
+          0.13269234599118726
+        ],
+        "inertia_kg_m2": [
+          [
+            0.5753415802658626,
+            -0.005047430572567764,
+            0.003575447707219068
+          ],
+          [
+            -0.005047430572567764,
+            0.1438710563682624,
+            0.003528552403847359
+          ],
+          [
+            0.003575447707219068,
+            0.003528552403847359,
+            0.7123852049620032
+          ]
+        ]
+      },
+      "wood_errors": {
+        "mass_relative": 0.3628462544723531,
+        "com_error_mm": 43.437107102711,
+        "inertia_relative": 0.3651638179535788
+      },
+      "distance_evaluation_seconds": 2.993293261155486,
+      "global_mapping": "preserved component identity",
+      "physical_scope": "conditional VLM wood density on reference closed regions"
+    },
+    {
+      "method": "sensitivity_qem",
+      "target_faces": 600,
+      "actual_faces": 901,
+      "seconds_samples": [
+        0.05644455412402749,
+        0.05547549994662404,
+        0.047160298097878695
+      ],
+      "median_seconds": 0.05547549994662404,
+      "component_budgets": [
+        68,
+        67,
+        37,
+        58,
+        58,
+        37,
+        48,
+        48,
+        49,
+        48,
+        20,
+        20,
+        20,
+        20,
+        2
+      ],
+      "surface_mean_mm": 8.998334644576252,
+      "surface_p95_mm": 36.18649928876622,
+      "reverse_surface_mean_mm": 15.82046386052224,
+      "reverse_surface_p95_mm": 61.56354023030407,
+      "symmetric_mean_distance_mm": 12.409399252549246,
+      "mean_normal_error_degrees": 26.495372843404418,
+      "closed_wood_regions": 4,
+      "wood_region_count": 4,
+      "wood_physics": {
+        "mass_kg": 1.3480575654445983,
+        "center_of_mass_m": [
+          0.00016950942807676043,
+          0.000190750765066282,
+          0.12800832215106206
+        ],
+        "inertia_kg_m2": [
+          [
+            0.8844535200589507,
+            -0.002144713459040012,
+            5.505413329798758e-06
+          ],
+          [
+            -0.002144713459040012,
+            0.2238271537670884,
+            1.4929348075440059e-05
+          ],
+          [
+            5.505413329798758e-06,
+            1.4929348075440059e-05,
+            1.0973524875137106
+          ]
+        ]
+      },
+      "wood_errors": {
+        "mass_relative": 0.022387286013084484,
+        "com_error_mm": 0.3266156424883956,
+        "inertia_relative": 0.02262122273212734
+      },
+      "distance_evaluation_seconds": 3.0396153782494366,
+      "global_mapping": "preserved component identity",
+      "physical_scope": "conditional VLM wood density on reference closed regions"
+    }
+  ],
+  "edit": {
+    "scope": "four closed wooden legs; open rails and upholstery excluded",
+    "component_id": 6,
+    "wood_components": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "before_density_kg_m3": 600.0,
+    "edited_density_kg_m3": 2700.0,
+    "edit_material": "aluminum, user-specified nominal prior",
+    "before": {
+      "mass_kg": 1.3789280214523079,
+      "center_of_mass_m": [
+        -1.8520153204159444e-07,
+        1.3637300490742065e-08,
+        0.12780460455562245
+      ],
+      "inertia_kg_m2": [
+        [
+          0.9048177808533162,
+          2.2637238676689702e-07,
+          -3.172874232897799e-08
+        ],
+        [
+          2.2637238676689702e-07,
+          0.22912718525548903,
+          4.854471015839456e-08
+        ],
+        [
+          -3.172874232897799e-08,
+          4.854471015839456e-08,
+          1.1226255196854957
+        ]
+      ]
+    },
+    "after": {
+      "mass_kg": 2.5854912760193116,
+      "center_of_mass_m": [
+        -0.18773481245575568,
+        0.3767731863169337,
+        0.1278045322930039
+      ],
+      "inertia_kg_m2": [
+        [
+          1.3295027811234221,
+          0.20901354639718597,
+          -0.00018534053308756626
+        ],
+        [
+          0.20901354639718597,
+          0.33848973440797236,
+          0.00018541526873429304
+        ],
+        [
+          -0.00018534053308756626,
+          0.00018541526873429304,
+          1.6467685048904843
+        ]
+      ]
+    },
+    "full_recompute_residual": {
+      "mass_kg": 0.0,
+      "center_m": 2.7755575615628914e-17,
+      "inertia_kg_m2": 4.648541058872642e-16
+    }
+  },
+  "vlm_seal": {
+    "sha256": "9edb81bdc92843bbf421c2e7def629d94f42a1c52a61093e89e86b2649d1cecf",
+    "mass_labels_read": false
+  },
+  "geometry_arrays_sha256": "a7e24feda7bc9c864edd3a511e7b00dc45ce09974b5f3baba1a739673e9cb3a7",
+  "matched_qem": {
+    "scope": "matched achieved face counts; same reference and sample points",
+    "timing_protocol": "one warmup per method, 15 alternating paired repeats, VLM processes finished",
+    "pairs": [
+      {
+        "component_method": {
+          "method": "component_qem",
+          "target_faces": 2400,
+          "actual_faces": 2486,
+          "seconds_samples": [
+            0.02407302800565958,
+            0.02236700989305973,
+            0.0226840996183455,
+            0.029232784174382687,
+            0.030975256115198135,
+            0.02431829320266843,
+            0.022574835922569036,
+            0.022257089149206877,
+            0.022588056046515703,
+            0.024906801991164684,
+            0.02254648506641388,
+            0.024021053686738014,
+            0.02451940393075347,
+            0.02239597775042057,
+            0.022836953401565552
+          ],
+          "median_seconds": 0.022836953401565552,
+          "component_budgets": [
+            848,
+            608,
+            266,
+            238,
+            238,
+            60,
+            22,
+            22,
+            22,
+            22,
+            13,
+            13,
+            13,
+            13,
+            2
+          ],
+          "surface_mean_mm": 1.7149377400153811,
+          "surface_p95_mm": 8.381390701351737,
+          "reverse_surface_mean_mm": 3.8594730347357724,
+          "reverse_surface_p95_mm": 18.787808108292847,
+          "symmetric_mean_distance_mm": 2.787205387375577,
+          "mean_normal_error_degrees": 11.148315152487744,
+          "closed_wood_regions": 3,
+          "wood_region_count": 4,
+          "wood_physics": null,
+          "wood_errors": null,
+          "distance_evaluation_seconds": 3.0521533801220357,
+          "global_mapping": "preserved component identity",
+          "physical_scope": "conditional VLM wood density on reference closed regions",
+          "timing_iqr_seconds": [
+            0.022560660494491458,
+            0.02441884856671095
+          ]
+        },
+        "matched_global": {
+          "method": "matched_global_qem",
+          "actual_faces": 2486,
+          "median_seconds": 0.02504100138321519,
+          "seconds_samples": [
+            0.02671905281022191,
+            0.030267437919974327,
+            0.025681260973215103,
+            0.03874979028478265,
+            0.038055995013564825,
+            0.024803853128105402,
+            0.02374150464311242,
+            0.023940970189869404,
+            0.023799067828804255,
+            0.02450536983087659,
+            0.02370248408988118,
+            0.024891831912100315,
+            0.028411307837814093,
+            0.025108010973781347,
+            0.02504100138321519
+          ],
+          "timing_iqr_seconds": [
+            0.024223170010372996,
+            0.027565180324018
+          ],
+          "surface_p95_mm": 175.2562979097409,
+          "surface_mean_mm": 19.38036764495019,
+          "wood_errors": {
+            "mass_relative": 0.021701309221704213,
+            "com_error_mm": 3.946491343790666,
+            "inertia_relative": 0.02320883547726407
+          }
+        },
+        "absolute_face_count_difference": 0
+      },
+      {
+        "component_method": {
+          "method": "sensitivity_qem",
+          "target_faces": 2400,
+          "actual_faces": 2399,
+          "seconds_samples": [
+            0.01984368497505784,
+            0.020021865144371986,
+            0.02004305925220251,
+            0.019992451183497906,
+            0.01962766796350479,
+            0.019351093098521233,
+            0.019661571830511093,
+            0.01989380782470107,
+            0.019382609985768795,
+            0.019202818162739277,
+            0.01976662501692772,
+            0.019675453193485737,
+            0.020117045380175114,
+            0.01987128797918558,
+            0.02079461794346571
+          ],
+          "median_seconds": 0.01984368497505784,
+          "component_budgets": [
+            411,
+            399,
+            219,
+            343,
+            346,
+            216,
+            76,
+            76,
+            76,
+            76,
+            40,
+            40,
+            40,
+            40,
+            2
+          ],
+          "surface_mean_mm": 2.6414451236576304,
+          "surface_p95_mm": 17.603990892008863,
+          "reverse_surface_mean_mm": 3.4030457507660303,
+          "reverse_surface_p95_mm": 18.89423195850037,
+          "symmetric_mean_distance_mm": 3.02224543721183,
+          "mean_normal_error_degrees": 10.9478088393379,
+          "closed_wood_regions": 4,
+          "wood_region_count": 4,
+          "wood_physics": {
+            "mass_kg": 1.3789280214523079,
+            "center_of_mass_m": [
+              -1.8520153204159444e-07,
+              1.3637300490742065e-08,
+              0.12780460455562245
+            ],
+            "inertia_kg_m2": [
+              [
+                0.9048177808533162,
+                2.2637238676689702e-07,
+                -3.172874232897799e-08
+              ],
+              [
+                2.2637238676689702e-07,
+                0.22912718525548903,
+                4.854471015839456e-08
+              ],
+              [
+                -3.172874232897799e-08,
+                4.854471015839456e-08,
+                1.1226255196854957
+              ]
+            ]
+          },
+          "wood_errors": {
+            "mass_relative": 0.0,
+            "com_error_mm": 0.0,
+            "inertia_relative": 0.0
+          },
+          "distance_evaluation_seconds": 3.2045631683431566,
+          "global_mapping": "preserved component identity",
+          "physical_scope": "conditional VLM wood density on reference closed regions",
+          "timing_iqr_seconds": [
+            0.019644619897007942,
+            0.020007158163934946
+          ]
+        },
+        "matched_global": {
+          "method": "matched_global_qem",
+          "actual_faces": 2398,
+          "median_seconds": 0.025965979788452387,
+          "seconds_samples": [
+            0.024591897148638964,
+            0.02662034798413515,
+            0.025028133764863014,
+            0.024837116710841656,
+            0.024489480070769787,
+            0.02599625615403056,
+            0.026906026992946863,
+            0.026827868074178696,
+            0.02571344980970025,
+            0.026863066013902426,
+            0.025965979788452387,
+            0.024918672163039446,
+            0.027083581779152155,
+            0.025286931078881025,
+            0.026377716101706028
+          ],
+          "timing_iqr_seconds": [
+            0.02497340296395123,
+            0.026724108029156923
+          ],
+          "surface_p95_mm": 175.2562979097409,
+          "surface_mean_mm": 19.40495344426657,
+          "wood_errors": {
+            "mass_relative": 0.03865164377488184,
+            "com_error_mm": 13.864081387813075,
+            "inertia_relative": 0.03851787399210343
+          }
+        },
+        "absolute_face_count_difference": 1
+      },
+      {
+        "component_method": {
+          "method": "component_qem",
+          "target_faces": 1200,
+          "actual_faces": 1340,
+          "seconds_samples": [
+            0.03416152624413371,
+            0.03144347295165062,
+            0.034111413173377514,
+            0.031185093335807323,
+            0.03186542307958007,
+            0.031203605700284243,
+            0.03138198470696807,
+            0.031167243141680956,
+            0.031657632905989885,
+            0.031116160098463297,
+            0.032912323251366615,
+            0.03175820782780647,
+            0.03315134719014168,
+            0.03079627174884081,
+            0.034746240358799696
+          ],
+          "median_seconds": 0.031657632905989885,
+          "component_budgets": [
+            417,
+            299,
+            131,
+            118,
+            118,
+            31,
+            13,
+            13,
+            13,
+            13,
+            8,
+            8,
+            8,
+            8,
+            2
+          ],
+          "surface_mean_mm": 4.1185953061583325,
+          "surface_p95_mm": 18.900456550625318,
+          "reverse_surface_mean_mm": 9.236109720535392,
+          "reverse_surface_p95_mm": 40.57135955898824,
+          "symmetric_mean_distance_mm": 6.677352513346863,
+          "mean_normal_error_degrees": 17.31768312118366,
+          "closed_wood_regions": 4,
+          "wood_region_count": 4,
+          "wood_physics": {
+            "mass_kg": 1.1326033223555887,
+            "center_of_mass_m": [
+              0.008557988344034739,
+              0.04576362938416902,
+              0.12914123312756165
+            ],
+            "inertia_kg_m2": [
+              [
+                0.740113557286638,
+                -0.022854277873151453,
+                0.0029117157195033623
+              ],
+              [
+                -0.022854277873151453,
+                0.18757400664920867,
+                -0.0015402802541808194
+              ],
+              [
+                0.0029117157195033623,
+                -0.0015402802541808194,
+                0.9183972817144915
+              ]
+            ]
+          },
+          "wood_errors": {
+            "mass_relative": 0.17863492166711226,
+            "com_error_mm": 46.576146648283355,
+            "inertia_relative": 0.18331821273530147
+          },
+          "distance_evaluation_seconds": 2.796154776122421,
+          "global_mapping": "preserved component identity",
+          "physical_scope": "conditional VLM wood density on reference closed regions",
+          "timing_iqr_seconds": [
+            0.031194349518045783,
+            0.03303183522075415
+          ]
+        },
+        "matched_global": {
+          "method": "matched_global_qem",
+          "actual_faces": 1339,
+          "median_seconds": 0.025914119090884924,
+          "seconds_samples": [
+            0.02417017100378871,
+            0.026422347873449326,
+            0.027600879780948162,
+            0.023978562094271183,
+            0.029887882061302662,
+            0.023926133289933205,
+            0.02419178280979395,
+            0.03713412210345268,
+            0.029648295138031244,
+            0.024031836073845625,
+            0.028911089058965445,
+            0.02478762110695243,
+            0.028116486966609955,
+            0.024974576197564602,
+            0.025914119090884924
+          ],
+          "timing_iqr_seconds": [
+            0.02418097690679133,
+            0.0285137880127877
+          ],
+          "surface_p95_mm": 169.55607565129975,
+          "surface_mean_mm": 20.588204352615552,
+          "wood_errors": null
+        },
+        "absolute_face_count_difference": 1
+      },
+      {
+        "component_method": {
+          "method": "sensitivity_qem",
+          "target_faces": 1200,
+          "actual_faces": 1246,
+          "seconds_samples": [
+            0.03702852874994278,
+            0.03628724021837115,
+            0.04983674315735698,
+            0.038613632787019014,
+            0.03670924622565508,
+            0.036502121947705746,
+            0.036587418988347054,
+            0.036976395174860954,
+            0.038689873181283474,
+            0.03667483106255531,
+            0.037176537327468395,
+            0.037046656012535095,
+            0.03715881099924445,
+            0.03705261088907719,
+            0.03598145907744765
+          ],
+          "median_seconds": 0.03702852874994278,
+          "component_budgets": [
+            156,
+            152,
+            83,
+            130,
+            131,
+            82,
+            76,
+            76,
+            76,
+            76,
+            40,
+            40,
+            40,
+            40,
+            2
+          ],
+          "surface_mean_mm": 6.587999048345469,
+          "surface_p95_mm": 32.40190079252437,
+          "reverse_surface_mean_mm": 11.67190533345637,
+          "reverse_surface_p95_mm": 52.87905103250805,
+          "symmetric_mean_distance_mm": 9.129952190900921,
+          "mean_normal_error_degrees": 19.392875898541416,
+          "closed_wood_regions": 4,
+          "wood_region_count": 4,
+          "wood_physics": {
+            "mass_kg": 1.3789280214523079,
+            "center_of_mass_m": [
+              -1.8520153204159444e-07,
+              1.3637300490742065e-08,
+              0.12780460455562245
+            ],
+            "inertia_kg_m2": [
+              [
+                0.9048177808533162,
+                2.2637238676689702e-07,
+                -3.172874232897799e-08
+              ],
+              [
+                2.2637238676689702e-07,
+                0.22912718525548903,
+                4.854471015839456e-08
+              ],
+              [
+                -3.172874232897799e-08,
+                4.854471015839456e-08,
+                1.1226255196854957
+              ]
+            ]
+          },
+          "wood_errors": {
+            "mass_relative": 0.0,
+            "com_error_mm": 0.0,
+            "inertia_relative": 0.0
+          },
+          "distance_evaluation_seconds": 3.29605283588171,
+          "global_mapping": "preserved component identity",
+          "physical_scope": "conditional VLM wood density on reference closed regions",
+          "timing_iqr_seconds": [
+            0.03663112502545118,
+            0.03716767416335642
+          ]
+        },
+        "matched_global": {
+          "method": "matched_global_qem",
+          "actual_faces": 1246,
+          "median_seconds": 0.02545408671721816,
+          "seconds_samples": [
+            0.025384369771927595,
+            0.02571083279326558,
+            0.024750135373324156,
+            0.028954822104424238,
+            0.02537502022460103,
+            0.02545408671721816,
+            0.02489830832928419,
+            0.026360975112766027,
+            0.027693648356944323,
+            0.024774141144007444,
+            0.026390244718641043,
+            0.026040488854050636,
+            0.02534241508692503,
+            0.025040216743946075,
+            0.025673917960375547
+          ],
+          "timing_iqr_seconds": [
+            0.025191315915435553,
+            0.026200731983408332
+          ],
+          "surface_p95_mm": 169.55607565129975,
+          "surface_mean_mm": 21.300220807317082,
+          "wood_errors": null
+        },
+        "absolute_face_count_difference": 0
+      },
+      {
+        "component_method": {
+          "method": "component_qem",
+          "target_faces": 600,
+          "actual_faces": 873,
+          "seconds_samples": [
+            0.042816068045794964,
+            0.040273424703627825,
+            0.04329266492277384,
+            0.041708902921527624,
+            0.04377698292955756,
+            0.043064843863248825,
+            0.04375829407945275,
+            0.040386990178376436,
+            0.03611606266349554,
+            0.03338378435000777,
+            0.0351421982049942,
+            0.033657961059361696,
+            0.03768119402229786,
+            0.04384355712682009,
+            0.04485965706408024
+          ],
+          "median_seconds": 0.041708902921527624,
+          "component_budgets": [
+            200,
+            145,
+            64,
+            58,
+            58,
+            17,
+            8,
+            8,
+            8,
+            8,
+            6,
+            6,
+            6,
+            6,
+            2
+          ],
+          "surface_mean_mm": 8.402939156021388,
+          "surface_p95_mm": 34.599913908653754,
+          "reverse_surface_mean_mm": 14.388297697711472,
+          "reverse_surface_p95_mm": 56.36439082797883,
+          "symmetric_mean_distance_mm": 11.395618426866431,
+          "mean_normal_error_degrees": 25.302285668480497,
+          "closed_wood_regions": 4,
+          "wood_region_count": 4,
+          "wood_physics": {
+            "mass_kg": 0.8785891536813655,
+            "center_of_mass_m": [
+              0.041495156521849895,
+              0.011875571408252046,
+              0.13269234599118726
+            ],
+            "inertia_kg_m2": [
+              [
+                0.5753415802658626,
+                -0.005047430572567764,
+                0.003575447707219068
+              ],
+              [
+                -0.005047430572567764,
+                0.1438710563682624,
+                0.003528552403847359
+              ],
+              [
+                0.003575447707219068,
+                0.003528552403847359,
+                0.7123852049620032
+              ]
+            ]
+          },
+          "wood_errors": {
+            "mass_relative": 0.3628462544723531,
+            "com_error_mm": 43.437107102711,
+            "inertia_relative": 0.3651638179535788
+          },
+          "distance_evaluation_seconds": 2.993293261155486,
+          "global_mapping": "preserved component identity",
+          "physical_scope": "conditional VLM wood density on reference closed regions",
+          "timing_iqr_seconds": [
+            0.0368986283428967,
+            0.043525479501113296
+          ]
+        },
+        "matched_global": {
+          "method": "matched_global_qem",
+          "actual_faces": 873,
+          "median_seconds": 0.027030209079384804,
+          "seconds_samples": [
+            0.02828882820904255,
+            0.02801293460652232,
+            0.029075989965349436,
+            0.027719098143279552,
+            0.027030209079384804,
+            0.02707415772601962,
+            0.027003853116184473,
+            0.02435898408293724,
+            0.023280642926692963,
+            0.02267430815845728,
+            0.023294392973184586,
+            0.021825524978339672,
+            0.024444670882076025,
+            0.03312555467709899,
+            0.03292985912412405
+          ],
+          "timing_iqr_seconds": [
+            0.023826688528060913,
+            0.028150881407782435
+          ],
+          "surface_p95_mm": 117.9044652950428,
+          "surface_mean_mm": 21.713428102370255,
+          "wood_errors": null
+        },
+        "absolute_face_count_difference": 0
+      },
+      {
+        "component_method": {
+          "method": "sensitivity_qem",
+          "target_faces": 600,
+          "actual_faces": 901,
+          "seconds_samples": [
+            0.034724933095276356,
+            0.0344849000684917,
+            0.03311256505548954,
+            0.03371366625651717,
+            0.03512996807694435,
+            0.0343145658262074,
+            0.03497284511104226,
+            0.03423586394637823,
+            0.03454026021063328,
+            0.03450282569974661,
+            0.03473123488947749,
+            0.033656399231404066,
+            0.037080864887684584,
+            0.03605290688574314,
+            0.03434187779203057
+          ],
+          "median_seconds": 0.03450282569974661,
+          "component_budgets": [
+            68,
+            67,
+            37,
+            58,
+            58,
+            37,
+            48,
+            48,
+            49,
+            48,
+            20,
+            20,
+            20,
+            20,
+            2
+          ],
+          "surface_mean_mm": 8.998334644576252,
+          "surface_p95_mm": 36.18649928876622,
+          "reverse_surface_mean_mm": 15.82046386052224,
+          "reverse_surface_p95_mm": 61.56354023030407,
+          "symmetric_mean_distance_mm": 12.409399252549246,
+          "mean_normal_error_degrees": 26.495372843404418,
+          "closed_wood_regions": 4,
+          "wood_region_count": 4,
+          "wood_physics": {
+            "mass_kg": 1.3480575654445983,
+            "center_of_mass_m": [
+              0.00016950942807676043,
+              0.000190750765066282,
+              0.12800832215106206
+            ],
+            "inertia_kg_m2": [
+              [
+                0.8844535200589507,
+                -0.002144713459040012,
+                5.505413329798758e-06
+              ],
+              [
+                -0.002144713459040012,
+                0.2238271537670884,
+                1.4929348075440059e-05
+              ],
+              [
+                5.505413329798758e-06,
+                1.4929348075440059e-05,
+                1.0973524875137106
+              ]
+            ]
+          },
+          "wood_errors": {
+            "mass_relative": 0.022387286013084484,
+            "com_error_mm": 0.3266156424883956,
+            "inertia_relative": 0.02262122273212734
+          },
+          "distance_evaluation_seconds": 3.0396153782494366,
+          "global_mapping": "preserved component identity",
+          "physical_scope": "conditional VLM wood density on reference closed regions",
+          "timing_iqr_seconds": [
+            0.034275214886292815,
+            0.034852040000259876
+          ]
+        },
+        "matched_global": {
+          "method": "matched_global_qem",
+          "actual_faces": 901,
+          "median_seconds": 0.022407003212720156,
+          "seconds_samples": [
+            0.022577650379389524,
+            0.027084792032837868,
+            0.021482030861079693,
+            0.022149865049868822,
+            0.0240948679856956,
+            0.02272235741838813,
+            0.02200694102793932,
+            0.021488301921635866,
+            0.02308744005858898,
+            0.022336845751851797,
+            0.023950214963406324,
+            0.022407003212720156,
+            0.023699828889220953,
+            0.021534430794417858,
+            0.022275494877249002
+          ],
+          "timing_iqr_seconds": [
+            0.02207840303890407,
+            0.023393634473904967
+          ],
+          "surface_p95_mm": 127.9935382224646,
+          "surface_mean_mm": 21.545601685214358,
+          "wood_errors": null
+        },
+        "absolute_face_count_difference": 0
+      }
+    ]
+  },
+  "grounding_ablation": {
+    "scope": "one previously exposed reference object; development ablation",
+    "original_views": 4,
+    "vlm_calls": 3,
+    "vlm_and_fusion_reuse_identical_raw_answers": true,
+    "mesh_geometry_receives_rgb_or_vlm_materials": false,
+    "geometry_baseline": "same geometry rules with appearance gating removed",
+    "metrics": [
+      {
+        "method": "mesh_geometry",
+        "role_accuracy": 0.8666666666666667,
+        "component_count": 15,
+        "correct_components": 13
+      },
+      {
+        "method": "vlm",
+        "role_accuracy": 0.5333333333333333,
+        "component_count": 15,
+        "correct_components": 8
+      },
+      {
+        "method": "fusion",
+        "role_accuracy": 1.0,
+        "component_count": 15,
+        "correct_components": 15
+      }
+    ],
+    "predictions": {
+      "mesh_geometry": [
+        {
+          "component_id": 0,
+          "role": "cushion",
+          "surface_material": null,
+          "evidence": [
+            "separate closed upholstered region",
+            "upright cushion proportions"
+          ]
+        },
+        {
+          "component_id": 1,
+          "role": "seat",
+          "surface_material": null,
+          "evidence": [
+            "broad horizontal support"
+          ]
+        },
+        {
+          "component_id": 2,
+          "role": "backrest",
+          "surface_material": null,
+          "evidence": [
+            "wide upright panel"
+          ]
+        },
+        {
+          "component_id": 3,
+          "role": "frame_rail",
+          "surface_material": null,
+          "evidence": [
+            "horizontal elongated support",
+            "does not reach ground"
+          ]
+        },
+        {
+          "component_id": 4,
+          "role": "frame_rail",
+          "surface_material": null,
+          "evidence": [
+            "horizontal elongated support",
+            "does not reach ground"
+          ]
+        },
+        {
+          "component_id": 5,
+          "role": "backrest",
+          "surface_material": null,
+          "evidence": [
+            "wide upright panel"
+          ]
+        },
+        {
+          "component_id": 6,
+          "role": "leg",
+          "surface_material": null,
+          "evidence": [
+            "reaches common ground plane",
+            "elongated vertically"
+          ]
+        },
+        {
+          "component_id": 7,
+          "role": "leg",
+          "surface_material": null,
+          "evidence": [
+            "reaches common ground plane",
+            "elongated vertically"
+          ]
+        },
+        {
+          "component_id": 8,
+          "role": "leg",
+          "surface_material": null,
+          "evidence": [
+            "reaches common ground plane",
+            "elongated vertically"
+          ]
+        },
+        {
+          "component_id": 9,
+          "role": "leg",
+          "surface_material": null,
+          "evidence": [
+            "reaches common ground plane",
+            "elongated vertically"
+          ]
+        },
+        {
+          "component_id": 10,
+          "role": "frame_rail",
+          "surface_material": null,
+          "evidence": [
+            "horizontal elongated support",
+            "does not reach ground"
+          ]
+        },
+        {
+          "component_id": 11,
+          "role": "frame_rail",
+          "surface_material": null,
+          "evidence": [
+            "horizontal elongated support",
+            "does not reach ground"
+          ]
+        },
+        {
+          "component_id": 12,
+          "role": "frame_rail",
+          "surface_material": null,
+          "evidence": [
+            "horizontal elongated support",
+            "does not reach ground"
+          ]
+        },
+        {
+          "component_id": 13,
+          "role": "frame_rail",
+          "surface_material": null,
+          "evidence": [
+            "horizontal elongated support",
+            "does not reach ground"
+          ]
+        },
+        {
+          "component_id": 14,
+          "role": "underside",
+          "surface_material": null,
+          "evidence": [
+            "near-planar horizontal sheet"
+          ]
+        }
+      ],
+      "vlm": [
+        {
+          "component_id": 0,
+          "role": "backrest",
+          "surface_material": "fabric"
+        },
+        {
+          "component_id": 1,
+          "role": "seat",
+          "surface_material": "fabric"
+        },
+        {
+          "component_id": 2,
+          "role": "backrest",
+          "surface_material": "fabric"
+        },
+        {
+          "component_id": 3,
+          "role": "backrest",
+          "surface_material": "fabric"
+        },
+        {
+          "component_id": 4,
+          "role": "backrest",
+          "surface_material": "fabric"
+        },
+        {
+          "component_id": 5,
+          "role": "backrest",
+          "surface_material": "fabric"
+        },
+        {
+          "component_id": 6,
+          "role": "leg",
+          "surface_material": "wood"
+        },
+        {
+          "component_id": 7,
+          "role": "leg",
+          "surface_material": "wood"
+        },
+        {
+          "component_id": 8,
+          "role": "leg",
+          "surface_material": "wood"
+        },
+        {
+          "component_id": 9,
+          "role": "leg",
+          "surface_material": "wood"
+        },
+        {
+          "component_id": 10,
+          "role": "frame_rail",
+          "surface_material": "wood"
+        },
+        {
+          "component_id": 11,
+          "role": "leg",
+          "surface_material": "wood"
+        },
+        {
+          "component_id": 12,
+          "role": "leg",
+          "surface_material": "wood"
+        },
+        {
+          "component_id": 13,
+          "role": "leg",
+          "surface_material": "wood"
+        },
+        {
+          "component_id": 14,
+          "role": "frame_rail",
+          "surface_material": "wood"
+        }
+      ],
+      "fusion": [
+        {
+          "component_id": 0,
+          "role": "cushion",
+          "surface_material": "fabric",
+          "evidence": [
+            "separate closed upholstered region",
+            "upright cushion proportions"
+          ]
+        },
+        {
+          "component_id": 1,
+          "role": "seat",
+          "surface_material": "fabric",
+          "evidence": [
+            "broad horizontal support"
+          ]
+        },
+        {
+          "component_id": 2,
+          "role": "backrest",
+          "surface_material": "fabric",
+          "evidence": [
+            "wide upright panel"
+          ]
+        },
+        {
+          "component_id": 3,
+          "role": "armrest",
+          "surface_material": "fabric",
+          "evidence": [
+            "lateral placement",
+            "narrow transverse extent"
+          ]
+        },
+        {
+          "component_id": 4,
+          "role": "armrest",
+          "surface_material": "fabric",
+          "evidence": [
+            "lateral placement",
+            "narrow transverse extent"
+          ]
+        },
+        {
+          "component_id": 5,
+          "role": "backrest",
+          "surface_material": "fabric",
+          "evidence": [
+            "wide upright panel"
+          ]
+        },
+        {
+          "component_id": 6,
+          "role": "leg",
+          "surface_material": "wood",
+          "evidence": [
+            "reaches common ground plane",
+            "elongated vertically"
+          ]
+        },
+        {
+          "component_id": 7,
+          "role": "leg",
+          "surface_material": "wood",
+          "evidence": [
+            "reaches common ground plane",
+            "elongated vertically"
+          ]
+        },
+        {
+          "component_id": 8,
+          "role": "leg",
+          "surface_material": "wood",
+          "evidence": [
+            "reaches common ground plane",
+            "elongated vertically"
+          ]
+        },
+        {
+          "component_id": 9,
+          "role": "leg",
+          "surface_material": "wood",
+          "evidence": [
+            "reaches common ground plane",
+            "elongated vertically"
+          ]
+        },
+        {
+          "component_id": 10,
+          "role": "frame_rail",
+          "surface_material": "wood",
+          "evidence": [
+            "horizontal elongated support",
+            "does not reach ground"
+          ]
+        },
+        {
+          "component_id": 11,
+          "role": "frame_rail",
+          "surface_material": "wood",
+          "evidence": [
+            "horizontal elongated support",
+            "does not reach ground"
+          ]
+        },
+        {
+          "component_id": 12,
+          "role": "frame_rail",
+          "surface_material": "wood",
+          "evidence": [
+            "horizontal elongated support",
+            "does not reach ground"
+          ]
+        },
+        {
+          "component_id": 13,
+          "role": "frame_rail",
+          "surface_material": "wood",
+          "evidence": [
+            "horizontal elongated support",
+            "does not reach ground"
+          ]
+        },
+        {
+          "component_id": 14,
+          "role": "underside",
+          "surface_material": "wood",
+          "evidence": [
+            "near-planar horizontal sheet"
+          ]
+        }
+      ]
+    }
+  },
+  "contact_geometry": {
+    "scope": "reference-mesh geometric proximity and horizontal-ground footprints",
+    "reference_unit": "glTF meters, not laboratory calibration",
+    "sampled_min_is_not_exact_surface_min": true,
+    "frame_interfaces_force_or_bond_strength_evaluated": false,
+    "ground_plane_z_m": 0.0,
+    "legs": [
+      {
+        "leg_component_id": 6,
+        "ground_contact_center_m": [
+          -0.4076441377401352,
+          0.8127259612083435,
+          0.0
+        ],
+        "ground_footprint_area_m2": 0.0013180249416784324,
+        "ground_footprint_vertices_m": [
+          [
+            -0.42575427889823914,
+            0.8308359980583191,
+            0.0
+          ],
+          [
+            -0.4258386790752411,
+            0.7945736646652222,
+            0.0
+          ],
+          [
+            -0.3894917964935303,
+            0.7945736646652222,
+            0.0
+          ],
+          [
+            -0.3894917964935303,
+            0.8309205174446106,
+            0.0
+          ]
+        ],
+        "interface_sample_count": 4096,
+        "exact_surface_pair": {
+          "point_first_m": [
+            -0.42179393768310547,
+            0.7770248055458069,
+            0.22724983096122742
+          ],
+          "point_second_m": [
+            -0.42179393768310547,
+            0.7770248055458069,
+            0.22724983096122742
+          ],
+          "distance_m": 0.0,
+          "triangle_pair_candidates": 50,
+          "method": "triangle intersection / boundary minimum"
+        },
+        "interface_min_sample_distance_mm": 0.01682074607856141,
+        "interface_p05_distance_mm": 1.2696550691013495,
+        "near_surface_fraction_1mm": 0.0419921875,
+        "near_surface_fraction_3mm": 0.11962890625,
+        "closest_sample_on_leg_m": [
+          -0.40100210298331945,
+          0.7770248055458069,
+          0.18398711264223638
+        ],
+        "paired_point_on_frame_m": [
+          -0.40101399695020545,
+          0.7770129113854601,
+          0.18398711264223597
+        ]
+      },
+      {
+        "leg_component_id": 7,
+        "ground_contact_center_m": [
+          -0.4076441377401352,
+          -0.8127261102199554,
+          0.0
+        ],
+        "ground_footprint_area_m2": 0.001318027105606135,
+        "ground_footprint_vertices_m": [
+          [
+            -0.3894917964935303,
+            -0.7945737838745117,
+            0.0
+          ],
+          [
+            -0.4258386790752411,
+            -0.7945737838745117,
+            0.0
+          ],
+          [
+            -0.42575427889823914,
+            -0.8308361768722534,
+            0.0
+          ],
+          [
+            -0.3894917964935303,
+            -0.8309206962585449,
+            0.0
+          ]
+        ],
+        "interface_sample_count": 4096,
+        "exact_surface_pair": {
+          "point_first_m": [
+            -0.42179393768310547,
+            -0.7770249843597412,
+            0.22724983096122742
+          ],
+          "point_second_m": [
+            -0.42179393768310547,
+            -0.7770249843597412,
+            0.22724983096122742
+          ],
+          "distance_m": 0.0,
+          "triangle_pair_candidates": 54,
+          "method": "triangle intersection / boundary minimum"
+        },
+        "interface_min_sample_distance_mm": 0.015388462012572377,
+        "interface_p05_distance_mm": 1.4403164107874962,
+        "near_surface_fraction_1mm": 0.037841796875,
+        "near_surface_fraction_3mm": 0.11328125,
+        "closest_sample_on_leg_m": [
+          -0.371942937374115,
+          -0.8102610215584591,
+          0.22485850091167503
+        ],
+        "paired_point_on_frame_m": [
+          -0.3719429671764374,
+          -0.8102456331253052,
+          0.22485850091167503
+        ]
+      },
+      {
+        "leg_component_id": 8,
+        "ground_contact_center_m": [
+          0.4076441377401352,
+          0.8127259612083435,
+          0.0
+        ],
+        "ground_footprint_area_m2": 0.0013180249416784315,
+        "ground_footprint_vertices_m": [
+          [
+            0.3894917964935303,
+            0.7945736646652222,
+            0.0
+          ],
+          [
+            0.4258386790752411,
+            0.7945736646652222,
+            0.0
+          ],
+          [
+            0.42575427889823914,
+            0.8308359980583191,
+            0.0
+          ],
+          [
+            0.3894917964935303,
+            0.8309205174446106,
+            0.0
+          ]
+        ],
+        "interface_sample_count": 4096,
+        "exact_surface_pair": {
+          "point_first_m": [
+            0.371942937374115,
+            0.8298112154006958,
+            0.22724983096122742
+          ],
+          "point_second_m": [
+            0.371942937374115,
+            0.8298112154006958,
+            0.22724983096122742
+          ],
+          "distance_m": 0.0,
+          "triangle_pair_candidates": 73,
+          "method": "triangle intersection / boundary minimum"
+        },
+        "interface_min_sample_distance_mm": 0.004015089374122549,
+        "interface_p05_distance_mm": 1.244242363803428,
+        "near_surface_fraction_1mm": 0.041015625,
+        "near_surface_fraction_3mm": 0.124267578125,
+        "closest_sample_on_leg_m": [
+          0.42264328986760513,
+          0.7770248055458069,
+          0.18620872637205804
+        ],
+        "paired_point_on_frame_m": [
+          0.42264045079377116,
+          0.777021966425794,
+          0.18620872637205801
+        ]
+      },
+      {
+        "leg_component_id": 9,
+        "ground_contact_center_m": [
+          0.4076441377401352,
+          -0.8127261102199554,
+          0.0
+        ],
+        "ground_footprint_area_m2": 0.001318027105606135,
+        "ground_footprint_vertices_m": [
+          [
+            0.4258386790752411,
+            -0.7945737838745117,
+            0.0
+          ],
+          [
+            0.3894917964935303,
+            -0.7945737838745117,
+            0.0
+          ],
+          [
+            0.3894917964935303,
+            -0.8309206962585449,
+            0.0
+          ],
+          [
+            0.42575427889823914,
+            -0.8308361768722534,
+            0.0
+          ]
+        ],
+        "interface_sample_count": 4096,
+        "exact_surface_pair": {
+          "point_first_m": [
+            0.42263761162757874,
+            -0.7770249843597412,
+            0.22724983096122742
+          ],
+          "point_second_m": [
+            0.42263761162757874,
+            -0.7770249843597412,
+            0.22724983096122742
+          ],
+          "distance_m": 0.0,
+          "triangle_pair_candidates": 67,
+          "method": "triangle intersection / boundary minimum"
+        },
+        "interface_min_sample_distance_mm": 0.003867496850248688,
+        "interface_p05_distance_mm": 1.3129975848609452,
+        "near_surface_fraction_1mm": 0.037841796875,
+        "near_surface_fraction_3mm": 0.120361328125,
+        "closest_sample_on_leg_m": [
+          0.4226430810495968,
+          -0.7770249843597412,
+          0.209150318724292
+        ],
+        "paired_point_on_frame_m": [
+          0.42264034629410757,
+          -0.7770222496487326,
+          0.2091503187242925
+        ]
+      }
+    ]
+  },
+  "unified_part_state": {
+    "schema": "object/part/construction_region/mesh_support",
+    "version": 2,
+    "geometry_sha256": "a7e24feda7bc9c864edd3a511e7b00dc45ce09974b5f3baba1a739673e9cb3a7",
+    "parts": [
+      {
+        "component_id": 0,
+        "part_name": "cushion_0",
+        "surface_material": "fabric",
+        "construction": "upholstered",
+        "contains_macroscopic_cavity": "no",
+        "evidence": "Visible in top view as the curved backrest, covered in gray fabric, matching the seat upholstery.",
+        "construction_votes": {
+          "upholstered": 3
+        },
+        "support": 3,
+        "samples": 3,
+        "material_votes": {
+          "fabric": 3
+        },
+        "part_id": "part_000",
+        "instance_version": 2,
+        "functional_role": "cushion",
+        "vlm_original_part_name": "Headrest Back Panel",
+        "role_evidence": [
+          "separate closed upholstered region",
+          "upright cushion proportions"
+        ],
+        "role_source": "category-conditioned geometric constraints",
+        "anchor_m": [
+          0.002958133816719055,
+          -0.5911235213279724,
+          0.6322400569915771
+        ],
+        "material_parameters": {
+          "source": "VLM typical-material prior, not measured",
+          "density_kg_m3": 500.0,
+          "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+          "youngs_modulus_pa": 150000000.0,
+          "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+          "friction_coefficient": 0.4,
+          "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+          "hardness_records": [],
+          "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+          "assumptions": [
+            "Assumed effective in-plane tensile modulus for woven textile; friction coefficient for dry slider on textile surface under light contact; surface finish unresolved.",
+            "Assumed effective in-plane tensile modulus for woven upholstery fabric; friction coefficient for dry slider on fabric surface under light contact; surface finish unresolved.",
+            "Assumed effective in-plane tensile modulus for woven textile under light contact; friction coefficient for dry slider on fabric surface; surface finish unresolved."
+          ]
+        }
+      },
+      {
+        "component_id": 1,
+        "part_name": "seat_1",
+        "surface_material": "fabric",
+        "construction": "upholstered",
+        "contains_macroscopic_cavity": "no",
+        "evidence": "The separate, rectangular pillow with a visible seam, placed against the headrest back.",
+        "construction_votes": {
+          "upholstered": 3
+        },
+        "support": 3,
+        "samples": 3,
+        "material_votes": {
+          "fabric": 3
+        },
+        "part_id": "part_001",
+        "instance_version": 2,
+        "functional_role": "seat",
+        "vlm_original_part_name": "Headrest Pillow",
+        "role_evidence": [
+          "broad horizontal support"
+        ],
+        "role_source": "category-conditioned geometric constraints",
+        "anchor_m": [
+          0.0,
+          0.11396780610084534,
+          0.33559881150722504
+        ],
+        "material_parameters": {
+          "source": "VLM typical-material prior, not measured",
+          "density_kg_m3": 500.0,
+          "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+          "youngs_modulus_pa": 150000000.0,
+          "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+          "friction_coefficient": 0.4,
+          "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+          "hardness_records": [],
+          "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+          "assumptions": [
+            "Assumed effective in-plane tensile modulus for woven textile; friction coefficient for dry slider on textile surface under light contact; surface finish unresolved.",
+            "Assumed effective in-plane tensile modulus for woven upholstery fabric; friction coefficient for dry slider on fabric surface under light contact; surface finish unresolved.",
+            "Assumed effective in-plane tensile modulus for woven textile under light contact; friction coefficient for dry slider on fabric surface; surface finish unresolved."
+          ]
+        }
+      },
+      {
+        "component_id": 2,
+        "part_name": "backrest_2",
+        "surface_material": "fabric",
+        "construction": "upholstered",
+        "contains_macroscopic_cavity": "no",
+        "evidence": "The curved panel forming the back of the armrest, upholstered in gray fabric.",
+        "construction_votes": {
+          "upholstered": 3
+        },
+        "support": 3,
+        "samples": 3,
+        "material_votes": {
+          "fabric": 3
+        },
+        "part_id": "part_002",
+        "instance_version": 2,
+        "functional_role": "backrest",
+        "vlm_original_part_name": "Armrest Back Panel",
+        "role_evidence": [
+          "wide upright panel"
+        ],
+        "role_source": "category-conditioned geometric constraints",
+        "anchor_m": [
+          0.0,
+          -0.7432918548583984,
+          0.6026380658149719
+        ],
+        "material_parameters": {
+          "source": "VLM typical-material prior, not measured",
+          "density_kg_m3": 500.0,
+          "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+          "youngs_modulus_pa": 150000000.0,
+          "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+          "friction_coefficient": 0.4,
+          "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+          "hardness_records": [],
+          "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+          "assumptions": [
+            "Assumed effective in-plane tensile modulus for woven textile; friction coefficient for dry slider on textile surface under light contact; surface finish unresolved.",
+            "Assumed effective in-plane tensile modulus for woven upholstery fabric; friction coefficient for dry slider on fabric surface under light contact; surface finish unresolved.",
+            "Assumed effective in-plane tensile modulus for woven textile under light contact; friction coefficient for dry slider on fabric surface; surface finish unresolved."
+          ]
+        }
+      },
+      {
+        "component_id": 3,
+        "part_name": "armrest_3",
+        "surface_material": "fabric",
+        "construction": "upholstered",
+        "contains_macroscopic_cavity": "no",
+        "evidence": "The side panel of the armrest, upholstered in gray fabric, visible from the side view.",
+        "construction_votes": {
+          "upholstered": 3
+        },
+        "support": 3,
+        "samples": 3,
+        "material_votes": {
+          "fabric": 3
+        },
+        "part_id": "part_003",
+        "instance_version": 2,
+        "functional_role": "armrest",
+        "vlm_original_part_name": "Armrest Side Panel",
+        "role_evidence": [
+          "lateral placement",
+          "narrow transverse extent"
+        ],
+        "role_source": "category-conditioned geometric constraints",
+        "anchor_m": [
+          -0.3742799162864685,
+          -0.4794917069375515,
+          0.4143471121788025
+        ],
+        "material_parameters": {
+          "source": "VLM typical-material prior, not measured",
+          "density_kg_m3": 500.0,
+          "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+          "youngs_modulus_pa": 150000000.0,
+          "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+          "friction_coefficient": 0.4,
+          "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+          "hardness_records": [],
+          "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+          "assumptions": [
+            "Assumed effective in-plane tensile modulus for woven textile; friction coefficient for dry slider on textile surface under light contact; surface finish unresolved.",
+            "Assumed effective in-plane tensile modulus for woven upholstery fabric; friction coefficient for dry slider on fabric surface under light contact; surface finish unresolved.",
+            "Assumed effective in-plane tensile modulus for woven textile under light contact; friction coefficient for dry slider on fabric surface; surface finish unresolved."
+          ]
+        }
+      },
+      {
+        "component_id": 4,
+        "part_name": "armrest_4",
+        "surface_material": "fabric",
+        "construction": "upholstered",
+        "contains_macroscopic_cavity": "no",
+        "evidence": "The front panel of the armrest, upholstered in gray fabric, forming the transition to the seat.",
+        "construction_votes": {
+          "upholstered": 3
+        },
+        "support": 3,
+        "samples": 3,
+        "material_votes": {
+          "fabric": 3
+        },
+        "part_id": "part_004",
+        "instance_version": 2,
+        "functional_role": "armrest",
+        "vlm_original_part_name": "Armrest Front Panel",
+        "role_evidence": [
+          "lateral placement",
+          "narrow transverse extent"
+        ],
+        "role_source": "category-conditioned geometric constraints",
+        "anchor_m": [
+          0.37505681812763214,
+          -0.4794917069375515,
+          0.4143471121788025
+        ],
+        "material_parameters": {
+          "source": "VLM typical-material prior, not measured",
+          "density_kg_m3": 500.0,
+          "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+          "youngs_modulus_pa": 150000000.0,
+          "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+          "friction_coefficient": 0.4,
+          "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+          "hardness_records": [],
+          "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+          "assumptions": [
+            "Assumed effective in-plane tensile modulus for woven textile; friction coefficient for dry slider on textile surface under light contact; surface finish unresolved.",
+            "Assumed effective in-plane tensile modulus for woven upholstery fabric; friction coefficient for dry slider on fabric surface under light contact; surface finish unresolved.",
+            "Assumed effective in-plane tensile modulus for woven textile under light contact; friction coefficient for dry slider on fabric surface; surface finish unresolved."
+          ]
+        }
+      },
+      {
+        "component_id": 5,
+        "part_name": "backrest_5",
+        "surface_material": "fabric",
+        "construction": "upholstered",
+        "contains_macroscopic_cavity": "no",
+        "evidence": "The large, flat back panel of the seat, upholstered in gray fabric, visible in side and top views.",
+        "construction_votes": {
+          "upholstered": 3
+        },
+        "support": 3,
+        "samples": 3,
+        "material_votes": {
+          "fabric": 3
+        },
+        "part_id": "part_005",
+        "instance_version": 2,
+        "functional_role": "backrest",
+        "vlm_original_part_name": "Seat Back Panel",
+        "role_evidence": [
+          "wide upright panel"
+        ],
+        "role_source": "category-conditioned geometric constraints",
+        "anchor_m": [
+          -0.0003403276205062866,
+          -0.8742398619651794,
+          0.5214746370911598
+        ],
+        "material_parameters": {
+          "source": "VLM typical-material prior, not measured",
+          "density_kg_m3": 500.0,
+          "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+          "youngs_modulus_pa": 150000000.0,
+          "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+          "friction_coefficient": 0.4,
+          "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+          "hardness_records": [],
+          "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+          "assumptions": [
+            "Assumed effective in-plane tensile modulus for woven textile; friction coefficient for dry slider on textile surface under light contact; surface finish unresolved.",
+            "Assumed effective in-plane tensile modulus for woven upholstery fabric; friction coefficient for dry slider on fabric surface under light contact; surface finish unresolved.",
+            "Assumed effective in-plane tensile modulus for woven textile under light contact; friction coefficient for dry slider on fabric surface; surface finish unresolved."
+          ]
+        }
+      },
+      {
+        "component_id": 6,
+        "part_name": "leg_6",
+        "surface_material": "wood",
+        "construction": "solid",
+        "contains_macroscopic_cavity": "no",
+        "evidence": "The small, cylindrical wooden leg at the front left corner, visible in all views.",
+        "construction_votes": {
+          "solid": 3
+        },
+        "support": 3,
+        "samples": 3,
+        "material_votes": {
+          "wood": 3
+        },
+        "part_id": "part_006",
+        "instance_version": 2,
+        "functional_role": "leg",
+        "vlm_original_part_name": "Left Front Leg",
+        "role_evidence": [
+          "reaches common ground plane",
+          "elongated vertically"
+        ],
+        "role_source": "category-conditioned geometric constraints",
+        "anchor_m": [
+          -0.3998534381389618,
+          0.8049352765083313,
+          0.11462974548339844
+        ],
+        "material_parameters": {
+          "source": "VLM typical-material prior, not measured",
+          "density_kg_m3": 600.0,
+          "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+          "youngs_modulus_pa": 10000000000.0,
+          "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+          "friction_coefficient": 0.3,
+          "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+          "hardness_records": [],
+          "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+          "assumptions": [
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface; surface finish unresolved."
+          ]
+        }
+      },
+      {
+        "component_id": 7,
+        "part_name": "leg_7",
+        "surface_material": "wood",
+        "construction": "solid",
+        "contains_macroscopic_cavity": "no",
+        "evidence": "The small, cylindrical wooden leg at the rear left corner, visible in all views.",
+        "construction_votes": {
+          "solid": 3
+        },
+        "support": 3,
+        "samples": 3,
+        "material_votes": {
+          "wood": 3
+        },
+        "part_id": "part_007",
+        "instance_version": 2,
+        "functional_role": "leg",
+        "vlm_original_part_name": "Left Rear Leg",
+        "role_evidence": [
+          "reaches common ground plane",
+          "elongated vertically"
+        ],
+        "role_source": "category-conditioned geometric constraints",
+        "anchor_m": [
+          -0.3998534381389618,
+          -0.8049354553222656,
+          0.11462974548339844
+        ],
+        "material_parameters": {
+          "source": "VLM typical-material prior, not measured",
+          "density_kg_m3": 600.0,
+          "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+          "youngs_modulus_pa": 10000000000.0,
+          "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+          "friction_coefficient": 0.3,
+          "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+          "hardness_records": [],
+          "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+          "assumptions": [
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface; surface finish unresolved."
+          ]
+        }
+      },
+      {
+        "component_id": 8,
+        "part_name": "leg_8",
+        "surface_material": "wood",
+        "construction": "solid",
+        "contains_macroscopic_cavity": "no",
+        "evidence": "The small, cylindrical wooden leg at the front right corner, visible in all views.",
+        "construction_votes": {
+          "solid": 3
+        },
+        "support": 3,
+        "samples": 3,
+        "material_votes": {
+          "wood": 3
+        },
+        "part_id": "part_008",
+        "instance_version": 2,
+        "functional_role": "leg",
+        "vlm_original_part_name": "Right Front Leg",
+        "role_evidence": [
+          "reaches common ground plane",
+          "elongated vertically"
+        ],
+        "role_source": "category-conditioned geometric constraints",
+        "anchor_m": [
+          0.3998534381389618,
+          0.8049352765083313,
+          0.11462974548339844
+        ],
+        "material_parameters": {
+          "source": "VLM typical-material prior, not measured",
+          "density_kg_m3": 600.0,
+          "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+          "youngs_modulus_pa": 10000000000.0,
+          "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+          "friction_coefficient": 0.3,
+          "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+          "hardness_records": [],
+          "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+          "assumptions": [
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface; surface finish unresolved."
+          ]
+        }
+      },
+      {
+        "component_id": 9,
+        "part_name": "leg_9",
+        "surface_material": "wood",
+        "construction": "solid",
+        "contains_macroscopic_cavity": "no",
+        "evidence": "The small, cylindrical wooden leg at the rear right corner, visible in all views.",
+        "construction_votes": {
+          "solid": 3
+        },
+        "support": 3,
+        "samples": 3,
+        "material_votes": {
+          "wood": 3
+        },
+        "part_id": "part_009",
+        "instance_version": 2,
+        "functional_role": "leg",
+        "vlm_original_part_name": "Right Rear Leg",
+        "role_evidence": [
+          "reaches common ground plane",
+          "elongated vertically"
+        ],
+        "role_source": "category-conditioned geometric constraints",
+        "anchor_m": [
+          0.3998534381389618,
+          -0.8049354553222656,
+          0.11462974548339844
+        ],
+        "material_parameters": {
+          "source": "VLM typical-material prior, not measured",
+          "density_kg_m3": 600.0,
+          "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+          "youngs_modulus_pa": 10000000000.0,
+          "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+          "friction_coefficient": 0.3,
+          "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+          "hardness_records": [],
+          "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+          "assumptions": [
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface; surface finish unresolved."
+          ]
+        }
+      },
+      {
+        "component_id": 10,
+        "part_name": "frame_rail_10",
+        "surface_material": "wood",
+        "construction": "solid",
+        "contains_macroscopic_cavity": "no",
+        "evidence": "The long, flat wooden panel forming the base of the seat, visible from the side.",
+        "construction_votes": {
+          "solid": 2
+        },
+        "support": 2,
+        "samples": 3,
+        "material_votes": {
+          "wood": 2,
+          "fabric": 1
+        },
+        "part_id": "part_010",
+        "instance_version": 2,
+        "functional_role": "frame_rail",
+        "vlm_original_part_name": "Seat Frame Panel",
+        "role_evidence": [
+          "horizontal elongated support",
+          "does not reach ground"
+        ],
+        "role_source": "category-conditioned geometric constraints",
+        "anchor_m": [
+          -0.4114099144935608,
+          -8.940696716308594e-08,
+          0.2025512084364891
+        ],
+        "material_parameters": {
+          "source": "VLM typical-material prior, not measured",
+          "density_kg_m3": 600.0,
+          "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+          "youngs_modulus_pa": 10000000000.0,
+          "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+          "friction_coefficient": 0.3,
+          "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+          "hardness_records": [],
+          "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+          "assumptions": [
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface; surface finish unresolved."
+          ]
+        }
+      },
+      {
+        "component_id": 11,
+        "part_name": "frame_rail_11",
+        "surface_material": "wood",
+        "construction": "solid",
+        "contains_macroscopic_cavity": "no",
+        "evidence": "The wooden side frame piece on the left, visible in side view.",
+        "construction_votes": {
+          "solid": 3
+        },
+        "support": 3,
+        "samples": 3,
+        "material_votes": {
+          "wood": 3
+        },
+        "part_id": "part_011",
+        "instance_version": 2,
+        "functional_role": "frame_rail",
+        "vlm_original_part_name": "Left Side Frame",
+        "role_evidence": [
+          "horizontal elongated support",
+          "does not reach ground"
+        ],
+        "role_source": "category-conditioned geometric constraints",
+        "anchor_m": [
+          -1.4901161193847656e-08,
+          0.8194272518157959,
+          0.2025512084364891
+        ],
+        "material_parameters": {
+          "source": "VLM typical-material prior, not measured",
+          "density_kg_m3": 600.0,
+          "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+          "youngs_modulus_pa": 10000000000.0,
+          "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+          "friction_coefficient": 0.3,
+          "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+          "hardness_records": [],
+          "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+          "assumptions": [
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface; surface finish unresolved."
+          ]
+        }
+      },
+      {
+        "component_id": 12,
+        "part_name": "frame_rail_12",
+        "surface_material": "wood",
+        "construction": "solid",
+        "contains_macroscopic_cavity": "no",
+        "evidence": "The wooden side frame piece on the right, visible in side view.",
+        "construction_votes": {
+          "solid": 3
+        },
+        "support": 3,
+        "samples": 3,
+        "material_votes": {
+          "wood": 3
+        },
+        "part_id": "part_012",
+        "instance_version": 2,
+        "functional_role": "frame_rail",
+        "vlm_original_part_name": "Right Side Frame",
+        "role_evidence": [
+          "horizontal elongated support",
+          "does not reach ground"
+        ],
+        "role_source": "category-conditioned geometric constraints",
+        "anchor_m": [
+          -1.4901161193847656e-08,
+          -0.8206296563148499,
+          0.2025512084364891
+        ],
+        "material_parameters": {
+          "source": "VLM typical-material prior, not measured",
+          "density_kg_m3": 600.0,
+          "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+          "youngs_modulus_pa": 10000000000.0,
+          "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+          "friction_coefficient": 0.3,
+          "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+          "hardness_records": [],
+          "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+          "assumptions": [
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface; surface finish unresolved."
+          ]
+        }
+      },
+      {
+        "component_id": 13,
+        "part_name": "frame_rail_13",
+        "surface_material": "wood",
+        "construction": "solid",
+        "contains_macroscopic_cavity": "no",
+        "evidence": "The wooden frame piece at the front, visible in side view.",
+        "construction_votes": {
+          "solid": 3
+        },
+        "support": 3,
+        "samples": 3,
+        "material_votes": {
+          "wood": 3
+        },
+        "part_id": "part_013",
+        "instance_version": 2,
+        "functional_role": "frame_rail",
+        "vlm_original_part_name": "Front Leg Frame",
+        "role_evidence": [
+          "horizontal elongated support",
+          "does not reach ground"
+        ],
+        "role_source": "category-conditioned geometric constraints",
+        "anchor_m": [
+          0.41225358843803406,
+          -8.940696716308594e-08,
+          0.2025512084364891
+        ],
+        "material_parameters": {
+          "source": "VLM typical-material prior, not measured",
+          "density_kg_m3": 600.0,
+          "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+          "youngs_modulus_pa": 10000000000.0,
+          "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+          "friction_coefficient": 0.3,
+          "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+          "hardness_records": [],
+          "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+          "assumptions": [
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface; surface finish unresolved."
+          ]
+        }
+      },
+      {
+        "component_id": 14,
+        "part_name": "underside_14",
+        "surface_material": "wood",
+        "construction": "solid",
+        "contains_macroscopic_cavity": "no",
+        "evidence": "The wooden frame piece at the back, visible in side view.",
+        "construction_votes": {
+          "solid": 3
+        },
+        "support": 3,
+        "samples": 3,
+        "material_votes": {
+          "wood": 3
+        },
+        "part_id": "part_014",
+        "instance_version": 2,
+        "functional_role": "underside",
+        "vlm_original_part_name": "Back Leg Frame",
+        "role_evidence": [
+          "near-planar horizontal sheet"
+        ],
+        "role_source": "category-conditioned geometric constraints",
+        "anchor_m": [
+          0.0,
+          0.0004528164863586426,
+          0.21932004392147064
+        ],
+        "material_parameters": {
+          "source": "VLM typical-material prior, not measured",
+          "density_kg_m3": 600.0,
+          "density_kg_m3_source": "separate shared VLM conditional material-prior query",
+          "youngs_modulus_pa": 10000000000.0,
+          "youngs_modulus_pa_source": "separate shared VLM conditional material-prior query",
+          "friction_coefficient": 0.3,
+          "friction_coefficient_source": "separate shared VLM conditional material-prior query",
+          "hardness_records": [],
+          "friction_contact_pair": "clean dry stainless-steel slider / material, light contact, room temperature; finish unresolved",
+          "assumptions": [
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface under light contact; surface finish unresolved.",
+            "Longitudinal modulus for unknown hardwood species; friction coefficient for dry slider on wood surface; surface finish unresolved."
+          ]
+        }
+      }
+    ],
+    "connections": [
+      {
+        "part_ids": [
+          "part_006",
+          "part_010"
+        ],
+        "relation": "geometric interface within 1 mm",
+        "surface_pair": {
+          "point_first_m": [
+            -0.42179393768310547,
+            0.7770248055458069,
+            0.22724983096122742
+          ],
+          "point_second_m": [
+            -0.42179393768310547,
+            0.7770248055458069,
+            0.22724983096122742
+          ],
+          "distance_m": 0.0,
+          "triangle_pair_candidates": 32,
+          "method": "triangle intersection / boundary minimum"
+        },
+        "mechanical_connection_verified": false
+      },
+      {
+        "part_ids": [
+          "part_006",
+          "part_011"
+        ],
+        "relation": "geometric interface within 1 mm",
+        "surface_pair": {
+          "point_first_m": [
+            -0.371942937374115,
+            0.8090431988239288,
+            0.22724983096122742
+          ],
+          "point_second_m": [
+            -0.371942937374115,
+            0.8090431988239288,
+            0.22724983096122742
+          ],
+          "distance_m": 0.0,
+          "triangle_pair_candidates": 41,
+          "method": "triangle intersection / boundary minimum"
+        },
+        "mechanical_connection_verified": false
+      },
+      {
+        "part_ids": [
+          "part_007",
+          "part_010"
+        ],
+        "relation": "geometric interface within 1 mm",
+        "surface_pair": {
+          "point_first_m": [
+            -0.42179393768310547,
+            -0.7770249843597412,
+            0.22724983096122742
+          ],
+          "point_second_m": [
+            -0.42179393768310547,
+            -0.7770249843597412,
+            0.22724983096122742
+          ],
+          "distance_m": 0.0,
+          "triangle_pair_candidates": 32,
+          "method": "triangle intersection / boundary minimum"
+        },
+        "mechanical_connection_verified": false
+      },
+      {
+        "part_ids": [
+          "part_007",
+          "part_012"
+        ],
+        "relation": "geometric interface within 1 mm",
+        "surface_pair": {
+          "point_first_m": [
+            -0.371942937374115,
+            -0.8102456033229828,
+            0.22724983096122742
+          ],
+          "point_second_m": [
+            -0.371942937374115,
+            -0.8102456033229828,
+            0.22724983096122742
+          ],
+          "distance_m": 0.0,
+          "triangle_pair_candidates": 35,
+          "method": "triangle intersection / boundary minimum"
+        },
+        "mechanical_connection_verified": false
+      },
+      {
+        "part_ids": [
+          "part_008",
+          "part_011"
+        ],
+        "relation": "geometric interface within 1 mm",
+        "surface_pair": {
+          "point_first_m": [
+            0.371942937374115,
+            0.8298112154006958,
+            0.22724983096122742
+          ],
+          "point_second_m": [
+            0.371942937374115,
+            0.8298112154006958,
+            0.22724983096122742
+          ],
+          "distance_m": 0.0,
+          "triangle_pair_candidates": 41,
+          "method": "triangle intersection / boundary minimum"
+        },
+        "mechanical_connection_verified": false
+      },
+      {
+        "part_ids": [
+          "part_008",
+          "part_013"
+        ],
+        "relation": "geometric interface within 1 mm",
+        "surface_pair": {
+          "point_first_m": [
+            0.42263761162757874,
+            0.7770248055458069,
+            0.22724983096122742
+          ],
+          "point_second_m": [
+            0.42263761162757874,
+            0.7770248055458069,
+            0.22724983096122742
+          ],
+          "distance_m": 0.0,
+          "triangle_pair_candidates": 32,
+          "method": "triangle intersection / boundary minimum"
+        },
+        "mechanical_connection_verified": false
+      },
+      {
+        "part_ids": [
+          "part_009",
+          "part_012"
+        ],
+        "relation": "geometric interface within 1 mm",
+        "surface_pair": {
+          "point_first_m": [
+            0.371942937374115,
+            -0.8308361768722534,
+            0.17767518758773804
+          ],
+          "point_second_m": [
+            0.371942937374115,
+            -0.8308361768722534,
+            0.17767518758773804
+          ],
+          "distance_m": 0.0,
+          "triangle_pair_candidates": 35,
+          "method": "triangle intersection / boundary minimum"
+        },
+        "mechanical_connection_verified": false
+      },
+      {
+        "part_ids": [
+          "part_009",
+          "part_013"
+        ],
+        "relation": "geometric interface within 1 mm",
+        "surface_pair": {
+          "point_first_m": [
+            0.42263761162757874,
+            -0.7770249843597412,
+            0.22724983096122742
+          ],
+          "point_second_m": [
+            0.42263761162757874,
+            -0.7770249843597412,
+            0.22724983096122742
+          ],
+          "distance_m": 0.0,
+          "triangle_pair_candidates": 32,
+          "method": "triangle intersection / boundary minimum"
+        },
+        "mechanical_connection_verified": false
+      }
+    ],
+    "role_predictions_use_evaluation_annotations": false
+  },
+  "scope": "single exposed development object; reference geometry assisted"
+}
