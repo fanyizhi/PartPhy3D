@@ -13,10 +13,22 @@ from tactile3d.experiments.ten_objects import (
     parse_ranges,
     predict_physics,
 )
+from tactile3d.mesh.segmentation import nearest_surface_labels
 
 
 def config():
     return yaml.safe_load(Path("configs/ten_object_pilot.yaml").read_text())
+
+
+def test_large_triangle_centroid_does_not_steal_material_assignment():
+    mesh = trimesh.Trimesh(vertices=[[-10, -10, 0], [10, -10, 0], [0, 10, 0],
+                                   [-.1, -.1, .5], [.1, -.1, .5], [0, .2, .5]],
+                           faces=[[0, 1, 2], [3, 4, 5]], process=False)
+    labels, distances = nearest_surface_labels(mesh, [[0, 0, .05]], np.array([3, 7]))
+    assert np.linalg.norm(mesh.triangles_center[1]-[0, 0, .05]) < np.linalg.norm(
+        mesh.triangles_center[0]-[0, 0, .05])
+    assert labels.tolist() == [3]
+    assert distances[0] == pytest.approx(.05)
 
 
 def test_cached_ranges_accept_fixed_values_and_ranges_and_reject_bad_order():
@@ -48,8 +60,10 @@ def test_component_support_does_not_fill_gap_between_two_disconnected_solids():
     assert selected.tolist() == [True, False, True]
 
 
-def test_mass_samples_match_disjoint_field_integration_without_labels():
+@pytest.mark.parametrize("shell_model", ["legacy_mean_thickness", "material_conditioned"])
+def test_mass_samples_match_disjoint_field_integration_without_labels(shell_model):
     cfg = config()
+    cfg["shell_model"] = shell_model
     cfg["samples"] = 128
     info = {"caption": "a usb hub", "candidate_materials_density": "(plastic: 1000-2000 kg/m^3)",
             "thickness": "(plastic: 0.2-0.5 cm)"}

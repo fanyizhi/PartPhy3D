@@ -15,6 +15,25 @@ class PartSegmentation:
     part_volume_fraction: dict[int, float]
 
 
+def nearest_surface_labels(mesh, points, face_labels, batch_size=512):
+    """Assign by actual triangle distance, avoiding centroid bias on large faces."""
+    points = np.asarray(points, dtype=float)
+    face_labels = np.asarray(face_labels)
+    if (points.ndim != 2 or points.shape[1] != 3 or not len(points)
+            or not np.isfinite(points).all() or face_labels.shape != (len(mesh.faces),)
+            or face_labels.dtype.kind not in "iu" or np.any(face_labels < 0)
+            or type(batch_size) is not int or batch_size <= 0):
+        raise ValueError("Require finite query points, integer face labels and positive batch size")
+    labels = np.empty(len(points), dtype=face_labels.dtype)
+    distances = np.empty(len(points), dtype=float)
+    for start in range(0, len(points), batch_size):
+        stop = start + batch_size
+        _, distance, triangle = trimesh.proximity.closest_point(mesh, points[start:stop])
+        labels[start:stop] = face_labels[triangle]
+        distances[start:stop] = distance
+    return labels, distances
+
+
 def _kmeans(features: np.ndarray, k: int, rng: np.random.Generator, max_iters: int) -> np.ndarray:
     n = features.shape[0]
     k = max(1, min(k, n))

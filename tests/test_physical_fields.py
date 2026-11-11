@@ -12,7 +12,48 @@ from tactile3d.experiments.single_object import (
     predict_fields,
     voxel_partition,
 )
-from tactile3d.physics.fields import integrate_density_cells, isotropic_mixture_bounds
+from tactile3d.physics.fields import (
+    integrate_density_cells,
+    isotropic_mixture_bounds,
+    material_conditioned_shell,
+)
+
+
+def test_material_and_thickness_stay_coupled_in_thin_shell_integral():
+    result = material_conditioned_shell(
+        [.2], .2, [.1, .001], np.array([0, 1]),
+        {"density": [100., 8000.]}, {"density": [0., 0.]})
+    masses = result["shell_volume_samples_m3"] * [100., 8000.]
+    np.testing.assert_allclose(masses, [.4, .32])
+    assert result["mean"]["density"][0] * .2**3 == pytest.approx(.36)
+    # E[rho] E[t] is 22.725 times E[rho*t] for this analytic example.
+    decoupled = np.mean([100., 8000.]) * np.mean([.1, .001]) * .2**2
+    assert decoupled / masses.mean() == pytest.approx(22.725)
+
+
+def test_conditional_field_mean_and_variance_match_explicit_sample_enumeration():
+    depth = np.array([.1, .15, .2])
+    choices = np.array([0, 1, 0, 1])
+    thickness = np.array([.01, .08])
+    outer, core = np.array([100., 1000., 200., 900.]), np.array([20., 0., 10., 30.])
+    result = material_conditioned_shell(depth, .1, thickness, choices,
+                                        {"density": outer}, {"density": core})
+    shell = np.clip((thickness[choices][None, :] - np.maximum(depth[:, None]-.1, 0))/.1, 0, 1)
+    explicit = shell*outer + (1-shell)*core
+    np.testing.assert_allclose(result["mean"]["density"], explicit.mean(axis=1))
+    np.testing.assert_allclose(result["std"]["density"], explicit.std(axis=1))
+    sample_mass = result["shell_volume_samples_m3"]*outer + (
+        len(depth)*.1**3-result["shell_volume_samples_m3"])*core
+    assert result["mean"]["density"].sum()*.1**3 == pytest.approx(sample_mass.mean())
+
+
+def test_conditional_shell_respects_cubic_metric_scale():
+    arguments = (np.array([0, 1]), {"density": [100., 8000.]}, {"density": [0., 0.]})
+    first = material_conditioned_shell([.2], .2, [.1, .001], *arguments)
+    scaled = material_conditioned_shell([2.], 2., [1., .01], *arguments)
+    np.testing.assert_allclose(scaled["mean"]["density"], first["mean"]["density"])
+    np.testing.assert_allclose(scaled["shell_volume_samples_m3"],
+                               1000*first["shell_volume_samples_m3"])
 
 
 def test_finite_cubes_give_analytic_rectangular_solid_and_translation_invariance():

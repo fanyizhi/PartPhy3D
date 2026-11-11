@@ -1,0 +1,486 @@
+{
+  "date": "2026-11-12",
+  "scope": "paired fixed-five development audit of the historical untrained rule prototype",
+  "held_out_benchmark": false,
+  "parameters_fitted_to_mass_labels": false,
+  "frozen_spec": {
+    "code_sha256": "e7ef8ac5b8139338f81957eebf72f549915713913feeaeab7b9eb6acbe8ad9d7",
+    "cohort": {
+      "cohort_name": "abo500_five_object_development_pilot",
+      "failure_policy": "retain failures; no replacement objects",
+      "held_out_benchmark": false,
+      "object_ids": [
+        "B07B4G5RBN_ATVPDKIKX0DER",
+        "B076YKYHCB_A1F83G8C2ARO7P",
+        "B07WTFJGRG",
+        "B073WGP8XN",
+        "B013TGFGWS_A1F83G8C2ARO7P"
+      ],
+      "parent_split_sha256": "cee2d846d5a51bbeaf211f21e367da67e0faf1873a7a6e3111602fd9118fe374",
+      "selection_rule": "first five IDs of the previously frozen ten-object development cohort"
+    },
+    "conditional_config": {
+      "alignment_mean_iou_min": 0.85,
+      "alpha_threshold": 128,
+      "component_gate_padding_in_voxels": 0.5,
+      "construction": {
+        "default_shell_thickness_m": [
+          0.001,
+          0.003,
+          0.005
+        ],
+        "dumbbell_steel_fraction": [
+          0.7,
+          0.85,
+          0.95
+        ],
+        "electronics_core_occupancy": [
+          0.1,
+          0.25,
+          0.45
+        ],
+        "furniture_panel_fill": [
+          0.1,
+          0.2,
+          0.35
+        ],
+        "generic_core_occupancy": [
+          0.65,
+          0.85,
+          1.0
+        ],
+        "hidden_wood_fraction": [
+          0.02,
+          0.07,
+          0.15
+        ],
+        "hollow_core_occupancy": [
+          0.0,
+          0.02,
+          0.08
+        ],
+        "shell_to_core_void_fraction": [
+          0.0,
+          0.03,
+          0.1
+        ],
+        "soft_core_occupancy": [
+          0.75,
+          0.9,
+          1.0
+        ]
+      },
+      "display_resolution": 420,
+      "experiment": "fixed_ten_object_untrained_reference_mesh_pilot",
+      "fallback_materials": {
+        "circuit_board": {
+          "density": [
+            1500,
+            2000
+          ],
+          "thickness_m": [
+            0.002,
+            0.003
+          ]
+        },
+        "fabric": {
+          "density": [
+            100,
+            300
+          ],
+          "thickness_m": [
+            0.002,
+            0.005
+          ]
+        },
+        "foam": {
+          "density": [
+            20,
+            60
+          ],
+          "thickness_m": [
+            0.05,
+            0.1
+          ]
+        },
+        "steel": {
+          "density": [
+            7600,
+            8000
+          ],
+          "thickness_m": [
+            0.002,
+            0.005
+          ]
+        },
+        "wood": {
+          "density": [
+            300,
+            800
+          ],
+          "thickness_m": [
+            0.01,
+            0.03
+          ]
+        }
+      },
+      "lod_face_fractions": [
+        0.5,
+        0.25
+      ],
+      "main_resolution": 144,
+      "max_bbox_cells": 2500000,
+      "max_clustering_faces": 40000,
+      "regions": 8,
+      "samples": 4096,
+      "seed": 20261030,
+      "selection": "first_10_published_test_ids_no_replacement",
+      "shell_model": "material_conditioned",
+      "status": {
+        "calibrated_uncertainty": false,
+        "instantmesh_executed": false,
+        "learned_part_model_executed": false,
+        "local_physical_ground_truth_available": false,
+        "material_source": "cached_NeRF2Physics_proposals_plus_declared_heuristic",
+        "part_ground_truth_available": false,
+        "qwen_executed": false,
+        "reference_mesh_and_dataset_alpha_used": true,
+        "trained": false
+      },
+      "voxel_resolutions": [
+        144
+      ]
+    },
+    "integration_sha256": "70034ece4a15479a5f3bc3b16f3700190cff7f690754d3f0fe63e7ef0934348c",
+    "legacy_config": {
+      "alignment_mean_iou_min": 0.85,
+      "alpha_threshold": 128,
+      "component_gate_padding_in_voxels": 0.5,
+      "construction": {
+        "default_shell_thickness_m": [
+          0.001,
+          0.003,
+          0.005
+        ],
+        "dumbbell_steel_fraction": [
+          0.7,
+          0.85,
+          0.95
+        ],
+        "electronics_core_occupancy": [
+          0.1,
+          0.25,
+          0.45
+        ],
+        "furniture_panel_fill": [
+          0.1,
+          0.2,
+          0.35
+        ],
+        "generic_core_occupancy": [
+          0.65,
+          0.85,
+          1.0
+        ],
+        "hidden_wood_fraction": [
+          0.02,
+          0.07,
+          0.15
+        ],
+        "hollow_core_occupancy": [
+          0.0,
+          0.02,
+          0.08
+        ],
+        "shell_to_core_void_fraction": [
+          0.0,
+          0.03,
+          0.1
+        ],
+        "soft_core_occupancy": [
+          0.75,
+          0.9,
+          1.0
+        ]
+      },
+      "display_resolution": 420,
+      "experiment": "fixed_ten_object_untrained_reference_mesh_pilot",
+      "fallback_materials": {
+        "circuit_board": {
+          "density": [
+            1500,
+            2000
+          ],
+          "thickness_m": [
+            0.002,
+            0.003
+          ]
+        },
+        "fabric": {
+          "density": [
+            100,
+            300
+          ],
+          "thickness_m": [
+            0.002,
+            0.005
+          ]
+        },
+        "foam": {
+          "density": [
+            20,
+            60
+          ],
+          "thickness_m": [
+            0.05,
+            0.1
+          ]
+        },
+        "steel": {
+          "density": [
+            7600,
+            8000
+          ],
+          "thickness_m": [
+            0.002,
+            0.005
+          ]
+        },
+        "wood": {
+          "density": [
+            300,
+            800
+          ],
+          "thickness_m": [
+            0.01,
+            0.03
+          ]
+        }
+      },
+      "lod_face_fractions": [
+        0.5,
+        0.25
+      ],
+      "main_resolution": 144,
+      "max_bbox_cells": 2500000,
+      "max_clustering_faces": 40000,
+      "regions": 8,
+      "samples": 4096,
+      "seed": 20261030,
+      "selection": "first_10_published_test_ids_no_replacement",
+      "shell_model": "legacy_mean_thickness",
+      "status": {
+        "calibrated_uncertainty": false,
+        "instantmesh_executed": false,
+        "learned_part_model_executed": false,
+        "local_physical_ground_truth_available": false,
+        "material_source": "cached_NeRF2Physics_proposals_plus_declared_heuristic",
+        "part_ground_truth_available": false,
+        "qwen_executed": false,
+        "reference_mesh_and_dataset_alpha_used": true,
+        "trained": false
+      },
+      "voxel_resolutions": [
+        144
+      ]
+    },
+    "scope": "paired development audit of an untrained rule prototype",
+    "surface_assignment_ablation": [
+      "nearest_triangle_centroid",
+      "nearest_triangle_surface"
+    ],
+    "surface_assignment_sha256": "a226f05259f567639ca88b2f176671a691227e4ac25bf965841572255a3e11a8",
+    "target_mass_used_for_inference": false
+  },
+  "report": {
+    "completed": 5,
+    "conditional": {
+      "ade_kg": 7.2581625842739115,
+      "alde": 0.6178306476340859,
+      "ape": 0.7208586745085348,
+      "mnre": 0.5554090426121944,
+      "num_scenes": 5,
+      "rmse_kg": 11.751712450038513
+    },
+    "conditional_nearest_surface": {
+      "ade_kg": 7.212995826880464,
+      "alde": 0.620330550299152,
+      "ape": 0.723728848203213,
+      "mnre": 0.5533670741654122,
+      "num_scenes": 5,
+      "rmse_kg": 11.614272076202022
+    },
+    "legacy": {
+      "ade_kg": 9.21051252899936,
+      "alde": 0.7281489454239459,
+      "ape": 0.9686677947218773,
+      "mnre": 0.49574895157058896,
+      "num_scenes": 5,
+      "rmse_kg": 15.02540128015654
+    },
+    "requested": 5,
+    "targets_kg": {
+      "B013TGFGWS_A1F83G8C2ARO7P": 0.14968536000000002,
+      "B073WGP8XN": 7.8471416000000005,
+      "B076YKYHCB_A1F83G8C2ARO7P": 0.29596878,
+      "B07B4G5RBN_ATVPDKIKX0DER": 29.029888,
+      "B07WTFJGRG": 4.4406656799999995
+    },
+    "nerf_cached_same_five": {
+      "num_scenes": 5,
+      "ade_kg": 2.9597538168729,
+      "alde": 0.5122259238209024,
+      "ape": 0.4773862160099621,
+      "mnre": 0.6226054461668057,
+      "rmse_kg": 4.289701792140246
+    }
+  },
+  "predictions": [
+    {
+      "changed_owner_fraction": 0.13218482154865688,
+      "conditional_mass_kg": 53.126688830997395,
+      "conditional_nearest_surface_mass_kg": 52.78071465178659,
+      "legacy_mass_kg": 59.88642127319254,
+      "part_mass_change_kg": [
+        -0.7562011859864173,
+        -0.9956599479671304,
+        -1.2828917917011466,
+        -1.2484405169880688,
+        -0.6875666436231374,
+        -0.5638524216255343,
+        -0.5614724397380773,
+        -0.6636474945656374
+      ],
+      "pitch_m": 0.012356080528762605,
+      "scene_id": "B07B4G5RBN_ATVPDKIKX0DER",
+      "status": "predicted",
+      "surface_distance_p95_m": 0.07138630993615994,
+      "volume_m3": 0.30857196362779327
+    },
+    {
+      "changed_owner_fraction": 0.12006111113243688,
+      "conditional_mass_kg": 0.11549943316869243,
+      "conditional_nearest_surface_mass_kg": 0.11549071674181566,
+      "legacy_mass_kg": 0.1272417193765065,
+      "part_mass_change_kg": [
+        -0.00011164296551684303,
+        -0.0021224276719920485,
+        -0.0021244450518086364,
+        -0.00016356351905778225,
+        -0.003947593881051745,
+        -0.0030716938258269107,
+        -5.151847910728723e-05,
+        -0.00014940081345285634
+      ],
+      "pitch_m": 0.0007619148948126369,
+      "scene_id": "B076YKYHCB_A1F83G8C2ARO7P",
+      "status": "predicted",
+      "surface_distance_p95_m": 0.007616605713135667,
+      "volume_m3": 0.00011522378121895245
+    },
+    {
+      "changed_owner_fraction": 0.19115936409461032,
+      "conditional_mass_kg": 6.021540575425462,
+      "conditional_nearest_surface_mass_kg": 6.135792773489637,
+      "legacy_mass_kg": 6.110305705153657,
+      "part_mass_change_kg": [
+        -0.006367375956713994,
+        -0.001746443397493691,
+        -0.023907181069492522,
+        -0.042363497716618626,
+        0.00023415539400462038,
+        -0.008315501086766486,
+        -0.001334675362029053,
+        -0.004964610533083613
+      ],
+      "pitch_m": 0.009958332611454858,
+      "scene_id": "B07WTFJGRG",
+      "status": "predicted",
+      "surface_distance_p95_m": 0.019068671597374798,
+      "volume_m3": 0.010187584329937355
+    },
+    {
+      "changed_owner_fraction": 0.682836912633858,
+      "conditional_mass_kg": 18.20671883049925,
+      "conditional_nearest_surface_mass_kg": 18.212634716349346,
+      "legacy_mass_kg": 21.032048172973372,
+      "part_mass_change_kg": [
+        -0.46297714530996936,
+        -0.35673760805258325,
+        -0.6693141109943612,
+        -0.33181662404897416,
+        -0.47957860590096324,
+        -0.33138847084390566,
+        -0.10772768625892237,
+        -0.08578909106444543
+      ],
+      "pitch_m": 0.008279417951901754,
+      "scene_id": "B073WGP8XN",
+      "status": "predicted",
+      "surface_distance_p95_m": 0.011763588835795723,
+      "volume_m3": 0.009698756810885877
+    },
+    {
+      "changed_owner_fraction": 0.07026686413938385,
+      "conditional_mass_kg": 0.22277597761614118,
+      "conditional_nearest_surface_mass_kg": 0.22273956951855947,
+      "legacy_mass_kg": 0.32244107305373304,
+      "part_mass_change_kg": [
+        -0.009163928101956736,
+        -0.000561396949833393,
+        -0.010843673331040905,
+        -0.008872853810737952,
+        -0.01854289121214219,
+        -0.024860202337350354,
+        -0.016833086074828287,
+        -0.009987063619701964
+      ],
+      "pitch_m": 0.002326388739877277,
+      "scene_id": "B013TGFGWS_A1F83G8C2ARO7P",
+      "status": "predicted",
+      "surface_distance_p95_m": 0.020514848022581147,
+      "volume_m3": 0.002737375447957677
+    }
+  ],
+  "seal_verified_on_server": true,
+  "prediction_seal": {
+    "frozen_spec.json": "55528330e701f7d4142696d6713a11cf222485d7be41e739d4f2499adf6c4be3",
+    "objects/B013TGFGWS_A1F83G8C2ARO7P/conditional_field.npz": "ca5cdb78912d4d24b3d71a9aca8b8d9e6d15e694ae9b5e9ccae2c7a89fa2e963",
+    "objects/B013TGFGWS_A1F83G8C2ARO7P/conditional_parts.json": "2a257d29b55247bce215892218192f51543e4bdaa072b9faa8d327cfe51835f9",
+    "objects/B013TGFGWS_A1F83G8C2ARO7P/legacy_prediction.json": "0cce64af6b10a694f7227558c427988cf4a8063b730163d0f4144de1d74ae414",
+    "objects/B013TGFGWS_A1F83G8C2ARO7P/nearest_surface_field.npz": "8e6f60fa3208a6d938ce6d12c40cd903bd645b82600020715d67b1dc5197c8ff",
+    "objects/B013TGFGWS_A1F83G8C2ARO7P/nearest_surface_parts.json": "d339ae8f833b640ed9c4ad14fc5d2b1c5c85b854bb81f0d70703b395c87a1898",
+    "objects/B013TGFGWS_A1F83G8C2ARO7P/part_states.json": "2b4610b087c7c2460c06bb2549d28ef4f0bc9b36ef15a91d57855dd499c7c574",
+    "objects/B013TGFGWS_A1F83G8C2ARO7P/physical_field.npz": "321d3f4dd2045fab0095cab53efb1d92c4f997f3ae9b16033fd7ca79b06be7a7",
+    "objects/B073WGP8XN/conditional_field.npz": "b8c5dc3eb367e5a1e84a9ace0887dcea205f9678791b16d44b4fe2a03ef5c693",
+    "objects/B073WGP8XN/conditional_parts.json": "d01375c857339d6cf16dbcf5f8fe96c1a2de83c8c91c7f6ab380fe7ed512653d",
+    "objects/B073WGP8XN/legacy_prediction.json": "6d629e59a1e17077f2a9a98d6826da4a906ba70a4ef31c6cee3f686b69cb0eb8",
+    "objects/B073WGP8XN/nearest_surface_field.npz": "a2b8645ba231a9de8de8c7c0c91a1d34bfa95b056dc2270e9ee60ee6c42f459b",
+    "objects/B073WGP8XN/nearest_surface_parts.json": "41484aa99181ffa2a90c8a83f7c37595bcbbf8ef47819ddc192bf304eb1fd8b1",
+    "objects/B073WGP8XN/part_states.json": "fbbda4a86bc05eef5f28a50ea765e6346cf162927706fcdd14129bc558cce3b6",
+    "objects/B073WGP8XN/physical_field.npz": "c7433fa77110184092fbfdc4632f3712c4bd3c1562fe20fb9d56efa12794c6ad",
+    "objects/B076YKYHCB_A1F83G8C2ARO7P/conditional_field.npz": "e003b12f06b48d0abdf6ec7c767a5db8a43f1781e0dfeb3c88a11d12b653a516",
+    "objects/B076YKYHCB_A1F83G8C2ARO7P/conditional_parts.json": "fb439c48fdd85025a7ed4f14a602f07fdeaf41a7712aac6da4fde915f738befc",
+    "objects/B076YKYHCB_A1F83G8C2ARO7P/legacy_prediction.json": "c1fb9a4f4cd8036a222c6764913d55bc5735579d774aafc03ee72676cc70d2fd",
+    "objects/B076YKYHCB_A1F83G8C2ARO7P/nearest_surface_field.npz": "1dc9fd90e7513d9694d5bc60f00c57e9cec0197b65a573e66d07b9e43aa6ffe5",
+    "objects/B076YKYHCB_A1F83G8C2ARO7P/nearest_surface_parts.json": "4cb2614453cc8e76fb59d0bb326d9315a570fed890322c6810a29bce2bfee3fd",
+    "objects/B076YKYHCB_A1F83G8C2ARO7P/part_states.json": "59a1e13d113556c661372c8edf8594ac6f099401898cf1952c4f53f3834b0fff",
+    "objects/B076YKYHCB_A1F83G8C2ARO7P/physical_field.npz": "f2f0424a0029231a1119b5b00ba2a7e2bf83782d382aa4ff8f3c202a5e13add6",
+    "objects/B07B4G5RBN_ATVPDKIKX0DER/conditional_field.npz": "aaccab23030b15d379bb2eb9674a5348a4b59dc2752e43e42ef28211ba87ec3f",
+    "objects/B07B4G5RBN_ATVPDKIKX0DER/conditional_parts.json": "cc08ac64b75484699edd5f8201d4eda8a1eee506861cc5666cd1e769d20ffd3f",
+    "objects/B07B4G5RBN_ATVPDKIKX0DER/legacy_prediction.json": "f0d64ca7e087bbbefa382f0a17f706553adba510d616f20955ad21569ac52f54",
+    "objects/B07B4G5RBN_ATVPDKIKX0DER/nearest_surface_field.npz": "dec054eeb3d95e986cd77b853729b45be7470a74360f3d536f89562eb48dcbbe",
+    "objects/B07B4G5RBN_ATVPDKIKX0DER/nearest_surface_parts.json": "ebc583c7605c9a936a60d06b32d5e2b804ed1b0b6ea90a6ac1db83fdb6b160ec",
+    "objects/B07B4G5RBN_ATVPDKIKX0DER/part_states.json": "d379a3c5fd9783ca31497ac1c4a6b95f487515fc13df2023b4c0d831e5ac8753",
+    "objects/B07B4G5RBN_ATVPDKIKX0DER/physical_field.npz": "5fc0703de4d39c877a52a0ffc22ce2d67a7b01d286882397e52bbaf6dedba72d",
+    "objects/B07WTFJGRG/conditional_field.npz": "f928a60644b542d76e015c22fa671ba463b6a945b015bf1f29198636eed8e2eb",
+    "objects/B07WTFJGRG/conditional_parts.json": "2e9092afb5ef8e645e170dc8475eb8fabe3e962825e8f6ccbd69fac515b6bdba",
+    "objects/B07WTFJGRG/legacy_prediction.json": "372e32ae6990f82a3dd06074c66e575721ed784ce5307f2c4f7896bf2550ecd3",
+    "objects/B07WTFJGRG/nearest_surface_field.npz": "7fcfb39121632a6728f753b31dbdf9502e67028703c38c8c94ad454c5031a993",
+    "objects/B07WTFJGRG/nearest_surface_parts.json": "e1affade0c5528d9503d398a4669506208580e07669a483744fad1ba8c72e5b3",
+    "objects/B07WTFJGRG/part_states.json": "3c2786d8d9f8832865b1101930872e451c195db05a368f80e7442d796ec91d7e",
+    "objects/B07WTFJGRG/physical_field.npz": "bc306bd89f24f641423736ffe3c3905128d21e9ffa117fd5fe89a9fca85f3c59",
+    "predictions.json": "4dc50c8c4086939197f85d29fb17fccd6210c9146428822b63b209a001e2bf43"
+  },
+  "interpretation": "Condition material density and shell thickness jointly. Nearest-triangle surface assignment lowers ADE slightly but does not uniformly improve all metrics. Geometry, material priors, construction fractions and Monte Carlo seed are held fixed. This is not the complete multi-round VLM method."
+}

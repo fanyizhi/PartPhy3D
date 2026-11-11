@@ -158,3 +158,51 @@ the property stage and include periods with concurrent development jobs, so they
 are not an end-to-end speed comparison. These are rerun results, not copied
 published numbers. PUGS-Qwen currently has one development object; its complete
 100-object comparison remains pending.
+
+
+### Material/geometry integration audit (2026-11-12)
+
+A paired audit reuses the five frozen development objects, the same 144-resolution
+cell envelopes, geometry/color regions, cached material priors, construction
+fractions and random seed. The historical prototype averaged candidate thickness
+before sampling density. This loses the material/thickness dependence:
+`E[rho * V_shell(t)]` generally differs from `E[rho] * V_shell(E[t])`.
+The corrected integrator conditions shell volume and all core/outer fields on
+the same material draw. Its cell-field mean equals the sampled mass integral.
+Within-material thickness uncertainty is still held fixed at its nominal value.
+
+A separate geometry ablation replaces nearest triangle-centroid ownership with
+batched closest-triangle-surface queries. This prevents large-face centroid bias;
+it is a geometric assignment rule, not a recovery of hidden internal anatomy.
+The historical `predict` mode retains its original integration default. The new
+`audit-shell` stage explicitly evaluates all three alternatives.
+
+| Same five development objects | ADE kg ↓ | ALDE ↓ | APE % ↓ | MnRE ↑ |
+| --- | ---: | ---: | ---: | ---: |
+| Historical rule prototype | 9.2105 | 0.7281 | 96.8668 | 0.4957 |
+| Material-conditioned shell | 7.2582 | 0.6178 | 72.0859 | 0.5554 |
+| Material-conditioned shell + nearest surface | 7.2130 | 0.6203 | 72.3729 | 0.5534 |
+| NeRF2Physics cached stage, same five | 2.9598 | 0.5122 | 47.7386 | 0.6226 |
+
+The nearest-surface variant reduces ADE by 21.69% relative to the historical
+prototype; its ALDE, APE and MnRE are slightly worse than conditioning alone.
+The two corrected variants trade off these metrics. The multi-round VLM full method remains
+a separate pending whole-object comparison. Old color-driven region/material
+rules and generic hidden-fill assumptions remain major targets for replacement.
+[Predictions, frozen configuration and seal](results/mass_integration_audit_20261112.json)
+record the complete five-object audit; no mass fitting or object substitution was
+performed. This development audit is not added to the 100-object published-test table.
+
+```bash
+python -m pip install -e ".[study]"
+python -m tactile3d.experiments.ten_objects \
+  --root /path/to/abo_500 \
+  --assets /path/to/reference_meshes \
+  --stage audit-shell \
+  --cohort configs/five_object_pilot.json \
+  --output outputs/material_geometry_audit
+```
+
+The reference-mesh folder must contain `<scene_id>/model.glb`. The stage seals
+all predictions and fields before opening mass labels, retains unsuccessful
+objects in the requested cohort, and reports aggregate scores only when complete.

@@ -5,6 +5,50 @@ from __future__ import annotations
 import numpy as np
 
 
+def material_conditioned_shell(depth, pitch, thicknesses, choices, outer, core):
+    """Average conditional shell/core fields without decoupling material and thickness.
+
+    ``outer`` and ``core`` map each physical field to aligned Monte Carlo samples.
+    The returned shell-volume samples use the same material choices as density.
+    Thickness is the conditional nominal value; its within-material uncertainty
+    is not sampled here. Artificial part boundaries must not enter ``depth``.
+    """
+    depth = np.asarray(depth, dtype=float)
+    thicknesses = np.asarray(thicknesses, dtype=float)
+    choices = np.asarray(choices)
+    if (depth.ndim != 1 or not len(depth) or not np.isfinite(depth).all()
+            or np.any(depth < 0) or not np.isfinite(pitch) or pitch <= 0
+            or thicknesses.ndim != 1 or not np.isfinite(thicknesses).all()
+            or np.any(thicknesses < 0) or choices.ndim != 1 or not len(choices)
+            or choices.dtype.kind not in "iu" or np.any(choices < 0)
+            or np.any(choices >= len(thicknesses)) or not outer
+            or set(outer) != set(core)):
+        raise ValueError("Invalid conditional shell geometry or material choices")
+    outside = {key: np.asarray(values, dtype=float) for key, values in outer.items()}
+    inside = {key: np.asarray(values, dtype=float) for key, values in core.items()}
+    if any(values.shape != choices.shape or not np.isfinite(values).all()
+           or np.any(values < 0) for values in (*outside.values(), *inside.values())):
+        raise ValueError("Conditional fields require aligned nonnegative samples")
+    means = {key: np.zeros(len(depth)) for key in outside}
+    seconds = {key: np.zeros(len(depth)) for key in outside}
+    shell_volumes = np.zeros(len(choices))
+    for material in np.unique(choices):
+        selected = choices == material
+        fraction = selected.mean()
+        shell = np.clip((thicknesses[material] - np.maximum(depth - pitch, 0)) / pitch, 0, 1)
+        inner = 1 - shell
+        shell_volumes[selected] = shell.sum() * pitch**3
+        for key in means:
+            a, b = outside[key][selected], inside[key][selected]
+            means[key] += fraction * (shell * a.mean() + inner * b.mean())
+            seconds[key] += fraction * (
+                shell**2 * np.mean(a*a) + inner**2 * np.mean(b*b)
+                + 2 * shell * inner * np.mean(a*b))
+    return {"mean": means,
+            "std": {key: np.sqrt(np.maximum(seconds[key] - means[key]**2, 0)) for key in means},
+            "shell_volume_samples_m3": shell_volumes}
+
+
 def integrate_density_cells(centers, density, pitch, part_ids=None):
     """Integrate disjoint, axis-aligned, constant-density cubic cells."""
     x = np.asarray(centers, dtype=float)
