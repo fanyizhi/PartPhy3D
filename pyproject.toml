@@ -34,6 +34,7 @@ train = [
   "bitsandbytes==0.46.1; platform_system == 'Linux'"
 ]
 figures = ["matplotlib>=3.8"]
+study = ["matplotlib>=3.8", "rtree>=1.2,<2"]
 frontend = [
   "einops==0.8.2",
   "omegaconf==2.3.0",
@@ -42,7 +43,7 @@ frontend = [
   "opencv-python-headless==4.10.0.84",
   "nvdiffrast @ https://codeload.github.com/NVlabs/nvdiffrast/zip/refs/tags/v0.3.3#sha256=ad37393412e35eaccde53a87686aeceb805e8d8c644daff10459675b42438a5d"
 ]
-dev = ["pytest>=7.4", "ruff>=0.4", "black>=24.4", "build>=1.2", "setuptools>=68", "wheel>=0.42"]
+dev = ["pytest>=7.4", "ruff>=0.4", "black>=24.4", "build>=1.2", "setuptools>=68", "wheel>=0.42", "rtree>=1.2,<2"]
 
 [project.scripts]
 tactile3d = "tactile3d.cli:main"

@@ -68,6 +68,10 @@ class VLMResponse:
     peak_gpu_bytes: int
     preprocess_seconds: float = 0.0
     image_grid_thw: tuple[tuple[int, ...], ...] | None = None
+    generation_seed: int = DEFAULT_SEED
+    do_sample: bool = False
+    temperature: float | None = None
+    top_p: float | None = None
 
 
 class LocalVLM:
@@ -152,9 +156,27 @@ class LocalVLM:
         }
 
     def generate(
-        self, prompt: str, images: list[Image.Image], system: str
+        self,
+        prompt: str,
+        images: list[Image.Image],
+        system: str,
+        *,
+        seed: int = DEFAULT_SEED,
+        do_sample: bool = False,
+        temperature: float = 0.7,
+        top_p: float = 0.9,
     ) -> VLMResponse:
-        """同一模型复用多个对象，保留原始回答供独立审计。"""
+        """同一模型复用多个对象，保留原始回答供独立审计。
+
+        随机采样的重复运行用于估计经验分布；这些频率不是校准概率。
+        默认仍是确定性解码，保持既有基线协议不变。
+        """
+        if type(seed) is not int:
+            raise TypeError("生成随机种子必须是整数")
+        if not isinstance(do_sample, bool):
+            raise TypeError("do_sample必须是布尔值")
+        if do_sample and (not 0 < float(temperature) <= 5 or not 0 < float(top_p) <= 1):
+            raise ValueError("随机生成需要0 < temperature <= 5且0 < top_p <= 1")
         preprocessing_start = time.perf_counter()
         messages = make_messages(prompt, images, system)
         inputs = self.processor.apply_chat_template(
@@ -175,10 +197,16 @@ class LocalVLM:
         self.torch.cuda.synchronize()
         preprocess_seconds = time.perf_counter() - preprocessing_start
         start = time.perf_counter()
+        self.torch.manual_seed(seed)
+        self.torch.cuda.manual_seed_all(seed)
+        generation = {
+            "max_new_tokens": self.max_tokens,
+            "do_sample": do_sample,
+        }
+        if do_sample:
+            generation.update(temperature=float(temperature), top_p=float(top_p))
         with self.torch.inference_mode():
-            generated = self.model.generate(
-                **inputs, max_new_tokens=self.max_tokens, do_sample=False
-            )
+            generated = self.model.generate(**inputs, **generation)
         self.torch.cuda.synchronize()
         seconds = time.perf_counter() - start
         generated_only = generated[0, input_tokens:]
@@ -191,4 +219,8 @@ class LocalVLM:
             int(self.torch.cuda.max_memory_allocated()),
             preprocess_seconds,
             image_grid,
+            seed,
+            do_sample,
+            float(temperature) if do_sample else None,
+            float(top_p) if do_sample else None,
         )

@@ -12,6 +12,7 @@ import json
 import sys
 from collections import Counter
 from dataclasses import asdict
+from importlib.metadata import version
 from pathlib import Path
 from time import perf_counter
 
@@ -26,11 +27,10 @@ import trimesh
 from matplotlib.colors import LogNorm, Normalize
 from matplotlib.patches import Patch
 from PIL import Image
-from scipy.spatial import cKDTree
 
 from tactile3d.figures.mesh_fields import render_mesh
 from tactile3d.mesh.assembly import texture_face_rgb
-from tactile3d.mesh.task_lod import simplify_components
+from tactile3d.mesh.task_lod import simplify_components, simplify_with_lineage
 from tactile3d.physics.materials import load_material_priors
 from tactile3d.physics.part_io import write_json
 from tactile3d.vision.progressive import make_prompt, validate_answer
@@ -378,6 +378,13 @@ def closed_properties(pieces, ids, density):
 
 def benchmark(args):
     output = args.output
+    write_json(
+        output / "benchmark_environment.json",
+        {
+            name: version(name)
+            for name in ("numpy", "scipy", "trimesh", "fast-simplification", "rtree")
+        },
+    )
     mesh, labels, pieces, _colors = load_prepared(output)
     state = active_states(output)["progressive"]
     names = {c["component_id"]: c["surface_material"] for c in state["components"]}
@@ -391,7 +398,6 @@ def benchmark(args):
     bulk_density = np.array([rho if i in wood else np.nan for i in range(len(pieces))])
     directory = output / "lod"
     directory.mkdir(exist_ok=False)
-    tree = cKDTree(mesh.triangles_center)
     surface_points, reference_sample_faces = trimesh.sample.sample_surface(
         mesh, 12000, seed=711
     )
@@ -405,10 +411,8 @@ def benchmark(args):
             for repetition in range(3):
                 start = perf_counter()
                 if method == "global_qem":
-                    reduced = mesh.simplify_quadric_decimation(face_count=target)
-                    # Explicit approximate mapping, included in measured cost.
-                    _, nearest = tree.query(reduced.triangles_center)
-                    mapped = labels[nearest]
+                    result = simplify_with_lineage(mesh, labels, target)
+                    reduced, mapped = result.mesh, result.face_components
                     budgets = None
                 else:
                     result = simplify_components(
@@ -490,7 +494,7 @@ def benchmark(args):
                 "wood_errors": errors,
                 "distance_evaluation_seconds": perf_counter() - sample_start,
                 "global_mapping": (
-                    "nearest original triangle centroid"
+                    "verified edge-collapse ancestry"
                     if method == "global_qem"
                     else "preserved component identity"
                 ),
@@ -546,7 +550,7 @@ def benchmark(args):
     write_json(
         output / "edit.json",
         {
-            "scope": "closed wooden frame only, upholstery excluded",
+            "scope": "four closed wooden legs only; open rails and upholstery excluded",
             "component_id": chosen,
             "wood_components": wood,
             "before_density_kg_m3": rho,
@@ -654,7 +658,7 @@ def figures(args):
         (axes[0, 2], *axes[1]),
         fields,
         (
-            "c  Surface density prior",
+            "c  Material density prior",
             "d  Material modulus prior",
             "e  Friction prior",
             "f  Hardness prior",
@@ -710,7 +714,7 @@ def figures(args):
         ax.imshow(render_mesh(data["vertices"], data["faces"], cols, resolution=500))
         ax.set_title(
             f"{row['method']} · {row['actual_faces']:,} faces\n"
-            f"surface P95 {row['surface_p95_mm']:.2f} mm · wood closed {row['closed_wood_regions']}/{row['wood_region_count']}",
+            f"surface P95 {row['surface_p95_mm']:.2f} mm",
             fontsize=8,
         )
         ax.axis("off")
@@ -741,7 +745,7 @@ def figures(args):
         axes[2].plot(x, [1000 * r["median_seconds"] for r in subset], "o-", color=color)
     for ax, title, ylabel in zip(
         axes,
-        ("Surface fidelity", "Closed wood-frame fidelity", "QEM + mapping cost"),
+        ("Surface fidelity", "Closed wood-leg fidelity", "QEM + mapping cost"),
         ("P95 distance (mm)", "Inertia tensor error (%)", "Median time (ms)"),
     ):
         ax.set(title=title, xlabel="Actual triangle count", ylabel=ylabel)
@@ -753,7 +757,7 @@ def figures(args):
     edited = material.copy()
     edited[labels == edit["component_id"]] = to_rgb("#c0c6ce")
     axes[0].imshow(rendered)
-    axes[0].set_title("Before · wooden frame")
+    axes[0].set_title("Before · wooden supports")
     axes[0].axis("off")
     axes[1].imshow(render_mesh(mesh.vertices, mesh.faces, edited, resolution=600))
     axes[1].set_title(f"Edit component {edit['component_id']} to aluminum")
@@ -763,14 +767,14 @@ def figures(args):
         [edit[k]["mass_kg"] for k in ("before", "after")],
         color=["#bd8656", "#a0a8b2"],
     )
-    axes[2].set(title="Wood-frame domain mass", ylabel="Mass (kg)")
+    axes[2].set(title="Four-leg domain mass", ylabel="Mass (kg)")
     moments = [
         np.linalg.eigvalsh(edit[k]["inertia_kg_m2"]) for k in ("before", "after")
     ]
     for i, (name, vals) in enumerate(zip(("Before", "After"), moments)):
         axes[3].bar(np.arange(3) + (i - 0.5) * 0.35, vals, 0.35, label=name)
     axes[3].set(
-        title="Frame principal moments",
+        title="Leg-domain principal moments",
         ylabel="kg m$^2$",
         xticks=range(3),
         xticklabels=["I1", "I2", "I3"],
@@ -782,7 +786,7 @@ def figures(args):
     for i, name in enumerate(("Before", "After")):
         axes[4].bar(np.arange(3) + (i - 0.5) * 0.35, centers[i], 0.35, label=name)
     axes[4].set(
-        title="Frame center of mass",
+        title="Leg-domain center of mass",
         ylabel="Coordinate (mm)",
         xticks=range(3),
         xticklabels=["x", "y", "z"],
@@ -796,6 +800,83 @@ def figures(args):
         xticklabels=["x", "y", "z"],
     )
     savefig(fig, dest / "local_material_edit")
+    # Conditional sensitivity on the actual closed frame, with one shared wood
+    # density across parts. These curves are not calibrated confidence intervals.
+    rho0 = edit["before_density_kg_m3"]
+    rho_after = edit["edited_density_kg_m3"]
+    frame = edit["before"]
+    selected = closed_properties(_pieces, [edit["component_id"]], 1.0)
+    frame_volume = frame["mass_kg"] / rho0
+    frame_center = np.array(frame["center_of_mass_m"])
+    part_center = np.array(selected["center_of_mass_m"])
+
+    def origin_tensor(properties):
+        c = np.array(properties["center_of_mass_m"])
+        return np.array(properties["inertia_kg_m2"]) + properties["mass_kg"] * (
+            np.dot(c, c) * np.eye(3) - np.outer(c, c)
+        )
+
+    density_values = np.linspace(300.0, 950.0, 80)
+    sweep = []
+    for rho in density_values:
+        mass_before = rho * frame_volume
+        delta_mass = (rho_after - rho) * selected["mass_kg"]
+        mass_after = mass_before + delta_mass
+        center_after = (
+            mass_before * frame_center + delta_mass * part_center
+        ) / mass_after
+        origin_after = origin_tensor(frame) * rho / rho0 + origin_tensor(selected) * (
+            rho_after - rho
+        )
+        inertia_after = origin_after - mass_after * (
+            np.dot(center_after, center_after) * np.eye(3)
+            - np.outer(center_after, center_after)
+        )
+        sweep.append(
+            {
+                "wood_density_kg_m3": float(rho),
+                "before_mass_kg": float(mass_before),
+                "after_mass_kg": float(mass_after),
+                "com_displacement_mm": float(
+                    np.linalg.norm(center_after - frame_center) * 1000
+                ),
+                "after_principal_inertia_kg_m2": np.linalg.eigvalsh(
+                    inertia_after
+                ).tolist(),
+            }
+        )
+    fig, axes = plt.subplots(1, 3, figsize=(7.2, 2.8), layout="constrained")
+    axes[0].plot(
+        density_values,
+        [r["before_mass_kg"] for r in sweep],
+        label="Before",
+        color="#bd8656",
+    )
+    axes[0].plot(
+        density_values,
+        [r["after_mass_kg"] for r in sweep],
+        label="One aluminum leg",
+        color="#6588a2",
+    )
+    axes[0].set(title="Four-leg domain mass", ylabel="kg")
+    axes[0].legend(fontsize=6)
+    axes[1].plot(
+        density_values, [r["com_displacement_mm"] for r in sweep], color="#6588a2"
+    )
+    axes[1].set(title="Edit-induced COM shift", ylabel="mm")
+    for index in range(3):
+        axes[2].plot(
+            density_values,
+            [r["after_principal_inertia_kg_m2"][index] for r in sweep],
+            label=f"I{index+1}",
+        )
+    axes[2].set(title="Edited leg-domain inertia", ylabel="kg m$^2$")
+    axes[2].legend(fontsize=6)
+    for ax in axes:
+        ax.set_xlabel("Shared wood density (kg m$^{-3}$)")
+        ax.axvline(rho0, color="0.6", linestyle=":", linewidth=0.7)
+    savefig(fig, dest / "physical_parameter_sensitivity")
+    write_json(dest / "density_sensitivity.json", sweep)
     np.savez_compressed(dest / "surface_fields.npz", component_ids=labels, **fields)
     write_json(
         dest / "source_data.json",
@@ -817,12 +898,14 @@ def figures(args):
         "per-parameter provenance is recorded in source_data.json. "
         "Unknown properties remain gray. Hardness is not pooled across incompatible scales.\n\n"
         "QEM comparison uses common requested budgets and reports actual face counts. "
-        "Distances are one-way original-surface samples to reduced triangles. "
+        "Surface distances are evaluated in both directions using 12000 samples per surface. "
         "Physical errors concern only VLM-assigned closed wooden regions with fixed nominal density. "
         "Invalid domains have no physical-error value. Times include reduction and component mapping, "
         "exclude VLM, and summarize three warmed runs.\n\n"
         "Local edit changes one closed wooden component to specified aluminum density. "
-        "Mass and inertia refer to the frame domain, excluding upholstery and hidden supports.\n",
+        "Mass and inertia refer to four closed wooden legs, excluding open rails, upholstery and hidden supports.\n"
+        "RGB and reference mesh: Amazon Berkeley Objects, Collins et al., CVPR 2022, CC BY 4.0. "
+        "These renders, overlays and simplifications are derived analyses.\n",
         encoding="utf-8",
     )
 

@@ -18,11 +18,36 @@
    薄结构与物理敏感度引导的区域预算分配。QEM 核心使用同一实现。
    敏感度是排序代理，尚无物理误差上界，也未实现逐边的接口保护。
 4. 区域预算按容量限制分配整数面数，区域内执行 QEM，直接保留区域身份。
-   全局 QEM 使用原三角面中心最近邻进行近似身份映射，映射耗时计入成本。
+   全局 QEM 沿边折叠历史追踪部件身份，并逐面校验输出拓扑，映射耗时计入成本。
    报告实际面数，不能假定 QEM 严格达到请求面数。
 5. 在 VLM 判为木材且参考网格闭合的区域上，以固定密度先验独立积分质量、
    质心和完整惯量。开放区域不输出物理误差，不用带符号体积冒充材料体积。
-   比较一次局部铝材编辑的增量结果与全量重算残差。
+   比较一次局部铝材编辑的增量结果与全量重算残差。当前原始参考中只有四条木腿
+   是有效闭合域，横梁和软包不参与该物理积分。工具默认补洞得到的闭合性不作原始证据。
+
+## 视角与角色消融
+
+额外根据标定相机的位置和视线交点选择三／四个方位，使用相同的编号辅助图和问题。
+四视角选中 02、08、20、26，实际方位约 354、98、182、259 度。
+三轮随机试验用于开发设置选择，不把该物体再次称为独立测试。
+
+角色定位进一步比较纯几何、VLM 和融合。纯几何移除材质门控，VLM 与融合复用
+完全相同的原始回答，融合仅增加几何约束。椅类角色规则使用归一化尺寸、落地、
+侧向位置和闭合性，不使用对象编号或评价角色标签。类别和坐标约定属于明确输入。
+该规则仍是针对软包家具的开发模板，需要独立对象检验。
+
+另外执行逐部件局部图诊断，以及增加区域平均 RGB 的视觉证据对照。各版本原始回答
+分别保存，不把不同输入条件或不同调用预算混在同一个对照数字中。
+
+## 接触几何与统一状态
+
+落地边界来自腿的最低平面和凸包。腿—横梁的最近点计算包括顶点—面、边—边和
+三角形相交，先用空间包围盒筛选候选。采样点用于展示接口邻域，最小距离另由
+表面几何计算，二者分别保存。图中软包淡化，展示支架与落地点，红圈为最小距离点。
+这是参考数字模型上的几何接触，不包含连接强度或接触力结论。
+
+统一状态 v2 保存稳定部件 ID、功能角色、原 VLM 名称、空间锚点、材质参数出处及
+腿—横梁的几何接口图。减面沿边折叠历史保持身份，编辑保留原始状态和新版本。
 
 ## 图件约定
 
@@ -47,6 +72,13 @@ python scripts/evaluate_reference_vlm.py --source outputs/chaise_reference_20261
 python scripts/query_reference_material_priors.py --source outputs/chaise_reference_20261111
 python scripts/run_reference_mesh_study.py benchmark --output outputs/chaise_reference_20261111
 python scripts/run_reference_mesh_study.py figures --output outputs/chaise_reference_20261111
+python scripts/compare_matched_qem.py --source outputs/chaise_reference_20261111
+python scripts/run_view_and_contact_study.py prepare --source outputs/chaise_reference_20261111
+python scripts/run_view_and_contact_study.py run --source outputs/chaise_reference_20261111
+python scripts/run_view_and_contact_study.py contacts --source outputs/chaise_reference_20261111
+python scripts/check_geometric_roles.py --source outputs/chaise_reference_20261111
+python scripts/ablate_reference_grounding.py --source outputs/chaise_reference_20261111 --output paper_assets/chaise_reference_20261111
+python scripts/polish_reference_contacts.py --source outputs/chaise_reference_20261111 --output paper_assets/chaise_reference_20261111
 ```
 
 代码模块分别为 `vision/progressive.py`、`mesh/task_lod.py`、`figures/mesh_fields.py`。

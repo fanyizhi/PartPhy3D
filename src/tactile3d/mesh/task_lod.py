@@ -122,3 +122,59 @@ def simplify_components(
         budgets.tolist(),
         perf_counter() - start,
     )
+
+
+def simplify_with_lineage(
+    mesh: trimesh.Trimesh, face_labels: np.ndarray, total: int
+) -> ComponentLOD:
+    """Transfer component IDs through edge-collapse ancestry, without nearest faces.
+
+    Compact vertex ordering is verified against every output face. A mismatch
+    raises instead of silently assigning labels by geometric proximity.
+    """
+    import fast_simplification
+
+    start = perf_counter()
+    values = np.asarray(face_labels)
+    if values.shape != (len(mesh.faces),) or values.dtype.kind not in "iu":
+        raise ValueError("One integer label per input face is required")
+    vertices, faces, collapses = fast_simplification.simplify(
+        np.asarray(mesh.vertices),
+        np.asarray(mesh.faces),
+        target_count=total,
+        return_collapses=True,
+    )
+    roots = np.arange(len(mesh.vertices))
+    for keep, remove in collapses[::-1]:
+        roots[remove] = roots[keep]
+    while np.any(roots[roots] != roots):
+        roots = roots[roots]
+    mapped = roots[mesh.faces]
+    survives = (
+        (mapped[:, 0] != mapped[:, 1])
+        & (mapped[:, 1] != mapped[:, 2])
+        & (mapped[:, 0] != mapped[:, 2])
+    )
+    kept = np.unique(mapped[survives])
+    if len(kept) != len(vertices):
+        raise ValueError("Collapse ancestry and compacted vertices disagree")
+    compact = np.full(len(mesh.vertices), -1, dtype=int)
+    compact[kept] = np.arange(len(kept))
+    lookup = {}
+    for triangle, label in zip(compact[mapped[survives]], values[survives]):
+        key = tuple(sorted(triangle))
+        if key in lookup and lookup[key] != label:
+            raise ValueError("Collapse merges incompatible component faces")
+        lookup[key] = int(label)
+    try:
+        labels = np.array([lookup[tuple(sorted(face))] for face in faces], dtype=int)
+    except KeyError as error:
+        raise ValueError(
+            "Output topology does not match recorded edge collapses"
+        ) from error
+    return ComponentLOD(
+        trimesh.Trimesh(vertices, faces, process=False),
+        labels,
+        [],
+        perf_counter() - start,
+    )
