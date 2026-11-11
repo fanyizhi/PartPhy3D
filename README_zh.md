@@ -29,6 +29,7 @@ VLM 推理另需 GPU、模型权重与训练依赖，配置见服务器安装说
 - `docs/`：方法、数据、复现及历史文字记录。
 
 数据集图片、参考模型、模型权重和中间产物保存在本地，不随 Git 克隆分发。
-当前图件来自参考几何开发实验，材料参数先验及四腿物理域的范围在图注中说明。
+当前图件来自参考几何开发实验。[新版整物体减面对照](docs/baseline_mapping.md#vlm-construction-and-component-support-integration-2026-11-12)
+使用部件补全物理域；早期图件的质量矩范围为四条木腿，各图分别注明。
 
 代码采用 MIT 许可；数据和第三方组件遵循各自许可，见 [THIRD_PARTY.md](THIRD_PARTY.md)。

@@ -1,7 +1,9 @@
 import numpy as np
 import pytest
+import trimesh
 
-from tactile3d.experiments.vlm_mass import integrate_construction
+from tactile3d.experiments.vlm_mass import construct, properties, validate_hypothesis
+from tactile3d.physics.fields import integrate_construction
 
 
 def row(core, thickness=0.0, region=0):
@@ -16,6 +18,95 @@ def row(core, thickness=0.0, region=0):
 POINTS = np.array([[0.0, 0.0, 0.0], [0.1, 0.0, 0.0]])
 OWNERS = np.array([0, 0])
 DENSITIES = {"cover": 1000.0, "foam": 40.0, "steel": 7850.0}
+
+
+@pytest.mark.parametrize("foam,wood", [(0.9, 0.2), (-0.1, 0.1), (float("nan"), 0)])
+def test_component_core_rejects_invalid_phase_volumes(foam, wood):
+    answer = {
+        "upholstery": [
+            {"role": "seat", "foam_fraction": foam, "hidden_wood_fraction": wood}
+        ],
+        "underside": {"kind": "manufactured_panel", "thickness_mm": 15},
+    }
+    with pytest.raises(ValueError, match="Core fractions"):
+        validate_hypothesis(answer, ["seat"])
+
+
+@pytest.mark.parametrize(
+    "kind,thickness", [("visual_cap", 15), ("manufactured_panel", 0)]
+)
+def test_planar_component_cannot_silently_gain_or_lose_material(kind, thickness):
+    answer = {
+        "upholstery": [
+            {"role": "seat", "foam_fraction": 0.8, "hidden_wood_fraction": 0.05}
+        ],
+        "underside": {"kind": kind, "thickness_mm": thickness},
+    }
+    with pytest.raises(ValueError, match="panel requires thickness"):
+        validate_hypothesis(answer, ["seat"])
+
+
+def test_qem_removed_component_loses_its_mass_without_dropping_the_object():
+    first, second = trimesh.creation.box(extents=[0.2] * 3), trimesh.creation.box(
+        extents=[0.2] * 3
+    )
+    second.apply_translation([1, 0, 0])
+    parts = [
+        {"component_id": i, "surface_material": "wood", "functional_role": "leg"}
+        for i in range(2)
+    ]
+    answer = {"upholstery": [], "underside": {"kind": "visual_cap", "thickness_mm": 0}}
+    missing = [first, trimesh.Trimesh()]
+    with pytest.raises(ValueError, match="Missing reference support"):
+        construct(missing, parts, answer, 0.0035)
+    before = construct([first, second], parts, answer, 0.0035)
+    after = construct(missing, parts, answer, 0.0035, allow_removed=True)
+    density = {"wood": 500.0}
+    assert properties(before, parts, answer, density)["mass_kg"] == pytest.approx(8.0)
+    assert properties(after, parts, answer, density)["mass_kg"] == pytest.approx(4.0)
+    assert after["excluded_geometry_hypotheses"][0]["component_id"] == 1
+
+
+def test_planar_upholstery_has_fabric_volume_without_a_fictitious_foam_core():
+    patch = trimesh.Trimesh(
+        [[0, 0, 0], [2, 0, 0], [2, 1, 0], [0, 1, 0]],
+        [[0, 1, 2], [0, 2, 3]],
+        process=False,
+    )
+    parts = [
+        {"component_id": 0, "surface_material": "fabric", "functional_role": "seat"}
+    ]
+    answer = {
+        "upholstery": [
+            {"role": "seat", "foam_fraction": 0.9, "hidden_wood_fraction": 0.1}
+        ],
+        "underside": {"kind": "visual_cap", "thickness_mm": 0},
+    }
+    partition = construct([patch], parts, answer, 0.0035)
+    result = properties(
+        partition, parts, answer, {"wood": 500, "foam": 40, "fabric": 200}
+    )
+    assert result["mass_kg"] == pytest.approx(1.4)
+    assert partition["parts"][0]["core"]["volume_m3"] == 0
+
+
+def test_flattened_wood_leg_does_not_inherit_the_underside_panel_thickness():
+    box = trimesh.creation.box(extents=[0.2] * 3)
+    flat_leg = trimesh.Trimesh(
+        [[1, 0, 0], [1.1, 0, 0], [1.1, 0.1, 0]], [[0, 1, 2]], process=False
+    )
+    parts = [
+        {"component_id": i, "surface_material": "wood", "functional_role": "leg"}
+        for i in range(2)
+    ]
+    answer = {
+        "upholstery": [],
+        "underside": {"kind": "manufactured_panel", "thickness_mm": 15},
+    }
+    partition = construct([box, flat_leg], parts, answer, 0.0035, allow_removed=True)
+    result = properties(partition, parts, answer, {"wood": 500})
+    assert result["mass_kg"] == pytest.approx(4.0)
+    assert "three-dimensional" in partition["excluded_geometry_hypotheses"][0]["reason"]
 
 
 def test_solid_and_hollow_use_distinct_material_volumes():

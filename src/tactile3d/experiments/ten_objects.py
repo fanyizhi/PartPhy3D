@@ -19,7 +19,6 @@ import numpy as np
 import trimesh
 import yaml
 from PIL import Image
-from scipy import ndimage
 from scipy.spatial import cKDTree
 
 matplotlib.use("Agg")
@@ -40,7 +39,11 @@ from tactile3d.figures.style import configure_style
 from tactile3d.mesh.assembly import face_components, texture_face_rgb
 from tactile3d.mesh.segmentation import _kmeans, _smooth_face_labels, nearest_surface_labels
 from tactile3d.models.calibration import mass_metrics
-from tactile3d.physics.fields import integrate_density_cells, material_conditioned_shell
+from tactile3d.physics.fields import (
+    depth_within_region,
+    integrate_density_cells,
+    material_conditioned_shell,
+)
 from tactile3d.utils.io import ensure_dir, read_json, write_json
 
 COLORS = ("#5A76A8", "#C96A6A", "#4FA38F", "#8573B5", "#D1A14B", "#747474",
@@ -185,15 +188,6 @@ def geometric_support(mesh, points, pitch, cfg):
         low, high = vertices.min(axis=0)-padding, vertices.max(axis=0)+padding
         keep |= np.all((points >= low) & (points <= high), axis=1)
     return keep, count
-
-
-def depth_within_region(points, pitch):
-    indices = np.rint(points/pitch).astype(np.int64)
-    origin = indices.min(axis=0)-2
-    shape = indices.max(axis=0)-origin+3
-    mask = np.zeros(shape, bool)
-    mask[tuple((indices-origin).T)] = True
-    return ndimage.distance_transform_edt(mask)[tuple((indices-origin).T)]*pitch
 
 
 def predict_physics(points, ids, region_rgb, materials, profile, pitch, cfg):

@@ -208,40 +208,80 @@ all predictions and fields before opening mass labels, retains unsuccessful
 objects in the requested cohort, and reports aggregate scores only when complete.
 
 
-### VLM construction integration pilot (2026-11-12)
+### VLM construction and component-support integration (2026-11-12)
 
-`python -m tactile3d.experiments.vlm_mass` integrates VLM structure proposals over
-fixed metric cells. It uses four actual azimuth-selected views plus two region
-evidence sheets, three saved self-check rounds, explicit per-region shell/core
-material volumes, and fixed density priors. Regions are geometric clusters,
-not established manufacturing parts. The surface-hints option supplies the old
-uncalibrated texture/material evidence separately from volumetric fractions.
+The earlier geometric-cluster driver is preserved at
+[commit 1a0559f](https://github.com/fanyizhi/PartPhy3D/blob/1a0559f/src/tactile3d/experiments/vlm_mass.py).
+Its unconstrained five-object pilot obtained ADE 16.4381 kg; replaying the same
+answers with library thickness means gave 12.7764 kg. The 20 mm cloth answer
+violates the supplied 2–5 mm bounds. Those diagnostic predictions are not
+selected as the main method; their raw records remain in the audit.
+The finite-cell integration API now lives in `tactile3d.physics.fields`.
 
-The exploratory unconstrained five-object run completed 15 valid-JSON queries.
-It did **not** improve accuracy: ADE was 16.4381 kg; replacing positive shell
-thicknesses with the existing material-prior means gave 12.7764 kg on exactly
-the same answers. Neither is selected as the full method. Records are appended
-to [the development audit](results/mass_integration_audit_20261112.json).
-Self-check repetition did not supply independent evidence of correctness.
+The current driver uses the existing VLM/geometry component state instead of
+eight geometric clusters. Closed wood boundaries are used directly; other
+components use explicitly recorded convex-completion hypotheses. A planar
+underside requires a panel-thickness or visual-cap hypothesis. Cloth thickness
+and material densities remain the same fixed library means as the controls.
+Three independently worded questions receive four actual selected views and
+two numbered component diagrams; previous answers are not fed into later calls.
+The equal mean of their mass predictions is not a calibrated posterior.
 
-The run exposed a cloth-cover thickness of 0.02 m against its supplied material
-range [0.002, 0.005] m. The integrator now rejects such out-of-range positive
-thicknesses by default, retains the raw response and validation error, and allows
-one schema/physical-bound repair request. It never silently accepts or clips
-that value into a valid prediction. Remaining invalid hypotheses stop the run;
-a complete-cohort score is not produced by dropping objects. Explicit
-`--allow-unconstrained-thickness` is reserved for the diagnostic ablation.
-`--stage library` replays the same saved answers with library thickness means;
-it is a separate parameter-source ablation, not a measured-thickness correction.
+Structural domains have precedence over upholstery. If E_i is a completed
+envelope, its assigned domain is D_i = E_i minus all higher-priority envelopes.
+The core is D_i intersected with the inward-offset original envelope; the shell
+is the remainder. Cropping an overlap therefore creates no artificial cloth
+coat. Domain unions conserve volume, and density-weighted zeroth, first and
+second moments supply mass, center of mass and inertia. Hidden phases use a
+homogenized density; their exact internal positions remain unresolved.
+
+On the exposed chaise case, the three predictions are 41.9033, 49.1507 and
+47.2424 kg; the mean is **46.0988 kg**, against catalogue mass **29.0299 kg**.
+This still overestimates absolute mass. All three answers propose a 15 mm bottom
+panel. Exact repartitioning with a visual-cap alternative and a separate
+hidden-wood-as-air ablation quantify the sensitivity of these assumptions.
+Neither counterfactual is selected using the target mass. Predictions were
+sealed before the new run opened the catalogue label.
+
+The same frozen hypotheses now support a whole-body QEM comparison. Mean
+physical errors below measure retention of the original conditional domain
+model, rather than error against measured physical truth. Global QEM is rerun
+at each paired achieved triangle count. Both component-preserving controls and
+all three requested budgets are included in the result record.
+
+| Requested budget | Method | Actual faces | Surface P95 mm | Mass error % | COM error mm | Inertia error % |
+| ---: | --- | ---: | ---: | ---: | ---: | ---: |
+| 2400 | Domain-density QEM | 2397 | 4.6349 | 1.2403 | 1.5856 | 1.3223 |
+| 2400 | Matched global QEM | 2396 | 175.2563 | 19.3874 | 35.9575 | 16.2744 |
+| 1200 | Domain-density QEM | 1215 | 18.6214 | 6.5781 | 4.2877 | 4.8380 |
+| 1200 | Matched global QEM | 1215 | 173.0117 | 24.4066 | 43.3888 | 24.2413 |
+| 600 | Domain-density QEM | 791 | 36.1865 | 1.6317 | 50.6582 | 16.8633 |
+| 600 | Matched global QEM | 791 | 43.7530 | 38.1771 | 31.3705 | 40.4016 |
+
+At the lowest budget, the domain-density allocation has worse COM retention
+than the global control. QEM can stop above the requested count, so plots use
+achieved counts. Disappeared or dimension-collapsed solid supports contribute
+zero material volume and are recorded; they are never replaced by a guessed
+underside-panel thickness. Missing reference components are rejected during
+inference. Local density edits preserve the domains and obey the analytic
+mass change V_i times delta-rho.
 
 ```bash
 python -m tactile3d.experiments.vlm_mass \
-  --root /path/to/abo_500 --assets /path/to/reference_meshes \
-  --geometry outputs/material_geometry_audit \
+  --root /path/to/abo_500 --reference outputs/reference \
   --model /path/to/Qwen3-VL-8B-Instruct \
-  --output outputs/vlm_construction --surface-hints
+  --output outputs/component_construction
+python scripts/run_reference_mesh_study.py domain-evaluate \
+  --output outputs/reference --construction outputs/component_construction \
+  --figures outputs/component_construction/figures
 ```
 
-The next structural change must improve physical-part binding and distinguish
-upholstery volume from wood-frame domains, rather than treating repeated names
-or unconstrained numerical VLM outputs as physical ground truth.
+The reference directory comes from the existing prepare/infer/evaluate stages,
+including its geometry-constrained part state and numbered evidence sheets.
+`domain-figures` regenerates only the figure from saved, hash-checked reduced
+meshes. [Rendered panels and source data](../paper_assets/chaise_reference_20261111_final/README.md)
+and [complete development records](results/mass_integration_audit_20261112.json)
+separate absolute mass prediction from conditional simplification retention.
+The complete PUGS/Gen2Physics cohort comparison and construction-probability
+calibration remain unfinished. The next modeling target is a geometry-supported
+hidden-frame hypothesis instead of unconstrained hidden-wood volume fractions.

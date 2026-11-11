@@ -5,6 +5,8 @@ from __future__ import annotations
 import hashlib
 import json
 from collections import Counter
+from copy import deepcopy
+from pathlib import Path
 from time import perf_counter
 
 import matplotlib
@@ -23,8 +25,205 @@ from tactile3d.experiments.reference_study import (
 from tactile3d.figures.reference_study import savefig
 from tactile3d.mesh.contacts import closest_surface_pair
 from tactile3d.mesh.task_lod import simplify_components, simplify_with_lineage
-from tactile3d.physics.part_io import write_json
+from tactile3d.physics.part_io import file_sha256, write_json
 from tactile3d.vision.role_constraints import furniture_role_candidates
+
+
+def evaluate_support_domains(args):
+    """Replay fixed VLM constructions over matched QEM and structural ablations.
+
+    Physical errors measure retention of a conditional domain model. They are
+    separate from absolute mass accuracy and do not read product mass labels.
+    """
+    from tactile3d.experiments.vlm_mass import construct, properties
+
+    source = args.construction
+    seal = json.loads((source / "prediction_seal.json").read_text())
+    if any(file_sha256(source / name) != value for name, value in seal.items()):
+        raise ValueError("Construction prediction seal mismatch")
+    protocol = json.loads((source / "protocol.json").read_text())
+    state_path = args.output / "part_state_geometry_constrained.json"
+    state = json.loads(state_path.read_text())
+    if file_sha256(state_path) != protocol["part_state_sha256"] or state[
+        "geometry_sha256"
+    ] != file_sha256(args.output / "reference_arrays.npz"):
+        raise ValueError("Construction state and reference geometry do not match")
+    output = source / "domain_evaluation"
+    output.mkdir(exist_ok=False)
+    write_json(
+        output / "protocol.json",
+        {
+            "source_sha256": file_sha256(Path(__file__)),
+            "construction_seal_sha256": file_sha256(source / "prediction_seal.json"),
+            "geometry_module_sha256": file_sha256(
+                Path(__file__).parents[1] / "physics/support_domains.py"
+            ),
+            "construction_module_sha256": file_sha256(
+                Path(__file__).with_name("vlm_mass.py")
+            ),
+            "mass_labels_read": False,
+            "scope": "single exposed development object; conditional whole-body retention",
+            "samples": 12000,
+            "sample_seed": 711,
+            "sensitivity_density": "mean conditional assigned mass divided by assigned volume; homogenized ranking proxy",
+            "timing_scope": "single simplification call; no comparative speed claim",
+        },
+    )
+    mesh, labels, pieces, _ = load_prepared(args.output)
+    parts = state["parts"]
+    hypotheses = [
+        json.loads((source / f"hypothesis_{i}.json").read_text())
+        for i in range(protocol["rounds"])
+    ]
+    densities, thickness = protocol["densities_kg_m3"], protocol["fabric_thickness_m"]
+
+    def integrate(subsets, answer):
+        return properties(
+            construct(subsets, parts, answer, thickness, allow_removed=True),
+            parts,
+            answer,
+            densities,
+        )
+
+    # Catch implementation or geometry drift before using a frozen answer.
+    for row in hypotheses:
+        replay = integrate(pieces, row["answer"])
+        for key in ("mass_kg", "center_of_mass_m", "inertia_kg_m2"):
+            if not np.allclose(replay[key], row[key], rtol=1e-8, atol=1e-10):
+                raise ValueError("Frozen domain prediction cannot be reproduced")
+    ablations = []
+    for row in hypotheses:
+        no_panel, no_frame = deepcopy(row["answer"]), deepcopy(row["answer"])
+        no_panel["underside"] = {"kind": "visual_cap", "thickness_mm": 0.0}
+        for phase in no_frame["upholstery"]:
+            phase["hidden_wood_fraction"] = 0.0
+        ablations.append(
+            {
+                "trial": row["trial"],
+                "original_mass_kg": row["mass_kg"],
+                "panel_as_visual_cap_mass_kg": integrate(pieces, no_panel)["mass_kg"],
+                "hidden_wood_as_air_mass_kg": integrate(pieces, no_frame)["mass_kg"],
+                "interpretation": "counterfactual sensitivity; alternatives are not ground truth or selected predictions",
+            }
+        )
+    write_json(output / "structural_sensitivity.json", ablations)
+    effective = np.zeros(len(pieces))
+    for row in hypotheses:
+        volumes = {
+            p["component_id"]: p["assigned"]["volume_m3"]
+            for p in row["partition"]["parts"]
+        }
+        for part in row["parts"]:
+            index = part["component_id"]
+            if volumes[index] > 0:
+                effective[index] += part["mass_kg"] / volumes[index] / len(hypotheses)
+    points, _ = trimesh.sample.sample_surface(mesh, 12000, seed=711)
+
+    def measure(candidate):
+        asset_hash = hashlib.sha256(
+            b"".join(
+                np.ascontiguousarray(value).tobytes()
+                for value in (
+                    candidate.mesh.vertices,
+                    candidate.mesh.faces,
+                    candidate.face_components,
+                )
+            )
+        ).hexdigest()
+        asset = output / f"mesh_{asset_hash}.npz"
+        if not asset.is_file():
+            np.savez_compressed(
+                asset,
+                vertices=candidate.mesh.vertices,
+                faces=candidate.mesh.faces,
+                component_ids=candidate.face_components,
+            )
+        subsets = [
+            (
+                candidate.mesh.submesh(
+                    [np.flatnonzero(candidate.face_components == i)],
+                    append=True,
+                    repair=False,
+                )
+                if np.any(candidate.face_components == i)
+                else trimesh.Trimesh()
+            )
+            for i in range(len(pieces))
+        ]
+        _, distances, _ = trimesh.proximity.closest_point(candidate.mesh, points)
+        result = {
+            "actual_faces": len(candidate.mesh.faces),
+            "mesh_asset": asset.name,
+            "mesh_asset_sha256": file_sha256(asset),
+            "seconds": candidate.seconds,
+            "surface_p95_mm": float(np.quantile(distances, 0.95) * 1000),
+            "budgets": candidate.budgets,
+            "removed_component_ids": [
+                i for i, p in enumerate(subsets) if not len(p.faces)
+            ],
+            "physical_errors": [],
+            "valid": False,
+        }
+        try:
+            for row in hypotheses:
+                physics = integrate(subsets, row["answer"])
+                result["physical_errors"].append(
+                    {
+                        "trial": row["trial"],
+                        "mass_relative": abs(physics["mass_kg"] / row["mass_kg"] - 1),
+                        "com_error_mm": float(
+                            np.linalg.norm(
+                                np.asarray(physics["center_of_mass_m"])
+                                - row["center_of_mass_m"]
+                            )
+                            * 1000
+                        ),
+                        "inertia_relative": float(
+                            np.linalg.norm(
+                                np.asarray(physics["inertia_kg_m2"])
+                                - row["inertia_kg_m2"]
+                            )
+                            / np.linalg.norm(row["inertia_kg_m2"])
+                        ),
+                    }
+                )
+            result["valid"] = True
+        except (ValueError, IndexError) as error:
+            result["validation_error"] = str(error)
+        return result
+
+    targets = json.loads((args.output / "input_manifest.json").read_text())[
+        "face_budget_targets"
+    ]
+    results = []
+    for target in targets:
+        for method in ("component_qem", "domain_density_qem"):
+            component = simplify_components(
+                pieces, target, effective if method == "domain_density_qem" else None
+            )
+            global_result = simplify_with_lineage(
+                mesh, labels, len(component.mesh.faces)
+            )
+            pair = {
+                "target_faces": target,
+                "method": method,
+                "component": measure(component),
+                "matched_global": measure(global_result),
+                "absolute_face_count_difference": abs(
+                    len(component.mesh.faces) - len(global_result.mesh.faces)
+                ),
+            }
+            results.append(pair)
+            write_json(output / "matched_qem.json", results)
+            print(
+                "DOMAIN_QEM",
+                target,
+                method,
+                pair["component"]["valid"],
+                pair["matched_global"]["valid"],
+                flush=True,
+            )
+    return results
 
 
 def evaluate_vlm(args):

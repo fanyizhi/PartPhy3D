@@ -1,0 +1,26 @@
+{
+  "claim": "Domain-density allocation improves moderate-budget whole-body retention; lowest-budget center-of-mass retention remains weaker.",
+  "archetype": "image plate + quantitative panels",
+  "backend": "Python/matplotlib",
+  "objects": 1,
+  "scope": "previously exposed reference object; development",
+  "construction_hypotheses": 3,
+  "statistic": "mean conditional relative error across fixed hypotheses",
+  "confidence_intervals": null,
+  "significance_tests": null,
+  "surface_metric": "95th percentile of 12000 fixed reference-to-reduced surface distances",
+  "mass_com_inertia_reference": "same completed-domain model at unreduced geometry; not measured physical truth",
+  "color_processing": "fixed surface-material pseudo-colors and shared normal-based lighting",
+  "image_example": "highest predeclared reduction budget; all budgets plotted below",
+  "dimensions_mm": [
+    183,
+    165
+  ],
+  "exports": [
+    "PNG",
+    "SVG",
+    "PDF",
+    "600 dpi TIFF"
+  ],
+  "source_sha256": "6f474c4213feecd00e271152668a3c0ac77851e71e32a238cd2d7657b4726bb0"
+}

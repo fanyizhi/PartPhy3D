@@ -668,5 +668,4917 @@
     "physical_validation_replay": "fabric shell thickness 0.02 m outside material bounds [0.002, 0.005] m",
     "selected_for_main_method": false,
     "interpretation": "Repeated self-check answers were correlated; voting is not evidence of calibrated correctness. Material bounds are now validated by default. Part identity and core occupancy still need improved grounding."
+  },
+  "component_support_development": {
+    "scope": "one exposed reference-geometry development object; no cohort claim",
+    "protocol": {
+      "scene": "B07B4G5RBN_ATVPDKIKX0DER",
+      "scope": "exposed reference-geometry development case",
+      "part_state_sha256": "f50522ce5706875eb1172f4a580e9aa3ffee70dc2d485a37b0fd4c4b817fb0bc",
+      "source_sha256": "6ce25fbe81058dae3ab45fc95ede39c9440fe4c812576c295c8cf1c87e3c9b01",
+      "geometry_module_sha256": "60625ded37bcf5eaeefea9f3b259dcf962beaf34d083afd5d8601788f4d96e29",
+      "input_hashes": {
+        "data/abo500_five/scenes/B07B4G5RBN_ATVPDKIKX0DER/images/B07B4G5RBN_ATVPDKIKX0DER_02.png": "401bee21a611c090235b5739a155bc32ac92b74428d7e36e896b7c88bca261b0",
+        "data/abo500_five/scenes/B07B4G5RBN_ATVPDKIKX0DER/images/B07B4G5RBN_ATVPDKIKX0DER_08.png": "21f79d248771c9f1055f41e448b0d28c4c71aa4b47c20ec8985dcc2dea55dc9f",
+        "data/abo500_five/scenes/B07B4G5RBN_ATVPDKIKX0DER/images/B07B4G5RBN_ATVPDKIKX0DER_20.png": "59382554f398eda0b8212ecba43b286e8fdd6fe2c8c0caa6b4fe7ef6e876b10c",
+        "data/abo500_five/scenes/B07B4G5RBN_ATVPDKIKX0DER/images/B07B4G5RBN_ATVPDKIKX0DER_26.png": "f66ade9a3fd642a306fc01e012eb6a2d54d5aef35a20409b9d8cb20ee9f6f5ad",
+        "outputs/chaise_reference_20261111/component_sheet.png": "dbd9875fac9c5e8208ba4a739b7ae8dd0f1999585449cebd668096e2e8fa2f5d",
+        "outputs/chaise_reference_20261111/views_contacts/global_component_positions.png": "3daee355fc098ea0053b0cee5f48ec66102e17676e2f3e7c29f231f845825020"
+      },
+      "selected_views": [
+        {
+          "frame_index": 2,
+          "target_azimuth_degrees": 0.0,
+          "actual_azimuth_degrees": 354.1807771254349,
+          "elevation_degrees": 9.686455817531318,
+          "estimated_lookat_center": [
+            -9.841869938845794e-09,
+            0.028389240012334505,
+            0.429474334615675
+          ]
+        },
+        {
+          "frame_index": 8,
+          "target_azimuth_degrees": 90.0,
+          "actual_azimuth_degrees": 97.95690279623524,
+          "elevation_degrees": 57.67259564805305,
+          "estimated_lookat_center": [
+            -9.841869938845794e-09,
+            0.028389240012334505,
+            0.429474334615675
+          ]
+        },
+        {
+          "frame_index": 20,
+          "target_azimuth_degrees": 180.0,
+          "actual_azimuth_degrees": 181.5163842206532,
+          "elevation_degrees": 5.356594585221614,
+          "estimated_lookat_center": [
+            -9.841869938845794e-09,
+            0.028389240012334505,
+            0.429474334615675
+          ]
+        },
+        {
+          "frame_index": 26,
+          "target_azimuth_degrees": 270.0,
+          "actual_azimuth_degrees": 259.09935594305915,
+          "elevation_degrees": -4.616260536803075,
+          "estimated_lookat_center": [
+            -9.841869938845794e-09,
+            0.028389240012334505,
+            0.429474334615675
+          ]
+        }
+      ],
+      "densities_kg_m3": {
+        "wood": 500.0,
+        "fabric": 200.0,
+        "foam": 40.0
+      },
+      "fabric_thickness_m": 0.0035,
+      "components": [
+        {
+          "component_id": 0,
+          "material": "fabric",
+          "role": "cushion",
+          "extent_m": [
+            0.71233269572258,
+            0.3027815818786621,
+            0.4534173011779785
+          ],
+          "closed_as_loaded": true
+        },
+        {
+          "component_id": 1,
+          "material": "fabric",
+          "role": "seat",
+          "extent_m": [
+            0.894342839717865,
+            1.49456125497818,
+            0.22323235869407654
+          ],
+          "closed_as_loaded": false
+        },
+        {
+          "component_id": 2,
+          "material": "fabric",
+          "role": "backrest",
+          "extent_m": [
+            0.8878940343856812,
+            0.3448469638824463,
+            0.4466893672943115
+          ],
+          "closed_as_loaded": false
+        },
+        {
+          "component_id": 3,
+          "material": "fabric",
+          "role": "armrest",
+          "extent_m": [
+            0.12731844186782837,
+            0.8059350326657295,
+            0.3728283643722534
+          ],
+          "closed_as_loaded": false
+        },
+        {
+          "component_id": 4,
+          "material": "fabric",
+          "role": "armrest",
+          "extent_m": [
+            0.1257646381855011,
+            0.8059350326657295,
+            0.3728283643722534
+          ],
+          "closed_as_loaded": false
+        },
+        {
+          "component_id": 5,
+          "material": "fabric",
+          "role": "backrest",
+          "extent_m": [
+            0.8717105090618134,
+            0.08757460117340088,
+            0.5858514755964279
+          ],
+          "closed_as_loaded": false
+        },
+        {
+          "component_id": 6,
+          "material": "wood",
+          "role": "leg",
+          "extent_m": [
+            0.055821001529693604,
+            0.05582094192504883,
+            0.22925949096679688
+          ],
+          "closed_as_loaded": true
+        },
+        {
+          "component_id": 7,
+          "material": "wood",
+          "role": "leg",
+          "extent_m": [
+            0.055821001529693604,
+            0.05582094192504883,
+            0.22925949096679688
+          ],
+          "closed_as_loaded": true
+        },
+        {
+          "component_id": 8,
+          "material": "wood",
+          "role": "leg",
+          "extent_m": [
+            0.055821001529693604,
+            0.05582094192504883,
+            0.22925949096679688
+          ],
+          "closed_as_loaded": true
+        },
+        {
+          "component_id": 9,
+          "material": "wood",
+          "role": "leg",
+          "extent_m": [
+            0.055821001529693604,
+            0.05582094192504883,
+            0.22925949096679688
+          ],
+          "closed_as_loaded": true
+        },
+        {
+          "component_id": 10,
+          "material": "wood",
+          "role": "frame_rail",
+          "extent_m": [
+            0.024432599544525146,
+            1.554049789905548,
+            0.05341656506061554
+          ],
+          "closed_as_loaded": false
+        },
+        {
+          "component_id": 11,
+          "material": "wood",
+          "role": "frame_rail",
+          "extent_m": [
+            0.7438859045505524,
+            0.02443253993988037,
+            0.05341656506061554
+          ],
+          "closed_as_loaded": false
+        },
+        {
+          "component_id": 12,
+          "material": "wood",
+          "role": "frame_rail",
+          "extent_m": [
+            0.7438859045505524,
+            0.02443253993988037,
+            0.05341656506061554
+          ],
+          "closed_as_loaded": false
+        },
+        {
+          "component_id": 13,
+          "material": "wood",
+          "role": "frame_rail",
+          "extent_m": [
+            0.024432599544525146,
+            1.554049789905548,
+            0.05341656506061554
+          ],
+          "closed_as_loaded": false
+        },
+        {
+          "component_id": 14,
+          "material": "wood",
+          "role": "underside",
+          "extent_m": [
+            0.8200963139533997,
+            1.638140082359314,
+            0.0
+          ],
+          "closed_as_loaded": false
+        }
+      ],
+      "target_mass_used_for_inference": false,
+      "rounds": 3,
+      "geometry": "provided closed wood solids; per-component convex/prism completion elsewhere; disjoint CSG",
+      "aggregation": "equal mean of three independent-question construction hypotheses; not calibrated probabilities"
+    },
+    "report": {
+      "prediction": {
+        "scene_id": "B07B4G5RBN_ATVPDKIKX0DER",
+        "mass_kg": 46.0987652510133,
+        "hypothesis_masses_kg": [
+          41.90325098076497,
+          49.15065328912477,
+          47.24239148315014
+        ]
+      },
+      "target_mass_kg": 29.029888,
+      "metrics": {
+        "num_scenes": 1,
+        "ade_kg": 17.068877251013298,
+        "alde": 0.4624602455497775,
+        "ape": 0.5879759939484884,
+        "mnre": 0.6297324416810034,
+        "rmse_kg": 17.068877251013298
+      },
+      "scope": "single exposed development case; not a whole-cohort comparison"
+    },
+    "hypotheses": [
+      {
+        "mass_kg": 41.90325098076497,
+        "center_of_mass_m": [
+          3.769770851602317e-05,
+          -0.14052216861035655,
+          0.3537781887234799
+        ],
+        "inertia_kg_m2": [
+          [
+            13.016050798346832,
+            -0.0014804447897818686,
+            -0.00014990982834771262
+          ],
+          [
+            -0.0014804447897818686,
+            4.103946556915976,
+            1.618696205207018
+          ],
+          [
+            -0.00014990982834771262,
+            1.618696205207018,
+            15.058642178688071
+          ]
+        ],
+        "parts": [
+          {
+            "component_id": 6,
+            "wood_volume_m3": 0.000574553930746192,
+            "mass_kg": 0.287276965373096
+          },
+          {
+            "component_id": 7,
+            "wood_volume_m3": 0.0005745532757961075,
+            "mass_kg": 0.28727663789805374
+          },
+          {
+            "component_id": 8,
+            "wood_volume_m3": 0.0005745528740550947,
+            "mass_kg": 0.28727643702754735
+          },
+          {
+            "component_id": 9,
+            "wood_volume_m3": 0.0005745532884897852,
+            "mass_kg": 0.28727664424489263
+          },
+          {
+            "component_id": 10,
+            "wood_volume_m3": 0.002017274543843713,
+            "mass_kg": 1.0086372719218566
+          },
+          {
+            "component_id": 11,
+            "wood_volume_m3": 0.0009653625402166472,
+            "mass_kg": 0.4826812701083236
+          },
+          {
+            "component_id": 12,
+            "wood_volume_m3": 0.0009653625402166468,
+            "mass_kg": 0.4826812701083234
+          },
+          {
+            "component_id": 13,
+            "wood_volume_m3": 0.0020172745438437104,
+            "mass_kg": 1.0086372719218553
+          },
+          {
+            "component_id": 14,
+            "wood_volume_m3": 0.019607686678585742,
+            "mass_kg": 9.803843339292872
+          },
+          {
+            "component_id": 0,
+            "fabric_volume_m3": 0.002873139064537116,
+            "foam_volume_m3": 0.03442300742585306,
+            "hidden_wood_volume_m3": 0.0021514379641158162,
+            "mass_kg": 3.0272670919994535
+          },
+          {
+            "component_id": 1,
+            "fabric_volume_m3": 0.006897899422258705,
+            "foam_volume_m3": 0.2026555392820536,
+            "hidden_wood_volume_m3": 0.011920914075414919,
+            "mass_kg": 15.446258493441345
+          },
+          {
+            "component_id": 2,
+            "fabric_volume_m3": 0.0030833062267186847,
+            "foam_volume_m3": 0.03333221513014039,
+            "hidden_wood_volume_m3": 0.004761745018591485,
+            "mass_kg": 4.330822359845095
+          },
+          {
+            "component_id": 3,
+            "fabric_volume_m3": 0.0016011318826711933,
+            "foam_volume_m3": 0.012030812153131743,
+            "hidden_wood_volume_m3": 0.0027763412661073253,
+            "mass_kg": 2.189629495713171
+          },
+          {
+            "component_id": 4,
+            "fabric_volume_m3": 0.001598034473128523,
+            "foam_volume_m3": 0.011958131452772964,
+            "hidden_wood_volume_m3": 0.0027595687967937603,
+            "mass_kg": 2.1777165511335035
+          },
+          {
+            "component_id": 5,
+            "fabric_volume_m3": 0.0029725259975516617,
+            "foam_volume_m3": 0.0018080163699702304,
+            "hidden_wood_volume_m3": 0.0002582880528528901,
+            "mass_kg": 0.7959698807355866
+          }
+        ],
+        "core_model": "homogenized phase density; hidden spatial arrangement remains unresolved",
+        "trial": 0,
+        "answer": {
+          "upholstery": [
+            {
+              "role": "armrest",
+              "foam_fraction": 0.65,
+              "hidden_wood_fraction": 0.15
+            },
+            {
+              "role": "backrest",
+              "foam_fraction": 0.7,
+              "hidden_wood_fraction": 0.1
+            },
+            {
+              "role": "cushion",
+              "foam_fraction": 0.8,
+              "hidden_wood_fraction": 0.05
+            },
+            {
+              "role": "seat",
+              "foam_fraction": 0.85,
+              "hidden_wood_fraction": 0.05
+            }
+          ],
+          "underside": {
+            "kind": "manufactured_panel",
+            "thickness_mm": 15.0
+          },
+          "evidence": "The armrest, backrest, cushion, and seat are all upholstered components with visible fabric surfaces. The foam_fraction is estimated based on typical upholstery construction where foam provides core cushioning (65-85% for armrests and seats, 70% for backrests, 80% for cushions). The hidden_wood_fraction accounts for internal wooden frames or structural supports (10-15% for armrests and backrests, 5% for seat and cushion). The underside is a flat wooden panel, inferred from its planar shape and connection to the frame rails (Components 10, 11, 12, 13), and its thickness is estimated from standard furniture panel construction (15mm)."
+        },
+        "partition": {
+          "parts": [
+            {
+              "component_id": 6,
+              "material": "wood",
+              "geometry_source": "provided_closed_boundary",
+              "assigned": {
+                "volume_m3": 0.000574553930746192,
+                "first_m4": [
+                  -0.0002311364116332839,
+                  0.00046387798450265487,
+                  7.343054894614811e-05
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0003863924930665603,
+                    0.0001866162004968277,
+                    2.9452038696882845e-05
+                  ],
+                  [
+                    0.0001866162004968277,
+                    0.00010485452897803326,
+                    -5.919743898179958e-05
+                  ],
+                  [
+                    2.9452038696882845e-05,
+                    -5.919743898179958e-05,
+                    0.00046776106109384425
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.0005745539307461924,
+                "first_m4": [
+                  -0.00023113641163328402,
+                  0.00046387798450265514,
+                  7.343054894614815e-05
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0003863924930665606,
+                    0.00018661620049682782,
+                    2.945203869688286e-05
+                  ],
+                  [
+                    0.00018661620049682782,
+                    0.00010485452897803331,
+                    -5.919743898179959e-05
+                  ],
+                  [
+                    2.945203869688286e-05,
+                    -5.919743898179959e-05,
+                    0.00046776106109384463
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0,
+                "first_m4": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 7,
+              "material": "wood",
+              "geometry_source": "provided_closed_boundary",
+              "assigned": {
+                "volume_m3": 0.0005745532757961075,
+                "first_m4": [
+                  -0.00023113612501236784,
+                  -0.0004638775446543962,
+                  7.343057828795477e-05
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0003863922132124987,
+                    -0.00018661600469348783,
+                    2.9452050615107085e-05
+                  ],
+                  [
+                    -0.00018661600469348783,
+                    0.00010485440717725793,
+                    5.919747503591926e-05
+                  ],
+                  [
+                    2.9452050615107085e-05,
+                    5.919747503591926e-05,
+                    0.00046776065270643177
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.0005745532757961075,
+                "first_m4": [
+                  -0.00023113612501236784,
+                  -0.0004638775446543962,
+                  7.343057828795477e-05
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0003863922132124987,
+                    -0.00018661600469348783,
+                    2.9452050615107085e-05
+                  ],
+                  [
+                    -0.00018661600469348783,
+                    0.00010485440717725793,
+                    5.919747503591926e-05
+                  ],
+                  [
+                    2.9452050615107085e-05,
+                    5.919747503591926e-05,
+                    0.00046776065270643177
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0,
+                "first_m4": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 8,
+              "material": "wood",
+              "geometry_source": "provided_closed_boundary",
+              "assigned": {
+                "volume_m3": 0.0005745528740550947,
+                "first_m4": [
+                  0.00023113596150310371,
+                  0.00046387712648289183,
+                  7.343054407842909e-05
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.00038639179565050493,
+                    -0.00018661583498080854,
+                    -2.94520366980158e-05
+                  ],
+                  [
+                    -0.00018661583498080854,
+                    0.00010485433656747156,
+                    -5.919743513695953e-05
+                  ],
+                  [
+                    -2.94520366980158e-05,
+                    -5.919743513695953e-05,
+                    0.00046776017251647236
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.0005745528740550947,
+                "first_m4": [
+                  0.00023113596150310371,
+                  0.00046387712648289183,
+                  7.343054407842909e-05
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.00038639179565050493,
+                    -0.00018661583498080854,
+                    -2.94520366980158e-05
+                  ],
+                  [
+                    -0.00018661583498080854,
+                    0.00010485433656747156,
+                    -5.919743513695953e-05
+                  ],
+                  [
+                    -2.94520366980158e-05,
+                    -5.919743513695953e-05,
+                    0.00046776017251647236
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0,
+                "first_m4": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 9,
+              "material": "wood",
+              "geometry_source": "provided_closed_boundary",
+              "assigned": {
+                "volume_m3": 0.0005745532884897852,
+                "first_m4": [
+                  0.00023113614950991053,
+                  -0.00046387753498972436,
+                  7.343057950809987e-05
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.000386392188941281,
+                    0.00018661601646478607,
+                    -2.94520510974004e-05
+                  ],
+                  [
+                    0.00018661601646478607,
+                    0.0001048544254851159,
+                    5.9197475985111666e-05
+                  ],
+                  [
+                    -2.94520510974004e-05,
+                    5.9197475985111666e-05,
+                    0.0004677606464924897
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.0005745532884897852,
+                "first_m4": [
+                  0.00023113614950991053,
+                  -0.00046387753498972436,
+                  7.343057950809987e-05
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.000386392188941281,
+                    0.00018661601646478607,
+                    -2.94520510974004e-05
+                  ],
+                  [
+                    0.00018661601646478607,
+                    0.0001048544254851159,
+                    5.9197475985111666e-05
+                  ],
+                  [
+                    -2.94520510974004e-05,
+                    5.9197475985111666e-05,
+                    0.0004677606464924897
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0,
+                "first_m4": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 10,
+              "material": "wood",
+              "geometry_source": "component_convex_completion_hypothesis",
+              "assigned": {
+                "volume_m3": 0.002017274543843713,
+                "first_m4": [
+                  -0.00082992674759278,
+                  -1.7417649522226626e-10,
+                  0.0004086013966037117
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.000489029351675834,
+                    -7.165793703838813e-11,
+                    0.0001681026656386827
+                  ],
+                  [
+                    -7.165793703838813e-11,
+                    0.0004247772108899529,
+                    3.527965958631548e-11
+                  ],
+                  [
+                    0.0001681026656386827,
+                    3.527965958631548e-11,
+                    0.0007473311959752949
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.002017274543843713,
+                "first_m4": [
+                  -0.0008299267475927783,
+                  -1.7417649519967857e-10,
+                  0.0004086013966037115
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.000489029351675834,
+                    -7.165793692093282e-11,
+                    0.00016810266563868254
+                  ],
+                  [
+                    -7.165793692093282e-11,
+                    0.0004247772108899525,
+                    3.527965959309173e-11
+                  ],
+                  [
+                    0.00016810266563868254,
+                    3.527965959309173e-11,
+                    0.0007473311959752948
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0,
+                "first_m4": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 11,
+              "material": "wood",
+              "geometry_source": "component_convex_completion_hypothesis",
+              "assigned": {
+                "volume_m3": 0.0009653625402166472,
+                "first_m4": [
+                  3.0056054397345944e-12,
+                  0.0007910443722615801,
+                  0.00019553534910088103
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.000688084074353854,
+                    -2.508413695217574e-12,
+                    -6.085359357625255e-13
+                  ],
+                  [
+                    -2.508413695217574e-12,
+                    8.430481256410084e-05,
+                    -0.00016022699352902069
+                  ],
+                  [
+                    -6.085359357625255e-13,
+                    -0.00016022699352902069,
+                    0.000692722508055817
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.0009653625402166472,
+                "first_m4": [
+                  3.005605446510858e-12,
+                  0.0007910443722615797,
+                  0.00019553534910088103
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0006880840743538544,
+                    -2.5084136861825557e-12,
+                    -6.085359411835365e-13
+                  ],
+                  [
+                    -2.5084136861825557e-12,
+                    8.430481256410084e-05,
+                    -0.00016022699352902058
+                  ],
+                  [
+                    -6.085359411835365e-13,
+                    -0.00016022699352902058,
+                    0.0006927225080558175
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0,
+                "first_m4": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 12,
+              "material": "wood",
+              "geometry_source": "component_convex_completion_hypothesis",
+              "assigned": {
+                "volume_m3": 0.0009653625402166468,
+                "first_m4": [
+                  3.005605430699575e-12,
+                  -0.0007922051285231548,
+                  0.00019553534910088103
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0006899877806767238,
+                    2.5120276446350754e-12,
+                    -6.085359447975434e-13
+                  ],
+                  [
+                    2.5120276446350754e-12,
+                    8.430481256410079e-05,
+                    0.00016046210611250276
+                  ],
+                  [
+                    -6.085359447975434e-13,
+                    0.00016046210611250276,
+                    0.0006946262143786868
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.0009653625402166469,
+                "first_m4": [
+                  3.0056054397345936e-12,
+                  -0.0007922051285231554,
+                  0.00019553534910088114
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0006899877806767241,
+                    2.5120276536700934e-12,
+                    -6.085359411835363e-13
+                  ],
+                  [
+                    2.5120276536700934e-12,
+                    8.430481256410098e-05,
+                    0.00016046210611250252
+                  ],
+                  [
+                    -6.085359411835363e-13,
+                    0.00016046210611250252,
+                    0.0006946262143786873
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0,
+                "first_m4": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 13,
+              "material": "wood",
+              "geometry_source": "component_convex_completion_hypothesis",
+              "assigned": {
+                "volume_m3": 0.0020172745438437104,
+                "first_m4": [
+                  0.0008316286695642658,
+                  -1.7417649522226567e-10,
+                  0.0004086013966037104
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0004890293516758338,
+                    7.18048852994876e-11,
+                    -0.00016844739199067197
+                  ],
+                  [
+                    7.18048852994876e-11,
+                    0.00042617902190270545,
+                    3.527965958631536e-11
+                  ],
+                  [
+                    -0.00016844739199067197,
+                    3.527965958631536e-11,
+                    0.0007487330069880479
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.0020172745438437104,
+                "first_m4": [
+                  0.0008316286695642681,
+                  -1.741764951996786e-10,
+                  0.0004086013966037116
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0004890293516758339,
+                    7.180488539751774e-11,
+                    -0.00016844739199067251
+                  ],
+                  [
+                    7.180488539751774e-11,
+                    0.0004261790219027064,
+                    3.527965959309173e-11
+                  ],
+                  [
+                    -0.00016844739199067251,
+                    3.527965959309173e-11,
+                    0.0007487330069880485
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0,
+                "first_m4": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 14,
+              "material": "wood",
+              "geometry_source": "planar_patch_inward_prism_hypothesis",
+              "assigned": {
+                "volume_m3": 0.019607686678585742,
+                "first_m4": [
+                  5.208767951602661e-06,
+                  -4.096117533862577e-06,
+                  0.004448829133623747
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.005303838703604163,
+                    4.4429071605151644e-13,
+                    -1.1682779818584827e-06
+                  ],
+                  [
+                    4.4429071605151644e-13,
+                    0.00207004057074208,
+                    8.955972007785903e-07
+                  ],
+                  [
+                    -1.1682779818584827e-06,
+                    8.955972007785903e-07,
+                    0.005354331565970702
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.019607686678585767,
+                "first_m4": [
+                  5.208767951602512e-06,
+                  -4.096117533862155e-06,
+                  0.0044488291336237515
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.005303838703604159,
+                    4.442906159895457e-13,
+                    -1.168277981858607e-06
+                  ],
+                  [
+                    4.442906159895457e-13,
+                    0.0020700405707420808,
+                    8.955972007786261e-07
+                  ],
+                  [
+                    -1.168277981858607e-06,
+                    8.955972007786261e-07,
+                    0.0053543315659706995
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0,
+                "first_m4": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 0,
+              "material": "fabric",
+              "geometry_source": "component_convex_completion_hypothesis",
+              "assigned": {
+                "volume_m3": 0.04590189834685344,
+                "first_m4": [
+                  2.767960900638735e-06,
+                  -0.02724545381388308,
+                  0.028922852167290392
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.035203916787736524,
+                    3.39340275652041e-06,
+                    -7.599935585348578e-06
+                  ],
+                  [
+                    3.39340275652041e-06,
+                    0.020159314509279738,
+                    0.017422834257290885
+                  ],
+                  [
+                    -7.599935585348578e-06,
+                    0.017422834257290885,
+                    0.017797433768430095
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.04302875928231632,
+                "first_m4": [
+                  -9.6965983507775e-07,
+                  -0.025531824189245874,
+                  0.02710365736543966
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.03294952454430623,
+                    8.790697553218154e-07,
+                    -4.621283903490555e-06
+                  ],
+                  [
+                    8.790697553218154e-07,
+                    0.018833530114036084,
+                    0.016314478732630738
+                  ],
+                  [
+                    -4.621283903490555e-06,
+                    0.016314478732630738,
+                    0.016629772051019037
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.002873139064537116,
+                "first_m4": [
+                  3.737620735717344e-06,
+                  -0.001713629624637184,
+                  0.001819194801850733
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0022543922434302686,
+                    2.514333001199515e-06,
+                    -2.978651681859405e-06
+                  ],
+                  [
+                    2.514333001199515e-06,
+                    0.0013257843952436438,
+                    0.0011083555246601405
+                  ],
+                  [
+                    -2.978651681859405e-06,
+                    0.0011083555246601405,
+                    0.00116766171741106
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 1,
+              "material": "fabric",
+              "geometry_source": "component_convex_completion_hypothesis",
+              "assigned": {
+                "volume_m3": 0.24531618093055707,
+                "first_m4": [
+                  2.5951333819246303e-06,
+                  0.03720961958696158,
+                  0.0816551486558019
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.07545790238079761,
+                    -1.0056281777563274e-06,
+                    -7.07979930235821e-07
+                  ],
+                  [
+                    -1.0056281777563274e-06,
+                    0.042050584357600396,
+                    -0.012569699471473777
+                  ],
+                  [
+                    -7.07979930235821e-07,
+                    -0.012569699471473777,
+                    0.06152535441054406
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.23841828150829836,
+                "first_m4": [
+                  3.8147505244158965e-06,
+                  0.03604955462989319,
+                  0.07901264500539819
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.07270548626014711,
+                    -1.4475585044600634e-06,
+                    -9.805455515765617e-07
+                  ],
+                  [
+                    -1.4475585044600634e-06,
+                    0.04039768547035082,
+                    -0.01212364268878005
+                  ],
+                  [
+                    -9.805455515765617e-07,
+                    -0.01212364268878005,
+                    0.05920694354619462
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.006897899422258705,
+                "first_m4": [
+                  -1.2196171424820192e-06,
+                  0.0011600649570683854,
+                  0.0026425036504037604
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.002752416120650537,
+                    4.41930326704662e-07,
+                    2.7256562134074246e-07
+                  ],
+                  [
+                    4.41930326704662e-07,
+                    0.001652898887249577,
+                    -0.0004460567826937351
+                  ],
+                  [
+                    2.7256562134074246e-07,
+                    -0.0004460567826937351,
+                    0.0023184108643494595
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 2,
+              "material": "fabric",
+              "geometry_source": "component_convex_completion_hypothesis",
+              "assigned": {
+                "volume_m3": 0.050700756412633524,
+                "first_m4": [
+                  1.13527012942944e-05,
+                  -0.03932049530083111,
+                  0.030840692014549007
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.05013494267583006,
+                    7.279278931509682e-06,
+                    -6.121427833787976e-06
+                  ],
+                  [
+                    7.279278931509682e-06,
+                    0.02215353234082914,
+                    0.024251642936741303
+                  ],
+                  [
+                    -6.121427833787976e-06,
+                    0.024251642936741303,
+                    0.03362153567365962
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.047617450185914845,
+                "first_m4": [
+                  8.864085853487145e-06,
+                  -0.03686953831530437,
+                  0.028923141186408444
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.04691563991175483,
+                    5.661715999922638e-06,
+                    -4.732774964362011e-06
+                  ],
+                  [
+                    5.661715999922638e-06,
+                    0.020676822850602964,
+                    0.02270164555424602
+                  ],
+                  [
+                    -4.732774964362011e-06,
+                    0.02270164555424602,
+                    0.03141786803658624
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0030833062267186847,
+                "first_m4": [
+                  2.4886154408081278e-06,
+                  -0.0024509569855267425,
+                  0.0019175508281405634
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0032193027640752196,
+                    1.617562931585893e-06,
+                    -1.3886528694261998e-06
+                  ],
+                  [
+                    1.617562931585893e-06,
+                    0.0014767094902261777,
+                    0.0015499973824952855
+                  ],
+                  [
+                    -1.3886528694261998e-06,
+                    0.0015499973824952855,
+                    0.002203667637073378
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 3,
+              "material": "fabric",
+              "geometry_source": "component_convex_completion_hypothesis",
+              "assigned": {
+                "volume_m3": 0.020110073656720028,
+                "first_m4": [
+                  -0.007810931918646026,
+                  -0.011013359581215496,
+                  0.00792230179406932
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.010114911772279446,
+                    -0.004243815149300222,
+                    0.0030788402459133147
+                  ],
+                  [
+                    -0.004243815149300222,
+                    0.006329570717122067,
+                    0.004300992612498237
+                  ],
+                  [
+                    0.0030788402459133147,
+                    0.004300992612498237,
+                    0.009895100975671891
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.018508941774048836,
+                "first_m4": [
+                  -0.0071719279754816154,
+                  -0.010160565431218625,
+                  0.007266788170857159
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.009288356089832759,
+                    -0.003907789321953427,
+                    0.0028179384627117325
+                  ],
+                  [
+                    -0.003907789321953427,
+                    0.005786856057836991,
+                    0.003953485090090594
+                  ],
+                  [
+                    0.0028179384627117325,
+                    0.003953485090090594,
+                    0.009094158933891695
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0016011318826711933,
+                "first_m4": [
+                  -0.0006390039431644014,
+                  -0.0008527941499968641,
+                  0.0006555136232121523
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0008265556824466819,
+                    -0.00033602582734679215,
+                    0.00026090178320157815
+                  ],
+                  [
+                    -0.00033602582734679215,
+                    0.0005427146592850699,
+                    0.0003475075224076401
+                  ],
+                  [
+                    0.00026090178320157815,
+                    0.0003475075224076401,
+                    0.0008009420417801914
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 4,
+              "material": "fabric",
+              "geometry_source": "component_convex_completion_hypothesis",
+              "assigned": {
+                "volume_m3": 0.019995159785086928,
+                "first_m4": [
+                  0.007774035866859554,
+                  -0.01093379187644907,
+                  0.007875975525440261
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.01003821797246607,
+                    0.004218325662756506,
+                    -0.0030637973289921907
+                  ],
+                  [
+                    0.004218325662756506,
+                    0.0062981204734769425,
+                    0.004269552287448495
+                  ],
+                  [
+                    -0.0030637973289921907,
+                    0.004269552287448495,
+                    0.009826156462191373
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.018397125311958404,
+                "first_m4": [
+                  0.007135713284131327,
+                  -0.01008323726424309,
+                  0.007221852645867457
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.00921406477481099,
+                    0.0038827932373762357,
+                    -0.0028032229261483964
+                  ],
+                  [
+                    0.0038827932373762357,
+                    0.0057561958135309964,
+                    0.003923021921055892
+                  ],
+                  [
+                    -0.0028032229261483964,
+                    0.003923021921055892,
+                    0.009027067988017626
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.001598034473128523,
+                "first_m4": [
+                  0.0006383225827282157,
+                  -0.0008505546122059757,
+                  0.0006541228795727991
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0008241531976550795,
+                    0.00033553242538027076,
+                    -0.0002605744028437927
+                  ],
+                  [
+                    0.00033553242538027076,
+                    0.0005419246599459458,
+                    0.00034653036639259953
+                  ],
+                  [
+                    -0.0002605744028437927,
+                    0.00034653036639259953,
+                    0.000799088474173747
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 5,
+              "material": "fabric",
+              "geometry_source": "component_convex_completion_hypothesis",
+              "assigned": {
+                "volume_m3": 0.005555406526080544,
+                "first_m4": [
+                  6.505239936627333e-07,
+                  -0.004839654951295412,
+                  0.0025955006878327536
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0055595241511047794,
+                    5.283420420984335e-07,
+                    -5.7912298012530944e-08
+                  ],
+                  [
+                    5.283420420984335e-07,
+                    0.0016465834593875665,
+                    0.0022780203979992733
+                  ],
+                  [
+                    -5.7912298012530944e-08,
+                    0.0022780203979992733,
+                    0.004523931964689218
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.002582880528528901,
+                "first_m4": [
+                  6.077841665776054e-07,
+                  -0.0022347236519656474,
+                  0.0010970963828402863
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.002441697062469822,
+                    5.091849591705197e-07,
+                    -1.3894227231213477e-07
+                  ],
+                  [
+                    5.091849591705197e-07,
+                    0.0006470029730319348,
+                    0.0009546008010837394
+                  ],
+                  [
+                    -1.3894227231213477e-07,
+                    0.0009546008010837394,
+                    0.0020737247035046936
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0029725259975516617,
+                "first_m4": [
+                  4.273982708545568e-08,
+                  -0.0026049312993297806,
+                  0.0014984043049924736
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0031178270886349215,
+                    1.915708292817821e-08,
+                    8.102997429945631e-08
+                  ],
+                  [
+                    1.915708292817821e-08,
+                    0.000999580486355635,
+                    0.0013234195969155473
+                  ],
+                  [
+                    8.102997429945631e-08,
+                    0.0013234195969155473,
+                    0.0024502072611844858
+                  ]
+                ]
+              }
+            }
+          ],
+          "union_volume_m3": 0.4154506498737252,
+          "raw_envelope_sum_m3": 0.4440088293283618,
+          "overlap_removed_m3": 0.028558179454636567,
+          "excluded_geometry_hypotheses": []
+        },
+        "edited_component_id": 6,
+        "edited_mass_kg": 43.16726962840659,
+        "edit_mass_delta_kg": 1.2640186476416224
+      },
+      {
+        "mass_kg": 49.15065328912477,
+        "center_of_mass_m": [
+          4.035872086734699e-05,
+          -0.08186754736373883,
+          0.3479227730417163
+        ],
+        "inertia_kg_m2": [
+          [
+            14.5657262309238,
+            -0.0012609519627569848,
+            -0.00019216730824633875
+          ],
+          [
+            -0.0012609519627569848,
+            4.462141889658065,
+            1.563482608402236
+          ],
+          [
+            -0.00019216730824633875,
+            1.563482608402236,
+            16.966045489234716
+          ]
+        ],
+        "parts": [
+          {
+            "component_id": 6,
+            "wood_volume_m3": 0.000574553930746192,
+            "mass_kg": 0.287276965373096
+          },
+          {
+            "component_id": 7,
+            "wood_volume_m3": 0.0005745532757961075,
+            "mass_kg": 0.28727663789805374
+          },
+          {
+            "component_id": 8,
+            "wood_volume_m3": 0.0005745528740550947,
+            "mass_kg": 0.28727643702754735
+          },
+          {
+            "component_id": 9,
+            "wood_volume_m3": 0.0005745532884897852,
+            "mass_kg": 0.28727664424489263
+          },
+          {
+            "component_id": 10,
+            "wood_volume_m3": 0.002017274543843713,
+            "mass_kg": 1.0086372719218566
+          },
+          {
+            "component_id": 11,
+            "wood_volume_m3": 0.0009653625402166472,
+            "mass_kg": 0.4826812701083236
+          },
+          {
+            "component_id": 12,
+            "wood_volume_m3": 0.0009653625402166468,
+            "mass_kg": 0.4826812701083234
+          },
+          {
+            "component_id": 13,
+            "wood_volume_m3": 0.0020172745438437104,
+            "mass_kg": 1.0086372719218553
+          },
+          {
+            "component_id": 14,
+            "wood_volume_m3": 0.019607686678585742,
+            "mass_kg": 9.803843339292872
+          },
+          {
+            "component_id": 0,
+            "fabric_volume_m3": 0.002873139064537116,
+            "foam_volume_m3": 0.01721150371292653,
+            "hidden_wood_volume_m3": 0.0043028759282316325,
+            "mass_kg": 3.4145259255403007
+          },
+          {
+            "component_id": 1,
+            "fabric_volume_m3": 0.006897899422258705,
+            "foam_volume_m3": 0.10728822667873426,
+            "hidden_wood_volume_m3": 0.03576274222624475,
+            "mass_kg": 23.552480064723486
+          },
+          {
+            "component_id": 2,
+            "fabric_volume_m3": 0.0030833062267186847,
+            "foam_volume_m3": 0.014285235055774453,
+            "hidden_wood_volume_m3": 0.004761745018591485,
+            "mass_kg": 3.5689431568704575
+          },
+          {
+            "component_id": 3,
+            "fabric_volume_m3": 0.0016011318826711933,
+            "foam_volume_m3": 0.006478129620917092,
+            "hidden_wood_volume_m3": 0.0027763412661073253,
+            "mass_kg": 1.967522194424585
+          },
+          {
+            "component_id": 4,
+            "fabric_volume_m3": 0.001598034473128523,
+            "foam_volume_m3": 0.006438993859185441,
+            "hidden_wood_volume_m3": 0.0027595687967937603,
+            "mass_kg": 1.9569510473900027
+          },
+          {
+            "component_id": 5,
+            "fabric_volume_m3": 0.0029725259975516617,
+            "foam_volume_m3": 0.0007748641585586702,
+            "hidden_wood_volume_m3": 0.0002582880528528901,
+            "mass_kg": 0.7546437922791241
+          }
+        ],
+        "core_model": "homogenized phase density; hidden spatial arrangement remains unresolved",
+        "trial": 1,
+        "answer": {
+          "upholstery": [
+            {
+              "role": "armrest",
+              "foam_fraction": 0.35,
+              "hidden_wood_fraction": 0.15
+            },
+            {
+              "role": "backrest",
+              "foam_fraction": 0.3,
+              "hidden_wood_fraction": 0.1
+            },
+            {
+              "role": "cushion",
+              "foam_fraction": 0.4,
+              "hidden_wood_fraction": 0.1
+            },
+            {
+              "role": "seat",
+              "foam_fraction": 0.45,
+              "hidden_wood_fraction": 0.15
+            }
+          ],
+          "underside": {
+            "kind": "manufactured_panel",
+            "thickness_mm": 15.0
+          },
+          "evidence": "The armrest, backrest, cushion, and seat are all upholstered components with visible fabric surfaces and implied internal padding. Foam_fraction is estimated based on typical upholstery density and visual volume; hidden_wood_fraction accounts for structural wood core within the fabric-wrapped form. The underside is a flat wooden panel, visually consistent with a structural baseboard or frame rail support, and its thickness is estimated from the scale of the wood rails and the furniture's proportions."
+        },
+        "partition": {
+          "parts": [
+            {
+              "component_id": 6,
+              "material": "wood",
+              "geometry_source": "provided_closed_boundary",
+              "assigned": {
+                "volume_m3": 0.000574553930746192,
+                "first_m4": [
+                  -0.0002311364116332839,
+                  0.00046387798450265487,
+                  7.343054894614811e-05
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0003863924930665603,
+                    0.0001866162004968277,
+                    2.9452038696882845e-05
+                  ],
+                  [
+                    0.0001866162004968277,
+                    0.00010485452897803326,
+                    -5.919743898179958e-05
+                  ],
+                  [
+                    2.9452038696882845e-05,
+                    -5.919743898179958e-05,
+                    0.00046776106109384425
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.0005745539307461924,
+                "first_m4": [
+                  -0.00023113641163328402,
+                  0.00046387798450265514,
+                  7.343054894614815e-05
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0003863924930665606,
+                    0.00018661620049682782,
+                    2.945203869688286e-05
+                  ],
+                  [
+                    0.00018661620049682782,
+                    0.00010485452897803331,
+                    -5.919743898179959e-05
+                  ],
+                  [
+                    2.945203869688286e-05,
+                    -5.919743898179959e-05,
+                    0.00046776106109384463
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0,
+                "first_m4": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 7,
+              "material": "wood",
+              "geometry_source": "provided_closed_boundary",
+              "assigned": {
+                "volume_m3": 0.0005745532757961075,
+                "first_m4": [
+                  -0.00023113612501236784,
+                  -0.0004638775446543962,
+                  7.343057828795477e-05
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0003863922132124987,
+                    -0.00018661600469348783,
+                    2.9452050615107085e-05
+                  ],
+                  [
+                    -0.00018661600469348783,
+                    0.00010485440717725793,
+                    5.919747503591926e-05
+                  ],
+                  [
+                    2.9452050615107085e-05,
+                    5.919747503591926e-05,
+                    0.00046776065270643177
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.0005745532757961075,
+                "first_m4": [
+                  -0.00023113612501236784,
+                  -0.0004638775446543962,
+                  7.343057828795477e-05
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0003863922132124987,
+                    -0.00018661600469348783,
+                    2.9452050615107085e-05
+                  ],
+                  [
+                    -0.00018661600469348783,
+                    0.00010485440717725793,
+                    5.919747503591926e-05
+                  ],
+                  [
+                    2.9452050615107085e-05,
+                    5.919747503591926e-05,
+                    0.00046776065270643177
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0,
+                "first_m4": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 8,
+              "material": "wood",
+              "geometry_source": "provided_closed_boundary",
+              "assigned": {
+                "volume_m3": 0.0005745528740550947,
+                "first_m4": [
+                  0.00023113596150310371,
+                  0.00046387712648289183,
+                  7.343054407842909e-05
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.00038639179565050493,
+                    -0.00018661583498080854,
+                    -2.94520366980158e-05
+                  ],
+                  [
+                    -0.00018661583498080854,
+                    0.00010485433656747156,
+                    -5.919743513695953e-05
+                  ],
+                  [
+                    -2.94520366980158e-05,
+                    -5.919743513695953e-05,
+                    0.00046776017251647236
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.0005745528740550947,
+                "first_m4": [
+                  0.00023113596150310371,
+                  0.00046387712648289183,
+                  7.343054407842909e-05
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.00038639179565050493,
+                    -0.00018661583498080854,
+                    -2.94520366980158e-05
+                  ],
+                  [
+                    -0.00018661583498080854,
+                    0.00010485433656747156,
+                    -5.919743513695953e-05
+                  ],
+                  [
+                    -2.94520366980158e-05,
+                    -5.919743513695953e-05,
+                    0.00046776017251647236
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0,
+                "first_m4": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 9,
+              "material": "wood",
+              "geometry_source": "provided_closed_boundary",
+              "assigned": {
+                "volume_m3": 0.0005745532884897852,
+                "first_m4": [
+                  0.00023113614950991053,
+                  -0.00046387753498972436,
+                  7.343057950809987e-05
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.000386392188941281,
+                    0.00018661601646478607,
+                    -2.94520510974004e-05
+                  ],
+                  [
+                    0.00018661601646478607,
+                    0.0001048544254851159,
+                    5.9197475985111666e-05
+                  ],
+                  [
+                    -2.94520510974004e-05,
+                    5.9197475985111666e-05,
+                    0.0004677606464924897
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.0005745532884897852,
+                "first_m4": [
+                  0.00023113614950991053,
+                  -0.00046387753498972436,
+                  7.343057950809987e-05
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.000386392188941281,
+                    0.00018661601646478607,
+                    -2.94520510974004e-05
+                  ],
+                  [
+                    0.00018661601646478607,
+                    0.0001048544254851159,
+                    5.9197475985111666e-05
+                  ],
+                  [
+                    -2.94520510974004e-05,
+                    5.9197475985111666e-05,
+                    0.0004677606464924897
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0,
+                "first_m4": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 10,
+              "material": "wood",
+              "geometry_source": "component_convex_completion_hypothesis",
+              "assigned": {
+                "volume_m3": 0.002017274543843713,
+                "first_m4": [
+                  -0.00082992674759278,
+                  -1.7417649522226626e-10,
+                  0.0004086013966037117
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.000489029351675834,
+                    -7.165793703838813e-11,
+                    0.0001681026656386827
+                  ],
+                  [
+                    -7.165793703838813e-11,
+                    0.0004247772108899529,
+                    3.527965958631548e-11
+                  ],
+                  [
+                    0.0001681026656386827,
+                    3.527965958631548e-11,
+                    0.0007473311959752949
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.002017274543843713,
+                "first_m4": [
+                  -0.0008299267475927783,
+                  -1.7417649519967857e-10,
+                  0.0004086013966037115
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.000489029351675834,
+                    -7.165793692093282e-11,
+                    0.00016810266563868254
+                  ],
+                  [
+                    -7.165793692093282e-11,
+                    0.0004247772108899525,
+                    3.527965959309173e-11
+                  ],
+                  [
+                    0.00016810266563868254,
+                    3.527965959309173e-11,
+                    0.0007473311959752948
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0,
+                "first_m4": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 11,
+              "material": "wood",
+              "geometry_source": "component_convex_completion_hypothesis",
+              "assigned": {
+                "volume_m3": 0.0009653625402166472,
+                "first_m4": [
+                  3.0056054397345944e-12,
+                  0.0007910443722615801,
+                  0.00019553534910088103
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.000688084074353854,
+                    -2.508413695217574e-12,
+                    -6.085359357625255e-13
+                  ],
+                  [
+                    -2.508413695217574e-12,
+                    8.430481256410084e-05,
+                    -0.00016022699352902069
+                  ],
+                  [
+                    -6.085359357625255e-13,
+                    -0.00016022699352902069,
+                    0.000692722508055817
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.0009653625402166472,
+                "first_m4": [
+                  3.005605446510858e-12,
+                  0.0007910443722615797,
+                  0.00019553534910088103
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0006880840743538544,
+                    -2.5084136861825557e-12,
+                    -6.085359411835365e-13
+                  ],
+                  [
+                    -2.5084136861825557e-12,
+                    8.430481256410084e-05,
+                    -0.00016022699352902058
+                  ],
+                  [
+                    -6.085359411835365e-13,
+                    -0.00016022699352902058,
+                    0.0006927225080558175
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0,
+                "first_m4": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 12,
+              "material": "wood",
+              "geometry_source": "component_convex_completion_hypothesis",
+              "assigned": {
+                "volume_m3": 0.0009653625402166468,
+                "first_m4": [
+                  3.005605430699575e-12,
+                  -0.0007922051285231548,
+                  0.00019553534910088103
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0006899877806767238,
+                    2.5120276446350754e-12,
+                    -6.085359447975434e-13
+                  ],
+                  [
+                    2.5120276446350754e-12,
+                    8.430481256410079e-05,
+                    0.00016046210611250276
+                  ],
+                  [
+                    -6.085359447975434e-13,
+                    0.00016046210611250276,
+                    0.0006946262143786868
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.0009653625402166469,
+                "first_m4": [
+                  3.0056054397345936e-12,
+                  -0.0007922051285231554,
+                  0.00019553534910088114
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0006899877806767241,
+                    2.5120276536700934e-12,
+                    -6.085359411835363e-13
+                  ],
+                  [
+                    2.5120276536700934e-12,
+                    8.430481256410098e-05,
+                    0.00016046210611250252
+                  ],
+                  [
+                    -6.085359411835363e-13,
+                    0.00016046210611250252,
+                    0.0006946262143786873
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0,
+                "first_m4": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 13,
+              "material": "wood",
+              "geometry_source": "component_convex_completion_hypothesis",
+              "assigned": {
+                "volume_m3": 0.0020172745438437104,
+                "first_m4": [
+                  0.0008316286695642658,
+                  -1.7417649522226567e-10,
+                  0.0004086013966037104
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0004890293516758338,
+                    7.18048852994876e-11,
+                    -0.00016844739199067197
+                  ],
+                  [
+                    7.18048852994876e-11,
+                    0.00042617902190270545,
+                    3.527965958631536e-11
+                  ],
+                  [
+                    -0.00016844739199067197,
+                    3.527965958631536e-11,
+                    0.0007487330069880479
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.0020172745438437104,
+                "first_m4": [
+                  0.0008316286695642681,
+                  -1.741764951996786e-10,
+                  0.0004086013966037116
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0004890293516758339,
+                    7.180488539751774e-11,
+                    -0.00016844739199067251
+                  ],
+                  [
+                    7.180488539751774e-11,
+                    0.0004261790219027064,
+                    3.527965959309173e-11
+                  ],
+                  [
+                    -0.00016844739199067251,
+                    3.527965959309173e-11,
+                    0.0007487330069880485
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0,
+                "first_m4": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 14,
+              "material": "wood",
+              "geometry_source": "planar_patch_inward_prism_hypothesis",
+              "assigned": {
+                "volume_m3": 0.019607686678585742,
+                "first_m4": [
+                  5.208767951602661e-06,
+                  -4.096117533862577e-06,
+                  0.004448829133623747
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.005303838703604163,
+                    4.4429071605151644e-13,
+                    -1.1682779818584827e-06
+                  ],
+                  [
+                    4.4429071605151644e-13,
+                    0.00207004057074208,
+                    8.955972007785903e-07
+                  ],
+                  [
+                    -1.1682779818584827e-06,
+                    8.955972007785903e-07,
+                    0.005354331565970702
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.019607686678585767,
+                "first_m4": [
+                  5.208767951602512e-06,
+                  -4.096117533862155e-06,
+                  0.0044488291336237515
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.005303838703604159,
+                    4.442906159895457e-13,
+                    -1.168277981858607e-06
+                  ],
+                  [
+                    4.442906159895457e-13,
+                    0.0020700405707420808,
+                    8.955972007786261e-07
+                  ],
+                  [
+                    -1.168277981858607e-06,
+                    8.955972007786261e-07,
+                    0.0053543315659706995
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0,
+                "first_m4": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 0,
+              "material": "fabric",
+              "geometry_source": "component_convex_completion_hypothesis",
+              "assigned": {
+                "volume_m3": 0.04590189834685344,
+                "first_m4": [
+                  2.767960900638735e-06,
+                  -0.02724545381388308,
+                  0.028922852167290392
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.035203916787736524,
+                    3.39340275652041e-06,
+                    -7.599935585348578e-06
+                  ],
+                  [
+                    3.39340275652041e-06,
+                    0.020159314509279738,
+                    0.017422834257290885
+                  ],
+                  [
+                    -7.599935585348578e-06,
+                    0.017422834257290885,
+                    0.017797433768430095
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.04302875928231632,
+                "first_m4": [
+                  -9.6965983507775e-07,
+                  -0.02553182418924587,
+                  0.027103657365439654
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.03294952454430623,
+                    8.790697553213527e-07,
+                    -4.621283903490786e-06
+                  ],
+                  [
+                    8.790697553213527e-07,
+                    0.018833530114036087,
+                    0.016314478732630738
+                  ],
+                  [
+                    -4.621283903490786e-06,
+                    0.016314478732630738,
+                    0.016629772051019037
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.002873139064537116,
+                "first_m4": [
+                  3.737620735717344e-06,
+                  -0.001713629624637184,
+                  0.0018191948018507352
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.002254392243430268,
+                    2.514333001199515e-06,
+                    -2.978651681859174e-06
+                  ],
+                  [
+                    2.514333001199515e-06,
+                    0.0013257843952436436,
+                    0.0011083555246601442
+                  ],
+                  [
+                    -2.978651681859174e-06,
+                    0.0011083555246601442,
+                    0.00116766171741106
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 1,
+              "material": "fabric",
+              "geometry_source": "component_convex_completion_hypothesis",
+              "assigned": {
+                "volume_m3": 0.24531618093055707,
+                "first_m4": [
+                  2.5951333819246303e-06,
+                  0.03720961958696158,
+                  0.0816551486558019
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.07545790238079761,
+                    -1.0056281777563274e-06,
+                    -7.07979930235821e-07
+                  ],
+                  [
+                    -1.0056281777563274e-06,
+                    0.042050584357600396,
+                    -0.012569699471473777
+                  ],
+                  [
+                    -7.07979930235821e-07,
+                    -0.012569699471473777,
+                    0.06152535441054406
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.23841828150829836,
+                "first_m4": [
+                  3.8147505244158965e-06,
+                  0.03604955462989319,
+                  0.07901264500539819
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.07270548626014711,
+                    -1.4475585044600634e-06,
+                    -9.805455515765617e-07
+                  ],
+                  [
+                    -1.4475585044600634e-06,
+                    0.04039768547035082,
+                    -0.01212364268878005
+                  ],
+                  [
+                    -9.805455515765617e-07,
+                    -0.01212364268878005,
+                    0.05920694354619462
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.006897899422258705,
+                "first_m4": [
+                  -1.2196171424820192e-06,
+                  0.0011600649570683854,
+                  0.0026425036504037604
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.002752416120650537,
+                    4.41930326704662e-07,
+                    2.7256562134074246e-07
+                  ],
+                  [
+                    4.41930326704662e-07,
+                    0.001652898887249577,
+                    -0.0004460567826937351
+                  ],
+                  [
+                    2.7256562134074246e-07,
+                    -0.0004460567826937351,
+                    0.0023184108643494595
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 2,
+              "material": "fabric",
+              "geometry_source": "component_convex_completion_hypothesis",
+              "assigned": {
+                "volume_m3": 0.050700756412633524,
+                "first_m4": [
+                  1.13527012942944e-05,
+                  -0.03932049530083111,
+                  0.030840692014549007
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.05013494267583006,
+                    7.279278931509682e-06,
+                    -6.121427833787976e-06
+                  ],
+                  [
+                    7.279278931509682e-06,
+                    0.02215353234082914,
+                    0.024251642936741303
+                  ],
+                  [
+                    -6.121427833787976e-06,
+                    0.024251642936741303,
+                    0.03362153567365962
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.047617450185914845,
+                "first_m4": [
+                  8.864085853487145e-06,
+                  -0.03686953831530437,
+                  0.028923141186408444
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.04691563991175483,
+                    5.661715999922638e-06,
+                    -4.732774964362011e-06
+                  ],
+                  [
+                    5.661715999922638e-06,
+                    0.020676822850602964,
+                    0.02270164555424602
+                  ],
+                  [
+                    -4.732774964362011e-06,
+                    0.02270164555424602,
+                    0.03141786803658624
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0030833062267186847,
+                "first_m4": [
+                  2.4886154408081278e-06,
+                  -0.0024509569855267425,
+                  0.0019175508281405634
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0032193027640752196,
+                    1.617562931585893e-06,
+                    -1.3886528694261998e-06
+                  ],
+                  [
+                    1.617562931585893e-06,
+                    0.0014767094902261777,
+                    0.0015499973824952855
+                  ],
+                  [
+                    -1.3886528694261998e-06,
+                    0.0015499973824952855,
+                    0.002203667637073378
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 3,
+              "material": "fabric",
+              "geometry_source": "component_convex_completion_hypothesis",
+              "assigned": {
+                "volume_m3": 0.020110073656720028,
+                "first_m4": [
+                  -0.007810931918646026,
+                  -0.011013359581215496,
+                  0.00792230179406932
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.010114911772279446,
+                    -0.004243815149300222,
+                    0.0030788402459133147
+                  ],
+                  [
+                    -0.004243815149300222,
+                    0.006329570717122067,
+                    0.004300992612498237
+                  ],
+                  [
+                    0.0030788402459133147,
+                    0.004300992612498237,
+                    0.009895100975671891
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.018508941774048836,
+                "first_m4": [
+                  -0.0071719279754816154,
+                  -0.010160565431218625,
+                  0.007266788170857159
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.009288356089832759,
+                    -0.003907789321953427,
+                    0.0028179384627117325
+                  ],
+                  [
+                    -0.003907789321953427,
+                    0.005786856057836991,
+                    0.003953485090090594
+                  ],
+                  [
+                    0.0028179384627117325,
+                    0.003953485090090594,
+                    0.009094158933891695
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0016011318826711933,
+                "first_m4": [
+                  -0.0006390039431644014,
+                  -0.0008527941499968641,
+                  0.0006555136232121523
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0008265556824466819,
+                    -0.00033602582734679215,
+                    0.00026090178320157815
+                  ],
+                  [
+                    -0.00033602582734679215,
+                    0.0005427146592850699,
+                    0.0003475075224076401
+                  ],
+                  [
+                    0.00026090178320157815,
+                    0.0003475075224076401,
+                    0.0008009420417801914
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 4,
+              "material": "fabric",
+              "geometry_source": "component_convex_completion_hypothesis",
+              "assigned": {
+                "volume_m3": 0.019995159785086928,
+                "first_m4": [
+                  0.007774035866859554,
+                  -0.01093379187644907,
+                  0.007875975525440261
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.01003821797246607,
+                    0.004218325662756506,
+                    -0.0030637973289921907
+                  ],
+                  [
+                    0.004218325662756506,
+                    0.0062981204734769425,
+                    0.004269552287448495
+                  ],
+                  [
+                    -0.0030637973289921907,
+                    0.004269552287448495,
+                    0.009826156462191373
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.018397125311958404,
+                "first_m4": [
+                  0.007135713284131327,
+                  -0.01008323726424309,
+                  0.007221852645867457
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.00921406477481099,
+                    0.0038827932373762357,
+                    -0.0028032229261483964
+                  ],
+                  [
+                    0.0038827932373762357,
+                    0.0057561958135309964,
+                    0.003923021921055892
+                  ],
+                  [
+                    -0.0028032229261483964,
+                    0.003923021921055892,
+                    0.009027067988017626
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.001598034473128523,
+                "first_m4": [
+                  0.0006383225827282157,
+                  -0.0008505546122059757,
+                  0.0006541228795727991
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0008241531976550795,
+                    0.00033553242538027076,
+                    -0.0002605744028437927
+                  ],
+                  [
+                    0.00033553242538027076,
+                    0.0005419246599459458,
+                    0.00034653036639259953
+                  ],
+                  [
+                    -0.0002605744028437927,
+                    0.00034653036639259953,
+                    0.000799088474173747
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 5,
+              "material": "fabric",
+              "geometry_source": "component_convex_completion_hypothesis",
+              "assigned": {
+                "volume_m3": 0.005555406526080544,
+                "first_m4": [
+                  6.505239936627333e-07,
+                  -0.004839654951295412,
+                  0.0025955006878327536
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0055595241511047794,
+                    5.283420420984335e-07,
+                    -5.7912298012530944e-08
+                  ],
+                  [
+                    5.283420420984335e-07,
+                    0.0016465834593875665,
+                    0.0022780203979992733
+                  ],
+                  [
+                    -5.7912298012530944e-08,
+                    0.0022780203979992733,
+                    0.004523931964689218
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.002582880528528901,
+                "first_m4": [
+                  6.077841665776054e-07,
+                  -0.0022347236519656474,
+                  0.0010970963828402863
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.002441697062469822,
+                    5.091849591705197e-07,
+                    -1.3894227231213477e-07
+                  ],
+                  [
+                    5.091849591705197e-07,
+                    0.0006470029730319348,
+                    0.0009546008010837394
+                  ],
+                  [
+                    -1.3894227231213477e-07,
+                    0.0009546008010837394,
+                    0.0020737247035046936
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0029725259975516617,
+                "first_m4": [
+                  4.273982708545568e-08,
+                  -0.0026049312993297806,
+                  0.0014984043049924736
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0031178270886349215,
+                    1.915708292817821e-08,
+                    8.102997429945631e-08
+                  ],
+                  [
+                    1.915708292817821e-08,
+                    0.000999580486355635,
+                    0.0013234195969155473
+                  ],
+                  [
+                    8.102997429945631e-08,
+                    0.0013234195969155473,
+                    0.0024502072611844858
+                  ]
+                ]
+              }
+            }
+          ],
+          "union_volume_m3": 0.4154506498737252,
+          "raw_envelope_sum_m3": 0.4440088293283618,
+          "overlap_removed_m3": 0.028558179454636567,
+          "excluded_geometry_hypotheses": []
+        },
+        "edited_component_id": 6,
+        "edited_mass_kg": 50.41467193676639,
+        "edit_mass_delta_kg": 1.2640186476416224
+      },
+      {
+        "mass_kg": 47.24239148315014,
+        "center_of_mass_m": [
+          5.930966339029693e-05,
+          -0.11859701336683891,
+          0.3571371212980315
+        ],
+        "inertia_kg_m2": [
+          [
+            14.696152080111641,
+            -0.0008419926867037286,
+            -0.0002183573254365015
+          ],
+          [
+            -0.0008419926867037286,
+            4.415764780940093,
+            1.8407877339450098
+          ],
+          [
+            -0.0002183573254365015,
+            1.8407877339450098,
+            16.849212612570593
+          ]
+        ],
+        "parts": [
+          {
+            "component_id": 6,
+            "wood_volume_m3": 0.000574553930746192,
+            "mass_kg": 0.287276965373096
+          },
+          {
+            "component_id": 7,
+            "wood_volume_m3": 0.0005745532757961075,
+            "mass_kg": 0.28727663789805374
+          },
+          {
+            "component_id": 8,
+            "wood_volume_m3": 0.0005745528740550947,
+            "mass_kg": 0.28727643702754735
+          },
+          {
+            "component_id": 9,
+            "wood_volume_m3": 0.0005745532884897852,
+            "mass_kg": 0.28727664424489263
+          },
+          {
+            "component_id": 10,
+            "wood_volume_m3": 0.002017274543843713,
+            "mass_kg": 1.0086372719218566
+          },
+          {
+            "component_id": 11,
+            "wood_volume_m3": 0.0009653625402166472,
+            "mass_kg": 0.4826812701083236
+          },
+          {
+            "component_id": 12,
+            "wood_volume_m3": 0.0009653625402166468,
+            "mass_kg": 0.4826812701083234
+          },
+          {
+            "component_id": 13,
+            "wood_volume_m3": 0.0020172745438437104,
+            "mass_kg": 1.0086372719218553
+          },
+          {
+            "component_id": 14,
+            "wood_volume_m3": 0.019607686678585742,
+            "mass_kg": 9.803843339292872
+          },
+          {
+            "component_id": 0,
+            "fabric_volume_m3": 0.002873139064537116,
+            "foam_volume_m3": 0.03442300742585306,
+            "hidden_wood_volume_m3": 0.0021514379641158162,
+            "mass_kg": 3.0272670919994535
+          },
+          {
+            "component_id": 1,
+            "fabric_volume_m3": 0.006897899422258705,
+            "foam_volume_m3": 0.17881371113122377,
+            "hidden_wood_volume_m3": 0.023841828150829837,
+            "mass_kg": 20.453042405115607
+          },
+          {
+            "component_id": 2,
+            "fabric_volume_m3": 0.0030833062267186847,
+            "foam_volume_m3": 0.03333221513014039,
+            "hidden_wood_volume_m3": 0.0071426175278872265,
+            "mass_kg": 5.521258614492966
+          },
+          {
+            "component_id": 3,
+            "fabric_volume_m3": 0.0016011318826711933,
+            "foam_volume_m3": 0.012030812153131743,
+            "hidden_wood_volume_m3": 0.0018508941774048838,
+            "mass_kg": 1.7269059513619502
+          },
+          {
+            "component_id": 4,
+            "fabric_volume_m3": 0.001598034473128523,
+            "foam_volume_m3": 0.011958131452772964,
+            "hidden_wood_volume_m3": 0.0018397125311958404,
+            "mass_kg": 1.7177884183345433
+          },
+          {
+            "component_id": 5,
+            "fabric_volume_m3": 0.0029725259975516617,
+            "foam_volume_m3": 0.0018080163699702304,
+            "hidden_wood_volume_m3": 0.0003874320792793351,
+            "mass_kg": 0.8605418939488091
+          }
+        ],
+        "core_model": "homogenized phase density; hidden spatial arrangement remains unresolved",
+        "trial": 2,
+        "answer": {
+          "upholstery": [
+            {
+              "role": "armrest",
+              "foam_fraction": 0.65,
+              "hidden_wood_fraction": 0.1
+            },
+            {
+              "role": "backrest",
+              "foam_fraction": 0.7,
+              "hidden_wood_fraction": 0.15
+            },
+            {
+              "role": "cushion",
+              "foam_fraction": 0.8,
+              "hidden_wood_fraction": 0.05
+            },
+            {
+              "role": "seat",
+              "foam_fraction": 0.75,
+              "hidden_wood_fraction": 0.1
+            }
+          ],
+          "underside": {
+            "kind": "manufactured_panel",
+            "thickness_mm": 15.0
+          },
+          "evidence": "The underside component (Component 14) is a flat, planar wooden element spanning the full length of the frame, consistent with a structural panel rather than a visual cap. Its dimensions suggest it is a solid, thin board. Visual inspection of the object’s construction and the component mapping shows it is a single, continuous panel forming the base structure, not a cap. The thickness is estimated based on typical furniture construction for such a panel, which is thin enough to be structural yet rigid enough to support the weight of the upholstery and user."
+        },
+        "partition": {
+          "parts": [
+            {
+              "component_id": 6,
+              "material": "wood",
+              "geometry_source": "provided_closed_boundary",
+              "assigned": {
+                "volume_m3": 0.000574553930746192,
+                "first_m4": [
+                  -0.0002311364116332839,
+                  0.00046387798450265487,
+                  7.343054894614811e-05
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0003863924930665603,
+                    0.0001866162004968277,
+                    2.9452038696882845e-05
+                  ],
+                  [
+                    0.0001866162004968277,
+                    0.00010485452897803326,
+                    -5.919743898179958e-05
+                  ],
+                  [
+                    2.9452038696882845e-05,
+                    -5.919743898179958e-05,
+                    0.00046776106109384425
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.0005745539307461924,
+                "first_m4": [
+                  -0.00023113641163328402,
+                  0.00046387798450265514,
+                  7.343054894614815e-05
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0003863924930665606,
+                    0.00018661620049682782,
+                    2.945203869688286e-05
+                  ],
+                  [
+                    0.00018661620049682782,
+                    0.00010485452897803331,
+                    -5.919743898179959e-05
+                  ],
+                  [
+                    2.945203869688286e-05,
+                    -5.919743898179959e-05,
+                    0.00046776106109384463
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0,
+                "first_m4": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 7,
+              "material": "wood",
+              "geometry_source": "provided_closed_boundary",
+              "assigned": {
+                "volume_m3": 0.0005745532757961075,
+                "first_m4": [
+                  -0.00023113612501236784,
+                  -0.0004638775446543962,
+                  7.343057828795477e-05
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0003863922132124987,
+                    -0.00018661600469348783,
+                    2.9452050615107085e-05
+                  ],
+                  [
+                    -0.00018661600469348783,
+                    0.00010485440717725793,
+                    5.919747503591926e-05
+                  ],
+                  [
+                    2.9452050615107085e-05,
+                    5.919747503591926e-05,
+                    0.00046776065270643177
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.0005745532757961075,
+                "first_m4": [
+                  -0.00023113612501236784,
+                  -0.0004638775446543962,
+                  7.343057828795477e-05
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0003863922132124987,
+                    -0.00018661600469348783,
+                    2.9452050615107085e-05
+                  ],
+                  [
+                    -0.00018661600469348783,
+                    0.00010485440717725793,
+                    5.919747503591926e-05
+                  ],
+                  [
+                    2.9452050615107085e-05,
+                    5.919747503591926e-05,
+                    0.00046776065270643177
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0,
+                "first_m4": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 8,
+              "material": "wood",
+              "geometry_source": "provided_closed_boundary",
+              "assigned": {
+                "volume_m3": 0.0005745528740550947,
+                "first_m4": [
+                  0.00023113596150310371,
+                  0.00046387712648289183,
+                  7.343054407842909e-05
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.00038639179565050493,
+                    -0.00018661583498080854,
+                    -2.94520366980158e-05
+                  ],
+                  [
+                    -0.00018661583498080854,
+                    0.00010485433656747156,
+                    -5.919743513695953e-05
+                  ],
+                  [
+                    -2.94520366980158e-05,
+                    -5.919743513695953e-05,
+                    0.00046776017251647236
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.0005745528740550947,
+                "first_m4": [
+                  0.00023113596150310371,
+                  0.00046387712648289183,
+                  7.343054407842909e-05
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.00038639179565050493,
+                    -0.00018661583498080854,
+                    -2.94520366980158e-05
+                  ],
+                  [
+                    -0.00018661583498080854,
+                    0.00010485433656747156,
+                    -5.919743513695953e-05
+                  ],
+                  [
+                    -2.94520366980158e-05,
+                    -5.919743513695953e-05,
+                    0.00046776017251647236
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0,
+                "first_m4": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 9,
+              "material": "wood",
+              "geometry_source": "provided_closed_boundary",
+              "assigned": {
+                "volume_m3": 0.0005745532884897852,
+                "first_m4": [
+                  0.00023113614950991053,
+                  -0.00046387753498972436,
+                  7.343057950809987e-05
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.000386392188941281,
+                    0.00018661601646478607,
+                    -2.94520510974004e-05
+                  ],
+                  [
+                    0.00018661601646478607,
+                    0.0001048544254851159,
+                    5.9197475985111666e-05
+                  ],
+                  [
+                    -2.94520510974004e-05,
+                    5.9197475985111666e-05,
+                    0.0004677606464924897
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.0005745532884897852,
+                "first_m4": [
+                  0.00023113614950991053,
+                  -0.00046387753498972436,
+                  7.343057950809987e-05
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.000386392188941281,
+                    0.00018661601646478607,
+                    -2.94520510974004e-05
+                  ],
+                  [
+                    0.00018661601646478607,
+                    0.0001048544254851159,
+                    5.9197475985111666e-05
+                  ],
+                  [
+                    -2.94520510974004e-05,
+                    5.9197475985111666e-05,
+                    0.0004677606464924897
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0,
+                "first_m4": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 10,
+              "material": "wood",
+              "geometry_source": "component_convex_completion_hypothesis",
+              "assigned": {
+                "volume_m3": 0.002017274543843713,
+                "first_m4": [
+                  -0.00082992674759278,
+                  -1.7417649522226626e-10,
+                  0.0004086013966037117
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.000489029351675834,
+                    -7.165793703838813e-11,
+                    0.0001681026656386827
+                  ],
+                  [
+                    -7.165793703838813e-11,
+                    0.0004247772108899529,
+                    3.527965958631548e-11
+                  ],
+                  [
+                    0.0001681026656386827,
+                    3.527965958631548e-11,
+                    0.0007473311959752949
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.002017274543843713,
+                "first_m4": [
+                  -0.0008299267475927783,
+                  -1.7417649519967857e-10,
+                  0.0004086013966037115
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.000489029351675834,
+                    -7.165793692093282e-11,
+                    0.00016810266563868254
+                  ],
+                  [
+                    -7.165793692093282e-11,
+                    0.0004247772108899525,
+                    3.527965959309173e-11
+                  ],
+                  [
+                    0.00016810266563868254,
+                    3.527965959309173e-11,
+                    0.0007473311959752948
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0,
+                "first_m4": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 11,
+              "material": "wood",
+              "geometry_source": "component_convex_completion_hypothesis",
+              "assigned": {
+                "volume_m3": 0.0009653625402166472,
+                "first_m4": [
+                  3.0056054397345944e-12,
+                  0.0007910443722615801,
+                  0.00019553534910088103
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.000688084074353854,
+                    -2.508413695217574e-12,
+                    -6.085359357625255e-13
+                  ],
+                  [
+                    -2.508413695217574e-12,
+                    8.430481256410084e-05,
+                    -0.00016022699352902069
+                  ],
+                  [
+                    -6.085359357625255e-13,
+                    -0.00016022699352902069,
+                    0.000692722508055817
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.0009653625402166472,
+                "first_m4": [
+                  3.005605446510858e-12,
+                  0.0007910443722615797,
+                  0.00019553534910088103
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0006880840743538544,
+                    -2.5084136861825557e-12,
+                    -6.085359411835365e-13
+                  ],
+                  [
+                    -2.5084136861825557e-12,
+                    8.430481256410084e-05,
+                    -0.00016022699352902058
+                  ],
+                  [
+                    -6.085359411835365e-13,
+                    -0.00016022699352902058,
+                    0.0006927225080558175
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0,
+                "first_m4": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 12,
+              "material": "wood",
+              "geometry_source": "component_convex_completion_hypothesis",
+              "assigned": {
+                "volume_m3": 0.0009653625402166468,
+                "first_m4": [
+                  3.005605430699575e-12,
+                  -0.0007922051285231548,
+                  0.00019553534910088103
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0006899877806767238,
+                    2.5120276446350754e-12,
+                    -6.085359447975434e-13
+                  ],
+                  [
+                    2.5120276446350754e-12,
+                    8.430481256410079e-05,
+                    0.00016046210611250276
+                  ],
+                  [
+                    -6.085359447975434e-13,
+                    0.00016046210611250276,
+                    0.0006946262143786868
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.0009653625402166469,
+                "first_m4": [
+                  3.0056054397345936e-12,
+                  -0.0007922051285231554,
+                  0.00019553534910088114
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0006899877806767241,
+                    2.5120276536700934e-12,
+                    -6.085359411835363e-13
+                  ],
+                  [
+                    2.5120276536700934e-12,
+                    8.430481256410098e-05,
+                    0.00016046210611250252
+                  ],
+                  [
+                    -6.085359411835363e-13,
+                    0.00016046210611250252,
+                    0.0006946262143786873
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0,
+                "first_m4": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 13,
+              "material": "wood",
+              "geometry_source": "component_convex_completion_hypothesis",
+              "assigned": {
+                "volume_m3": 0.0020172745438437104,
+                "first_m4": [
+                  0.0008316286695642658,
+                  -1.7417649522226567e-10,
+                  0.0004086013966037104
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0004890293516758338,
+                    7.18048852994876e-11,
+                    -0.00016844739199067197
+                  ],
+                  [
+                    7.18048852994876e-11,
+                    0.00042617902190270545,
+                    3.527965958631536e-11
+                  ],
+                  [
+                    -0.00016844739199067197,
+                    3.527965958631536e-11,
+                    0.0007487330069880479
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.0020172745438437104,
+                "first_m4": [
+                  0.0008316286695642681,
+                  -1.741764951996786e-10,
+                  0.0004086013966037116
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0004890293516758339,
+                    7.180488539751774e-11,
+                    -0.00016844739199067251
+                  ],
+                  [
+                    7.180488539751774e-11,
+                    0.0004261790219027064,
+                    3.527965959309173e-11
+                  ],
+                  [
+                    -0.00016844739199067251,
+                    3.527965959309173e-11,
+                    0.0007487330069880485
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0,
+                "first_m4": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 14,
+              "material": "wood",
+              "geometry_source": "planar_patch_inward_prism_hypothesis",
+              "assigned": {
+                "volume_m3": 0.019607686678585742,
+                "first_m4": [
+                  5.208767951602661e-06,
+                  -4.096117533862577e-06,
+                  0.004448829133623747
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.005303838703604163,
+                    4.4429071605151644e-13,
+                    -1.1682779818584827e-06
+                  ],
+                  [
+                    4.4429071605151644e-13,
+                    0.00207004057074208,
+                    8.955972007785903e-07
+                  ],
+                  [
+                    -1.1682779818584827e-06,
+                    8.955972007785903e-07,
+                    0.005354331565970702
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.019607686678585767,
+                "first_m4": [
+                  5.208767951602512e-06,
+                  -4.096117533862155e-06,
+                  0.0044488291336237515
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.005303838703604159,
+                    4.442906159895457e-13,
+                    -1.168277981858607e-06
+                  ],
+                  [
+                    4.442906159895457e-13,
+                    0.0020700405707420808,
+                    8.955972007786261e-07
+                  ],
+                  [
+                    -1.168277981858607e-06,
+                    8.955972007786261e-07,
+                    0.0053543315659706995
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0,
+                "first_m4": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 0,
+              "material": "fabric",
+              "geometry_source": "component_convex_completion_hypothesis",
+              "assigned": {
+                "volume_m3": 0.04590189834685344,
+                "first_m4": [
+                  2.767960900638735e-06,
+                  -0.02724545381388308,
+                  0.028922852167290392
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.035203916787736524,
+                    3.39340275652041e-06,
+                    -7.599935585348578e-06
+                  ],
+                  [
+                    3.39340275652041e-06,
+                    0.020159314509279738,
+                    0.017422834257290885
+                  ],
+                  [
+                    -7.599935585348578e-06,
+                    0.017422834257290885,
+                    0.017797433768430095
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.04302875928231632,
+                "first_m4": [
+                  -9.6965983507775e-07,
+                  -0.02553182418924587,
+                  0.027103657365439654
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.03294952454430623,
+                    8.790697553213527e-07,
+                    -4.621283903490786e-06
+                  ],
+                  [
+                    8.790697553213527e-07,
+                    0.018833530114036087,
+                    0.016314478732630738
+                  ],
+                  [
+                    -4.621283903490786e-06,
+                    0.016314478732630738,
+                    0.016629772051019037
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.002873139064537116,
+                "first_m4": [
+                  3.737620735717633e-06,
+                  -0.001713629624637184,
+                  0.0018191948018507352
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.002254392243430268,
+                    2.514333001199515e-06,
+                    -2.9786516818594055e-06
+                  ],
+                  [
+                    2.514333001199515e-06,
+                    0.0013257843952436436,
+                    0.0011083555246601405
+                  ],
+                  [
+                    -2.9786516818594055e-06,
+                    0.0011083555246601405,
+                    0.00116766171741106
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 1,
+              "material": "fabric",
+              "geometry_source": "component_convex_completion_hypothesis",
+              "assigned": {
+                "volume_m3": 0.24531618093055707,
+                "first_m4": [
+                  2.5951333819246303e-06,
+                  0.03720961958696158,
+                  0.0816551486558019
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.07545790238079761,
+                    -1.0056281777563274e-06,
+                    -7.07979930235821e-07
+                  ],
+                  [
+                    -1.0056281777563274e-06,
+                    0.042050584357600396,
+                    -0.012569699471473777
+                  ],
+                  [
+                    -7.07979930235821e-07,
+                    -0.012569699471473777,
+                    0.06152535441054406
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.23841828150829836,
+                "first_m4": [
+                  3.8147505244158965e-06,
+                  0.03604955462989319,
+                  0.07901264500539819
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.07270548626014711,
+                    -1.4475585044600634e-06,
+                    -9.805455515765617e-07
+                  ],
+                  [
+                    -1.4475585044600634e-06,
+                    0.04039768547035082,
+                    -0.01212364268878005
+                  ],
+                  [
+                    -9.805455515765617e-07,
+                    -0.01212364268878005,
+                    0.05920694354619462
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.006897899422258705,
+                "first_m4": [
+                  -1.2196171424820192e-06,
+                  0.0011600649570683854,
+                  0.0026425036504037604
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.002752416120650537,
+                    4.41930326704662e-07,
+                    2.7256562134074246e-07
+                  ],
+                  [
+                    4.41930326704662e-07,
+                    0.001652898887249577,
+                    -0.0004460567826937351
+                  ],
+                  [
+                    2.7256562134074246e-07,
+                    -0.0004460567826937351,
+                    0.0023184108643494595
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 2,
+              "material": "fabric",
+              "geometry_source": "component_convex_completion_hypothesis",
+              "assigned": {
+                "volume_m3": 0.050700756412633524,
+                "first_m4": [
+                  1.13527012942944e-05,
+                  -0.03932049530083111,
+                  0.030840692014549007
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.05013494267583006,
+                    7.279278931509682e-06,
+                    -6.121427833787976e-06
+                  ],
+                  [
+                    7.279278931509682e-06,
+                    0.02215353234082914,
+                    0.024251642936741303
+                  ],
+                  [
+                    -6.121427833787976e-06,
+                    0.024251642936741303,
+                    0.03362153567365962
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.047617450185914845,
+                "first_m4": [
+                  8.864085853487145e-06,
+                  -0.03686953831530437,
+                  0.028923141186408444
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.04691563991175483,
+                    5.661715999922638e-06,
+                    -4.732774964362011e-06
+                  ],
+                  [
+                    5.661715999922638e-06,
+                    0.020676822850602964,
+                    0.02270164555424602
+                  ],
+                  [
+                    -4.732774964362011e-06,
+                    0.02270164555424602,
+                    0.03141786803658624
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0030833062267186847,
+                "first_m4": [
+                  2.4886154408081278e-06,
+                  -0.0024509569855267425,
+                  0.0019175508281405634
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0032193027640752196,
+                    1.617562931585893e-06,
+                    -1.3886528694261998e-06
+                  ],
+                  [
+                    1.617562931585893e-06,
+                    0.0014767094902261777,
+                    0.0015499973824952855
+                  ],
+                  [
+                    -1.3886528694261998e-06,
+                    0.0015499973824952855,
+                    0.002203667637073378
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 3,
+              "material": "fabric",
+              "geometry_source": "component_convex_completion_hypothesis",
+              "assigned": {
+                "volume_m3": 0.020110073656720028,
+                "first_m4": [
+                  -0.007810931918646026,
+                  -0.011013359581215496,
+                  0.00792230179406932
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.010114911772279446,
+                    -0.004243815149300222,
+                    0.0030788402459133147
+                  ],
+                  [
+                    -0.004243815149300222,
+                    0.006329570717122067,
+                    0.004300992612498237
+                  ],
+                  [
+                    0.0030788402459133147,
+                    0.004300992612498237,
+                    0.009895100975671891
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.018508941774048836,
+                "first_m4": [
+                  -0.0071719279754816154,
+                  -0.010160565431218625,
+                  0.007266788170857159
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.009288356089832759,
+                    -0.003907789321953427,
+                    0.0028179384627117325
+                  ],
+                  [
+                    -0.003907789321953427,
+                    0.005786856057836991,
+                    0.003953485090090594
+                  ],
+                  [
+                    0.0028179384627117325,
+                    0.003953485090090594,
+                    0.009094158933891695
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0016011318826711933,
+                "first_m4": [
+                  -0.0006390039431644014,
+                  -0.0008527941499968641,
+                  0.0006555136232121523
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0008265556824466819,
+                    -0.00033602582734679215,
+                    0.00026090178320157815
+                  ],
+                  [
+                    -0.00033602582734679215,
+                    0.0005427146592850699,
+                    0.0003475075224076401
+                  ],
+                  [
+                    0.00026090178320157815,
+                    0.0003475075224076401,
+                    0.0008009420417801914
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 4,
+              "material": "fabric",
+              "geometry_source": "component_convex_completion_hypothesis",
+              "assigned": {
+                "volume_m3": 0.019995159785086928,
+                "first_m4": [
+                  0.007774035866859554,
+                  -0.01093379187644907,
+                  0.007875975525440261
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.01003821797246607,
+                    0.004218325662756506,
+                    -0.0030637973289921907
+                  ],
+                  [
+                    0.004218325662756506,
+                    0.0062981204734769425,
+                    0.004269552287448495
+                  ],
+                  [
+                    -0.0030637973289921907,
+                    0.004269552287448495,
+                    0.009826156462191373
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.018397125311958404,
+                "first_m4": [
+                  0.007135713284131327,
+                  -0.01008323726424309,
+                  0.007221852645867457
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.00921406477481099,
+                    0.0038827932373762357,
+                    -0.0028032229261483964
+                  ],
+                  [
+                    0.0038827932373762357,
+                    0.0057561958135309964,
+                    0.003923021921055892
+                  ],
+                  [
+                    -0.0028032229261483964,
+                    0.003923021921055892,
+                    0.009027067988017626
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.001598034473128523,
+                "first_m4": [
+                  0.0006383225827282157,
+                  -0.0008505546122059757,
+                  0.0006541228795727991
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0008241531976550795,
+                    0.00033553242538027076,
+                    -0.0002605744028437927
+                  ],
+                  [
+                    0.00033553242538027076,
+                    0.0005419246599459458,
+                    0.00034653036639259953
+                  ],
+                  [
+                    -0.0002605744028437927,
+                    0.00034653036639259953,
+                    0.000799088474173747
+                  ]
+                ]
+              }
+            },
+            {
+              "component_id": 5,
+              "material": "fabric",
+              "geometry_source": "component_convex_completion_hypothesis",
+              "assigned": {
+                "volume_m3": 0.005555406526080544,
+                "first_m4": [
+                  6.505239936627333e-07,
+                  -0.004839654951295412,
+                  0.0025955006878327536
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0055595241511047794,
+                    5.283420420984335e-07,
+                    -5.7912298012530944e-08
+                  ],
+                  [
+                    5.283420420984335e-07,
+                    0.0016465834593875665,
+                    0.0022780203979992733
+                  ],
+                  [
+                    -5.7912298012530944e-08,
+                    0.0022780203979992733,
+                    0.004523931964689218
+                  ]
+                ]
+              },
+              "core": {
+                "volume_m3": 0.002582880528528901,
+                "first_m4": [
+                  6.077841665776054e-07,
+                  -0.0022347236519656474,
+                  0.0010970963828402863
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.002441697062469822,
+                    5.091849591705197e-07,
+                    -1.3894227231213477e-07
+                  ],
+                  [
+                    5.091849591705197e-07,
+                    0.0006470029730319348,
+                    0.0009546008010837394
+                  ],
+                  [
+                    -1.3894227231213477e-07,
+                    0.0009546008010837394,
+                    0.0020737247035046936
+                  ]
+                ]
+              },
+              "shell": {
+                "volume_m3": 0.0029725259975516617,
+                "first_m4": [
+                  4.273982708545568e-08,
+                  -0.0026049312993297806,
+                  0.0014984043049924736
+                ],
+                "inertia_origin_m5": [
+                  [
+                    0.0031178270886349215,
+                    1.915708292817821e-08,
+                    8.102997429945631e-08
+                  ],
+                  [
+                    1.915708292817821e-08,
+                    0.000999580486355635,
+                    0.0013234195969155473
+                  ],
+                  [
+                    8.102997429945631e-08,
+                    0.0013234195969155473,
+                    0.0024502072611844858
+                  ]
+                ]
+              }
+            }
+          ],
+          "union_volume_m3": 0.4154506498737252,
+          "raw_envelope_sum_m3": 0.4440088293283618,
+          "overlap_removed_m3": 0.028558179454636567,
+          "excluded_geometry_hypotheses": []
+        },
+        "edited_component_id": 6,
+        "edited_mass_kg": 48.506410130791764,
+        "edit_mass_delta_kg": 1.2640186476416224
+      }
+    ],
+    "domain_evaluation_protocol": {
+      "source_sha256": "2812d8f5aa6d57c8c7b7b18b628836c669d94f68a1043141ab266840e0988de3",
+      "construction_seal_sha256": "0b0544d05548d91f9f42b5aa9bafbfc81bf090e95bd70654d8f234b504665c18",
+      "geometry_module_sha256": "60625ded37bcf5eaeefea9f3b259dcf962beaf34d083afd5d8601788f4d96e29",
+      "construction_module_sha256": "ef7bf41b0b4913f25943b0e59c535cce9bff32b571af4717fc94d7e36c657b70",
+      "mass_labels_read": false,
+      "scope": "single exposed development object; conditional whole-body retention",
+      "samples": 12000,
+      "sample_seed": 711,
+      "sensitivity_density": "mean conditional assigned mass divided by assigned volume; homogenized ranking proxy",
+      "timing_scope": "single simplification call; no comparative speed claim"
+    },
+    "structural_sensitivity": [
+      {
+        "trial": 0,
+        "original_mass_kg": 41.90325098076497,
+        "panel_as_visual_cap_mass_kg": 33.274790055609174,
+        "hidden_wood_as_air_mass_kg": 29.589103393826875,
+        "interpretation": "counterfactual sensitivity; alternatives are not ground truth or selected predictions"
+      },
+      {
+        "trial": 1,
+        "original_mass_kg": 49.15065328912477,
+        "panel_as_visual_cap_mass_kg": 40.70086985440889,
+        "hidden_wood_as_air_mass_kg": 23.83987264471385,
+        "interpretation": "counterfactual sensitivity; alternatives are not ground truth or selected predictions"
+      },
+      {
+        "trial": 2,
+        "original_mass_kg": 47.24239148315014,
+        "panel_as_visual_cap_mass_kg": 38.720441538001786,
+        "hidden_wood_as_air_mass_kg": 28.63543026779368,
+        "interpretation": "counterfactual sensitivity; alternatives are not ground truth or selected predictions"
+      }
+    ],
+    "matched_qem": [
+      {
+        "target_faces": 2400,
+        "method": "component_qem",
+        "component": {
+          "actual_faces": 2486,
+          "mesh_asset": "mesh_972774580958e14c89110287695c9d6bb58bee69319a279e1a41269b5af731f7.npz",
+          "mesh_asset_sha256": "ae2e5721978c52c12d492d2056849e11350d1ffe9cd80a859348ee6c9bd1c07e",
+          "seconds": 0.025450189132243395,
+          "surface_p95_mm": 8.381390701351737,
+          "budgets": [
+            848,
+            608,
+            266,
+            238,
+            238,
+            60,
+            22,
+            22,
+            22,
+            22,
+            13,
+            13,
+            13,
+            13,
+            2
+          ],
+          "removed_component_ids": [],
+          "physical_errors": [
+            {
+              "trial": 0,
+              "mass_relative": 0.14290482733519339,
+              "com_error_mm": 21.298231827018732,
+              "inertia_relative": 0.2970757507455058
+            },
+            {
+              "trial": 1,
+              "mass_relative": 0.1167888455143764,
+              "com_error_mm": 16.933419176562648,
+              "inertia_relative": 0.257513049627493
+            },
+            {
+              "trial": 2,
+              "mass_relative": 0.12147386474435651,
+              "com_error_mm": 18.90351102531815,
+              "inertia_relative": 0.25756596676289034
+            }
+          ],
+          "valid": true
+        },
+        "matched_global": {
+          "actual_faces": 2486,
+          "mesh_asset": "mesh_d8b0d0fa8cf53c18055cc8df2c5294a90978d45d9b13f28880bd1777decaf243.npz",
+          "mesh_asset_sha256": "ef0cdd589acaec056ff40f3e5c92420ded33b7876460d0cbe2de0308bcf07abc",
+          "seconds": 0.02176901511847973,
+          "surface_p95_mm": 175.2562979097409,
+          "budgets": [],
+          "removed_component_ids": [
+            14
+          ],
+          "physical_errors": [
+            {
+              "trial": 0,
+              "mass_relative": 0.21300130128825345,
+              "com_error_mm": 45.489690831809035,
+              "inertia_relative": 0.17943117769916886
+            },
+            {
+              "trial": 1,
+              "mass_relative": 0.17822022414487637,
+              "com_error_mm": 27.930231112839856,
+              "inertia_relative": 0.1490966315053834
+            },
+            {
+              "trial": 2,
+              "mass_relative": 0.18867826546511046,
+              "com_error_mm": 34.86194442044477,
+              "inertia_relative": 0.15705013301275791
+            }
+          ],
+          "valid": true
+        },
+        "absolute_face_count_difference": 0
+      },
+      {
+        "target_faces": 2400,
+        "method": "domain_density_qem",
+        "component": {
+          "actual_faces": 2397,
+          "mesh_asset": "mesh_d3cd965d2234aa4f1d561fa3a5744eb9cb51b51859c65f62f77c95664933f0b6.npz",
+          "mesh_asset_sha256": "ab57a5bd2cd601ff681ae6829baa84163438c09098dd474ca27f6fc1b168f369",
+          "seconds": 0.01844674302265048,
+          "surface_p95_mm": 4.634882169921044,
+          "budgets": [
+            336,
+            654,
+            170,
+            277,
+            278,
+            219,
+            76,
+            76,
+            76,
+            76,
+            40,
+            40,
+            40,
+            40,
+            2
+          ],
+          "removed_component_ids": [],
+          "physical_errors": [
+            {
+              "trial": 0,
+              "mass_relative": 0.011415959634574424,
+              "com_error_mm": 1.5414771024204366,
+              "inertia_relative": 0.011934334897917126
+            },
+            {
+              "trial": 1,
+              "mass_relative": 0.011960518737648806,
+              "com_error_mm": 1.1130916298921565,
+              "inertia_relative": 0.012734676743113097
+            },
+            {
+              "trial": 2,
+              "mass_relative": 0.013832011787548004,
+              "com_error_mm": 2.1022401087147395,
+              "inertia_relative": 0.015000392104482375
+            }
+          ],
+          "valid": true
+        },
+        "matched_global": {
+          "actual_faces": 2396,
+          "mesh_asset": "mesh_2bf5428ae6d0282c467bb4e6de97a60db222acf3d417846a4df3278ca99eebef.npz",
+          "mesh_asset_sha256": "10265883368700ba3e8d88bdaa38e1febb137a8e4f652819c6e34f7f3cbc7824",
+          "seconds": 0.019726808182895184,
+          "surface_p95_mm": 175.2562979097409,
+          "budgets": [],
+          "removed_component_ids": [
+            14
+          ],
+          "physical_errors": [
+            {
+              "trial": 0,
+              "mass_relative": 0.21362409770641577,
+              "com_error_mm": 45.29058261563302,
+              "inertia_relative": 0.1803009876468244
+            },
+            {
+              "trial": 1,
+              "mass_relative": 0.17876724511007025,
+              "com_error_mm": 27.846559755620415,
+              "inertia_relative": 0.1500403619040133
+            },
+            {
+              "trial": 2,
+              "mass_relative": 0.1892310432502401,
+              "com_error_mm": 34.735459880284495,
+              "inertia_relative": 0.157890693146019
+            }
+          ],
+          "valid": true
+        },
+        "absolute_face_count_difference": 1
+      },
+      {
+        "target_faces": 1200,
+        "method": "component_qem",
+        "component": {
+          "actual_faces": 1340,
+          "mesh_asset": "mesh_359772e221bec29ed236b8d7259dc6a796b29a833d8f98f9f01aac9fbadac54e.npz",
+          "mesh_asset_sha256": "e7dcafde59736b24e5fcc7aa901938239f590ee128ad8fe5d54450f8da5f73fd",
+          "seconds": 0.02599489688873291,
+          "surface_p95_mm": 18.900456550625318,
+          "budgets": [
+            417,
+            299,
+            131,
+            118,
+            118,
+            31,
+            13,
+            13,
+            13,
+            13,
+            8,
+            8,
+            8,
+            8,
+            2
+          ],
+          "removed_component_ids": [],
+          "physical_errors": [
+            {
+              "trial": 0,
+              "mass_relative": 0.06027501283254688,
+              "com_error_mm": 15.883445269460273,
+              "inertia_relative": 0.1734200032105647
+            },
+            {
+              "trial": 1,
+              "mass_relative": 0.019884770111913586,
+              "com_error_mm": 17.181156520728848,
+              "inertia_relative": 0.13669296092128988
+            },
+            {
+              "trial": 2,
+              "mass_relative": 0.030147993298944353,
+              "com_error_mm": 15.311203422793763,
+              "inertia_relative": 0.1387822992607596
+            }
+          ],
+          "valid": true
+        },
+        "matched_global": {
+          "actual_faces": 1339,
+          "mesh_asset": "mesh_cbeb4e727a9d2470779dd4142cc69672967685f53d0c79015417499b1192abb6.npz",
+          "mesh_asset_sha256": "1f69bbc0d9c41df6dff44fa0eaed19cdf56d7d2a833acfe93b59bcdd48af182c",
+          "seconds": 0.019825132098048925,
+          "surface_p95_mm": 169.55607565129975,
+          "budgets": [],
+          "removed_component_ids": [
+            14
+          ],
+          "physical_errors": [
+            {
+              "trial": 0,
+              "mass_relative": 0.25451661787477065,
+              "com_error_mm": 55.59798857789183,
+              "inertia_relative": 0.2494069679918266
+            },
+            {
+              "trial": 1,
+              "mass_relative": 0.22031106328933836,
+              "com_error_mm": 34.45445359571073,
+              "inertia_relative": 0.21422640139356647
+            },
+            {
+              "trial": 2,
+              "mass_relative": 0.2306486557787506,
+              "com_error_mm": 42.900266233619064,
+              "inertia_relative": 0.22324155896801043
+            }
+          ],
+          "valid": true
+        },
+        "absolute_face_count_difference": 1
+      },
+      {
+        "target_faces": 1200,
+        "method": "domain_density_qem",
+        "component": {
+          "actual_faces": 1215,
+          "mesh_asset": "mesh_60c896df96b3ca4aaf3319d1e7965f9fec598d4e7fd52f09eda5220a5114c84c.npz",
+          "mesh_asset_sha256": "8fd1b4b1764dc46f3fd93dc31d5f68a2efd6c32f97502f15f0fba73f6e87400d",
+          "seconds": 0.02559316484257579,
+          "surface_p95_mm": 18.621373101550635,
+          "budgets": [
+            151,
+            295,
+            78,
+            125,
+            126,
+            99,
+            41,
+            41,
+            41,
+            41,
+            40,
+            40,
+            40,
+            40,
+            2
+          ],
+          "removed_component_ids": [],
+          "physical_errors": [
+            {
+              "trial": 0,
+              "mass_relative": 0.052132144737442654,
+              "com_error_mm": 3.7870666776353654,
+              "inertia_relative": 0.03941631141414827
+            },
+            {
+              "trial": 1,
+              "mass_relative": 0.07480307865927749,
+              "com_error_mm": 5.619441058843005,
+              "inertia_relative": 0.052991738714565105
+            },
+            {
+              "trial": 2,
+              "mass_relative": 0.07040839791900111,
+              "com_error_mm": 3.456448591997674,
+              "inertia_relative": 0.05273211378935317
+            }
+          ],
+          "valid": true
+        },
+        "matched_global": {
+          "actual_faces": 1215,
+          "mesh_asset": "mesh_76e980979d4ef01ec1bb83ce23df35b127bb91993f4ee42821d058f25ae7ab6a.npz",
+          "mesh_asset_sha256": "c77793415e3d2dae9dac833777c8dbf3063623cb02dd38805daaa6b266885d76",
+          "seconds": 0.02023559482768178,
+          "surface_p95_mm": 173.01166350960153,
+          "budgets": [],
+          "removed_component_ids": [
+            7,
+            9,
+            14
+          ],
+          "physical_errors": [
+            {
+              "trial": 0,
+              "mass_relative": 0.26383104968503135,
+              "com_error_mm": 54.80745910155728,
+              "inertia_relative": 0.263323616453093
+            },
+            {
+              "trial": 1,
+              "mass_relative": 0.22833087585747613,
+              "com_error_mm": 33.81442511319436,
+              "inertia_relative": 0.2268226351644337
+            },
+            {
+              "trial": 2,
+              "mass_relative": 0.24003533197788196,
+              "com_error_mm": 41.544404187506444,
+              "inertia_relative": 0.23709363333507752
+            }
+          ],
+          "valid": true
+        },
+        "absolute_face_count_difference": 0
+      },
+      {
+        "target_faces": 600,
+        "method": "component_qem",
+        "component": {
+          "actual_faces": 873,
+          "mesh_asset": "mesh_6dcacd80b1336d1f3260a8306780654b4cf52ca3a0592895b71a6db996577c81.npz",
+          "mesh_asset_sha256": "2ed2c9cb874b466880a33380069626bf45334ed69567bfd5fc333123435e0573",
+          "seconds": 0.03270079242065549,
+          "surface_p95_mm": 34.599913908653754,
+          "budgets": [
+            200,
+            145,
+            64,
+            58,
+            58,
+            17,
+            8,
+            8,
+            8,
+            8,
+            6,
+            6,
+            6,
+            6,
+            2
+          ],
+          "removed_component_ids": [],
+          "physical_errors": [
+            {
+              "trial": 0,
+              "mass_relative": 0.033117610463698544,
+              "com_error_mm": 19.914469537925296,
+              "inertia_relative": 0.15602775565550142
+            },
+            {
+              "trial": 1,
+              "mass_relative": 0.011325683585613922,
+              "com_error_mm": 14.445357104954033,
+              "inertia_relative": 0.11206685996628729
+            },
+            {
+              "trial": 2,
+              "mass_relative": 0.00048817263497513697,
+              "com_error_mm": 16.084851743818664,
+              "inertia_relative": 0.1167038172834123
+            }
+          ],
+          "valid": true
+        },
+        "matched_global": {
+          "actual_faces": 873,
+          "mesh_asset": "mesh_682a7b49332fd18cfab21fe4c05c7ae4c7ca7714b33fedb3df2c9ff597f2e585.npz",
+          "mesh_asset_sha256": "0bf1bd9e0a443d1f2423ab04b47289886b60d5a74217c279870a7cfd844bb289",
+          "seconds": 0.022495088167488575,
+          "surface_p95_mm": 117.9044652950428,
+          "budgets": [],
+          "removed_component_ids": [
+            6,
+            7,
+            8,
+            9,
+            14
+          ],
+          "physical_errors": [
+            {
+              "trial": 0,
+              "mass_relative": 0.34591014190046754,
+              "com_error_mm": 38.857678533217275,
+              "inertia_relative": 0.36155698041488826
+            },
+            {
+              "trial": 1,
+              "mass_relative": 0.30338547899599355,
+              "com_error_mm": 24.331867629628174,
+              "inertia_relative": 0.3229805626066084
+            },
+            {
+              "trial": 2,
+              "mass_relative": 0.32127153625740257,
+              "com_error_mm": 27.986418622228438,
+              "inertia_relative": 0.33663726114312065
+            }
+          ],
+          "valid": true
+        },
+        "absolute_face_count_difference": 0
+      },
+      {
+        "target_faces": 600,
+        "method": "domain_density_qem",
+        "component": {
+          "actual_faces": 791,
+          "mesh_asset": "mesh_2acfc5160e3b076a9f241a94360afd28b88c85b1975855d28c8bd5a98b5f4eb9.npz",
+          "mesh_asset_sha256": "6729e0cbc88dd3743e16be344dda13145ee6fbe21ae1f9cb3f5efd800c87417c",
+          "seconds": 0.03403350664302707,
+          "surface_p95_mm": 36.18649928876622,
+          "budgets": [
+            71,
+            139,
+            37,
+            60,
+            60,
+            47,
+            21,
+            21,
+            21,
+            21,
+            29,
+            21,
+            21,
+            29,
+            2
+          ],
+          "removed_component_ids": [],
+          "physical_errors": [
+            {
+              "trial": 0,
+              "mass_relative": 0.035683108658252305,
+              "com_error_mm": 56.96416780414927,
+              "inertia_relative": 0.20700572520408017
+            },
+            {
+              "trial": 1,
+              "mass_relative": 0.003327046576200976,
+              "com_error_mm": 38.10920256254381,
+              "inertia_relative": 0.15675574924675187
+            },
+            {
+              "trial": 2,
+              "mass_relative": 0.009941913562748206,
+              "com_error_mm": 56.90114939620476,
+              "inertia_relative": 0.1421361821500058
+            }
+          ],
+          "valid": true
+        },
+        "matched_global": {
+          "actual_faces": 791,
+          "mesh_asset": "mesh_422309baf6840f119909e67b909a64cc52b41e85de8c94bd49a906998cd3bbd1.npz",
+          "mesh_asset_sha256": "16504d0e03861ae2f0af8652d25eaeda1820cae20d901fafac7c4549d670855f",
+          "seconds": 0.0228511830791831,
+          "surface_p95_mm": 43.75299744481232,
+          "budgets": [],
+          "removed_component_ids": [
+            6,
+            7,
+            8,
+            9,
+            11,
+            12,
+            14
+          ],
+          "physical_errors": [
+            {
+              "trial": 0,
+              "mass_relative": 0.40028468771011727,
+              "com_error_mm": 32.08462476568088,
+              "inertia_relative": 0.4202457404169118
+            },
+            {
+              "trial": 1,
+              "mass_relative": 0.35934849596910756,
+              "com_error_mm": 29.324177240367497,
+              "inertia_relative": 0.38256674147265146
+            },
+            {
+              "trial": 2,
+              "mass_relative": 0.3856804171284296,
+              "com_error_mm": 32.70269703401044,
+              "inertia_relative": 0.4092366129940879
+            }
+          ],
+          "valid": true
+        },
+        "absolute_face_count_difference": 0
+      }
+    ],
+    "source_checks": {
+      "pytest": "263 passed",
+      "ruff": "passed"
+    },
+    "record_sha256": {
+      "domain_evaluation/matched_qem.json": "6f474c4213feecd00e271152668a3c0ac77851e71e32a238cd2d7657b4726bb0",
+      "domain_evaluation/protocol.json": "2e898aa7403c8050d677b1cefeddef9ab1dc8b6a001eab9b0b8a30d8e8e5eabc",
+      "domain_evaluation/structural_sensitivity.json": "20865b364e1c26c9ad56eadcb985a2743c992e913cc4babaafb53338696b4ea8",
+      "figures/domain_retention_contract.json": "dfb0924ae5a93226d63fe8458320a50a18335b4392147cf404d3bdbc1ef44970",
+      "figures/domain_retention_source.csv": "7a1802c2ef4cc07c229ee6880f574df2c76758c7fe7046fc9389aafdc3d64a12",
+      "figures/domain_retention_validation.json": "401dae2297faab0e7dcd0cf3a7da20ee7a3113b63e99da0895e1a574a71f6498",
+      "hypothesis_0.json": "d467427d1ff0ebf85fddde14589f7722b221a6dc92cab9aa4110a713f28d9b00",
+      "hypothesis_1.json": "566640ffc6143dbe74b33baa0a70640c2534550880634817de017f33da4f9fac",
+      "hypothesis_2.json": "47c277be038f6df6110964b90451b10b434f7cf5a36d67756f2091e0a97b1c23",
+      "model.json": "c0ab49414a545acffe0a8d67cb417fca811213b5063a77d2e925f5992f900520",
+      "prediction_seal.json": "0b0544d05548d91f9f42b5aa9bafbfc81bf090e95bd70654d8f234b504665c18",
+      "predictions.json": "eeadf3882a3c95c870f53f1f04193759f52c71dc0ae94be1372aa182717b0732",
+      "protocol.json": "92da5bc2f754d3f9dab1ef3691b46f9055db2c010c0828784e836741648bf06c",
+      "raw_0.json": "e00af2faa1e1730ecb3d17daf5313182a17da6bde7aede0a66651586767c94db",
+      "raw_1.json": "b30136201025d533f9abb3227a8b405de8eda7b9e7805a7829e77e27fb92da29",
+      "raw_2.json": "76c68a173cc944333360800f1c13baaa3005b539d7caf5c128cd7549cc88172c",
+      "report.json": "ed23901316f0e58090a4ce82bf05ca503b9b94e28b796bd832d2f8b662fc0b35",
+      "source_snapshot/support_domains.py": "60625ded37bcf5eaeefea9f3b259dcf962beaf34d083afd5d8601788f4d96e29",
+      "source_snapshot/vlm_mass.py": "6ce25fbe81058dae3ab45fc95ede39c9440fe4c812576c295c8cf1c87e3c9b01"
+    },
+    "interpretation": [
+      "Disjoint domains remove overlap and retain shell/core geometric moments; completion remains a hypothesis.",
+      "Three independent-question answers are not calibrated probabilities; underside panel judgments remain correlated.",
+      "Absolute mass remains overestimated. Counterfactual alternatives are not selected using the target mass.",
+      "Matched QEM errors measure retention of the same conditional whole-body model, not absolute accuracy.",
+      "Moderate-budget retention improves; the lowest-budget center-of-mass result is worse than its matched global baseline."
+    ],
+    "main_cohort_benchmark_completed": false
   }
 }

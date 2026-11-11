@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import numpy as np
+from scipy import ndimage
 
 
 def material_conditioned_shell(depth, pitch, thicknesses, choices, outer, core):
@@ -103,3 +104,89 @@ def isotropic_mixture_bounds(fractions, youngs, poisson):
         return np.divide(9*k*g, 3*k+g, out=np.zeros_like(k), where=(3*k+g) > 0)
 
     return to_young(kr, gr), to_young(kv, gv)
+
+
+def depth_within_region(points, pitch):
+    indices = np.rint(points / pitch).astype(np.int64)
+    origin = indices.min(axis=0) - 2
+    shape = indices.max(axis=0) - origin + 3
+    mask = np.zeros(shape, bool)
+    mask[tuple((indices - origin).T)] = True
+    return ndimage.distance_transform_edt(mask)[tuple((indices - origin).T)] * pitch
+
+
+def integrate_construction(
+    points, owners, pitch, rows, densities, thicknesses=None, thickness_bounds=None
+):
+    """Allocate each disjoint cell once; material fractions refer to core volume."""
+    points, owners = np.asarray(points), np.asarray(owners)
+    if (
+        points.ndim != 2
+        or points.shape[1] != 3
+        or not len(points)
+        or not np.isfinite(points).all()
+        or owners.shape != (len(points),)
+        or owners.dtype.kind not in "iu"
+        or np.any(owners < 0)
+        or not np.isfinite(pitch)
+        or pitch <= 0
+        or not densities
+        or any(not np.isfinite(rho) or rho <= 0 for rho in densities.values())
+    ):
+        raise ValueError("Invalid metric cells or density library")
+    requested = set(np.unique(owners).tolist())
+    if len(rows) != len(requested) or {r["region_id"] for r in rows} != requested:
+        raise ValueError("VLM must cover every occupied region exactly once")
+    depth = depth_within_region(points, pitch)
+    density = np.zeros(len(points))
+    occupied = np.zeros(len(points))
+    material_volumes = dict.fromkeys(densities, 0.0)
+    for row in rows:
+        surface = row["surface_material"]
+        thickness = float(row["wall_thickness_m"])
+        if surface not in densities or not np.isfinite(thickness) or thickness < 0:
+            raise ValueError("Invalid shell material or thickness")
+        if thickness_bounds is not None and thickness > 0:
+            low, high = thickness_bounds[surface]
+            if not low <= thickness <= high:
+                raise ValueError(
+                    f"{surface} shell thickness {thickness} m outside "
+                    f"material bounds [{low}, {high}] m"
+                )
+        if thicknesses is not None and thickness > 0:
+            thickness = float(thicknesses[surface])
+            if not np.isfinite(thickness) or thickness < 0:
+                raise ValueError("Invalid library thickness")
+        phases = row["core"]
+        fractions = np.asarray([p["fraction"] for p in phases], dtype=float)
+        if (
+            not np.isfinite(fractions).all()
+            or np.any(fractions < 0)
+            or fractions.sum() > 1 + 1e-8
+            or any(p["material"] not in densities for p in phases)
+        ):
+            raise ValueError(
+                "Core fractions must be finite nonnegative volume fractions summing <=1"
+            )
+        selected = owners == row["region_id"]
+        shell = np.clip(
+            (thickness - np.maximum(depth[selected] - pitch, 0)) / pitch, 0, 1
+        )
+        core_density = sum(p["fraction"] * densities[p["material"]] for p in phases)
+        density[selected] = shell * densities[surface] + (1 - shell) * core_density
+        occupied[selected] = shell + (1 - shell) * fractions.sum()
+        material_volumes[surface] += float(shell.sum() * pitch**3)
+        core_volume = float((1 - shell).sum() * pitch**3)
+        for phase in phases:
+            material_volumes[phase["material"]] += core_volume * phase["fraction"]
+    moments = integrate_density_cells(points, density, pitch, owners)
+    material_mass = sum(densities[k] * v for k, v in material_volumes.items())
+    if not np.isclose(material_mass, moments["mass_kg"], rtol=1e-10):
+        raise ValueError("Material allocation and cell mass disagree")
+    if sum(material_volumes.values()) > len(points) * pitch**3 * (1 + 1e-8):
+        raise ValueError("Material allocations exceed the envelope")
+    return {
+        "moments": moments,
+        "material_volumes_m3": material_volumes,
+        "occupied_volume_m3": float(occupied.sum() * pitch**3),
+    }

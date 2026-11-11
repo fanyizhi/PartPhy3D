@@ -1,4 +1,8 @@
-"""Multi-round VLM construction hypotheses integrated over fixed metric cells."""
+"""Component-supported VLM construction, non-overlapping domains and rigid moments.
+
+The earlier geometric-cluster driver is archived at commit 1a0559f. This entry
+uses an existing VLM/geometry part state and keeps numeric material priors fixed.
+"""
 
 from __future__ import annotations
 
@@ -8,417 +12,363 @@ from dataclasses import asdict
 from pathlib import Path
 
 import numpy as np
-from PIL import Image, ImageDraw
+from PIL import Image
 
-from tactile3d.eval.benchmark import verify_prediction_seal
-from tactile3d.experiments.ten_objects import depth_within_region, load_mesh
-from tactile3d.figures.mesh_fields import render_mesh
-from tactile3d.mesh.assembly import texture_face_rgb
+from tactile3d.experiments.reference_study import load_prepared
 from tactile3d.models.calibration import mass_metrics
-from tactile3d.physics.fields import integrate_density_cells
 from tactile3d.physics.part_io import file_sha256, write_json
+from tactile3d.physics.support_domains import (
+    SupportDomain,
+    assemble_properties,
+    convex_envelope,
+    eroded_convex,
+    partition_domains,
+    solid_from_mesh,
+)
 from tactile3d.vision.local_vlm import LocalVLM
 from tactile3d.vision.view_selection import select_azimuth_views
 from tactile3d.vision.vlm_interior import _parse_response_content
 
 
-def integrate_construction(
-    points, owners, pitch, rows, densities, thicknesses=None, thickness_bounds=None
-):
-    """Allocate each disjoint cell once; material fractions refer to core volume."""
-    points, owners = np.asarray(points), np.asarray(owners)
-    if (
-        points.ndim != 2
-        or points.shape[1] != 3
-        or not len(points)
-        or not np.isfinite(points).all()
-        or owners.shape != (len(points),)
-        or owners.dtype.kind not in "iu"
-        or np.any(owners < 0)
-        or not np.isfinite(pitch)
-        or pitch <= 0
-        or not densities
-        or any(not np.isfinite(rho) or rho <= 0 for rho in densities.values())
-    ):
-        raise ValueError("Invalid metric cells or density library")
-    requested = set(np.unique(owners).tolist())
-    if len(rows) != len(requested) or {r["region_id"] for r in rows} != requested:
-        raise ValueError("VLM must cover every occupied region exactly once")
-    depth = depth_within_region(points, pitch)
-    density = np.zeros(len(points))
-    occupied = np.zeros(len(points))
-    material_volumes = dict.fromkeys(densities, 0.0)
+def validate_hypothesis(answer, roles):
+    rows = answer["upholstery"]
+    if len(rows) != len(roles) or {r["role"] for r in rows} != set(roles):
+        raise ValueError("Every upholstery role must occur exactly once")
     for row in rows:
-        surface = row["surface_material"]
-        thickness = float(row["wall_thickness_m"])
-        if surface not in densities or not np.isfinite(thickness) or thickness < 0:
-            raise ValueError("Invalid shell material or thickness")
-        if thickness_bounds is not None and thickness > 0:
-            low, high = thickness_bounds[surface]
-            if not low <= thickness <= high:
-                raise ValueError(
-                    f"{surface} shell thickness {thickness} m outside "
-                    f"material bounds [{low}, {high}] m"
-                )
-        if thicknesses is not None and thickness > 0:
-            thickness = float(thicknesses[surface])
-            if not np.isfinite(thickness) or thickness < 0:
-                raise ValueError("Invalid library thickness")
-        phases = row["core"]
-        fractions = np.asarray([p["fraction"] for p in phases], dtype=float)
+        fractions = np.asarray(
+            [row["foam_fraction"], row["hidden_wood_fraction"]], dtype=float
+        )
         if (
             not np.isfinite(fractions).all()
             or np.any(fractions < 0)
             or fractions.sum() > 1 + 1e-8
-            or any(p["material"] not in densities for p in phases)
         ):
             raise ValueError(
-                "Core fractions must be finite nonnegative volume fractions summing <=1"
+                "Core fractions must be nonnegative and sum to at most one"
             )
-        selected = owners == row["region_id"]
-        shell = np.clip(
-            (thickness - np.maximum(depth[selected] - pitch, 0)) / pitch, 0, 1
+        row["foam_fraction"], row["hidden_wood_fraction"] = fractions.tolist()
+    panel = answer["underside"]
+    thickness = float(panel["thickness_mm"])
+    if panel["kind"] not in ("manufactured_panel", "visual_cap") or not np.isfinite(
+        thickness
+    ):
+        raise ValueError("Invalid planar-component hypothesis")
+    if (panel["kind"] == "visual_cap" and thickness != 0) or (
+        panel["kind"] == "manufactured_panel" and thickness <= 0
+    ):
+        raise ValueError(
+            "A panel requires thickness; a cap hypothesis must explicitly use zero"
         )
-        core_density = sum(p["fraction"] * densities[p["material"]] for p in phases)
-        density[selected] = shell * densities[surface] + (1 - shell) * core_density
-        occupied[selected] = shell + (1 - shell) * fractions.sum()
-        material_volumes[surface] += float(shell.sum() * pitch**3)
-        core_volume = float((1 - shell).sum() * pitch**3)
-        for phase in phases:
-            material_volumes[phase["material"]] += core_volume * phase["fraction"]
-    moments = integrate_density_cells(points, density, pitch, owners)
-    material_mass = sum(densities[k] * v for k, v in material_volumes.items())
-    if not np.isclose(material_mass, moments["mass_kg"], rtol=1e-10):
-        raise ValueError("Material allocation and cell mass disagree")
-    if sum(material_volumes.values()) > len(points) * pitch**3 * (1 + 1e-8):
-        raise ValueError("Material allocations exceed the envelope")
-    return {
-        "moments": moments,
-        "material_volumes_m3": material_volumes,
-        "occupied_volume_m3": float(occupied.sum() * pitch**3),
-    }
+    answer["underside"]["thickness_mm"] = thickness
+    return answer
 
 
-def prepare_evidence(root, assets, geometry, scene, output):
-    source = root / "scenes" / scene
-    mesh = load_mesh(assets / scene / "model.glb")
-    mesh.vertices = mesh.vertices[:, [0, 2, 1]] * [1, -1, 1]
-    labels = np.load(geometry / "objects" / scene / "face_labels.npy")
-    rgb = texture_face_rgb(mesh)
-    count = int(labels.max()) + 1
-    palette = np.asarray(
-        [
-            [0.15, 0.45, 0.7],
-            [0.9, 0.4, 0.1],
-            [0.2, 0.65, 0.4],
-            [0.7, 0.3, 0.6],
-            [0.6, 0.55, 0.1],
-            [0.25, 0.7, 0.75],
-            [0.55, 0.4, 0.25],
-            [0.4, 0.4, 0.6],
-        ]
+def construct(pieces, parts, answer, thickness, *, allow_removed=False):
+    role_phases = {r["role"]: r for r in answer["upholstery"]}
+    bounds = [p.bounds for p in pieces if len(p.faces)]
+    if not bounds:
+        raise ValueError("No surviving assembly geometry")
+    assembly_center = np.mean(bounds, axis=(0, 1))
+    domains, excluded = [], []
+    for part in parts:
+        index = part["component_id"]
+        mesh = pieces[index]
+        material = part["surface_material"]
+        if not len(mesh.faces):
+            if not allow_removed:
+                raise ValueError(f"Missing reference support for component {index}")
+            excluded.append(
+                {
+                    "component_id": index,
+                    "reason": "component geometry removed by simplification",
+                    "material_volume_m3": 0.0,
+                }
+            )
+            continue
+        if material not in ("wood", "fabric"):
+            raise ValueError(
+                "This component-state pilot supports upholstered wood-frame assets"
+            )
+        if material == "fabric":
+            if part["functional_role"] not in role_phases:
+                raise ValueError("Missing upholstery-role hypothesis")
+            hull, source = convex_envelope(mesh, thickness, assembly_center)
+            domain = SupportDomain(
+                index, material, hull, eroded_convex(hull, thickness), 2, source
+            )
+        else:
+            singular = np.linalg.svd(
+                mesh.vertices - mesh.vertices.mean(0), compute_uv=False
+            )
+            planar = singular[-1] < singular[0] * 1e-7
+            if planar and part["functional_role"] != "underside":
+                if not allow_removed:
+                    raise ValueError("A solid wood support collapsed to a planar patch")
+                excluded.append(
+                    {
+                        "component_id": index,
+                        "reason": "solid support lost its three-dimensional extent during simplification",
+                        "material_volume_m3": 0.0,
+                    }
+                )
+                continue
+            if planar and answer["underside"]["kind"] == "visual_cap":
+                excluded.append(
+                    {
+                        "component_id": index,
+                        "reason": "explicit visual-cap hypothesis",
+                        "material_volume_m3": 0.0,
+                    }
+                )
+                continue
+            panel_thickness = (
+                answer["underside"]["thickness_mm"] / 1000 if planar else 0
+            )
+            if planar:
+                spans = np.sort(mesh.extents)
+                if panel_thickness > 0.1 * spans[-2]:
+                    raise ValueError(
+                        "Panel thickness violates the planar-aspect hypothesis"
+                    )
+            if mesh.is_volume and not planar:
+                hull, source = mesh, "provided_closed_boundary"
+            else:
+                hull, source = convex_envelope(mesh, panel_thickness, assembly_center)
+            domain = SupportDomain(
+                index, material, hull, solid_from_mesh(hull), 1 if planar else 0, source
+            )
+        domains.append(domain)
+    result = partition_domains(domains)
+    result["excluded_geometry_hypotheses"] = excluded
+    return result
+
+
+def properties(
+    partition, parts, answer, densities, edited_component=None, edited_density=None
+):
+    state = {p["component_id"]: p for p in parts}
+    phases = {r["role"]: r for r in answer["upholstery"]}
+    weighted, allocations = [], []
+    for domain in partition["parts"]:
+        index = domain["component_id"]
+        part = state[index]
+        if part["surface_material"] == "wood":
+            rho = edited_density if index == edited_component else densities["wood"]
+            weighted.append((domain["assigned"], rho))
+            allocations.append(
+                {
+                    "component_id": index,
+                    "wood_volume_m3": domain["assigned"]["volume_m3"],
+                    "mass_kg": domain["assigned"]["volume_m3"] * rho,
+                }
+            )
+        else:
+            phase = phases[part["functional_role"]]
+            rho = (
+                phase["foam_fraction"] * densities["foam"]
+                + phase["hidden_wood_fraction"] * densities["wood"]
+            )
+            weighted.extend(
+                [(domain["shell"], densities["fabric"]), (domain["core"], rho)]
+            )
+            allocations.append(
+                {
+                    "component_id": index,
+                    "fabric_volume_m3": domain["shell"]["volume_m3"],
+                    "foam_volume_m3": domain["core"]["volume_m3"]
+                    * phase["foam_fraction"],
+                    "hidden_wood_volume_m3": domain["core"]["volume_m3"]
+                    * phase["hidden_wood_fraction"],
+                    "mass_kg": domain["shell"]["volume_m3"] * densities["fabric"]
+                    + domain["core"]["volume_m3"] * rho,
+                }
+            )
+    result = assemble_properties(weighted)
+    if not np.isclose(
+        sum(p["mass_kg"] for p in allocations), result["mass_kg"], rtol=1e-10
+    ):
+        raise ValueError("Part masses do not sum to whole-object mass")
+    result["parts"] = allocations
+    result["core_model"] = (
+        "homogenized phase density; hidden spatial arrangement remains unresolved"
     )
-    overview = render_mesh(
-        mesh.vertices, mesh.faces, palette[labels % len(palette)], resolution=600
-    )
-    Image.fromarray(np.asarray(overview, dtype=np.uint8)).save(output / "regions.png")
-    sheet = Image.new("RGB", (1000, 500), "white")
-    draw = ImageDraw.Draw(sheet)
-    for region in range(count):
-        part = mesh.submesh(
-            [np.flatnonzero(labels == region)], append=True, repair=False
-        )
-        panel = render_mesh(
-            part.vertices, part.faces, rgb[labels == region], resolution=220
-        )
-        x, y = region % 4 * 250, region // 4 * 250
-        sheet.paste(Image.fromarray(np.asarray(panel, dtype=np.uint8)), (x, y + 24))
-        draw.text((x + 8, y + 5), f"REGION {region}", fill="black")
-    sheet.save(output / "numbered_regions.png")
-    transforms = json.loads((source / "transforms.json").read_text())
-    selected = select_azimuth_views(
-        np.asarray([f["transform_matrix"] for f in transforms["frames"]]), 4
-    )
-    paths = [
-        source / transforms["frames"][v["frame_index"]]["file_path"] for v in selected
-    ]
-    paths += [output / "regions.png", output / "numbered_regions.png"]
-    write_json(
-        output / "evidence.json",
-        {
-            "views": selected,
-            "files": {str(p): file_sha256(p) for p in paths},
-            "mesh_sha256": file_sha256(assets / scene / "model.glb"),
-        },
-    )
-    return [Image.open(p).copy() for p in paths]
+    return result
 
 
 def run(args):
-    args.output.mkdir(parents=True, exist_ok=True)
-    verify_prediction_seal(args.geometry)
-    ids = json.loads(args.cohort.read_text(encoding="utf-8"))["object_ids"]
-    spec = {
-        "cohort": ids,
-        "rounds": 3,
-        "surface_hints": args.surface_hints,
-        "thickness_policy": (
-            "unconstrained_ablation"
-            if args.allow_unconstrained_thickness
-            else "material_bounds"
-        ),
-        "seed": 1200,
-        "geometry_source": str(args.geometry),
-        "model": str(args.model),
-        "code_sha256": file_sha256(Path(__file__)),
-        "mass_labels_used_for_inference": False,
-        "aggregation": "equal mean of three whole-object construction integrals",
-        "uncertainty": "correlated self-check rounds, not calibrated posterior samples",
+    args.output.mkdir(parents=True, exist_ok=False)
+    scene = json.loads((args.reference / "input_manifest.json").read_text())["scene"]
+    _mesh, _labels, pieces, _colors = load_prepared(args.reference)
+    state_path = args.reference / "part_state_geometry_constrained.json"
+    state = json.loads(state_path.read_text())
+    if state["geometry_sha256"] != file_sha256(args.reference / "reference_arrays.npz"):
+        raise ValueError("Part IDs are bound to different reference geometry")
+    parts = state["parts"]
+    roles = sorted(
+        {p["functional_role"] for p in parts if p["surface_material"] == "fabric"}
+    )
+    materials = json.loads((args.root / "scenes" / scene / "info.json").read_text())
+    # Use the same released density/thickness priors as the existing development controls.
+    import yaml
+
+    from tactile3d.experiments.ten_objects import materials_from_info
+
+    cfg = yaml.safe_load(Path("configs/ten_object_pilot.yaml").read_text())
+    priors, _ = materials_from_info(materials, cfg)
+    densities = {
+        kind: float(np.mean(next(m["density"] for m in priors if m["kind"] == kind)))
+        for kind in ("wood", "fabric", "foam")
     }
-    protocol = args.output / "protocol.json"
-    if protocol.exists() and json.loads(protocol.read_text()) != spec:
-        raise ValueError("Saved run uses a different frozen protocol")
-    write_json(protocol, spec)
-    model = LocalVLM(args.model, max_tokens=2600, max_pixels=384**2, quantized=True)
+    thickness = float(
+        np.mean(next(m["thickness_m"] for m in priors if m["kind"] == "fabric"))
+    )
+    transforms = json.loads(
+        (args.root / "scenes" / scene / "transforms.json").read_text()
+    )
+    views = select_azimuth_views(
+        np.asarray([f["transform_matrix"] for f in transforms["frames"]]), 4
+    )
+    paths = [
+        args.root
+        / "scenes"
+        / scene
+        / transforms["frames"][v["frame_index"]]["file_path"]
+        for v in views
+    ]
+    paths += [
+        args.reference / "component_sheet.png",
+        args.reference / "views_contacts/global_component_positions.png",
+    ]
+    features = [
+        {
+            "component_id": p["component_id"],
+            "material": p["surface_material"],
+            "role": p["functional_role"],
+            "extent_m": pieces[p["component_id"]].extents.tolist(),
+            "closed_as_loaded": bool(pieces[p["component_id"]].is_volume),
+        }
+        for p in parts
+    ]
+    protocol = {
+        "scene": scene,
+        "scope": "exposed reference-geometry development case",
+        "part_state_sha256": file_sha256(state_path),
+        "source_sha256": file_sha256(Path(__file__)),
+        "geometry_module_sha256": file_sha256(
+            Path(__file__).parents[1] / "physics/support_domains.py"
+        ),
+        "input_hashes": {str(p): file_sha256(p) for p in paths},
+        "selected_views": views,
+        "densities_kg_m3": densities,
+        "fabric_thickness_m": thickness,
+        "components": features,
+        "target_mass_used_for_inference": False,
+        "rounds": 3,
+        "geometry": "provided closed wood solids; per-component convex/prism completion elsewhere; disjoint CSG",
+        "aggregation": "equal mean of three independent-question construction hypotheses; not calibrated probabilities",
+    }
+    write_json(args.output / "protocol.json", protocol)
+    model = LocalVLM(args.model, max_tokens=1000, max_pixels=768**2, quantized=True)
     write_json(args.output / "model.json", model.provenance)
-    predictions = []
-    for scene in ids:
-        directory = args.output / scene
-        directory.mkdir(exist_ok=True)
-        images = prepare_evidence(
-            args.root, args.assets, args.geometry, scene, directory
+    images = [Image.open(p).copy() for p in paths]
+    prompt = (
+        "Analyze one upholstered wood-frame object from four original views and two numbered mesh diagrams. "
+        "Surface materials and functional roles were inferred previously and are fixed in this experiment: "
+        + json.dumps(features)
+        + ". Do NOT estimate mass or densities. Numeric material priors and cloth "
+        "thickness are supplied separately. Give core construction hypotheses for each of these upholstery "
+        f"roles: {json.dumps(roles)}. foam_fraction and hidden_wood_fraction are MACROSCOPIC CORE VOLUME "
+        "fractions, summing <=1. Remaining fraction is macroscopic empty space. Foam density ALREADY "
+        "includes microscopic pores: do not reduce foam_fraction again for micro-porosity. Exclude the "
+        "visible wooden legs/rails from hidden_wood_fraction; they already have separate support domains. "
+        "For the planar wood-labelled underside, infer whether it represents a manufactured thin panel "
+        "or a rendering cap, and if a panel estimate its thickness in MILLIMETERS. A visual_cap hypothesis "
+        "uses thickness_mm=0 explicitly; it is not measured absence of a panel. Return JSON with "
+        "upholstery:[{role:string,foam_fraction:number,hidden_wood_fraction:number}], "
+        "underside:{kind:manufactured_panel|visual_cap,thickness_mm:number}, evidence:string. "
+        "Cover every role once, with no extra roles. Avoid physical certainty for hidden structure."
+    )
+    focuses = [
+        "Infer the assembly construction from all evidence.",
+        "Independently inspect support versus padding, and distinguish bulk foam from macroscopic air.",
+        "Independently inspect the underside and whether any hidden frame is being counted twice.",
+    ]
+    results = []
+    for trial, focus in enumerate(focuses):
+        response = model.generate(
+            prompt + "\n" + focus,
+            images,
+            "Return physically consistent construction JSON.",
+            seed=2410 + trial,
+            do_sample=True,
+            temperature=0.6,
+            top_p=0.9,
         )
-        original = json.loads(
-            (args.geometry / "objects" / scene / "legacy_prediction.json").read_text()
+        record = {"prompt": prompt + "\n" + focus, "response": asdict(response)}
+        write_json(args.output / f"raw_{trial}.json", record)
+        answer = validate_hypothesis(_parse_response_content(response.text), roles)
+        partition = construct(pieces, parts, answer, thickness)
+        result = properties(partition, parts, answer, densities)
+        wood_id = next(
+            p["component_id"] for p in parts if p["functional_role"] == "leg"
         )
-        densities = {
-            m["name"]: float(np.mean(m["density"])) for m in original["materials"]
-        }
-        bounds = {m["name"]: m["thickness_m"] for m in original["materials"]}
-        checked_bounds = None if args.allow_unconstrained_thickness else bounds
-        with np.load(
-            args.geometry / "objects" / scene / "nearest_surface_field.npz"
-        ) as field:
-            points, owners, pitch = (
-                field["centers_m"],
-                field["part_ids"],
-                float(field["pitch_m"]),
-            )
-        volumes = {
-            int(i): float((owners == i).sum() * pitch**3) for i in np.unique(owners)
-        }
-        prompt = (
-            "First four images are actual views of ONE object. Image 5 colors geometric regions; "
-            "image 6 shows isolated textured regions with their authoritative REGION IDs. "
-            "Regions may cross functional parts. Infer construction of each occupied region. "
-            "Do not estimate mass. Use ONLY these material names/densities (kg/m^3): "
-            f"{json.dumps(densities)}. Envelope volumes in m^3: {json.dumps(volumes)}. "
-            "Allocate volume, not material-name confidence. A metal screw candidate is NOT an "
-            "entire metal region. Cloth covers are thin; foam and hidden frame occupy the core. "
-            "Containers and bags can contain empty space. Distinguish coated dense cores from "
-            "hollow tubes. A solid uses thickness 0 and core material fraction 1. A hollow shell "
-            "uses its physical wall thickness and empty core []. Layered structures use "
-            "surface material/thickness and core phases with volumetric fractions summing <=1; "
-            "remaining fraction is void. Do not fill a geometric wood-colored region entirely "
-            "with wood unless construction supports it. Do not copy example values. "
-            "Return JSON {regions:[{region_id:integer,construction:string,surface_material:string,"
-            "wall_thickness_m:number,core:[{material:string,fraction:number}],reason:string}]}. "
-            "Cover every listed region exactly once. Give concise reasons. Hidden structure is inferred."
-        )
-        results = []
-        if checked_bounds is not None:
-            prompt += (
-                "\nMANDATORY material-specific shell thickness bounds in METERS: "
-                + json.dumps(bounds)
-                + ". Every positive wall_thickness_m must lie in "
-                "its surface material's bounds. Cloth covering, foam and internal frame "
-                "are separate layers. Do not use total cushion thickness for cloth. "
-                "Thickness 0 denotes no distinct shell, with construction encoded in core."
-            )
-        if args.surface_hints:
-            hints = {
-                r["part_id"]: r["material_hypothesis_probabilities_uncalibrated"]
-                for r in original["parts"]
-            }
-            prompt += (
-                "\nIndependent weak surface evidence from texture/color for each numbered region: "
-                + json.dumps(hints)
-                + ". These are uncalibrated surface-material scores, "
-                "NOT core volume fractions. Use them to resolve region identity/material binding "
-                "with the images; explicitly justify contradictions. A geometric region can "
-                "include several physical pieces. Do not relabel all regions as the same frame "
-                "or leg without matching the numbered textured patches."
-            )
-        previous = None
-        for trial in range(3):
-            path = directory / f"round_{trial}.json"
-            question = prompt
-            if trial:
-                question += (
-                    "\nReview this previous construction hypothesis against the images and region "
-                    "sizes. Check especially thin covers, hollow spaces, frame location and "
-                    "volume fractions. Revise unsupported assignments; do not infer a target mass. "
-                    + json.dumps(previous)
-                )
-            if path.exists():
-                record = json.loads(path.read_text())
-                if record["prompt"] != question:
-                    raise ValueError("Cached prompt differs from frozen evidence")
-                answer = record["answer"]
-            else:
-                error = None
-                for attempt in range(2):
-                    query = (
-                        question
-                        if error is None
-                        else (
-                            question
-                            + "\nYour previous JSON failed validation: "
-                            + str(error)
-                            + ". Return a complete corrected JSON with valid volume fractions."
-                        )
-                    )
-                    response = model.generate(
-                        query,
-                        images,
-                        "Return physically consistent construction JSON.",
-                        seed=1200 + trial + attempt * 100,
-                        do_sample=True,
-                        temperature=0.6,
-                        top_p=0.9,
-                    )
-                    record = {
-                        "prompt": question,
-                        "actual_query": query,
-                        "response": asdict(response),
-                    }
-                    write_json(directory / f"raw_{trial}_{attempt}.json", record)
-                    try:
-                        answer = _parse_response_content(response.text)
-                        record["answer"] = answer
-                        record["integral"] = integrate_construction(
-                            points,
-                            owners,
-                            pitch,
-                            answer["regions"],
-                            densities,
-                            thickness_bounds=checked_bounds,
-                        )
-                        write_json(path, record)
-                        error = None
-                        break
-                    except (ValueError, KeyError, TypeError) as exc:
-                        error = exc
-                        record["validation_error"] = str(exc)
-                        write_json(directory / f"raw_{trial}_{attempt}.json", record)
-                if error is not None:
-                    raise ValueError(
-                        f"{scene} round {trial} invalid after schema repair: {error}"
-                    )
-            previous = answer
-            integral = integrate_construction(
-                points,
-                owners,
-                pitch,
-                answer["regions"],
-                densities,
-                thickness_bounds=checked_bounds,
-            )
-            results.append(integral["moments"]["mass_kg"])
-            print(scene, trial, results[-1], flush=True)
-        predictions.append(
+        edited = properties(partition, parts, answer, densities, wood_id, 2700.0)
+        expected_delta = next(
+            p["assigned"]["volume_m3"]
+            for p in partition["parts"]
+            if p["component_id"] == wood_id
+        ) * (2700 - densities["wood"])
+        if not np.isclose(
+            edited["mass_kg"] - result["mass_kg"], expected_delta, rtol=1e-7
+        ):
+            raise ValueError("Density edit violates fixed-domain mass conservation")
+        result.update(
             {
-                "scene_id": scene,
-                "mass_kg": float(np.mean(results)),
-                "round_masses_kg": results,
+                "trial": trial,
+                "answer": answer,
+                "partition": partition,
+                "edited_component_id": wood_id,
+                "edited_mass_kg": edited["mass_kg"],
+                "edit_mass_delta_kg": expected_delta,
             }
         )
-    write_json(args.output / "predictions.json", predictions)
+        write_json(args.output / f"hypothesis_{trial}.json", result)
+        results.append(result)
+        print(
+            "COMPONENT_MASS",
+            trial,
+            result["mass_kg"],
+            "overlap_removed_m3",
+            partition["overlap_removed_m3"],
+            flush=True,
+        )
+    prediction = {
+        "scene_id": scene,
+        "mass_kg": float(np.mean([r["mass_kg"] for r in results])),
+        "hypothesis_masses_kg": [r["mass_kg"] for r in results],
+    }
+    write_json(args.output / "predictions.json", [prediction])
+    files = list(args.output.glob("*.json"))
     write_json(
-        args.output / "prediction_seal.json",
-        {"predictions.json": file_sha256(args.output / "predictions.json")},
+        args.output / "prediction_seal.json", {p.name: file_sha256(p) for p in files}
     )
     weights = json.loads((args.root / "filtered_product_weights.json").read_text())
-    target = [float(weights.get(s, weights.get(s.split("_")[0]))) for s in ids]
+    target = float(weights.get(scene, weights.get(scene.split("_")[0])))
     report = {
-        "metrics": mass_metrics(target, [p["mass_kg"] for p in predictions]),
-        "scope": "five exposed development objects; reference geometry; VLM construction inference",
+        "prediction": prediction,
+        "target_mass_kg": target,
+        "metrics": mass_metrics([target], [prediction["mass_kg"]]),
+        "scope": "single exposed development case; not a whole-cohort comparison",
     }
     write_json(args.output / "report.json", report)
     return report
 
 
-def reanalyse_library(args):
-    """Paired parameter-source ablation with exactly the same saved VLM answers."""
-    verify_prediction_seal(args.output)
-    ids = json.loads(args.cohort.read_text(encoding="utf-8"))["object_ids"]
-    predictions = []
-    for scene in ids:
-        source = args.geometry / "objects" / scene
-        original = json.loads((source / "legacy_prediction.json").read_text())
-        densities = {
-            m["name"]: float(np.mean(m["density"])) for m in original["materials"]
-        }
-        thicknesses = {
-            m["name"]: float(np.mean(m["thickness_m"])) for m in original["materials"]
-        }
-        with np.load(source / "nearest_surface_field.npz") as field:
-            points, owners, pitch = (
-                field["centers_m"],
-                field["part_ids"],
-                float(field["pitch_m"]),
-            )
-        masses = []
-        for trial in range(3):
-            answer = json.loads(
-                (args.output / scene / f"round_{trial}.json").read_text()
-            )["answer"]
-            result = integrate_construction(
-                points, owners, pitch, answer["regions"], densities, thicknesses
-            )
-            masses.append(result["moments"]["mass_kg"])
-        predictions.append(
-            {
-                "scene_id": scene,
-                "mass_kg": float(np.mean(masses)),
-                "round_masses_kg": masses,
-            }
-        )
-    write_json(args.output / "library_predictions.json", predictions)
-    write_json(
-        args.output / "library_prediction_seal.json",
-        {
-            "library_predictions.json": file_sha256(
-                args.output / "library_predictions.json"
-            )
-        },
-    )
-    weights = json.loads((args.root / "filtered_product_weights.json").read_text())
-    target = [float(weights.get(s, weights.get(s.split("_")[0]))) for s in ids]
-    report = {
-        "metrics": mass_metrics(target, [r["mass_kg"] for r in predictions]),
-        "scope": "same VLM answers; positive shell thicknesses replaced by supplied material prior means",
-        "additional_VLM_calls": 0,
-    }
-    write_json(args.output / "library_report.json", report)
-    return report
-
-
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    for name in ("root", "assets", "geometry", "model", "output"):
+    for name in ("root", "reference", "model", "output"):
         parser.add_argument("--" + name, type=Path, required=True)
-    parser.add_argument(
-        "--cohort", type=Path, default=Path("configs/five_object_pilot.json")
-    )
-    parser.add_argument("--surface-hints", action="store_true")
-    parser.add_argument("--allow-unconstrained-thickness", action="store_true")
-    parser.add_argument("--stage", choices=("run", "library"), default="run")
-    args = parser.parse_args()
-    print(
-        json.dumps(run(args) if args.stage == "run" else reanalyse_library(args)),
-        flush=True,
-    )
+    print(json.dumps(run(parser.parse_args())), flush=True)
 
 
 if __name__ == "__main__":

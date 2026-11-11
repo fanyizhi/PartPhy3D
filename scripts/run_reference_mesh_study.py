@@ -12,7 +12,16 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "stage", choices=["prepare", "infer", "evaluate", "figures", "all"]
+        "stage",
+        choices=[
+            "prepare",
+            "infer",
+            "evaluate",
+            "domain-evaluate",
+            "domain-figures",
+            "figures",
+            "all",
+        ],
     )
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--root", type=Path, default=Path("data/abo500_five"))
@@ -32,6 +41,7 @@ def main():
         default=Path("configs/evidence/chaise_surface_material_review.json"),
     )
     parser.add_argument("--answers", type=Path)
+    parser.add_argument("--construction", type=Path)
     args = parser.parse_args()
     args.figures = args.figures or args.output / "figures"
 
@@ -41,6 +51,16 @@ def main():
     from tactile3d.figures import reference_study as figures
 
     figures.configure_style()
+
+    if args.stage in {"domain-evaluate", "domain-figures"}:
+        if args.construction is None:
+            parser.error(
+                "domain-evaluate requires --construction with sealed VLM hypotheses"
+            )
+        if args.stage == "domain-evaluate":
+            evaluation.evaluate_support_domains(args)
+        figures.draw_domain_retention(args)
+        return
 
     def step(operation, marker=None):
         if args.resume and marker is not None and (args.output / marker).is_file():

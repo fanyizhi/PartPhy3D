@@ -57,7 +57,216 @@ def savefig(fig, path):
             bbox_inches="tight",
             **({"pil_kwargs": {"compression": "tiff_lzw"}} if suffix == "tiff" else {}),
         )
+        if suffix == "svg":
+            svg = path.with_suffix(".svg")
+            svg.write_text(
+                "\n".join(line.rstrip() for line in svg.read_text().splitlines()) + "\n"
+            )
     plt.close(fig)
+
+
+def draw_domain_retention(args):
+    """One rendered example plus all whole-body reduction levels, from saved arrays."""
+    source = args.construction / "domain_evaluation"
+    pairs = read(source / "matched_qem.json")
+    if any(not p[k]["valid"] for p in pairs for k in ("component", "matched_global")):
+        raise ValueError("A complete domain evaluation is required before plotting")
+    mesh, labels, _pieces, _texture = load_prepared(args.output)
+    state = read(args.output / "part_state_geometry_constrained.json")
+    materials = {p["component_id"]: p["surface_material"] for p in state["parts"]}
+    out = args.figures
+    out.mkdir(parents=True, exist_ok=True)
+    rows = []
+    for pair in pairs:
+        for key in ("component", "matched_global"):
+            row = pair[key]
+            rows.append(
+                {
+                    "method": pair["method"] if key == "component" else "global_qem",
+                    "pair_method": pair["method"],
+                    "target_faces": pair["target_faces"],
+                    "actual_faces": row["actual_faces"],
+                    "surface_p95_mm": row["surface_p95_mm"],
+                    **{
+                        field: float(
+                            np.mean([r[field] for r in row["physical_errors"]])
+                        )
+                        for field in (
+                            "mass_relative",
+                            "com_error_mm",
+                            "inertia_relative",
+                        )
+                    },
+                }
+            )
+    with (out / "domain_retention_source.csv").open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
+        writer.writeheader()
+        writer.writerows(rows)
+    write_json(
+        out / "domain_retention_contract.json",
+        {
+            "claim": "Domain-density allocation improves moderate-budget whole-body retention; lowest-budget center-of-mass retention remains weaker.",
+            "archetype": "image plate + quantitative panels",
+            "backend": "Python/matplotlib",
+            "objects": 1,
+            "scope": "previously exposed reference object; development",
+            "construction_hypotheses": 3,
+            "statistic": "mean conditional relative error across fixed hypotheses",
+            "confidence_intervals": None,
+            "significance_tests": None,
+            "surface_metric": "95th percentile of 12000 fixed reference-to-reduced surface distances",
+            "mass_com_inertia_reference": "same completed-domain model at unreduced geometry; not measured physical truth",
+            "color_processing": "fixed surface-material pseudo-colors and shared normal-based lighting",
+            "image_example": "highest predeclared reduction budget; all budgets plotted below",
+            "dimensions_mm": [183, 165],
+            "exports": ["PNG", "SVG", "PDF", "600 dpi TIFF"],
+            "source_sha256": digest(source / "matched_qem.json"),
+        },
+    )
+    chosen = next(p for p in pairs if p["method"] == "domain_density_qem")
+    palette = {
+        "fabric": np.array([0.34, 0.57, 0.68]),
+        "wood": np.array([0.72, 0.52, 0.33]),
+    }
+    images = [
+        (
+            mesh.vertices,
+            mesh.faces,
+            labels,
+            f"Reference | {len(mesh.faces):,} triangles",
+        )
+    ]
+    for key, title in (
+        ("matched_global", "Global QEM"),
+        ("component", "Domain-density QEM"),
+    ):
+        row = chosen[key]
+        asset = source / row["mesh_asset"]
+        if digest(asset) != row["mesh_asset_sha256"]:
+            raise ValueError("Rendered candidate mesh hash mismatch")
+        with np.load(asset) as data:
+            images.append(
+                (
+                    data["vertices"],
+                    data["faces"],
+                    data["component_ids"],
+                    f"{title} | {row['actual_faces']:,} triangles",
+                )
+            )
+    style = {
+        "global_qem": ("Global QEM", "#626878", "o"),
+        "component_qem": ("Component QEM", "#7399b4", "s"),
+        "domain_density_qem": ("Domain-density QEM", "#bf7955", "^"),
+    }
+    with plt.rc_context(
+        {
+            "font.size": 7,
+            "axes.labelsize": 7,
+            "axes.titlesize": 7,
+            "xtick.labelsize": 6.5,
+            "ytick.labelsize": 6.5,
+        }
+    ):
+        fig = plt.figure(figsize=(183 / 25.4, 165 / 25.4))
+        grid = fig.add_gridspec(
+            3, 6, height_ratios=[1.05, 1, 1], hspace=0.62, wspace=1.1
+        )
+        for i, (vertices, faces, ids, title) in enumerate(images):
+            ax = fig.add_subplot(grid[0, 2 * i : 2 * i + 2])
+            colors = np.array([palette[materials[int(j)]] for j in ids])
+            ax.imshow(render_mesh(vertices, faces, colors, resolution=850))
+            ax.set_title(title, pad=1)
+            ax.axis("off")
+            if i == 0:
+                ax.text(
+                    -0.03,
+                    1.08,
+                    "a",
+                    transform=ax.transAxes,
+                    fontweight="bold",
+                    fontsize=9,
+                )
+        fields = [
+            ("surface_p95_mm", "Surface distance P95 (mm)", 1),
+            ("mass_relative", "Mass retention error (%)", 100),
+            ("com_error_mm", "Center-of-mass error (mm)", 1),
+            ("inertia_relative", "Inertia retention error (%)", 100),
+        ]
+        handles = []
+        for i, (field, label, scale) in enumerate(fields):
+            ax = fig.add_subplot(grid[1 + i // 2, (i % 2) * 3 : (i % 2 + 1) * 3])
+            for method, (name, color, marker) in style.items():
+                series = sorted(
+                    [r for r in rows if r["method"] == method],
+                    key=lambda r: r["actual_faces"],
+                )
+                (line,) = ax.plot(
+                    [r["actual_faces"] for r in series],
+                    [r[field] * scale for r in series],
+                    color=color,
+                    marker=marker,
+                    markersize=4,
+                    linewidth=1.1,
+                    label=name,
+                )
+                if i == 0:
+                    handles.append(line)
+            ax.set(
+                xlabel="Achieved triangle count",
+                ylabel=label,
+                yscale="log",
+                xlim=(600, 2650),
+            )
+            ax.set_xticks([800, 1600, 2400])
+            ax.text(
+                -0.18,
+                1.04,
+                chr(ord("b") + i),
+                transform=ax.transAxes,
+                fontweight="bold",
+                fontsize=9,
+            )
+        fig.legend(
+            handles=handles,
+            loc="lower center",
+            bbox_to_anchor=(0.51, 0.005),
+            ncol=3,
+            frameon=False,
+            fontsize=7,
+        )
+        fig.subplots_adjust(left=0.10, right=0.98, bottom=0.12, top=0.97)
+        savefig(fig, out / "domain_retention")
+    caption = (
+        "Whole-body retention on one previously exposed development object. "
+        "a, Shared material pseudo-colors and lighting on the reference and highest-budget reduced meshes. "
+        "b-e, All three predeclared budgets, plotted against achieved triangle counts. "
+        "Physical errors average three fixed construction hypotheses for the same object; these are not three independent objects. "
+        "Global QEM is rerun at each paired achieved face count (difference at most one triangle). "
+        "The reference is the conditional completed-domain model, not measured mass, center of mass or inertia. "
+        "Lines connect measured budgets; no confidence intervals or significance tests are asserted. "
+        "The lowest-budget domain-density result has worse center-of-mass retention than its paired global baseline.\n"
+    )
+    (out / "domain_retention_caption.md").write_text(caption)
+    assets = [out / f"domain_retention.{ext}" for ext in ("png", "svg", "pdf", "tiff")]
+    for path in assets:
+        if path.suffix == ".svg":
+            ET.parse(path)
+        elif path.suffix in (".png", ".tiff"):
+            with Image.open(path) as image:
+                image.verify()
+        elif not path.read_bytes().startswith(b"%PDF"):
+            raise ValueError("Invalid PDF figure")
+    write_json(
+        out / "domain_retention_validation.json",
+        {
+            "file_checks": "passed",
+            "source_rows": len(rows),
+            "files": {
+                p.name: {"sha256": digest(p), "bytes": p.stat().st_size} for p in assets
+            },
+        },
+    )
 
 
 def draw_properties(args):

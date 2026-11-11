@@ -4,6 +4,7 @@
 
 | 内容 | 预览 | 可编辑版本 |
 | --- | --- | --- |
+| 新版整物体减面及质量矩保持 | [PNG](domain_retention.png) | [SVG](domain_retention.svg) |
 | 接触点与支撑多边形 | [PNG](contact_geometry.png) | [SVG](contact_geometry.svg) |
 | 材质和物性先验 | [PNG](dense_property_maps.png) | [SVG](dense_property_maps.svg) |
 | QEM 减面对比 | [PNG](qem_mesh_comparison.png) | [SVG](qem_mesh_comparison.svg) |
@@ -13,7 +14,8 @@
 | 方法流程 | [PNG](method_overview.png) | [SVG](method_overview.svg) |
 
 `physical_parameter_sensitivity` 是补充敏感度图。
-正式比较使用 `matched_accuracy_cost` 和匹配面数表。
+新版整物体对照使用 `domain_retention`，包含三个减面档位的全部结果。
+早期四腿精度与耗时比较使用 `matched_accuracy_cost` 和匹配面数表。
 
 文件分工如下。
 
@@ -24,6 +26,9 @@
 - `CAPTIONS.md` 解释图例、单位、来源和评价范围；`artifact_validation.json` 保存文件校验信息。
 - PDF、TIFF 是本地投稿导出版本，由相同脚本生成；GitHub 主要保留预览、SVG 和源数据。
 
-本轮使用参考几何；物性字段是参数先验，质量矩计算限定于四条闭合木腿。
+`domain_retention` 的质量矩覆盖完整的条件部件物理域，其数值及口径见
+`domain_retention_source.csv`、`domain_retention_contract.json` 和 `domain_retention_caption.md`。
+这些是固定物理模型在减面前后的保持误差，绝对质量仍需改善；仅一个开发对象。
+其余早期图件使用参考几何和物性先验，质量矩计算限定于四条闭合木腿。
 完整结果见[实验说明](../../docs/results/chaise_reference_20261111_zh.md)，
 复现命令见[运行方法](../../docs/REFERENCE_MESH_STUDY_zh.md)。

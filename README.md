@@ -33,7 +33,8 @@ dependencies; see the setup guide. Use `all` for the complete workflow or
 
 Dataset images, reference models, checkpoints and intermediate exports are local
 resources, not bundled in Git. Current figures describe a reference-geometry
-development study; captions identify parameter priors and the four-leg domain.
+development study. The new [whole-body retention comparison](docs/baseline_mapping.md#vlm-construction-and-component-support-integration-2026-11-12)
+uses completed component domains; earlier physical comparisons cover four legs.
 
 Code is MIT licensed. Data and third-party components retain their own licenses;
 see [THIRD_PARTY.md](THIRD_PARTY.md).
