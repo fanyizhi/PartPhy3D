@@ -18,7 +18,7 @@
 
 ## 生成阶段稀疏解码
 
-![固定生成前端的稀疏计算对照](sparse_decoder_benchmark.png)
+[固定生成前端的稀疏计算对照 (historical)](https://github.com/fanyizhi/PartPhy3D/blob/a6d87d5399dff9979565d084b6001af8bb796e3a/docs/results/geometry_physics_20261107/sparse_decoder_benchmark.png)
 
 | 对象 | 实际运行的单元权重比例 | 解码/提取阶段中位提速 |
 | --- | ---: | ---: |
@@ -42,7 +42,7 @@
 
 ## 从图片学习尺度
 
-![尺度学习、误差和独立校准区间](image_scale.png)
+[尺度学习、误差和独立校准区间 (historical)](https://github.com/fanyizhi/PartPhy3D/blob/a6d87d5399dff9979565d084b6001af8bb796e3a/docs/results/geometry_physics_20261107/image_scale.png)
 
 冻结CLIP图像特征、对数长度岭回归；300训练对象，50验证对象选正则参数，另50对象
 独立校准，100测试对象。最终alpha=1.0。测试质量没有输入训练，测试尺寸不参与选参。
@@ -65,7 +65,7 @@
 
 ## 部件闭合域、材料编辑及条件质量
 
-![商品尺度辅助下的局部薄层质量](catalog_layer_masses.png)
+[商品尺度辅助下的局部薄层质量 (historical)](https://github.com/fanyizhi/PartPhy3D/blob/a6d87d5399dff9979565d084b6001af8bb796e3a/docs/results/geometry_physics_20261107/catalog_layer_masses.png)
 
 固定部件：躺椅坐垫表皮、集线器顶部、梯子顶部平台、镜面、保护套皮革片。
 按公开的厚度/最大边长比0.001、0.002、0.005构造，不按质量挑厚度。
@@ -77,7 +77,7 @@
 换材后复用几何矩，核对质量、质心和完整惯量的全量重新积分。
 
 图片学习尺度也已接入上述路径：
-[使用图片尺度的局部薄层质量](learned_scale_layer_masses.png)、
+[使用图片尺度的局部薄层质量 (historical)](https://github.com/fanyizhi/PartPhy3D/blob/a6d87d5399dff9979565d084b6001af8bb796e3a/docs/results/geometry_physics_20261107/learned_scale_layer_masses.png)、
 [记录及失败](learned_scale_patch_report.json)、[CSV与尺度传播范围](learned_scale_layer_masses.csv)。
 此时测试物体尺寸只用于尺度模块的独立评价，不输入局部域的构造。
 
@@ -88,9 +88,9 @@
 
 ## 刚体链路与综合入口
 
-![相同冲量下局部条件材料域的响应](conditional_rigid_response.png)
+[相同冲量下局部条件材料域的响应 (historical)](https://github.com/fanyizhi/PartPhy3D/blob/a6d87d5399dff9979565d084b6001af8bb796e3a/docs/results/geometry_physics_20261107/conditional_rigid_response.png)
 
-上述图为商品尺寸辅助的条件片；[图片尺度下的响应](learned_scale_rigid_response.png)
+上述图为商品尺寸辅助的条件片；[图片尺度下的响应 (historical)](https://github.com/fanyizhi/PartPhy3D/blob/a6d87d5399dff9979565d084b6001af8bb796e3a/docs/results/geometry_physics_20261107/learned_scale_rigid_response.png)
 采用同一冲量设置。程序检查能量、世界角动量及四元数范数漂移。
 这是零重力、无接触的局部刚体数值诊断，不验证 E、摩擦、硬度、变形或实物交互精度。
 [数值记录](rigid_response.json)、[图片尺度记录](learned_scale_rigid_response.json)。
@@ -108,7 +108,7 @@
 
 ## 独立分割评价准备
 
-[人工标注页面核验截图](annotation_ui_qa.png)。已实际打开页面验证画笔、撤销、
+[人工标注页面核验截图 (historical)](https://github.com/fanyizhi/PartPhy3D/blob/a6d87d5399dff9979565d084b6001af8bb796e3a/docs/results/geometry_physics_20261107/annotation_ui_qa.png)。已实际打开页面验证画笔、撤销、
 切换案例和PNG导出；导出测试保持0/255，未创建人工语义真值，也未勾选人工核验。
 [功能核验记录](annotation_ui_qa.json)。
 

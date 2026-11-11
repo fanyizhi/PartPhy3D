@@ -33,7 +33,7 @@ APE为对象相对误差的算术均值：
 | Qwen3-VL-8B，1视角 | 5 | 2.2265 | 34.76 | 0.6020 |
 | Qwen3-VL-8B，3视角 | 5 | 2.3228 | 46.53 | 0.8220 |
 
-![实际质量对比](mass_comparison.png)
+[实际质量对比 (historical)](https://github.com/fanyizhi/PartPhy3D/blob/a6d87d5399dff9979565d084b6001af8bb796e3a/docs/results/server_pilot_20261106/mass_comparison.png)
 
 | 对象 | ABO质量标签 kg | 2B单/三视角 kg | 8B单视角 kg | 8B三视角 kg |
 | --- | ---: | ---: | ---: | ---: |
@@ -73,7 +73,7 @@ APE为对象相对误差的算术均值：
 | 毛毡保护套 | 50,148 | 是 | 0.7251 |
 | 对象均值 | — | — | 0.6675 |
 
-![真实生成结果与原始图像](reconstruction.png)
+[真实生成结果与原始图像 (historical)](https://github.com/fanyizhi/PartPhy3D/blob/a6d87d5399dff9979565d084b6001af8bb796e3a/docs/results/server_pilot_20261106/reconstruction.png)
 
 上下两行视角不同；下排为统一方向、各自归一化显示大小的生成Mesh。真实投影分数
 来自固定相机下的轮廓评价，不从这张展示图估计。
@@ -99,14 +99,14 @@ FlexiCubes规则网格查询/曲面提取；不能宣称整个重建流程从未
 这是参考几何与相机的**坐标审计**，不是生成模型的精度，也不是论文创新贡献。
 [审计JSON](reference_frame_audit.json)。
 
-![参考几何坐标检查](reference_frame_audit.png)
+[参考几何坐标检查 (historical)](https://github.com/fanyizhi/PartPhy3D/blob/a6d87d5399dff9979565d084b6001af8bb796e3a/docs/results/server_pilot_20261106/reference_frame_audit.png)
 
 VLM输出仍有框重复、内部材料未知、实心声明与void内部冲突等问题。
 8B三视角有2个对象、单视角有3个对象包含至少一个“solid且interior=void”的
 部件。新增质量标记保留这些矛盾，不自动改成看起来合理的答案。
 [不改动封存预测的事后语义审计](semantic_audit.json)。
 
-![材料条件先验](material_priors.png)
+[材料条件先验 (historical)](https://github.com/fanyizhi/PartPhy3D/blob/a6d87d5399dff9979565d084b6001af8bb796e3a/docs/results/server_pilot_20261106/material_priors.png)
 
 图中密度和杨氏模量是**配置材料先验**，按VLM材料假设检索；不是材料实测值，
 不是已训练的物性回归结果，也没有独立准确率。灰色表示未知或空腔。

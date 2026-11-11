@@ -14,7 +14,7 @@
 - 禁用体素入口后新演示和学习仍运行。原体素原型仍保留，不混同两条路径。
 - 新主线完整CPU诊断耗时约12.8秒，仅描述该本机小实验，不能外推到ABO或GPU模型。
 
-![材料域截面](mesh_native_v0.6_sections.png)
+[材料域截面 (historical)](https://github.com/fanyizhi/PartPhy3D/blob/a6d87d5399dff9979565d084b6001af8bb796e3a/docs/results/mesh_native_v0.6_sections.png)
 
 灰色斜线表示泡沫E未提供，不能画成已知值。原本的外壳参数也只是设计预设。
 这些图不是从真实图像估计材料成功的证据。
@@ -39,7 +39,7 @@
 共享状态的0.618978，反而更差。误差与区间仍大，不能据此证明真实内部被识别。
 原物体MAP资产的ADE分别为0.419310和0.394167，不等于混合预测的ADE。
 
-![合成学习诊断](mesh_native_v0.6_learning.png)
+[合成学习诊断 (historical)](https://github.com/fanyizhi/PartPhy3D/blob/a6d87d5399dff9979565d084b6001af8bb796e3a/docs/results/mesh_native_v0.6_learning.png)
 
 逐种子全部指标、APE、MnRE及区间见[原始表](mesh_native_v0.6_metrics.csv)和
 [测试预测](mesh_native_v0.6_predictions.csv)。图中训练目标不同，损失曲线高度

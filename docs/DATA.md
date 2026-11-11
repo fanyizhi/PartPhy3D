@@ -7,16 +7,16 @@ It needs no dataset download, API key, pretrained checkpoint or GPU.
 
 ### Prepared five-object subset
 
-The repository now includes `data/abo500_five`, containing the fixed five IDs
-in `configs/five_object_pilot.json`. Verify the included subset with
-`python scripts/prepare_five_objects.py --verify-only`. To construct a new copy
-from an existing local release, specify a new output directory:
+Git retains the fixed five-object metadata, cameras, manifests and licenses in
+`data/abo500_five`. Dataset images and reference GLBs are stored locally and are
+not included in a fresh clone. Restore them from your existing ABO-500 release
+or prepare a new subset, then run the verifier:
 
 ```bash
 python scripts/prepare_five_objects.py --source-root /data/abo_500 \
   --mesh-source data/abo500_ten --output outputs/new_subset \
   --archive outputs/datasets/ABO500-five.zip
-python scripts/prepare_five_objects.py --verify-only
+python scripts/prepare_five_objects.py --output outputs/new_subset --verify-only
 ```
 
 ```text
@@ -38,8 +38,8 @@ substituting another object. Reference GLBs remain separate from generated Mesh.
 It does not include the previous `features/` and `ns/` caches, run inference,
 verify metric scale or establish camera-to-reference-Mesh registration.
 The data ZIP extracts to `abo500_five/`; extract it into the project's `data/`
-directory on the server. The fixed five-object subset is tracked in Git; other
-data directories remain ignored. The complete server ZIP places it directly
+directory on the server. Only subset metadata is tracked in Git; image and mesh
+files remain local. A server ZIP built after restoring the data places it directly
 inside `PartPhy3D/data/abo500_five/` and includes its attribution and licenses.
 
 These five objects are a development cohort, not SFT training data or an untouched
@@ -94,7 +94,7 @@ Use images with documented scale evidence and the actual frontend's outputs.
 Save frontend version, weights identifier, seed, input views and elapsed time.
 Keep reference and generated meshes in separate experiment directories. Native
 ABO bounding boxes or volumes must not silently supply scale to the main track.
-The complete InstantMesh/Qwen/learned-part path has not been executed here.
+See the latest results for the executed reconstruction and VLM development scope.
 
 ## Material-color preview
 

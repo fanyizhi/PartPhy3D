@@ -8,6 +8,7 @@ import hashlib
 import json
 import re
 import shutil
+import subprocess
 import time
 from pathlib import Path
 from typing import Any
@@ -20,6 +21,7 @@ SOURCE_DIRECTORIES = (
     "examples",
     "tests",
     "docs",
+    "paper_assets",
     ".github",
 )
 ROOT_FILES = (
@@ -106,6 +108,13 @@ def release_files(root: Path) -> list[Path]:
             )
             and path.relative_to(root).as_posix() not in EXCLUDED_FILES
         )
+    if (root / ".git").exists():
+        tracked = set(
+            subprocess.check_output(["git", "-C", str(root), "ls-files", "-z"])
+            .decode("utf-8")
+            .split("\0")
+        )
+        files = [path for path in files if path.relative_to(root).as_posix() in tracked]
     for path in files:
         relative = path.relative_to(root).as_posix()
         if path.is_symlink() or not path.resolve().is_relative_to(root):

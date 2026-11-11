@@ -10,3 +10,9 @@ and failures; distinguish implemented code, executed experiments and research cl
 
 Keep data, checkpoints, credentials and private machine settings outside Git.
 Do not present material priors as measurements or paper scores as reproduced results.
+
+Before every push, review `git diff --cached --stat` and clean the tracked tree.
+Keep one experiment entry point, consolidate duplicate scripts, and retain only
+the current figure set with its source data. Dataset images, reference models,
+run logs and draft exports stay local. Repair documentation links when removing
+files, and run the applicable tests and source-release check before publishing.

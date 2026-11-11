@@ -14,6 +14,10 @@ data/*
 wandb/
 .reference/
 checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
 .venv/
 .env
 .env.*
@@ -29,3 +33,16 @@ vla_server_ed25519
 # Local submission exports; PNG, editable SVG and source data remain versioned.
 paper_assets/chaise_reference_20261111_final/*.pdf
 paper_assets/chaise_reference_20261111_final/*.tiff
+
+# Datasets and historical render exports stay local, outside the source tree.
+data/abo500_five/scenes/*/images/
+data/abo500_five/meshes_reference/
+data/abo500_five/selected_objects.jpg
+docs/assets/
+docs/archive/
+docs/results/**/*.png
+docs/results/**/*.svg
+RELEASE_MANIFEST.json
+paper_assets/*
+!paper_assets/chaise_reference_20261111_final/
+paper_assets/chaise_reference_20261111_final/qem_accuracy_cost.*

@@ -1,6 +1,7 @@
 # 一次下载、统一安装、服务器校验
 
-固定五物体现在随GitHub仓库提供于`data/abo500_five/`。项目根目录中的
+固定五物体的元数据位于`data/abo500_five/`，图片和参考模型另行在本地准备。
+项目根目录中的
 `requirements.txt`一次安装几何处理、绘图、测试、视觉与微调依赖，以及项目本身。
 `environment.yml`只负责创建Python和pip，并调用同一份requirements。
 
@@ -15,16 +16,15 @@ python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
-python scripts/check_installation.py --training
+python scripts/check_installation.py --training --skip-data
 ```
 
-仓库包含5物体的150张图、相机、参考GLB、质量标签、许可及SHA-256清单，
-使用相对路径。数据约181MB，下载仓库需要相应流量和磁盘空间。
-无需重新复制ABO全量数据，也不需要Git LFS。
+仓库仅包含源码、最新结果和数据元信息。按[数据准备](DATA.md)恢复150张图和参考模型后，
+再运行不带`--skip-data`的检查。已有本地或服务器数据无需重新下载。
 
 ## 使用带数据的完整ZIP
 
-在本机项目根目录可生成迁移包：
+在已准备好数据的本机项目根目录可生成迁移包：
 
 ```bash
 python scripts/package_server.py --output outputs/server_bundle

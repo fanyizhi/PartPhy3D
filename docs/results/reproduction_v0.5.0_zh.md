@@ -39,12 +39,12 @@
 - [逐对象原始预测](learning_v0.5.0_predictions.csv)
 - [物理切片源数据](physical_fields_v0.5.0.csv)
 
-![学习结果](learning_results_v0.5.0.png)
+[学习结果 (historical)](https://github.com/fanyizhi/PartPhy3D/blob/a6d87d5399dff9979565d084b6001af8bb796e3a/docs/results/learning_results_v0.5.0.png)
 
 图a目标不同，仅检查收敛；图b单种子质量；图c三个种子的误差和均值；图d单种子
 前24个按参考质量排序的测试对象。没有把排序用于调参或选好结果。
 
-![密度与占用](physical_fields_v0.5.0.png)
+[密度与占用 (historical)](https://github.com/fanyizhi/PartPhy3D/blob/a6d87d5399dff9979565d084b6001af8bb796e3a/docs/results/physical_fields_v0.5.0.png)
 
 固定第一个测试对象，未挑选更漂亮样本。其预测内部与真值仍不同，图中如实显示。
 顶部统一密度色标，底部统一宏观占用色标，材料编辑保持占用不变。
@@ -62,7 +62,7 @@
 预算，再在同误差条件下比较开销。体积参考是解析场的高分辨曲面。
 完整各级结果见[CSV](adaptive_v0.5.0_metrics.csv)。
 
-![曲面预算与误差](adaptive_v0.5.0.png)
+[曲面预算与误差 (historical)](https://github.com/fanyizhi/PartPhy3D/blob/a6d87d5399dff9979565d084b6001af8bb796e3a/docs/results/adaptive_v0.5.0.png)
 
 ## 真实两个ABO对象：通路运行，质量不合格
 

@@ -12,8 +12,8 @@
 | Mesh、VLM 与融合消融 | [PNG](grounding_ablation.png) | [SVG](grounding_ablation.svg) |
 | 方法流程 | [PNG](method_overview.png) | [SVG](method_overview.svg) |
 
-`physical_parameter_sensitivity` 是补充敏感度图，`qem_accuracy_cost` 是原请求预算的探索曲线。
-正式比较以 `matched_accuracy_cost` 和匹配面数表为入口。
+`physical_parameter_sensitivity` 是补充敏感度图。
+正式比较使用 `matched_accuracy_cost` 和匹配面数表。
 
 文件分工如下。
 

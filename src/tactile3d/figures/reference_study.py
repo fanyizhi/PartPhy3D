@@ -185,38 +185,6 @@ def draw_properties(args):
         )
         ax.axis("off")
     savefig(fig, dest / "qem_mesh_comparison")
-    fig, axes = plt.subplots(1, 3, figsize=(7.2, 2.8), layout="constrained")
-    for method, color in zip(
-        ("global_qem", "component_qem", "sensitivity_qem"),
-        ("#8e969e", "#588cb2", "#bd805c"),
-    ):
-        subset = [r for r in rows if r["method"] == method]
-        x = [r["actual_faces"] for r in subset]
-        axes[0].plot(
-            x, [r["surface_p95_mm"] for r in subset], "o-", label=method, color=color
-        )
-        axes[1].plot(
-            x,
-            [
-                (
-                    100 * r["wood_errors"]["inertia_relative"]
-                    if r["wood_errors"]
-                    else np.nan
-                )
-                for r in subset
-            ],
-            "o-",
-            color=color,
-        )
-        axes[2].plot(x, [1000 * r["median_seconds"] for r in subset], "o-", color=color)
-    for ax, title, ylabel in zip(
-        axes,
-        ("Surface fidelity", "Closed wood-leg fidelity", "QEM + mapping cost"),
-        ("P95 distance (mm)", "Inertia tensor error (%)", "Median time (ms)"),
-    ):
-        ax.set(title=title, xlabel="Actual triangle count", ylabel=ylabel)
-    axes[0].legend(fontsize=7)
-    savefig(fig, dest / "qem_accuracy_cost")
     edit = read(out / "edit.json")
     fig, axes = plt.subplots(2, 3, figsize=(7.2, 5), layout="constrained")
     axes = axes.ravel()

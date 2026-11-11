@@ -34,7 +34,7 @@ alpha=16、dropout=0.05。固定00号单视图，白底384×384。学习率5e-5�
 完整100、补充95和90对象的数值见[报告](report.json)。这些仍是开发诊断，不能
 称作独立采集的盲测，也不能排除基座预训练接触过公开产品数据。
 
-![质量误差与损失](mass_sft.png)
+[质量误差与损失 (historical)](https://github.com/fanyizhi/PartPhy3D/blob/a6d87d5399dff9979565d084b6001af8bb796e3a/docs/results/abo_mass_sft_20261107/mass_sft.png)
 
 100个对象中，60例相对误差改善，35例变差，5例相同。按真实质量事后分组：
 

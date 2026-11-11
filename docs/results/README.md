@@ -21,13 +21,13 @@ published comparison methods.
 
 Version 0.6.0 adds the Mesh-native physical path and Mesh-basis response learning.
 See [executed checks, full metrics and limitations](mesh_native_v0.6_zh.md),
-[material sections](mesh_native_v0.6_sections.png) and
+[material sections (historical)](https://github.com/fanyizhi/PartPhy3D/blob/a6d87d5399dff9979565d084b6001af8bb796e3a/docs/results/mesh_native_v0.6_sections.png) and
 [local validation record](mesh_native_v0.6_validation.json). These are known-design
 and synthetic checks; the newer five-object diagnostics are recorded above.
 Published baselines remain pending.
 
 Version 0.5.1 adds a fixed-geometry, fixed-occupancy material edit on a known stool.
-The [three views](material_edit_v1_views.png), [physical changes](material_edit_v1_physics.png),
+The [three views (historical)](https://github.com/fanyizhi/PartPhy3D/blob/a6d87d5399dff9979565d084b6001af8bb796e3a/docs/results/material_edit_v1_views.png), [physical changes (historical)](https://github.com/fanyizhi/PartPhy3D/blob/a6d87d5399dff9979565d084b6001af8bb796e3a/docs/results/material_edit_v1_physics.png),
 [CSV](material_edit_v1_physics.csv) and [audit report](material_edit_v1_report.json)
 come from specified dimensions and material values, not real-object inference.
 The total mass changes from 5.120 to 6.432 kg. No pixels outside the selected

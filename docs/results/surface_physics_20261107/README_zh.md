@@ -8,13 +8,13 @@
 
 ## 实际输出
 
-![真实生成Mesh的表面物性与编辑](surface_properties_and_edits.png)
+[真实生成Mesh的表面物性与编辑 (historical)](https://github.com/fanyizhi/PartPhy3D/blob/a6d87d5399dff9979565d084b6001af8bb796e3a/docs/results/surface_physics_20261107/surface_properties_and_edits.png)
 
 每行：原图、SAM2 提议叠图、生成 Mesh 部件、密度先验、杨氏模量先验、换材。
 灰色是未知，物性来自 `configs/material_priors.yaml`，不是实测属性。
 颜色只是材料示意，不是物理渲染或材料纹理生成。
 
-![五物体部件换材](part_edit_comparison.png)
+[五物体部件换材 (historical)](https://github.com/fanyizhi/PartPhy3D/blob/a6d87d5399dff9979565d084b6001af8bb796e3a/docs/results/surface_physics_20261107/part_edit_comparison.png)
 
 编辑目标是显式指定的、已有观测面的部件。目标外的面颜色、密度、杨氏模量和
 像素变化均有断言检查。详见 [编辑记录](surface_edits.json)、[编辑命令](edit_specs.json)
@@ -33,13 +33,13 @@
 [完整拒绝与重复检查](surface_coverage_and_conflicts.json)。
 
 新增串行入口已重新执行第一个对象，五步合计约 166 秒，未复用定位与分割输出；
-[阶段时间和状态](pipeline_gate.json)、[单对象输出](pipeline_gate.png)。
+[阶段时间和状态](pipeline_gate.json)、[单对象输出 (historical)](https://github.com/fanyizhi/PartPhy3D/blob/a6d87d5399dff9979565d084b6001af8bb796e3a/docs/results/surface_physics_20261107/pipeline_gate.png)。
 本机和 Linux 服务器均通过 189 项测试，见 [检查记录](verification.json)；
 [服务器实际库版本](environment.json)单独记录。
 
 ## 第一次失败与修正
 
-[第一次的错误材料分配图](failure_initial_semantic_assignment.png)保留不覆盖。
+[第一次的错误材料分配图 (historical)](https://github.com/fanyizhi/PartPhy3D/blob/a6d87d5399dff9979565d084b6001af8bb796e3a/docs/results/surface_physics_20261107/failure_initial_semantic_assignment.png)保留不覆盖。
 主要问题是同一点被分别命名为“坐垫”和“木框”，以及大区域掩码吞没小部件。
 后来增加可见点位材料问答、重复掩码拒绝和嵌套区域规则，生成最终图。
 点位问答仍然是 VLM 假设；同一模型的回答一致不构成真实材料正确的证明。
@@ -48,9 +48,9 @@
 
 ## 实际对照
 
-![同物体质量对照](available_mass_baselines.png)
+[同物体质量对照 (historical)](https://github.com/fanyizhi/PartPhy3D/blob/a6d87d5399dff9979565d084b6001af8bb796e3a/docs/results/surface_physics_20261107/available_mass_baselines.png)
 
-![共同生成Mesh位置的密度查询](density_field_comparison.png)
+[共同生成Mesh位置的密度查询 (historical)](https://github.com/fanyizhi/PartPhy3D/blob/a6d87d5399dff9979565d084b6001af8bb796e3a/docs/results/surface_physics_20261107/density_field_comparison.png)
 
 使用原始 NeRF2Physics `predict_physical_property_integral` 和
 `predict_physical_property_query`，未修改其算法；源码固定为
