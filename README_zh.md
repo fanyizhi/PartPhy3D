@@ -1,5 +1,11 @@
 # PartPhy3D
 
+**2026-11-11 最新实验**：[主要图件入口](paper_assets/chaise_reference_20261111_final/README.md) ·
+[结果说明](docs/results/chaise_reference_20261111_zh.md) ·
+[运行方法](docs/REFERENCE_MESH_STUDY_zh.md)。
+已完成参考 Mesh 上的 VLM／几何／融合对照、任务约束 QEM、局部换材及几何接触图。
+图件入口集中列出主要结果；SVG、数值源数据与原始回答用于排版和复现。
+
 **v0.6.4**：生成阶段稀疏权重解码、图片尺度训练与独立校准、部件条件闭合材料域、
 换材后的局部物理矩与刚体响应已实际执行；新增独立人工标注及分割评价入口。
 [当前方法、范围和复现](docs/METHODS_V064_zh.md) ·
