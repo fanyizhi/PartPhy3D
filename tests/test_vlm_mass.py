@@ -31,6 +31,113 @@ OWNERS = np.array([0, 0])
 DENSITIES = {"cover": 1000.0, "foam": 40.0, "steel": 7850.0}
 
 
+def test_role_map_keeps_the_broad_upholstery_role_and_freezes_other_parameters():
+    from tactile3d.experiments.vlm_mass import apply_fraction_map
+
+    base = {
+        "upholstery": [
+            {"role": name, "foam_fraction": 0.9, "hidden_wood_fraction": 0.05}
+            for name in ["seat", "upholstery"]
+        ],
+        "underside": {"kind": "visual_cap", "thickness_mm": 0},
+    }
+    result = apply_fraction_map(base, {"wood_fraction_by_id": {"R0": 0.02, "R1": 0.07}})
+    assert [r["hidden_wood_fraction"] for r in result["upholstery"]] == [0.02, 0.07]
+    assert result["underside"] == base["underside"]
+    assert base["upholstery"][1]["hidden_wood_fraction"] == 0.05
+    for invalid in [{"R0": 0.02}, {"R0": 0.02, "R1": 0.2}, {"R0": False, "R1": 0.01}]:
+        with pytest.raises(ValueError):
+            apply_fraction_map(base, {"wood_fraction_by_id": invalid})
+
+
+def test_unresolved_surface_material_cannot_silently_receive_a_density():
+    from tactile3d.experiments.vlm_mass import validate_grounded_roles
+
+    mesh = trimesh.creation.box()
+    with pytest.raises(ValueError, match="Unresolved surface material"):
+        validate_grounded_roles(
+            [mesh],
+            [
+                {
+                    "component_id": 0,
+                    "surface_material": "mixed",
+                    "functional_role": "frame",
+                }
+            ],
+        )
+
+
+def test_closed_geometry_policy_does_not_fill_the_concave_empty_corner():
+    import manifold3d as manifold
+
+    from tactile3d.physics.support_domains import domain_mesh
+
+    solid = manifold.Manifold.cube((2, 1, 1)) + manifold.Manifold.cube((1, 2, 1))
+    mesh = domain_mesh(solid)
+    parts = [
+        {
+            "component_id": 0,
+            "surface_material": "fabric",
+            "functional_role": "upholstery",
+        }
+    ]
+    answer = {
+        "upholstery": [
+            {"role": "upholstery", "foam_fraction": 0.9, "hidden_wood_fraction": 0.07}
+        ],
+        "underside": {"kind": "visual_cap", "thickness_mm": 0},
+    }
+    convex = construct([mesh], parts, answer, 0.1)
+    closed = construct([mesh], parts, answer, 0.1, geometry_policy="closed")
+    assert convex["union_volume_m3"] == pytest.approx(3.5)
+    assert closed["union_volume_m3"] == pytest.approx(3.0)
+
+
+def test_strict_material_lookup_does_not_assign_screw_density_to_plastic():
+    from pathlib import Path
+
+    import yaml
+
+    from tactile3d.experiments.vlm_mass import resolve_native_priors
+
+    info = {
+        "caption": "a chair",
+        "candidate_materials_density": "(wood: 400-800 kg/m^3);(foam: 20-100 kg/m^3);(fabric: 100-300 kg/m^3);(screws: 7000-9000 kg/m^3)",
+        "thickness": "(fabric: 0.2-0.5 cm)",
+    }
+    cfg = yaml.safe_load(Path("configs/ten_object_pilot.yaml").read_text())
+    densities, thickness, sources = resolve_native_priors(
+        info, cfg, {"wood", "foam", "fabric", "plastic", "metal"}
+    )
+    assert densities["plastic"] == 1050.0
+    assert densities["metal"] == 8000.0
+    assert densities["wood"] == 600.0
+    assert thickness == pytest.approx(0.0035)
+    assert sources["plastic"]["source"] == "existing_declared_material_library_mean"
+    assert sources["metal"]["name"] == "screws"
+
+
+def test_inward_closed_concave_solid_is_reoriented_without_convex_completion():
+    import manifold3d as manifold
+
+    from tactile3d.physics.support_domains import domain_mesh
+
+    mesh = domain_mesh(
+        manifold.Manifold.cube((2, 1, 1)) + manifold.Manifold.cube((1, 2, 1))
+    )
+    mesh.invert()
+    vertices, faces = mesh.vertices.copy(), mesh.faces.copy()
+    parts = [
+        {"component_id": 0, "surface_material": "plastic", "functional_role": "frame"}
+    ]
+    answer = {"upholstery": [], "underside": {"kind": "visual_cap", "thickness_mm": 0}}
+    result = construct([mesh], parts, answer, 0.0035, geometry_policy="closed")
+    assert result["union_volume_m3"] == pytest.approx(3.0)
+    assert "reversed globally inward winding" in result["parts"][0]["geometry_source"]
+    np.testing.assert_array_equal(mesh.vertices, vertices)
+    np.testing.assert_array_equal(mesh.faces, faces)
+
+
 def test_whole_upholstered_frame_cannot_be_accepted_as_a_leg():
     from tactile3d.experiments.vlm_mass import validate_grounded_roles
 

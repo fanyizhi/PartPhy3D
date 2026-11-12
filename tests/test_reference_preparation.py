@@ -1,3 +1,4 @@
+import hashlib
 import json
 import struct
 from types import SimpleNamespace
@@ -8,6 +9,90 @@ import trimesh
 from PIL import Image
 
 from tactile3d.experiments import reference_inference, reference_study
+from tactile3d.vision.local_vlm import VLMResponse
+
+
+@pytest.mark.parametrize("mode,image_count", [("global-context", 6), ("isolated", 1)])
+def test_binding_evidence_scope_and_state_provenance(
+    tmp_path, monkeypatch, mode, image_count
+):
+    box = trimesh.creation.box()
+    labels = np.zeros(len(box.faces), dtype=int)
+    monkeypatch.setattr(
+        reference_inference,
+        "load_prepared",
+        lambda _: (box, labels, [box], np.full((len(box.faces), 3), 0.5)),
+    )
+    monkeypatch.setattr(
+        reference_inference,
+        "render_mesh",
+        lambda *a, **k: np.full((16, 16, 3), 255, dtype=np.uint8),
+    )
+    calls = []
+
+    class Model:
+        def __init__(self, *a, **k):
+            self.provenance = {"fixture": True}
+
+        def generate(self, prompt, images, *a, **k):
+            calls.append((prompt, len(images)))
+            return VLMResponse(
+                json.dumps(
+                    {"surface_material": "fabric", "functional_role": "upholstery"}
+                ),
+                0.0,
+                1,
+                1,
+                0,
+            )
+
+    monkeypatch.setattr(reference_inference, "LocalVLM", Model)
+    (tmp_path / "reference_arrays.npz").write_bytes(b"frozen geometry")
+    state = {
+        "geometry_sha256": hashlib.sha256(b"frozen geometry").hexdigest(),
+        "parts": [
+            {"component_id": 0, "surface_material": "mixed", "functional_role": "frame"}
+        ],
+    }
+    path = tmp_path / "part_state_geometry_constrained.json"
+    path.write_text(json.dumps(state))
+    original = path.read_bytes()
+    (tmp_path / "input_manifest.json").write_text(
+        json.dumps({"evidence_groups": [[0]]})
+    )
+    views = tmp_path / "views_contacts"
+    views.mkdir()
+    (views / "view_selection.json").write_text(
+        json.dumps({"4": [{"frame_index": i} for i in range(4)]})
+    )
+    for i in range(4):
+        Image.new("RGB", (16, 16), "red").save(views / f"view_{i:02d}.png")
+    reference_inference.refine_local_binding(
+        SimpleNamespace(
+            output=tmp_path, binding_evidence=mode, model=tmp_path / "model"
+        )
+    )
+    assert len(calls) == 3 and all(count == image_count for _, count in calls)
+    if mode == "isolated":
+        assert all("No other components are shown" in prompt for prompt, _ in calls)
+    assert path.read_bytes() == original
+    name = (
+        "part_state_isolated_audit.json"
+        if mode == "isolated"
+        else "part_state_local_audit.json"
+    )
+    directory = tmp_path / (
+        "local_binding_isolated_audit" if mode == "isolated" else "local_binding_audit"
+    )
+    updated = json.loads((tmp_path / name).read_text())
+    assert updated["parts"][0]["surface_material"] == "fabric"
+    assert updated["prior_state_sha256"] == hashlib.sha256(original).hexdigest()
+    assert (directory / name).read_bytes() == (tmp_path / name).read_bytes()
+    seal = json.loads((directory / "seal.json").read_text())
+    assert all(
+        hashlib.sha256((directory / file).read_bytes()).hexdigest() == digest
+        for file, digest in seal.items()
+    )
 
 
 def test_incomplete_download_is_rejected_before_geometry_processing(tmp_path):

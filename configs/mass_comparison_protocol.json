@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "status": "comparison recipe; complete-method benchmark pending",
+  "development": {
+    "training_split": "released ABO-500 train",
+    "validation_split": "released ABO-500 val",
+    "debug_cohort": "configs/train_furniture3_development.json",
+    "selection_policy": "model choices and occupancy calibration use train/validation only"
+  },
+  "test": {
+    "cohort": "configs/abo500_mass_test.json",
+    "report_original_test_100": true,
+    "report_separate_90_without_prior_development": true,
+    "failure_policy": "retain requested scene list; no aggregate ranking for incomplete runs",
+    "freeze_before_test": ["source revision", "model weights", "hyperparameters", "prompts", "material priors", "image and query budgets"],
+    "targets_opened_after_prediction_seal": true
+  },
+  "tracks": {
+    "official_method": "original representation, VLM and reconstruction protocol; report input and compute differences",
+    "shared_vlm": "Qwen3-VL-8B-Instruct NF4; matched input and query-budget comparisons require separately declared per-method recipes",
+    "reference_mesh": "provided ABO geometry with recorded metric scale; separate from generated/reconstructed geometry"
+  },
+  "metrics": {
+    "ade_kg": "macro mean, lower is better",
+    "alde": "macro natural-log error, lower is better",
+    "ape": "macro fraction internally, percentage for display, lower is better",
+    "mnre": "macro min-ratio, higher is better",
+    "selection": "report all four metrics; never replace aggregate results with a best object or best trial"
+  },
+  "statistics": {
+    "resampling_unit": "same scene IDs paired across methods",
+    "bootstrap_samples": 2000,
+    "seed": 17,
+    "interval": "95% paired percentile bootstrap of per-scene errors and differences"
+  },
+  "ablation": {
+    "binding_geometry": "2x2: original/local binding and convex/preserved closed geometry; density, thickness and core fractions fixed",
+    "full_pipeline": "separate from fixed-parameter mechanism ablation; average every predeclared construction trial",
+    "budgets": "report actual calls, input/output tokens, image pixels and inference time, including local audits and repairs",
+    "qem": "matched achieved triangles; same conditional physical state; report mass, COM and inertia retention separately from absolute accuracy"
+  },
+  "publication": {
+    "published_scores_are_reference_only": true,
+    "dense_property_accuracy_requires_independent_labels": true,
+    "development_failure_diagnostics": "retain locally; no manuscript failure-statistics figures requested"
+  }
+}

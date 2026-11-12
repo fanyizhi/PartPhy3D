@@ -18,6 +18,54 @@ def save(path: Path, payload: object) -> Path:
     return path
 
 
+def test_paper_cli_requires_a_frozen_cohort(monkeypatch):
+    from tactile3d.cli import main as cli_main
+
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "tactile3d",
+            "paper-figures",
+            "--run",
+            "A=one.json",
+            "--run",
+            "B=two.json",
+            "--output",
+            "fig",
+        ],
+    )
+    with pytest.raises(SystemExit) as error:
+        cli_main()
+    assert error.value.code == 2
+
+
+def test_paper_cli_rejects_malformed_cohort_instead_of_using_intersection(
+    tmp_path, monkeypatch
+):
+    from tactile3d.cli import main as cli_main
+
+    path = save(tmp_path / "cohort.json", {"wrong_field": ["a"]})
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "tactile3d",
+            "paper-figures",
+            "--run",
+            "A=one.json",
+            "--run",
+            "B=two.json",
+            "--output",
+            "fig",
+            "--cohort",
+            str(path),
+        ],
+    )
+    with pytest.raises(ValueError, match="object_ids"):
+        cli_main()
+
+
 def prediction(scene: str, mean: float, target: float) -> dict[str, object]:
     return {
         "scene_id": scene,

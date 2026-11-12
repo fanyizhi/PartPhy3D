@@ -40,12 +40,16 @@ def main() -> None:
     demo = sub.add_parser("make-demo-image")
     demo.add_argument("--output", required=True)
 
-    abo_validate = sub.add_parser("abo500-validate", help="validate ABO-500 data and meshes")
+    abo_validate = sub.add_parser(
+        "abo500-validate", help="validate ABO-500 data and meshes"
+    )
     _add_abo_dataset_args(abo_validate)
     abo_validate.add_argument("--split", default="all")
     abo_validate.add_argument("--limit", type=int)
 
-    abo_run = sub.add_parser("abo500-run", help="run mesh physical inference on ABO-500")
+    abo_run = sub.add_parser(
+        "abo500-run", help="run mesh physical inference on ABO-500"
+    )
     _add_abo_dataset_args(abo_run)
     abo_run.add_argument("--config", default="configs/abo500_mesh.yaml")
     abo_run.add_argument("--split", default="test")
@@ -57,25 +61,34 @@ def main() -> None:
         choices=("surface_only", "heuristic", "file", "openai_compatible"),
         help="override config VLM/interior backend",
     )
-    abo_run.add_argument("--vlm-response-root", help="cached response root for file backend")
+    abo_run.add_argument(
+        "--vlm-response-root", help="cached response root for file backend"
+    )
     abo_run.add_argument("--vlm-base-url", help="OpenAI-compatible VLM base URL")
     abo_run.add_argument("--vlm-model", help="served multimodal model name")
 
     abo_calibrate = sub.add_parser(
-        "abo500-calibrate", help="fit weakly supervised material calibration from mass labels"
+        "abo500-calibrate",
+        help="fit weakly supervised material calibration from mass labels",
     )
     abo_calibrate.add_argument("--features", required=True)
     abo_calibrate.add_argument("--config", default="configs/abo500_mesh.yaml")
     abo_calibrate.add_argument("--output", required=True)
 
-    abo_evaluate = sub.add_parser("abo500-evaluate", help="evaluate ABO-500 mass predictions")
+    abo_evaluate = sub.add_parser(
+        "abo500-evaluate", help="evaluate ABO-500 mass predictions"
+    )
     abo_evaluate.add_argument("--predictions", required=True)
     abo_evaluate.add_argument("--output")
 
-    abo_demo = sub.add_parser("abo500-make-demo", help="create a tiny ABO-500-shaped fixture")
+    abo_demo = sub.add_parser(
+        "abo500-make-demo", help="create a tiny ABO-500-shaped fixture"
+    )
     abo_demo.add_argument("--root", required=True)
 
-    mesh_run = sub.add_parser("mesh-run", help="infer physics from one metric textured mesh")
+    mesh_run = sub.add_parser(
+        "mesh-run", help="infer physics from one metric textured mesh"
+    )
     mesh_run.add_argument("--mesh", required=True)
     mesh_run.add_argument("--mesh-unit-to-meter", required=True, type=float)
     mesh_run.add_argument("--config", default="configs/abo500_mesh_vlm.yaml")
@@ -94,7 +107,8 @@ def main() -> None:
     mesh_run.add_argument("--vlm-model")
 
     prepare_sft = sub.add_parser(
-        "prepare-sft", help="build grouped multimodal SFT splits from expert annotations"
+        "prepare-sft",
+        help="build grouped multimodal SFT splits from expert annotations",
     )
     prepare_sft.add_argument("--annotations", required=True)
     prepare_sft.add_argument("--image-root")
@@ -111,13 +125,16 @@ def main() -> None:
     fit_psych.add_argument("--output", required=True)
     fit_psych.add_argument("--l2", type=float, default=1e-3)
 
-    train_vlm = sub.add_parser("train-vlm", help="LoRA/QLoRA fine-tune a multimodal model")
+    train_vlm = sub.add_parser(
+        "train-vlm", help="LoRA/QLoRA fine-tune a multimodal model"
+    )
     from tactile3d.training.train_vlm import add_training_arguments
 
     add_training_arguments(train_vlm)
 
     part_replace = sub.add_parser(
-        "part-replace", help="replace a labelled mesh part and recompute physical properties"
+        "part-replace",
+        help="replace a labelled mesh part and recompute physical properties",
     )
     part_replace.add_argument("--source", required=True)
     part_replace.add_argument("--face-labels", required=True)
@@ -130,19 +147,26 @@ def main() -> None:
     part_replace.add_argument("--no-icp", action="store_true")
     part_replace.add_argument("--output", required=True)
 
-    mesh_volume = sub.add_parser("mesh-volume", help="validate and integrate mesh volume")
+    mesh_volume = sub.add_parser(
+        "mesh-volume", help="validate and integrate mesh volume"
+    )
     mesh_volume.add_argument("--mesh", required=True)
     mesh_volume.add_argument("--mesh-unit-to-meter", required=True, type=float)
     mesh_volume.add_argument(
-        "--repair-strategy", choices=("none", "fill_only", "fill_then_hull", "voxel_envelope"), default="fill_only"
+        "--repair-strategy",
+        choices=("none", "fill_only", "fill_then_hull", "voxel_envelope"),
+        default="fill_only",
     )
     mesh_volume.add_argument("--convex-hull-proxy", action="store_true")
-    mesh_volume.add_argument("--density", type=float, help="optional uniform density in kg/m^3")
+    mesh_volume.add_argument(
+        "--density", type=float, help="optional uniform density in kg/m^3"
+    )
     mesh_volume.add_argument("--fill-fraction", type=float, default=1.0)
     mesh_volume.add_argument("--output")
 
     import_baseline = sub.add_parser(
-        "import-mass-baseline", help="normalize PUGS or scalar baseline mass predictions"
+        "import-mass-baseline",
+        help="normalize PUGS or scalar baseline mass predictions",
     )
     import_baseline.add_argument("--predictions", required=True)
     import_baseline.add_argument("--targets", required=True)
@@ -157,6 +181,21 @@ def main() -> None:
         "--run", action="append", required=True, metavar="METHOD=PREDICTIONS_JSON"
     )
     paper_figures.add_argument("--output", required=True)
+    paper_figures.add_argument(
+        "--cohort",
+        required=True,
+        help="Frozen JSON object_ids list; incomplete methods cannot be ranked",
+    )
+    paper_figures.add_argument(
+        "--evaluation-context",
+        choices=[
+            "development",
+            "published_test",
+            "heldout_subset",
+            "synthetic_validation",
+        ],
+        default="development",
+    )
     paper_figures.add_argument("--bootstrap-samples", type=int, default=2000)
     paper_figures.add_argument("--seed", type=int, default=17)
     paper_figures.add_argument(
@@ -182,7 +221,8 @@ def main() -> None:
     )
 
     abo_pilot = sub.add_parser(
-        "abo-pilot", help="run the reproducible ABO sofa physics pilot and export paper figures"
+        "abo-pilot",
+        help="run the reproducible ABO sofa physics pilot and export paper figures",
     )
     abo_pilot.add_argument("--asset-dir", default="data/pilot/B075X4QMX3")
     abo_pilot.add_argument("--output", default="outputs/abo_sofa_pilot")
@@ -206,7 +246,8 @@ def main() -> None:
     token_pilot.add_argument("--pitch", type=float, default=0.04)
 
     detail_pilot = sub.add_parser(
-        "assembly-detail-pilot", help="inspect native sofa pieces and candidate leg connections"
+        "assembly-detail-pilot",
+        help="inspect native sofa pieces and candidate leg connections",
     )
     detail_pilot.add_argument("--asset-dir", default="data/pilot/B075X4QMX3")
     detail_pilot.add_argument("--output", default="outputs/assembly_detail_pilot")
@@ -368,12 +409,22 @@ def main() -> None:
     elif args.cmd == "paper-figures":
         from tactile3d.figures.comparison import generate_comparison_figures
 
+        cohort = json.loads(Path(args.cohort).read_text(encoding="utf-8"))
+        cohort_ids = cohort.get("object_ids") if isinstance(cohort, dict) else cohort
+        if (
+            not isinstance(cohort_ids, list)
+            or not cohort_ids
+            or any(not isinstance(i, str) or not i for i in cohort_ids)
+        ):
+            raise ValueError("A non-empty frozen object_ids list is required")
         report = generate_comparison_figures(
             _parse_runs(args.run),
             args.output,
             bootstrap_samples=args.bootstrap_samples,
             seed=args.seed,
             formats=tuple(args.formats),
+            cohort_ids=cohort_ids,
+            evaluation_context=args.evaluation_context,
         )
         print(json.dumps(report, indent=2))
     elif args.cmd == "object-figures":
@@ -392,17 +443,36 @@ def main() -> None:
         from tactile3d.figures.assembly_pilot import run_assembly_pilot
 
         report = run_assembly_pilot(args.asset_dir, args.output)
-        print(json.dumps({"output": args.output, "parts": len(report["parts"]),
-                          "connections": report["connections"]}, indent=2))
+        print(
+            json.dumps(
+                {
+                    "output": args.output,
+                    "parts": len(report["parts"]),
+                    "connections": report["connections"],
+                },
+                indent=2,
+            )
+        )
     elif args.cmd == "token-mapping-pilot":
         from tactile3d.figures.token_pilot import run_token_pilot
 
         report = run_token_pilot(
-            args.asset_dir, args.output, samples=args.samples, seed=args.seed, pitch=args.pitch
+            args.asset_dir,
+            args.output,
+            samples=args.samples,
+            seed=args.seed,
+            pitch=args.pitch,
         )
-        print(json.dumps({"output": args.output,
-                          "mass": report["mass_prior_predictive_kg"],
-                          "geometry": report["geometry"]}, indent=2))
+        print(
+            json.dumps(
+                {
+                    "output": args.output,
+                    "mass": report["mass_prior_predictive_kg"],
+                    "geometry": report["geometry"],
+                },
+                indent=2,
+            )
+        )
     elif args.cmd == "abo-pilot":
         from tactile3d.figures.abo_pilot import generate_abo_sofa_pilot
 
@@ -419,7 +489,9 @@ def main() -> None:
 
 def _add_abo_dataset_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--root", required=True, help="ABO-500 root containing scenes/")
-    parser.add_argument("--mesh-root", help="optional external directory containing scene meshes")
+    parser.add_argument(
+        "--mesh-root", help="optional external directory containing scene meshes"
+    )
     parser.add_argument(
         "--mesh-unit-to-meter",
         type=float,

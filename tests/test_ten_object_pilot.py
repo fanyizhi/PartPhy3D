@@ -6,6 +6,7 @@ import trimesh
 import yaml
 
 from tactile3d.experiments.ten_objects import (
+    canonical_material,
     construction_profile,
     geometric_support,
     materials_from_info,
@@ -18,6 +19,13 @@ from tactile3d.mesh.segmentation import nearest_surface_labels
 
 def config():
     return yaml.safe_load(Path("configs/ten_object_pilot.yaml").read_text())
+
+
+def test_strict_cached_material_names_reject_unknown_instead_of_guessing_plastic():
+    assert canonical_material("screws", strict=True) == "metal"
+    assert canonical_material("unspecified trim", strict=True) == "unknown"
+    assert canonical_material("polypropylene", strict=True) == "plastic"
+    assert canonical_material("screws") == "plastic"  # Legacy replay remains explicit.
 
 
 def test_large_triangle_centroid_does_not_steal_material_assignment():

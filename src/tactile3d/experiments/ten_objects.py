@@ -54,8 +54,10 @@ YOUNGS = {"wood": 1e10, "foam": 2e6, "fabric": 1e8, "metal": 2e11,
           "rubber": 8e6, "board": 1e10, "mineral": 3e10, "composite": 2e10}
 
 
-def canonical_material(name):
+def canonical_material(name, *, strict=False):
     name = name.lower()
+    if strict and any(word in name for word in ("screw", "nail", "bolt", "rivet")):
+        return "metal"
     if any(word in name for word in ("foam", "batting")):
         return "foam"
     if any(word in name for word in ("wood", "mdf")):
@@ -74,6 +76,11 @@ def canonical_material(name):
         return "rubber"
     if any(word in name for word in ("concrete", "ceramic", "stone")):
         return "mineral"
+    if strict and not any(word in name for word in (
+        "plastic", "polypropylene", "polyethylene", "polycarbonate", "acrylic", "resin",
+        "pvc", "abs", "polystyrene", "ptfe",
+    )):
+        return "unknown"
     return "plastic"
 
 
@@ -106,10 +113,10 @@ def construction_profile(caption):
     return "generic"
 
 
-def materials_from_info(info, cfg):
+def materials_from_info(info, cfg, *, strict=False):
     ranges = parse_ranges(info["candidate_materials_density"])
     thickness = parse_ranges(info["thickness"])
-    result = [{"name": name, "kind": canonical_material(name), "density": list(pair),
+    result = [{"name": name, "kind": canonical_material(name, strict=strict), "density": list(pair),
                "thickness_m": [v/100 for v in thickness.get(name, (.1, .5))],
                "source": "released_cached_language_proposal"}
               for name, pair in ranges.items()]

@@ -42,7 +42,9 @@ def evaluate_support_domains(args):
     if any(file_sha256(source / name) != value for name, value in seal.items()):
         raise ValueError("Construction prediction seal mismatch")
     protocol = json.loads((source / "protocol.json").read_text())
-    state_path = args.output / "part_state_geometry_constrained.json"
+    state_path = args.output / protocol.get(
+        "part_state_name", "part_state_geometry_constrained.json"
+    )
     state = json.loads(state_path.read_text())
     if file_sha256(state_path) != protocol["part_state_sha256"] or state[
         "geometry_sha256"
@@ -79,7 +81,14 @@ def evaluate_support_domains(args):
 
     def integrate(subsets, answer):
         return properties(
-            construct(subsets, parts, answer, thickness, allow_removed=True),
+            construct(
+                subsets,
+                parts,
+                answer,
+                thickness,
+                allow_removed=True,
+                geometry_policy=protocol.get("geometry_policy", "convex"),
+            ),
             parts,
             answer,
             densities,

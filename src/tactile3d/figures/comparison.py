@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import csv
+import hashlib
+import json
 from itertools import combinations
 from pathlib import Path
 from typing import Any
@@ -71,11 +73,19 @@ def generate_comparison_figures(
     )
     report: dict[str, Any] = {
         "schema_version": 1,
-        "comparison_unit": "declared cohort"
-        if cohort_ids is not None
-        else "common objects",
+        "comparison_unit": (
+            "declared cohort" if cohort_ids is not None else "common objects"
+        ),
         "evaluation_context": evaluation_context,
         "num_common_scenes": len(common_ids),
+        "cohort_ids": common_ids,
+        "scene_list_sha256": hashlib.sha256(
+            json.dumps(common_ids, separators=(",", ":")).encode()
+        ).hexdigest(),
+        "prediction_files_sha256": {
+            name: hashlib.sha256(Path(path).read_bytes()).hexdigest()
+            for name, path in runs.items()
+        },
         "bootstrap_samples": bootstrap_samples,
         "confidence_interval": "paired nonparametric percentile bootstrap, 95%",
         "methods": {},

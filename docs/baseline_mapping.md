@@ -427,3 +427,109 @@ both complete scene IDs and ASIN keys. `vlm_mass --evaluate-only --root ...
 match; reports and the previous seal are excluded from the new prediction seal.
 Objects with no independent solid domain skip the optional solid-density edit
 control instead of aborting their mass prediction.
+
+### Local grounding and closed-boundary diagnostic (2026-11-13)
+
+`bind-local` selects at most three evidence groups, prioritizing geometric leg
+conflicts and then uncertain groups by area. Each query receives four original
+views, an isolated textured target and a blue-highlighted context. The artificial
+highlight is explicitly excluded as material evidence. Three joint material/role
+votes are saved per target; this agreement is not a calibrated probability.
+Original states remain unchanged. Mixed or unknown materials stop integration
+with an explicit error instead of receiving a guessed density.
+
+On training object `B075X5TN2K_ATVPDKIKX0DER`, the wide upholstered body was
+previously bound as a wooden leg. Local evidence returned fabric/upholstery in
+all three trials. A fixed-parameter 2-by-2 diagnostic holds the pre-existing
+material density, fabric thickness, foam occupancy (0.90), hidden-wood fraction
+(0.07), and underside hypothesis constant:
+
+| Binding | Upholstery boundary | Mass (kg) | APE (%) |
+| --- | --- | ---: | ---: |
+| Original | Convex completion | 114.0251 | 214.2280 |
+| Original | Preserve closed boundary | 113.6537 | 213.2047 |
+| Local target audit | Convex completion | 43.8756 | 20.9115 |
+| Local target audit | Preserve closed boundary | 36.1838 | 0.2855 |
+
+The catalogue target is 36.28736 kg. This is a single-object mechanism diagnostic,
+not the complete VLM method or a test-set benchmark. The complete three-query
+construction procedure on the corrected state predicts 28.7431 kg (20.7903%
+APE), averaging all three hypotheses. It must not be replaced by the fixed-prior
+diagnostic. Exact raw artifacts, predictions and seals are retained on the server
+under `outputs/local_binding_geometry_audit_20261113` and
+`outputs/local_binding_fullmass_20261113`; the local evidence manifest records
+their file hashes.
+
+`--geometry-policy closed` preserves valid concave closed upholstery instead of
+filling empty space with its convex hull. Convex erosion uses inward plane
+offsets; concave erosion uses an inscribed 16-segment polyhedral ball, which
+underestimates the Euclidean shell thickness contribution. This is a stated
+geometric approximation, not recovered internal structure. Open inputs retain
+explicit convex/prism completion. Geometry and part-state hashes are recorded.
+
+Fraction refinement uses a fixed region-ID dictionary to prevent omitted broad
+roles. Numerical feasibility is checked outside the prompt; exposed numerical
+bounds remain an explicit diagnostic option. This improves response coverage,
+not established physical accuracy. In the two completed training objects,
+numeric-geometry refinement did not outperform its no-numeric-geometry control;
+on the sectional sofa both returned 39.0969 kg against 41.0047 kg. The first
+training chair was not covered by that refinement experiment. There is no complete three-object refined
+score, and these development runs do not establish a gain over PUGS or
+Gen2Physics. Detailed unsuccessful-run diagnostics remain local.
+
+An additional `--binding-evidence isolated` control uses only the textured target
+and metric extent. On the first training chair, the contextual queries repeatedly
+described the whole chair as mixed material, even when their explanation called
+the target a wooden leg. Isolated evidence returned wood/leg in all three trials;
+the two thin trim targets received plastic hypotheses. These are inferred labels,
+not independently annotated material accuracy. The additional queries are part
+of the actual development cost, not a budget-matched comparison win.
+
+Numerical replay exposed two independent implementation defects. The historical
+cached-name resolver mapped an unrecognized `screws` proposal to plastic,
+attaching its 8000 kg/m3 density to plastic targets. Native inference now uses
+strict name resolution: fasteners map to metal, unknown names remain unknown,
+and absent plastic uses the pre-existing material library mean with a recorded
+source/hash. Historical generic-pilot APIs retain their explicit legacy default;
+new native inference does not use that fallback. Secondly, a watertight,
+winding-consistent trim had globally inward orientation. Closed mode now flips
+that orientation without moving vertices before deciding whether completion is
+needed. Open or inconsistent boundaries are not certified by this operation.
+
+Solid domains also declare that their core equals the entire assigned solid.
+This avoids an unnecessary coincident-surface intersection and subtraction that
+created signed numerical slivers on the thin trim. No negative volume is clipped.
+The same three sealed construction answers were replayed under the four density
+and orientation combinations in `outputs/first_chair_numeric_fixes_20261113`.
+These fixes reduced the numerical overestimate but did not resolve its full
+construction error. Open upholstered geometry completion and hidden occupancy
+remain the next development targets; no target-fitted parameter was introduced.
+
+Refinement changes only hidden-wood core density while freezing the partition,
+foam, thickness and underside hypothesis. It therefore reuses sealed unit-density
+moments exactly instead of recomputing expensive identical CSG. Resume verifies
+input hashes, construction mode and raw prompts before reusing responses.
+
+The locked comparison recipe is `configs/mass_comparison_protocol.json`.
+`paper-figures` requires `--cohort` and refuses incomplete rankings; outputs
+include scene IDs and prediction-file hashes. Report ADE, ALDE, APE and MnRE
+together with paired scene bootstrap intervals. Official-model, shared-VLM and
+reference-geometry tracks remain separate, with actual query and image budgets
+including local audits. Train/validation calibration must precede freezing the
+held-out evaluation recipe. Conditional QEM retention remains separate from
+absolute mass accuracy.
+
+```bash
+python scripts/run_reference_mesh_study.py bind-local \
+  --output outputs/new_reference --model /path/to/Qwen3-VL-8B-Instruct
+# Optional controlled follow-up for unresolved targets; keep its output separate.
+python scripts/run_reference_mesh_study.py bind-local \
+  --output outputs/new_reference \
+  --part-state outputs/new_reference/part_state_local_audit.json \
+  --binding-evidence isolated --model /path/to/Qwen3-VL-8B-Instruct
+python -m tactile3d.experiments.vlm_mass \
+  --root /path/to/abo_500 --reference outputs/new_reference \
+  --part-state outputs/new_reference/part_state_local_audit.json \
+  --geometry-policy closed --model /path/to/Qwen3-VL-8B-Instruct \
+  --output outputs/local_grounded_construction
+```

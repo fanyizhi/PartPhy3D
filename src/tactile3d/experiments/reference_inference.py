@@ -27,6 +27,226 @@ from tactile3d.vision.view_selection import select_azimuth_views
 from tactile3d.vision.vlm_interior import _parse_response_content
 
 
+def refine_local_binding(args):
+    """Audit one target at a time, preserving native geometry and prior states."""
+    from tactile3d.experiments.vlm_mass import leg_role_conflicts
+
+    out = args.output
+    mesh, labels, pieces, texture = load_prepared(out)
+    mode = getattr(args, "binding_evidence", "global-context")
+    if mode not in {"global-context", "isolated"}:
+        raise ValueError("Unknown binding evidence mode")
+    path = (
+        getattr(args, "part_state", None)
+        or out / "part_state_geometry_constrained.json"
+    )
+    if path.resolve().parent != out.resolve():
+        raise ValueError("Binding state must share its reference directory")
+    state = json.loads(path.read_text())
+    if (
+        state["geometry_sha256"]
+        != hashlib.sha256((out / "reference_arrays.npz").read_bytes()).hexdigest()
+    ):
+        raise ValueError("Binding state geometry mismatch")
+    conflict_ids = set(leg_role_conflicts(pieces, state["parts"]))
+    manifest = json.loads((out / "input_manifest.json").read_text())
+    groups = manifest.get("evidence_groups", [[i] for i in range(len(pieces))])
+    priorities = []
+    for index, children in enumerate(groups):
+        rows = [p for p in state["parts"] if p["component_id"] in children]
+        conflict = bool(conflict_ids.intersection(children))
+        uncertain = any(
+            p.get("support", 0) < 3 or p["surface_material"] in {"mixed", "unknown"}
+            for p in rows
+        )
+        if conflict or uncertain:
+            priorities.append(
+                (not conflict, -sum(pieces[i].area for i in children), index)
+            )
+    selected = [row[2] for row in sorted(priorities)[:3]]
+    directory = out / (
+        "local_binding_isolated_audit" if mode == "isolated" else "local_binding_audit"
+    )
+    directory.mkdir(exist_ok=False)
+    views = json.loads((out / "views_contacts/view_selection.json").read_text())["4"]
+    paths = [out / f"views_contacts/view_{v['frame_index']:02d}.png" for v in views]
+    originals = [Image.open(p).copy() for p in paths]
+    protocol = {
+        "selected_groups": selected,
+        "evidence_mode": mode,
+        "images_per_query": 1 if mode == "isolated" else 6,
+        "total_queries": 3 * len(selected),
+        "selection": "geometric leg conflicts first, then uncertain groups by area; max 3 groups",
+        "source_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        "prior_state_sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+        "mass_labels_used": False,
+        "trials_per_group": 3,
+        "image_hashes": {
+            p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in paths
+        },
+    }
+    write_json(directory / "protocol.json", protocol)
+    records = []
+    model = (
+        LocalVLM(args.model, max_tokens=450, max_pixels=768**2, quantized=True)
+        if selected
+        else None
+    )
+    if model:
+        write_json(directory / "model.json", model.provenance)
+    for group in selected:
+        children = groups[group]
+        target_faces = np.flatnonzero(np.isin(labels, children))
+        target = mesh.submesh([target_faces], append=True, repair=False)
+        representative = max(children, key=lambda i: pieces[i].area)
+        # A small repeated-detail group gets a magnified representative, not a
+        # convex hull bridging its disconnected instances.
+        show = pieces[representative] if len(children) > 1 else target
+        colors = (
+            texture[labels == representative]
+            if len(children) > 1
+            else texture[target_faces]
+        )
+        isolated = Image.fromarray(
+            render_mesh(show.vertices, show.faces, colors, resolution=700)
+        )
+        highlight = np.full((len(mesh.faces), 3), 0.78)
+        highlight[target_faces] = [0.14, 0.57, 0.78]
+        context = Image.fromarray(
+            render_mesh(mesh.vertices, mesh.faces, highlight, resolution=700)
+        )
+        isolated.save(directory / f"group_{group}_isolated.png")
+        context.save(directory / f"group_{group}_context.png")
+        size = target.extents
+        ground = bool(
+            abs(target.bounds[0, 2] - mesh.bounds[0, 2])
+            <= np.linalg.norm(mesh.extents) * 1e-3
+        )
+        prompt = (
+            "Inspect ONE target, with four original views, its isolated textured rendering, and "
+            "a context rendering where ONLY the target is blue and the rest is gray. "
+            "The blue highlight is artificial and is NOT its material color. Do not map any numeric IDs. "
+            f"Target extent xyz in meters: {size.tolist()}; touches common ground: {ground}; "
+            f"native instances: {len(children)}. Isolated image shows {'one representative' if len(children)>1 else 'the complete target'}. "
+            "Infer visible OUTERMOST surface, independently of hidden structure or functional role. "
+            "Fabric-covered wood is surface fabric. Closed geometry does not imply solid wood. "
+            "A whole body spanning the chair width is not a single leg. "
+            "Return JSON {surface_material:wood|fabric|metal|plastic|rubber|mixed|unknown, "
+            "functional_role:leg|frame_rail|frame|underside|seat|backrest|cushion|armrest|upholstery|fastener|mixed|unknown, "
+            "evidence:string}. If ambiguous use unknown. Do not estimate mass or density."
+        )
+        query_images = originals + [isolated, context]
+        if mode == "isolated":
+            prompt = (
+                "Inspect ONLY the physical component rendered in the attached image on white background. "
+                "It is an isolated mesh component, not a complete object. No other components are shown. "
+                "Classify its visible outermost surface and its likely component role. "
+                "Do not include materials belonging to absent components or imagine the whole object. "
+                "A painted or finished surface can still be wood, metal or plastic; finish alone does not mean mixed. "
+                "Use mixed only if distinct material regions are visible ON THIS isolated target. "
+                f"Its full target extent xyz in meters is {size.tolist()}; native instances {len(children)}. "
+                f"The image shows {'one representative' if len(children)>1 else 'the complete target'}. "
+                "Return JSON {surface_material:wood|fabric|metal|plastic|rubber|mixed|unknown, "
+                "functional_role:leg|frame_rail|frame|underside|seat|backrest|cushion|armrest|upholstery|fastener|mixed|unknown, "
+                "evidence:string}. Use unknown if the rendering is insufficient. Do not estimate mass or density."
+            )
+            query_images = [isolated]
+        query_paths = (
+            [directory / f"group_{group}_isolated.png"]
+            if mode == "isolated"
+            else paths
+            + [
+                directory / f"group_{group}_isolated.png",
+                directory / f"group_{group}_context.png",
+            ]
+        )
+        votes = []
+        for trial in range(3):
+            response = model.generate(
+                prompt,
+                query_images,
+                "Return one target's material and role JSON.",
+                seed=5710 + trial,
+                do_sample=True,
+                temperature=0.6,
+                top_p=0.9,
+            )
+            record = {
+                "group": group,
+                "trial": trial,
+                "prompt": prompt,
+                "input_image_sha256": {
+                    str(p): hashlib.sha256(p.read_bytes()).hexdigest()
+                    for p in query_paths
+                },
+                "response": asdict(response),
+            }
+            write_json(directory / f"raw_{group}_{trial}.json", record)
+            answer = _parse_response_content(response.text)
+            material, role = answer["surface_material"], answer["functional_role"]
+            if material not in {
+                "wood",
+                "fabric",
+                "metal",
+                "plastic",
+                "rubber",
+                "mixed",
+                "unknown",
+            } or role not in {
+                "leg",
+                "frame_rail",
+                "frame",
+                "underside",
+                "seat",
+                "backrest",
+                "cushion",
+                "armrest",
+                "upholstery",
+                "fastener",
+                "mixed",
+                "unknown",
+            }:
+                raise ValueError("Invalid local-binding vocabulary")
+            votes.append((material, role))
+            records.append(record)
+        pair, support = Counter(votes).most_common(1)[0]
+        if support < 2:
+            pair = ("unknown", "unknown")
+        for part in state["parts"]:
+            if part["component_id"] in children:
+                part.update(
+                    {
+                        "surface_material": pair[0],
+                        "functional_role": pair[1],
+                        "support": support,
+                        "samples": 3,
+                        "binding_source": (
+                            "isolated target only plus metric extent"
+                            if mode == "isolated"
+                            else "isolated target plus geometry and highlighted context"
+                        ),
+                    }
+                )
+        print("LOCAL_BINDING", group, pair, support, flush=True)
+    state["prior_state_sha256"] = protocol["prior_state_sha256"]
+    state["local_binding_protocol"] = protocol
+    state_name = (
+        "part_state_isolated_audit.json"
+        if mode == "isolated"
+        else "part_state_local_audit.json"
+    )
+    write_json(out / state_name, state)
+    write_json(directory / state_name, state)
+    write_json(
+        directory / "seal.json",
+        {
+            p.name: hashlib.sha256(p.read_bytes()).hexdigest()
+            for p in directory.iterdir()
+            if p.is_file()
+        },
+    )
+
+
 def infer_native_parts(args):
     """Bind native candidates to joint material/role votes without review labels."""
     out = args.output

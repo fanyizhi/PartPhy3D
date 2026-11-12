@@ -22,6 +22,7 @@ from tactile3d.physics.support_domains import (
     SupportDomain,
     assemble_properties,
     convex_envelope,
+    eroded_closed,
     eroded_convex,
     partition_domains,
     solid_from_mesh,
@@ -31,7 +32,7 @@ from tactile3d.vision.view_selection import select_azimuth_views
 from tactile3d.vision.vlm_interior import _parse_response_content
 
 
-def validate_grounded_roles(pieces, parts):
+def leg_role_conflicts(pieces, parts):
     """Reject an impossible leg binding; never infer material from a role."""
     if len(parts) != len(pieces) or {p["component_id"] for p in parts} != set(
         range(len(pieces))
@@ -50,10 +51,56 @@ def validate_grounded_roles(pieces, parts):
             size[0], size[1]
         ):
             conflicts.append(part["component_id"])
+    return conflicts
+
+
+def validate_grounded_roles(pieces, parts):
+    unresolved = [
+        p["component_id"]
+        for p in parts
+        if p.get("surface_material") in {"mixed", "unknown"}
+    ]
+    if unresolved:
+        raise ValueError(
+            f"Unresolved surface material on {len(unresolved)} native components (first IDs {unresolved[:8]}); subdivide or rebind before physical inference"
+        )
+    conflicts = leg_role_conflicts(pieces, parts)
     if conflicts:
         raise ValueError(
             f"Leg role conflicts with z-up ground support and extent for native IDs {conflicts}; rebind components before physical inference"
         )
+
+
+def resolve_native_priors(info, cfg, required):
+    """Strict cached-name binding, with explicit existing-library fallbacks."""
+    from tactile3d.experiments.ten_objects import materials_from_info
+    from tactile3d.physics.materials import load_material_priors
+
+    priors, _ = materials_from_info(info, cfg, strict=True)
+    library_path = Path("configs/material_priors.yaml")
+    library = {p.name: p for p in load_material_priors(library_path)}
+    densities, sources = {}, {}
+    for kind in sorted(required):
+        candidates = [p for p in priors if p["kind"] == kind]
+        if candidates:
+            chosen = candidates[0]
+            densities[kind] = float(np.mean(chosen["density"]))
+            sources[kind] = chosen
+        elif kind in library:
+            densities[kind] = library[kind].density_kg_m3.mean
+            sources[kind] = {
+                "source": "existing_declared_material_library_mean",
+                "path": str(library_path),
+                "sha256": file_sha256(library_path),
+            }
+        else:
+            raise ValueError(
+                f"No explicit density prior for {kind}; refine the material hypothesis"
+            )
+    thickness = float(
+        np.mean(next(p["thickness_m"] for p in priors if p["kind"] == "fabric"))
+    )
+    return densities, thickness, sources
 
 
 def evaluate_saved_prediction(output, root):
@@ -163,6 +210,21 @@ def apply_beam_inventory(base, proposal, role_geometry, sections):
     return validate_hypothesis(answer, sorted(role_geometry))
 
 
+def apply_fraction_map(base, proposal):
+    roles = sorted(row["role"] for row in base["upholstery"])
+    mapping = {f"R{i}": role for i, role in enumerate(roles)}
+    values = proposal["wood_fraction_by_id"]
+    if not isinstance(values, dict) or set(values) != set(mapping):
+        raise ValueError("Fraction map must cover every fixed role ID exactly once")
+    if any(type(value) not in (int, float) for value in values.values()):
+        raise ValueError("Fraction map values must be numeric fractions")
+    answer = deepcopy(base)
+    inverse = {role: key for key, role in mapping.items()}
+    for phase in answer["upholstery"]:
+        phase["hidden_wood_fraction"] = values[inverse[phase["role"]]]
+    return validate_hypothesis(answer, roles)
+
+
 def refine_construction(args):
     """Paired second-round construction queries; freeze all non-frame parameters."""
     source = args.refine_from
@@ -170,13 +232,15 @@ def refine_construction(args):
     if any(file_sha256(source / name) != value for name, value in seal.items()):
         raise ValueError("Prior prediction seal mismatch")
     protocol = json.loads((source / "protocol.json").read_text())
-    state_path = args.reference / "part_state_geometry_constrained.json"
+    state_path = args.reference / protocol.get(
+        "part_state_name", "part_state_geometry_constrained.json"
+    )
     state = json.loads(state_path.read_text())
     if file_sha256(state_path) != protocol["part_state_sha256"] or state[
         "geometry_sha256"
     ] != file_sha256(args.reference / "reference_arrays.npz"):
         raise ValueError("Geometry and prior construction state mismatch")
-    args.output.mkdir(parents=True, exist_ok=False)
+    args.output.mkdir(parents=True, exist_ok=getattr(args, "resume", False))
     _, _, pieces, _ = load_prepared(args.reference)
     parts = state["parts"]
     validate_grounded_roles(pieces, parts)
@@ -204,6 +268,8 @@ def refine_construction(args):
             "source_sha256": file_sha256(Path(__file__)),
             "refined_from_seal_sha256": file_sha256(source / "prediction_seal.json"),
             "construction_model": args.refine_representation,
+            "fraction_role_schema": getattr(args, "role_schema", "map"),
+            "fraction_bounds_exposed": getattr(args, "expose_fraction_bounds", False),
             "section_source": "visible frame-rail oriented bounding-box section proxy",
             "sections": sections,
             "additional_queries": protocol["rounds"],
@@ -211,9 +277,25 @@ def refine_construction(args):
             "non_frame_parameters": "foam fractions, underside hypothesis and numeric material priors frozen",
         }
     )
+    # Refinement changes core densities, not geometry. The source prediction
+    # seal fixes its per-trial domains, even if the builder is later updated.
+    # A new geometry policy requires rebuilding the prior explicitly.
+    protocol["partition_source"] = "sealed prior moments; geometry unchanged"
+    if getattr(args, "resume", False) and (args.output / "protocol.json").is_file():
+        previous = json.loads((args.output / "protocol.json").read_text())
+        keys = (
+            "part_state_sha256",
+            "input_hashes",
+            "refined_from_seal_sha256",
+            "construction_model",
+            "fraction_role_schema",
+            "fraction_bounds_exposed",
+        )
+        if any(previous.get(key) != protocol.get(key) for key in keys):
+            raise ValueError("Refinement resume protocol differs")
+        protocol["resumed_from_source_sha256"] = previous["source_sha256"]
     write_json(args.output / "protocol.json", protocol)
-    model = LocalVLM(args.model, max_tokens=1000, max_pixels=768**2, quantized=True)
-    write_json(args.output / "model.json", model.provenance)
+    model = None
     images = [Image.open(p).copy() for p in paths]
     results = []
     for trial in range(protocol["rounds"]):
@@ -267,22 +349,69 @@ def refine_construction(args):
                 "a fraction of its core volume using the supplied evidence. "
                 "Do not change foam or bottom-panel assumptions."
             )
-        response = model.generate(
-            prompt,
-            images,
-            "Return construction JSON grounded in the images and metric geometry.",
-            seed=3510 + trial,
-            do_sample=True,
-            temperature=0.6,
-            top_p=0.9,
-        )
-        write_json(
-            args.output / f"raw_{trial}.json",
-            {"prompt": prompt, "response": asdict(response)},
-        )
-        proposal = _parse_response_content(response.text)
+        if (
+            args.refine_representation != "beams"
+            and getattr(args, "role_schema", "map") == "map"
+        ):
+            foam_by_role = {
+                r["role"]: r["foam_fraction"] for r in prior["answer"]["upholstery"]
+            }
+            mapping = {
+                f"R{i}": {
+                    "role": role,
+                    **(
+                        {"max_wood_fraction": 1 - foam_by_role[role]}
+                        if getattr(args, "expose_fraction_bounds", False)
+                        else {}
+                    ),
+                    **(
+                        roles[role] if args.refine_representation == "fractions" else {}
+                    ),
+                }
+                for i, role in enumerate(sorted(roles))
+            }
+            prompt = (
+                "Infer only ADDITIONAL hidden wood in this upholstered object from the four original views "
+                "and two diagrams. Visible supports already have separate domains; do not count them twice. "
+                "Keep existing foam and bottom-panel assumptions fixed. Remaining volume can be macroscopic air. "
+                "Geometric core volume is NOT wood volume. Unused core may be macroscopic air. "
+                "No mass or density estimates. Required region IDs and evidence: "
+                + json.dumps(mapping)
+                + '. Return JSON {"wood_fraction_by_id":'
+                + json.dumps({key: "number" for key in mapping})
+                + ',"evidence":"string"}. Replace number placeholders with plausible finite volume fractions. '
+                "Do not fill the remaining core with wood merely to reach a sum of one. "
+                "Include EVERY region ID, even a zero-volume or broad upholstery role. "
+                "Do not infer extra wood merely because a component is upholstered."
+            )
+        raw_path = args.output / f"raw_{trial}.json"
+        if getattr(args, "resume", False) and raw_path.is_file():
+            record = json.loads(raw_path.read_text())
+            if record["prompt"] != prompt:
+                raise ValueError("Cached refinement prompt differs")
+            response_text = record["response"]["text"]
+        else:
+            if model is None:
+                model = LocalVLM(
+                    args.model, max_tokens=1000, max_pixels=768**2, quantized=True
+                )
+                write_json(args.output / "model.json", model.provenance)
+            response = model.generate(
+                prompt,
+                images,
+                "Return construction JSON grounded in the images and metric geometry.",
+                seed=3510 + trial,
+                do_sample=True,
+                temperature=0.6,
+                top_p=0.9,
+            )
+            write_json(raw_path, {"prompt": prompt, "response": asdict(response)})
+            response_text = response.text
+        proposal = _parse_response_content(response_text)
         if args.refine_representation == "beams":
             answer = apply_beam_inventory(prior["answer"], proposal, roles, sections)
+        elif getattr(args, "role_schema", "map") == "map":
+            answer = apply_fraction_map(prior["answer"], proposal)
         else:
             rows = proposal["upholstery"]
             if len(rows) != len(roles) or {r["role"] for r in rows} != set(roles):
@@ -295,7 +424,7 @@ def refine_construction(args):
                     if r["role"] == phase["role"]
                 )
             answer = validate_hypothesis(answer, sorted(roles))
-        partition = construct(pieces, parts, answer, protocol["fabric_thickness_m"])
+        partition = prior["partition"]
         result = properties(partition, parts, answer, protocol["densities_kg_m3"])
         result.update(
             {
@@ -324,8 +453,12 @@ def refine_construction(args):
     return evaluate_saved_prediction(args.output, args.root)
 
 
-def construct(pieces, parts, answer, thickness, *, allow_removed=False):
+def construct(
+    pieces, parts, answer, thickness, *, allow_removed=False, geometry_policy="convex"
+):
     role_phases = {r["role"]: r for r in answer["upholstery"]}
+    if geometry_policy not in {"convex", "closed"}:
+        raise ValueError("Unknown geometry policy")
     bounds = [p.bounds for p in pieces if len(p.faces)]
     if not bounds:
         raise ValueError("No surviving assembly geometry")
@@ -334,6 +467,16 @@ def construct(pieces, parts, answer, thickness, *, allow_removed=False):
     for part in parts:
         index = part["component_id"]
         mesh = pieces[index]
+        orientation_repaired = False
+        if (
+            geometry_policy == "closed"
+            and mesh.is_watertight
+            and mesh.is_winding_consistent
+            and mesh.volume < 0
+        ):
+            mesh = mesh.copy()
+            mesh.invert()
+            orientation_repaired = True
         material = part["surface_material"]
         if not len(mesh.faces):
             if not allow_removed:
@@ -353,10 +496,16 @@ def construct(pieces, parts, answer, thickness, *, allow_removed=False):
         if material == "fabric":
             if part["functional_role"] not in role_phases:
                 raise ValueError("Missing upholstery-role hypothesis")
-            hull, source = convex_envelope(mesh, thickness, assembly_center)
-            domain = SupportDomain(
-                index, material, hull, eroded_convex(hull, thickness), 2, source
-            )
+            if geometry_policy == "closed" and mesh.is_volume:
+                hull, source = (
+                    mesh,
+                    "provided_closed_boundary; exact convex erosion or inscribed_ball16_erosion",
+                )
+                inner = eroded_closed(hull, thickness)
+            else:
+                hull, source = convex_envelope(mesh, thickness, assembly_center)
+                inner = eroded_convex(hull, thickness)
+            domain = SupportDomain(index, material, hull, inner, 2, source)
         else:
             singular = np.linalg.svd(
                 mesh.vertices - mesh.vertices.mean(0), compute_uv=False
@@ -396,7 +545,17 @@ def construct(pieces, parts, answer, thickness, *, allow_removed=False):
             else:
                 hull, source = convex_envelope(mesh, panel_thickness, assembly_center)
             domain = SupportDomain(
-                index, material, hull, solid_from_mesh(hull), 1 if planar else 0, source
+                index,
+                material,
+                hull,
+                solid_from_mesh(hull),
+                1 if planar else 0,
+                source,
+                full_core=True,
+            )
+        if orientation_repaired:
+            domain.source += (
+                "; reversed globally inward winding; vertex positions unchanged"
             )
         domains.append(domain)
     result = partition_domains(domains)
@@ -493,7 +652,12 @@ def run(args):
     args.output.mkdir(parents=True, exist_ok=getattr(args, "resume", False))
     scene = json.loads((args.reference / "input_manifest.json").read_text())["scene"]
     _mesh, _labels, pieces, _colors = load_prepared(args.reference)
-    state_path = args.reference / "part_state_geometry_constrained.json"
+    state_path = (
+        getattr(args, "part_state", None)
+        or args.reference / "part_state_geometry_constrained.json"
+    )
+    if state_path.resolve().parent != args.reference.resolve():
+        raise ValueError("Part state must be inside its bound reference directory")
     state = json.loads(state_path.read_text())
     if state["geometry_sha256"] != file_sha256(args.reference / "reference_arrays.npz"):
         raise ValueError("Part IDs are bound to different reference geometry")
@@ -506,18 +670,11 @@ def run(args):
     # Use the same released density/thickness priors as the existing development controls.
     import yaml
 
-    from tactile3d.experiments.ten_objects import materials_from_info
-
     cfg = yaml.safe_load(Path("configs/ten_object_pilot.yaml").read_text())
-    priors, _ = materials_from_info(materials, cfg)
-    densities = {
-        kind: float(np.mean(next(m["density"] for m in priors if m["kind"] == kind)))
-        for kind in sorted(
-            {"wood", "fabric", "foam"} | {p["surface_material"] for p in parts}
-        )
-    }
-    thickness = float(
-        np.mean(next(m["thickness_m"] for m in priors if m["kind"] == "fabric"))
+    densities, thickness, density_sources = resolve_native_priors(
+        materials,
+        cfg,
+        {"wood", "fabric", "foam"} | {p["surface_material"] for p in parts},
     )
     transforms = json.loads(
         (args.root / "scenes" / scene / "transforms.json").read_text()
@@ -569,6 +726,8 @@ def run(args):
         "scene": scene,
         "scope": "exposed reference-geometry development case",
         "part_state_sha256": file_sha256(state_path),
+        "part_state_name": state_path.name,
+        "geometry_policy": getattr(args, "geometry_policy", "convex"),
         "source_sha256": file_sha256(Path(__file__)),
         "geometry_module_sha256": file_sha256(
             Path(__file__).parents[1] / "physics/support_domains.py"
@@ -576,15 +735,23 @@ def run(args):
         "input_hashes": {str(p): file_sha256(p) for p in paths},
         "selected_views": views,
         "densities_kg_m3": densities,
+        "density_prior_sources": density_sources,
+        "material_name_policy": "strict; unknown names never become plastic",
         "fabric_thickness_m": thickness,
         "components": features,
         "target_mass_used_for_inference": False,
         "rounds": 3,
-        "geometry": "provided closed wood solids; per-component convex/prism completion elsewhere; disjoint CSG",
+        "geometry": (
+            "provided closed solids and closed upholstery; inscribed-ball16 erosion for concave upholstery; open-component convex/prism completion; disjoint CSG"
+            if getattr(args, "geometry_policy", "convex") == "closed"
+            else "provided closed wood solids; per-component convex/prism completion elsewhere; disjoint CSG"
+        ),
         "aggregation": "equal mean of three independent-question construction hypotheses; not calibrated probabilities",
     }
     if getattr(args, "resume", False) and (args.output / "protocol.json").is_file():
         previous = json.loads((args.output / "protocol.json").read_text())
+        if previous.get("geometry_policy", "convex") != protocol["geometry_policy"]:
+            raise ValueError("Resume geometry policy differs from the frozen protocol")
         if any(
             previous[key] != protocol[key]
             for key in (
@@ -644,7 +811,13 @@ def run(args):
             write_json(raw_path, record)
             response_text = response.text
         answer = validate_hypothesis(_parse_response_content(response_text), roles)
-        partition = construct(pieces, parts, answer, thickness)
+        partition = construct(
+            pieces,
+            parts,
+            answer,
+            thickness,
+            geometry_policy=protocol["geometry_policy"],
+        )
         result = properties(partition, parts, answer, densities)
         edit = density_edit_check(partition, parts, answer, densities, result)
         result.update(
@@ -675,17 +848,131 @@ def run(args):
     return evaluate_saved_prediction(args.output, args.root)
 
 
+def audit_binding_parameters(args):
+    """Two-by-two diagnostic: binding versus closed-boundary preservation."""
+    import yaml
+
+    args.output.mkdir(parents=True, exist_ok=False)
+    _, _, pieces, _ = load_prepared(args.reference)
+    base = args.reference / "part_state_geometry_constrained.json"
+    if args.part_state.resolve().parent != args.reference.resolve():
+        raise ValueError("Audited state must share its reference directory")
+    protocol = json.loads((args.reference / "construction/protocol.json").read_text())
+    cfg = yaml.safe_load(Path("configs/ten_object_pilot.yaml").read_text())
+    foam = float(cfg["construction"]["soft_core_occupancy"][1])
+    wood = float(cfg["construction"]["hidden_wood_fraction"][1])
+    original = json.loads(
+        (args.reference / "construction/hypothesis_0.json").read_text()
+    )["answer"]
+    output = {
+        "scope": "fixed-parameter development diagnostic; not a VLM-method ranking",
+        "foam_fraction": foam,
+        "hidden_wood_fraction": wood,
+        "densities_kg_m3": protocol["densities_kg_m3"],
+        "fabric_thickness_m": protocol["fabric_thickness_m"],
+        "source_sha256": file_sha256(Path(__file__)),
+        "prior_protocol_sha256": file_sha256(
+            args.reference / "construction/protocol.json"
+        ),
+        "prior_construction_sha256": file_sha256(
+            args.reference / "construction/hypothesis_0.json"
+        ),
+        "geometry_source_sha256": file_sha256(
+            Path(__file__).parents[1] / "physics/support_domains.py"
+        ),
+        "arms": [],
+    }
+    for binding, path in [("original", base), ("local", args.part_state)]:
+        state = json.loads(path.read_text())
+        if state["geometry_sha256"] != file_sha256(
+            args.reference / "reference_arrays.npz"
+        ):
+            raise ValueError("State geometry mismatch")
+        conflicts = leg_role_conflicts(pieces, state["parts"])
+        if binding == "local" and conflicts:
+            raise ValueError("Local binding still contains geometric leg conflicts")
+        roles = sorted(
+            {
+                p["functional_role"]
+                for p in state["parts"]
+                if p["surface_material"] == "fabric"
+            }
+        )
+        answer = {
+            "upholstery": [
+                {"role": r, "foam_fraction": foam, "hidden_wood_fraction": wood}
+                for r in roles
+            ],
+            "underside": original["underside"],
+        }
+        validate_hypothesis(answer, roles)
+        for policy in ["convex", "closed"]:
+            partition = construct(
+                pieces,
+                state["parts"],
+                answer,
+                protocol["fabric_thickness_m"],
+                geometry_policy=policy,
+            )
+            result = properties(
+                partition, state["parts"], answer, protocol["densities_kg_m3"]
+            )
+            row = {
+                "binding": binding,
+                "geometry_policy": policy,
+                "state_sha256": file_sha256(path),
+                "geometric_role_conflicts": conflicts,
+                "answer": answer,
+                "properties": result,
+                "union_volume_m3": partition["union_volume_m3"],
+            }
+            output["arms"].append(row)
+            write_json(args.output / "predictions.json", output)
+            print(
+                "BINDING_GEOMETRY_AUDIT", binding, policy, result["mass_kg"], flush=True
+            )
+    seal_prediction_files(args.output)
+    scene = protocol["scene"]
+    weights = json.loads((args.root / "filtered_product_weights.json").read_text())
+    target = float(weights.get(scene, weights.get(scene.split("_")[0])))
+    report = {
+        "target_mass_kg": target,
+        "arms": [
+            {
+                "binding": r["binding"],
+                "geometry_policy": r["geometry_policy"],
+                "mass_kg": r["properties"]["mass_kg"],
+                "metrics": mass_metrics([target], [r["properties"]["mass_kg"]]),
+            }
+            for r in output["arms"]
+        ],
+    }
+    write_json(args.output / "report.json", report)
+    return report
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ("root", "reference", "model", "output"):
         parser.add_argument("--" + name, type=Path, required=name in {"root", "output"})
     parser.add_argument("--evaluate-only", action="store_true")
+    parser.add_argument("--part-state", type=Path)
+    parser.add_argument(
+        "--geometry-policy", choices=["convex", "closed"], default="convex"
+    )
+    parser.add_argument("--audit-binding", action="store_true")
     parser.add_argument(
         "--resume",
         action="store_true",
         help="Reuse raw responses only when prompts and input hashes match",
     )
     parser.add_argument("--refine-from", type=Path)
+    parser.add_argument("--role-schema", choices=["map", "list"], default="map")
+    parser.add_argument(
+        "--expose-fraction-bounds",
+        action="store_true",
+        help="Diagnostic prompt ablation; physical bounds are always checked externally",
+    )
     parser.add_argument(
         "--refine-representation",
         choices=["beams", "fractions", "fractions-no-geometry"],
@@ -694,6 +981,11 @@ def main():
     args = parser.parse_args()
     if args.evaluate_only:
         print(json.dumps(evaluate_saved_prediction(args.output, args.root)), flush=True)
+        return
+    if args.audit_binding:
+        if args.reference is None or args.part_state is None:
+            parser.error("Binding audit requires --reference and --part-state")
+        print(json.dumps(audit_binding_parameters(args)), flush=True)
         return
     if args.reference is None or args.model is None:
         parser.error("Inference requires --reference and --model")

@@ -72,7 +72,13 @@ def draw_domain_retention(args):
     if any(not p[k]["valid"] for p in pairs for k in ("component", "matched_global")):
         raise ValueError("A complete domain evaluation is required before plotting")
     mesh, labels, _pieces, _texture = load_prepared(args.output)
-    state = read(args.output / "part_state_geometry_constrained.json")
+    construction_protocol = read(args.construction / "protocol.json")
+    state = read(
+        args.output
+        / construction_protocol.get(
+            "part_state_name", "part_state_geometry_constrained.json"
+        )
+    )
     materials = {p["component_id"]: p["surface_material"] for p in state["parts"]}
     out = args.figures
     out.mkdir(parents=True, exist_ok=True)
@@ -106,7 +112,7 @@ def draw_domain_retention(args):
     write_json(
         out / "domain_retention_contract.json",
         {
-            "claim": "Domain-density allocation improves moderate-budget whole-body retention; lowest-budget center-of-mass retention remains weaker.",
+            "claim": "Matched-budget comparison of conditional whole-body geometry and physical retention.",
             "archetype": "image plate + quantitative panels",
             "backend": "Python/matplotlib",
             "objects": 1,
@@ -245,7 +251,7 @@ def draw_domain_retention(args):
         "Global QEM is rerun at each paired achieved face count (difference at most one triangle). "
         "The reference is the conditional completed-domain model, not measured mass, center of mass or inertia. "
         "Lines connect measured budgets; no confidence intervals or significance tests are asserted. "
-        "The lowest-budget domain-density result has worse center-of-mass retention than its paired global baseline.\n"
+        "All measured tradeoffs are shown across the predeclared budgets.\n"
     )
     (out / "domain_retention_caption.md").write_text(caption)
     assets = [out / f"domain_retention.{ext}" for ext in ("png", "svg", "pdf", "tiff")]

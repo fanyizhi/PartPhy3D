@@ -17,6 +17,7 @@ def main():
             "prepare",
             "infer",
             "bind-native",
+            "bind-local",
             "evaluate",
             "domain-evaluate",
             "domain-figures",
@@ -45,6 +46,12 @@ def main():
         default=Path("configs/evidence/chaise_surface_material_review.json"),
     )
     parser.add_argument("--answers", type=Path)
+    parser.add_argument("--part-state", type=Path)
+    parser.add_argument(
+        "--binding-evidence",
+        choices=["global-context", "isolated"],
+        default="global-context",
+    )
     parser.add_argument("--construction", type=Path)
     parser.add_argument(
         "--surface-audit",
@@ -60,6 +67,9 @@ def main():
     from tactile3d.figures import reference_study as figures
 
     figures.configure_style()
+    if args.stage == "bind-local":
+        inference.refine_local_binding(args)
+        return
     if args.stage == "bind-native":
         inference.infer_native_parts(args)
         return

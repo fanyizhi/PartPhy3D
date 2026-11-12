@@ -1,3 +1,4 @@
+import manifold3d as manifold
 import numpy as np
 import pytest
 import trimesh
@@ -7,10 +8,27 @@ from tactile3d.physics.support_domains import (
     assemble_properties,
     convex_envelope,
     domain_mesh,
+    eroded_closed,
     eroded_convex,
     partition_domains,
     solid_from_mesh,
 )
+
+
+def test_closed_concave_domain_keeps_its_empty_corner_and_has_converging_shell():
+    solid = manifold.Manifold.cube((2, 1, 1)) + manifold.Manifold.cube((1, 2, 1))
+    mesh = domain_mesh(solid)
+    assert mesh.volume == pytest.approx(3.0)
+    assert mesh.convex_hull.volume == pytest.approx(3.5)
+    coarse, fine = eroded_closed(mesh, 0.1, 8), eroded_closed(mesh, 0.1, 16)
+    exact_core = (2.24 + 0.01 - np.pi * 0.1**2 / 4) * 0.8
+    assert fine.volume() >= exact_core - 1e-6
+    assert fine.volume() <= coarse.volume() + 1e-6
+    assert fine.volume() - exact_core < 0.005
+    result = partition_domains([SupportDomain(0, "fabric", mesh, fine, 2, "closed")])
+    assert result["union_volume_m3"] == pytest.approx(3.0)
+    part = result["parts"][0]
+    assert part["core"]["volume_m3"] + part["shell"]["volume_m3"] == pytest.approx(3.0)
 
 
 def test_convex_layer_recovers_cube_shell_volume():
@@ -22,6 +40,22 @@ def test_convex_layer_recovers_cube_shell_volume():
     assert part["core"]["volume_m3"] == pytest.approx(0.8**3, rel=1e-6)
     properties = assemble_properties([(part["shell"], 200.0), (part["core"], 40.0)])
     assert properties["mass_kg"] == pytest.approx(118.08, rel=1e-6)
+
+
+def test_thin_solid_ring_has_exact_full_core_and_no_numerical_coat():
+    outer = manifold.Manifold.cube((0.54, 0.58, 0.016))
+    hole = manifold.Manifold.cube((0.53, 0.57, 0.04)).translate((0.005, 0.005, -0.01))
+    solid = outer - hole
+    mesh = domain_mesh(solid)
+    result = partition_domains(
+        [SupportDomain(0, "plastic", mesh, solid, 0, "closed", full_core=True)]
+    )
+    part = result["parts"][0]
+    assert part["core"] == part["assigned"]
+    assert part["shell"]["volume_m3"] == 0
+    assert part["assigned"]["volume_m3"] == pytest.approx(
+        (0.54 * 0.58 - 0.53 * 0.57) * 0.016
+    )
 
 
 def test_triangulated_support_planes_and_readonly_solid_roundtrip_remain_manifold():

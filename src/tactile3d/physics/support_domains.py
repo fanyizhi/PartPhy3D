@@ -79,6 +79,27 @@ def eroded_convex(envelope: trimesh.Trimesh, thickness: float) -> manifold.Manif
     return manifold.Manifold.hull_points(interior)
 
 
+def eroded_closed(envelope: trimesh.Trimesh, thickness: float, segments=16):
+    """Preserve closed concave geometry; approximate ball erosion by a polyhedron.
+
+    The inscribed sphere mesh underestimates the exact Euclidean shell. The
+    original outer volume is unchanged. Convex inputs use exact plane offsets.
+    """
+    if not envelope.is_volume or not np.isfinite(thickness) or thickness < 0:
+        raise ValueError(
+            "A positive closed boundary and nonnegative thickness are required"
+        )
+    if envelope.is_convex:
+        return eroded_convex(envelope, thickness)
+    outer = solid_from_mesh(envelope)
+    if thickness == 0:
+        return outer
+    inner = outer.minkowski_difference(manifold.Manifold.sphere(thickness, segments))
+    if inner.status() != manifold.Error.NoError:
+        raise ValueError(f"Closed-domain erosion failed: {inner.status()}")
+    return inner
+
+
 @dataclass
 class SupportDomain:
     component_id: int
@@ -87,6 +108,7 @@ class SupportDomain:
     inner: manifold.Manifold
     priority: int
     source: str
+    full_core: bool = False
 
 
 def unit_moments(solid: manifold.Manifold) -> dict:
@@ -122,8 +144,13 @@ def partition_domains(domains: list[SupportDomain]) -> dict:
         outer = solid_from_mesh(domain.envelope)
         raw_volume += float(outer.volume())
         assigned = outer - occupied
-        core = assigned ^ domain.inner
-        shell = assigned - core
+        if domain.full_core:
+            # The core is defined to be the whole assigned solid. Re-intersecting
+            # coincident thin faces can create signed CSG slivers numerically.
+            core, shell = assigned, manifold.Manifold()
+        else:
+            core = assigned ^ domain.inner
+            shell = assigned - core
         assigned_moments, core_moments, shell_moments = (
             unit_moments(solid) for solid in (assigned, core, shell)
         )
