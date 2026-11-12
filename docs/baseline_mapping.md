@@ -374,3 +374,56 @@ prediction seal and image hashes are checked before inference. All prediction
 files are sealed before the runner opens the catalogue target. The next required
 evidence is cross-object generalization, followed by train/validation-only
 probability calibration and a locked matched-cohort comparison.
+
+### Cross-object development protocol
+
+`configs/train_furniture3_development.json` locks the first three training IDs
+whose existing captions match the declared upholstered-furniture keywords, in
+the released order, without reading mass labels or replacing objects. This is
+development data, not the held-out test cohort. The original ASIN-normalized
+train/validation/test lists have no overlaps.
+
+The reference entry now accepts `--scene`; it no longer requires every new
+asset to have the chaise's 15 native candidates. New scenes never receive the
+historical manually reviewed chaise role file. Four calibrated views and two
+numbered diagrams are generated from each scene's own cameras and geometry.
+
+For fragmented meshes, the new evidence hierarchy keeps large native candidates
+separate and groups small candidates by coarse texture RGB. In the locked
+cohort, 299, 382 and 49 native candidates yield 9, 7 and 20 evidence groups.
+This compression is only for VLM evidence. Every native ID is retained exactly
+once, physical integration remains over native domains, and no parent convex
+hull is created. Group-inherited materials and roles remain hypotheses; mixed
+or unknown groups require further subdivision. Joint material/role voting does
+not establish calibrated correctness.
+
+```bash
+python scripts/prepare_ten_objects.py --root /path/to/abo_500 \
+  --assets /path/to/abo_500/meshes_reference --output outputs/train_inputs \
+  --cohort configs/train_furniture3_development.json
+python scripts/run_reference_mesh_study.py prepare --root /path/to/abo_500 \
+  --scene B07HSDY9FC_ATVPDKIKX0DER --output outputs/new_reference
+python scripts/run_reference_mesh_study.py bind-native --output outputs/new_reference
+```
+
+`bind-native --surface-audit` independently asks about outer coatings versus
+hidden structural material and saves a separate audit state; it never replaces
+the frozen initial state. Added leg preflight checks reject bindings inconsistent
+with z-up ground support and vertical extent before physical inference. This
+rejects impossible bindings without inferring material from a semantic role.
+Grounding is therefore checked before trusting a closed mesh as a material domain.
+
+The current cross-object audit does not establish generalization of the earlier
+chaise improvement; a complete refined-cohort score is not available. Numerical
+feedback cannot correct a wrongly bound surface material by itself. Subsequent
+work must resolve component-ID/material grounding and concave or hollow support
+before calibrating internal occupancy. Detailed unsuccessful-run diagnostics
+remain local and are not manuscript figures.
+
+GLB length/version are checked before parsing. Catalogue evaluation resolves
+both complete scene IDs and ASIN keys. `vlm_mass --evaluate-only --root ...
+--output ...` evaluates an already sealed prediction without another model call.
+`--resume` reuses a raw response only when its prompt and frozen input hashes
+match; reports and the previous seal are excluded from the new prediction seal.
+Objects with no independent solid domain skip the optional solid-density edit
+control instead of aborting their mass prediction.

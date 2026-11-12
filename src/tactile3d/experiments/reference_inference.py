@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+from collections import Counter
 from dataclasses import asdict
 from pathlib import Path
 
@@ -24,6 +25,158 @@ from tactile3d.physics.part_io import write_json
 from tactile3d.vision.local_vlm import LocalVLM
 from tactile3d.vision.view_selection import select_azimuth_views
 from tactile3d.vision.vlm_interior import _parse_response_content
+
+
+def infer_native_parts(args):
+    """Bind native candidates to joint material/role votes without review labels."""
+    out = args.output
+    manifest = json.loads((out / "input_manifest.json").read_text())
+    groups = manifest.get(
+        "evidence_groups", [[i] for i in range(len(manifest["components"]))]
+    )
+    count = len(groups)
+    if sorted(i for group in groups for i in group) != list(
+        range(len(manifest["components"]))
+    ):
+        raise ValueError(
+            "Evidence groups must partition native component IDs exactly once"
+        )
+    if count > 30:
+        raise ValueError(
+            f"{count} native candidates exceed the declared 30-ID evidence budget; hierarchical grouping required"
+        )
+    audit = getattr(args, "surface_audit", False)
+    directory = out / ("native_binding_surface_audit" if audit else "native_binding")
+    directory.mkdir(exist_ok=False)
+    views = json.loads((out / "views_contacts/view_selection.json").read_text())["4"]
+    paths = [out / f"views_contacts/view_{v['frame_index']:02d}.png" for v in views]
+    paths += [
+        out / "component_sheet.png",
+        out / "views_contacts/global_component_positions.png",
+    ]
+    images = [Image.open(p).copy() for p in paths]
+    prompt = (
+        "Bind numbered native mesh components to surface material and functional role. "
+        "Four original views and two numbered diagrams show the same object. "
+        "Native connectivity is NOT guaranteed to be a material or manufactured-part partition. "
+        "If a component contains multiple surface materials, use mixed, not a forced majority material. "
+        "Materials: wood,fabric,metal,plastic,rubber,mixed,unknown. "
+        "Roles: leg,frame_rail,frame,underside,seat,backrest,cushion,armrest,upholstery,fastener,mixed,unknown. "
+        "Numbered groups may contain repeated small native pieces; assign one role only if coherent. "
+        f"Return JSON {{components:[{{component_id:integer,surface_material:string,functional_role:string}}]}} "
+        f"covering IDs 0 through {count-1} exactly once. Do not estimate mass or hidden properties."
+    )
+    if audit:
+        prompt += (
+            " Audit visible OUTERMOST material independently of structural role. "
+            "A fabric-covered wooden frame has FABRIC on its surface, not wood. "
+            "A closed mesh does not imply solid wood. Examine the texture and seams; "
+            "use upholstery for a connected fabric cover spanning multiple functional parts. "
+            "Classify repeated small trim from its own appearance, not the large neighboring cushion. "
+            "If visual evidence cannot resolve a material, use unknown rather than infer it from the role."
+        )
+    model = LocalVLM(args.model, max_tokens=2200, max_pixels=768**2, quantized=True)
+    write_json(directory / "model.json", model.provenance)
+    records = []
+    for trial in range(3):
+        response = model.generate(
+            prompt,
+            images,
+            "Return component binding JSON.",
+            seed=4610 + trial,
+            do_sample=True,
+            temperature=0.6,
+            top_p=0.9,
+        )
+        record = {"prompt": prompt, "response": asdict(response)}
+        write_json(directory / f"raw_{trial}.json", record)
+        rows = _parse_response_content(response.text)["components"]
+        if len(rows) != count or {r["component_id"] for r in rows} != set(range(count)):
+            raise ValueError("Component binding must cover every native candidate once")
+        if any(
+            r["surface_material"]
+            not in {"wood", "fabric", "metal", "plastic", "rubber", "mixed", "unknown"}
+            or r["functional_role"]
+            not in {
+                "leg",
+                "frame_rail",
+                "underside",
+                "seat",
+                "backrest",
+                "cushion",
+                "armrest",
+                "frame",
+                "upholstery",
+                "fastener",
+                "mixed",
+                "unknown",
+            }
+            for r in rows
+        ):
+            raise ValueError("Unsupported component-binding vocabulary")
+        records.append(rows)
+    parts = []
+    for index in range(count):
+        votes = Counter(
+            (r["surface_material"], r["functional_role"])
+            for rows in records
+            for r in rows
+            if r["component_id"] == index
+        )
+        pair, support = votes.most_common(1)[0]
+        if support < 2:
+            pair = ("unknown", "unknown")
+        for child in groups[index]:
+            parts.append(
+                {
+                    "component_id": child,
+                    "evidence_group_id": index,
+                    "surface_material": pair[0],
+                    "functional_role": pair[1],
+                    "support": support,
+                    "samples": 3,
+                }
+            )
+    write_json(
+        out
+        / (
+            "part_state_surface_audit.json"
+            if audit
+            else "part_state_geometry_constrained.json"
+        ),
+        {
+            "schema": "object/part/construction_region/mesh_support",
+            "version": 2,
+            "geometry_sha256": hashlib.sha256(
+                (out / "reference_arrays.npz").read_bytes()
+            ).hexdigest(),
+            "parts": parts,
+            "scope": "joint VLM votes on native mesh candidates; no manual-role transfer",
+            "input_manifest_sha256": hashlib.sha256(
+                (out / "input_manifest.json").read_bytes()
+            ).hexdigest(),
+            "source_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+            "evidence_hashes": {
+                p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in paths
+            },
+        },
+    )
+    write_json(
+        directory / "seal.json",
+        {
+            p.name: hashlib.sha256(p.read_bytes()).hexdigest()
+            for p in directory.glob("*.json")
+        },
+    )
+    print(
+        "NATIVE_BINDING",
+        manifest["scene"],
+        "groups",
+        count,
+        "native",
+        len(parts),
+        flush=True,
+    )
 
 
 def query_properties(args):
@@ -145,9 +298,18 @@ def query_properties(args):
 
 
 def prepare_views(args):
+    scene = json.loads((args.output / "input_manifest.json").read_text())["scene"]
     out = args.output / "views_contacts"
     out.mkdir(exist_ok=False)
     mesh, _labels, pieces, texture = load_prepared(args.output)
+    manifest = json.loads((args.output / "input_manifest.json").read_text())
+    groups = manifest.get("evidence_groups", [[i] for i in range(len(pieces))])
+    pieces = [
+        mesh.submesh(
+            [np.flatnonzero(np.isin(_labels, children))], append=True, repair=False
+        )
+        for children in groups
+    ]
     centers = np.array(
         [np.average(p.triangles_center, weights=p.area_faces, axis=0) for p in pieces]
     )
@@ -175,7 +337,7 @@ def prepare_views(args):
         ax.set_title(f"Reference component positions · azimuth {az}°")
     fig.savefig(out / "global_component_positions.png", dpi=110, facecolor="white")
     plt.close(fig)
-    camera = json.loads((args.root / "scenes" / SCENE / "transforms.json").read_text())
+    camera = json.loads((args.root / "scenes" / scene / "transforms.json").read_text())
     poses = np.array([f["transform_matrix"] for f in camera["frames"]])
     selections = {}
     for count in (3, 4):
@@ -187,7 +349,7 @@ def prepare_views(args):
         for row, ax in zip(selection, axes):
             frame = camera["frames"][row["frame_index"]]
             image = Image.open(
-                args.root / "scenes" / SCENE / frame["file_path"]
+                args.root / "scenes" / scene / frame["file_path"]
             ).convert("RGBA")
             rgb = Image.alpha_composite(
                 Image.new("RGBA", image.size, "white"), image
@@ -201,6 +363,8 @@ def prepare_views(args):
         fig.savefig(out / f"selected_{count}_views.png", dpi=140)
         plt.close(fig)
     write_json(out / "view_selection.json", selections)
+    if scene != SCENE:
+        return  # Historical hand-reviewed chaise roles are not labels for other assets.
     write_json(
         out / "role_review.json",
         {

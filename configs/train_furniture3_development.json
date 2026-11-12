@@ -1,0 +1,26 @@
+{
+  "source_split": "train",
+  "split_sha256": "cee2d846d5a51bbeaf211f21e367da67e0faf1873a7a6e3111602fd9118fe374",
+  "selection": "first 3 train IDs in original order with caption matching upholster|sofa|couch|chaise|armchair; no replacement",
+  "object_ids": [
+    "B07HSDY9FC_ATVPDKIKX0DER",
+    "B075X5TN2K_ATVPDKIKX0DER",
+    "B07ZT3QBG3_ATVPDKIKX0DER"
+  ],
+  "objects": [
+    {
+      "scene_id": "B07HSDY9FC_ATVPDKIKX0DER",
+      "caption": "a dining chair with a blue upholstered seat"
+    },
+    {
+      "scene_id": "B075X5TN2K_ATVPDKIKX0DER",
+      "caption": "a chair with a cream upholstered seat"
+    },
+    {
+      "scene_id": "B07ZT3QBG3_ATVPDKIKX0DER",
+      "caption": "a sectional sofa with two ottomans"
+    }
+  ],
+  "mass_labels_read_for_selection": false,
+  "scope": "cross-object development; not held-out test"
+}

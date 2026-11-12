@@ -31,6 +31,68 @@ from tactile3d.vision.view_selection import select_azimuth_views
 from tactile3d.vision.vlm_interior import _parse_response_content
 
 
+def validate_grounded_roles(pieces, parts):
+    """Reject an impossible leg binding; never infer material from a role."""
+    if len(parts) != len(pieces) or {p["component_id"] for p in parts} != set(
+        range(len(pieces))
+    ):
+        raise ValueError("Part state must cover every native component exactly once")
+    bounds = np.asarray([mesh.bounds for mesh in pieces])
+    object_low, object_high = bounds[:, 0].min(0), bounds[:, 1].max(0)
+    tolerance = np.linalg.norm(object_high - object_low) * 1e-3
+    conflicts = []
+    for part in parts:
+        if part["functional_role"] != "leg":
+            continue
+        box = pieces[part["component_id"]].bounds
+        size = box[1] - box[0]
+        if abs(box[0, 2] - object_low[2]) > tolerance or size[2] <= 1.5 * max(
+            size[0], size[1]
+        ):
+            conflicts.append(part["component_id"])
+    if conflicts:
+        raise ValueError(
+            f"Leg role conflicts with z-up ground support and extent for native IDs {conflicts}; rebind components before physical inference"
+        )
+
+
+def evaluate_saved_prediction(output, root):
+    """Open catalogue targets only after verifying every sealed prediction input."""
+    seal = json.loads((output / "prediction_seal.json").read_text())
+    if "predictions.json" not in seal or any(
+        file_sha256(output / name) != value for name, value in seal.items()
+    ):
+        raise ValueError("Prediction seal mismatch")
+    rows = json.loads((output / "predictions.json").read_text())
+    if len(rows) != 1:
+        raise ValueError("This development runner expects one complete object")
+    prediction = rows[0]
+    scene = prediction["scene_id"]
+    weights = json.loads((root / "filtered_product_weights.json").read_text())
+    value = weights.get(scene, weights.get(scene.split("_")[0]))
+    if value is None:
+        raise ValueError(f"No catalogue mass for {scene} or its ASIN")
+    target = float(value)
+    report = {
+        "prediction": prediction,
+        "target_mass_kg": target,
+        "metrics": mass_metrics([target], [prediction["mass_kg"]]),
+        "scope": "single exposed development object; consult protocol for query budgets",
+    }
+    write_json(output / "report.json", report)
+    return report
+
+
+def seal_prediction_files(output):
+    paths = [
+        p
+        for p in output.glob("*.json")
+        if p.name in {"protocol.json", "model.json", "predictions.json"}
+        or p.stem.startswith(("raw_", "hypothesis_"))
+    ]
+    write_json(output / "prediction_seal.json", {p.name: file_sha256(p) for p in paths})
+
+
 def validate_hypothesis(answer, roles):
     rows = answer["upholstery"]
     if len(rows) != len(roles) or {r["role"] for r in rows} != set(roles):
@@ -117,6 +179,7 @@ def refine_construction(args):
     args.output.mkdir(parents=True, exist_ok=False)
     _, _, pieces, _ = load_prepared(args.reference)
     parts = state["parts"]
+    validate_grounded_roles(pieces, parts)
     sections = {}
     for part in parts:
         if (
@@ -131,7 +194,7 @@ def refine_construction(args):
                 "depth_m": float(spans[1]),
                 "area_m2": float(spans[0] * spans[1]),
             }
-    if not sections:
+    if not sections and args.refine_representation == "beams":
         raise ValueError("Beam refinement requires observed frame-rail cross sections")
     paths = [Path(p) for p in protocol["input_hashes"]]
     if any(file_sha256(p) != protocol["input_hashes"][str(p)] for p in paths):
@@ -257,23 +320,8 @@ def refine_construction(args):
         "hypothesis_masses_kg": results,
     }
     write_json(args.output / "predictions.json", [prediction])
-    write_json(
-        args.output / "prediction_seal.json",
-        {p.name: file_sha256(p) for p in args.output.glob("*.json")},
-    )
-    target = float(
-        json.loads((args.root / "filtered_product_weights.json").read_text())[
-            protocol["scene"]
-        ]
-    )
-    report = {
-        "prediction": prediction,
-        "target_mass_kg": target,
-        "metrics": mass_metrics([target], [prediction["mass_kg"]]),
-        "scope": "exposed development object; refinement arms each use 3 shared prior and 3 additional queries",
-    }
-    write_json(args.output / "report.json", report)
-    return report
+    seal_prediction_files(args.output)
+    return evaluate_saved_prediction(args.output, args.root)
 
 
 def construct(pieces, parts, answer, thickness, *, allow_removed=False):
@@ -298,7 +346,7 @@ def construct(pieces, parts, answer, thickness, *, allow_removed=False):
                 }
             )
             continue
-        if material not in ("wood", "fabric"):
+        if material not in ("wood", "fabric", "metal", "plastic", "rubber"):
             raise ValueError(
                 "This component-state pilot supports upholstered wood-frame assets"
             )
@@ -365,13 +413,14 @@ def properties(
     for domain in partition["parts"]:
         index = domain["component_id"]
         part = state[index]
-        if part["surface_material"] == "wood":
-            rho = edited_density if index == edited_component else densities["wood"]
+        if part["surface_material"] != "fabric":
+            material = part["surface_material"]
+            rho = edited_density if index == edited_component else densities[material]
             weighted.append((domain["assigned"], rho))
             allocations.append(
                 {
                     "component_id": index,
-                    "wood_volume_m3": domain["assigned"]["volume_m3"],
+                    f"{material}_volume_m3": domain["assigned"]["volume_m3"],
                     "mass_kg": domain["assigned"]["volume_m3"] * rho,
                 }
             )
@@ -408,8 +457,40 @@ def properties(
     return result
 
 
+def density_edit_check(partition, parts, answer, densities, before):
+    state = {p["component_id"]: p for p in parts}
+    solids = [
+        p
+        for p in partition["parts"]
+        if p["material"] != "fabric" and p["assigned"]["volume_m3"] > 0
+    ]
+    if not solids:
+        return {"edit_status": "not applicable: no independent solid domain"}
+    chosen = min(
+        solids,
+        key=lambda p: (
+            state[p["component_id"]]["functional_role"] != "leg",
+            p["material"] != "wood",
+            p["component_id"],
+        ),
+    )
+    index = chosen["component_id"]
+    edited = properties(partition, parts, answer, densities, index, 2700.0)
+    delta = chosen["assigned"]["volume_m3"] * (2700 - densities[chosen["material"]])
+    if not np.isclose(
+        edited["mass_kg"] - before["mass_kg"], delta, rtol=1e-7, atol=1e-12
+    ):
+        raise ValueError("Density edit violates fixed-domain mass conservation")
+    return {
+        "edit_status": "passed",
+        "edited_component_id": index,
+        "edited_mass_kg": edited["mass_kg"],
+        "edit_mass_delta_kg": delta,
+    }
+
+
 def run(args):
-    args.output.mkdir(parents=True, exist_ok=False)
+    args.output.mkdir(parents=True, exist_ok=getattr(args, "resume", False))
     scene = json.loads((args.reference / "input_manifest.json").read_text())["scene"]
     _mesh, _labels, pieces, _colors = load_prepared(args.reference)
     state_path = args.reference / "part_state_geometry_constrained.json"
@@ -417,6 +498,7 @@ def run(args):
     if state["geometry_sha256"] != file_sha256(args.reference / "reference_arrays.npz"):
         raise ValueError("Part IDs are bound to different reference geometry")
     parts = state["parts"]
+    validate_grounded_roles(pieces, parts)
     roles = sorted(
         {p["functional_role"] for p in parts if p["surface_material"] == "fabric"}
     )
@@ -430,7 +512,9 @@ def run(args):
     priors, _ = materials_from_info(materials, cfg)
     densities = {
         kind: float(np.mean(next(m["density"] for m in priors if m["kind"] == kind)))
-        for kind in ("wood", "fabric", "foam")
+        for kind in sorted(
+            {"wood", "fabric", "foam"} | {p["surface_material"] for p in parts}
+        )
     }
     thickness = float(
         np.mean(next(m["thickness_m"] for m in priors if m["kind"] == "fabric"))
@@ -462,6 +546,25 @@ def run(args):
         }
         for p in parts
     ]
+    if len(features) > 30:
+        grouped = {}
+        for part in parts:
+            grouped.setdefault(part["evidence_group_id"], []).append(part)
+        features = [
+            {
+                "evidence_group_id": group_id,
+                "native_components": len(rows),
+                "material": rows[0]["surface_material"],
+                "role": rows[0]["functional_role"],
+                "extent_m": (
+                    np.max([pieces[p["component_id"]].bounds[1] for p in rows], axis=0)
+                    - np.min(
+                        [pieces[p["component_id"]].bounds[0] for p in rows], axis=0
+                    )
+                ).tolist(),
+            }
+            for group_id, rows in sorted(grouped.items())
+        ]
     protocol = {
         "scene": scene,
         "scope": "exposed reference-geometry development case",
@@ -480,6 +583,19 @@ def run(args):
         "geometry": "provided closed wood solids; per-component convex/prism completion elsewhere; disjoint CSG",
         "aggregation": "equal mean of three independent-question construction hypotheses; not calibrated probabilities",
     }
+    if getattr(args, "resume", False) and (args.output / "protocol.json").is_file():
+        previous = json.loads((args.output / "protocol.json").read_text())
+        if any(
+            previous[key] != protocol[key]
+            for key in (
+                "part_state_sha256",
+                "input_hashes",
+                "densities_kg_m3",
+                "fabric_thickness_m",
+            )
+        ):
+            raise ValueError("Resume inputs differ from the frozen protocol")
+        protocol["resumed_from_source_sha256"] = previous["source_sha256"]
     write_json(args.output / "protocol.json", protocol)
     model = LocalVLM(args.model, max_tokens=1000, max_pixels=768**2, quantized=True)
     write_json(args.output / "model.json", model.provenance)
@@ -508,41 +624,35 @@ def run(args):
     ]
     results = []
     for trial, focus in enumerate(focuses):
-        response = model.generate(
-            prompt + "\n" + focus,
-            images,
-            "Return physically consistent construction JSON.",
-            seed=2410 + trial,
-            do_sample=True,
-            temperature=0.6,
-            top_p=0.9,
-        )
-        record = {"prompt": prompt + "\n" + focus, "response": asdict(response)}
-        write_json(args.output / f"raw_{trial}.json", record)
-        answer = validate_hypothesis(_parse_response_content(response.text), roles)
+        raw_path = args.output / f"raw_{trial}.json"
+        if getattr(args, "resume", False) and raw_path.is_file():
+            record = json.loads(raw_path.read_text())
+            if record["prompt"] != prompt + "\n" + focus:
+                raise ValueError("Cached query prompt differs from the frozen prompt")
+            response_text = record["response"]["text"]
+        else:
+            response = model.generate(
+                prompt + "\n" + focus,
+                images,
+                "Return physically consistent construction JSON.",
+                seed=2410 + trial,
+                do_sample=True,
+                temperature=0.6,
+                top_p=0.9,
+            )
+            record = {"prompt": prompt + "\n" + focus, "response": asdict(response)}
+            write_json(raw_path, record)
+            response_text = response.text
+        answer = validate_hypothesis(_parse_response_content(response_text), roles)
         partition = construct(pieces, parts, answer, thickness)
         result = properties(partition, parts, answer, densities)
-        wood_id = next(
-            p["component_id"] for p in parts if p["functional_role"] == "leg"
-        )
-        edited = properties(partition, parts, answer, densities, wood_id, 2700.0)
-        expected_delta = next(
-            p["assigned"]["volume_m3"]
-            for p in partition["parts"]
-            if p["component_id"] == wood_id
-        ) * (2700 - densities["wood"])
-        if not np.isclose(
-            edited["mass_kg"] - result["mass_kg"], expected_delta, rtol=1e-7
-        ):
-            raise ValueError("Density edit violates fixed-domain mass conservation")
+        edit = density_edit_check(partition, parts, answer, densities, result)
         result.update(
             {
                 "trial": trial,
                 "answer": answer,
                 "partition": partition,
-                "edited_component_id": wood_id,
-                "edited_mass_kg": edited["mass_kg"],
-                "edit_mass_delta_kg": expected_delta,
+                **edit,
             }
         )
         write_json(args.output / f"hypothesis_{trial}.json", result)
@@ -561,26 +671,20 @@ def run(args):
         "hypothesis_masses_kg": [r["mass_kg"] for r in results],
     }
     write_json(args.output / "predictions.json", [prediction])
-    files = list(args.output.glob("*.json"))
-    write_json(
-        args.output / "prediction_seal.json", {p.name: file_sha256(p) for p in files}
-    )
-    weights = json.loads((args.root / "filtered_product_weights.json").read_text())
-    target = float(weights.get(scene, weights.get(scene.split("_")[0])))
-    report = {
-        "prediction": prediction,
-        "target_mass_kg": target,
-        "metrics": mass_metrics([target], [prediction["mass_kg"]]),
-        "scope": "single exposed development case; not a whole-cohort comparison",
-    }
-    write_json(args.output / "report.json", report)
-    return report
+    seal_prediction_files(args.output)
+    return evaluate_saved_prediction(args.output, args.root)
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ("root", "reference", "model", "output"):
-        parser.add_argument("--" + name, type=Path, required=True)
+        parser.add_argument("--" + name, type=Path, required=name in {"root", "output"})
+    parser.add_argument("--evaluate-only", action="store_true")
+    parser.add_argument(
+        "--resume",
+        action="store_true",
+        help="Reuse raw responses only when prompts and input hashes match",
+    )
     parser.add_argument("--refine-from", type=Path)
     parser.add_argument(
         "--refine-representation",
@@ -588,6 +692,11 @@ def main():
         default="fractions",
     )
     args = parser.parse_args()
+    if args.evaluate_only:
+        print(json.dumps(evaluate_saved_prediction(args.output, args.root)), flush=True)
+        return
+    if args.reference is None or args.model is None:
+        parser.error("Inference requires --reference and --model")
     print(
         json.dumps(refine_construction(args) if args.refine_from else run(args)),
         flush=True,

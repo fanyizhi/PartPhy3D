@@ -18,9 +18,40 @@ def texture_face_rgb(mesh: trimesh.Trimesh) -> np.ndarray:
 
 def face_components(mesh: trimesh.Trimesh) -> tuple[int, np.ndarray]:
     adjacent = mesh.face_adjacency
-    graph = coo_matrix((np.ones(len(adjacent)), (adjacent[:, 0], adjacent[:, 1])),
-                       shape=(len(mesh.faces), len(mesh.faces)))
+    graph = coo_matrix(
+        (np.ones(len(adjacent)), (adjacent[:, 0], adjacent[:, 1])),
+        shape=(len(mesh.faces), len(mesh.faces)),
+    )
     return connected_components(graph, directed=False)
+
+
+def evidence_groups(areas, colors, *, area_fraction=0.01):
+    """Compress VLM evidence only; never union or hull the physical components.
+
+    Large candidates stay separate. Small candidates share coarse RGB buckets;
+    a group may still be mixed and must be checked by the visual model.
+    """
+    areas, colors = np.asarray(areas, float), np.asarray(colors, float)
+    if (
+        areas.ndim != 1
+        or not len(areas)
+        or colors.shape != (len(areas), 3)
+        or not np.isfinite(areas).all()
+        or not np.isfinite(colors).all()
+        or np.any(areas <= 0)
+        or np.any(colors < 0)
+        or np.any(colors > 1)
+        or not 0 < area_fraction < 1
+    ):
+        raise ValueError("Positive areas and finite RGB colors required")
+    large = areas >= areas.sum() * area_fraction
+    groups = [[int(i)] for i in np.flatnonzero(large)]
+    buckets = {}
+    for i in np.flatnonzero(~large):
+        key = tuple(np.floor(colors[i] / 0.1 + 1e-9).astype(int))
+        buckets.setdefault(key, []).append(int(i))
+    groups.extend(buckets[key] for key in sorted(buckets))
+    return groups
 
 
 def interface_geometry(
@@ -43,20 +74,28 @@ def interface_geometry(
         raise ValueError("Positive lengths and at least 32 samples are required")
     clipped = source.slice_plane(
         plane_origin=[0, float(source.bounds[1, 1] - top_band_m), 0],
-        plane_normal=[0, 1, 0], cap=False,
+        plane_normal=[0, 1, 0],
+        cap=False,
     )
     if not len(clipped.faces):
         raise ValueError("The attachment band contains no surface")
     rng = np.random.default_rng(seed)
-    ids = rng.choice(len(clipped.faces), size=samples, p=clipped.area_faces / clipped.area)
+    ids = rng.choice(
+        len(clipped.faces), size=samples, p=clipped.area_faces / clipped.area
+    )
     uv = rng.random((samples, 2))
     uv[uv.sum(axis=1) > 1] = 1 - uv[uv.sum(axis=1) > 1]
     triangles = clipped.triangles[ids]
-    points = (triangles[:, 0] + uv[:, :1] * (triangles[:, 1] - triangles[:, 0])
-              + uv[:, 1:] * (triangles[:, 2] - triangles[:, 0]))
+    points = (
+        triangles[:, 0]
+        + uv[:, :1] * (triangles[:, 1] - triangles[:, 0])
+        + uv[:, 1:] * (triangles[:, 2] - triangles[:, 0])
+    )
     distances = []
     for start in range(0, samples, 32):
-        _, d, _ = trimesh.proximity.closest_point_naive(target, points[start:start+32])
+        _, d, _ = trimesh.proximity.closest_point_naive(
+            target, points[start : start + 32]
+        )
         distances.extend(d)
     distances = np.asarray(distances)
     result = {
@@ -77,8 +116,12 @@ def interface_geometry(
         "mechanical_quality": "unverified",
         "connection_type": "unknown: not encoded in the visible mesh",
         "strength_safety_factor": None,
-        "required_evidence": ["joint construction", "fasteners or bond geometry",
-                              "material measurements", "load case and supports"],
+        "required_evidence": [
+            "joint construction",
+            "fasteners or bond geometry",
+            "material measurements",
+            "load case and supports",
+        ],
     }
     return result, points, distances
 

@@ -16,6 +16,7 @@ def main():
         choices=[
             "prepare",
             "infer",
+            "bind-native",
             "evaluate",
             "domain-evaluate",
             "domain-figures",
@@ -25,6 +26,9 @@ def main():
     )
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--root", type=Path, default=Path("data/abo500_five"))
+    parser.add_argument(
+        "--scene", help="Scene ID for prepare; default is the historical chaise"
+    )
     parser.add_argument("--figures", type=Path)
     parser.add_argument(
         "--model",
@@ -42,6 +46,11 @@ def main():
     )
     parser.add_argument("--answers", type=Path)
     parser.add_argument("--construction", type=Path)
+    parser.add_argument(
+        "--surface-audit",
+        action="store_true",
+        help="Bind outer surface material independently of hidden structural role",
+    )
     args = parser.parse_args()
     args.figures = args.figures or args.output / "figures"
 
@@ -51,6 +60,9 @@ def main():
     from tactile3d.figures import reference_study as figures
 
     figures.configure_style()
+    if args.stage == "bind-native":
+        inference.infer_native_parts(args)
+        return
 
     if args.stage in {"domain-evaluate", "domain-figures"}:
         if args.construction is None:

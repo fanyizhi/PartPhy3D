@@ -9,7 +9,9 @@ def test_upper_band_proximity_distinguishes_separated_surfaces():
     source = trimesh.creation.box(extents=[1, 1, 1])
     target = trimesh.creation.box(extents=[1, 1, 1])
     target.apply_translation([0, 1.01, 0])
-    report, _, distance = interface_geometry(source, target, top_band_m=0.1, samples=128)
+    report, _, distance = interface_geometry(
+        source, target, top_band_m=0.1, samples=128
+    )
     assert distance.min() == pytest.approx(0.01)
     assert report["near_sample_fraction"] == 0
     assert report["mechanical_quality"] == "unverified"
@@ -26,4 +28,18 @@ def test_texture_vertex_colors_do_not_require_bound_color_visual():
     )
     rgb = texture_face_rgb(mesh)
     assert rgb.shape == (len(mesh.faces), 3)
-    np.testing.assert_allclose(rgb, np.tile(np.array([128, 64, 32])/255, (len(mesh.faces), 1)))
+    np.testing.assert_allclose(
+        rgb, np.tile(np.array([128, 64, 32]) / 255, (len(mesh.faces), 1))
+    )
+
+
+def test_evidence_grouping_preserves_every_native_id_without_merging_geometry():
+    from tactile3d.mesh.assembly import evidence_groups
+
+    groups = evidence_groups(
+        [10.0, 0.001, 0.001, 0.001],
+        [[0.5, 0.4, 0.3], [0.2, 0.3, 0.4], [0.21, 0.31, 0.41], [0.8, 0.8, 0.8]],
+    )
+    assert groups[0] == [0]
+    assert sorted(i for group in groups for i in group) == [0, 1, 2, 3]
+    assert [1, 2] in groups

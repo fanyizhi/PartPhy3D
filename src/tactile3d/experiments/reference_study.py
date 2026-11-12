@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import struct
 from collections import Counter
 from dataclasses import asdict
 from importlib.metadata import version
@@ -19,7 +20,7 @@ import trimesh
 from PIL import Image
 
 from tactile3d.figures.mesh_fields import render_mesh
-from tactile3d.mesh.assembly import texture_face_rgb
+from tactile3d.mesh.assembly import evidence_groups, texture_face_rgb
 from tactile3d.mesh.task_lod import simplify_components, simplify_with_lineage
 from tactile3d.physics.materials import load_material_priors
 from tactile3d.physics.part_io import write_json
@@ -71,7 +72,16 @@ def load_prepared(output):
 def prepare(args):
     output = args.output
     output.mkdir(parents=True, exist_ok=False)
-    path = args.root / "meshes_reference" / SCENE / "model.glb"
+    scene = getattr(args, "scene", None) or SCENE
+    path = args.root / "meshes_reference" / scene / "model.glb"
+    with path.open("rb") as stream:
+        header = stream.read(12)
+    if len(header) != 12 or struct.unpack("<4sII", header) != (
+        b"glTF",
+        2,
+        path.stat().st_size,
+    ):
+        raise ValueError("Reference GLB is incomplete or has an invalid header")
     mesh = trimesh.load_scene(path, process=False).to_geometry()
     colors = texture_face_rgb(mesh)
     # UV seams must not masquerade as physical disconnections. Preserve face
@@ -88,24 +98,41 @@ def prepare(args):
     )
     labels = np.empty(len(mesh.faces), dtype=int)
     observations = []
-    fig, axes = plt.subplots(3, 5, figsize=(12, 7.2), layout="constrained")
-    if len(groups) != 15:
+    if scene == SCENE and len(groups) != 15:
         raise ValueError("Frozen chaise reference expected 15 connected candidates")
-    for index, (group, ax) in enumerate(zip(groups, axes.flat)):
+    for index, group in enumerate(groups):
         labels[group] = index
         part = mesh.submesh([group], append=True, repair=False)
         observations.append(
             {
                 "component_id": index,
                 "faces": len(group),
+                "area_m2": float(part.area),
                 "bounds_m": part.bounds.tolist(),
                 "watertight": bool(part.is_watertight),
                 "mean_texture_rgb": colors[group].mean(0).tolist(),
                 "volume_m3": float(part.volume) if part.is_volume else None,
             }
         )
-        ax.imshow(render_mesh(part.vertices, part.faces, colors[group], resolution=220))
-        ax.set_title(f"Component {index}", fontsize=12)
+    parents = (
+        [[i] for i in range(len(groups))]
+        if len(groups) <= 30
+        else evidence_groups(
+            [r["area_m2"] for r in observations],
+            [r["mean_texture_rgb"] for r in observations],
+        )
+    )
+    rows = (len(parents) + 4) // 5
+    fig, axes = plt.subplots(
+        rows, 5, figsize=(12, rows * 2.4), layout="constrained", squeeze=False
+    )
+    for index, (children, ax) in enumerate(zip(parents, axes.flat)):
+        ids = np.flatnonzero(np.isin(labels, children))
+        part = mesh.submesh([ids], append=True, repair=False)
+        ax.imshow(render_mesh(part.vertices, part.faces, colors[ids], resolution=220))
+        ax.set_title(f"Group {index} ({len(children)} native)", fontsize=10)
+        ax.axis("off")
+    for ax in axes.flat[len(parents) :]:
         ax.axis("off")
     fig.savefig(output / "component_sheet.png", dpi=110, facecolor="white")
     plt.close(fig)
@@ -120,7 +147,7 @@ def prepare(args):
         render_mesh(mesh.vertices, mesh.faces, colors, resolution=700)
     ).save(output / "reference_render.png")
     for view in (0, 10, 20):
-        source = args.root / "scenes" / SCENE / "images" / f"{SCENE}_{view:02d}.png"
+        source = args.root / "scenes" / scene / "images" / f"{scene}_{view:02d}.png"
         with Image.open(source) as im:
             rgba = im.convert("RGBA")
             Image.alpha_composite(Image.new("RGBA", rgba.size, "white"), rgba).convert(
@@ -129,15 +156,20 @@ def prepare(args):
     write_json(
         output / "input_manifest.json",
         {
-            "scene": SCENE,
+            "scene": scene,
             "scope": "reference_geometry_assisted_development",
-            "original_split": "test; previously exposed development object, not held-out",
+            "original_split": (
+                "test; previously exposed development object, not held-out"
+                if scene == SCENE
+                else "declared cohort; see selection manifest"
+            ),
             "reference_sha256": digest(path),
             "reference_geometry_used_for_inference": True,
             "target_mass_used_for_inference": False,
             "views": [0, 10, 20],
             "geometry_unit": "glTF meter convention; not independently measured",
             "components": observations,
+            "evidence_groups": parents,
             "face_budget_targets": [2400, 1200, 600],
             "methods": ["global_qem", "component_qem", "sensitivity_qem"],
             "vlm_trials": args.trials,
@@ -147,7 +179,7 @@ def prepare(args):
             },
         },
     )
-    print("Prepared 15 components and fixed study protocol", flush=True)
+    print(f"Prepared {len(groups)} components for {scene}", flush=True)
 
 
 def run_vlm(args):

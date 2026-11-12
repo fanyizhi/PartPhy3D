@@ -1,3 +1,5 @@
+import json
+
 import numpy as np
 import pytest
 import trimesh
@@ -5,10 +7,14 @@ import trimesh
 from tactile3d.experiments.vlm_mass import (
     apply_beam_inventory,
     construct,
+    density_edit_check,
+    evaluate_saved_prediction,
     properties,
+    seal_prediction_files,
     validate_hypothesis,
 )
 from tactile3d.physics.fields import integrate_construction
+from tactile3d.physics.part_io import file_sha256
 
 
 def row(core, thickness=0.0, region=0):
@@ -23,6 +29,68 @@ def row(core, thickness=0.0, region=0):
 POINTS = np.array([[0.0, 0.0, 0.0], [0.1, 0.0, 0.0]])
 OWNERS = np.array([0, 0])
 DENSITIES = {"cover": 1000.0, "foam": 40.0, "steel": 7850.0}
+
+
+def test_whole_upholstered_frame_cannot_be_accepted_as_a_leg():
+    from tactile3d.experiments.vlm_mass import validate_grounded_roles
+
+    leg = trimesh.creation.box(extents=[0.04, 0.04, 0.3])
+    body = trimesh.creation.box(extents=[0.8, 1.0, 0.7])
+    body.apply_translation([0, 0, 0.6])
+    validate_grounded_roles(
+        [leg, body],
+        [
+            {"component_id": 0, "functional_role": "leg"},
+            {"component_id": 1, "functional_role": "frame"},
+        ],
+    )
+    with pytest.raises(ValueError, match="rebind components"):
+        validate_grounded_roles(
+            [leg, body],
+            [
+                {"component_id": 0, "functional_role": "leg"},
+                {"component_id": 1, "functional_role": "leg"},
+            ],
+        )
+    with pytest.raises(ValueError, match="every native component"):
+        validate_grounded_roles(
+            [leg, body], [{"component_id": 0, "functional_role": "leg"}]
+        )
+
+
+def test_saved_prediction_evaluation_resolves_scene_suffix_and_rejects_tampering(
+    tmp_path,
+):
+    output, root = tmp_path / "run", tmp_path / "data"
+    output.mkdir()
+    root.mkdir()
+    path = output / "predictions.json"
+    path.write_text(json.dumps([{"scene_id": "ASIN_MARKET", "mass_kg": 2.0}]))
+    (output / "prediction_seal.json").write_text(
+        json.dumps({"predictions.json": file_sha256(path)})
+    )
+    (root / "filtered_product_weights.json").write_text(json.dumps({"ASIN": 2.5}))
+    report = evaluate_saved_prediction(output, root)
+    assert report["target_mass_kg"] == 2.5
+    assert report["metrics"]["ade_kg"] == pytest.approx(0.5)
+    seal_prediction_files(output)
+    evaluate_saved_prediction(output, root)
+    seal = json.loads((output / "prediction_seal.json").read_text())
+    assert "report.json" not in seal and "prediction_seal.json" not in seal
+    path.write_text(json.dumps([{"scene_id": "ASIN_MARKET", "mass_kg": 2.5}]))
+    with pytest.raises(ValueError, match="seal mismatch"):
+        evaluate_saved_prediction(output, root)
+
+
+def test_metal_fastener_retains_its_own_density_instead_of_wood_density():
+    mesh = trimesh.creation.box(extents=[0.01] * 3)
+    parts = [
+        {"component_id": 0, "surface_material": "metal", "functional_role": "fastener"}
+    ]
+    answer = {"upholstery": [], "underside": {"kind": "visual_cap", "thickness_mm": 0}}
+    partition = construct([mesh], parts, answer, 0.0035)
+    result = properties(partition, parts, answer, {"metal": 7500, "wood": 500})
+    assert result["mass_kg"] == pytest.approx(0.0075)
 
 
 def beam_case(count=2, length=1.0, section=10):
@@ -158,6 +226,9 @@ def test_planar_upholstery_has_fabric_volume_without_a_fictitious_foam_core():
     )
     assert result["mass_kg"] == pytest.approx(1.4)
     assert partition["parts"][0]["core"]["volume_m3"] == 0
+    assert density_edit_check(
+        partition, parts, answer, {"wood": 500, "foam": 40, "fabric": 200}, result
+    )["edit_status"].startswith("not applicable")
 
 
 def test_flattened_wood_leg_does_not_inherit_the_underside_panel_thickness():
