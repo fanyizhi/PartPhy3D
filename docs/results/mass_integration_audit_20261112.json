@@ -5580,5 +5580,1832 @@
       "Moderate-budget retention improves; the lowest-budget center-of-mass result is worse than its matched global baseline."
     ],
     "main_cohort_benchmark_completed": false
+  },
+  "geometry_feedback_refinement": {
+    "scope": "one exposed development case; no test-set ranking",
+    "baseline": {
+      "prediction": {
+        "scene_id": "B07B4G5RBN_ATVPDKIKX0DER",
+        "mass_kg": 46.0987652510133,
+        "hypothesis_masses_kg": [
+          41.90325098076497,
+          49.15065328912477,
+          47.24239148315014
+        ]
+      },
+      "target_mass_kg": 29.029888,
+      "metrics": {
+        "num_scenes": 1,
+        "ade_kg": 17.068877251013298,
+        "alde": 0.4624602455497775,
+        "ape": 0.5879759939484884,
+        "mnre": 0.6297324416810034,
+        "rmse_kg": 17.068877251013298
+      },
+      "scope": "single exposed development case; not a whole-cohort comparison"
+    },
+    "arms": {
+      "beams": {
+        "report": {
+          "prediction": {
+            "scene_id": "B07B4G5RBN_ATVPDKIKX0DER",
+            "mass_kg": 32.46783327568284,
+            "hypothesis_masses_kg": [
+              36.14771357428063,
+              27.93743115602663,
+              33.318355096741264
+            ]
+          },
+          "target_mass_kg": 29.029888,
+          "metrics": {
+            "num_scenes": 1,
+            "ade_kg": 3.437945275682843,
+            "alde": 0.11192393389947553,
+            "ape": 0.11842778296915382,
+            "mnre": 0.8941122665472805,
+            "rmse_kg": 3.437945275682843
+          },
+          "scope": "exposed development object; paired parameterization ablation; unequal query budgets"
+        },
+        "protocol": {
+          "scene": "B07B4G5RBN_ATVPDKIKX0DER",
+          "scope": "exposed reference-geometry development case",
+          "part_state_sha256": "f50522ce5706875eb1172f4a580e9aa3ffee70dc2d485a37b0fd4c4b817fb0bc",
+          "source_sha256": "a21cea19cd2778835b86309951326a7e9391ad94c2fe8827d7c6d0c40578f18f",
+          "geometry_module_sha256": "60625ded37bcf5eaeefea9f3b259dcf962beaf34d083afd5d8601788f4d96e29",
+          "input_hashes": {
+            "data/abo500_five/scenes/B07B4G5RBN_ATVPDKIKX0DER/images/B07B4G5RBN_ATVPDKIKX0DER_02.png": "401bee21a611c090235b5739a155bc32ac92b74428d7e36e896b7c88bca261b0",
+            "data/abo500_five/scenes/B07B4G5RBN_ATVPDKIKX0DER/images/B07B4G5RBN_ATVPDKIKX0DER_08.png": "21f79d248771c9f1055f41e448b0d28c4c71aa4b47c20ec8985dcc2dea55dc9f",
+            "data/abo500_five/scenes/B07B4G5RBN_ATVPDKIKX0DER/images/B07B4G5RBN_ATVPDKIKX0DER_20.png": "59382554f398eda0b8212ecba43b286e8fdd6fe2c8c0caa6b4fe7ef6e876b10c",
+            "data/abo500_five/scenes/B07B4G5RBN_ATVPDKIKX0DER/images/B07B4G5RBN_ATVPDKIKX0DER_26.png": "f66ade9a3fd642a306fc01e012eb6a2d54d5aef35a20409b9d8cb20ee9f6f5ad",
+            "outputs/chaise_reference_20261111/component_sheet.png": "dbd9875fac9c5e8208ba4a739b7ae8dd0f1999585449cebd668096e2e8fa2f5d",
+            "outputs/chaise_reference_20261111/views_contacts/global_component_positions.png": "3daee355fc098ea0053b0cee5f48ec66102e17676e2f3e7c29f231f845825020"
+          },
+          "selected_views": [
+            {
+              "frame_index": 2,
+              "target_azimuth_degrees": 0.0,
+              "actual_azimuth_degrees": 354.1807771254349,
+              "elevation_degrees": 9.686455817531318,
+              "estimated_lookat_center": [
+                -9.841869938845794e-09,
+                0.028389240012334505,
+                0.429474334615675
+              ]
+            },
+            {
+              "frame_index": 8,
+              "target_azimuth_degrees": 90.0,
+              "actual_azimuth_degrees": 97.95690279623524,
+              "elevation_degrees": 57.67259564805305,
+              "estimated_lookat_center": [
+                -9.841869938845794e-09,
+                0.028389240012334505,
+                0.429474334615675
+              ]
+            },
+            {
+              "frame_index": 20,
+              "target_azimuth_degrees": 180.0,
+              "actual_azimuth_degrees": 181.5163842206532,
+              "elevation_degrees": 5.356594585221614,
+              "estimated_lookat_center": [
+                -9.841869938845794e-09,
+                0.028389240012334505,
+                0.429474334615675
+              ]
+            },
+            {
+              "frame_index": 26,
+              "target_azimuth_degrees": 270.0,
+              "actual_azimuth_degrees": 259.09935594305915,
+              "elevation_degrees": -4.616260536803075,
+              "estimated_lookat_center": [
+                -9.841869938845794e-09,
+                0.028389240012334505,
+                0.429474334615675
+              ]
+            }
+          ],
+          "densities_kg_m3": {
+            "wood": 500.0,
+            "fabric": 200.0,
+            "foam": 40.0
+          },
+          "fabric_thickness_m": 0.0035,
+          "components": [
+            {
+              "component_id": 0,
+              "material": "fabric",
+              "role": "cushion",
+              "extent_m": [
+                0.71233269572258,
+                0.3027815818786621,
+                0.4534173011779785
+              ],
+              "closed_as_loaded": true
+            },
+            {
+              "component_id": 1,
+              "material": "fabric",
+              "role": "seat",
+              "extent_m": [
+                0.894342839717865,
+                1.49456125497818,
+                0.22323235869407654
+              ],
+              "closed_as_loaded": false
+            },
+            {
+              "component_id": 2,
+              "material": "fabric",
+              "role": "backrest",
+              "extent_m": [
+                0.8878940343856812,
+                0.3448469638824463,
+                0.4466893672943115
+              ],
+              "closed_as_loaded": false
+            },
+            {
+              "component_id": 3,
+              "material": "fabric",
+              "role": "armrest",
+              "extent_m": [
+                0.12731844186782837,
+                0.8059350326657295,
+                0.3728283643722534
+              ],
+              "closed_as_loaded": false
+            },
+            {
+              "component_id": 4,
+              "material": "fabric",
+              "role": "armrest",
+              "extent_m": [
+                0.1257646381855011,
+                0.8059350326657295,
+                0.3728283643722534
+              ],
+              "closed_as_loaded": false
+            },
+            {
+              "component_id": 5,
+              "material": "fabric",
+              "role": "backrest",
+              "extent_m": [
+                0.8717105090618134,
+                0.08757460117340088,
+                0.5858514755964279
+              ],
+              "closed_as_loaded": false
+            },
+            {
+              "component_id": 6,
+              "material": "wood",
+              "role": "leg",
+              "extent_m": [
+                0.055821001529693604,
+                0.05582094192504883,
+                0.22925949096679688
+              ],
+              "closed_as_loaded": true
+            },
+            {
+              "component_id": 7,
+              "material": "wood",
+              "role": "leg",
+              "extent_m": [
+                0.055821001529693604,
+                0.05582094192504883,
+                0.22925949096679688
+              ],
+              "closed_as_loaded": true
+            },
+            {
+              "component_id": 8,
+              "material": "wood",
+              "role": "leg",
+              "extent_m": [
+                0.055821001529693604,
+                0.05582094192504883,
+                0.22925949096679688
+              ],
+              "closed_as_loaded": true
+            },
+            {
+              "component_id": 9,
+              "material": "wood",
+              "role": "leg",
+              "extent_m": [
+                0.055821001529693604,
+                0.05582094192504883,
+                0.22925949096679688
+              ],
+              "closed_as_loaded": true
+            },
+            {
+              "component_id": 10,
+              "material": "wood",
+              "role": "frame_rail",
+              "extent_m": [
+                0.024432599544525146,
+                1.554049789905548,
+                0.05341656506061554
+              ],
+              "closed_as_loaded": false
+            },
+            {
+              "component_id": 11,
+              "material": "wood",
+              "role": "frame_rail",
+              "extent_m": [
+                0.7438859045505524,
+                0.02443253993988037,
+                0.05341656506061554
+              ],
+              "closed_as_loaded": false
+            },
+            {
+              "component_id": 12,
+              "material": "wood",
+              "role": "frame_rail",
+              "extent_m": [
+                0.7438859045505524,
+                0.02443253993988037,
+                0.05341656506061554
+              ],
+              "closed_as_loaded": false
+            },
+            {
+              "component_id": 13,
+              "material": "wood",
+              "role": "frame_rail",
+              "extent_m": [
+                0.024432599544525146,
+                1.554049789905548,
+                0.05341656506061554
+              ],
+              "closed_as_loaded": false
+            },
+            {
+              "component_id": 14,
+              "material": "wood",
+              "role": "underside",
+              "extent_m": [
+                0.8200963139533997,
+                1.638140082359314,
+                0.0
+              ],
+              "closed_as_loaded": false
+            }
+          ],
+          "target_mass_used_for_inference": false,
+          "rounds": 3,
+          "geometry": "provided closed wood solids; per-component convex/prism completion elsewhere; disjoint CSG",
+          "aggregation": "equal mean of three independent-question construction hypotheses; not calibrated probabilities",
+          "refined_from_seal_sha256": "0b0544d05548d91f9f42b5aa9bafbfc81bf090e95bd70654d8f234b504665c18",
+          "construction_model": "observed-section beam inventory; unresolved hidden locations",
+          "sections": {
+            "10": {
+              "width_m": 0.024432599544525146,
+              "depth_m": 0.05341656506061554,
+              "area_m2": 0.001305105543170093
+            },
+            "11": {
+              "width_m": 0.02443253993988037,
+              "depth_m": 0.05341656506061554,
+              "area_m2": 0.0013051023592947075
+            },
+            "12": {
+              "width_m": 0.02443253993988037,
+              "depth_m": 0.05341656506061554,
+              "area_m2": 0.0013051023592947075
+            },
+            "13": {
+              "width_m": 0.024432599544525146,
+              "depth_m": 0.05341656506061554,
+              "area_m2": 0.001305105543170093
+            }
+          },
+          "additional_queries": 3,
+          "total_queries_including_prior": 6,
+          "non_frame_parameters": "foam fractions, underside hypothesis and numeric material priors frozen"
+        },
+        "trial_answers": [
+          {
+            "upholstery": [
+              {
+                "role": "armrest",
+                "foam_fraction": 0.65,
+                "hidden_wood_fraction": 0.08821430848308985,
+                "hidden_beams": [
+                  {
+                    "section_component_id": 11,
+                    "count": 2,
+                    "length_m": 1.247275036948841
+                  }
+                ]
+              },
+              {
+                "role": "backrest",
+                "foam_fraction": 0.7,
+                "hidden_wood_fraction": 0.058499334205344804,
+                "hidden_beams": [
+                  {
+                    "section_component_id": 12,
+                    "count": 2,
+                    "length_m": 1.125078773618224
+                  }
+                ]
+              },
+              {
+                "role": "cushion",
+                "foam_fraction": 0.8,
+                "hidden_wood_fraction": 0.054416285981583,
+                "hidden_beams": [
+                  {
+                    "section_component_id": 13,
+                    "count": 2,
+                    "length_m": 0.897040581427543
+                  }
+                ]
+              },
+              {
+                "role": "seat",
+                "foam_fraction": 0.85,
+                "hidden_wood_fraction": 0.01922430591675504,
+                "hidden_beams": [
+                  {
+                    "section_component_id": 10,
+                    "count": 2,
+                    "length_m": 1.7559598929943383
+                  }
+                ]
+              }
+            ],
+            "underside": {
+              "kind": "manufactured_panel",
+              "thickness_mm": 15.0
+            },
+            "evidence": "The armrest, backrest, cushion, and seat are all upholstered components with visible fabric surfaces. The foam_fraction is estimated based on typical upholstery construction where foam provides core cushioning (65-85% for armrests and seats, 70% for backrests, 80% for cushions). The hidden_wood_fraction accounts for internal wooden frames or structural supports (10-15% for armrests and backrests, 5% for seat and cushion). The underside is a flat wooden panel, inferred from its planar shape and connection to the frame rails (Components 10, 11, 12, 13), and its thickness is estimated from standard furniture panel construction (15mm)."
+          },
+          {
+            "upholstery": [
+              {
+                "role": "armrest",
+                "foam_fraction": 0.35,
+                "hidden_wood_fraction": 0.06344375717281774,
+                "hidden_beams": [
+                  {
+                    "section_component_id": 11,
+                    "count": 2,
+                    "length_m": 0.897040581427543
+                  }
+                ]
+              },
+              {
+                "role": "backrest",
+                "foam_fraction": 0.3,
+                "hidden_wood_fraction": 0.046642313408797424,
+                "hidden_beams": [
+                  {
+                    "section_component_id": 12,
+                    "count": 2,
+                    "length_m": 0.897040581427543
+                  }
+                ]
+              },
+              {
+                "role": "cushion",
+                "foam_fraction": 0.4,
+                "hidden_wood_fraction": 0.0272081429907915,
+                "hidden_beams": [
+                  {
+                    "section_component_id": 10,
+                    "count": 1,
+                    "length_m": 0.897040581427543
+                  }
+                ]
+              },
+              {
+                "role": "seat",
+                "foam_fraction": 0.45,
+                "hidden_wood_fraction": 0.009820829408409785,
+                "hidden_beams": [
+                  {
+                    "section_component_id": 13,
+                    "count": 2,
+                    "length_m": 0.897040581427543
+                  }
+                ]
+              }
+            ],
+            "underside": {
+              "kind": "manufactured_panel",
+              "thickness_mm": 15.0
+            },
+            "evidence": "The armrest, backrest, cushion, and seat are all upholstered components with visible fabric surfaces and implied internal padding. Foam_fraction is estimated based on typical upholstery density and visual volume; hidden_wood_fraction accounts for structural wood core within the fabric-wrapped form. The underside is a flat wooden panel, visually consistent with a structural baseboard or frame rail support, and its thickness is estimated from the scale of the wood rails and the furniture's proportions."
+          },
+          {
+            "upholstery": [
+              {
+                "role": "armrest",
+                "foam_fraction": 0.65,
+                "hidden_wood_fraction": 0.06344375717281774,
+                "hidden_beams": [
+                  {
+                    "section_component_id": 11,
+                    "count": 2,
+                    "length_m": 0.897040581427543
+                  }
+                ]
+              },
+              {
+                "role": "backrest",
+                "foam_fraction": 0.7,
+                "hidden_wood_fraction": 0.046642313408797424,
+                "hidden_beams": [
+                  {
+                    "section_component_id": 12,
+                    "count": 2,
+                    "length_m": 0.897040581427543
+                  }
+                ]
+              },
+              {
+                "role": "cushion",
+                "foam_fraction": 0.8,
+                "hidden_wood_fraction": 0.054416285981583,
+                "hidden_beams": [
+                  {
+                    "section_component_id": 13,
+                    "count": 2,
+                    "length_m": 0.897040581427543
+                  }
+                ]
+              },
+              {
+                "role": "seat",
+                "foam_fraction": 0.75,
+                "hidden_wood_fraction": 0.009820829408409785,
+                "hidden_beams": [
+                  {
+                    "section_component_id": 10,
+                    "count": 2,
+                    "length_m": 0.897040581427543
+                  }
+                ]
+              }
+            ],
+            "underside": {
+              "kind": "manufactured_panel",
+              "thickness_mm": 15.0
+            },
+            "evidence": "The underside component (Component 14) is a flat, planar wooden element spanning the full length of the frame, consistent with a structural panel rather than a visual cap. Its dimensions suggest it is a solid, thin board. Visual inspection of the object’s construction and the component mapping shows it is a single, continuous panel forming the base structure, not a cap. The thickness is estimated based on typical furniture construction for such a panel, which is thin enough to be structural yet rigid enough to support the weight of the upholstery and user."
+          }
+        ],
+        "source_snapshot_verified": true,
+        "raw_hashes": {
+          "hypothesis_0.json": "81c8b89cd5819ed492ba6f01ecb055b8cfda4b0974cf5a667eb876265ae96127",
+          "hypothesis_1.json": "3ff3c4ebb6526461e1934abce339e1f02b76e03c82fea88b601e2872ceb831ea",
+          "hypothesis_2.json": "131cd22b85d851fde352ccc8de97d399831d1142eff31930d7e2e4a140c0fbfa",
+          "model.json": "94775c263cd05c0123525a4f05ba8e37e8bb04ea2e2cf1f6023f0488474e85d6",
+          "predictions.json": "1a9d1216cabdee9a7312c1a01e2a44e86dea6a6016f345aa28de3fcb186df005",
+          "prediction_seal.json": "9fc0404cb2ce945715da73dc57c2c78d5b25fcd3a78fd538aded1d3fe9e283cb",
+          "protocol.json": "a8f290c46f1277de9b3c6d7cd66dba132c7c3523b2113438d5cc0015c3c10d90",
+          "raw_0.json": "53f664cf37402728002387170bdc4d23ba37e1a23b81e48e8459a7f9c730db57",
+          "raw_1.json": "cc679fb96d0972871dcf697d0ad9f00c5db3e3af5fb8045c9734547ada89dead",
+          "raw_2.json": "7ada449646cb94c7030eeaaa197870d410b841fe780e2b168f640822c992a3ca",
+          "report.json": "c02a3b3aa94100bfb11e3d0bee4fc09222aa3c440f8e2b8a46f161cd75296621"
+        },
+        "additional_output_tokens": 1034,
+        "additional_query_seconds": 54.971457509789616
+      },
+      "fractions": {
+        "report": {
+          "prediction": {
+            "scene_id": "B07B4G5RBN_ATVPDKIKX0DER",
+            "mass_kg": 30.518177220995785,
+            "hypothesis_masses_kg": [
+              29.594808849004956,
+              24.77391964894739,
+              37.185803165035004
+            ]
+          },
+          "target_mass_kg": 29.029888,
+          "metrics": {
+            "num_scenes": 1,
+            "ade_kg": 1.4882892209957852,
+            "alde": 0.049996560598749795,
+            "ape": 0.051267480639118734,
+            "mnre": 0.9512326961660122,
+            "rmse_kg": 1.4882892209957852
+          },
+          "scope": "exposed development object; paired parameterization ablation; unequal query budgets"
+        },
+        "protocol": {
+          "scene": "B07B4G5RBN_ATVPDKIKX0DER",
+          "scope": "exposed reference-geometry development case",
+          "part_state_sha256": "f50522ce5706875eb1172f4a580e9aa3ffee70dc2d485a37b0fd4c4b817fb0bc",
+          "source_sha256": "5632bd944d41db668084787759d426867db4e891bc2b33ffd1a714e721281522",
+          "geometry_module_sha256": "60625ded37bcf5eaeefea9f3b259dcf962beaf34d083afd5d8601788f4d96e29",
+          "input_hashes": {
+            "data/abo500_five/scenes/B07B4G5RBN_ATVPDKIKX0DER/images/B07B4G5RBN_ATVPDKIKX0DER_02.png": "401bee21a611c090235b5739a155bc32ac92b74428d7e36e896b7c88bca261b0",
+            "data/abo500_five/scenes/B07B4G5RBN_ATVPDKIKX0DER/images/B07B4G5RBN_ATVPDKIKX0DER_08.png": "21f79d248771c9f1055f41e448b0d28c4c71aa4b47c20ec8985dcc2dea55dc9f",
+            "data/abo500_five/scenes/B07B4G5RBN_ATVPDKIKX0DER/images/B07B4G5RBN_ATVPDKIKX0DER_20.png": "59382554f398eda0b8212ecba43b286e8fdd6fe2c8c0caa6b4fe7ef6e876b10c",
+            "data/abo500_five/scenes/B07B4G5RBN_ATVPDKIKX0DER/images/B07B4G5RBN_ATVPDKIKX0DER_26.png": "f66ade9a3fd642a306fc01e012eb6a2d54d5aef35a20409b9d8cb20ee9f6f5ad",
+            "outputs/chaise_reference_20261111/component_sheet.png": "dbd9875fac9c5e8208ba4a739b7ae8dd0f1999585449cebd668096e2e8fa2f5d",
+            "outputs/chaise_reference_20261111/views_contacts/global_component_positions.png": "3daee355fc098ea0053b0cee5f48ec66102e17676e2f3e7c29f231f845825020"
+          },
+          "selected_views": [
+            {
+              "frame_index": 2,
+              "target_azimuth_degrees": 0.0,
+              "actual_azimuth_degrees": 354.1807771254349,
+              "elevation_degrees": 9.686455817531318,
+              "estimated_lookat_center": [
+                -9.841869938845794e-09,
+                0.028389240012334505,
+                0.429474334615675
+              ]
+            },
+            {
+              "frame_index": 8,
+              "target_azimuth_degrees": 90.0,
+              "actual_azimuth_degrees": 97.95690279623524,
+              "elevation_degrees": 57.67259564805305,
+              "estimated_lookat_center": [
+                -9.841869938845794e-09,
+                0.028389240012334505,
+                0.429474334615675
+              ]
+            },
+            {
+              "frame_index": 20,
+              "target_azimuth_degrees": 180.0,
+              "actual_azimuth_degrees": 181.5163842206532,
+              "elevation_degrees": 5.356594585221614,
+              "estimated_lookat_center": [
+                -9.841869938845794e-09,
+                0.028389240012334505,
+                0.429474334615675
+              ]
+            },
+            {
+              "frame_index": 26,
+              "target_azimuth_degrees": 270.0,
+              "actual_azimuth_degrees": 259.09935594305915,
+              "elevation_degrees": -4.616260536803075,
+              "estimated_lookat_center": [
+                -9.841869938845794e-09,
+                0.028389240012334505,
+                0.429474334615675
+              ]
+            }
+          ],
+          "densities_kg_m3": {
+            "wood": 500.0,
+            "fabric": 200.0,
+            "foam": 40.0
+          },
+          "fabric_thickness_m": 0.0035,
+          "components": [
+            {
+              "component_id": 0,
+              "material": "fabric",
+              "role": "cushion",
+              "extent_m": [
+                0.71233269572258,
+                0.3027815818786621,
+                0.4534173011779785
+              ],
+              "closed_as_loaded": true
+            },
+            {
+              "component_id": 1,
+              "material": "fabric",
+              "role": "seat",
+              "extent_m": [
+                0.894342839717865,
+                1.49456125497818,
+                0.22323235869407654
+              ],
+              "closed_as_loaded": false
+            },
+            {
+              "component_id": 2,
+              "material": "fabric",
+              "role": "backrest",
+              "extent_m": [
+                0.8878940343856812,
+                0.3448469638824463,
+                0.4466893672943115
+              ],
+              "closed_as_loaded": false
+            },
+            {
+              "component_id": 3,
+              "material": "fabric",
+              "role": "armrest",
+              "extent_m": [
+                0.12731844186782837,
+                0.8059350326657295,
+                0.3728283643722534
+              ],
+              "closed_as_loaded": false
+            },
+            {
+              "component_id": 4,
+              "material": "fabric",
+              "role": "armrest",
+              "extent_m": [
+                0.1257646381855011,
+                0.8059350326657295,
+                0.3728283643722534
+              ],
+              "closed_as_loaded": false
+            },
+            {
+              "component_id": 5,
+              "material": "fabric",
+              "role": "backrest",
+              "extent_m": [
+                0.8717105090618134,
+                0.08757460117340088,
+                0.5858514755964279
+              ],
+              "closed_as_loaded": false
+            },
+            {
+              "component_id": 6,
+              "material": "wood",
+              "role": "leg",
+              "extent_m": [
+                0.055821001529693604,
+                0.05582094192504883,
+                0.22925949096679688
+              ],
+              "closed_as_loaded": true
+            },
+            {
+              "component_id": 7,
+              "material": "wood",
+              "role": "leg",
+              "extent_m": [
+                0.055821001529693604,
+                0.05582094192504883,
+                0.22925949096679688
+              ],
+              "closed_as_loaded": true
+            },
+            {
+              "component_id": 8,
+              "material": "wood",
+              "role": "leg",
+              "extent_m": [
+                0.055821001529693604,
+                0.05582094192504883,
+                0.22925949096679688
+              ],
+              "closed_as_loaded": true
+            },
+            {
+              "component_id": 9,
+              "material": "wood",
+              "role": "leg",
+              "extent_m": [
+                0.055821001529693604,
+                0.05582094192504883,
+                0.22925949096679688
+              ],
+              "closed_as_loaded": true
+            },
+            {
+              "component_id": 10,
+              "material": "wood",
+              "role": "frame_rail",
+              "extent_m": [
+                0.024432599544525146,
+                1.554049789905548,
+                0.05341656506061554
+              ],
+              "closed_as_loaded": false
+            },
+            {
+              "component_id": 11,
+              "material": "wood",
+              "role": "frame_rail",
+              "extent_m": [
+                0.7438859045505524,
+                0.02443253993988037,
+                0.05341656506061554
+              ],
+              "closed_as_loaded": false
+            },
+            {
+              "component_id": 12,
+              "material": "wood",
+              "role": "frame_rail",
+              "extent_m": [
+                0.7438859045505524,
+                0.02443253993988037,
+                0.05341656506061554
+              ],
+              "closed_as_loaded": false
+            },
+            {
+              "component_id": 13,
+              "material": "wood",
+              "role": "frame_rail",
+              "extent_m": [
+                0.024432599544525146,
+                1.554049789905548,
+                0.05341656506061554
+              ],
+              "closed_as_loaded": false
+            },
+            {
+              "component_id": 14,
+              "material": "wood",
+              "role": "underside",
+              "extent_m": [
+                0.8200963139533997,
+                1.638140082359314,
+                0.0
+              ],
+              "closed_as_loaded": false
+            }
+          ],
+          "target_mass_used_for_inference": false,
+          "rounds": 3,
+          "geometry": "provided closed wood solids; per-component convex/prism completion elsewhere; disjoint CSG",
+          "aggregation": "equal mean of three independent-question construction hypotheses; not calibrated probabilities",
+          "refined_from_seal_sha256": "0b0544d05548d91f9f42b5aa9bafbfc81bf090e95bd70654d8f234b504665c18",
+          "construction_model": "fractions",
+          "section_source": "visible frame-rail oriented bounding-box section proxy",
+          "sections": {
+            "10": {
+              "width_m": 0.024432599544525146,
+              "depth_m": 0.05341656506061554,
+              "area_m2": 0.001305105543170093
+            },
+            "11": {
+              "width_m": 0.02443253993988037,
+              "depth_m": 0.05341656506061554,
+              "area_m2": 0.0013051023592947075
+            },
+            "12": {
+              "width_m": 0.02443253993988037,
+              "depth_m": 0.05341656506061554,
+              "area_m2": 0.0013051023592947075
+            },
+            "13": {
+              "width_m": 0.024432599544525146,
+              "depth_m": 0.05341656506061554,
+              "area_m2": 0.001305105543170093
+            }
+          },
+          "additional_queries": 3,
+          "total_queries_including_prior": 6,
+          "non_frame_parameters": "foam fractions, underside hypothesis and numeric material priors frozen"
+        },
+        "trial_answers": [
+          {
+            "upholstery": [
+              {
+                "role": "armrest",
+                "foam_fraction": 0.65,
+                "hidden_wood_fraction": 3.6e-05
+              },
+              {
+                "role": "backrest",
+                "foam_fraction": 0.7,
+                "hidden_wood_fraction": 5e-05
+              },
+              {
+                "role": "cushion",
+                "foam_fraction": 0.8,
+                "hidden_wood_fraction": 4.3e-05
+              },
+              {
+                "role": "seat",
+                "foam_fraction": 0.85,
+                "hidden_wood_fraction": 2.4e-05
+              }
+            ],
+            "underside": {
+              "kind": "manufactured_panel",
+              "thickness_mm": 15.0
+            },
+            "evidence": "The armrest, backrest, cushion, and seat are all upholstered components with visible fabric surfaces. The foam_fraction is estimated based on typical upholstery construction where foam provides core cushioning (65-85% for armrests and seats, 70% for backrests, 80% for cushions). The hidden_wood_fraction accounts for internal wooden frames or structural supports (10-15% for armrests and backrests, 5% for seat and cushion). The underside is a flat wooden panel, inferred from its planar shape and connection to the frame rails (Components 10, 11, 12, 13), and its thickness is estimated from standard furniture panel construction (15mm)."
+          },
+          {
+            "upholstery": [
+              {
+                "role": "armrest",
+                "foam_fraction": 0.35,
+                "hidden_wood_fraction": 0.0047
+              },
+              {
+                "role": "backrest",
+                "foam_fraction": 0.3,
+                "hidden_wood_fraction": 0.0068
+              },
+              {
+                "role": "cushion",
+                "foam_fraction": 0.4,
+                "hidden_wood_fraction": 0.0043
+              },
+              {
+                "role": "seat",
+                "foam_fraction": 0.45,
+                "hidden_wood_fraction": 0.0049
+              }
+            ],
+            "underside": {
+              "kind": "manufactured_panel",
+              "thickness_mm": 15.0
+            },
+            "evidence": "The armrest, backrest, cushion, and seat are all upholstered components with visible fabric surfaces and implied internal padding. Foam_fraction is estimated based on typical upholstery density and visual volume; hidden_wood_fraction accounts for structural wood core within the fabric-wrapped form. The underside is a flat wooden panel, visually consistent with a structural baseboard or frame rail support, and its thickness is estimated from the scale of the wood rails and the furniture's proportions."
+          },
+          {
+            "upholstery": [
+              {
+                "role": "armrest",
+                "foam_fraction": 0.65,
+                "hidden_wood_fraction": 0.048
+              },
+              {
+                "role": "backrest",
+                "foam_fraction": 0.7,
+                "hidden_wood_fraction": 0.053
+              },
+              {
+                "role": "cushion",
+                "foam_fraction": 0.8,
+                "hidden_wood_fraction": 0.034
+              },
+              {
+                "role": "seat",
+                "foam_fraction": 0.75,
+                "hidden_wood_fraction": 0.047
+              }
+            ],
+            "underside": {
+              "kind": "manufactured_panel",
+              "thickness_mm": 15.0
+            },
+            "evidence": "The underside component (Component 14) is a flat, planar wooden element spanning the full length of the frame, consistent with a structural panel rather than a visual cap. Its dimensions suggest it is a solid, thin board. Visual inspection of the object’s construction and the component mapping shows it is a single, continuous panel forming the base structure, not a cap. The thickness is estimated based on typical furniture construction for such a panel, which is thin enough to be structural yet rigid enough to support the weight of the upholstery and user."
+          }
+        ],
+        "source_snapshot_verified": true,
+        "raw_hashes": {
+          "hypothesis_0.json": "788c9701ed04df8aa481253b52d05d43554c20c8c25623f167320e20fe427497",
+          "hypothesis_1.json": "1299beed75db49c977c7508c1eafc5a85003bbf2b4a88c5c0290e391b3b8781b",
+          "hypothesis_2.json": "99c0d8977a10ea7d2997a8974638de19488036b9efc57237866ba514e590df1e",
+          "model.json": "aaada7b5e8a32387afb693f9054f3b3931e7e53bd55ca1c19c1390a34194aab9",
+          "predictions.json": "7941136798381e88597ff90f464e89b782e296d26777b206861d9b33a395a376",
+          "prediction_seal.json": "a3655af84559d9413f4b5a9bc36899917ea961145e57c44cd0c801cd8ff14c62",
+          "protocol.json": "a4c970dab26971de6e4fa6804ef22fe82130d785133ba65fe467cafc071597da",
+          "raw_0.json": "52ce628aa199d20a75b72fe438a1ad3d98a7776209c8d1521f3d2b4b974b4e76",
+          "raw_1.json": "0fb704893e64fd518e471dcc8f4c818ff439792483e9a31a107b97bfb82549d2",
+          "raw_2.json": "38d5c45d54dee1f686a6cb4f331e0b82fc0667e87016d6275f19fcdbfae04ea1",
+          "report.json": "43054f372788c8764d43132a7ab4be6c447dfb5c6cd5dc2ccf199845ce83c544"
+        },
+        "additional_output_tokens": 886,
+        "additional_query_seconds": 46.192714896053076
+      },
+      "no_metric_geometry": {
+        "report": {
+          "prediction": {
+            "scene_id": "B07B4G5RBN_ATVPDKIKX0DER",
+            "mass_kg": 44.9486184170182,
+            "hypothesis_masses_kg": [
+              40.98059930361479,
+              39.40739915872113,
+              54.45785678871869
+            ]
+          },
+          "target_mass_kg": 29.029888,
+          "metrics": {
+            "num_scenes": 1,
+            "ade_kg": 15.918730417018203,
+            "alde": 0.43719410449887786,
+            "ape": 0.5483565908700097,
+            "mnre": 0.6458460576178435,
+            "rmse_kg": 15.918730417018203
+          },
+          "scope": "exposed development object; refinement arms each use 3 shared prior and 3 additional queries"
+        },
+        "protocol": {
+          "scene": "B07B4G5RBN_ATVPDKIKX0DER",
+          "scope": "exposed reference-geometry development case",
+          "part_state_sha256": "f50522ce5706875eb1172f4a580e9aa3ffee70dc2d485a37b0fd4c4b817fb0bc",
+          "source_sha256": "3169cc3dcfa6978992e09fa16c4730659692e69e769f204ad865573b0d2afa40",
+          "geometry_module_sha256": "60625ded37bcf5eaeefea9f3b259dcf962beaf34d083afd5d8601788f4d96e29",
+          "input_hashes": {
+            "data/abo500_five/scenes/B07B4G5RBN_ATVPDKIKX0DER/images/B07B4G5RBN_ATVPDKIKX0DER_02.png": "401bee21a611c090235b5739a155bc32ac92b74428d7e36e896b7c88bca261b0",
+            "data/abo500_five/scenes/B07B4G5RBN_ATVPDKIKX0DER/images/B07B4G5RBN_ATVPDKIKX0DER_08.png": "21f79d248771c9f1055f41e448b0d28c4c71aa4b47c20ec8985dcc2dea55dc9f",
+            "data/abo500_five/scenes/B07B4G5RBN_ATVPDKIKX0DER/images/B07B4G5RBN_ATVPDKIKX0DER_20.png": "59382554f398eda0b8212ecba43b286e8fdd6fe2c8c0caa6b4fe7ef6e876b10c",
+            "data/abo500_five/scenes/B07B4G5RBN_ATVPDKIKX0DER/images/B07B4G5RBN_ATVPDKIKX0DER_26.png": "f66ade9a3fd642a306fc01e012eb6a2d54d5aef35a20409b9d8cb20ee9f6f5ad",
+            "outputs/chaise_reference_20261111/component_sheet.png": "dbd9875fac9c5e8208ba4a739b7ae8dd0f1999585449cebd668096e2e8fa2f5d",
+            "outputs/chaise_reference_20261111/views_contacts/global_component_positions.png": "3daee355fc098ea0053b0cee5f48ec66102e17676e2f3e7c29f231f845825020"
+          },
+          "selected_views": [
+            {
+              "frame_index": 2,
+              "target_azimuth_degrees": 0.0,
+              "actual_azimuth_degrees": 354.1807771254349,
+              "elevation_degrees": 9.686455817531318,
+              "estimated_lookat_center": [
+                -9.841869938845794e-09,
+                0.028389240012334505,
+                0.429474334615675
+              ]
+            },
+            {
+              "frame_index": 8,
+              "target_azimuth_degrees": 90.0,
+              "actual_azimuth_degrees": 97.95690279623524,
+              "elevation_degrees": 57.67259564805305,
+              "estimated_lookat_center": [
+                -9.841869938845794e-09,
+                0.028389240012334505,
+                0.429474334615675
+              ]
+            },
+            {
+              "frame_index": 20,
+              "target_azimuth_degrees": 180.0,
+              "actual_azimuth_degrees": 181.5163842206532,
+              "elevation_degrees": 5.356594585221614,
+              "estimated_lookat_center": [
+                -9.841869938845794e-09,
+                0.028389240012334505,
+                0.429474334615675
+              ]
+            },
+            {
+              "frame_index": 26,
+              "target_azimuth_degrees": 270.0,
+              "actual_azimuth_degrees": 259.09935594305915,
+              "elevation_degrees": -4.616260536803075,
+              "estimated_lookat_center": [
+                -9.841869938845794e-09,
+                0.028389240012334505,
+                0.429474334615675
+              ]
+            }
+          ],
+          "densities_kg_m3": {
+            "wood": 500.0,
+            "fabric": 200.0,
+            "foam": 40.0
+          },
+          "fabric_thickness_m": 0.0035,
+          "components": [
+            {
+              "component_id": 0,
+              "material": "fabric",
+              "role": "cushion",
+              "extent_m": [
+                0.71233269572258,
+                0.3027815818786621,
+                0.4534173011779785
+              ],
+              "closed_as_loaded": true
+            },
+            {
+              "component_id": 1,
+              "material": "fabric",
+              "role": "seat",
+              "extent_m": [
+                0.894342839717865,
+                1.49456125497818,
+                0.22323235869407654
+              ],
+              "closed_as_loaded": false
+            },
+            {
+              "component_id": 2,
+              "material": "fabric",
+              "role": "backrest",
+              "extent_m": [
+                0.8878940343856812,
+                0.3448469638824463,
+                0.4466893672943115
+              ],
+              "closed_as_loaded": false
+            },
+            {
+              "component_id": 3,
+              "material": "fabric",
+              "role": "armrest",
+              "extent_m": [
+                0.12731844186782837,
+                0.8059350326657295,
+                0.3728283643722534
+              ],
+              "closed_as_loaded": false
+            },
+            {
+              "component_id": 4,
+              "material": "fabric",
+              "role": "armrest",
+              "extent_m": [
+                0.1257646381855011,
+                0.8059350326657295,
+                0.3728283643722534
+              ],
+              "closed_as_loaded": false
+            },
+            {
+              "component_id": 5,
+              "material": "fabric",
+              "role": "backrest",
+              "extent_m": [
+                0.8717105090618134,
+                0.08757460117340088,
+                0.5858514755964279
+              ],
+              "closed_as_loaded": false
+            },
+            {
+              "component_id": 6,
+              "material": "wood",
+              "role": "leg",
+              "extent_m": [
+                0.055821001529693604,
+                0.05582094192504883,
+                0.22925949096679688
+              ],
+              "closed_as_loaded": true
+            },
+            {
+              "component_id": 7,
+              "material": "wood",
+              "role": "leg",
+              "extent_m": [
+                0.055821001529693604,
+                0.05582094192504883,
+                0.22925949096679688
+              ],
+              "closed_as_loaded": true
+            },
+            {
+              "component_id": 8,
+              "material": "wood",
+              "role": "leg",
+              "extent_m": [
+                0.055821001529693604,
+                0.05582094192504883,
+                0.22925949096679688
+              ],
+              "closed_as_loaded": true
+            },
+            {
+              "component_id": 9,
+              "material": "wood",
+              "role": "leg",
+              "extent_m": [
+                0.055821001529693604,
+                0.05582094192504883,
+                0.22925949096679688
+              ],
+              "closed_as_loaded": true
+            },
+            {
+              "component_id": 10,
+              "material": "wood",
+              "role": "frame_rail",
+              "extent_m": [
+                0.024432599544525146,
+                1.554049789905548,
+                0.05341656506061554
+              ],
+              "closed_as_loaded": false
+            },
+            {
+              "component_id": 11,
+              "material": "wood",
+              "role": "frame_rail",
+              "extent_m": [
+                0.7438859045505524,
+                0.02443253993988037,
+                0.05341656506061554
+              ],
+              "closed_as_loaded": false
+            },
+            {
+              "component_id": 12,
+              "material": "wood",
+              "role": "frame_rail",
+              "extent_m": [
+                0.7438859045505524,
+                0.02443253993988037,
+                0.05341656506061554
+              ],
+              "closed_as_loaded": false
+            },
+            {
+              "component_id": 13,
+              "material": "wood",
+              "role": "frame_rail",
+              "extent_m": [
+                0.024432599544525146,
+                1.554049789905548,
+                0.05341656506061554
+              ],
+              "closed_as_loaded": false
+            },
+            {
+              "component_id": 14,
+              "material": "wood",
+              "role": "underside",
+              "extent_m": [
+                0.8200963139533997,
+                1.638140082359314,
+                0.0
+              ],
+              "closed_as_loaded": false
+            }
+          ],
+          "target_mass_used_for_inference": false,
+          "rounds": 3,
+          "geometry": "provided closed wood solids; per-component convex/prism completion elsewhere; disjoint CSG",
+          "aggregation": "equal mean of three independent-question construction hypotheses; not calibrated probabilities",
+          "refined_from_seal_sha256": "0b0544d05548d91f9f42b5aa9bafbfc81bf090e95bd70654d8f234b504665c18",
+          "construction_model": "fractions-no-geometry",
+          "section_source": "visible frame-rail oriented bounding-box section proxy",
+          "sections": {
+            "10": {
+              "width_m": 0.024432599544525146,
+              "depth_m": 0.05341656506061554,
+              "area_m2": 0.001305105543170093
+            },
+            "11": {
+              "width_m": 0.02443253993988037,
+              "depth_m": 0.05341656506061554,
+              "area_m2": 0.0013051023592947075
+            },
+            "12": {
+              "width_m": 0.02443253993988037,
+              "depth_m": 0.05341656506061554,
+              "area_m2": 0.0013051023592947075
+            },
+            "13": {
+              "width_m": 0.024432599544525146,
+              "depth_m": 0.05341656506061554,
+              "area_m2": 0.001305105543170093
+            }
+          },
+          "additional_queries": 3,
+          "total_queries_including_prior": 6,
+          "non_frame_parameters": "foam fractions, underside hypothesis and numeric material priors frozen"
+        },
+        "trial_answers": [
+          {
+            "upholstery": [
+              {
+                "role": "armrest",
+                "foam_fraction": 0.65,
+                "hidden_wood_fraction": 0.1
+              },
+              {
+                "role": "backrest",
+                "foam_fraction": 0.7,
+                "hidden_wood_fraction": 0.1
+              },
+              {
+                "role": "cushion",
+                "foam_fraction": 0.8,
+                "hidden_wood_fraction": 0.05
+              },
+              {
+                "role": "seat",
+                "foam_fraction": 0.85,
+                "hidden_wood_fraction": 0.05
+              }
+            ],
+            "underside": {
+              "kind": "manufactured_panel",
+              "thickness_mm": 15.0
+            },
+            "evidence": "The armrest, backrest, cushion, and seat are all upholstered components with visible fabric surfaces. The foam_fraction is estimated based on typical upholstery construction where foam provides core cushioning (65-85% for armrests and seats, 70% for backrests, 80% for cushions). The hidden_wood_fraction accounts for internal wooden frames or structural supports (10-15% for armrests and backrests, 5% for seat and cushion). The underside is a flat wooden panel, inferred from its planar shape and connection to the frame rails (Components 10, 11, 12, 13), and its thickness is estimated from standard furniture panel construction (15mm)."
+          },
+          {
+            "upholstery": [
+              {
+                "role": "armrest",
+                "foam_fraction": 0.35,
+                "hidden_wood_fraction": 0.2
+              },
+              {
+                "role": "backrest",
+                "foam_fraction": 0.3,
+                "hidden_wood_fraction": 0.15
+              },
+              {
+                "role": "cushion",
+                "foam_fraction": 0.4,
+                "hidden_wood_fraction": 0.1
+              },
+              {
+                "role": "seat",
+                "foam_fraction": 0.45,
+                "hidden_wood_fraction": 0.05
+              }
+            ],
+            "underside": {
+              "kind": "manufactured_panel",
+              "thickness_mm": 15.0
+            },
+            "evidence": "The armrest, backrest, cushion, and seat are all upholstered components with visible fabric surfaces and implied internal padding. Foam_fraction is estimated based on typical upholstery density and visual volume; hidden_wood_fraction accounts for structural wood core within the fabric-wrapped form. The underside is a flat wooden panel, visually consistent with a structural baseboard or frame rail support, and its thickness is estimated from the scale of the wood rails and the furniture's proportions."
+          },
+          {
+            "upholstery": [
+              {
+                "role": "armrest",
+                "foam_fraction": 0.65,
+                "hidden_wood_fraction": 0.1
+              },
+              {
+                "role": "backrest",
+                "foam_fraction": 0.7,
+                "hidden_wood_fraction": 0.2
+              },
+              {
+                "role": "cushion",
+                "foam_fraction": 0.8,
+                "hidden_wood_fraction": 0.05
+              },
+              {
+                "role": "seat",
+                "foam_fraction": 0.75,
+                "hidden_wood_fraction": 0.15
+              }
+            ],
+            "underside": {
+              "kind": "manufactured_panel",
+              "thickness_mm": 15.0
+            },
+            "evidence": "The underside component (Component 14) is a flat, planar wooden element spanning the full length of the frame, consistent with a structural panel rather than a visual cap. Its dimensions suggest it is a solid, thin board. Visual inspection of the object’s construction and the component mapping shows it is a single, continuous panel forming the base structure, not a cap. The thickness is estimated based on typical furniture construction for such a panel, which is thin enough to be structural yet rigid enough to support the weight of the upholstery and user."
+          }
+        ],
+        "source_snapshot_verified": true,
+        "raw_hashes": {
+          "hypothesis_0.json": "e65682aa8c71f92dac0d51d76509915093d55b769a2b1f35ff4f48b5357b00ec",
+          "hypothesis_1.json": "eb4cd46fd7f218717e3eee1da3b8512ae766be9d96cf760381ad1f1d1d8b630c",
+          "hypothesis_2.json": "eb2bd0b372ec623321bdb749520fead060477e8da870440c0fad271a54f5da12",
+          "model.json": "02b841b9231846416241e29b3ed34b2106773149c71c9d640da35876051a9f64",
+          "predictions.json": "d229e1cd2680d78c190c274f63a0766e8e4112b93256222aff1e7e2620e325a8",
+          "prediction_seal.json": "34c09d42da819c5b4022306fd02386f45a744691e662d9cb2995968722731850",
+          "protocol.json": "f01ecd0382944f0d00ac66849a6b3f66e1a2a0ead1b9775bf0010a2af8982b84",
+          "raw_0.json": "a4b388e2d6dc4b6c59cdba39a0379820fbf7b6f91237a1ad0bfc5befe70560b7",
+          "raw_1.json": "f2abcfdfaa3a089cef82eb5d03c3a6249facca5e9f8b0f02d43b50f0e3d4c710",
+          "raw_2.json": "22a7dcb2b350a3400d2abb8496a8b6880e11da18625b5420354c13bd1a917794",
+          "report.json": "eb6fbcfbc4ded95a70e6dd0244e9e18994e7b5f45d721c5ebab591531a33f65c"
+        },
+        "additional_output_tokens": 588,
+        "additional_query_seconds": 31.576507253106683
+      }
+    },
+    "interpretation": [
+      "Both refinement arms use the same 3 original queries plus 3 follow-up queries, same seeds and maximum image/token budgets; actual output lengths differ.",
+      "The fraction follow-up outperforms the beam inventory on this development case; improvement cannot be attributed to the beam parameterization.",
+      "A third 6-query arm removes numerical section/role geometry from the prompt and adjusts the corresponding output instruction; images, roles and seeds remain the same.",
+      "All results concern one exposed development case. The context ablation supports numeric geometry feedback here; cross-object causal and accuracy claims remain untested.",
+      "Beam inventory assumes additive rectangular OBB-section proxy volumes; beam positions, intersections and physical attachment remain unresolved.",
+      "All non-frame parameters are frozen; no object mass value enters the inference prompt. No best-trial selection is used."
+    ],
+    "same_object_baselines": {
+      "nerf_cached": {
+        "scene_id": "B07B4G5RBN_ATVPDKIKX0DER",
+        "mass_interval_kg": [
+          8.375589370727539,
+          32.82023239135742
+        ],
+        "mass_kg": 20.59791088104248,
+        "property_stage_seconds": 4.444309069775045,
+        "peak_allocated_gpu_mib": 979.7880859375,
+        "peak_reserved_gpu_mib": 1030.0,
+        "target_mass_kg": 29.029888
+      },
+      "pugs_qwen": 4.538276791572571,
+      "interpretation": "same catalogue object but different representation, priors and query budgets; not a controlled algorithm ranking"
+    },
+    "refined_whole_body_qem": [
+      {
+        "target_faces": 2400,
+        "method": "component_qem",
+        "component": {
+          "actual_faces": 2486,
+          "mesh_asset": "mesh_972774580958e14c89110287695c9d6bb58bee69319a279e1a41269b5af731f7.npz",
+          "mesh_asset_sha256": "ae2e5721978c52c12d492d2056849e11350d1ffe9cd80a859348ee6c9bd1c07e",
+          "seconds": 0.022355661261826754,
+          "surface_p95_mm": 8.381390701351737,
+          "budgets": [
+            848,
+            608,
+            266,
+            238,
+            238,
+            60,
+            22,
+            22,
+            22,
+            22,
+            13,
+            13,
+            13,
+            13,
+            2
+          ],
+          "removed_component_ids": [],
+          "physical_errors": [
+            {
+              "trial": 0,
+              "mass_relative": 0.21337004284695227,
+              "com_error_mm": 20.983661024398256,
+              "inertia_relative": 0.42853682879961785
+            },
+            {
+              "trial": 1,
+              "mass_relative": 0.2608489225152708,
+              "com_error_mm": 20.46138284194011,
+              "inertia_relative": 0.5104657272592276
+            },
+            {
+              "trial": 2,
+              "mass_relative": 0.163610134015302,
+              "com_error_mm": 20.556602005112293,
+              "inertia_relative": 0.33748612811031237
+            }
+          ],
+          "valid": true
+        },
+        "matched_global": {
+          "actual_faces": 2486,
+          "mesh_asset": "mesh_d8b0d0fa8cf53c18055cc8df2c5294a90978d45d9b13f28880bd1777decaf243.npz",
+          "mesh_asset_sha256": "ef0cdd589acaec056ff40f3e5c92420ded33b7876460d0cbe2de0308bcf07abc",
+          "seconds": 0.021057330071926117,
+          "surface_p95_mm": 175.2562979097409,
+          "budgets": [],
+          "removed_component_ids": [
+            14
+          ],
+          "physical_errors": [
+            {
+              "trial": 0,
+              "mass_relative": 0.3014034516116888,
+              "com_error_mm": 52.647990261847,
+              "inertia_relative": 0.2382629462102195
+            },
+            {
+              "trial": 1,
+              "mass_relative": 0.3608678567782868,
+              "com_error_mm": 62.145267089659406,
+              "inertia_relative": 0.2781727436385404
+            },
+            {
+              "trial": 2,
+              "mass_relative": 0.2395034758289888,
+              "com_error_mm": 44.07344796890754,
+              "inertia_relative": 0.19515066502848571
+            }
+          ],
+          "valid": true
+        },
+        "absolute_face_count_difference": 0
+      },
+      {
+        "target_faces": 2400,
+        "method": "domain_density_qem",
+        "component": {
+          "actual_faces": 2398,
+          "mesh_asset": "mesh_4b418f551c5f3b0db4b0dadbcb2cc23bd718fdd2b2adfb6eedeb5d103e9862bc.npz",
+          "mesh_asset_sha256": "288c850a2da2a35f19a18416a4bb320f7dfc9f200e5ed52909707da58a8bcdd5",
+          "seconds": 0.022463220171630383,
+          "surface_p95_mm": 6.494445767596703,
+          "budgets": [
+            378,
+            620,
+            170,
+            268,
+            270,
+            228,
+            76,
+            76,
+            76,
+            76,
+            40,
+            40,
+            40,
+            40,
+            2
+          ],
+          "removed_component_ids": [],
+          "physical_errors": [
+            {
+              "trial": 0,
+              "mass_relative": 0.008584464414226556,
+              "com_error_mm": 1.2551305553357937,
+              "inertia_relative": 0.008601425477991644
+            },
+            {
+              "trial": 1,
+              "mass_relative": 0.005409662282646499,
+              "com_error_mm": 1.0320920529110347,
+              "inertia_relative": 0.005181663211363371
+            },
+            {
+              "trial": 2,
+              "mass_relative": 0.01202117275515524,
+              "com_error_mm": 1.3987586644915528,
+              "inertia_relative": 0.012453266944838585
+            }
+          ],
+          "valid": true
+        },
+        "matched_global": {
+          "actual_faces": 2398,
+          "mesh_asset": "mesh_d77b26ad713a2ec5e03bcb6bb2af7a3db9f5d5b4940ff58f686410cc321a635b.npz",
+          "mesh_asset_sha256": "16168badbb60b63d528fe2862d1d66ecc43745cd635d7e93b50cc30390dc4079",
+          "seconds": 0.02454304415732622,
+          "surface_p95_mm": 175.2562979097409,
+          "budgets": [],
+          "removed_component_ids": [
+            14
+          ],
+          "physical_errors": [
+            {
+              "trial": 0,
+              "mass_relative": 0.3021494206028893,
+              "com_error_mm": 52.40719590002407,
+              "inertia_relative": 0.23947818686833156
+            },
+            {
+              "trial": 1,
+              "mass_relative": 0.36171118265205815,
+              "com_error_mm": 61.78978623801143,
+              "inertia_relative": 0.27955194310103776
+            },
+            {
+              "trial": 2,
+              "mass_relative": 0.24013621231067162,
+              "com_error_mm": 43.898184862453,
+              "inertia_relative": 0.19613333031969327
+            }
+          ],
+          "valid": true
+        },
+        "absolute_face_count_difference": 0
+      },
+      {
+        "target_faces": 1200,
+        "method": "component_qem",
+        "component": {
+          "actual_faces": 1340,
+          "mesh_asset": "mesh_359772e221bec29ed236b8d7259dc6a796b29a833d8f98f9f01aac9fbadac54e.npz",
+          "mesh_asset_sha256": "e7dcafde59736b24e5fcc7aa901938239f590ee128ad8fe5d54450f8da5f73fd",
+          "seconds": 0.03406208986416459,
+          "surface_p95_mm": 18.900456550625318,
+          "budgets": [
+            417,
+            299,
+            131,
+            118,
+            118,
+            31,
+            13,
+            13,
+            13,
+            13,
+            8,
+            8,
+            8,
+            8,
+            2
+          ],
+          "removed_component_ids": [],
+          "physical_errors": [
+            {
+              "trial": 0,
+              "mass_relative": 0.12537833827605183,
+              "com_error_mm": 18.479029318360677,
+              "inertia_relative": 0.2745922254005373
+            },
+            {
+              "trial": 1,
+              "mass_relative": 0.1762942154177849,
+              "com_error_mm": 18.183728958521165,
+              "inertia_relative": 0.34033278098236325
+            },
+            {
+              "trial": 2,
+              "mass_relative": 0.07424527249941426,
+              "com_error_mm": 17.241598145984756,
+              "inertia_relative": 0.2025127383685918
+            }
+          ],
+          "valid": true
+        },
+        "matched_global": {
+          "actual_faces": 1339,
+          "mesh_asset": "mesh_cbeb4e727a9d2470779dd4142cc69672967685f53d0c79015417499b1192abb6.npz",
+          "mesh_asset_sha256": "1f69bbc0d9c41df6dff44fa0eaed19cdf56d7d2a833acfe93b59bcdd48af182c",
+          "seconds": 0.028355524875223637,
+          "surface_p95_mm": 169.55607565129975,
+          "budgets": [],
+          "removed_component_ids": [
+            14
+          ],
+          "physical_errors": [
+            {
+              "trial": 0,
+              "mass_relative": 0.34676374129610843,
+              "com_error_mm": 65.42783965791392,
+              "inertia_relative": 0.32230090292219765
+            },
+            {
+              "trial": 1,
+              "mass_relative": 0.4074026684452243,
+              "com_error_mm": 78.5490315629886,
+              "inertia_relative": 0.37053322275408446
+            },
+            {
+              "trial": 2,
+              "mass_relative": 0.2831184435927926,
+              "com_error_mm": 54.086389005239965,
+              "inertia_relative": 0.26976301494632093
+            }
+          ],
+          "valid": true
+        },
+        "absolute_face_count_difference": 1
+      },
+      {
+        "target_faces": 1200,
+        "method": "domain_density_qem",
+        "component": {
+          "actual_faces": 1220,
+          "mesh_asset": "mesh_14a30056c211a5be8241a480d13113e93c3853e34b2f66401c2d5a05c1f23bb9.npz",
+          "mesh_asset_sha256": "1c8b2328c8c8b1867e5b70b9f52eb6a0b2ea02e885061dfafcd439d8856e760b",
+          "seconds": 0.024666376411914825,
+          "surface_p95_mm": 22.167197071299405,
+          "budgets": [
+            157,
+            260,
+            72,
+            112,
+            113,
+            124,
+            50,
+            50,
+            50,
+            50,
+            40,
+            40,
+            40,
+            40,
+            2
+          ],
+          "removed_component_ids": [],
+          "physical_errors": [
+            {
+              "trial": 0,
+              "mass_relative": 0.005940350063589395,
+              "com_error_mm": 4.352609244574384,
+              "inertia_relative": 0.012866568246899935
+            },
+            {
+              "trial": 1,
+              "mass_relative": 0.008903526905203574,
+              "com_error_mm": 4.663441587649182,
+              "inertia_relative": 0.003358776598217855
+            },
+            {
+              "trial": 2,
+              "mass_relative": 0.02049790831500975,
+              "com_error_mm": 4.382107021638621,
+              "inertia_relative": 0.02591319145157716
+            }
+          ],
+          "valid": true
+        },
+        "matched_global": {
+          "actual_faces": 1220,
+          "mesh_asset": "mesh_16339bff24e50577293925f5d618356242c978c059e5ea32f5c556f565e2e60b.npz",
+          "mesh_asset_sha256": "20fb9bedc94d426154e13c771dd42406cd170df8c2023c1832f739667f197f3d",
+          "seconds": 0.020788985770195723,
+          "surface_p95_mm": 171.49170077753865,
+          "budgets": [],
+          "removed_component_ids": [
+            7,
+            9,
+            14
+          ],
+          "physical_errors": [
+            {
+              "trial": 0,
+              "mass_relative": 0.35548220675775966,
+              "com_error_mm": 66.35492450825868,
+              "inertia_relative": 0.3384809305069254
+            },
+            {
+              "trial": 1,
+              "mass_relative": 0.416031811237484,
+              "com_error_mm": 80.82738834462496,
+              "inertia_relative": 0.3880733752858757
+            },
+            {
+              "trial": 2,
+              "mass_relative": 0.29207537629681,
+              "com_error_mm": 53.74531059166251,
+              "inertia_relative": 0.2845154148712339
+            }
+          ],
+          "valid": true
+        },
+        "absolute_face_count_difference": 0
+      },
+      {
+        "target_faces": 600,
+        "method": "component_qem",
+        "component": {
+          "actual_faces": 873,
+          "mesh_asset": "mesh_6dcacd80b1336d1f3260a8306780654b4cf52ca3a0592895b71a6db996577c81.npz",
+          "mesh_asset_sha256": "2ed2c9cb874b466880a33380069626bf45334ed69567bfd5fc333123435e0573",
+          "seconds": 0.03305771294981241,
+          "surface_p95_mm": 34.599913908653754,
+          "budgets": [
+            200,
+            145,
+            64,
+            58,
+            58,
+            17,
+            8,
+            8,
+            8,
+            8,
+            6,
+            6,
+            6,
+            6,
+            2
+          ],
+          "removed_component_ids": [],
+          "physical_errors": [
+            {
+              "trial": 0,
+              "mass_relative": 0.10604265820048808,
+              "com_error_mm": 21.004293455570917,
+              "inertia_relative": 0.2621097967960517
+            },
+            {
+              "trial": 1,
+              "mass_relative": 0.1625773185469479,
+              "com_error_mm": 21.9261245237409,
+              "inertia_relative": 0.3334833342789491
+            },
+            {
+              "trial": 2,
+              "mass_relative": 0.04903007061502529,
+              "com_error_mm": 19.14589096884291,
+              "inertia_relative": 0.18482949264053392
+            }
+          ],
+          "valid": true
+        },
+        "matched_global": {
+          "actual_faces": 873,
+          "mesh_asset": "mesh_682a7b49332fd18cfab21fe4c05c7ae4c7ca7714b33fedb3df2c9ff597f2e585.npz",
+          "mesh_asset_sha256": "0bf1bd9e0a443d1f2423ab04b47289886b60d5a74217c279870a7cfd844bb289",
+          "seconds": 0.022505946923047304,
+          "surface_p95_mm": 117.9044652950428,
+          "budgets": [],
+          "removed_component_ids": [
+            6,
+            7,
+            8,
+            9,
+            14
+          ],
+          "physical_errors": [
+            {
+              "trial": 0,
+              "mass_relative": 0.42860013911862516,
+              "com_error_mm": 57.02466643828622,
+              "inertia_relative": 0.4425067870224873
+            },
+            {
+              "trial": 1,
+              "mass_relative": 0.4843887229968573,
+              "com_error_mm": 78.05148340358386,
+              "inertia_relative": 0.4932892554632209
+            },
+            {
+              "trial": 2,
+              "mass_relative": 0.37038727393866144,
+              "com_error_mm": 40.15839950870627,
+              "inertia_relative": 0.3865833893172321
+            }
+          ],
+          "valid": true
+        },
+        "absolute_face_count_difference": 0
+      },
+      {
+        "target_faces": 600,
+        "method": "domain_density_qem",
+        "component": {
+          "actual_faces": 829,
+          "mesh_asset": "mesh_c1ba5793ab78ba83657ef7ee46bb91cdb20594767019b3366cc2f513002eb242.npz",
+          "mesh_asset_sha256": "27e37a2e643c007ab80d181e9612ccdf1be71ade20f08327804752fd057efb2f",
+          "seconds": 0.03441717801615596,
+          "surface_p95_mm": 35.595126499974945,
+          "budgets": [
+            70,
+            112,
+            33,
+            51,
+            51,
+            55,
+            24,
+            24,
+            24,
+            24,
+            39,
+            26,
+            26,
+            39,
+            2
+          ],
+          "removed_component_ids": [],
+          "physical_errors": [
+            {
+              "trial": 0,
+              "mass_relative": 0.06418592570981141,
+              "com_error_mm": 59.370234995222035,
+              "inertia_relative": 0.22021307912684748
+            },
+            {
+              "trial": 1,
+              "mass_relative": 0.1256600913889625,
+              "com_error_mm": 59.7561500974871,
+              "inertia_relative": 0.30312142235136674
+            },
+            {
+              "trial": 2,
+              "mass_relative": 0.001714952022842109,
+              "com_error_mm": 61.552855307049185,
+              "inertia_relative": 0.12878664596763803
+            }
+          ],
+          "valid": true
+        },
+        "matched_global": {
+          "actual_faces": 828,
+          "mesh_asset": "mesh_20eb0ecc89f9435e562482897d85f7c441d86bfa1b1bf1edb7c07a8b7b02dc6e.npz",
+          "mesh_asset_sha256": "b5440c43d3f8efc7de3adc70899be5e0dac0a8d4d2e775b13d70b02d24c88858",
+          "seconds": 0.023253370076417923,
+          "surface_p95_mm": 90.31248103333319,
+          "budgets": [],
+          "removed_component_ids": [
+            6,
+            7,
+            8,
+            9,
+            11,
+            12,
+            14
+          ],
+          "physical_errors": [
+            {
+              "trial": 0,
+              "mass_relative": 0.44390498155263347,
+              "com_error_mm": 51.02430371239569,
+              "inertia_relative": 0.46026324617073266
+            },
+            {
+              "trial": 1,
+              "mass_relative": 0.4959146686249041,
+              "com_error_mm": 72.91915169795843,
+              "inertia_relative": 0.5059325972160683
+            },
+            {
+              "trial": 2,
+              "mass_relative": 0.3904630088624884,
+              "com_error_mm": 35.076821329969356,
+              "inertia_relative": 0.41090317486216793
+            }
+          ],
+          "valid": true
+        },
+        "absolute_face_count_difference": 1
+      }
+    ]
   }
 }

@@ -16,6 +16,39 @@ CUDA submodules, model weights, datasets, or generated intermediates.
 
 ## Reused Concepts
 
+### Published reference scores (verified 2026-11-12)
+
+| Published method | ADE kg ↓ | ALDE ↓ | APE % ↓ | MnRE ↑ |
+| --- | ---: | ---: | ---: | ---: |
+| NeRF2Physics | 12.725 | 0.736 | 104.0 | 0.564 |
+| PUGS | 9.461 | 0.661 | 76.7 | 0.576 |
+| VoMP, as reported by Gen2Physics | 8.433 | 0.631 | 88.7 | 0.576 |
+| Gen2Physics | 8.447 | 0.651 | 117.0 | 0.600 |
+
+Sources: [PUGS Table I](https://arxiv.org/html/2502.12231v1#S4.T1),
+[Gen2Physics Table 1](https://arxiv.org/html/2608.23869v1).
+APE is converted from fraction to percent. These are published reference numbers,
+not our reruns. PUGS explicitly reports 500 objects in its ablations; our cached
+NeRF2Physics rerun uses the released 100-object test split. Those cohorts cannot
+be ranked together as a paired comparison. Gen2Physics reports all methods on
+ground-truth ABO assets; its exact scene list and implementation must be locked
+before a matched rerun.
+
+For a fair new comparison, freeze scene IDs, metric scale and GT geometry track,
+material priors, VLM backbone and query/image/token budgets; report end-to-end
+reconstruction separately. Material segmentation needs material annotations;
+part names do not replace them. Compare mass by all four metrics, and compare
+QEM by achieved face count, geometry distance, mass/COM/inertia retention and
+edit consistency. Modulus, friction and hardness require suitable labels and
+contact/test conditions; colored prior maps alone do not measure their accuracy.
+
+Gen2Physics already combines multi-view segmentation, VLM refinement and
+solid/hollow reasoning. Our contribution candidate is the geometry-constrained
+construction state shared by physical integration, simplification and editing,
+with uncertainty calibration still to be demonstrated across objects.
+
+### Shared methodological foundations
+
 - Multi-view language-aligned evidence for material assignment.
 - Candidate material properties instead of a closed-set scalar regressor.
 - Spatial integration of density to obtain object mass.
@@ -285,3 +318,59 @@ separate absolute mass prediction from conditional simplification retention.
 The complete PUGS/Gen2Physics cohort comparison and construction-probability
 calibration remain unfinished. The next modeling target is a geometry-supported
 hidden-frame hypothesis instead of unconstrained hidden-wood volume fractions.
+
+### Geometry-feedback refinement and matched-query controls
+
+The next development iteration freezes the prior foam fractions, bottom panel,
+surface materials, densities, metric mesh and six input images. Three follow-up
+queries audit only additional hidden wood. All reported predictions average all
+three trials, with no best-trial selection and no mass label in the prompt.
+
+| Same exposed chaise | Total queries including shared prior | Mean mass kg | Absolute error kg | APE % |
+| --- | ---: | ---: | ---: | ---: |
+| Previous independent-question model | 3 | 46.0988 | 17.0689 | 58.7976 |
+| Follow-up without numerical geometry | 6 | 44.9486 | 15.9187 | 54.8357 |
+| Follow-up with numerical geometry, free fraction | 6 | 30.5182 | 1.4883 | 5.1267 |
+| Follow-up with numerical geometry, beam inventory | 6 | 32.4678 | 3.4379 | 11.8428 |
+
+Catalogue target: 29.029888 kg. Follow-up arms use the same seeds, image budgets
+and maximum output-token budgets; actual output lengths and runtimes are recorded
+separately. The no-numerical-geometry control removes role volumes, diagonals and
+section dimensions from the prompt, with the corresponding wording adjusted.
+It retains images and role names. This is one previously exposed development
+object, not a held-out benchmark or calibrated hidden-structure posterior.
+
+The beam inventory computes V_wood = sum(count * length * section_area), using
+oriented-bounding-box cross-section proxies of visible rails. Invalid dimensions
+or combined foam/wood volumes are rejected, not clipped. Beam locations, overlap
+and attachment geometry remain unresolved, so this is a volume prior, not recovered
+internal CAD. The beam arm is worse than the free-fraction refinement here and
+is retained as an ablation. Geometry-feedback fraction refinement is the default
+candidate for the next multi-object evaluation.
+
+Historical same-object outputs are NeRF2Physics released-cache 20.5979 kg and
+PUGS-Qwen 4.5383 kg. These use different representations, priors and query budgets;
+they are not a controlled ranking. Official PUGS GPT-4o and Gen2Physics reruns
+remain unfinished. Their published cohort scores above are separate references.
+
+The refined state also completed all three matched-QEM budgets. At **2398 faces
+for both methods**, domain-density QEM has mean mass/COM/inertia retention errors
+**0.8672%, 1.2287 mm, 0.8745%**, versus global QEM **30.1332%, 52.6984 mm,
+23.8388%**. At the lowest budget, COM retention remains weaker than global QEM.
+The current `domain_retention` figure now shows this refined state; the earlier
+state's full results remain in the audit. Retention errors still concern the
+same conditional model rather than measured COM or inertia.
+
+```bash
+python -m tactile3d.experiments.vlm_mass \
+  --root /path/to/abo_500 --reference outputs/reference \
+  --model /path/to/Qwen3-VL-8B-Instruct \
+  --refine-from outputs/component_construction \
+  --refine-representation fractions --output outputs/refined_construction
+```
+
+Use `beams` or `fractions-no-geometry` for the two controls. The shared prior
+prediction seal and image hashes are checked before inference. All prediction
+files are sealed before the runner opens the catalogue target. The next required
+evidence is cross-object generalization, followed by train/validation-only
+probability calibration and a locked matched-cohort comparison.

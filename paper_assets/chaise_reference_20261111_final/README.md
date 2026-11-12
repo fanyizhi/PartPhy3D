@@ -14,7 +14,7 @@
 | 方法流程 | [PNG](method_overview.png) | [SVG](method_overview.svg) |
 
 `physical_parameter_sensitivity` 是补充敏感度图。
-新版整物体对照使用 `domain_retention`，包含三个减面档位的全部结果。
+新版整物体对照使用 `domain_retention`，现为几何反馈精炼后的状态，包含三个减面档位的全部结果。
 早期四腿精度与耗时比较使用 `matched_accuracy_cost` 和匹配面数表。
 
 文件分工如下。

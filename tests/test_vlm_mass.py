@@ -2,7 +2,12 @@ import numpy as np
 import pytest
 import trimesh
 
-from tactile3d.experiments.vlm_mass import construct, properties, validate_hypothesis
+from tactile3d.experiments.vlm_mass import (
+    apply_beam_inventory,
+    construct,
+    properties,
+    validate_hypothesis,
+)
 from tactile3d.physics.fields import integrate_construction
 
 
@@ -18,6 +23,71 @@ def row(core, thickness=0.0, region=0):
 POINTS = np.array([[0.0, 0.0, 0.0], [0.1, 0.0, 0.0]])
 OWNERS = np.array([0, 0])
 DENSITIES = {"cover": 1000.0, "foam": 40.0, "steel": 7850.0}
+
+
+def beam_case(count=2, length=1.0, section=10):
+    base = {
+        "upholstery": [
+            {"role": "seat", "foam_fraction": 0.8, "hidden_wood_fraction": 0.15}
+        ],
+        "underside": {"kind": "manufactured_panel", "thickness_mm": 15},
+    }
+    proposal = {
+        "upholstery": [
+            {
+                "role": "seat",
+                "beams": [
+                    {
+                        "count": count,
+                        "length_m": length,
+                        "section_component_id": section,
+                    }
+                ],
+            }
+        ]
+    }
+    return (
+        base,
+        proposal,
+        {"seat": {"diagonal_m": 2.0, "core_volume_m3": 0.1}},
+        {10: {"area_m2": 0.001}},
+    )
+
+
+def test_beam_volume_uses_observed_section_and_preserves_other_parameters():
+    base, proposal, roles, sections = beam_case()
+    answer = apply_beam_inventory(base, proposal, roles, sections)
+    assert answer["upholstery"][0]["hidden_wood_fraction"] == pytest.approx(0.02)
+    assert answer["upholstery"][0]["foam_fraction"] == 0.8
+    assert answer["underside"] == base["underside"]
+    assert base["upholstery"][0]["hidden_wood_fraction"] == 0.15
+
+
+@pytest.mark.parametrize(
+    "count,length,section",
+    [
+        (1.5, 1, 10),
+        (-1, 1, 10),
+        (2, 3, 10),
+        (2, float("nan"), 10),
+        (2, 1, 99),
+        (100, 1, 10),
+    ],
+)
+def test_invalid_beam_inventory_is_rejected_without_clipping(count, length, section):
+    with pytest.raises(ValueError):
+        apply_beam_inventory(*beam_case(count, length, section))
+
+
+def test_empty_beam_inventory_is_explicit_absence_hypothesis():
+    base, proposal, roles, sections = beam_case()
+    proposal["upholstery"][0]["beams"] = []
+    assert (
+        apply_beam_inventory(base, proposal, roles, sections)["upholstery"][0][
+            "hidden_wood_fraction"
+        ]
+        == 0
+    )
 
 
 @pytest.mark.parametrize("foam,wood", [(0.9, 0.2), (-0.1, 0.1), (float("nan"), 0)])

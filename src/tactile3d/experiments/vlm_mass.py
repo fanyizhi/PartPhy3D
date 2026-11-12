@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from copy import deepcopy
 from dataclasses import asdict
 from pathlib import Path
 
@@ -61,6 +62,218 @@ def validate_hypothesis(answer, roles):
         )
     answer["underside"]["thickness_mm"] = thickness
     return answer
+
+
+def apply_beam_inventory(base, proposal, role_geometry, sections):
+    """Convert a bounded beam inventory to volume fractions, without clipping.
+
+    Beam position remains unresolved. This is an auditable volume prior, not
+    recovered internal CAD or proof that a hidden frame exists.
+    """
+    rows = proposal["upholstery"]
+    if len(rows) != len(role_geometry) or {r["role"] for r in rows} != set(
+        role_geometry
+    ):
+        raise ValueError("Every upholstery role needs exactly one beam inventory")
+    answer = deepcopy(base)
+    for phase in answer["upholstery"]:
+        role = phase["role"]
+        beams = next(r["beams"] for r in rows if r["role"] == role)
+        volume = 0.0
+        for beam in beams:
+            count, length = beam["count"], float(beam["length_m"])
+            section = beam["section_component_id"]
+            if (
+                type(count) is not int
+                or count <= 0
+                or type(section) is not int
+                or section not in sections
+                or not np.isfinite(length)
+                or not 0 < length <= role_geometry[role]["diagonal_m"]
+            ):
+                raise ValueError("Invalid beam count, section or length")
+            volume += count * length * sections[section]["area_m2"]
+        core = role_geometry[role]["core_volume_m3"]
+        if core <= 0 or volume > core * (1 - phase["foam_fraction"]) + 1e-12:
+            raise ValueError("Beam and foam volumes exceed the available core")
+        phase["hidden_wood_fraction"] = volume / core
+        phase["hidden_beams"] = deepcopy(beams)
+    return validate_hypothesis(answer, sorted(role_geometry))
+
+
+def refine_construction(args):
+    """Paired second-round construction queries; freeze all non-frame parameters."""
+    source = args.refine_from
+    seal = json.loads((source / "prediction_seal.json").read_text())
+    if any(file_sha256(source / name) != value for name, value in seal.items()):
+        raise ValueError("Prior prediction seal mismatch")
+    protocol = json.loads((source / "protocol.json").read_text())
+    state_path = args.reference / "part_state_geometry_constrained.json"
+    state = json.loads(state_path.read_text())
+    if file_sha256(state_path) != protocol["part_state_sha256"] or state[
+        "geometry_sha256"
+    ] != file_sha256(args.reference / "reference_arrays.npz"):
+        raise ValueError("Geometry and prior construction state mismatch")
+    args.output.mkdir(parents=True, exist_ok=False)
+    _, _, pieces, _ = load_prepared(args.reference)
+    parts = state["parts"]
+    sections = {}
+    for part in parts:
+        if (
+            part["surface_material"] == "wood"
+            and part["functional_role"] == "frame_rail"
+        ):
+            spans = np.sort(
+                pieces[part["component_id"]].bounding_box_oriented.primitive.extents
+            )
+            sections[part["component_id"]] = {
+                "width_m": float(spans[0]),
+                "depth_m": float(spans[1]),
+                "area_m2": float(spans[0] * spans[1]),
+            }
+    if not sections:
+        raise ValueError("Beam refinement requires observed frame-rail cross sections")
+    paths = [Path(p) for p in protocol["input_hashes"]]
+    if any(file_sha256(p) != protocol["input_hashes"][str(p)] for p in paths):
+        raise ValueError("Original image evidence changed")
+    protocol.update(
+        {
+            "source_sha256": file_sha256(Path(__file__)),
+            "refined_from_seal_sha256": file_sha256(source / "prediction_seal.json"),
+            "construction_model": args.refine_representation,
+            "section_source": "visible frame-rail oriented bounding-box section proxy",
+            "sections": sections,
+            "additional_queries": protocol["rounds"],
+            "total_queries_including_prior": 2 * protocol["rounds"],
+            "non_frame_parameters": "foam fractions, underside hypothesis and numeric material priors frozen",
+        }
+    )
+    write_json(args.output / "protocol.json", protocol)
+    model = LocalVLM(args.model, max_tokens=1000, max_pixels=768**2, quantized=True)
+    write_json(args.output / "model.json", model.provenance)
+    images = [Image.open(p).copy() for p in paths]
+    results = []
+    for trial in range(protocol["rounds"]):
+        prior = json.loads((source / f"hypothesis_{trial}.json").read_text())
+        roles = {}
+        for phase in prior["answer"]["upholstery"]:
+            indices = [
+                p["component_id"]
+                for p in parts
+                if p["functional_role"] == phase["role"]
+            ]
+            bounds = np.asarray([pieces[i].bounds for i in indices])
+            roles[phase["role"]] = {
+                "diagonal_m": float(
+                    np.linalg.norm(bounds[:, 1].max(0) - bounds[:, 0].min(0))
+                ),
+                "core_volume_m3": sum(
+                    p["core"]["volume_m3"]
+                    for p in prior["partition"]["parts"]
+                    if p["component_id"] in indices
+                ),
+            }
+        prompt = (
+            "Audit hidden wooden framing in this upholstered object using the same four original views "
+            "and numbered mesh diagrams. Visible rails, legs and the bottom panel already have separate "
+            "material domains: DO NOT count them again. Propose only additional hidden beams. "
+            "Do not estimate object mass, change foam or bottom-panel assumptions, or force agreement "
+            "with a previous answer. A hidden beam is a construction hypothesis, not visible evidence. "
+            "Use an empty beams list if no additional beam is supported by your construction hypothesis. "
+            "Observed rail sections (component ID -> dimensions): "
+            + json.dumps(sections)
+            + ". Available role geometry: "
+            + json.dumps(roles)
+            + '. Return JSON {"upholstery":[{"role":string,"beams":[{"section_component_id":integer,'
+            '"count":positive_integer,"length_m":number}]}],"evidence":string}. '
+            "Cover every listed role exactly once. Beam length cannot exceed the role diagonal. "
+            "Consider construction alternatives; do not assume all padding contains wood."
+        )
+        if args.refine_representation != "beams":
+            context = prompt.split(" Return JSON ")[0]
+            if args.refine_representation == "fractions-no-geometry":
+                context = (
+                    context.split("Observed rail sections")[0]
+                    + "Upholstery roles: "
+                    + json.dumps(sorted(roles))
+                    + "."
+                )
+            prompt = context + (
+                ' Return JSON {"upholstery":[{"role":string,"hidden_wood_fraction":number}],'
+                '"evidence":string}. Cover every role once. Estimate additional hidden wood as '
+                "a fraction of its core volume using the supplied evidence. "
+                "Do not change foam or bottom-panel assumptions."
+            )
+        response = model.generate(
+            prompt,
+            images,
+            "Return construction JSON grounded in the images and metric geometry.",
+            seed=3510 + trial,
+            do_sample=True,
+            temperature=0.6,
+            top_p=0.9,
+        )
+        write_json(
+            args.output / f"raw_{trial}.json",
+            {"prompt": prompt, "response": asdict(response)},
+        )
+        proposal = _parse_response_content(response.text)
+        if args.refine_representation == "beams":
+            answer = apply_beam_inventory(prior["answer"], proposal, roles, sections)
+        else:
+            rows = proposal["upholstery"]
+            if len(rows) != len(roles) or {r["role"] for r in rows} != set(roles):
+                raise ValueError("Every role needs exactly one fraction proposal")
+            answer = deepcopy(prior["answer"])
+            for phase in answer["upholstery"]:
+                phase["hidden_wood_fraction"] = next(
+                    r["hidden_wood_fraction"]
+                    for r in rows
+                    if r["role"] == phase["role"]
+                )
+            answer = validate_hypothesis(answer, sorted(roles))
+        partition = construct(pieces, parts, answer, protocol["fabric_thickness_m"])
+        result = properties(partition, parts, answer, protocol["densities_kg_m3"])
+        result.update(
+            {
+                "trial": trial,
+                "answer": answer,
+                "partition": partition,
+                "role_geometry": roles,
+            }
+        )
+        write_json(args.output / f"hypothesis_{trial}.json", result)
+        results.append(result["mass_kg"])
+        print(
+            "REFINED_MASS",
+            args.refine_representation,
+            trial,
+            result["mass_kg"],
+            flush=True,
+        )
+    prediction = {
+        "scene_id": protocol["scene"],
+        "mass_kg": float(np.mean(results)),
+        "hypothesis_masses_kg": results,
+    }
+    write_json(args.output / "predictions.json", [prediction])
+    write_json(
+        args.output / "prediction_seal.json",
+        {p.name: file_sha256(p) for p in args.output.glob("*.json")},
+    )
+    target = float(
+        json.loads((args.root / "filtered_product_weights.json").read_text())[
+            protocol["scene"]
+        ]
+    )
+    report = {
+        "prediction": prediction,
+        "target_mass_kg": target,
+        "metrics": mass_metrics([target], [prediction["mass_kg"]]),
+        "scope": "exposed development object; refinement arms each use 3 shared prior and 3 additional queries",
+    }
+    write_json(args.output / "report.json", report)
+    return report
 
 
 def construct(pieces, parts, answer, thickness, *, allow_removed=False):
@@ -368,7 +581,17 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ("root", "reference", "model", "output"):
         parser.add_argument("--" + name, type=Path, required=True)
-    print(json.dumps(run(parser.parse_args())), flush=True)
+    parser.add_argument("--refine-from", type=Path)
+    parser.add_argument(
+        "--refine-representation",
+        choices=["beams", "fractions", "fractions-no-geometry"],
+        default="fractions",
+    )
+    args = parser.parse_args()
+    print(
+        json.dumps(refine_construction(args) if args.refine_from else run(args)),
+        flush=True,
+    )
 
 
 if __name__ == "__main__":
