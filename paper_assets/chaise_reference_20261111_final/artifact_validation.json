@@ -7,8 +7,8 @@
       "sha256": "07749ff6d4ca1fbfd0c8a28c08347f00c8e45646d389dd08f4037dc40fd68bc3"
     },
     "README.md": {
-      "bytes": 1874,
-      "sha256": "85a7005cc7205e3c04de790730e6a1c964a04143e635eac2cc9e1e119b5638c6"
+      "bytes": 2686,
+      "sha256": "3144cbb714829b06d87a52fc01a56d7f30a57ef7c58cc46b1e7c272cea8fe69d"
     },
     "contact_geometry.json": {
       "bytes": 6635,
@@ -59,16 +59,16 @@
       "sha256": "76f22ffc8c7caea5180f5e30ba91f8203889e68e92a5772611bd565988fdcf3c"
     },
     "matched_accuracy_cost.png": {
-      "bytes": 124201,
-      "sha256": "2f282a37de897aa5d3f5879362157c23742b953bf1b59a8db3715f07a6bd28bb"
+      "bytes": 87396,
+      "sha256": "c391fbffa0e101159f01100fdf22105d5eab4714d868cc69601d2ff2f6bcf427"
     },
     "matched_accuracy_cost.svg": {
-      "bytes": 36784,
-      "sha256": "4f1c76f20729d34566aa62b3f936c0d6580f8c28a90a8fcffa1692a668a47b5e"
+      "bytes": 36774,
+      "sha256": "578a077d3630af81ac03a64b5fecb287e9061a40f5a046c5262b8f856090408d"
     },
     "matched_comparison.csv": {
-      "bytes": 1180,
-      "sha256": "42beca16196bb1d499f5324c002ac99cf1027d5ddbb93014500243fdc57185cd"
+      "bytes": 1193,
+      "sha256": "6591acd2f19468e23c6b2e4d1c09b145535bf4bcd2726d2699743b5a78266a82"
     },
     "material_library_snapshot.yaml": {
       "bytes": 2036,
@@ -99,12 +99,12 @@
       "sha256": "606e8a74fb6759c3fe6929232ead9f8ad505ad0debb2c37c2edd7b47825779ff"
     },
     "qem_mesh_comparison.png": {
-      "bytes": 490193,
-      "sha256": "76510391ebe30ed3c9674cf6b211f55c9e24ef944484211c6ebf7f2aae6abc81"
+      "bytes": 535749,
+      "sha256": "7a9d6ae00611517da23cdb9b0a53130875e67da9b1e1ddc31450c19aa7f7f24d"
     },
     "qem_mesh_comparison.svg": {
-      "bytes": 532471,
-      "sha256": "48ed459282691c32eb20fa0e243fa6e3a064203bbaa39609fc507037fd9863ae"
+      "bytes": 532438,
+      "sha256": "b67cba95a769ea501d09a581e907dbe2234340897c191ccb21cc9eb8f295156d"
     },
     "source_data.json": {
       "bytes": 120787,
@@ -119,5 +119,44 @@
       "sha256": "9edb81bdc92843bbf421c2e7def629d94f42a1c52a61093e89e86b2649d1cecf"
     }
   },
-  "file_scope": "Versioned repository artifacts, using Git-normalized contents; local exports excluded"
+  "file_scope": "Versioned repository artifacts, using Git-normalized contents; local exports excluded",
+  "method_display_name": "Ours",
+  "label_update": {
+    "domain_retention": {
+      "label": "Ours",
+      "previous_label": "Domain-density QEM",
+      "scientific_svg_elements_unchanged": true,
+      "png_size_preserved": [
+        1781,
+        1654
+      ]
+    },
+    "qem_mesh_comparison": {
+      "label": "Ours",
+      "previous_label": "sensitivity_qem",
+      "scientific_svg_elements_unchanged": true,
+      "png_size_preserved": [
+        1752,
+        1829
+      ]
+    },
+    "qem_accuracy_cost": {
+      "label": "Ours",
+      "previous_label": "sensitivity_qem",
+      "scientific_svg_elements_unchanged": true,
+      "png_size_preserved": [
+        1829,
+        729
+      ]
+    },
+    "matched_accuracy_cost": {
+      "label": "Ours",
+      "previous_label": "Physics budget",
+      "scientific_svg_elements_unchanged": true,
+      "png_size_preserved": [
+        1829,
+        729
+      ]
+    }
+  }
 }

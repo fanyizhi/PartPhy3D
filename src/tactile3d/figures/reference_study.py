@@ -145,7 +145,7 @@ def draw_domain_retention(args):
     ]
     for key, title in (
         ("matched_global", "Global QEM"),
-        ("component", "Domain-density QEM"),
+        ("component", "Ours"),
     ):
         row = chosen[key]
         asset = source / row["mesh_asset"]
@@ -163,7 +163,7 @@ def draw_domain_retention(args):
     style = {
         "global_qem": ("Global QEM", "#626878", "o"),
         "component_qem": ("Component QEM", "#7399b4", "s"),
-        "domain_density_qem": ("Domain-density QEM", "#bf7955", "^"),
+        "domain_density_qem": ("Ours", "#bf7955", "^"),
     }
     with plt.rc_context(
         {
@@ -393,8 +393,9 @@ def draw_properties(args):
             [to_rgb(MATERIAL_COLORS[lookup[int(i)]]) for i in data["component_ids"]]
         )
         ax.imshow(render_mesh(data["vertices"], data["faces"], cols, resolution=500))
+        name = "Ours" if row["method"] == "sensitivity_qem" else row["method"]
         ax.set_title(
-            f"{row['method']} · {row['actual_faces']:,} faces\n"
+            f"{name} · {row['actual_faces']:,} faces\n"
             f"surface P95 {row['surface_p95_mm']:.2f} mm",
             fontsize=8,
         )
@@ -737,7 +738,7 @@ def finalize_assets(args):
             for p in pairs["pairs"]
             if p["component_method"]["method"] == "component_qem"
         ],
-        "Physics budget": [
+        "Ours": [
             p["component_method"]
             for p in pairs["pairs"]
             if p["component_method"]["method"] == "sensitivity_qem"

@@ -251,7 +251,7 @@ tactile3d import-mass-baseline \
 tactile3d paper-figures \
   --run NeRF2Physics=outputs/baselines/nerf2physics.json \
   --run PUGS=outputs/baselines/pugs.json \
-  --run PartPhy3D=outputs/abo500_full/test/predictions.json \
+  --run Ours=outputs/abo500_full/test/predictions.json \
   --cohort configs/abo500_mass_test.json \
   --evaluation-context published_test \
   --bootstrap-samples 2000 \

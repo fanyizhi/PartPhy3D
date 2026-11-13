@@ -2,6 +2,10 @@
 
 这些文件对应同一轮躺椅开发实验。直接查看下表中的主要图即可，无须逐个打开文件。
 
+主方法在图表中统一标为 **Ours**。`domain_retention` 的 Ours 对应
+domain-density QEM；早期四腿图件的 Ours 对应 sensitivity QEM。
+原始 CSV/JSON 保留算法标识，便于追溯。两组实验的物理评价范围见下文。
+
 | 内容 | 预览 | 可编辑版本 |
 | --- | --- | --- |
 | 新版整物体减面及质量矩保持 | [PNG](domain_retention.png) | [SVG](domain_retention.svg) |

@@ -3,20 +3,59 @@
   "source_rows": 12,
   "files": {
     "domain_retention.png": {
-      "sha256": "784e2622c00e068b1f038951eca0ff1fb7176ecaf25aa3428b6b1194721a866b",
-      "bytes": 253927
+      "sha256": "1c40b22caa0a41931d2ec5c3f008d5d39727a3e6734b4b118dbb6adcb2096f4a",
+      "bytes": 206046
     },
     "domain_retention.svg": {
-      "sha256": "5ff59d1dd25172379e0add79e0c96e76e5c2d426b4967cbe843baac60ee0f453",
-      "bytes": 156679
+      "sha256": "1b0316ea1f8efdc04c082becc971061b0bf15edd59b0b7382c4a01c61f6385df",
+      "bytes": 156651
     },
     "domain_retention.pdf": {
-      "sha256": "429240976f87e8895dbc9c89fbd7c2cd136f6fa44449c1f516da31265fc0268f",
-      "bytes": 106350
+      "sha256": "ee232594148ff9380dc57b98b51cc006316543ca23da038fa5ca5aa02162e5ab",
+      "bytes": 117629
     },
     "domain_retention.tiff": {
-      "sha256": "2fe40a528e9079adbbe8b6aad1270518684ae54983025ac70995c5b66a40aa85",
-      "bytes": 1658142
+      "sha256": "bd76bc1f0e8fa683648e2de895826968c18058c2cc2b148d023a34f9101a7b31",
+      "bytes": 1261124
+    }
+  },
+  "method_display_name": "Ours",
+  "label_update": {
+    "domain_retention": {
+      "label": "Ours",
+      "previous_label": "Domain-density QEM",
+      "scientific_svg_elements_unchanged": true,
+      "png_size_preserved": [
+        1781,
+        1654
+      ]
+    },
+    "qem_mesh_comparison": {
+      "label": "Ours",
+      "previous_label": "sensitivity_qem",
+      "scientific_svg_elements_unchanged": true,
+      "png_size_preserved": [
+        1752,
+        1829
+      ]
+    },
+    "qem_accuracy_cost": {
+      "label": "Ours",
+      "previous_label": "sensitivity_qem",
+      "scientific_svg_elements_unchanged": true,
+      "png_size_preserved": [
+        1829,
+        729
+      ]
+    },
+    "matched_accuracy_cost": {
+      "label": "Ours",
+      "previous_label": "Physics budget",
+      "scientific_svg_elements_unchanged": true,
+      "png_size_preserved": [
+        1829,
+        729
+      ]
     }
   }
 }

@@ -328,10 +328,10 @@ three trials, with no best-trial selection and no mass label in the prompt.
 
 | Same exposed chaise | Total queries including shared prior | Mean mass kg | Absolute error kg | APE % |
 | --- | ---: | ---: | ---: | ---: |
-| Previous independent-question model | 3 | 46.0988 | 17.0689 | 58.7976 |
-| Follow-up without numerical geometry | 6 | 44.9486 | 15.9187 | 54.8357 |
-| Follow-up with numerical geometry, free fraction | 6 | 30.5182 | 1.4883 | 5.1267 |
-| Follow-up with numerical geometry, beam inventory | 6 | 32.4678 | 3.4379 | 11.8428 |
+| Ours (initial) | 3 | 46.0988 | 17.0689 | 58.7976 |
+| Ours (without numerical geometry) | 6 | 44.9486 | 15.9187 | 54.8357 |
+| Ours (geometry feedback) | 6 | 30.5182 | 1.4883 | 5.1267 |
+| Ours (beam inventory) | 6 | 32.4678 | 3.4379 | 11.8428 |
 
 Catalogue target: 29.029888 kg. Follow-up arms use the same seeds, image budgets
 and maximum output-token budgets; actual output lengths and runtimes are recorded
