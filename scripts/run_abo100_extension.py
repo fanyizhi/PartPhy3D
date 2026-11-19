@@ -22,13 +22,13 @@ APPLIANCE_CUES = r"\b(fan|grilles?|grills?|vents?|ventilation|filters?|compresso
 
 def write_score_table(output, stats, records):
     labels = {
-        "official_100": "官方测试集",
+        "official_100": "官方测试集" if len(records) == 100 else "冻结中期批次",
         "prior_50": "原 50 件",
-        "additional_50": "新增 50 件",
+        "additional_50": f"新增 {len(records) - 50} 件",
         "additional_excluding_declared_development": "新增批排除已声明开发对象",
     }
     lines = [
-        "# ABO-100 质量评分",
+        f"# ABO-{len(records)} 质量评分",
         "",
         "| 样本 | 方法 | 件数 | ADE (kg) ↓ | ALDE ↓ | APE (%) ↓ | MnRE ↑ |",
         "| --- | --- | ---: | ---: | ---: | ---: | ---: |",
@@ -82,6 +82,73 @@ def candidates(construction):
             for part in row.get("parts", [])
         )
     ]
+
+
+def partition(args):
+    full = read_json(args.cohort)
+    source = read_json(args.observations / "cohort.json")
+    additional = full["additional_object_ids"]
+    if additional != source["object_ids"] or len(additional) != 50:
+        raise ValueError("Expected the frozen 50-case extension")
+    for start in (0, 25):
+        batch = args.output / f"batch_{start:02d}"
+        obs = batch / "observations"
+        obs.mkdir(parents=True, exist_ok=False)
+        (obs / "scenes").symlink_to(
+            (args.observations / "scenes").resolve(), target_is_directory=True
+        )
+        cases = additional[start : start + 25]
+        ids = set(cases) | set(full["prior_object_ids"])
+        files = {
+            p: h for p, h in source["files_sha256"].items() if p.split("/")[1] in cases
+        }
+        write_json(
+            obs / "cohort.json",
+            source
+            | {
+                "object_ids": cases,
+                "files_sha256": files,
+                "reconstruction_views": {
+                    s: source["reconstruction_views"][s] for s in cases
+                },
+            },
+        )
+        write_json(
+            batch / "cohort75.json",
+            full
+            | {
+                "object_ids": [s for s in full["object_ids"] if s in ids],
+                "additional_object_ids": cases,
+                "parent_cohort_sha256": digest(args.cohort),
+            },
+        )
+
+
+def merge(args):
+    cohort = read_json(args.cohort)
+    first, second = sealed_rows(args.first), sealed_rows(args.second)
+    prior = set(cohort["prior_object_ids"])
+    if first.keys() & second.keys() != prior or first.keys() | second.keys() != set(
+        cohort["object_ids"]
+    ):
+        raise ValueError("Expected two disjoint extensions over the same original 50")
+    if any(first[s] != second[s] for s in prior):
+        raise ValueError("Archived predictions differ between batches")
+    rows = first | second
+    args.output.mkdir(exist_ok=False)
+    write_json(
+        args.output / "protocol.json",
+        dict(
+            cohort_sha256=digest(args.cohort),
+            mass_labels_used=False,
+            child_prediction_sha256=[
+                digest(x / "predictions.json") for x in (args.first, args.second)
+            ],
+        ),
+    )
+    result = args.output / "predictions.json"
+    write_json(result, [rows[s] for s in cohort["object_ids"]])
+    write_json(args.output / "prediction_seal.json", dict(sha256=digest(result)))
 
 
 def select(args):
@@ -211,6 +278,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="action", required=True)
     for name, fields in (
+        ("partition", ("cohort", "observations", "output")),
+        ("merge", ("cohort", "first", "second", "output")),
         ("prepare-clip", ("observations", "output")),
         ("appliance-candidates", ("construction",)),
         ("select", ("cohort", "previous", "clip", "construction", "output")),
@@ -222,7 +291,11 @@ def main():
         if name == "select":
             child.add_argument("--appliance", type=Path)
     args = parser.parse_args()
-    if args.action == "prepare-clip":
+    if args.action == "partition":
+        partition(args)
+    elif args.action == "merge":
+        merge(args)
+    elif args.action == "prepare-clip":
         prepare_clip(args.observations, args.output)
     elif args.action == "appliance-candidates":
         print("\n".join(candidates(args.construction)))

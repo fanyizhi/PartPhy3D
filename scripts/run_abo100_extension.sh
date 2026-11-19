@@ -11,24 +11,27 @@ nerf=${6:?official baseline directory}
 run() { "$py" "scripts/$1.py" "${@:2}"; }
 wait_for_reconstruction() {
   # Failed meshes have explicit exit codes and will be counted as fallbacks.
-  until "$py" -c 'import json,sys; assert len(json.load(open(sys.argv[1]))["rows"]) == 50' \
-    "$base/reconstructions_sparse/progress.json" 2>/dev/null; do
+  until "$py" -c 'import json,sys; assert len(json.load(open(sys.argv[1]))["rows"]) >= int(sys.argv[2])' \
+    "$base/reconstructions_sparse/progress.json" "$1" 2>/dev/null; do
     if ! pgrep -f "run_abo50_reconstruction.py.*--output $base/reconstructions_sparse$" >/dev/null; then
-      echo 'Reconstruction exited before writing 50 statuses' >&2
+      echo 'Reconstruction exited before writing the required statuses' >&2
       return 1
     fi
     sleep 15
   done
 }
 
-wait_for_reconstruction
-ln -s reconstructions_sparse "$base/reconstructions_ready"
+full_base=$base
 model="$models/Qwen3-VL-8B-Instruct"
-# Keep the failed dense run intact and use the successful retry for the repair scripts.
+run run_abo100_extension partition --cohort "$full_base/cohort100.json" \
+  --observations "$full_base/observations" --output "$full_base"
+
+run_batch() {
+# Use different directories for each half, sharing the completed reconstruction files.
 repair_base="$base/repaired_pipeline"
 mkdir "$repair_base"
 ln -s "$base/observations" "$repair_base/observations"
-ln -s "$base/reconstructions_ready" "$repair_base/reconstructions"
+ln -s "$full_base/reconstructions_sparse" "$repair_base/reconstructions"
 run run_abo100_extension prepare-clip --observations "$base/observations" --output "$base/clip_inputs"
 run run_abo_image_mass_control predict --dataset "$base/clip_inputs" \
   --checkpoint "$models/open_clip_pytorch_model.bin" --frozen-head "$prior/mass_kg_head.npz" --output "$base/clip"
@@ -51,7 +54,20 @@ if ((${#candidates[@]})); then
   run replay_appliance_role_constraints --run "$base/appliance_raw" --output "$base/appliance" --skip-invalid
   select_args+=(--appliance "$base/appliance")
 fi
-run run_abo100_extension select --cohort "$base/cohort100.json" --previous "$prior/selected_ours" \
+run run_abo100_extension select --cohort "$base/cohort75.json" --previous "$prior/selected_ours" \
   --clip "$base/clip" --construction "$base/panels" --output "$base/selected" "${select_args[@]}"
-run run_abo100_extension score --cohort "$base/cohort100.json" --run "$base/selected" \
-  --weights "$weights" --nerf "$nerf" --output "$base/score.json"
+}
+
+wait_for_reconstruction 25
+base="$full_base/batch_00"
+run_batch
+run run_abo100_extension score --cohort "$base/cohort75.json" --run "$base/selected" \
+  --weights "$weights" --nerf "$nerf" --output "$full_base/score75.json"
+base=$full_base
+wait_for_reconstruction 50
+base="$full_base/batch_25"
+run_batch
+run run_abo100_extension merge --cohort "$full_base/cohort100.json" \
+  --first "$full_base/batch_00/selected" --second "$full_base/batch_25/selected" --output "$full_base/selected"
+run run_abo100_extension score --cohort "$full_base/cohort100.json" --run "$full_base/selected" \
+  --weights "$weights" --nerf "$nerf" --output "$full_base/score.json"
