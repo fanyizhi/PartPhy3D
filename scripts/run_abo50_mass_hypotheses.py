@@ -159,10 +159,8 @@ def infer(args: argparse.Namespace) -> None:
                 else:
                     run = args.reconstructions / scene
                     mesh_path = run / "camera_space.ply"
-                    if (
-                        digest(mesh_path)
-                        != read_json(run / "report.json")["mesh_sha256"]
-                    ):
+                    mesh_hash = digest(mesh_path)
+                    if mesh_hash != read_json(run / "report.json")["mesh_sha256"]:
                         raise ValueError("Mesh differs from reconstruction provenance")
                     row.update(
                         integrate(
@@ -171,6 +169,7 @@ def infer(args: argparse.Namespace) -> None:
                             densities,
                         )
                     )
+                    row["mesh_sha256"] = mesh_hash
             except (OSError, KeyError, TypeError, ValueError, RuntimeError) as error:
                 row["errors"][name] = str(error)
         rows.append(row)

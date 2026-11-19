@@ -1,0 +1,264 @@
+{
+  "requested": 50,
+  "successful": 50,
+  "aggregate": {
+    "mean_paired_difference": 0.21605281050133385,
+    "paired_bootstrap_ci95": [
+      0.1970493533990399,
+      0.23529620916318517
+    ],
+    "objects_improved": 50
+  },
+  "rows": [
+    {
+      "scene_id": "B07TWQTVXL_ATVPDKIKX0DER",
+      "frozen_iou": 0.257681574562376,
+      "refined_iou": 0.48593804696093085
+    },
+    {
+      "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+      "frozen_iou": 0.6954917140664274,
+      "refined_iou": 0.9496809139597259
+    },
+    {
+      "scene_id": "B07TDMJPWG_ATVPDKIKX0DER",
+      "frozen_iou": 0.6412403116153812,
+      "refined_iou": 0.9018941701610149
+    },
+    {
+      "scene_id": "B01MRT550V",
+      "frozen_iou": 0.6175618393609906,
+      "refined_iou": 0.8012968899341965
+    },
+    {
+      "scene_id": "B0727Q5F94_ATVPDKIKX0DER",
+      "frozen_iou": 0.7758777531650513,
+      "refined_iou": 0.93047341994501
+    },
+    {
+      "scene_id": "B07YM1FZSJ_ATVPDKIKX0DER",
+      "frozen_iou": 0.752509900965015,
+      "refined_iou": 0.8577359774229948
+    },
+    {
+      "scene_id": "B07DBB76JV_ATVPDKIKX0DER",
+      "frozen_iou": 0.7247681357311784,
+      "refined_iou": 0.957362493070423
+    },
+    {
+      "scene_id": "B01MXTX8MC",
+      "frozen_iou": 0.6083033794870384,
+      "refined_iou": 0.8122633424271969
+    },
+    {
+      "scene_id": "B07YLZTGZ9_ATVPDKIKX0DER",
+      "frozen_iou": 0.8433421092803743,
+      "refined_iou": 0.8708580957666622
+    },
+    {
+      "scene_id": "B082Q989SF_ATVPDKIKX0DER",
+      "frozen_iou": 0.7673861206674623,
+      "refined_iou": 0.971370562659323
+    },
+    {
+      "scene_id": "B075X463J2_ATVPDKIKX0DER",
+      "frozen_iou": 0.7669063071766079,
+      "refined_iou": 0.9555258668177832
+    },
+    {
+      "scene_id": "B01LP0UKJE_ATVPDKIKX0DER",
+      "frozen_iou": 0.7405594931015292,
+      "refined_iou": 0.9044848482373083
+    },
+    {
+      "scene_id": "B07QFP4PV5_ATVPDKIKX0DER",
+      "frozen_iou": 0.7402520062452892,
+      "refined_iou": 0.9540697093043553
+    },
+    {
+      "scene_id": "B07MBFDKYY_ATVPDKIKX0DER",
+      "frozen_iou": 0.7447371609706845,
+      "refined_iou": 0.973393879366792
+    },
+    {
+      "scene_id": "B074KMVVK7_ATVPDKIKX0DER",
+      "frozen_iou": 0.7339288172989985,
+      "refined_iou": 0.948543582124396
+    },
+    {
+      "scene_id": "B0723DD7Z6",
+      "frozen_iou": 0.7341044841663663,
+      "refined_iou": 0.9544254441359042
+    },
+    {
+      "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+      "frozen_iou": 0.6177195289218799,
+      "refined_iou": 0.8747445838519448
+    },
+    {
+      "scene_id": "B07YM1D7B7_ATVPDKIKX0DER",
+      "frozen_iou": 0.8430826194381117,
+      "refined_iou": 0.8711367137870673
+    },
+    {
+      "scene_id": "B01LP0VI3G_ATVPDKIKX0DER",
+      "frozen_iou": 0.7342770219975896,
+      "refined_iou": 0.9241061599709054
+    },
+    {
+      "scene_id": "B012S0S20Y_ATVPDKIKX0DER",
+      "frozen_iou": 0.672015332648601,
+      "refined_iou": 0.9577061446543916
+    },
+    {
+      "scene_id": "B07Y3Q7MDR",
+      "frozen_iou": 0.5840474716102604,
+      "refined_iou": 0.8784069115985065
+    },
+    {
+      "scene_id": "B076YJFGCN_A1F83G8C2ARO7P",
+      "frozen_iou": 0.7622509640126972,
+      "refined_iou": 0.9568345491593595
+    },
+    {
+      "scene_id": "B07Y2B738L_ATVPDKIKX0DER",
+      "frozen_iou": 0.8020449458124744,
+      "refined_iou": 0.9627250282962155
+    },
+    {
+      "scene_id": "B01DN8TEA2_ATVPDKIKX0DER",
+      "frozen_iou": 0.7014656354854476,
+      "refined_iou": 0.9495623921623441
+    },
+    {
+      "scene_id": "B07F3T4RSD_A13V1IB3VIYZZH",
+      "frozen_iou": 0.6904425238140681,
+      "refined_iou": 0.9107792603979785
+    },
+    {
+      "scene_id": "B07JL5PLPN_ATVPDKIKX0DER",
+      "frozen_iou": 0.7237151008544144,
+      "refined_iou": 0.9321336101690932
+    },
+    {
+      "scene_id": "B075YNL7R3_ATVPDKIKX0DER",
+      "frozen_iou": 0.6477061948202384,
+      "refined_iou": 0.9268674705177921
+    },
+    {
+      "scene_id": "B07JQMLQ2C",
+      "frozen_iou": 0.7605908600911032,
+      "refined_iou": 0.9354074373694342
+    },
+    {
+      "scene_id": "B07SRSJFBH",
+      "frozen_iou": 0.7707813994337614,
+      "refined_iou": 0.9490920843493669
+    },
+    {
+      "scene_id": "B082L28P18_ATVPDKIKX0DER",
+      "frozen_iou": 0.7875571268394772,
+      "refined_iou": 0.9569164873056105
+    },
+    {
+      "scene_id": "B07GFRP9RY_A1F83G8C2ARO7P",
+      "frozen_iou": 0.7915934540745297,
+      "refined_iou": 0.9606727686956901
+    },
+    {
+      "scene_id": "B07WQ4VQ74_ATVPDKIKX0DER",
+      "frozen_iou": 0.4526127719789885,
+      "refined_iou": 0.7889669072927864
+    },
+    {
+      "scene_id": "B07K6S2G5Z_A1F83G8C2ARO7P",
+      "frozen_iou": 0.7536941572521654,
+      "refined_iou": 0.9432250807036411
+    },
+    {
+      "scene_id": "B00WRDS0AU_ATVPDKIKX0DER",
+      "frozen_iou": 0.7324237516161417,
+      "refined_iou": 0.9442136358045915
+    },
+    {
+      "scene_id": "B075HXHKVF_ATVPDKIKX0DER",
+      "frozen_iou": 0.7706315405105513,
+      "refined_iou": 0.9730100373573585
+    },
+    {
+      "scene_id": "B084W368ML_ATVPDKIKX0DER",
+      "frozen_iou": 0.5900063275983882,
+      "refined_iou": 0.9282063082149027
+    },
+    {
+      "scene_id": "B07XHQQ95Y_ATVPDKIKX0DER",
+      "frozen_iou": 0.7466463335109031,
+      "refined_iou": 0.9567036968424509
+    },
+    {
+      "scene_id": "B07WQ4P35G",
+      "frozen_iou": 0.4383196793305963,
+      "refined_iou": 0.8580266528051638
+    },
+    {
+      "scene_id": "B075YLJM75",
+      "frozen_iou": 0.7109335150934143,
+      "refined_iou": 0.9527426604029742
+    },
+    {
+      "scene_id": "B075YQ46MP_ATVPDKIKX0DER",
+      "frozen_iou": 0.6016219168983494,
+      "refined_iou": 0.8629112110292944
+    },
+    {
+      "scene_id": "B07N6RT9SM_ATVPDKIKX0DER",
+      "frozen_iou": 0.7376730479495315,
+      "refined_iou": 0.9655540793974801
+    },
+    {
+      "scene_id": "B07DB9638P_ATVPDKIKX0DER",
+      "frozen_iou": 0.5548450464310547,
+      "refined_iou": 0.9015963774447515
+    },
+    {
+      "scene_id": "B07HPQ358H_ATVPDKIKX0DER",
+      "frozen_iou": 0.725443029691465,
+      "refined_iou": 0.953604362377018
+    },
+    {
+      "scene_id": "B075YZPG5Y_ATVPDKIKX0DER",
+      "frozen_iou": 0.741729535919989,
+      "refined_iou": 0.9561745221535345
+    },
+    {
+      "scene_id": "B078GTTCCF_A1F83G8C2ARO7P",
+      "frozen_iou": 0.7191403027018394,
+      "refined_iou": 0.9446744971376994
+    },
+    {
+      "scene_id": "B072PZ4LVN_ATVPDKIKX0DER",
+      "frozen_iou": 0.7432135350567921,
+      "refined_iou": 0.9593613624745562
+    },
+    {
+      "scene_id": "B07B8PXMRT_ATVPDKIKX0DER",
+      "frozen_iou": 0.7066176346721939,
+      "refined_iou": 0.9393503976076246
+    },
+    {
+      "scene_id": "B003LSTD38_ATVPDKIKX0DER",
+      "frozen_iou": 0.7514099961512866,
+      "refined_iou": 0.961142449433984
+    },
+    {
+      "scene_id": "B07JM6HFVP_ATVPDKIKX0DER",
+      "frozen_iou": 0.7827243846111333,
+      "refined_iou": 0.9750873020643743
+    },
+    {
+      "scene_id": "B07GFRNHYW_A1RKKUPIHCS9HS",
+      "frozen_iou": 0.7917649233031995,
+      "refined_iou": 0.9470728579361959
+    }
+  ]
+}
