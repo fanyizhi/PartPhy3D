@@ -1,0 +1,41 @@
+{
+  "scope": "Current completed PUGS-Qwen prefix, provisional",
+  "rows": [
+    {
+      "scene_id": "B07TWQTVXL_ATVPDKIKX0DER",
+      "target_mass_kg": 1.84611944,
+      "pugs_qwen_kg": 158.0,
+      "ours_kg": 13.40471730907212
+    },
+    {
+      "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+      "target_mass_kg": 15.667067679999999,
+      "pugs_qwen_kg": 6.582302093505859,
+      "ours_kg": 4.499206796484583
+    },
+    {
+      "scene_id": "B07TDMJPWG_ATVPDKIKX0DER",
+      "target_mass_kg": 11.9748288,
+      "pugs_qwen_kg": 315.9992980957031,
+      "ours_kg": 30.46549566927033
+    }
+  ],
+  "metrics": {
+    "pugs_qwen_kg": {
+      "num_scenes": 3,
+      "ade_kg": 156.42103848073242,
+      "alde": 2.8632062351769427,
+      "ape": 36.85113992988346,
+      "mnre": 0.15657186678566926,
+      "rmse_kg": 197.39760663040997
+    },
+    "ours_kg": {
+      "num_scenes": 3,
+      "ade_kg": 13.73904187395262,
+      "alde": 1.3879895164718068,
+      "ape": 2.8393252234242414,
+      "mnre": 0.27265323022236626,
+      "rmse_kg": 14.14481132998721
+    }
+  }
+}

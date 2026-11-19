@@ -119,7 +119,7 @@ def density_figure(directory: Path, output: Path) -> None:
     figure, axes = plt.subplots(
         len(manifest["scenes"]),
         len(titles),
-        figsize=(7.2, 2.3 if pugs else 5.7),
+        figsize=(7.2, 2.3 if pugs else max(5.7, 1.8 * len(manifest["scenes"]))),
         layout="constrained",
         squeeze=False,
     )

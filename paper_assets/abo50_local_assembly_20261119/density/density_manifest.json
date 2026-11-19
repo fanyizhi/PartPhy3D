@@ -1,0 +1,47 @@
+{
+  "scenes": [
+    {
+      "scene_id": "B07Y3Q7MDR",
+      "view": 8,
+      "mesh_sha256": "87111a0bf05c31e1e2dda143cab11259cb8dfd9efd8160376a16ba6f244e8695",
+      "shared_mesh_foreground_coverage": 0.9573275472380436,
+      "ours_foreground_coverage": 0.6027483952626345,
+      "propagated_foreground_coverage": 0.9527167525540187
+    },
+    {
+      "scene_id": "B07K6S2G5Z_A1F83G8C2ARO7P",
+      "view": 8,
+      "mesh_sha256": "86df8579e526321653fd6772b6bd60556bda168c4b7603980741636080b5bec8",
+      "shared_mesh_foreground_coverage": 0.9647005237986791,
+      "ours_foreground_coverage": 0.7282428343690015,
+      "propagated_foreground_coverage": 0.9520447668933207
+    },
+    {
+      "scene_id": "B075YQ46MP_ATVPDKIKX0DER",
+      "view": 8,
+      "mesh_sha256": "18a5fa600314e459d56266cf8c44186bda3747ba2bdd5e90a9613d5bd07d2210",
+      "shared_mesh_foreground_coverage": 0.9331336175442639,
+      "ours_foreground_coverage": 0.531551253984714,
+      "propagated_foreground_coverage": 0.9044820831893076
+    },
+    {
+      "scene_id": "B076YJFGCN_A1F83G8C2ARO7P",
+      "view": 8,
+      "mesh_sha256": "a5a54dab2ee2dac4952fa3506d73a803f128984df0ef2107c02db44f92217537",
+      "shared_mesh_foreground_coverage": 0.9768563162970106,
+      "ours_foreground_coverage": 0.8738965952080706,
+      "propagated_foreground_coverage": 0.9728506787330317
+    },
+    {
+      "scene_id": "B07QFP4PV5_ATVPDKIKX0DER",
+      "view": 8,
+      "mesh_sha256": "8b86ea9caec5ecbd13dfd26835062e10db107ed3141a1bb9cac0e4b375a57c74",
+      "shared_mesh_foreground_coverage": 0.9784186586664086,
+      "ours_foreground_coverage": 0.4396593438498016,
+      "propagated_foreground_coverage": 0.8885609213200426
+    }
+  ],
+  "units": "kg/m^3",
+  "density_variant_label": "Ours \u00b7 appearance completion",
+  "density_variant_filename": "appearance_completion"
+}

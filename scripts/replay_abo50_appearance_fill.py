@@ -12,7 +12,7 @@ from scipy.spatial import cKDTree
 
 from prepare_abo50_benchmark import digest, read_json, write_json
 from replay_abo50_material_coverage import assign
-from run_abo50_density_maps import CASES, SIZE
+from run_abo50_density_maps import SIZE
 from tactile3d.vision.part_lifting import add_view_votes
 
 VIEWS = (0, 10, 20)
@@ -104,7 +104,14 @@ def main() -> None:
         row["scene_id"]: row
         for row in read_json(args.source / "density_manifest.json")["scenes"]
     }
-    for scene in CASES:
+    cases = read_json(args.source / "cohort.json")["object_ids"]
+    if (
+        not cases
+        or len(cases) != len(set(cases))
+        or set(cases) != density_reports.keys()
+    ):
+        raise ValueError("Source density maps must match the selection manifest")
+    for scene in cases:
         assets = args.source / "surface" / "fields" / scene
         tokens = read_json(assets / "part_tokens.json")
         mesh_path = Path(meshes[scene]["path"])
@@ -217,7 +224,7 @@ def main() -> None:
     write_json(
         args.output / "density_manifest.json",
         {
-            "scenes": [density_reports[scene] for scene in CASES],
+            "scenes": [density_reports[scene] for scene in cases],
             "units": "kg/m^3",
             "density_variant_label": (
                 "Ours · appearance completion"

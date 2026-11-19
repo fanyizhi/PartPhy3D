@@ -1,0 +1,15 @@
+{
+  "scenes": [
+    {
+      "scene_id": "B07QFP4PV5_ATVPDKIKX0DER",
+      "view": 8,
+      "mesh_sha256": "8b86ea9caec5ecbd13dfd26835062e10db107ed3141a1bb9cac0e4b375a57c74",
+      "shared_mesh_foreground_coverage": 0.9784186586664086,
+      "ours_foreground_coverage": 0.4396593438498016,
+      "propagated_foreground_coverage": 0.8885609213200426
+    }
+  ],
+  "units": "kg/m^3",
+  "density_variant_label": "Ours \u00b7 appearance completion",
+  "density_variant_filename": "appearance_completion"
+}

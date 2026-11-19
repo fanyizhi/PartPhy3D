@@ -30,7 +30,7 @@ SIZE = 384
 
 def prepare(args: argparse.Namespace) -> None:
     frozen = args.benchmark / "observations" / "cohort.json"
-    if not set(CASES) <= set(read_json(frozen)["object_ids"]):
+    if not set(args.scenes) <= set(read_json(frozen)["object_ids"]):
         raise ValueError("Density examples must belong to the frozen cohort")
     predictions = args.benchmark / "mass_hypotheses"
     if read_json(predictions / "prediction_seal.json")["sha256"] != digest(
@@ -49,7 +49,7 @@ def prepare(args: argparse.Namespace) -> None:
     }
     meshes = {}
     inputs = {}
-    for scene in CASES:
+    for scene in args.scenes:
         mesh = args.benchmark / "silhouettes" / scene / "corrected_camera_space.ply"
         meshes[scene] = {"path": str(mesh.resolve()), "sha256": digest(mesh)}
         record = by_scene[scene]
@@ -82,7 +82,7 @@ def prepare(args: argparse.Namespace) -> None:
         directory = args.output / "objects" / scene
         directory.mkdir(parents=True)
         write_json(directory / "prediction.json", prediction)
-    write_json(args.output / "cohort.json", {"object_ids": CASES})
+    write_json(args.output / "cohort.json", {"object_ids": args.scenes})
     write_json(args.output / "meshes.json", meshes)
 
 
@@ -116,7 +116,7 @@ def export(args: argparse.Namespace) -> None:
     meshes = read_json(args.output / "meshes.json")
     observations = args.benchmark / "observations"
     reports = []
-    for scene in CASES:
+    for scene in read_json(args.output / "cohort.json")["object_ids"]:
         source = args.cache / "scenes" / scene
         reference_hashes = list(
             args.nerf_runs.glob(f"batch_*/{scene}/input_hashes.json")
@@ -209,11 +209,14 @@ def export(args: argparse.Namespace) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("stage", choices=("prepare", "export"))
+    parser.add_argument("--scenes", nargs="+", default=CASES)
     for name in ("benchmark", "output"):
         parser.add_argument(f"--{name}", type=Path, required=True)
     for name in ("clip", "nerf", "cache", "nerf-runs"):
         parser.add_argument(f"--{name}", type=Path)
     args = parser.parse_args()
+    if len(set(args.scenes)) != len(args.scenes):
+        parser.error("Each example must be unique")
     if args.stage == "prepare":
         prepare(args)
     else:

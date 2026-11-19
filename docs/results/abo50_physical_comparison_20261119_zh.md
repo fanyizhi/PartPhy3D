@@ -2,6 +2,8 @@
 
 [固定六视角的覆盖率修复与复跑](abo50_coverage_repair_20261119_zh.md)
 
+[最新的 50 对象局部构造回放、PUGS-Qwen 进度与五件密度图](abo50_local_assembly_20261119_zh.md)
+
 ## 表 1　Ours 与基线的质量指标
 
 | 方法 | ABO-500 口径 | ADE (kg) ↓ | ALDE ↓ | APE (%) ↓ | MnRE ↑ | 出处 |

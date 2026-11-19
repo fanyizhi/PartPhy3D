@@ -1,0 +1,36 @@
+{
+  "scope": "exploratory local-dimension assembly replay",
+  "cohort_sha256": "5a3545eb717b0accf03de2f826498e63da1ae64ed1367d1551bd6b5d311e219b",
+  "source_prediction_sha256": "c48a3b71d3a2c8af5cacb6c441457b507ef44f03a90b7ffdf8ec3c7038ba2efb",
+  "catalogue_sha256": null,
+  "repair_winding": true,
+  "material_priors_sha256": "762509cdb3da009c0dc514f9144146ebb4b7c5aec86f98e253383eea4bbce97c",
+  "mass_labels_used_for_inference": false,
+  "repair_source_sha256": "16a23ca82481ee6013fc02d96fc39c5ab3accbd8889eff3102a89c261f099f28",
+  "repair_code_sha256": "9cd0dab0af08d423bf716be56aa0ee4c05cc521b79a79a023288cb36ae209e46",
+  "prompt": "Describe the real object seen in these images. Return JSON with\nmax_length_m and parts. Use one to five material-bearing components. Each part has\nname, evidence, material_id, construction_id, v, a and parameter.\nChoose material_id by number from this list: 1: foam, 2: rubber, 3: plastic, 4: wood, 5: aluminum, 6: steel, 7: glass, 8: ceramic, 9: silicone, 10: paper_cardboard, 11: fabric, 12: leather, 13: stone.\nUse construction_id 1 for filled material, 2 for a hollow thin shell and 3 for an\nunfilled lattice or assembly. For each component, give a positive relative size\nweight v (1\u2013100) and a visible surface weight a (0\u2013100), with at least one positive\na. The weights need not sum to 100. Never list a void as a part. Set parameter to\n1 for filled material, wall thickness in millimeters for a shell, or the material\nfill fraction strictly between 0 and 1 for an unfilled assembly. Give a positive\nmax_length_m. Return JSON only. Do not estimate mass.",
+  "maximum_attempts": 2,
+  "model": {
+    "path": "/root/autodl-tmp/models/Qwen3-VL-8B-Instruct",
+    "model_type": "qwen3_vl",
+    "torch": "2.6.0+cu124",
+    "device": "NVIDIA GeForce RTX 4090",
+    "dtype": "bfloat16",
+    "max_pixels": 200704,
+    "effective_image_pixel_budget": {
+      "min_pixels": 65536,
+      "max_pixels": 200704
+    },
+    "max_new_tokens": 1200,
+    "seed": 17,
+    "quantization": "NF4_double_quant",
+    "adapter_path": null,
+    "load_seconds": 86.5220659780316
+  },
+  "weighted_followup": true,
+  "routing": "is_open_canopy",
+  "code_sha256": "726fd1b74a3560b482f143be374b817ff7e4d5962f85d0f7e10333089a867dcd",
+  "local_dimension_prompt": "Estimate the construction dimensions of the assembled shelter in\nthese views. Describe only matter, excluding all air below the canopy. Group\nidentical pieces. The estimated overall longest dimension is {length} m. Return\none JSON with groups: each group contains name, material, kind, count and the\ndimensions below. Material choices: {materials}.\nKinds: sheet (area_m2 per piece, thickness_mm); tube (length_m per piece,\ndiameter_mm, wall_mm); box (dimensions_mm, three positive numbers per piece;\nuse only for small compact fittings); rod (length_m per piece, diameter_mm;\nuse only when not hollow). Give positive values and integer counts. Include all\nmain visible material groups, including roof fabric, tubes and base fittings\nwhere present. Thickness and diameter are in millimetres. Do not estimate mass.\n",
+  "compact_dimensions_unit": "mm",
+  "archived_responses_replayed": true
+}
