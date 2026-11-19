@@ -20,6 +20,41 @@ from tactile3d.models.calibration import mass_metrics
 APPLIANCE_CUES = r"\b(fan|grilles?|grills?|vents?|ventilation|filters?|compressor|condenser|radiator)\b"
 
 
+def write_score_table(output, stats, records):
+    labels = {
+        "official_100": "官方测试集",
+        "prior_50": "原 50 件",
+        "additional_50": "新增 50 件",
+        "additional_excluding_declared_development": "新增批排除已声明开发对象",
+    }
+    lines = [
+        "# ABO-100 质量评分",
+        "",
+        "| 样本 | 方法 | 件数 | ADE (kg) ↓ | ALDE ↓ | APE (%) ↓ | MnRE ↑ |",
+        "| --- | --- | ---: | ---: | ---: | ---: | ---: |",
+    ]
+    for group, result in stats.items():
+        for key, name in (("ours", "Ours"), ("nerf", "NeRF2Physics 官方缓存")):
+            m = result[key]
+            lines.append(
+                f"| {labels[group]} | {name} | {result['n']} | {m['ade_kg']:.3f} | {m['alde']:.4f} | {100*m['ape']:.2f} | {m['mnre']:.4f} |"
+            )
+    lines += [
+        "",
+        f"全组仅用图像先验回退 {stats['official_100']['image_only_fallback']} 件。原 50 件是既有封存结果，其中包含探索性修正。",
+        "",
+        "| 对象 | 批次 | 目录质量 (kg) | Ours (kg) | NeRF2Physics (kg) | 仅图像先验 |",
+        "| --- | --- | ---: | ---: | ---: | --- |",
+    ]
+    for row in records:
+        lines.append(
+            f"| `{row['scene_id']}` | {labels[row['batch']]} | {row['target_mass_kg']:.3f} | {row['mass_kg']:.3f} | {row['nerf_mass_kg']:.3f} | {'是' if row.get('image_only_fallback') else '否'} |"
+        )
+    output.with_name(f"{output.stem}_table.md").write_text(
+        "\n".join(lines) + "\n", encoding="utf-8", newline="\n"
+    )
+
+
 def prepare_clip(observations, output):
     cohort = read_json(observations / "cohort.json")
     output.mkdir(exist_ok=False)
@@ -169,6 +204,7 @@ def score(args):
             per_scene=records,
         ),
     )
+    write_score_table(args.output, stats, records)
 
 
 def main():
