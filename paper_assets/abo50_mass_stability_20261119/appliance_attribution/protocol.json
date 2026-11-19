@@ -1,0 +1,17 @@
+{
+  "source_sha256": "608e70bdf94f78e4d6a4eab19ee26318baf512aebf2f233d3861bbb49a3e6ad9",
+  "code_sha256": "1adc003f783b160264981ee574a539fbf7f7127cd077773070523e873cea837f",
+  "priors_sha256": "762509cdb3da009c0dc514f9144146ebb4b7c5aec86f98e253383eea4bbce97c",
+  "panel_thickness_m": {
+    "steel": 0.0008,
+    "aluminum": 0.001,
+    "plastic": 0.0025
+  },
+  "fin_thickness_m": 0.00012,
+  "fin_pitch_m": 0.0016,
+  "coil_depth_limit_m": 0.06,
+  "copper_tube_volume_fraction": 0.03,
+  "copper_density_kg_m3": 8960.0,
+  "scope": "Exploratory role constraints after inspecting the raw six-case probe; nominal engineering assumptions",
+  "mass_labels_read_by_replay": false
+}

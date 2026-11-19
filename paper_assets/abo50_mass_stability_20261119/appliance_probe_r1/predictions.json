@@ -1,0 +1,260 @@
+[
+  {
+    "scene_id": "B07Y2B738L_ATVPDKIKX0DER",
+    "peak_gpu_bytes": 6733556224,
+    "device_class": "cooling",
+    "cue": "front controls and outlet, rear intake and exhaust ports, vented panels",
+    "parts": [
+      {
+        "name": "covering shell",
+        "material": "plastic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          52.0,
+          38.0,
+          25.0
+        ],
+        "occupied_fraction": 0.8,
+        "evidence": "visible",
+        "volume_m3": 0.03952,
+        "mass_kg": 41.496
+      },
+      {
+        "name": "chassis",
+        "material": "plastic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          52.0,
+          38.0,
+          25.0
+        ],
+        "occupied_fraction": 0.8,
+        "evidence": "visible",
+        "volume_m3": 0.03952,
+        "mass_kg": 41.496
+      },
+      {
+        "name": "heat exchangers",
+        "material": "copper",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          50.0,
+          36.0,
+          20.0
+        ],
+        "occupied_fraction": 0.2,
+        "evidence": "inferred",
+        "volume_m3": 0.0072,
+        "mass_kg": 64.512
+      },
+      {
+        "name": "compressor",
+        "material": "steel",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          15.0,
+          10.0,
+          5.0
+        ],
+        "occupied_fraction": 0.5,
+        "evidence": "inferred",
+        "volume_m3": 0.000375,
+        "mass_kg": 2.94375
+      },
+      {
+        "name": "fan assemblies",
+        "material": "aluminum",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          10.0,
+          8.0,
+          5.0
+        ],
+        "occupied_fraction": 0.3,
+        "evidence": "inferred",
+        "volume_m3": 0.00011999999999999999,
+        "mass_kg": 0.32399999999999995
+      }
+    ],
+    "mass_kg": 150.77175000000003,
+    "visible_mass_kg": 82.992
+  },
+  {
+    "scene_id": "B07N6RT9SM_ATVPDKIKX0DER",
+    "peak_gpu_bytes": 6734395904,
+    "device_class": "cooling",
+    "cue": "front vents, rear exhaust ports, compressor-like housing, and control panel",
+    "parts": [
+      {
+        "name": "covering shell",
+        "material": "plastic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          52.0,
+          30.0,
+          30.0
+        ],
+        "occupied_fraction": 0.8,
+        "evidence": "visible",
+        "volume_m3": 0.03744,
+        "mass_kg": 39.312
+      },
+      {
+        "name": "chassis",
+        "material": "plastic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          52.0,
+          30.0,
+          30.0
+        ],
+        "occupied_fraction": 0.8,
+        "evidence": "visible",
+        "volume_m3": 0.03744,
+        "mass_kg": 39.312
+      },
+      {
+        "name": "heat exchangers",
+        "material": "copper",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          40.0,
+          20.0,
+          10.0
+        ],
+        "occupied_fraction": 0.2,
+        "evidence": "inferred",
+        "volume_m3": 0.0016,
+        "mass_kg": 14.336
+      },
+      {
+        "name": "compressor and fan assemblies",
+        "material": "aluminum",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          20.0,
+          15.0,
+          10.0
+        ],
+        "occupied_fraction": 0.6,
+        "evidence": "inferred",
+        "volume_m3": 0.0018,
+        "mass_kg": 4.859999999999999
+      }
+    ],
+    "mass_kg": 97.82,
+    "visible_mass_kg": 78.624
+  },
+  {
+    "scene_id": "B07XHQQ95Y_ATVPDKIKX0DER",
+    "peak_gpu_bytes": 6734395904,
+    "device_class": "dehumidifier",
+    "cue": "front controls and outlet with rear intake, coils, exhaust and ports",
+    "parts": [
+      {
+        "name": "covering shell",
+        "material": "plastic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          45.0,
+          30.0,
+          30.0
+        ],
+        "occupied_fraction": 0.8,
+        "evidence": "visible",
+        "volume_m3": 0.032400000000000005,
+        "mass_kg": 34.02
+      },
+      {
+        "name": "chassis",
+        "material": "plastic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          45.0,
+          30.0,
+          30.0
+        ],
+        "occupied_fraction": 0.8,
+        "evidence": "visible",
+        "volume_m3": 0.032400000000000005,
+        "mass_kg": 34.02
+      },
+      {
+        "name": "heat exchangers",
+        "material": "copper",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          40.0,
+          25.0,
+          10.0
+        ],
+        "occupied_fraction": 0.2,
+        "evidence": "inferred",
+        "volume_m3": 0.002,
+        "mass_kg": 17.92
+      },
+      {
+        "name": "compressor",
+        "material": "steel",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          10.0,
+          10.0,
+          5.0
+        ],
+        "occupied_fraction": 0.5,
+        "evidence": "inferred",
+        "volume_m3": 0.00025,
+        "mass_kg": 1.9625000000000001
+      },
+      {
+        "name": "fan assemblies",
+        "material": "aluminum",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          15.0,
+          15.0,
+          5.0
+        ],
+        "occupied_fraction": 0.3,
+        "evidence": "inferred",
+        "volume_m3": 0.00033749999999999996,
+        "mass_kg": 0.9112499999999999
+      }
+    ],
+    "mass_kg": 88.83375000000001,
+    "visible_mass_kg": 68.04
+  },
+  {
+    "scene_id": "B076YJFGCN_A1F83G8C2ARO7P",
+    "peak_gpu_bytes": 6734395904,
+    "device_class": "undecided",
+    "cue": "multiple USB-A ports, USB-C port, brand name 'amazonbasics', rectangular plastic housing, no visible intake/exhaust, no compressor or fan assemblies"
+  },
+  {
+    "scene_id": "B07TWQTVXL_ATVPDKIKX0DER",
+    "peak_gpu_bytes": 6734395904,
+    "device_class": "undecided",
+    "cue": "metal frame with horizontal bars, no visible controls, outlets, intake, coils, exhaust, or ports"
+  },
+  {
+    "scene_id": "B07QFP4PV5_ATVPDKIKX0DER",
+    "peak_gpu_bytes": 6734395904,
+    "device_class": "undecided",
+    "cue": "object is a sofa, not an appliance"
+  }
+]

@@ -1,0 +1,257 @@
+[
+  {
+    "scene_id": "B07Y2B738L_ATVPDKIKX0DER",
+    "peak_gpu_bytes": 17819387392,
+    "device_class": "cooling",
+    "cue": "front controls and outlet, rear intake and exhaust ports",
+    "parts": [
+      {
+        "name": "shell",
+        "material": "plastic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          55.0,
+          35.0,
+          25.0
+        ],
+        "occupied_fraction": 0.3,
+        "evidence": "visible",
+        "volume_m3": 0.014437499999999999,
+        "mass_kg": 15.159374999999999
+      },
+      {
+        "name": "chassis",
+        "material": "plastic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          55.0,
+          35.0,
+          25.0
+        ],
+        "occupied_fraction": 0.3,
+        "evidence": "visible",
+        "volume_m3": 0.014437499999999999,
+        "mass_kg": 15.159374999999999
+      },
+      {
+        "name": "heat exchangers",
+        "material": "aluminum",
+        "shape": "sheet",
+        "count": 2,
+        "dims_cm": [
+          50.0,
+          10.0,
+          1.0
+        ],
+        "occupied_fraction": 0.9,
+        "evidence": "inferred",
+        "volume_m3": 0.0009000000000000001,
+        "mass_kg": 2.43
+      },
+      {
+        "name": "compressor",
+        "material": "steel",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          10.0,
+          5.0,
+          3.0
+        ],
+        "occupied_fraction": 0.7,
+        "evidence": "inferred",
+        "volume_m3": 0.00010499999999999999,
+        "mass_kg": 0.8242499999999999
+      },
+      {
+        "name": "fan assemblies",
+        "material": "plastic",
+        "shape": "block",
+        "count": 2,
+        "dims_cm": [
+          15.0,
+          10.0,
+          5.0
+        ],
+        "occupied_fraction": 0.5,
+        "evidence": "inferred",
+        "volume_m3": 0.00075,
+        "mass_kg": 0.7875
+      }
+    ],
+    "mass_kg": 34.3605,
+    "visible_mass_kg": 30.318749999999998
+  },
+  {
+    "scene_id": "B07N6RT9SM_ATVPDKIKX0DER",
+    "peak_gpu_bytes": 17820636672,
+    "device_class": "cooling",
+    "cue": "front vents and controls, rear exhaust and intake ports, compressor label",
+    "parts": [
+      {
+        "name": "shell",
+        "material": "plastic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          55.0,
+          35.0,
+          30.0
+        ],
+        "occupied_fraction": 0.8,
+        "evidence": "visible",
+        "volume_m3": 0.0462,
+        "mass_kg": 48.51
+      },
+      {
+        "name": "chassis",
+        "material": "plastic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          55.0,
+          35.0,
+          30.0
+        ],
+        "occupied_fraction": 0.8,
+        "evidence": "visible",
+        "volume_m3": 0.0462,
+        "mass_kg": 48.51
+      },
+      {
+        "name": "heat exchangers",
+        "material": "aluminum",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          55.0,
+          35.0,
+          5.0
+        ],
+        "occupied_fraction": 0.2,
+        "evidence": "inferred",
+        "volume_m3": 0.001925,
+        "mass_kg": 5.1975
+      },
+      {
+        "name": "compressor",
+        "material": "steel",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          15.0,
+          10.0,
+          5.0
+        ],
+        "occupied_fraction": 0.5,
+        "evidence": "inferred",
+        "volume_m3": 0.000375,
+        "mass_kg": 2.94375
+      },
+      {
+        "name": "fan assemblies",
+        "material": "plastic",
+        "shape": "block",
+        "count": 2,
+        "dims_cm": [
+          10.0,
+          10.0,
+          5.0
+        ],
+        "occupied_fraction": 0.3,
+        "evidence": "inferred",
+        "volume_m3": 0.0003,
+        "mass_kg": 0.31499999999999995
+      }
+    ],
+    "mass_kg": 105.47625,
+    "visible_mass_kg": 97.02
+  },
+  {
+    "scene_id": "B07XHQQ95Y_ATVPDKIKX0DER",
+    "peak_gpu_bytes": 17820636672,
+    "device_class": "dehumidifier",
+    "cue": "front control panel with display and buttons, rear exhaust grille, side-mounted power cord, no visible compressor or condenser coils, no air intake vents on rear, no fan grille on front",
+    "parts": [
+      {
+        "name": "shell",
+        "material": "plastic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          55.0,
+          35.0,
+          30.0
+        ],
+        "occupied_fraction": 0.8,
+        "evidence": "visible",
+        "volume_m3": 0.0462,
+        "mass_kg": 48.51
+      },
+      {
+        "name": "chassis",
+        "material": "plastic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          55.0,
+          35.0,
+          30.0
+        ],
+        "occupied_fraction": 0.8,
+        "evidence": "visible",
+        "volume_m3": 0.0462,
+        "mass_kg": 48.51
+      },
+      {
+        "name": "heat exchangers",
+        "material": "aluminum",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          55.0,
+          35.0,
+          0.5
+        ],
+        "occupied_fraction": 0.2,
+        "evidence": "inferred",
+        "volume_m3": 0.0001925,
+        "mass_kg": 0.5197499999999999
+      },
+      {
+        "name": "compressor",
+        "material": "steel",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          10.0,
+          10.0,
+          5.0
+        ],
+        "occupied_fraction": 0.5,
+        "evidence": "inferred",
+        "volume_m3": 0.00025,
+        "mass_kg": 1.9625000000000001
+      },
+      {
+        "name": "fan assemblies",
+        "material": "plastic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          10.0,
+          10.0,
+          5.0
+        ],
+        "occupied_fraction": 0.3,
+        "evidence": "inferred",
+        "volume_m3": 0.00015,
+        "mass_kg": 0.15749999999999997
+      }
+    ],
+    "mass_kg": 99.65975,
+    "visible_mass_kg": 97.02
+  }
+]

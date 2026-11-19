@@ -1,0 +1,1538 @@
+{
+  "cohorts": [
+    {
+      "n": 50,
+      "reference": "direct",
+      "stats": {
+        "clip": {
+          "metrics": {
+            "num_scenes": 50,
+            "ade_kg": 5.5452503786846,
+            "alde": 0.5771464062696622,
+            "ape": 0.7259059286330283,
+            "mnre": 0.617672061216455,
+            "rmse_kg": 8.807321522285152
+          },
+          "delta_vs_reference": {
+            "ade_kg": {
+              "method_minus_reference": -0.7706045823878802,
+              "paired_bootstrap_ci95": [
+                -2.251487095342454,
+                0.6228028837756404
+              ]
+            },
+            "alde": {
+              "method_minus_reference": -0.4126764423371246,
+              "paired_bootstrap_ci95": [
+                -0.7080552285422216,
+                -0.1196729289883908
+              ]
+            },
+            "ape": {
+              "method_minus_reference": 0.2022296790488673,
+              "paired_bootstrap_ci95": [
+                -0.09621699982234977,
+                0.5873487984103627
+              ]
+            },
+            "mnre": {
+              "method_minus_reference": 0.11632320499322873,
+              "paired_bootstrap_ci95": [
+                0.008257303406428546,
+                0.22379040407864267
+              ]
+            }
+          }
+        },
+        "direct": {
+          "metrics": {
+            "num_scenes": 50,
+            "ade_kg": 6.31585496107248,
+            "alde": 0.9898228486067869,
+            "ape": 0.5236762495841609,
+            "mnre": 0.5013488562232262,
+            "rmse_kg": 10.553257044039736
+          },
+          "delta_vs_reference": {
+            "ade_kg": {
+              "method_minus_reference": 0.0,
+              "paired_bootstrap_ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "alde": {
+              "method_minus_reference": 0.0,
+              "paired_bootstrap_ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "ape": {
+              "method_minus_reference": 0.0,
+              "paired_bootstrap_ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "mnre": {
+              "method_minus_reference": 0.0,
+              "paired_bootstrap_ci95": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "direct_clip": {
+          "metrics": {
+            "num_scenes": 50,
+            "ade_kg": 5.6848041612514475,
+            "alde": 0.6864967816823447,
+            "ape": 0.5103510579621326,
+            "mnre": 0.5652306457681465,
+            "rmse_kg": 9.482278513172208
+          },
+          "delta_vs_reference": {
+            "ade_kg": {
+              "method_minus_reference": -0.6310507998210327,
+              "paired_bootstrap_ci95": [
+                -1.3297932939331203,
+                0.03849840890551395
+              ]
+            },
+            "alde": {
+              "method_minus_reference": -0.30332606692444214,
+              "paired_bootstrap_ci95": [
+                -0.45544689948950173,
+                -0.1539739769333286
+              ]
+            },
+            "ape": {
+              "method_minus_reference": -0.01332519162202831,
+              "paired_bootstrap_ci95": [
+                -0.09859847275896154,
+                0.08850248955214121
+              ]
+            },
+            "mnre": {
+              "method_minus_reference": 0.06388178954492028,
+              "paired_bootstrap_ci95": [
+                0.012921476798218345,
+                0.1108110050349129
+              ]
+            }
+          }
+        },
+        "nerf": {
+          "metrics": {
+            "num_scenes": 50,
+            "ade_kg": 8.87226038857523,
+            "alde": 0.8104698234308443,
+            "ape": 1.5638601805928514,
+            "mnre": 0.5291353017563533,
+            "rmse_kg": 15.47590605738486
+          },
+          "delta_vs_reference": {
+            "ade_kg": {
+              "method_minus_reference": 2.5564054275027486,
+              "paired_bootstrap_ci95": [
+                -0.42623393152290057,
+                6.037084811603209
+              ]
+            },
+            "alde": {
+              "method_minus_reference": -0.17935302517594265,
+              "paired_bootstrap_ci95": [
+                -0.46836677870244126,
+                0.0969105240657278
+              ]
+            },
+            "ape": {
+              "method_minus_reference": 1.0401839310086907,
+              "paired_bootstrap_ci95": [
+                0.25299641586864297,
+                2.0561333379497952
+              ]
+            },
+            "mnre": {
+              "method_minus_reference": 0.027786445533126952,
+              "paired_bootstrap_ci95": [
+                -0.06674596767747776,
+                0.11960636258541371
+              ]
+            }
+          }
+        },
+        "physical": {
+          "metrics": {
+            "num_scenes": 50,
+            "ade_kg": 7.123792587465073,
+            "alde": 1.0384495785642918,
+            "ape": 0.8033656644210768,
+            "mnre": 0.4878376876785693,
+            "rmse_kg": 11.559241012405122
+          },
+          "delta_vs_reference": {
+            "ade_kg": {
+              "method_minus_reference": 0.8079376263925911,
+              "paired_bootstrap_ci95": [
+                -0.9296083540513378,
+                2.5219795971809074
+              ]
+            },
+            "alde": {
+              "method_minus_reference": 0.04862672995750488,
+              "paired_bootstrap_ci95": [
+                -0.20694246711033887,
+                0.30931895041719976
+              ]
+            },
+            "ape": {
+              "method_minus_reference": 0.2796894148369159,
+              "paired_bootstrap_ci95": [
+                0.0006094427878065961,
+                0.6394173995775391
+              ]
+            },
+            "mnre": {
+              "method_minus_reference": -0.013511168544657011,
+              "paired_bootstrap_ci95": [
+                -0.09964038140496477,
+                0.07919160752946316
+              ]
+            }
+          }
+        },
+        "physical_clip": {
+          "metrics": {
+            "num_scenes": 50,
+            "ade_kg": 5.718342844739481,
+            "alde": 0.6809688203491754,
+            "ape": 0.5832402624174131,
+            "mnre": 0.5861374195705602,
+            "rmse_kg": 9.779628985128486
+          },
+          "delta_vs_reference": {
+            "ade_kg": {
+              "method_minus_reference": -0.597512116333,
+              "paired_bootstrap_ci95": [
+                -1.8968672946292588,
+                0.6737726585354122
+              ]
+            },
+            "alde": {
+              "method_minus_reference": -0.3088540282576114,
+              "paired_bootstrap_ci95": [
+                -0.5479707471781528,
+                -0.08857814485806412
+              ]
+            },
+            "ape": {
+              "method_minus_reference": 0.059564012833252154,
+              "paired_bootstrap_ci95": [
+                -0.11278537873975568,
+                0.24878509850052363
+              ]
+            },
+            "mnre": {
+              "method_minus_reference": 0.084788563347334,
+              "paired_bootstrap_ci95": [
+                0.0029524776591210162,
+                0.17026748200404596
+              ]
+            }
+          }
+        },
+        "physical_direct": {
+          "metrics": {
+            "num_scenes": 50,
+            "ade_kg": 6.324561605641905,
+            "alde": 0.9860547068095512,
+            "ape": 0.6175710048586164,
+            "mnre": 0.4850028590143345,
+            "rmse_kg": 10.601616478072156
+          },
+          "delta_vs_reference": {
+            "ade_kg": {
+              "method_minus_reference": 0.008706644569423662,
+              "paired_bootstrap_ci95": [
+                -1.0540044284061516,
+                1.0283100902833147
+              ]
+            },
+            "alde": {
+              "method_minus_reference": -0.0037681417972357687,
+              "paired_bootstrap_ci95": [
+                -0.1356551723445812,
+                0.12870627929503056
+              ]
+            },
+            "ape": {
+              "method_minus_reference": 0.09389475527445543,
+              "paired_bootstrap_ci95": [
+                -0.007378398558175576,
+                0.2150737437684388
+              ]
+            },
+            "mnre": {
+              "method_minus_reference": -0.0163459972088918,
+              "paired_bootstrap_ci95": [
+                -0.06270567692389836,
+                0.03181680044349
+              ]
+            }
+          }
+        },
+        "physical_role_clip": {
+          "metrics": {
+            "num_scenes": 50,
+            "ade_kg": 5.404721629740194,
+            "alde": 0.6445181370720384,
+            "ape": 0.5735875412008613,
+            "mnre": 0.595790140787112,
+            "rmse_kg": 8.823579998850798
+          },
+          "delta_vs_reference": {
+            "ade_kg": {
+              "method_minus_reference": -0.9111333313322857,
+              "paired_bootstrap_ci95": [
+                -2.1697193980132394,
+                0.2633580775117935
+              ]
+            },
+            "alde": {
+              "method_minus_reference": -0.3453047115347484,
+              "paired_bootstrap_ci95": [
+                -0.5804672884594767,
+                -0.12952674488606844
+              ]
+            },
+            "ape": {
+              "method_minus_reference": 0.04991129161670038,
+              "paired_bootstrap_ci95": [
+                -0.12170986921507326,
+                0.23928373049121712
+              ]
+            },
+            "mnre": {
+              "method_minus_reference": 0.09444128456388576,
+              "paired_bootstrap_ci95": [
+                0.012718587696478552,
+                0.17767899321133832
+              ]
+            }
+          }
+        },
+        "physical_role_replay": {
+          "metrics": {
+            "num_scenes": 50,
+            "ade_kg": 6.730320953911014,
+            "alde": 0.9655482120100178,
+            "ape": 0.7895640116620097,
+            "mnre": 0.5016393404376361,
+            "rmse_kg": 10.562139365696307
+          },
+          "delta_vs_reference": {
+            "ade_kg": {
+              "method_minus_reference": 0.4144659928385321,
+              "paired_bootstrap_ci95": [
+                -1.2279465478998288,
+                1.994620837147567
+              ]
+            },
+            "alde": {
+              "method_minus_reference": -0.024274636596769112,
+              "paired_bootstrap_ci95": [
+                -0.2639596234301182,
+                0.21187771853053433
+              ]
+            },
+            "ape": {
+              "method_minus_reference": 0.2658877620778489,
+              "paired_bootstrap_ci95": [
+                -0.012206353045095696,
+                0.6268990200483261
+              ]
+            },
+            "mnre": {
+              "method_minus_reference": 0.00029048421440994177,
+              "paired_bootstrap_ci95": [
+                -0.08264648811569737,
+                0.08975595493446593
+              ]
+            }
+          }
+        }
+      },
+      "per_scene": [
+        {
+          "scene_id": "B07TWQTVXL_ATVPDKIKX0DER",
+          "target": 1.84611944,
+          "clip": 3.8663337007984584,
+          "nerf": 7.0672407150268555,
+          "physical": 13.40471730907212,
+          "direct": 2.5,
+          "physical_clip": 7.199104825028037,
+          "direct_clip": 3.1089924818172436,
+          "physical_direct": 5.788937145338538,
+          "physical_role_replay": 13.40471730907212,
+          "physical_role_clip": 7.199104825028037
+        },
+        {
+          "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+          "target": 15.667067679999999,
+          "clip": 4.868447278076124,
+          "nerf": 10.498028814792633,
+          "physical": 4.499206796484583,
+          "direct": 12.5,
+          "physical_clip": 4.680187077654799,
+          "direct_clip": 7.800999357515135,
+          "physical_direct": 7.499338967939593,
+          "physical_role_replay": 4.499206796484583,
+          "physical_role_clip": 4.680187077654799
+        },
+        {
+          "scene_id": "B07TDMJPWG_ATVPDKIKX0DER",
+          "target": 11.9748288,
+          "clip": 8.41175406339911,
+          "nerf": 16.548452854156494,
+          "physical": 30.46549566927033,
+          "direct": 15.0,
+          "physical_clip": 16.008380835970033,
+          "direct_clip": 11.232822928853933,
+          "physical_direct": 21.377147495375873,
+          "physical_role_replay": 30.46549566927033,
+          "physical_role_clip": 16.008380835970033
+        },
+        {
+          "scene_id": "B01MRT550V",
+          "target": 0.56699,
+          "clip": 0.7390877125260794,
+          "nerf": 0.9985581934452057,
+          "physical": 0.5588830127935318,
+          "direct": 0.15,
+          "physical_clip": 0.6427002158823778,
+          "direct_clip": 0.3329611942537927,
+          "physical_direct": 0.2895383427441515,
+          "physical_role_replay": 0.5588830127935318,
+          "physical_role_clip": 0.6427002158823778
+        },
+        {
+          "scene_id": "B0727Q5F94_ATVPDKIKX0DER",
+          "target": 9.07184,
+          "clip": 6.5946018181578205,
+          "nerf": 11.469624519348145,
+          "physical": 7.554506252760522,
+          "direct": 1.5,
+          "physical_clip": 7.058254789233608,
+          "direct_clip": 3.1451395401852573,
+          "physical_direct": 3.3662678709723597,
+          "physical_role_replay": 7.554506252760522,
+          "physical_role_clip": 7.058254789233608
+        },
+        {
+          "scene_id": "B07YM1FZSJ_ATVPDKIKX0DER",
+          "target": 15.648924,
+          "clip": 12.903478710096017,
+          "nerf": 49.3955192565918,
+          "physical": 14.673528345109887,
+          "direct": 5.0,
+          "physical_clip": 13.76007124266135,
+          "direct_clip": 8.032272004263804,
+          "physical_direct": 8.565491330072632,
+          "physical_role_replay": 14.673528345109887,
+          "physical_role_clip": 13.76007124266135
+        },
+        {
+          "scene_id": "B07DBB76JV_ATVPDKIKX0DER",
+          "target": 28.122704,
+          "clip": 22.308444035870643,
+          "nerf": 22.07326889038086,
+          "physical": 40.53593682745581,
+          "direct": 15.0,
+          "physical_clip": 30.071476155268563,
+          "direct_clip": 18.292803517724114,
+          "physical_direct": 24.658447891378668,
+          "physical_role_replay": 40.53593682745581,
+          "physical_role_clip": 30.071476155268563
+        },
+        {
+          "scene_id": "B01MXTX8MC",
+          "target": 0.56699,
+          "clip": 0.7292265041471853,
+          "nerf": 0.23925656080245972,
+          "physical": 0.3654792048272728,
+          "direct": 0.5,
+          "physical_clip": 0.5162529640347697,
+          "direct_clip": 0.603832138986981,
+          "physical_direct": 0.42748052869532716,
+          "physical_role_replay": 0.3654792048272728,
+          "physical_role_clip": 0.5162529640347697
+        },
+        {
+          "scene_id": "B07YLZTGZ9_ATVPDKIKX0DER",
+          "target": 19.27766,
+          "clip": 15.937979252036168,
+          "nerf": 38.88101768493652,
+          "physical": 19.833097064230056,
+          "direct": 10.0,
+          "physical_clip": 17.779186975599252,
+          "direct_clip": 12.624570983616104,
+          "physical_direct": 14.083002898611523,
+          "physical_role_replay": 19.833097064230056,
+          "physical_role_clip": 17.779186975599252
+        },
+        {
+          "scene_id": "B082Q989SF_ATVPDKIKX0DER",
+          "target": 14.514944,
+          "clip": 11.203385863802975,
+          "nerf": 20.752046823501587,
+          "physical": 4.3600613867894396,
+          "direct": 10.0,
+          "physical_clip": 6.989095084921223,
+          "direct_clip": 10.58460479366281,
+          "physical_direct": 6.60307609133004,
+          "physical_role_replay": 4.3600613867894396,
+          "physical_role_clip": 6.989095084921223
+        },
+        {
+          "scene_id": "B075X463J2_ATVPDKIKX0DER",
+          "target": 12.246984,
+          "clip": 4.912851600561782,
+          "nerf": 11.621519923210144,
+          "physical": 31.338603372355173,
+          "direct": 15.0,
+          "physical_clip": 12.408138770067248,
+          "direct_clip": 8.584449546035362,
+          "physical_direct": 21.681306477823878,
+          "physical_role_replay": 31.338603372355173,
+          "physical_role_clip": 12.408138770067248
+        },
+        {
+          "scene_id": "B01LP0UKJE_ATVPDKIKX0DER",
+          "target": 1.07954896,
+          "clip": 1.1462151570089485,
+          "nerf": 1.4385078251361847,
+          "physical": 0.02419906533232996,
+          "direct": 0.05,
+          "physical_clip": 0.16654529554858757,
+          "direct_clip": 0.23939665379960395,
+          "physical_direct": 0.03478438251020849,
+          "physical_role_replay": 0.02419906533232996,
+          "physical_role_clip": 0.16654529554858757
+        },
+        {
+          "scene_id": "B07QFP4PV5_ATVPDKIKX0DER",
+          "target": 41.4129496,
+          "clip": 20.137876694082152,
+          "nerf": 33.89341640472412,
+          "physical": 45.30039068502486,
+          "direct": 35.0,
+          "physical_clip": 30.203537571098824,
+          "direct_clip": 26.548553337100596,
+          "physical_direct": 39.818509188264066,
+          "physical_role_replay": 45.30039068502486,
+          "physical_role_clip": 30.203537571098824
+        },
+        {
+          "scene_id": "B07MBFDKYY_ATVPDKIKX0DER",
+          "target": 4.082328,
+          "clip": 1.2598307974599465,
+          "nerf": 0.9914955198764801,
+          "physical": 0.5268489597568005,
+          "direct": 0.2,
+          "physical_clip": 0.8147027341990164,
+          "direct_clip": 0.5019623088360213,
+          "physical_direct": 0.32460713478197006,
+          "physical_role_replay": 0.5268489597568005,
+          "physical_role_clip": 0.8147027341990164
+        },
+        {
+          "scene_id": "B074KMVVK7_ATVPDKIKX0DER",
+          "target": 23.359988,
+          "clip": 22.719582620958462,
+          "nerf": 29.333152294158936,
+          "physical": 15.016840704496666,
+          "direct": 25.0,
+          "physical_clip": 18.47095972307839,
+          "direct_clip": 23.83253166417621,
+          "physical_direct": 19.3757843096071,
+          "physical_role_replay": 15.016840704496666,
+          "physical_role_clip": 18.47095972307839
+        },
+        {
+          "scene_id": "B0723DD7Z6",
+          "target": 27.215519999999998,
+          "clip": 6.8914023898398336,
+          "nerf": 26.5013747215271,
+          "physical": 12.371847613071257,
+          "direct": 2.5,
+          "physical_clip": 9.233600609050269,
+          "direct_clip": 4.1507235483225795,
+          "physical_direct": 5.561440373920963,
+          "physical_role_replay": 12.371847613071257,
+          "physical_role_clip": 9.233600609050269
+        },
+        {
+          "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+          "target": 16.319819226624002,
+          "clip": 12.74884494850168,
+          "nerf": 5.216909646987915,
+          "physical": 5.399609945686072,
+          "direct": 8.5,
+          "physical_clip": 8.296914485514439,
+          "direct_clip": 10.40985984834879,
+          "physical_direct": 6.774709184779197,
+          "physical_role_replay": 5.399609945686072,
+          "physical_role_clip": 8.296914485514439
+        },
+        {
+          "scene_id": "B07YM1D7B7_ATVPDKIKX0DER",
+          "target": 18.2797576,
+          "clip": 15.445506171882576,
+          "nerf": 39.91484069824219,
+          "physical": 19.833097064230056,
+          "direct": 10.0,
+          "physical_clip": 17.502349074141776,
+          "direct_clip": 12.427995080415254,
+          "physical_direct": 14.083002898611523,
+          "physical_role_replay": 19.833097064230056,
+          "physical_role_clip": 17.502349074141776
+        },
+        {
+          "scene_id": "B01LP0VI3G_ATVPDKIKX0DER",
+          "target": 0.9979024000000001,
+          "clip": 1.373912957577628,
+          "nerf": 4.26220965385437,
+          "physical": 0.09055390993357772,
+          "direct": 0.1,
+          "physical_clip": 0.35272253999008896,
+          "direct_clip": 0.3706633186029646,
+          "physical_direct": 0.09515981816585072,
+          "physical_role_replay": 0.09055390993357772,
+          "physical_role_clip": 0.35272253999008896
+        },
+        {
+          "scene_id": "B012S0S20Y_ATVPDKIKX0DER",
+          "target": 1.474174,
+          "clip": 0.8327348970143743,
+          "nerf": 30.067620754241943,
+          "physical": 0.35246109160895434,
+          "direct": 0.2,
+          "physical_clip": 0.5417625409924135,
+          "direct_clip": 0.40810167777512857,
+          "physical_direct": 0.2655037067948221,
+          "physical_role_replay": 0.35246109160895434,
+          "physical_role_clip": 0.5417625409924135
+        },
+        {
+          "scene_id": "B07Y3Q7MDR",
+          "target": 13.471682399999999,
+          "clip": 11.831718744141755,
+          "nerf": 1.8644615411758423,
+          "physical": 1.5970407731580611,
+          "direct": 3.5,
+          "physical_clip": 4.34692273349008,
+          "direct_clip": 6.435139128604458,
+          "physical_direct": 2.364242522681041,
+          "physical_role_replay": 1.5970407731580611,
+          "physical_role_clip": 4.34692273349008
+        },
+        {
+          "scene_id": "B076YJFGCN_A1F83G8C2ARO7P",
+          "target": 0.103475675,
+          "clip": 0.23205027076076112,
+          "nerf": 0.08589542470872402,
+          "physical": 0.031006369386681748,
+          "direct": 0.05,
+          "physical_clip": 0.0848235604740079,
+          "direct_clip": 0.10771496431804663,
+          "physical_direct": 0.03937408372691468,
+          "physical_role_replay": 0.031006369386681748,
+          "physical_role_clip": 0.0848235604740079
+        },
+        {
+          "scene_id": "B07Y2B738L_ATVPDKIKX0DER",
+          "target": 51.8909248,
+          "clip": 33.05402920970019,
+          "nerf": 10.774965763092041,
+          "physical": 3.0340168134870464,
+          "direct": 15.0,
+          "physical_clip": 10.014313774578982,
+          "direct_clip": 22.266801255355535,
+          "physical_direct": 6.746128682607951,
+          "physical_role_replay": 10.8516975,
+          "physical_role_clip": 18.93917437851583
+        },
+        {
+          "scene_id": "B01DN8TEA2_ATVPDKIKX0DER",
+          "target": 0.34472992,
+          "clip": 2.519978908160256,
+          "nerf": 0.1780262105166912,
+          "physical": 0.29424617123158747,
+          "direct": 0.3,
+          "physical_clip": 0.8611005430903592,
+          "direct_clip": 0.8694789660757049,
+          "physical_direct": 0.29710915733022475,
+          "physical_role_replay": 0.29424617123158747,
+          "physical_role_clip": 0.8611005430903592
+        },
+        {
+          "scene_id": "B07F3T4RSD_A13V1IB3VIYZZH",
+          "target": 0.37,
+          "clip": 2.273250461037506,
+          "nerf": 5.1113362312316895,
+          "physical": 0.9709200487343006,
+          "direct": 0.5,
+          "physical_clip": 1.4856461383572492,
+          "direct_clip": 1.0661262732522603,
+          "physical_direct": 0.6967496138263374,
+          "physical_role_replay": 0.9709200487343006,
+          "physical_role_clip": 1.4856461383572492
+        },
+        {
+          "scene_id": "B07JL5PLPN_ATVPDKIKX0DER",
+          "target": 0.680388,
+          "clip": 0.6149802550904149,
+          "nerf": 8.4979989528656,
+          "physical": 0.06780765832985637,
+          "direct": 0.15,
+          "physical_clip": 0.20420668700309197,
+          "direct_clip": 0.30372197527271916,
+          "physical_direct": 0.10085211326233305,
+          "physical_role_replay": 0.06780765832985637,
+          "physical_role_clip": 0.20420668700309197
+        },
+        {
+          "scene_id": "B075YNL7R3_ATVPDKIKX0DER",
+          "target": 2.4720764,
+          "clip": 6.82169909618988,
+          "nerf": 5.527623295783997,
+          "physical": 0.9294810305141769,
+          "direct": 0.2,
+          "physical_clip": 2.5180627287230553,
+          "direct_clip": 1.1680495791009797,
+          "physical_direct": 0.43115682309669573,
+          "physical_role_replay": 0.9294810305141769,
+          "physical_role_clip": 2.5180627287230553
+        },
+        {
+          "scene_id": "B07JQMLQ2C",
+          "target": 0.78925008,
+          "clip": 2.62280063315944,
+          "nerf": 1.2349659577012062,
+          "physical": 0.3413217438782033,
+          "direct": 0.5,
+          "physical_clip": 0.9461600741707694,
+          "direct_clip": 1.145163881974855,
+          "physical_direct": 0.41311121013487595,
+          "physical_role_replay": 0.3413217438782033,
+          "physical_role_clip": 0.9461600741707694
+        },
+        {
+          "scene_id": "B07SRSJFBH",
+          "target": 13.8,
+          "clip": 10.034536580796338,
+          "nerf": 36.2612190246582,
+          "physical": 5.10659439197654,
+          "direct": 1.5,
+          "physical_clip": 7.1583732949307715,
+          "direct_clip": 3.8796655617713376,
+          "physical_direct": 2.767650915120043,
+          "physical_role_replay": 5.10659439197654,
+          "physical_role_clip": 7.1583732949307715
+        },
+        {
+          "scene_id": "B082L28P18_ATVPDKIKX0DER",
+          "target": 18.14368,
+          "clip": 9.52532772571877,
+          "nerf": 14.182488441467285,
+          "physical": 9.51463137237161,
+          "direct": 12.5,
+          "physical_clip": 9.51997804678377,
+          "direct_clip": 10.911764136540187,
+          "physical_direct": 10.905635797817801,
+          "physical_role_replay": 9.51463137237161,
+          "physical_role_clip": 9.51997804678377
+        },
+        {
+          "scene_id": "B07GFRP9RY_A1F83G8C2ARO7P",
+          "target": 40,
+          "clip": 16.74558358678572,
+          "nerf": 23.922799110412598,
+          "physical": 17.883481293813666,
+          "direct": 15.0,
+          "physical_clip": 17.30518219575499,
+          "direct_clip": 15.848777675322024,
+          "physical_direct": 16.378407108360843,
+          "physical_role_replay": 17.883481293813666,
+          "physical_role_clip": 17.30518219575499
+        },
+        {
+          "scene_id": "B07WQ4VQ74_ATVPDKIKX0DER",
+          "target": 4.72189272,
+          "clip": 6.670933848120054,
+          "nerf": 8.762797117233276,
+          "physical": 6.105368592527252,
+          "direct": 4.5,
+          "physical_clip": 6.381889218651413,
+          "direct_clip": 5.478978218294014,
+          "physical_direct": 5.241579787275267,
+          "physical_role_replay": 6.105368592527252,
+          "physical_role_clip": 6.381889218651413
+        },
+        {
+          "scene_id": "B07K6S2G5Z_A1F83G8C2ARO7P",
+          "target": 47,
+          "clip": 29.865745057589574,
+          "nerf": 49.94716739654541,
+          "physical": 21.082902210444676,
+          "direct": 15.0,
+          "physical_clip": 25.09295882296929,
+          "direct_clip": 21.165683921476376,
+          "physical_direct": 17.783237420578686,
+          "physical_role_replay": 21.082902210444676,
+          "physical_role_clip": 25.09295882296929
+        },
+        {
+          "scene_id": "B00WRDS0AU_ATVPDKIKX0DER",
+          "target": 2.00034072,
+          "clip": 1.6992710976461614,
+          "nerf": 0.38784145563840866,
+          "physical": 1.084217364407888,
+          "direct": 0.15,
+          "physical_clip": 1.3573427094527086,
+          "direct_clip": 0.504866977180053,
+          "physical_direct": 0.4032773297139119,
+          "physical_role_replay": 1.084217364407888,
+          "physical_role_clip": 1.3573427094527086
+        },
+        {
+          "scene_id": "B075HXHKVF_ATVPDKIKX0DER",
+          "target": 0.71667536,
+          "clip": 0.7705211650084,
+          "nerf": 0.4155001640319824,
+          "physical": 0.6517865822436191,
+          "direct": 0.5,
+          "physical_clip": 0.7086715435850354,
+          "direct_clip": 0.6206936301463065,
+          "physical_direct": 0.5708706430723247,
+          "physical_role_replay": 0.6517865822436191,
+          "physical_role_clip": 0.7086715435850354
+        },
+        {
+          "scene_id": "B084W368ML_ATVPDKIKX0DER",
+          "target": 6.99892456,
+          "clip": 5.937172198625259,
+          "nerf": 9.13260555267334,
+          "physical": 10.50209791521171,
+          "direct": 8.5,
+          "physical_clip": 7.896376622821081,
+          "direct_clip": 7.103940011593194,
+          "physical_direct": 9.448165551010394,
+          "physical_role_replay": 10.50209791521171,
+          "physical_role_clip": 7.896376622821081
+        },
+        {
+          "scene_id": "B07XHQQ95Y_ATVPDKIKX0DER",
+          "target": 18.597272,
+          "clip": 7.404919893471347,
+          "nerf": 6.485934376716614,
+          "physical": 2.714101564191872,
+          "direct": 12.0,
+          "physical_clip": 4.483046359963958,
+          "direct_clip": 9.426507238720827,
+          "physical_direct": 5.706944784234597,
+          "physical_role_replay": 7.68605,
+          "physical_role_clip": 7.544175537937559
+        },
+        {
+          "scene_id": "B07WQ4P35G",
+          "target": 5.76969024,
+          "clip": 4.525828344787796,
+          "nerf": 3.372054874897003,
+          "physical": 5.642695297796953,
+          "direct": 3.5,
+          "physical_clip": 5.053500798433722,
+          "direct_clip": 3.9799999003463915,
+          "physical_direct": 4.444033476729145,
+          "physical_role_replay": 5.642695297796953,
+          "physical_role_clip": 5.053500798433722
+        },
+        {
+          "scene_id": "B075YLJM75",
+          "target": 4.53592,
+          "clip": 4.6313299962335215,
+          "nerf": 3.551191508769989,
+          "physical": 0.47241855614913847,
+          "direct": 0.2,
+          "physical_clip": 1.4791640307521121,
+          "direct_clip": 0.9624271397080947,
+          "physical_direct": 0.30738202815035837,
+          "physical_role_replay": 0.47241855614913847,
+          "physical_role_clip": 1.4791640307521121
+        },
+        {
+          "scene_id": "B075YQ46MP_ATVPDKIKX0DER",
+          "target": 14.106711200000001,
+          "clip": 16.57134733416823,
+          "nerf": 8.748543739318848,
+          "physical": 8.657807565521042,
+          "direct": 12.5,
+          "physical_clip": 11.977960440769483,
+          "direct_clip": 14.392423064831817,
+          "physical_direct": 10.40300891901055,
+          "physical_role_replay": 8.657807565521042,
+          "physical_role_clip": 11.977960440769483
+        },
+        {
+          "scene_id": "B07N6RT9SM_ATVPDKIKX0DER",
+          "target": 25.30136176,
+          "clip": 6.184647389888762,
+          "nerf": 7.212998151779175,
+          "physical": 2.4763624446181263,
+          "direct": 12.5,
+          "physical_clip": 3.913493136511938,
+          "direct_clip": 8.792502054228336,
+          "physical_direct": 5.563679587981912,
+          "physical_role_replay": 9.360315,
+          "physical_role_clip": 7.608564104565764
+        },
+        {
+          "scene_id": "B07DB9638P_ATVPDKIKX0DER",
+          "target": 16.329312,
+          "clip": 8.535395493323042,
+          "nerf": 12.717464447021484,
+          "physical": 8.150461100121792,
+          "direct": 12.5,
+          "physical_clip": 8.340707940126205,
+          "direct_clip": 10.329203438142654,
+          "physical_direct": 10.0936001382818,
+          "physical_role_replay": 8.150461100121792,
+          "physical_role_clip": 8.340707940126205
+        },
+        {
+          "scene_id": "B07HPQ358H_ATVPDKIKX0DER",
+          "target": 1.4968536,
+          "clip": 3.568018820940624,
+          "nerf": 2.545432388782501,
+          "physical": 11.51881434104445,
+          "direct": 3.5,
+          "physical_clip": 6.410877191443256,
+          "direct_clip": 3.533845762521645,
+          "physical_direct": 6.349476371611724,
+          "physical_role_replay": 11.51881434104445,
+          "physical_role_clip": 6.410877191443256
+        },
+        {
+          "scene_id": "B075YZPG5Y_ATVPDKIKX0DER",
+          "target": 60.327736,
+          "clip": 37.93793186352893,
+          "nerf": 19.095699548721313,
+          "physical": 68.0082139027302,
+          "direct": 35.0,
+          "physical_clip": 50.79459602361337,
+          "direct_clip": 36.43936902888842,
+          "physical_direct": 48.78819003196939,
+          "physical_role_replay": 68.0082139027302,
+          "physical_role_clip": 50.79459602361337
+        },
+        {
+          "scene_id": "B078GTTCCF_A1F83G8C2ARO7P",
+          "target": 0.719396912,
+          "clip": 2.4642657852388012,
+          "nerf": 0.17690440267324448,
+          "physical": 0.5966322199215577,
+          "direct": 0.5,
+          "physical_clip": 1.2125429336414304,
+          "direct_clip": 1.1100148163963401,
+          "physical_direct": 0.5461832201384247,
+          "physical_role_replay": 0.5966322199215577,
+          "physical_role_clip": 1.2125429336414304
+        },
+        {
+          "scene_id": "B072PZ4LVN_ATVPDKIKX0DER",
+          "target": 42.410852,
+          "clip": 57.86400356669226,
+          "nerf": 46.68654823303223,
+          "physical": 52.48789672768305,
+          "direct": 35.0,
+          "physical_clip": 55.11043316341133,
+          "direct_clip": 45.00266797462378,
+          "physical_direct": 42.86112907365958,
+          "physical_role_replay": 52.48789672768305,
+          "physical_role_clip": 55.11043316341133
+        },
+        {
+          "scene_id": "B07B8PXMRT_ATVPDKIKX0DER",
+          "target": 2.3359988,
+          "clip": 1.7459574661250032,
+          "nerf": 4.6703081130981445,
+          "physical": 0.05602103496510086,
+          "direct": 0.5,
+          "physical_clip": 0.3127464536287625,
+          "direct_clip": 0.934333309404359,
+          "physical_direct": 0.16736342934628948,
+          "physical_role_replay": 0.05602103496510086,
+          "physical_role_clip": 0.3127464536287625
+        },
+        {
+          "scene_id": "B003LSTD38_ATVPDKIKX0DER",
+          "target": 0.1,
+          "clip": 0.1631771954623964,
+          "nerf": 0.17577585019171238,
+          "physical": 0.0410773092680702,
+          "direct": 0.15,
+          "physical_clip": 0.08187111898285743,
+          "direct_clip": 0.15644992591675924,
+          "physical_direct": 0.07849583676992386,
+          "physical_role_replay": 0.0410773092680702,
+          "physical_role_clip": 0.08187111898285743
+        },
+        {
+          "scene_id": "B07JM6HFVP_ATVPDKIKX0DER",
+          "target": 2.26796,
+          "clip": 0.6141629521054961,
+          "nerf": 1.4629013240337372,
+          "physical": 0.5611803135179901,
+          "direct": 0.15,
+          "physical_clip": 0.5870742355219625,
+          "direct_clip": 0.3035200863465619,
+          "physical_direct": 0.29013280929205254,
+          "physical_role_replay": 0.5611803135179901,
+          "physical_role_clip": 0.5870742355219625
+        },
+        {
+          "scene_id": "B07GFRNHYW_A1RKKUPIHCS9HS",
+          "target": 20.3,
+          "clip": 30.328919302439797,
+          "nerf": 81.90907287597656,
+          "physical": 20.410677110026338,
+          "direct": 15.0,
+          "physical_clip": 24.880389445869692,
+          "direct_clip": 21.329176954036388,
+          "physical_direct": 17.49743285886233,
+          "physical_role_replay": 20.410677110026338,
+          "physical_role_clip": 24.880389445869692
+        }
+      ],
+      "physical_role_clip_vs_previous_physical": {
+        "ade_kg": {
+          "method_minus_reference": -1.719070957724877,
+          "paired_bootstrap_ci95": [
+            -3.1305448158911657,
+            -0.5483346208630475
+          ]
+        },
+        "alde": {
+          "method_minus_reference": -0.39393144149225334,
+          "paired_bootstrap_ci95": [
+            -0.5593570420001459,
+            -0.22325948472398965
+          ]
+        },
+        "ape": {
+          "method_minus_reference": -0.22977812322021549,
+          "paired_bootstrap_ci95": [
+            -0.45907510586033445,
+            -0.03151307601370358
+          ]
+        },
+        "mnre": {
+          "method_minus_reference": 0.10795245310854278,
+          "paired_bootstrap_ci95": [
+            0.04867711151451343,
+            0.1670313074482648
+          ]
+        }
+      }
+    },
+    {
+      "n": 12,
+      "reference": "nerf",
+      "stats": {
+        "clip": {
+          "metrics": {
+            "num_scenes": 12,
+            "ade_kg": 2.1772185313757855,
+            "alde": 0.47816517760477617,
+            "ape": 0.9458174292788204,
+            "mnre": 0.6987023569872366,
+            "rmse_kg": 3.661555969204763
+          },
+          "delta_vs_reference": {
+            "ade_kg": {
+              "method_minus_reference": -5.190721639931205,
+              "paired_bootstrap_ci95": [
+                -15.091603710033459,
+                0.7483964048899557
+              ]
+            },
+            "alde": {
+              "method_minus_reference": -0.5447176577779267,
+              "paired_bootstrap_ci95": [
+                -1.2367945356692753,
+                -0.011565984252792412
+              ]
+            },
+            "ape": {
+              "method_minus_reference": -0.06267447210890244,
+              "paired_bootstrap_ci95": [
+                -0.6856534325131035,
+                0.5657902786719661
+              ]
+            },
+            "mnre": {
+              "method_minus_reference": 0.1979355871412599,
+              "paired_bootstrap_ci95": [
+                -0.0035447334429339343,
+                0.4268881125273422
+              ]
+            }
+          }
+        },
+        "nerf": {
+          "metrics": {
+            "num_scenes": 12,
+            "ade_kg": 7.367940171306991,
+            "alde": 1.0228828353827026,
+            "ape": 1.0084919013877227,
+            "mnre": 0.5007667698459768,
+            "rmse_kg": 16.960112860094952
+          },
+          "delta_vs_reference": {
+            "ade_kg": {
+              "method_minus_reference": 0.0,
+              "paired_bootstrap_ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "alde": {
+              "method_minus_reference": 0.0,
+              "paired_bootstrap_ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "ape": {
+              "method_minus_reference": 0.0,
+              "paired_bootstrap_ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "mnre": {
+              "method_minus_reference": 0.0,
+              "paired_bootstrap_ci95": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        }
+      },
+      "per_scene": [
+        {
+          "scene_id": "B07TYYNGQ1_ATVPDKIKX0DER",
+          "target": 0.8391452,
+          "clip": 4.820024542915119,
+          "nerf": 4.088410377502441
+        },
+        {
+          "scene_id": "B07YPTDRLV_ATVPDKIKX0DER",
+          "target": 3.175144,
+          "clip": 3.427598482885787,
+          "nerf": 10.549396991729736
+        },
+        {
+          "scene_id": "B075X5HB29_ATVPDKIKX0DER",
+          "target": 61.23492,
+          "clip": 50.12037108795996,
+          "nerf": 55.48057174682617
+        },
+        {
+          "scene_id": "B07B4Z6JZ4",
+          "target": 0.907184,
+          "clip": 4.357497808488442,
+          "nerf": 2.216394603252411
+        },
+        {
+          "scene_id": "B07RD8B8ZB_ATVPDKIKX0DER",
+          "target": 0.5987414400000001,
+          "clip": 1.0947442437124826,
+          "nerf": 0.10787520371377468
+        },
+        {
+          "scene_id": "B071FJR4FW_ATVPDKIKX0DER",
+          "target": 66.678024,
+          "clip": 68.37317258447418,
+          "nerf": 9.402493476867676
+        },
+        {
+          "scene_id": "B075HWK9M3_ATVPDKIKX0DER",
+          "target": 0.6168851200000001,
+          "clip": 1.1691139174709102,
+          "nerf": 0.6972019970417023
+        },
+        {
+          "scene_id": "B07YM1FJ1M_ATVPDKIKX0DER",
+          "target": 15.648924,
+          "clip": 13.683272825556596,
+          "nerf": 23.39136266708374
+        },
+        {
+          "scene_id": "B07WQWGQJK",
+          "target": 3.7920291199999996,
+          "clip": 3.097143367200363,
+          "nerf": 6.953424334526062
+        },
+        {
+          "scene_id": "B07HKF5F8P_ATVPDKIKX0DER",
+          "target": 6.123492,
+          "clip": 5.304026825369383,
+          "nerf": 5.430109739303589
+        },
+        {
+          "scene_id": "B07PKZMKJC_ATVPDKIKX0DER",
+          "target": 0.69853168,
+          "clip": 0.6367594358994133,
+          "nerf": 0.02309751696884632
+        },
+        {
+          "scene_id": "B07XMV34PX_ATVPDKIKX0DER",
+          "target": 3.9916096000000003,
+          "clip": 2.948338301451784,
+          "nerf": 3.3827685117721558
+        }
+      ],
+      "physical_role_clip_vs_previous_physical": null
+    }
+  ],
+  "prediction_sha256": "407269909c3143350015144997a76608e2e3d734ca6c54df1cf9820a19ab0966",
+  "same_object_scale_only": {
+    "n": 37,
+    "stats": {
+      "catalog_scale": {
+        "metrics": {
+          "num_scenes": 37,
+          "ade_kg": 10.664884088556121,
+          "alde": 0.8559862605326358,
+          "ape": 2.141520105474497,
+          "mnre": 0.5175952802923136,
+          "rmse_kg": 19.033986550566677
+        },
+        "delta_vs_reference": {
+          "ade_kg": {
+            "method_minus_reference": 4.851846042369923,
+            "paired_bootstrap_ci95": [
+              0.8261521141098402,
+              9.601489185555655
+            ]
+          },
+          "alde": {
+            "method_minus_reference": -0.14889113539825027,
+            "paired_bootstrap_ci95": [
+              -0.3937057161991043,
+              0.054973114549371975
+            ]
+          },
+          "ape": {
+            "method_minus_reference": 1.4281856064261538,
+            "paired_bootstrap_ci95": [
+              -0.10598141803566068,
+              3.8539604049780944
+            ]
+          },
+          "mnre": {
+            "method_minus_reference": 0.014521225288379238,
+            "paired_bootstrap_ci95": [
+              -0.0681837327257168,
+              0.0968091116070116
+            ]
+          }
+        }
+      },
+      "visual_scale": {
+        "metrics": {
+          "num_scenes": 37,
+          "ade_kg": 5.813038046186197,
+          "alde": 1.004877395930886,
+          "ape": 0.7133344990483429,
+          "mnre": 0.5030740550039344,
+          "rmse_kg": 9.129617805843102
+        },
+        "delta_vs_reference": {
+          "ade_kg": {
+            "method_minus_reference": 0.0,
+            "paired_bootstrap_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "alde": {
+            "method_minus_reference": 0.0,
+            "paired_bootstrap_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "ape": {
+            "method_minus_reference": 0.0,
+            "paired_bootstrap_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "mnre": {
+            "method_minus_reference": 0.0,
+            "paired_bootstrap_ci95": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      }
+    },
+    "per_scene": [
+      {
+        "scene_id": "B07TWQTVXL_ATVPDKIKX0DER",
+        "target": 1.84611944,
+        "visual_scale": 13.40471730907212,
+        "catalog_scale": 3.9217844841875475
+      },
+      {
+        "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+        "target": 15.667067679999999,
+        "visual_scale": 4.499206796484583,
+        "catalog_scale": 5.871755102328898
+      },
+      {
+        "scene_id": "B07TDMJPWG_ATVPDKIKX0DER",
+        "target": 11.9748288,
+        "visual_scale": 30.46549566927033,
+        "catalog_scale": 25.618209922638496
+      },
+      {
+        "scene_id": "B01MRT550V",
+        "target": 0.56699,
+        "visual_scale": 0.5588830127935318,
+        "catalog_scale": 0.49150109404467063
+      },
+      {
+        "scene_id": "B0727Q5F94_ATVPDKIKX0DER",
+        "target": 9.07184,
+        "visual_scale": 7.554506252760522,
+        "catalog_scale": 6.367915902868669
+      },
+      {
+        "scene_id": "B07DBB76JV_ATVPDKIKX0DER",
+        "target": 28.122704,
+        "visual_scale": 40.53593682745581,
+        "catalog_scale": 42.302238546625
+      },
+      {
+        "scene_id": "B01MXTX8MC",
+        "target": 0.56699,
+        "visual_scale": 0.3654792048272728,
+        "catalog_scale": 0.316774076355253
+      },
+      {
+        "scene_id": "B082Q989SF_ATVPDKIKX0DER",
+        "target": 14.514944,
+        "visual_scale": 4.3600613867894396,
+        "catalog_scale": 10.483754540911985
+      },
+      {
+        "scene_id": "B01LP0UKJE_ATVPDKIKX0DER",
+        "target": 1.07954896,
+        "visual_scale": 0.02419906533232996,
+        "catalog_scale": 47.30523528734316
+      },
+      {
+        "scene_id": "B07QFP4PV5_ATVPDKIKX0DER",
+        "target": 41.4129496,
+        "visual_scale": 45.30039068502486,
+        "catalog_scale": 79.1351384092367
+      },
+      {
+        "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+        "target": 16.319819226624002,
+        "visual_scale": 5.399609945686072,
+        "catalog_scale": 9.966236300351255
+      },
+      {
+        "scene_id": "B01LP0VI3G_ATVPDKIKX0DER",
+        "target": 0.9979024000000001,
+        "visual_scale": 0.09055390993357772,
+        "catalog_scale": 5.1186809708371594
+      },
+      {
+        "scene_id": "B07Y3Q7MDR",
+        "target": 13.471682399999999,
+        "visual_scale": 1.5970407731580611,
+        "catalog_scale": 1.6740148513552702
+      },
+      {
+        "scene_id": "B076YJFGCN_A1F83G8C2ARO7P",
+        "target": 0.103475675,
+        "visual_scale": 0.031006369386681748,
+        "catalog_scale": 0.045737359785872886
+      },
+      {
+        "scene_id": "B01DN8TEA2_ATVPDKIKX0DER",
+        "target": 0.34472992,
+        "visual_scale": 0.29424617123158747,
+        "catalog_scale": 0.2554624546903354
+      },
+      {
+        "scene_id": "B07F3T4RSD_A13V1IB3VIYZZH",
+        "target": 0.37,
+        "visual_scale": 0.9709200487343006,
+        "catalog_scale": 1.0760072971693602
+      },
+      {
+        "scene_id": "B07JL5PLPN_ATVPDKIKX0DER",
+        "target": 0.680388,
+        "visual_scale": 0.06780765832985637,
+        "catalog_scale": 6.45072649638398
+      },
+      {
+        "scene_id": "B075YNL7R3_ATVPDKIKX0DER",
+        "target": 2.4720764,
+        "visual_scale": 0.9294810305141769,
+        "catalog_scale": 4.054024646291825
+      },
+      {
+        "scene_id": "B07JQMLQ2C",
+        "target": 0.78925008,
+        "visual_scale": 0.3413217438782033,
+        "catalog_scale": 2.3334747333983
+      },
+      {
+        "scene_id": "B07SRSJFBH",
+        "target": 13.8,
+        "visual_scale": 5.10659439197654,
+        "catalog_scale": 22.568478740039104
+      },
+      {
+        "scene_id": "B07WQ4VQ74_ATVPDKIKX0DER",
+        "target": 4.72189272,
+        "visual_scale": 6.105368592527252,
+        "catalog_scale": 7.943262747378401
+      },
+      {
+        "scene_id": "B07K6S2G5Z_A1F83G8C2ARO7P",
+        "target": 47,
+        "visual_scale": 75.5376168171858,
+        "catalog_scale": 116.37945829971312
+      },
+      {
+        "scene_id": "B00WRDS0AU_ATVPDKIKX0DER",
+        "target": 2.00034072,
+        "visual_scale": 1.084217364407888,
+        "catalog_scale": 1.1336423641412616
+      },
+      {
+        "scene_id": "B075HXHKVF_ATVPDKIKX0DER",
+        "target": 0.71667536,
+        "visual_scale": 0.6517865822436191,
+        "catalog_scale": 0.42167470537640517
+      },
+      {
+        "scene_id": "B084W368ML_ATVPDKIKX0DER",
+        "target": 6.99892456,
+        "visual_scale": 10.50209791521171,
+        "catalog_scale": 15.846067599374488
+      },
+      {
+        "scene_id": "B07XHQQ95Y_ATVPDKIKX0DER",
+        "target": 18.597272,
+        "visual_scale": 2.714101564191872,
+        "catalog_scale": 2.4182946827475904
+      },
+      {
+        "scene_id": "B07WQ4P35G",
+        "target": 5.76969024,
+        "visual_scale": 5.642695297796953,
+        "catalog_scale": 5.85337627617266
+      },
+      {
+        "scene_id": "B075YQ46MP_ATVPDKIKX0DER",
+        "target": 14.106711200000001,
+        "visual_scale": 8.657807565521042,
+        "catalog_scale": 7.573455348442861
+      },
+      {
+        "scene_id": "B07N6RT9SM_ATVPDKIKX0DER",
+        "target": 25.30136176,
+        "visual_scale": 2.4763624446181263,
+        "catalog_scale": 2.1761623241826418
+      },
+      {
+        "scene_id": "B07DB9638P_ATVPDKIKX0DER",
+        "target": 16.329312,
+        "visual_scale": 8.150461100121792,
+        "catalog_scale": 16.76850078567327
+      },
+      {
+        "scene_id": "B075YZPG5Y_ATVPDKIKX0DER",
+        "target": 60.327736,
+        "visual_scale": 68.0082139027302,
+        "catalog_scale": 75.66401962512575
+      },
+      {
+        "scene_id": "B078GTTCCF_A1F83G8C2ARO7P",
+        "target": 0.719396912,
+        "visual_scale": 0.5966322199215577,
+        "catalog_scale": 0.8502785309443124
+      },
+      {
+        "scene_id": "B072PZ4LVN_ATVPDKIKX0DER",
+        "target": 42.410852,
+        "visual_scale": 52.48789672768305,
+        "catalog_scale": 74.78816671131314
+      },
+      {
+        "scene_id": "B07B8PXMRT_ATVPDKIKX0DER",
+        "target": 2.3359988,
+        "visual_scale": 0.05602103496510086,
+        "catalog_scale": 1.1002550818669412
+      },
+      {
+        "scene_id": "B003LSTD38_ATVPDKIKX0DER",
+        "target": 0.1,
+        "visual_scale": 0.0410773092680702,
+        "catalog_scale": 0.0509081362925175
+      },
+      {
+        "scene_id": "B07JM6HFVP_ATVPDKIKX0DER",
+        "target": 2.26796,
+        "visual_scale": 0.5611803135179901,
+        "catalog_scale": 1.9164398681427044
+      },
+      {
+        "scene_id": "B07GFRNHYW_A1RKKUPIHCS9HS",
+        "target": 20.3,
+        "visual_scale": 20.410677110026338,
+        "catalog_scale": 64.9572787309918
+      }
+    ]
+  },
+  "catalogue_length": {
+    "n": 50,
+    "clip": {
+      "mae_m": 0.312767689024517,
+      "ape": 0.3132142279138438,
+      "mean_absolute_log_error": 0.3503030501210293,
+      "within_factor_1_25": 0.56
+    },
+    "old_vlm": {
+      "mae_m": 0.353270885056572,
+      "ape": 0.26280980521869884,
+      "mean_absolute_log_error": 0.40359913533846986,
+      "within_factor_1_25": 0.6
+    }
+  }
+}

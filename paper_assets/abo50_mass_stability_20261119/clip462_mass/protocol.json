@@ -1,0 +1,30 @@
+{
+  "manifest_sha256": "b49a243abb03fea21eebd426c7618cfe285a1ddb51d04024cd2710515edf78c7",
+  "labels_sha256": "75f9b9102dffaf1a71ebfb683b9535a4e73d748b64e9307f1f14adff2425ad8a",
+  "checkpoint_sha256": "80905176486d952914c1deb3b753b8e653ab54aa4ffb14208bc5007cf7643a16",
+  "n_views": 3,
+  "heads": {
+    "length_m": {
+      "alpha": 0.1,
+      "train_objects": 300,
+      "val_objects": 100,
+      "validation": {
+        "mae_m": 0.3153870358051336,
+        "ape": 0.4014536086973828,
+        "mean_absolute_log_error": 0.36998957325584425,
+        "within_factor_1_25": 0.45
+      }
+    },
+    "mass_kg": {
+      "alpha": 0.1,
+      "train_objects": 300,
+      "val_objects": 100,
+      "validation": {
+        "mae_m": 11.485607531429277,
+        "ape": 0.9118110368006773,
+        "mean_absolute_log_error": 0.671494307977244,
+        "within_factor_1_25": 0.26
+      }
+    }
+  }
+}

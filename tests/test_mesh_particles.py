@@ -50,3 +50,39 @@ def test_thin_shell_and_core_particles_conserve_volume_through_mpm_export():
     loaded = run_mpm(export, dx=0.06, steps=8, strain_rate=1)
     assert fall["max_deviation_from_ballistic_m"] < 1e-12
     assert loaded["elastic_energy_j"] > 0 and loaded["jacobian"].min() > 0
+
+
+def test_generated_void_and_visual_wall_thickness_emit_no_core_points():
+    pytest.importorskip("igl")
+    with pytest.raises(ValueError, match="Unresolved"):
+        Construction.from_visual_hypothesis("plastic", "unknown")
+    outer = trimesh.creation.box((0.2,) * 3)
+    inner = trimesh.creation.box((0.16,) * 3)
+    priors = [
+        MaterialPrior(
+            "plastic", ScalarPrior(1000, 0, 1000, 1000), ScalarPrior(1e5, 0, 1e5, 1e5)
+        )
+    ]
+    settings = dict(finest_m=0.001, bulk_m=0.020, poisson={"plastic": 0.3})
+    generated = sample_mesh_particles(
+        outer,
+        Construction.from_generated_partition("plastic"),
+        priors,
+        inner_mesh=inner,
+        **settings,
+    )
+    visual = sample_mesh_particles(
+        outer,
+        Construction.from_visual_hypothesis("plastic", "hollow", thickness_m=0.02),
+        priors,
+        **settings,
+    )
+    for data in (generated, visual):
+        assert set(data["material_names"]) == {"plastic"}
+        assert np.all(np.abs(data["position_m"]).max(axis=1) >= 0.08)
+        assert data["mass_kg"].sum() == pytest.approx(
+            1000 * (0.2**3 - 0.16**3), rel=0.05
+        )
+    assert generated["mass_kg"].sum() == pytest.approx(
+        1000 * (0.2**3 - 0.16**3), rel=1e-10
+    )

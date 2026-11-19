@@ -1,0 +1,112 @@
+{
+  "cohorts": [
+    {
+      "cohort_sha256": "41ee2972b8ac799df6c17b917e12fc2dfc56d71d1627332f611d7e9632d08855",
+      "object_ids": [
+        "B07TYYNGQ1_ATVPDKIKX0DER",
+        "B07YPTDRLV_ATVPDKIKX0DER",
+        "B075X5HB29_ATVPDKIKX0DER",
+        "B07B4Z6JZ4",
+        "B07RD8B8ZB_ATVPDKIKX0DER",
+        "B071FJR4FW_ATVPDKIKX0DER",
+        "B075HWK9M3_ATVPDKIKX0DER",
+        "B07YM1FJ1M_ATVPDKIKX0DER",
+        "B07WQWGQJK",
+        "B07HKF5F8P_ATVPDKIKX0DER",
+        "B07PKZMKJC_ATVPDKIKX0DER",
+        "B07XMV34PX_ATVPDKIKX0DER"
+      ]
+    },
+    {
+      "cohort_sha256": "5a3545eb717b0accf03de2f826498e63da1ae64ed1367d1551bd6b5d311e219b",
+      "object_ids": [
+        "B07TWQTVXL_ATVPDKIKX0DER",
+        "B07DBDX15Y_ATVPDKIKX0DER",
+        "B07TDMJPWG_ATVPDKIKX0DER",
+        "B01MRT550V",
+        "B0727Q5F94_ATVPDKIKX0DER",
+        "B07YM1FZSJ_ATVPDKIKX0DER",
+        "B07DBB76JV_ATVPDKIKX0DER",
+        "B01MXTX8MC",
+        "B07YLZTGZ9_ATVPDKIKX0DER",
+        "B082Q989SF_ATVPDKIKX0DER",
+        "B075X463J2_ATVPDKIKX0DER",
+        "B01LP0UKJE_ATVPDKIKX0DER",
+        "B07QFP4PV5_ATVPDKIKX0DER",
+        "B07MBFDKYY_ATVPDKIKX0DER",
+        "B074KMVVK7_ATVPDKIKX0DER",
+        "B0723DD7Z6",
+        "B07QFRSC43_ATVPDKIKX0DER",
+        "B07YM1D7B7_ATVPDKIKX0DER",
+        "B01LP0VI3G_ATVPDKIKX0DER",
+        "B012S0S20Y_ATVPDKIKX0DER",
+        "B07Y3Q7MDR",
+        "B076YJFGCN_A1F83G8C2ARO7P",
+        "B07Y2B738L_ATVPDKIKX0DER",
+        "B01DN8TEA2_ATVPDKIKX0DER",
+        "B07F3T4RSD_A13V1IB3VIYZZH",
+        "B07JL5PLPN_ATVPDKIKX0DER",
+        "B075YNL7R3_ATVPDKIKX0DER",
+        "B07JQMLQ2C",
+        "B07SRSJFBH",
+        "B082L28P18_ATVPDKIKX0DER",
+        "B07GFRP9RY_A1F83G8C2ARO7P",
+        "B07WQ4VQ74_ATVPDKIKX0DER",
+        "B07K6S2G5Z_A1F83G8C2ARO7P",
+        "B00WRDS0AU_ATVPDKIKX0DER",
+        "B075HXHKVF_ATVPDKIKX0DER",
+        "B084W368ML_ATVPDKIKX0DER",
+        "B07XHQQ95Y_ATVPDKIKX0DER",
+        "B07WQ4P35G",
+        "B075YLJM75",
+        "B075YQ46MP_ATVPDKIKX0DER",
+        "B07N6RT9SM_ATVPDKIKX0DER",
+        "B07DB9638P_ATVPDKIKX0DER",
+        "B07HPQ358H_ATVPDKIKX0DER",
+        "B075YZPG5Y_ATVPDKIKX0DER",
+        "B078GTTCCF_A1F83G8C2ARO7P",
+        "B072PZ4LVN_ATVPDKIKX0DER",
+        "B07B8PXMRT_ATVPDKIKX0DER",
+        "B003LSTD38_ATVPDKIKX0DER",
+        "B07JM6HFVP_ATVPDKIKX0DER",
+        "B07GFRNHYW_A1RKKUPIHCS9HS"
+      ]
+    }
+  ],
+  "code_sha256": "239b814e5d206c4de2877dd5868acfed2485cb9bd51712d23e5ba4a7d9b9782a",
+  "model": {
+    "path": "/root/autodl-tmp/models/Qwen3-VL-8B-Instruct",
+    "model_type": "qwen3_vl",
+    "torch": "2.6.0+cu124",
+    "device": "NVIDIA GeForce RTX 4090",
+    "dtype": "bfloat16",
+    "max_pixels": 200704,
+    "effective_image_pixel_budget": {
+      "min_pixels": 65536,
+      "max_pixels": 200704
+    },
+    "max_new_tokens": 1200,
+    "seed": 17,
+    "quantization": "NF4_double_quant",
+    "adapter_path": null,
+    "load_seconds": 40.49024790804833
+  },
+  "quantized": true,
+  "views": [
+    0,
+    8,
+    20
+  ],
+  "archived_direct_seal_sha256": "8d93dc2d5a43b75f1a9a3b0732b7fce9c2ef1ade74a99ce0f829aa3f6f2f0d3f",
+  "priors_sha256": "762509cdb3da009c0dc514f9144146ebb4b7c5aec86f98e253383eea4bbce97c",
+  "prompt": "Estimate local physical dimensions of the one complete\nunpackaged object across these three views. Infer its longest dimension in cm.\nDo not estimate its mass. Decompose into 1\u20138 nonoverlapping groups of pieces.\nUse all load-bearing or mass-bearing pieces, including concealed components\nplausibly required for the depicted functional object. Distinguish a bare\nenclosure from a working appliance when the views give evidence. Exclude air,\ndecorative pattern and packaging. A foam cushion's bulk volume includes its cells.\nFor thin walls use sheet; for hollow round supports use tube; keep thickness\nindependent of span. For a complicated compact component use a bounding block\nand the fraction actually occupied by the specified material. Prefer physically\nplausible local dimensions to allocating fractions of the object's outer box.\nMaterial choices: foam, rubber, plastic, wood, aluminum, steel, glass, ceramic, silicone, paper_cardboard, fabric, leather, stone.\nReturn one compact JSON object with longest_cm and groups. Each group is exactly\n[name, material, shape, integer_count, dims_cm, occupied_fraction, evidence].\nShapes and dimension order: sheet=[length,width,thickness], block=[length,width,height],\nellipsoid=[full_length,full_width,full_height], tube=[length,outer_diameter,wall],\nrod=[length,diameter]. All lengths in cm. occupied_fraction in (0,1], 1 for a\nfully occupied shape. evidence is exactly visible or inferred. Count each piece\nonly once. Return JSON only.\n",
+  "direct_prompt": "Estimate its mass in kilograms from these views. Return JSON with mass_kg.",
+  "system": "You infer physical hypotheses about one empty, unpackaged household object. Return a single JSON object and distinguish visible evidence from assumptions.",
+  "hypotheses": [
+    "visible only",
+    "visible plus inferred",
+    "equal-weight geometric mean of component and direct"
+  ],
+  "fallback": "On component failure after one constrained retry, ensemble uses direct only.",
+  "mass_labels_used": false
+}

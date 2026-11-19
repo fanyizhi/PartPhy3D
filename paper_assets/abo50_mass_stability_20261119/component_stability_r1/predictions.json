@@ -1,0 +1,2305 @@
+[
+  {
+    "scene_id": "B07TYYNGQ1_ATVPDKIKX0DER",
+    "errors": [
+      "Invalid shape or dimension count",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 2.5,
+    "ensemble_mass_kg": 2.5
+  },
+  {
+    "scene_id": "B07YPTDRLV_ATVPDKIKX0DER",
+    "errors": [],
+    "direct_mass_kg": 10.0,
+    "parts": [
+      {
+        "name": "enclosure",
+        "material": "plastic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          42.0,
+          30.0,
+          35.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.0441,
+        "mass_kg": 46.305
+      },
+      {
+        "name": "lid",
+        "material": "plastic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          42.0,
+          30.0,
+          5.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.0063,
+        "mass_kg": 6.615
+      },
+      {
+        "name": "foot pedal",
+        "material": "plastic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          10.0,
+          10.0,
+          5.0
+        ],
+        "occupied_fraction": 0.25,
+        "evidence": "inferred",
+        "volume_m3": 0.000125,
+        "mass_kg": 0.13125
+      },
+      {
+        "name": "side wall reinforcement",
+        "material": "plastic",
+        "shape": "sheet",
+        "count": 4,
+        "dims_cm": [
+          30.0,
+          10.0,
+          1.0
+        ],
+        "occupied_fraction": 0.05,
+        "evidence": "inferred",
+        "volume_m3": 5.9999999999999995e-05,
+        "mass_kg": 0.063
+      },
+      {
+        "name": "base support",
+        "material": "plastic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          15.0,
+          15.0,
+          5.0
+        ],
+        "occupied_fraction": 0.1,
+        "evidence": "inferred",
+        "volume_m3": 0.0001125,
+        "mass_kg": 0.118125
+      }
+    ],
+    "longest_cm": 42,
+    "component_mass_kg": 53.232375000000005,
+    "visible_mass_kg": 52.92,
+    "ensemble_mass_kg": 23.072142293250533
+  },
+  {
+    "scene_id": "B075X5HB29_ATVPDKIKX0DER",
+    "errors": [
+      "Expected 1\u20138 groups",
+      "Expected 1\u20138 groups"
+    ],
+    "direct_mass_kg": 35.0,
+    "ensemble_mass_kg": 35.0
+  },
+  {
+    "scene_id": "B07B4Z6JZ4",
+    "errors": [],
+    "direct_mass_kg": 1.2,
+    "parts": [
+      {
+        "name": "lampshade_enclosure",
+        "material": "fabric",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          22.0,
+          22.0,
+          0.5
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.000242,
+        "mass_kg": 0.0847
+      },
+      {
+        "name": "metal_support_structure",
+        "material": "aluminum",
+        "shape": "tube",
+        "count": 1,
+        "dims_cm": [
+          28.0,
+          2.0,
+          0.2
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 3.166725394818511e-05,
+        "mass_kg": 0.0855015856600998
+      },
+      {
+        "name": "base_plate",
+        "material": "aluminum",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          10.0,
+          10.0,
+          2.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.00019999999999999998,
+        "mass_kg": 0.5399999999999999
+      },
+      {
+        "name": "internal_support_rod",
+        "material": "aluminum",
+        "shape": "rod",
+        "count": 1,
+        "dims_cm": [
+          28.0,
+          1.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "inferred",
+        "volume_m3": 2.1991148575128552e-05,
+        "mass_kg": 0.05937610115284709
+      },
+      {
+        "name": "lamp_bulb_socket_and_mount",
+        "material": "aluminum",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          2.0,
+          2.0,
+          2.0
+        ],
+        "occupied_fraction": 0.1,
+        "evidence": "inferred",
+        "volume_m3": 8e-07,
+        "mass_kg": 0.00216
+      },
+      {
+        "name": "internal_support_brace",
+        "material": "aluminum",
+        "shape": "rod",
+        "count": 4,
+        "dims_cm": [
+          2.0,
+          0.1
+        ],
+        "occupied_fraction": 0.05,
+        "evidence": "inferred",
+        "volume_m3": 3.141592653589793e-09,
+        "mass_kg": 8.482300164692441e-06
+      }
+    ],
+    "longest_cm": 34,
+    "component_mass_kg": 0.7717461691131116,
+    "visible_mass_kg": 0.7102015856600997,
+    "ensemble_mass_kg": 0.9623385074576065
+  },
+  {
+    "scene_id": "B07RD8B8ZB_ATVPDKIKX0DER",
+    "errors": [
+      "Invalid shape or dimension count",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 0.15,
+    "ensemble_mass_kg": 0.15
+  },
+  {
+    "scene_id": "B071FJR4FW_ATVPDKIKX0DER",
+    "errors": [
+      "Invalid shape or dimension count",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 50.0,
+    "ensemble_mass_kg": 50.0
+  },
+  {
+    "scene_id": "B075HWK9M3_ATVPDKIKX0DER",
+    "errors": [],
+    "direct_mass_kg": 0.5,
+    "parts": [
+      {
+        "name": "cylindrical body",
+        "material": "ceramic",
+        "shape": "tube",
+        "count": 1,
+        "dims_cm": [
+          12.5,
+          10.0,
+          0.5
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.00018653206380689395,
+        "mass_kg": 0.4849833658979243
+      },
+      {
+        "name": "cork base",
+        "material": "wood",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          10.0,
+          10.0,
+          0.5
+        ],
+        "occupied_fraction": 0.25,
+        "evidence": "visible",
+        "volume_m3": 1.2499999999999999e-05,
+        "mass_kg": 0.008124999999999999
+      }
+    ],
+    "longest_cm": 12.5,
+    "component_mass_kg": 0.4931083658979243,
+    "visible_mass_kg": 0.4931083658979243,
+    "ensemble_mass_kg": 0.4965422267531354
+  },
+  {
+    "scene_id": "B07YM1FJ1M_ATVPDKIKX0DER",
+    "errors": [
+      "Expected 1\u20138 groups"
+    ],
+    "direct_mass_kg": 5.0,
+    "parts": [
+      {
+        "name": "canopy_sheet",
+        "material": "fabric",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          150.0,
+          150.0,
+          0.1
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.00225,
+        "mass_kg": 0.7875
+      },
+      {
+        "name": "support_tube_1",
+        "material": "aluminum",
+        "shape": "tube",
+        "count": 1,
+        "dims_cm": [
+          150.0,
+          10.0,
+          1.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.004241150082346221,
+        "mass_kg": 11.451105222334796
+      },
+      {
+        "name": "support_tube_2",
+        "material": "aluminum",
+        "shape": "tube",
+        "count": 1,
+        "dims_cm": [
+          150.0,
+          10.0,
+          1.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.004241150082346221,
+        "mass_kg": 11.451105222334796
+      },
+      {
+        "name": "support_tube_3",
+        "material": "aluminum",
+        "shape": "tube",
+        "count": 1,
+        "dims_cm": [
+          150.0,
+          10.0,
+          1.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.004241150082346221,
+        "mass_kg": 11.451105222334796
+      },
+      {
+        "name": "support_tube_4",
+        "material": "aluminum",
+        "shape": "tube",
+        "count": 1,
+        "dims_cm": [
+          150.0,
+          10.0,
+          1.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.004241150082346221,
+        "mass_kg": 11.451105222334796
+      },
+      {
+        "name": "ground_stabilizer",
+        "material": "aluminum",
+        "shape": "rod",
+        "count": 4,
+        "dims_cm": [
+          30.0,
+          5.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "inferred",
+        "volume_m3": 0.002356194490192345,
+        "mass_kg": 6.3617251235193315
+      }
+    ],
+    "longest_cm": 150,
+    "component_mass_kg": 52.95364601285851,
+    "visible_mass_kg": 46.591920889339185,
+    "ensemble_mass_kg": 16.271700281909464
+  },
+  {
+    "scene_id": "B07WQWGQJK",
+    "errors": [],
+    "direct_mass_kg": 3.5,
+    "parts": [
+      {
+        "name": "main frame",
+        "material": "aluminum",
+        "shape": "tube",
+        "count": 1,
+        "dims_cm": [
+          100.0,
+          15.0,
+          1.5
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.0063617251235193305,
+        "mass_kg": 17.176657833502194
+      },
+      {
+        "name": "side frame",
+        "material": "aluminum",
+        "shape": "tube",
+        "count": 2,
+        "dims_cm": [
+          100.0,
+          15.0,
+          1.5
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.012723450247038661,
+        "mass_kg": 34.35331566700439
+      },
+      {
+        "name": "step frame",
+        "material": "aluminum",
+        "shape": "tube",
+        "count": 4,
+        "dims_cm": [
+          100.0,
+          15.0,
+          1.5
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.025446900494077322,
+        "mass_kg": 68.70663133400878
+      },
+      {
+        "name": "step plate",
+        "material": "aluminum",
+        "shape": "sheet",
+        "count": 3,
+        "dims_cm": [
+          30.0,
+          25.0,
+          1.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.0022500000000000003,
+        "mass_kg": 6.075000000000001
+      },
+      {
+        "name": "handrail",
+        "material": "aluminum",
+        "shape": "tube",
+        "count": 1,
+        "dims_cm": [
+          100.0,
+          15.0,
+          1.5
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.0063617251235193305,
+        "mass_kg": 17.176657833502194
+      },
+      {
+        "name": "pivot joint",
+        "material": "aluminum",
+        "shape": "block",
+        "count": 2,
+        "dims_cm": [
+          10.0,
+          10.0,
+          10.0
+        ],
+        "occupied_fraction": 0.5,
+        "evidence": "inferred",
+        "volume_m3": 0.001,
+        "mass_kg": 2.7
+      },
+      {
+        "name": "foot pad",
+        "material": "rubber",
+        "shape": "block",
+        "count": 4,
+        "dims_cm": [
+          5.0,
+          5.0,
+          1.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 9.999999999999999e-05,
+        "mass_kg": 0.10999999999999999
+      },
+      {
+        "name": "connecting bracket",
+        "material": "aluminum",
+        "shape": "block",
+        "count": 4,
+        "dims_cm": [
+          5.0,
+          5.0,
+          1.0
+        ],
+        "occupied_fraction": 0.5,
+        "evidence": "inferred",
+        "volume_m3": 4.9999999999999996e-05,
+        "mass_kg": 0.13499999999999998
+      }
+    ],
+    "longest_cm": 100,
+    "component_mass_kg": 146.43326266801756,
+    "visible_mass_kg": 143.59826266801758,
+    "ensemble_mass_kg": 22.638825484950882
+  },
+  {
+    "scene_id": "B07HKF5F8P_ATVPDKIKX0DER",
+    "errors": [
+      "Invalid shape or dimension count",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 2.5,
+    "ensemble_mass_kg": 2.5
+  },
+  {
+    "scene_id": "B07PKZMKJC_ATVPDKIKX0DER",
+    "errors": [
+      "Invalid shape or dimension count",
+      "Expected 1\u20138 groups"
+    ],
+    "direct_mass_kg": 0.15,
+    "ensemble_mass_kg": 0.15
+  },
+  {
+    "scene_id": "B07XMV34PX_ATVPDKIKX0DER",
+    "errors": [
+      "Tube wall leaves no cavity",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 3.5,
+    "ensemble_mass_kg": 3.5
+  },
+  {
+    "scene_id": "B07TWQTVXL_ATVPDKIKX0DER",
+    "errors": [
+      "Invalid shape or dimension count",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 2.5,
+    "ensemble_mass_kg": 2.5
+  },
+  {
+    "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+    "errors": [
+      "Invalid shape or dimension count",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 12.5,
+    "ensemble_mass_kg": 12.5
+  },
+  {
+    "scene_id": "B07TDMJPWG_ATVPDKIKX0DER",
+    "errors": [
+      "Invalid shape or dimension count",
+      "Expected 1\u20138 groups"
+    ],
+    "direct_mass_kg": 15.0,
+    "ensemble_mass_kg": 15.0
+  },
+  {
+    "scene_id": "B01MRT550V",
+    "errors": [
+      "Invalid shape or dimension count",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 0.15,
+    "ensemble_mass_kg": 0.15
+  },
+  {
+    "scene_id": "B0727Q5F94_ATVPDKIKX0DER",
+    "errors": [
+      "Invalid shape or dimension count",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 1.5,
+    "ensemble_mass_kg": 1.5
+  },
+  {
+    "scene_id": "B07YM1FZSJ_ATVPDKIKX0DER",
+    "errors": [
+      "Expected 1\u20138 groups",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 5.0,
+    "ensemble_mass_kg": 5.0
+  },
+  {
+    "scene_id": "B07DBB76JV_ATVPDKIKX0DER",
+    "errors": [
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 15.0,
+    "parts": [
+      {
+        "name": "main enclosure",
+        "material": "wood",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          120.0,
+          40.0,
+          30.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.144,
+        "mass_kg": 93.6
+      },
+      {
+        "name": "internal shelf grid",
+        "material": "wood",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          110.0,
+          35.0,
+          25.0
+        ],
+        "occupied_fraction": 0.9,
+        "evidence": "inferred",
+        "volume_m3": 0.08662500000000001,
+        "mass_kg": 56.306250000000006
+      },
+      {
+        "name": "front panel",
+        "material": "wood",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          110.0,
+          35.0,
+          0.5
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.0019249999999999998,
+        "mass_kg": 1.25125
+      },
+      {
+        "name": "side panels",
+        "material": "wood",
+        "shape": "sheet",
+        "count": 2,
+        "dims_cm": [
+          30.0,
+          40.0,
+          0.5
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.0012,
+        "mass_kg": 0.7799999999999999
+      },
+      {
+        "name": "back panel",
+        "material": "wood",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          110.0,
+          40.0,
+          0.5
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.0021999999999999997,
+        "mass_kg": 1.4299999999999997
+      },
+      {
+        "name": "top lid",
+        "material": "wood",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          120.0,
+          40.0,
+          0.5
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.0024,
+        "mass_kg": 1.5599999999999998
+      },
+      {
+        "name": "bottom support",
+        "material": "wood",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          120.0,
+          40.0,
+          5.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "inferred",
+        "volume_m3": 0.024,
+        "mass_kg": 15.6
+      }
+    ],
+    "longest_cm": 120,
+    "component_mass_kg": 170.5275,
+    "visible_mass_kg": 98.62125,
+    "ensemble_mass_kg": 50.575809434946265
+  },
+  {
+    "scene_id": "B01MXTX8MC",
+    "errors": [
+      "Invalid shape or dimension count",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 0.5,
+    "ensemble_mass_kg": 0.5
+  },
+  {
+    "scene_id": "B07YLZTGZ9_ATVPDKIKX0DER",
+    "errors": [
+      "Invalid shape or dimension count",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 10.0,
+    "ensemble_mass_kg": 10.0
+  },
+  {
+    "scene_id": "B082Q989SF_ATVPDKIKX0DER",
+    "errors": [],
+    "direct_mass_kg": 10.0,
+    "parts": [
+      {
+        "name": "foam cushion",
+        "material": "foam",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          55.0,
+          45.0,
+          40.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.09899999999999999,
+        "mass_kg": 6.435
+      },
+      {
+        "name": "fabric cover",
+        "material": "fabric",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          55.0,
+          45.0,
+          5.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.012374999999999999,
+        "mass_kg": 4.33125
+      },
+      {
+        "name": "internal support frame",
+        "material": "wood",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          50.0,
+          40.0,
+          35.0
+        ],
+        "occupied_fraction": 0.7,
+        "evidence": "inferred",
+        "volume_m3": 0.048999999999999995,
+        "mass_kg": 31.849999999999998
+      }
+    ],
+    "longest_cm": 55,
+    "component_mass_kg": 42.616249999999994,
+    "visible_mass_kg": 10.76625,
+    "ensemble_mass_kg": 20.643703640577673
+  },
+  {
+    "scene_id": "B075X463J2_ATVPDKIKX0DER",
+    "errors": [
+      "Expecting ',' delimiter: line 244 column 8 (char 3305)",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 15.0,
+    "ensemble_mass_kg": 15.0
+  },
+  {
+    "scene_id": "B01LP0UKJE_ATVPDKIKX0DER",
+    "errors": [],
+    "direct_mass_kg": 0.05,
+    "parts": [
+      {
+        "name": "foam cushion",
+        "material": "foam",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          15.0,
+          5.0,
+          0.5
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "inferred",
+        "volume_m3": 3.75e-05,
+        "mass_kg": 0.0024375
+      }
+    ],
+    "longest_cm": 15.0,
+    "component_mass_kg": 0.0024375,
+    "visible_mass_kg": 0,
+    "ensemble_mass_kg": 0.011039701082909808
+  },
+  {
+    "scene_id": "B07QFP4PV5_ATVPDKIKX0DER",
+    "errors": [
+      "Expected 1\u20138 groups",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 35.0,
+    "ensemble_mass_kg": 35.0
+  },
+  {
+    "scene_id": "B07MBFDKYY_ATVPDKIKX0DER",
+    "errors": [],
+    "direct_mass_kg": 0.2,
+    "parts": [
+      {
+        "name": "ceramic body",
+        "material": "ceramic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          12.5,
+          10.0,
+          8.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.001,
+        "mass_kg": 2.6
+      },
+      {
+        "name": "ceramic lid",
+        "material": "ceramic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          12.5,
+          10.0,
+          1.5
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.0001875,
+        "mass_kg": 0.4875
+      },
+      {
+        "name": "ceramic knob",
+        "material": "ceramic",
+        "shape": "ellipsoid",
+        "count": 1,
+        "dims_cm": [
+          2.5,
+          2.5,
+          2.5
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 8.181230868723419e-06,
+        "mass_kg": 0.02127120025868089
+      }
+    ],
+    "longest_cm": 12.5,
+    "component_mass_kg": 3.1087712002586807,
+    "visible_mass_kg": 3.1087712002586807,
+    "ensemble_mass_kg": 0.7885139441073545
+  },
+  {
+    "scene_id": "B074KMVVK7_ATVPDKIKX0DER",
+    "errors": [
+      "Invalid shape or dimension count",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 25.0,
+    "ensemble_mass_kg": 25.0
+  },
+  {
+    "scene_id": "B0723DD7Z6",
+    "errors": [],
+    "direct_mass_kg": 2.5,
+    "parts": [
+      {
+        "name": "rug_base",
+        "material": "fabric",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          120.0,
+          80.0,
+          0.5
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.0048,
+        "mass_kg": 1.68
+      }
+    ],
+    "longest_cm": 120,
+    "component_mass_kg": 1.68,
+    "visible_mass_kg": 1.68,
+    "ensemble_mass_kg": 2.04939015319192
+  },
+  {
+    "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+    "errors": [
+      "Tube wall leaves no cavity",
+      "Tube wall leaves no cavity"
+    ],
+    "direct_mass_kg": 8.5,
+    "ensemble_mass_kg": 8.5
+  },
+  {
+    "scene_id": "B07YM1D7B7_ATVPDKIKX0DER",
+    "errors": [
+      "Invalid shape or dimension count",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 10.0,
+    "ensemble_mass_kg": 10.0
+  },
+  {
+    "scene_id": "B01LP0VI3G_ATVPDKIKX0DER",
+    "errors": [],
+    "direct_mass_kg": 0.1,
+    "parts": [
+      {
+        "name": "keyboard_enclosure",
+        "material": "plastic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          22.0,
+          11.0,
+          0.5
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.000121,
+        "mass_kg": 0.12705
+      }
+    ],
+    "longest_cm": 22.0,
+    "component_mass_kg": 0.12705,
+    "visible_mass_kg": 0.12705,
+    "ensemble_mass_kg": 0.11271645842555558
+  },
+  {
+    "scene_id": "B012S0S20Y_ATVPDKIKX0DER",
+    "errors": [
+      "Invalid shape or dimension count",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 0.2,
+    "ensemble_mass_kg": 0.2
+  },
+  {
+    "scene_id": "B07Y3Q7MDR",
+    "errors": [
+      "Invalid shape or dimension count",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 3.5,
+    "ensemble_mass_kg": 3.5
+  },
+  {
+    "scene_id": "B076YJFGCN_A1F83G8C2ARO7P",
+    "errors": [],
+    "direct_mass_kg": 0.05,
+    "parts": [
+      {
+        "name": "enclosure",
+        "material": "plastic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          12.5,
+          4.0,
+          1.5
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 7.5e-05,
+        "mass_kg": 0.07874999999999999
+      },
+      {
+        "name": "internal_housing",
+        "material": "plastic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          12.5,
+          4.0,
+          1.5
+        ],
+        "occupied_fraction": 0.8,
+        "evidence": "inferred",
+        "volume_m3": 5.9999999999999995e-05,
+        "mass_kg": 0.063
+      },
+      {
+        "name": "USB_ports",
+        "material": "plastic",
+        "shape": "block",
+        "count": 10,
+        "dims_cm": [
+          0.8,
+          0.5,
+          0.2
+        ],
+        "occupied_fraction": 0.9,
+        "evidence": "visible",
+        "volume_m3": 7.200000000000002e-07,
+        "mass_kg": 0.0007560000000000002
+      },
+      {
+        "name": "USB_connector",
+        "material": "plastic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          0.8,
+          0.5,
+          0.2
+        ],
+        "occupied_fraction": 0.9,
+        "evidence": "visible",
+        "volume_m3": 7.200000000000001e-08,
+        "mass_kg": 7.560000000000001e-05
+      },
+      {
+        "name": "internal_circuit_board",
+        "material": "plastic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          12.5,
+          4.0,
+          0.5
+        ],
+        "occupied_fraction": 0.7,
+        "evidence": "inferred",
+        "volume_m3": 1.75e-05,
+        "mass_kg": 0.018375
+      },
+      {
+        "name": "power_input_port",
+        "material": "plastic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          0.8,
+          0.5,
+          0.2
+        ],
+        "occupied_fraction": 0.9,
+        "evidence": "visible",
+        "volume_m3": 7.200000000000001e-08,
+        "mass_kg": 7.560000000000001e-05
+      },
+      {
+        "name": "internal_wiring",
+        "material": "plastic",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          12.5,
+          4.0,
+          0.05
+        ],
+        "occupied_fraction": 0.1,
+        "evidence": "inferred",
+        "volume_m3": 2.5e-07,
+        "mass_kg": 0.0002625
+      }
+    ],
+    "longest_cm": 12.5,
+    "component_mass_kg": 0.1612947,
+    "visible_mass_kg": 0.07965719999999998,
+    "ensemble_mass_kg": 0.08980386962709347
+  },
+  {
+    "scene_id": "B07Y2B738L_ATVPDKIKX0DER",
+    "errors": [],
+    "direct_mass_kg": 15.0,
+    "parts": [
+      {
+        "name": "enclosure",
+        "material": "plastic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          60.0,
+          40.0,
+          25.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.06,
+        "mass_kg": 63.0
+      },
+      {
+        "name": "front_grille",
+        "material": "plastic",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          55.0,
+          35.0,
+          1.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.0019249999999999998,
+        "mass_kg": 2.0212499999999998
+      },
+      {
+        "name": "top_grille",
+        "material": "plastic",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          55.0,
+          35.0,
+          1.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.0019249999999999998,
+        "mass_kg": 2.0212499999999998
+      },
+      {
+        "name": "side_grille",
+        "material": "plastic",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          40.0,
+          25.0,
+          1.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.001,
+        "mass_kg": 1.05
+      },
+      {
+        "name": "rear_panel",
+        "material": "plastic",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          40.0,
+          25.0,
+          1.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.001,
+        "mass_kg": 1.05
+      },
+      {
+        "name": "control_panel",
+        "material": "plastic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          10.0,
+          5.0,
+          2.0
+        ],
+        "occupied_fraction": 0.1,
+        "evidence": "visible",
+        "volume_m3": 9.999999999999999e-06,
+        "mass_kg": 0.010499999999999999
+      },
+      {
+        "name": "internal_fan_blades",
+        "material": "plastic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          15.0,
+          10.0,
+          5.0
+        ],
+        "occupied_fraction": 0.3,
+        "evidence": "inferred",
+        "volume_m3": 0.000225,
+        "mass_kg": 0.23625
+      },
+      {
+        "name": "heat_exchanger",
+        "material": "aluminum",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          20.0,
+          15.0,
+          5.0
+        ],
+        "occupied_fraction": 0.4,
+        "evidence": "inferred",
+        "volume_m3": 0.0006000000000000001,
+        "mass_kg": 1.62
+      }
+    ],
+    "longest_cm": 60,
+    "component_mass_kg": 71.00924999999998,
+    "visible_mass_kg": 69.15299999999998,
+    "ensemble_mass_kg": 32.63646350326579
+  },
+  {
+    "scene_id": "B01DN8TEA2_ATVPDKIKX0DER",
+    "errors": [],
+    "direct_mass_kg": 0.3,
+    "parts": [
+      {
+        "name": "cover",
+        "material": "plastic",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          18.0,
+          12.0,
+          0.3
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 6.479999999999999e-05,
+        "mass_kg": 0.06803999999999999
+      },
+      {
+        "name": "spine",
+        "material": "plastic",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          18.0,
+          0.5,
+          0.3
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 2.6999999999999996e-06,
+        "mass_kg": 0.0028349999999999994
+      },
+      {
+        "name": "back_cover",
+        "material": "plastic",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          18.0,
+          12.0,
+          0.3
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 6.479999999999999e-05,
+        "mass_kg": 0.06803999999999999
+      },
+      {
+        "name": "binding_elastic",
+        "material": "rubber",
+        "shape": "tube",
+        "count": 1,
+        "dims_cm": [
+          18.0,
+          0.2,
+          0.05
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "inferred",
+        "volume_m3": 4.241150082346221e-07,
+        "mass_kg": 0.0004665265090580843
+      },
+      {
+        "name": "internal_pages",
+        "material": "paper_cardboard",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          18.0,
+          12.0,
+          0.05
+        ],
+        "occupied_fraction": 0.95,
+        "evidence": "inferred",
+        "volume_m3": 1.026e-05,
+        "mass_kg": 0.0056430000000000004
+      }
+    ],
+    "longest_cm": 18.0,
+    "component_mass_kg": 0.1450245265090581,
+    "visible_mass_kg": 0.13891499999999998,
+    "ensemble_mass_kg": 0.2085841747417992
+  },
+  {
+    "scene_id": "B07F3T4RSD_A13V1IB3VIYZZH",
+    "errors": [
+      "Tube wall leaves no cavity",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 0.5,
+    "ensemble_mass_kg": 0.5
+  },
+  {
+    "scene_id": "B07JL5PLPN_ATVPDKIKX0DER",
+    "errors": [
+      "Invalid shape or dimension count",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 0.15,
+    "ensemble_mass_kg": 0.15
+  },
+  {
+    "scene_id": "B075YNL7R3_ATVPDKIKX0DER",
+    "errors": [
+      "Invalid shape or dimension count",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 0.2,
+    "ensemble_mass_kg": 0.2
+  },
+  {
+    "scene_id": "B07JQMLQ2C",
+    "errors": [
+      "Invalid shape or dimension count",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 0.5,
+    "ensemble_mass_kg": 0.5
+  },
+  {
+    "scene_id": "B07SRSJFBH",
+    "errors": [],
+    "direct_mass_kg": 1.5,
+    "parts": [
+      {
+        "name": "foam core",
+        "material": "foam",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          120.0,
+          60.0,
+          10.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.072,
+        "mass_kg": 4.68
+      },
+      {
+        "name": "foam top cover",
+        "material": "foam",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          120.0,
+          60.0,
+          5.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.036,
+        "mass_kg": 2.34
+      },
+      {
+        "name": "foam bottom cover",
+        "material": "foam",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          120.0,
+          60.0,
+          5.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.036,
+        "mass_kg": 2.34
+      }
+    ],
+    "longest_cm": 120,
+    "component_mass_kg": 9.36,
+    "visible_mass_kg": 9.36,
+    "ensemble_mass_kg": 3.746998799039039
+  },
+  {
+    "scene_id": "B082L28P18_ATVPDKIKX0DER",
+    "errors": [
+      "Expecting value: line 250 column 13 (char 3547)",
+      "Expected 1\u20138 groups"
+    ],
+    "direct_mass_kg": 12.5,
+    "ensemble_mass_kg": 12.5
+  },
+  {
+    "scene_id": "B07GFRP9RY_A1F83G8C2ARO7P",
+    "errors": [
+      "Invalid shape or dimension count",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 15.0,
+    "ensemble_mass_kg": 15.0
+  },
+  {
+    "scene_id": "B07WQ4VQ74_ATVPDKIKX0DER",
+    "errors": [
+      "Invalid shape or dimension count",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 4.5,
+    "ensemble_mass_kg": 4.5
+  },
+  {
+    "scene_id": "B07K6S2G5Z_A1F83G8C2ARO7P",
+    "errors": [
+      "Invalid shape or dimension count",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 15.0,
+    "ensemble_mass_kg": 15.0
+  },
+  {
+    "scene_id": "B00WRDS0AU_ATVPDKIKX0DER",
+    "errors": [
+      "Invalid shape or dimension count",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 0.15,
+    "ensemble_mass_kg": 0.15
+  },
+  {
+    "scene_id": "B075HXHKVF_ATVPDKIKX0DER",
+    "errors": [],
+    "direct_mass_kg": 0.5,
+    "parts": [
+      {
+        "name": "ceramic_enclosure",
+        "material": "ceramic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          12.5,
+          12.5,
+          12.5
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.001953125,
+        "mass_kg": 5.078125
+      },
+      {
+        "name": "ceramic_lid",
+        "material": "ceramic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          12.5,
+          12.5,
+          1.5
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.000234375,
+        "mass_kg": 0.609375
+      },
+      {
+        "name": "ceramic_base",
+        "material": "ceramic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          12.5,
+          12.5,
+          1.5
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.000234375,
+        "mass_kg": 0.609375
+      },
+      {
+        "name": "ceramic_wall",
+        "material": "ceramic",
+        "shape": "tube",
+        "count": 1,
+        "dims_cm": [
+          12.5,
+          12.5,
+          1.5
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.0006479534848028947,
+        "mass_kg": 1.6846790604875261
+      }
+    ],
+    "longest_cm": 12.5,
+    "component_mass_kg": 7.981554060487526,
+    "visible_mass_kg": 7.981554060487526,
+    "ensemble_mass_kg": 1.9976929269143853
+  },
+  {
+    "scene_id": "B084W368ML_ATVPDKIKX0DER",
+    "errors": [
+      "Invalid shape or dimension count",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 8.5,
+    "ensemble_mass_kg": 8.5
+  },
+  {
+    "scene_id": "B07XHQQ95Y_ATVPDKIKX0DER",
+    "errors": [
+      "Invalid shape or dimension count",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 12.0,
+    "ensemble_mass_kg": 12.0
+  },
+  {
+    "scene_id": "B07WQ4P35G",
+    "errors": [],
+    "direct_mass_kg": 3.5,
+    "parts": [
+      {
+        "name": "frame",
+        "material": "aluminum",
+        "shape": "tube",
+        "count": 4,
+        "dims_cm": [
+          54.0,
+          20.0,
+          1.5
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.018830706365617216,
+        "mass_kg": 50.84290718716648
+      },
+      {
+        "name": "step_pads",
+        "material": "plastic",
+        "shape": "sheet",
+        "count": 2,
+        "dims_cm": [
+          28.0,
+          20.0,
+          1.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.00112,
+        "mass_kg": 1.176
+      },
+      {
+        "name": "handgrip",
+        "material": "plastic",
+        "shape": "tube",
+        "count": 1,
+        "dims_cm": [
+          54.0,
+          8.0,
+          2.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.0020357520395261858,
+        "mass_kg": 2.137539641502495
+      },
+      {
+        "name": "feet",
+        "material": "rubber",
+        "shape": "block",
+        "count": 4,
+        "dims_cm": [
+          3.0,
+          3.0,
+          3.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.000108,
+        "mass_kg": 0.11879999999999999
+      },
+      {
+        "name": "connecting_braces",
+        "material": "aluminum",
+        "shape": "rod",
+        "count": 2,
+        "dims_cm": [
+          15.0,
+          1.5
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 5.3014376029327756e-05,
+        "mass_kg": 0.14313881527918496
+      }
+    ],
+    "longest_cm": 54,
+    "component_mass_kg": 54.41838564394816,
+    "visible_mass_kg": 54.41838564394816,
+    "ensemble_mass_kg": 13.800882209258166
+  },
+  {
+    "scene_id": "B075YLJM75",
+    "errors": [
+      "Invalid shape or dimension count",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 0.2,
+    "ensemble_mass_kg": 0.2
+  },
+  {
+    "scene_id": "B075YQ46MP_ATVPDKIKX0DER",
+    "errors": [
+      "Expected 1\u20138 groups",
+      "Expected 1\u20138 groups"
+    ],
+    "direct_mass_kg": 12.5,
+    "ensemble_mass_kg": 12.5
+  },
+  {
+    "scene_id": "B07N6RT9SM_ATVPDKIKX0DER",
+    "errors": [
+      "Expected 1\u20138 groups"
+    ],
+    "direct_mass_kg": 12.5,
+    "parts": [
+      {
+        "name": "main_enclosure",
+        "material": "plastic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          52.0,
+          32.0,
+          30.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.04992,
+        "mass_kg": 52.416
+      },
+      {
+        "name": "front_grille",
+        "material": "plastic",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          30.0,
+          10.0,
+          1.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.0003,
+        "mass_kg": 0.31499999999999995
+      },
+      {
+        "name": "top_panel",
+        "material": "plastic",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          32.0,
+          32.0,
+          1.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.001024,
+        "mass_kg": 1.0752
+      },
+      {
+        "name": "rear_grille",
+        "material": "plastic",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          30.0,
+          10.0,
+          1.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.0003,
+        "mass_kg": 0.31499999999999995
+      },
+      {
+        "name": "side_panel",
+        "material": "plastic",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          52.0,
+          10.0,
+          1.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.00052,
+        "mass_kg": 0.5459999999999999
+      },
+      {
+        "name": "bottom_panel",
+        "material": "plastic",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          52.0,
+          32.0,
+          1.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.001664,
+        "mass_kg": 1.7471999999999999
+      },
+      {
+        "name": "internal_fan_blade_support",
+        "material": "plastic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          10.0,
+          10.0,
+          10.0
+        ],
+        "occupied_fraction": 0.1,
+        "evidence": "inferred",
+        "volume_m3": 0.0001,
+        "mass_kg": 0.10500000000000001
+      },
+      {
+        "name": "internal_fan_motor_housing",
+        "material": "plastic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          15.0,
+          15.0,
+          5.0
+        ],
+        "occupied_fraction": 0.2,
+        "evidence": "inferred",
+        "volume_m3": 0.000225,
+        "mass_kg": 0.23625
+      }
+    ],
+    "longest_cm": 52,
+    "component_mass_kg": 56.75564999999999,
+    "visible_mass_kg": 56.41439999999999,
+    "ensemble_mass_kg": 26.63542049602371
+  },
+  {
+    "scene_id": "B07DB9638P_ATVPDKIKX0DER",
+    "errors": [
+      "Invalid shape or dimension count",
+      "Tube wall leaves no cavity"
+    ],
+    "direct_mass_kg": 12.5,
+    "ensemble_mass_kg": 12.5
+  },
+  {
+    "scene_id": "B07HPQ358H_ATVPDKIKX0DER",
+    "errors": [
+      "Each group needs a distinct name",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 3.5,
+    "ensemble_mass_kg": 3.5
+  },
+  {
+    "scene_id": "B075YZPG5Y_ATVPDKIKX0DER",
+    "errors": [],
+    "direct_mass_kg": 35.0,
+    "parts": [
+      {
+        "name": "top_sheet",
+        "material": "wood",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          120.0,
+          60.0,
+          2.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.0144,
+        "mass_kg": 9.36
+      },
+      {
+        "name": "front_door_sheet",
+        "material": "wood",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          60.0,
+          120.0,
+          2.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.0144,
+        "mass_kg": 9.36
+      },
+      {
+        "name": "side_panel_left",
+        "material": "wood",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          120.0,
+          2.0,
+          2.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.00047999999999999996,
+        "mass_kg": 0.312
+      },
+      {
+        "name": "side_panel_right",
+        "material": "wood",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          120.0,
+          2.0,
+          2.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.00047999999999999996,
+        "mass_kg": 0.312
+      },
+      {
+        "name": "bottom_sheet",
+        "material": "wood",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          120.0,
+          60.0,
+          2.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.0144,
+        "mass_kg": 9.36
+      },
+      {
+        "name": "back_panel",
+        "material": "wood",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          120.0,
+          60.0,
+          2.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.0144,
+        "mass_kg": 9.36
+      },
+      {
+        "name": "internal_divider",
+        "material": "wood",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          120.0,
+          2.0,
+          2.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "inferred",
+        "volume_m3": 0.00047999999999999996,
+        "mass_kg": 0.312
+      },
+      {
+        "name": "internal_back_panel",
+        "material": "wood",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          120.0,
+          60.0,
+          2.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "inferred",
+        "volume_m3": 0.0144,
+        "mass_kg": 9.36
+      }
+    ],
+    "longest_cm": 120,
+    "component_mass_kg": 47.736,
+    "visible_mass_kg": 38.064,
+    "ensemble_mass_kg": 40.87493119260264
+  },
+  {
+    "scene_id": "B078GTTCCF_A1F83G8C2ARO7P",
+    "errors": [
+      "Tube wall leaves no cavity"
+    ],
+    "direct_mass_kg": 0.5,
+    "parts": [
+      {
+        "name": "cover",
+        "material": "plastic",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          21.5,
+          1.5,
+          0.3
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 9.674999999999998e-06,
+        "mass_kg": 0.010158749999999998
+      },
+      {
+        "name": "spine",
+        "material": "plastic",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          21.5,
+          0.3,
+          0.3
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 1.935e-06,
+        "mass_kg": 0.00203175
+      },
+      {
+        "name": "back_cover",
+        "material": "plastic",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          21.5,
+          1.5,
+          0.3
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 9.674999999999998e-06,
+        "mass_kg": 0.010158749999999998
+      },
+      {
+        "name": "binding",
+        "material": "plastic",
+        "shape": "tube",
+        "count": 1,
+        "dims_cm": [
+          21.5,
+          0.2,
+          0.05
+        ],
+        "occupied_fraction": 0.9,
+        "evidence": "inferred",
+        "volume_m3": 4.5592363385221877e-07,
+        "mass_kg": 0.0004787198155448297
+      },
+      {
+        "name": "internal_pages",
+        "material": "paper_cardboard",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          21.5,
+          1.5,
+          0.05
+        ],
+        "occupied_fraction": 0.95,
+        "evidence": "inferred",
+        "volume_m3": 1.531875e-06,
+        "mass_kg": 0.0008425312500000001
+      }
+    ],
+    "longest_cm": 21.5,
+    "component_mass_kg": 0.023670501065544823,
+    "visible_mass_kg": 0.022349249999999994,
+    "ensemble_mass_kg": 0.10878993764485947
+  },
+  {
+    "scene_id": "B072PZ4LVN_ATVPDKIKX0DER",
+    "errors": [],
+    "direct_mass_kg": 35.0,
+    "parts": [
+      {
+        "name": "seat_base_sheet",
+        "material": "fabric",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          165.0,
+          85.0,
+          5.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.07012499999999999,
+        "mass_kg": 24.543749999999996
+      },
+      {
+        "name": "backrest_sheet",
+        "material": "fabric",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          165.0,
+          85.0,
+          5.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.07012499999999999,
+        "mass_kg": 24.543749999999996
+      },
+      {
+        "name": "side_armrest_left",
+        "material": "fabric",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          60.0,
+          40.0,
+          5.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.012,
+        "mass_kg": 4.2
+      },
+      {
+        "name": "side_armrest_right",
+        "material": "fabric",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          60.0,
+          40.0,
+          5.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.012,
+        "mass_kg": 4.2
+      },
+      {
+        "name": "seat_cushion_block",
+        "material": "foam",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          160.0,
+          80.0,
+          20.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.256,
+        "mass_kg": 16.64
+      },
+      {
+        "name": "back_cushion_block",
+        "material": "foam",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          160.0,
+          80.0,
+          20.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.256,
+        "mass_kg": 16.64
+      },
+      {
+        "name": "side_armrest_cushion_block",
+        "material": "foam",
+        "shape": "block",
+        "count": 2,
+        "dims_cm": [
+          55.0,
+          35.0,
+          15.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.057749999999999996,
+        "mass_kg": 3.7537499999999997
+      },
+      {
+        "name": "leg_tube",
+        "material": "wood",
+        "shape": "tube",
+        "count": 4,
+        "dims_cm": [
+          15.0,
+          2.0,
+          0.5
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.00014137166941154066,
+        "mass_kg": 0.09189158511750142
+      }
+    ],
+    "longest_cm": 165,
+    "component_mass_kg": 94.61314158511749,
+    "visible_mass_kg": 94.61314158511749,
+    "ensemble_mass_kg": 57.54528612735462
+  },
+  {
+    "scene_id": "B07B8PXMRT_ATVPDKIKX0DER",
+    "errors": [
+      "Invalid shape or dimension count",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 0.5,
+    "ensemble_mass_kg": 0.5
+  },
+  {
+    "scene_id": "B003LSTD38_ATVPDKIKX0DER",
+    "errors": [
+      "Each group needs a distinct name"
+    ],
+    "direct_mass_kg": 0.15,
+    "parts": [
+      {
+        "name": "enclosure_body",
+        "material": "plastic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          16.5,
+          8.0,
+          3.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.000396,
+        "mass_kg": 0.41579999999999995
+      },
+      {
+        "name": "zipper_track",
+        "material": "plastic",
+        "shape": "tube",
+        "count": 1,
+        "dims_cm": [
+          16.5,
+          0.8,
+          0.2
+        ],
+        "occupied_fraction": 0.1,
+        "evidence": "visible",
+        "volume_m3": 6.220353454107792e-07,
+        "mass_kg": 0.0006531371126813182
+      },
+      {
+        "name": "zipper_pull",
+        "material": "plastic",
+        "shape": "rod",
+        "count": 1,
+        "dims_cm": [
+          4.0,
+          0.5
+        ],
+        "occupied_fraction": 0.2,
+        "evidence": "visible",
+        "volume_m3": 1.5707963267948966e-07,
+        "mass_kg": 0.00016493361431346414
+      },
+      {
+        "name": "zipper_teeth",
+        "material": "plastic",
+        "shape": "rod",
+        "count": 1,
+        "dims_cm": [
+          16.5,
+          0.1
+        ],
+        "occupied_fraction": 0.01,
+        "evidence": "visible",
+        "volume_m3": 1.2959069696057898e-09,
+        "mass_kg": 1.3607023180860792e-06
+      },
+      {
+        "name": "foam_cushion",
+        "material": "foam",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          16.5,
+          8.0,
+          2.5
+        ],
+        "occupied_fraction": 0.8,
+        "evidence": "inferred",
+        "volume_m3": 0.000264,
+        "mass_kg": 0.01716
+      },
+      {
+        "name": "edge_seal",
+        "material": "rubber",
+        "shape": "sheet",
+        "count": 1,
+        "dims_cm": [
+          16.5,
+          0.2,
+          0.1
+        ],
+        "occupied_fraction": 0.02,
+        "evidence": "inferred",
+        "volume_m3": 6.600000000000001e-09,
+        "mass_kg": 7.260000000000002e-06
+      }
+    ],
+    "longest_cm": 16.5,
+    "component_mass_kg": 0.43378669142931287,
+    "visible_mass_kg": 0.41661943142931285,
+    "ensemble_mass_kg": 0.2550843070719893
+  },
+  {
+    "scene_id": "B07JM6HFVP_ATVPDKIKX0DER",
+    "errors": [],
+    "direct_mass_kg": 0.15,
+    "parts": [
+      {
+        "name": "ceramic bowl body",
+        "material": "ceramic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          10.5,
+          8.0,
+          7.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 0.000588,
+        "mass_kg": 1.5288
+      },
+      {
+        "name": "ceramic base ring",
+        "material": "ceramic",
+        "shape": "tube",
+        "count": 1,
+        "dims_cm": [
+          10.5,
+          2.5,
+          0.5
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 3.2986722862692825e-05,
+        "mass_kg": 0.08576547944300135
+      },
+      {
+        "name": "ceramic bottom disc",
+        "material": "ceramic",
+        "shape": "block",
+        "count": 1,
+        "dims_cm": [
+          8.0,
+          8.0,
+          1.0
+        ],
+        "occupied_fraction": 1.0,
+        "evidence": "visible",
+        "volume_m3": 6.4e-05,
+        "mass_kg": 0.1664
+      }
+    ],
+    "longest_cm": 10.5,
+    "component_mass_kg": 1.7809654794430014,
+    "visible_mass_kg": 1.7809654794430014,
+    "ensemble_mass_kg": 0.5168605439733722
+  },
+  {
+    "scene_id": "B07GFRNHYW_A1RKKUPIHCS9HS",
+    "errors": [
+      "Invalid shape or dimension count",
+      "Invalid shape or dimension count"
+    ],
+    "direct_mass_kg": 15.0,
+    "ensemble_mass_kg": 15.0
+  }
+]

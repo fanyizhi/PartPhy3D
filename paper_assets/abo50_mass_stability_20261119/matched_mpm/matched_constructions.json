@@ -1,0 +1,67 @@
+{
+  "exterior_m": 0.2,
+  "inner_m": 0.16,
+  "timestep_s": 5e-07,
+  "steps": 80,
+  "grid_dx_m": 0.026,
+  "strain_rate_s_inv": 10,
+  "cases": [
+    {
+      "case": "generated_solid",
+      "mpm_particles": 4366,
+      "cavity_particles": 1728,
+      "materials": [
+        "plastic"
+      ],
+      "analytic_mass_kg": 8.400000000000002,
+      "particle_mass_kg": 8.399999999999988,
+      "relative_error": -1.6653345369377348e-15,
+      "elastic_energy_j": 0.9044874867817602,
+      "min_J": 0.9996059351446325,
+      "mass_transfer_residual_kg": 1.7763568394002505e-15
+    },
+    {
+      "case": "generated_hollow",
+      "mpm_particles": 3185,
+      "cavity_particles": 0,
+      "materials": [
+        "plastic"
+      ],
+      "analytic_mass_kg": 4.099200000000002,
+      "particle_mass_kg": 4.099200000008596,
+      "relative_error": 2.0965451597021456e-12,
+      "elastic_energy_j": 0.3784502747148336,
+      "min_J": 0.9996962741388119,
+      "mass_transfer_residual_kg": 8.881784197001252e-16
+    },
+    {
+      "case": "visual_hollow_hypothesis",
+      "mpm_particles": 3185,
+      "cavity_particles": 0,
+      "materials": [
+        "plastic"
+      ],
+      "analytic_mass_kg": 4.099200000000002,
+      "particle_mass_kg": 4.0136704477232925,
+      "relative_error": -0.020864937616293378,
+      "elastic_energy_j": 0.37053723499722613,
+      "min_J": 0.9996957127631975,
+      "mass_transfer_residual_kg": 8.881784197001252e-16
+    },
+    {
+      "case": "generated_foam_core",
+      "mpm_particles": 5532,
+      "cavity_particles": 2347,
+      "materials": [
+        "plastic",
+        "foam"
+      ],
+      "analytic_mass_kg": 4.365440000000002,
+      "particle_mass_kg": 4.365439999996964,
+      "relative_error": -6.959988141375106e-13,
+      "elastic_energy_j": 0.37945517562664355,
+      "min_J": 0.999330793155291,
+      "mass_transfer_residual_kg": 1.7763568394002505e-15
+    }
+  ]
+}

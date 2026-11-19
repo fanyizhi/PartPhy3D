@@ -3,6 +3,8 @@
 *.jpg binary
 *.glb binary
 data/abo500_five/** -text whitespace=cr-at-eol
+paper_assets/abo50_mass_stability_20261119/holdout_cohort.json -text whitespace=cr-at-eol
+paper_assets/abo50_mass_stability_20261119/appliance_attribution/predictions.json -text whitespace=cr-at-eol
 *.md whitespace=-blank-at-eol
 *.whl binary
 *.npz binary

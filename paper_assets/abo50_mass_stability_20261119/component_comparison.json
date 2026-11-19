@@ -1,0 +1,1049 @@
+{
+  "prediction_sha256": "62391557856f9d19c5de70767657f0c07d533fd65a1b59faa505f1d15782064f",
+  "cohorts": [
+    {
+      "n": 12,
+      "stats": {
+        "ensemble_mass_kg": {
+          "n": 12,
+          "metrics": {
+            "num_scenes": 12,
+            "ade_kg": 7.435686821734613,
+            "alde": 0.8311496644972808,
+            "ape": 1.369973931612044,
+            "mnre": 0.5351596185966293,
+            "rmse_kg": 12.022746600392418
+          },
+          "paired_vs_direct": {
+            "ade_kg": {
+              "method_minus_reference": 1.7805465084012795,
+              "paired_bootstrap_ci95": [
+                -1.6908297440602886,
+                6.165124494299359
+              ]
+            },
+            "alde": {
+              "method_minus_reference": 0.10224647194122456,
+              "paired_bootstrap_ci95": [
+                -0.22044159284860468,
+                0.493462468837575
+              ]
+            },
+            "ape": {
+              "method_minus_reference": 0.6760880229184788,
+              "paired_bootstrap_ci95": [
+                -0.12814640701602154,
+                1.8036251775971424
+              ]
+            },
+            "mnre": {
+              "method_minus_reference": -0.009339426511461071,
+              "paired_bootstrap_ci95": [
+                -0.1888835652198388,
+                0.1534033150883104
+              ]
+            }
+          }
+        },
+        "component_mass_kg": {
+          "n": 5,
+          "metrics": {
+            "num_scenes": 5,
+            "ade_kg": 46.052480229173014,
+            "alde": 1.6155281027922157,
+            "ape": 11.223041427270477,
+            "mnre": 0.4062242477904837,
+            "rmse_kg": 69.63321597059121
+          },
+          "paired_vs_direct": {
+            "ade_kg": {
+              "method_minus_reference": 42.417378181173014,
+              "paired_bootstrap_ci95": [
+                5.270964988567288,
+                94.05737598363096
+              ]
+            },
+            "alde": {
+              "method_minus_reference": 1.0438999213368805,
+              "paired_bootstrap_ci95": [
+                -0.02605501772711828,
+                2.454926078095388
+              ]
+            },
+            "ape": {
+              "method_minus_reference": 10.539198437784473,
+              "paired_bootstrap_ci95": [
+                0.27574931364707483,
+                25.21191506009863
+              ]
+            },
+            "mnre": {
+              "method_minus_reference": -0.2190805979599792,
+              "paired_bootstrap_ci95": [
+                -0.5708854391885814,
+                0.028620836390087046
+              ]
+            }
+          }
+        },
+        "direct_mass_kg": {
+          "n": 12,
+          "metrics": {
+            "num_scenes": 12,
+            "ade_kg": 5.655140313333333,
+            "alde": 0.7289031925560563,
+            "ape": 0.6938859086935653,
+            "mnre": 0.5444990451080903,
+            "rmse_kg": 9.760560549566494
+          },
+          "paired_vs_direct": {
+            "ade_kg": {
+              "method_minus_reference": 0.0,
+              "paired_bootstrap_ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "alde": {
+              "method_minus_reference": 0.0,
+              "paired_bootstrap_ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "ape": {
+              "method_minus_reference": 0.0,
+              "paired_bootstrap_ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "mnre": {
+              "method_minus_reference": 0.0,
+              "paired_bootstrap_ci95": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "visible_mass_kg": {
+          "n": 5,
+          "metrics": {
+            "num_scenes": 5,
+            "ade_kg": 44.16296912115975,
+            "alde": 1.6014643882562225,
+            "ape": 10.986103663607711,
+            "mnre": 0.40089881955024,
+            "rmse_kg": 67.7906436266741
+          },
+          "paired_vs_direct": {
+            "ade_kg": {
+              "method_minus_reference": 40.527867073159754,
+              "paired_bootstrap_ci95": [
+                4.023237797244628,
+                92.27335593967854
+              ]
+            },
+            "alde": {
+              "method_minus_reference": 1.0298362068008875,
+              "paired_bootstrap_ci95": [
+                -0.03117391248051212,
+                2.455639397960013
+              ]
+            },
+            "ape": {
+              "method_minus_reference": 10.302260674121708,
+              "paired_bootstrap_ci95": [
+                0.22158026030653305,
+                24.757234551676465
+              ]
+            },
+            "mnre": {
+              "method_minus_reference": -0.2244060262002229,
+              "paired_bootstrap_ci95": [
+                -0.5840765401654605,
+                0.015061058005398498
+              ]
+            }
+          }
+        }
+      },
+      "per_scene": [
+        {
+          "scene_id": "B07TYYNGQ1_ATVPDKIKX0DER",
+          "target_mass_kg": 0.8391452,
+          "direct_mass_kg": 2.5,
+          "ensemble_mass_kg": 2.5,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": null,
+          "prior_mass_kg": null
+        },
+        {
+          "scene_id": "B07YPTDRLV_ATVPDKIKX0DER",
+          "target_mass_kg": 3.175144,
+          "direct_mass_kg": 10.0,
+          "ensemble_mass_kg": 23.072142293250533,
+          "visible_mass_kg": 52.92,
+          "component_mass_kg": 53.232375000000005,
+          "nerf_mass_kg": null,
+          "prior_mass_kg": null
+        },
+        {
+          "scene_id": "B075X5HB29_ATVPDKIKX0DER",
+          "target_mass_kg": 61.23492,
+          "direct_mass_kg": 35.0,
+          "ensemble_mass_kg": 35.0,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": null,
+          "prior_mass_kg": null
+        },
+        {
+          "scene_id": "B07B4Z6JZ4",
+          "target_mass_kg": 0.907184,
+          "direct_mass_kg": 1.2,
+          "ensemble_mass_kg": 0.9623385074576065,
+          "visible_mass_kg": 0.7102015856600997,
+          "component_mass_kg": 0.7717461691131116,
+          "nerf_mass_kg": null,
+          "prior_mass_kg": null
+        },
+        {
+          "scene_id": "B07RD8B8ZB_ATVPDKIKX0DER",
+          "target_mass_kg": 0.5987414400000001,
+          "direct_mass_kg": 0.15,
+          "ensemble_mass_kg": 0.15,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": null,
+          "prior_mass_kg": null
+        },
+        {
+          "scene_id": "B071FJR4FW_ATVPDKIKX0DER",
+          "target_mass_kg": 66.678024,
+          "direct_mass_kg": 50.0,
+          "ensemble_mass_kg": 50.0,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": null,
+          "prior_mass_kg": null
+        },
+        {
+          "scene_id": "B075HWK9M3_ATVPDKIKX0DER",
+          "target_mass_kg": 0.6168851200000001,
+          "direct_mass_kg": 0.5,
+          "ensemble_mass_kg": 0.4965422267531354,
+          "visible_mass_kg": 0.4931083658979243,
+          "component_mass_kg": 0.4931083658979243,
+          "nerf_mass_kg": null,
+          "prior_mass_kg": null
+        },
+        {
+          "scene_id": "B07YM1FJ1M_ATVPDKIKX0DER",
+          "target_mass_kg": 15.648924,
+          "direct_mass_kg": 5.0,
+          "ensemble_mass_kg": 16.271700281909464,
+          "visible_mass_kg": 46.591920889339185,
+          "component_mass_kg": 52.95364601285851,
+          "nerf_mass_kg": null,
+          "prior_mass_kg": null
+        },
+        {
+          "scene_id": "B07WQWGQJK",
+          "target_mass_kg": 3.7920291199999996,
+          "direct_mass_kg": 3.5,
+          "ensemble_mass_kg": 22.638825484950882,
+          "visible_mass_kg": 143.59826266801758,
+          "component_mass_kg": 146.43326266801756,
+          "nerf_mass_kg": null,
+          "prior_mass_kg": null
+        },
+        {
+          "scene_id": "B07HKF5F8P_ATVPDKIKX0DER",
+          "target_mass_kg": 6.123492,
+          "direct_mass_kg": 2.5,
+          "ensemble_mass_kg": 2.5,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": null,
+          "prior_mass_kg": null
+        },
+        {
+          "scene_id": "B07PKZMKJC_ATVPDKIKX0DER",
+          "target_mass_kg": 0.69853168,
+          "direct_mass_kg": 0.15,
+          "ensemble_mass_kg": 0.15,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": null,
+          "prior_mass_kg": null
+        },
+        {
+          "scene_id": "B07XMV34PX_ATVPDKIKX0DER",
+          "target_mass_kg": 3.9916096000000003,
+          "direct_mass_kg": 3.5,
+          "ensemble_mass_kg": 3.5,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": null,
+          "prior_mass_kg": null
+        }
+      ]
+    },
+    {
+      "n": 50,
+      "stats": {
+        "prior_mass_kg": {
+          "n": 50,
+          "metrics": {
+            "num_scenes": 50,
+            "ade_kg": 7.123792587465073,
+            "alde": 1.0384495785642918,
+            "ape": 0.8033656644210768,
+            "mnre": 0.4878376876785693,
+            "rmse_kg": 11.559241012405122
+          },
+          "paired_vs_direct": {
+            "ade_kg": {
+              "method_minus_reference": 0.8079376263925911,
+              "paired_bootstrap_ci95": [
+                -0.9296083540513378,
+                2.5219795971809074
+              ]
+            },
+            "alde": {
+              "method_minus_reference": 0.04862672995750488,
+              "paired_bootstrap_ci95": [
+                -0.20694246711033887,
+                0.30931895041719976
+              ]
+            },
+            "ape": {
+              "method_minus_reference": 0.2796894148369159,
+              "paired_bootstrap_ci95": [
+                0.0006094427878065961,
+                0.6394173995775391
+              ]
+            },
+            "mnre": {
+              "method_minus_reference": -0.013511168544657011,
+              "paired_bootstrap_ci95": [
+                -0.09964038140496477,
+                0.07919160752946316
+              ]
+            }
+          }
+        },
+        "ensemble_mass_kg": {
+          "n": 50,
+          "metrics": {
+            "num_scenes": 50,
+            "ade_kg": 6.082601603961369,
+            "alde": 0.9778485226026215,
+            "ape": 0.5889680613895174,
+            "mnre": 0.5022315610599553,
+            "rmse_kg": 9.699887592713013
+          },
+          "paired_vs_direct": {
+            "ade_kg": {
+              "method_minus_reference": -0.23325335711111012,
+              "paired_bootstrap_ci95": [
+                -1.3768165919070197,
+                0.6482911311093071
+              ]
+            },
+            "alde": {
+              "method_minus_reference": -0.011974326004165325,
+              "paired_bootstrap_ci95": [
+                -0.14403169081948564,
+                0.11199857446439332
+              ]
+            },
+            "ape": {
+              "method_minus_reference": 0.06529181180535652,
+              "paired_bootstrap_ci95": [
+                -0.015830195483552512,
+                0.15967615129943583
+              ]
+            },
+            "mnre": {
+              "method_minus_reference": 0.000882704836728907,
+              "paired_bootstrap_ci95": [
+                -0.04017439226350621,
+                0.04302239256360457
+              ]
+            }
+          }
+        },
+        "component_mass_kg": {
+          "n": 18,
+          "metrics": {
+            "num_scenes": 18,
+            "ade_kg": 20.91429932392812,
+            "alde": 1.5402716969606802,
+            "ape": 2.091461374850313,
+            "mnre": 0.38107939436786364,
+            "rmse_kg": 39.72287012370134
+          },
+          "paired_vs_direct": {
+            "ade_kg": {
+              "method_minus_reference": 12.699535433539232,
+              "paired_bootstrap_ci95": [
+                0.2884014149108385,
+                29.62927947940531
+              ]
+            },
+            "alde": {
+              "method_minus_reference": 0.32411369368269155,
+              "paired_bootstrap_ci95": [
+                -0.4193223612720853,
+                1.1083920595545094
+              ]
+            },
+            "ape": {
+              "method_minus_reference": 1.5206743324154133,
+              "paired_bootstrap_ci95": [
+                0.3223864758346824,
+                2.9334646806054296
+              ]
+            },
+            "mnre": {
+              "method_minus_reference": -0.0573928224564961,
+              "paired_bootstrap_ci95": [
+                -0.26248645880332877,
+                0.1442429725530866
+              ]
+            }
+          }
+        },
+        "nerf_mass_kg": {
+          "n": 50,
+          "metrics": {
+            "num_scenes": 50,
+            "ade_kg": 8.87226038857523,
+            "alde": 0.8104698234308443,
+            "ape": 1.5638601805928514,
+            "mnre": 0.5291353017563533,
+            "rmse_kg": 15.47590605738486
+          },
+          "paired_vs_direct": {
+            "ade_kg": {
+              "method_minus_reference": 2.5564054275027486,
+              "paired_bootstrap_ci95": [
+                -0.42623393152290057,
+                6.037084811603209
+              ]
+            },
+            "alde": {
+              "method_minus_reference": -0.17935302517594265,
+              "paired_bootstrap_ci95": [
+                -0.46836677870244126,
+                0.0969105240657278
+              ]
+            },
+            "ape": {
+              "method_minus_reference": 1.0401839310086907,
+              "paired_bootstrap_ci95": [
+                0.25299641586864297,
+                2.0561333379497952
+              ]
+            },
+            "mnre": {
+              "method_minus_reference": 0.027786445533126952,
+              "paired_bootstrap_ci95": [
+                -0.06674596767747776,
+                0.11960636258541371
+              ]
+            }
+          }
+        },
+        "direct_mass_kg": {
+          "n": 50,
+          "metrics": {
+            "num_scenes": 50,
+            "ade_kg": 6.31585496107248,
+            "alde": 0.9898228486067869,
+            "ape": 0.5236762495841609,
+            "mnre": 0.5013488562232262,
+            "rmse_kg": 10.553257044039736
+          },
+          "paired_vs_direct": {
+            "ade_kg": {
+              "method_minus_reference": 0.0,
+              "paired_bootstrap_ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "alde": {
+              "method_minus_reference": 0.0,
+              "paired_bootstrap_ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "ape": {
+              "method_minus_reference": 0.0,
+              "paired_bootstrap_ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "mnre": {
+              "method_minus_reference": 0.0,
+              "paired_bootstrap_ci95": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "visible_mass_kg": {
+          "n": 17,
+          "metrics": {
+            "num_scenes": 17,
+            "ade_kg": 16.856010431663577,
+            "alde": 1.198668431769108,
+            "ape": 1.8849583699148535,
+            "mnre": 0.43286851843014995,
+            "rmse_kg": 27.186365399379522
+          },
+          "paired_vs_direct": {
+            "ade_kg": {
+              "method_minus_reference": 8.218586839487104,
+              "paired_bootstrap_ci95": [
+                -0.3202233094157932,
+                19.010387368452882
+              ]
+            },
+            "alde": {
+              "method_minus_reference": 0.0916938164058817,
+              "paired_bootstrap_ci95": [
+                -0.6149652938885808,
+                0.7833839054009828
+              ]
+            },
+            "ape": {
+              "method_minus_reference": 1.336694699155578,
+              "paired_bootstrap_ci95": [
+                0.13423486193926518,
+                2.8745492696529693
+              ]
+            },
+            "mnre": {
+              "method_minus_reference": -0.028671732379202137,
+              "paired_bootstrap_ci95": [
+                -0.23812704126942683,
+                0.18691689768577457
+              ]
+            }
+          }
+        }
+      },
+      "per_scene": [
+        {
+          "scene_id": "B07TWQTVXL_ATVPDKIKX0DER",
+          "target_mass_kg": 1.84611944,
+          "direct_mass_kg": 2.5,
+          "ensemble_mass_kg": 2.5,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 7.0672407150268555,
+          "prior_mass_kg": 13.40471730907212
+        },
+        {
+          "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+          "target_mass_kg": 15.667067679999999,
+          "direct_mass_kg": 12.5,
+          "ensemble_mass_kg": 12.5,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 10.498028814792633,
+          "prior_mass_kg": 4.499206796484583
+        },
+        {
+          "scene_id": "B07TDMJPWG_ATVPDKIKX0DER",
+          "target_mass_kg": 11.9748288,
+          "direct_mass_kg": 15.0,
+          "ensemble_mass_kg": 15.0,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 16.548452854156494,
+          "prior_mass_kg": 30.46549566927033
+        },
+        {
+          "scene_id": "B01MRT550V",
+          "target_mass_kg": 0.56699,
+          "direct_mass_kg": 0.15,
+          "ensemble_mass_kg": 0.15,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 0.9985581934452057,
+          "prior_mass_kg": 0.5588830127935318
+        },
+        {
+          "scene_id": "B0727Q5F94_ATVPDKIKX0DER",
+          "target_mass_kg": 9.07184,
+          "direct_mass_kg": 1.5,
+          "ensemble_mass_kg": 1.5,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 11.469624519348145,
+          "prior_mass_kg": 7.554506252760522
+        },
+        {
+          "scene_id": "B07YM1FZSJ_ATVPDKIKX0DER",
+          "target_mass_kg": 15.648924,
+          "direct_mass_kg": 5.0,
+          "ensemble_mass_kg": 5.0,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 49.3955192565918,
+          "prior_mass_kg": 14.673528345109887
+        },
+        {
+          "scene_id": "B07DBB76JV_ATVPDKIKX0DER",
+          "target_mass_kg": 28.122704,
+          "direct_mass_kg": 15.0,
+          "ensemble_mass_kg": 50.575809434946265,
+          "visible_mass_kg": 98.62125,
+          "component_mass_kg": 170.5275,
+          "nerf_mass_kg": 22.07326889038086,
+          "prior_mass_kg": 40.53593682745581
+        },
+        {
+          "scene_id": "B01MXTX8MC",
+          "target_mass_kg": 0.56699,
+          "direct_mass_kg": 0.5,
+          "ensemble_mass_kg": 0.5,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 0.23925656080245972,
+          "prior_mass_kg": 0.3654792048272728
+        },
+        {
+          "scene_id": "B07YLZTGZ9_ATVPDKIKX0DER",
+          "target_mass_kg": 19.27766,
+          "direct_mass_kg": 10.0,
+          "ensemble_mass_kg": 10.0,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 38.88101768493652,
+          "prior_mass_kg": 19.833097064230056
+        },
+        {
+          "scene_id": "B082Q989SF_ATVPDKIKX0DER",
+          "target_mass_kg": 14.514944,
+          "direct_mass_kg": 10.0,
+          "ensemble_mass_kg": 20.643703640577673,
+          "visible_mass_kg": 10.76625,
+          "component_mass_kg": 42.616249999999994,
+          "nerf_mass_kg": 20.752046823501587,
+          "prior_mass_kg": 4.3600613867894396
+        },
+        {
+          "scene_id": "B075X463J2_ATVPDKIKX0DER",
+          "target_mass_kg": 12.246984,
+          "direct_mass_kg": 15.0,
+          "ensemble_mass_kg": 15.0,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 11.621519923210144,
+          "prior_mass_kg": 31.338603372355173
+        },
+        {
+          "scene_id": "B01LP0UKJE_ATVPDKIKX0DER",
+          "target_mass_kg": 1.07954896,
+          "direct_mass_kg": 0.05,
+          "ensemble_mass_kg": 0.011039701082909808,
+          "visible_mass_kg": 0,
+          "component_mass_kg": 0.0024375,
+          "nerf_mass_kg": 1.4385078251361847,
+          "prior_mass_kg": 0.02419906533232996
+        },
+        {
+          "scene_id": "B07QFP4PV5_ATVPDKIKX0DER",
+          "target_mass_kg": 41.4129496,
+          "direct_mass_kg": 35.0,
+          "ensemble_mass_kg": 35.0,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 33.89341640472412,
+          "prior_mass_kg": 45.30039068502486
+        },
+        {
+          "scene_id": "B07MBFDKYY_ATVPDKIKX0DER",
+          "target_mass_kg": 4.082328,
+          "direct_mass_kg": 0.2,
+          "ensemble_mass_kg": 0.7885139441073545,
+          "visible_mass_kg": 3.1087712002586807,
+          "component_mass_kg": 3.1087712002586807,
+          "nerf_mass_kg": 0.9914955198764801,
+          "prior_mass_kg": 0.5268489597568005
+        },
+        {
+          "scene_id": "B074KMVVK7_ATVPDKIKX0DER",
+          "target_mass_kg": 23.359988,
+          "direct_mass_kg": 25.0,
+          "ensemble_mass_kg": 25.0,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 29.333152294158936,
+          "prior_mass_kg": 15.016840704496666
+        },
+        {
+          "scene_id": "B0723DD7Z6",
+          "target_mass_kg": 27.215519999999998,
+          "direct_mass_kg": 2.5,
+          "ensemble_mass_kg": 2.04939015319192,
+          "visible_mass_kg": 1.68,
+          "component_mass_kg": 1.68,
+          "nerf_mass_kg": 26.5013747215271,
+          "prior_mass_kg": 12.371847613071257
+        },
+        {
+          "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+          "target_mass_kg": 16.319819226624002,
+          "direct_mass_kg": 8.5,
+          "ensemble_mass_kg": 8.5,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 5.216909646987915,
+          "prior_mass_kg": 5.399609945686072
+        },
+        {
+          "scene_id": "B07YM1D7B7_ATVPDKIKX0DER",
+          "target_mass_kg": 18.2797576,
+          "direct_mass_kg": 10.0,
+          "ensemble_mass_kg": 10.0,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 39.91484069824219,
+          "prior_mass_kg": 19.833097064230056
+        },
+        {
+          "scene_id": "B01LP0VI3G_ATVPDKIKX0DER",
+          "target_mass_kg": 0.9979024000000001,
+          "direct_mass_kg": 0.1,
+          "ensemble_mass_kg": 0.11271645842555558,
+          "visible_mass_kg": 0.12705,
+          "component_mass_kg": 0.12705,
+          "nerf_mass_kg": 4.26220965385437,
+          "prior_mass_kg": 0.09055390993357772
+        },
+        {
+          "scene_id": "B012S0S20Y_ATVPDKIKX0DER",
+          "target_mass_kg": 1.474174,
+          "direct_mass_kg": 0.2,
+          "ensemble_mass_kg": 0.2,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 30.067620754241943,
+          "prior_mass_kg": 0.35246109160895434
+        },
+        {
+          "scene_id": "B07Y3Q7MDR",
+          "target_mass_kg": 13.471682399999999,
+          "direct_mass_kg": 3.5,
+          "ensemble_mass_kg": 3.5,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 1.8644615411758423,
+          "prior_mass_kg": 1.5970407731580611
+        },
+        {
+          "scene_id": "B076YJFGCN_A1F83G8C2ARO7P",
+          "target_mass_kg": 0.103475675,
+          "direct_mass_kg": 0.05,
+          "ensemble_mass_kg": 0.08980386962709347,
+          "visible_mass_kg": 0.07965719999999998,
+          "component_mass_kg": 0.1612947,
+          "nerf_mass_kg": 0.08589542470872402,
+          "prior_mass_kg": 0.031006369386681748
+        },
+        {
+          "scene_id": "B07Y2B738L_ATVPDKIKX0DER",
+          "target_mass_kg": 51.8909248,
+          "direct_mass_kg": 15.0,
+          "ensemble_mass_kg": 32.63646350326579,
+          "visible_mass_kg": 69.15299999999998,
+          "component_mass_kg": 71.00924999999998,
+          "nerf_mass_kg": 10.774965763092041,
+          "prior_mass_kg": 3.0340168134870464
+        },
+        {
+          "scene_id": "B01DN8TEA2_ATVPDKIKX0DER",
+          "target_mass_kg": 0.34472992,
+          "direct_mass_kg": 0.3,
+          "ensemble_mass_kg": 0.2085841747417992,
+          "visible_mass_kg": 0.13891499999999998,
+          "component_mass_kg": 0.1450245265090581,
+          "nerf_mass_kg": 0.1780262105166912,
+          "prior_mass_kg": 0.29424617123158747
+        },
+        {
+          "scene_id": "B07F3T4RSD_A13V1IB3VIYZZH",
+          "target_mass_kg": 0.37,
+          "direct_mass_kg": 0.5,
+          "ensemble_mass_kg": 0.5,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 5.1113362312316895,
+          "prior_mass_kg": 0.9709200487343006
+        },
+        {
+          "scene_id": "B07JL5PLPN_ATVPDKIKX0DER",
+          "target_mass_kg": 0.680388,
+          "direct_mass_kg": 0.15,
+          "ensemble_mass_kg": 0.15,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 8.4979989528656,
+          "prior_mass_kg": 0.06780765832985637
+        },
+        {
+          "scene_id": "B075YNL7R3_ATVPDKIKX0DER",
+          "target_mass_kg": 2.4720764,
+          "direct_mass_kg": 0.2,
+          "ensemble_mass_kg": 0.2,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 5.527623295783997,
+          "prior_mass_kg": 0.9294810305141769
+        },
+        {
+          "scene_id": "B07JQMLQ2C",
+          "target_mass_kg": 0.78925008,
+          "direct_mass_kg": 0.5,
+          "ensemble_mass_kg": 0.5,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 1.2349659577012062,
+          "prior_mass_kg": 0.3413217438782033
+        },
+        {
+          "scene_id": "B07SRSJFBH",
+          "target_mass_kg": 13.8,
+          "direct_mass_kg": 1.5,
+          "ensemble_mass_kg": 3.746998799039039,
+          "visible_mass_kg": 9.36,
+          "component_mass_kg": 9.36,
+          "nerf_mass_kg": 36.2612190246582,
+          "prior_mass_kg": 5.10659439197654
+        },
+        {
+          "scene_id": "B082L28P18_ATVPDKIKX0DER",
+          "target_mass_kg": 18.14368,
+          "direct_mass_kg": 12.5,
+          "ensemble_mass_kg": 12.5,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 14.182488441467285,
+          "prior_mass_kg": 9.51463137237161
+        },
+        {
+          "scene_id": "B07GFRP9RY_A1F83G8C2ARO7P",
+          "target_mass_kg": 40,
+          "direct_mass_kg": 15.0,
+          "ensemble_mass_kg": 15.0,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 23.922799110412598,
+          "prior_mass_kg": 17.883481293813666
+        },
+        {
+          "scene_id": "B07WQ4VQ74_ATVPDKIKX0DER",
+          "target_mass_kg": 4.72189272,
+          "direct_mass_kg": 4.5,
+          "ensemble_mass_kg": 4.5,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 8.762797117233276,
+          "prior_mass_kg": 6.105368592527252
+        },
+        {
+          "scene_id": "B07K6S2G5Z_A1F83G8C2ARO7P",
+          "target_mass_kg": 47,
+          "direct_mass_kg": 15.0,
+          "ensemble_mass_kg": 15.0,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 49.94716739654541,
+          "prior_mass_kg": 21.082902210444676
+        },
+        {
+          "scene_id": "B00WRDS0AU_ATVPDKIKX0DER",
+          "target_mass_kg": 2.00034072,
+          "direct_mass_kg": 0.15,
+          "ensemble_mass_kg": 0.15,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 0.38784145563840866,
+          "prior_mass_kg": 1.084217364407888
+        },
+        {
+          "scene_id": "B075HXHKVF_ATVPDKIKX0DER",
+          "target_mass_kg": 0.71667536,
+          "direct_mass_kg": 0.5,
+          "ensemble_mass_kg": 1.9976929269143853,
+          "visible_mass_kg": 7.981554060487526,
+          "component_mass_kg": 7.981554060487526,
+          "nerf_mass_kg": 0.4155001640319824,
+          "prior_mass_kg": 0.6517865822436191
+        },
+        {
+          "scene_id": "B084W368ML_ATVPDKIKX0DER",
+          "target_mass_kg": 6.99892456,
+          "direct_mass_kg": 8.5,
+          "ensemble_mass_kg": 8.5,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 9.13260555267334,
+          "prior_mass_kg": 10.50209791521171
+        },
+        {
+          "scene_id": "B07XHQQ95Y_ATVPDKIKX0DER",
+          "target_mass_kg": 18.597272,
+          "direct_mass_kg": 12.0,
+          "ensemble_mass_kg": 12.0,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 6.485934376716614,
+          "prior_mass_kg": 2.714101564191872
+        },
+        {
+          "scene_id": "B07WQ4P35G",
+          "target_mass_kg": 5.76969024,
+          "direct_mass_kg": 3.5,
+          "ensemble_mass_kg": 13.800882209258166,
+          "visible_mass_kg": 54.41838564394816,
+          "component_mass_kg": 54.41838564394816,
+          "nerf_mass_kg": 3.372054874897003,
+          "prior_mass_kg": 5.642695297796953
+        },
+        {
+          "scene_id": "B075YLJM75",
+          "target_mass_kg": 4.53592,
+          "direct_mass_kg": 0.2,
+          "ensemble_mass_kg": 0.2,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 3.551191508769989,
+          "prior_mass_kg": 0.47241855614913847
+        },
+        {
+          "scene_id": "B075YQ46MP_ATVPDKIKX0DER",
+          "target_mass_kg": 14.106711200000001,
+          "direct_mass_kg": 12.5,
+          "ensemble_mass_kg": 12.5,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 8.748543739318848,
+          "prior_mass_kg": 8.657807565521042
+        },
+        {
+          "scene_id": "B07N6RT9SM_ATVPDKIKX0DER",
+          "target_mass_kg": 25.30136176,
+          "direct_mass_kg": 12.5,
+          "ensemble_mass_kg": 26.63542049602371,
+          "visible_mass_kg": 56.41439999999999,
+          "component_mass_kg": 56.75564999999999,
+          "nerf_mass_kg": 7.212998151779175,
+          "prior_mass_kg": 2.4763624446181263
+        },
+        {
+          "scene_id": "B07DB9638P_ATVPDKIKX0DER",
+          "target_mass_kg": 16.329312,
+          "direct_mass_kg": 12.5,
+          "ensemble_mass_kg": 12.5,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 12.717464447021484,
+          "prior_mass_kg": 8.150461100121792
+        },
+        {
+          "scene_id": "B07HPQ358H_ATVPDKIKX0DER",
+          "target_mass_kg": 1.4968536,
+          "direct_mass_kg": 3.5,
+          "ensemble_mass_kg": 3.5,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 2.545432388782501,
+          "prior_mass_kg": 11.51881434104445
+        },
+        {
+          "scene_id": "B075YZPG5Y_ATVPDKIKX0DER",
+          "target_mass_kg": 60.327736,
+          "direct_mass_kg": 35.0,
+          "ensemble_mass_kg": 40.87493119260264,
+          "visible_mass_kg": 38.064,
+          "component_mass_kg": 47.736,
+          "nerf_mass_kg": 19.095699548721313,
+          "prior_mass_kg": 68.0082139027302
+        },
+        {
+          "scene_id": "B078GTTCCF_A1F83G8C2ARO7P",
+          "target_mass_kg": 0.719396912,
+          "direct_mass_kg": 0.5,
+          "ensemble_mass_kg": 0.10878993764485947,
+          "visible_mass_kg": 0.022349249999999994,
+          "component_mass_kg": 0.023670501065544823,
+          "nerf_mass_kg": 0.17690440267324448,
+          "prior_mass_kg": 0.5966322199215577
+        },
+        {
+          "scene_id": "B072PZ4LVN_ATVPDKIKX0DER",
+          "target_mass_kg": 42.410852,
+          "direct_mass_kg": 35.0,
+          "ensemble_mass_kg": 57.54528612735462,
+          "visible_mass_kg": 94.61314158511749,
+          "component_mass_kg": 94.61314158511749,
+          "nerf_mass_kg": 46.68654823303223,
+          "prior_mass_kg": 52.48789672768305
+        },
+        {
+          "scene_id": "B07B8PXMRT_ATVPDKIKX0DER",
+          "target_mass_kg": 2.3359988,
+          "direct_mass_kg": 0.5,
+          "ensemble_mass_kg": 0.5,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 4.6703081130981445,
+          "prior_mass_kg": 0.05602103496510086
+        },
+        {
+          "scene_id": "B003LSTD38_ATVPDKIKX0DER",
+          "target_mass_kg": 0.1,
+          "direct_mass_kg": 0.15,
+          "ensemble_mass_kg": 0.2550843070719893,
+          "visible_mass_kg": 0.41661943142931285,
+          "component_mass_kg": 0.43378669142931287,
+          "nerf_mass_kg": 0.17577585019171238,
+          "prior_mass_kg": 0.0410773092680702
+        },
+        {
+          "scene_id": "B07JM6HFVP_ATVPDKIKX0DER",
+          "target_mass_kg": 2.26796,
+          "direct_mass_kg": 0.15,
+          "ensemble_mass_kg": 0.5168605439733722,
+          "visible_mass_kg": 1.7809654794430014,
+          "component_mass_kg": 1.7809654794430014,
+          "nerf_mass_kg": 1.4629013240337372,
+          "prior_mass_kg": 0.5611803135179901
+        },
+        {
+          "scene_id": "B07GFRNHYW_A1RKKUPIHCS9HS",
+          "target_mass_kg": 20.3,
+          "direct_mass_kg": 15.0,
+          "ensemble_mass_kg": 15.0,
+          "visible_mass_kg": null,
+          "component_mass_kg": null,
+          "nerf_mass_kg": 81.90907287597656,
+          "prior_mass_kg": 20.410677110026338
+        }
+      ]
+    }
+  ]
+}

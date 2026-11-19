@@ -1,0 +1,39 @@
+{
+  "object_ids": [
+    "B07Y2B738L_ATVPDKIKX0DER",
+    "B07N6RT9SM_ATVPDKIKX0DER",
+    "B07XHQQ95Y_ATVPDKIKX0DER",
+    "B076YJFGCN_A1F83G8C2ARO7P",
+    "B07TWQTVXL_ATVPDKIKX0DER",
+    "B07QFP4PV5_ATVPDKIKX0DER"
+  ],
+  "cohort_sha256": "5a3545eb717b0accf03de2f826498e63da1ae64ed1367d1551bd6b5d311e219b",
+  "code_sha256": "457dce11c7095a30d4c8270732fc75ee2cbb1aa6eb25be5960c55f124749b957",
+  "model": {
+    "path": "/root/autodl-tmp/models/Qwen3-VL-8B-Instruct",
+    "model_type": "qwen3_vl",
+    "torch": "2.6.0+cu124",
+    "device": "NVIDIA GeForce RTX 4090",
+    "dtype": "bfloat16",
+    "max_pixels": 200704,
+    "effective_image_pixel_budget": {
+      "min_pixels": 65536,
+      "max_pixels": 200704
+    },
+    "max_new_tokens": 620,
+    "seed": 17,
+    "quantization": "NF4_double_quant",
+    "adapter_path": null,
+    "load_seconds": 40.25741312094033
+  },
+  "prompt": "Identify the device function from the three photographs. Distinguish\nwindow air conditioner, portable air conditioner, compressor dehumidifier,\nfilter air purifier, bare computer case, and ordinary electric fan. Compare\nthe front controls and outlet with the rear intake, coils, exhaust and ports.\nIf the evidence cannot distinguish functions, return undecided.\nReturn only a compact JSON object with class, cue, longest_cm, groups. class\nmust be one of cooling, dehumidifier, purifier, case, fan, undecided. Only for\ncooling or dehumidifier fill groups, covering shell, chassis, heat exchangers,\ncompressor and fan assemblies as applicable. Give dimensions in cm, not mass.\nEach group is [name,material,shape,count,[length,width,height],fill,evidence].\nUse only block and sheet; sheet height is wall thickness. For bulky assemblies\nestimate local bounding volume and the solid material fraction in (0,1],\nexcluding air. Use sheet for panels and block with fill for coils and motors.\nMaterials: steel, aluminum, plastic, rubber, copper. evidence is visible or\ninferred. Put no dimensions outside this compact format. If class is other\nthan cooling or dehumidifier use an empty groups list.",
+  "views": [
+    0,
+    8,
+    20
+  ],
+  "priors_sha256": "762509cdb3da009c0dc514f9144146ebb4b7c5aec86f98e253383eea4bbce97c",
+  "copper_kg_m3": 8960.0,
+  "quantized": true,
+  "catalogue_and_mass_labels_used": false
+}

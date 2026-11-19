@@ -19,6 +19,34 @@ class Construction:
     support_top_m: float | None = None
 
     @classmethod
+    def from_generated_partition(cls, surface: str, core: str = "void"):
+        """Use an explicit inner mesh for the void or a second material."""
+        if not surface or surface == core or surface == "void" or not core:
+            raise ValueError(
+                "Generated partition requires distinct shell and core regions"
+            )
+        return cls(surface=surface, core=core)
+
+    @classmethod
+    def from_visual_hypothesis(
+        cls, surface: str, structure: str, *, thickness_m=0.0, core=None
+    ):
+        """Accept a selected visual hypothesis; unresolved constructions cannot emit particles."""
+        if structure == "solid":
+            return cls.from_evidence(
+                surface=surface, solid=True, core=core, thickness_m=thickness_m
+            )
+        if structure == "hollow" and core in (None, "void"):
+            return cls.from_evidence(
+                surface=surface, solid=False, core="void", thickness_m=thickness_m
+            )
+        if structure in {"layered", "foam_filled"} and core not in (None, "void"):
+            return cls.from_evidence(
+                surface=surface, solid=False, core=core, thickness_m=thickness_m
+            )
+        raise ValueError("Unresolved or contradictory visual construction")
+
+    @classmethod
     def from_evidence(
         cls,
         *,
@@ -30,6 +58,8 @@ class Construction:
         frame_boxes=(),
         support_top_m=None,
     ):
+        if not surface or surface == "void":
+            raise ValueError("Outer material must be known")
         if support_top_m is not None and (not frame or not np.isfinite(support_top_m)):
             raise ValueError(
                 "Support boundary requires a frame material and finite height"
@@ -70,6 +100,7 @@ def sample_mesh_particles(
     finest_m: float,
     bulk_m: float,
     poisson: dict[str, float],
+    inner_mesh: trimesh.Trimesh | None = None,
 ) -> dict:
     """Return disjoint quadrature points with SI particle fields and stable material IDs."""
     import igl
@@ -78,6 +109,21 @@ def sample_mesh_particles(
         raise ValueError("Particle sampling requires an outward, closed metric mesh")
     if not np.isfinite([finest_m, bulk_m]).all() or not 0 < finest_m <= bulk_m:
         raise ValueError("Require finite 0 < finest_m <= bulk_m")
+    explicit = (
+        construction.core != construction.surface and construction.thickness_m == 0
+    )
+    if explicit != (inner_mesh is not None):
+        raise ValueError("Generated partition requires exactly one explicit inner mesh")
+    if inner_mesh is not None:
+        if not inner_mesh.is_volume or not np.isfinite(inner_mesh.vertices).all():
+            raise ValueError("Inner interface must be an outward, closed metric mesh")
+        if np.any(inner_mesh.bounds[0] <= mesh.bounds[0]) or np.any(
+            inner_mesh.bounds[1] >= mesh.bounds[1]
+        ):
+            raise ValueError("Inner interface must be strictly enclosed")
+        outside = trimesh.boolean.difference([inner_mesh, mesh], engine="manifold")
+        if not outside.is_empty and abs(outside.volume) > 1e-8 * inner_mesh.volume:
+            raise ValueError("Inner interface intersects the exterior")
     support_top = construction.support_top_m
     if (
         support_top is not None
@@ -86,7 +132,15 @@ def sample_mesh_particles(
         raise ValueError("Support boundary must lie inside mesh z bounds")
     labels = list(
         dict.fromkeys(
-            filter(None, (construction.surface, construction.core, construction.frame))
+            (
+                name
+                for name in (
+                    construction.surface,
+                    construction.core,
+                    construction.frame,
+                )
+                if name and name != "void"
+            )
         )
     )
     materials = {prior.name: prior for prior in priors}
@@ -103,10 +157,20 @@ def sample_mesh_particles(
 
     vertices = np.asarray(mesh.vertices, dtype=np.float64)
     faces = np.asarray(mesh.faces, dtype=np.int64)
+    core_id = labels.index(construction.core) if construction.core != "void" else -1
+    if inner_mesh is not None:
+        inner_vertices = np.asarray(inner_mesh.vertices, dtype=np.float64)
+        inner_faces = np.asarray(inner_mesh.faces, dtype=np.int64)
+        inner_in_outer = igl.signed_distance(
+            inner_vertices, vertices, faces, igl.SIGNED_DISTANCE_TYPE_PSEUDONORMAL
+        )[0]
+        if not np.all(inner_in_outer < 0):
+            raise ValueError("Inner interface touches or exits the exterior")
     positions = mesh.bounds.mean(0)[None]
     size = mesh.extents.max() + finest_m
     offsets = np.array(list(product((-0.25, 0.25), repeat=3)))
     xyz, volumes, ids = [], [], []
+    resolved_void = False
     while len(positions):
         depth = -igl.signed_distance(
             positions, vertices, faces, igl.SIGNED_DISTANCE_TYPE_PSEUDONORMAL
@@ -115,8 +179,21 @@ def sample_mesh_particles(
             raise ValueError("Mesh signed-distance query produced non-finite values")
         radius = np.sqrt(3) * size / 2
         refine = np.abs(depth) <= radius
-        domain = np.full(len(depth), labels.index(construction.core), dtype=np.int16)
-        if construction.thickness_m:
+        domain = np.full(len(depth), core_id, dtype=np.int16)
+        if inner_mesh is not None:
+            inner_depth = -igl.signed_distance(
+                positions,
+                inner_vertices,
+                inner_faces,
+                igl.SIGNED_DISTANCE_TYPE_PSEUDONORMAL,
+            )[0]
+            if not np.isfinite(inner_depth).all():
+                raise ValueError(
+                    "Inner signed-distance query produced non-finite values"
+                )
+            domain[inner_depth <= 0] = labels.index(construction.surface)
+            refine |= np.abs(inner_depth) <= radius
+        elif construction.thickness_m:
             shell = depth <= construction.thickness_m
             domain[shell] = labels.index(construction.surface)
             refine |= np.abs(depth - construction.thickness_m) <= radius
@@ -135,7 +212,9 @@ def sample_mesh_particles(
                     refine |= np.abs(height) <= size / 2
         inside = depth > 0
         split = (depth >= -radius) & (size > finest_m) & (refine | (size > bulk_m))
-        accepted = inside & ~split
+        accepted = inside & ~split & (domain >= 0)
+        if construction.core == "void" and np.any(inside & ~split & (domain < 0)):
+            resolved_void = True
         if np.any(accepted):
             xyz.append(positions[accepted])
             volumes.append(np.full(accepted.sum(), size**3))
@@ -144,10 +223,19 @@ def sample_mesh_particles(
         size /= 2
     if not xyz:
         raise ValueError("No positive-volume cells at requested resolution")
+    if construction.core == "void" and not resolved_void:
+        raise ValueError("Sampling did not resolve the declared cavity")
     material_id = np.concatenate(ids)
     if len(np.unique(material_id)) != len(labels):
         raise ValueError("Sampling did not resolve all declared material domains")
     volume_m3 = np.concatenate(volumes)
+    if inner_mesh is not None:
+        # The declared boundaries supply exact per-region volume independently of sampling.
+        exact = [mesh.volume - inner_mesh.volume]
+        if construction.core != "void":
+            exact.append(inner_mesh.volume)
+        sampled = np.bincount(material_id, weights=volume_m3)
+        volume_m3 *= (np.asarray(exact) / sampled)[material_id]
     return dict(
         position_m=np.concatenate(xyz),
         volume_m3=volume_m3,
