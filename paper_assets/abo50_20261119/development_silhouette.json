@@ -1,0 +1,157 @@
+{
+  "scope": "relative camera-space geometry. No absolute metric scale or mass inferred",
+  "input_view_indices": [
+    13,
+    5,
+    29,
+    11,
+    9,
+    22
+  ],
+  "fit": {
+    "isotropic_scale": 0.8498540189859647,
+    "translation_camera_units": [
+      0.0019511018355207253,
+      -0.0003313072695174319,
+      0.00258923280547218
+    ],
+    "scale_center_camera_units": [
+      -0.0006364993751049042,
+      -0.0036664865911006927,
+      0.1618909016251564
+    ],
+    "extent_rmse_before": 0.08870980171720269,
+    "extent_rmse_after": 0.005422923463616996,
+    "solver_active_bounds": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "heldout_count": 24,
+  "mean_frozen_iou": 0.7172827660368813,
+  "mean_refined_iou": 0.9670255150303392,
+  "heldout": [
+    {
+      "index": 0,
+      "frozen_iou": 0.7349743279975838,
+      "refined_iou": 0.9660292921074044
+    },
+    {
+      "index": 1,
+      "frozen_iou": 0.7096774193548387,
+      "refined_iou": 0.9589072025287876
+    },
+    {
+      "index": 2,
+      "frozen_iou": 0.7194095400756374,
+      "refined_iou": 0.9753127606338615
+    },
+    {
+      "index": 3,
+      "frozen_iou": 0.7309957173447538,
+      "refined_iou": 0.9837827988338192
+    },
+    {
+      "index": 4,
+      "frozen_iou": 0.7169684775318578,
+      "refined_iou": 0.9641361733114874
+    },
+    {
+      "index": 6,
+      "frozen_iou": 0.7204792490118577,
+      "refined_iou": 0.9782645324347093
+    },
+    {
+      "index": 7,
+      "frozen_iou": 0.6826973340303188,
+      "refined_iou": 0.9411764705882353
+    },
+    {
+      "index": 8,
+      "frozen_iou": 0.69605358435916,
+      "refined_iou": 0.9492158327109783
+    },
+    {
+      "index": 10,
+      "frozen_iou": 0.7356895889358432,
+      "refined_iou": 0.9685773480662984
+    },
+    {
+      "index": 12,
+      "frozen_iou": 0.7161916312916919,
+      "refined_iou": 0.9646397884996696
+    },
+    {
+      "index": 14,
+      "frozen_iou": 0.7285517663251262,
+      "refined_iou": 0.9748545303408146
+    },
+    {
+      "index": 15,
+      "frozen_iou": 0.7217197373311858,
+      "refined_iou": 0.9785436729177226
+    },
+    {
+      "index": 16,
+      "frozen_iou": 0.6946330777656079,
+      "refined_iou": 0.9498792270531401
+    },
+    {
+      "index": 17,
+      "frozen_iou": 0.7168476271806759,
+      "refined_iou": 0.9783702213279678
+    },
+    {
+      "index": 18,
+      "frozen_iou": 0.7167070217917676,
+      "refined_iou": 0.9704749679075738
+    },
+    {
+      "index": 19,
+      "frozen_iou": 0.7348882647453902,
+      "refined_iou": 0.970811345646438
+    },
+    {
+      "index": 20,
+      "frozen_iou": 0.7075483019320773,
+      "refined_iou": 0.9719269102990034
+    },
+    {
+      "index": 21,
+      "frozen_iou": 0.7236745663327633,
+      "refined_iou": 0.9791214297644897
+    },
+    {
+      "index": 23,
+      "frozen_iou": 0.6795716639209226,
+      "refined_iou": 0.9314912944738835
+    },
+    {
+      "index": 24,
+      "frozen_iou": 0.7190237797246558,
+      "refined_iou": 0.9771057577310781
+    },
+    {
+      "index": 25,
+      "frozen_iou": 0.7380124223602484,
+      "refined_iou": 0.9653102068045364
+    },
+    {
+      "index": 26,
+      "frozen_iou": 0.7166888539271451,
+      "refined_iou": 0.9805162364696086
+    },
+    {
+      "index": 27,
+      "frozen_iou": 0.7382992748846408,
+      "refined_iou": 0.9656940760389037
+    },
+    {
+      "index": 28,
+      "frozen_iou": 0.7154831567294005,
+      "refined_iou": 0.9644702842377261
+    }
+  ]
+}
