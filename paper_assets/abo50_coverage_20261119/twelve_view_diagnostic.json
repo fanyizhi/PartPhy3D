@@ -1,0 +1,141 @@
+{
+  "requested": 3,
+  "valid": 3,
+  "metrics": {
+    "instantmesh": {
+      "iou": 0.7659227386241901,
+      "recall": 0.8999120868848679,
+      "precision": 0.8128915534731757
+    },
+    "visual_hull": {
+      "iou": 0.8011462470567826,
+      "recall": 0.9999907221851109,
+      "precision": 0.8011500289576855
+    }
+  },
+  "scenes": [
+    {
+      "scene_id": "B07TWQTVXL_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22,
+        23,
+        1,
+        12,
+        7,
+        8,
+        28
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "pitch": 0.005454925949193326,
+      "method_face_counts": {
+        "instantmesh": 24128,
+        "visual_hull": 89642
+      },
+      "visual_hull_sha256": "7af3ca35cf157aa5901268bae339beee438221ffa4c7816f32ffd52269f30f02",
+      "instantmesh": {
+        "iou": 0.48457557371439386,
+        "recall": 0.7731258832290223,
+        "precision": 0.5630319414057465
+      },
+      "visual_hull": {
+        "iou": 0.6312231743663718,
+        "recall": 0.9999721665553329,
+        "precision": 0.6312345200690803
+      }
+    },
+    {
+      "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22,
+        23,
+        1,
+        12,
+        7,
+        8,
+        28
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "pitch": 0.004051433497267289,
+      "method_face_counts": {
+        "instantmesh": 83336,
+        "visual_hull": 293798
+      },
+      "visual_hull_sha256": "54879db6f0a5bba1949a9da948ea7b5b317757712e0122b56f2feada2e44d9d9",
+      "instantmesh": {
+        "iou": 0.9485747122833837,
+        "recall": 0.9886382058110699,
+        "precision": 0.9591008146343339
+      },
+      "visual_hull": {
+        "iou": 0.9339949553877334,
+        "recall": 1.0,
+        "precision": 0.9339949553877334
+      }
+    },
+    {
+      "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22,
+        23,
+        1,
+        12,
+        7,
+        8,
+        28
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "pitch": 0.004963568257986644,
+      "method_face_counts": {
+        "instantmesh": 31180,
+        "visual_hull": 126554
+      },
+      "visual_hull_sha256": "8aefce037c695b4ab189a115e9cda46c7c213cd81e7e31305279cccfcb21c54b",
+      "instantmesh": {
+        "iou": 0.8646179298747929,
+        "recall": 0.9379721716145117,
+        "precision": 0.9165419043794463
+      },
+      "visual_hull": {
+        "iou": 0.8382206114162429,
+        "recall": 1.0,
+        "precision": 0.8382206114162429
+      }
+    }
+  ]
+}

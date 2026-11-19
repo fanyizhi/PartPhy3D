@@ -1,0 +1,191 @@
+{
+  "requested": 50,
+  "methods": {
+    "direct_mass_kg": {
+      "coverage": 50,
+      "metrics": {
+        "num_scenes": 50,
+        "ade_kg": 6.31585496107248,
+        "alde": 0.9898228486067869,
+        "ape": 0.5236762495841609,
+        "mnre": 0.5013488562232262,
+        "rmse_kg": 10.553257044039736
+      },
+      "full_cohort": true,
+      "paired_delta_vs_nerf_cache": {
+        "ade_kg": {
+          "method_minus_reference": -2.5564054275027486,
+          "paired_bootstrap_ci95": [
+            -6.0370848116032105,
+            0.4262339315228985
+          ]
+        },
+        "alde": {
+          "method_minus_reference": 0.17935302517594265,
+          "paired_bootstrap_ci95": [
+            -0.09691052406572814,
+            0.46836677870244114
+          ]
+        },
+        "ape": {
+          "method_minus_reference": -1.0401839310086907,
+          "paired_bootstrap_ci95": [
+            -2.0561333379497966,
+            -0.252996415868643
+          ]
+        },
+        "mnre": {
+          "method_minus_reference": -0.027786445533126952,
+          "paired_bootstrap_ci95": [
+            -0.11960636258541373,
+            0.06674596767747774
+          ]
+        }
+      },
+      "failed_scene_ids": []
+    },
+    "all_solid_mass_kg": {
+      "coverage": 43,
+      "metrics": {
+        "num_scenes": 43,
+        "ade_kg": 31.45639685649288,
+        "alde": 1.0808672136035895,
+        "ape": 2.3163355908313914,
+        "mnre": 0.45819997169310156,
+        "rmse_kg": 64.57444815967946
+      },
+      "full_cohort": false,
+      "paired_delta_vs_nerf_cache": {
+        "ade_kg": {
+          "method_minus_reference": 23.07810311345132,
+          "paired_bootstrap_ci95": [
+            9.611844967665416,
+            39.74912820194905
+          ]
+        },
+        "alde": {
+          "method_minus_reference": 0.21914908357449217,
+          "paired_bootstrap_ci95": [
+            -0.1107004847302399,
+            0.5662598304546249
+          ]
+        },
+        "ape": {
+          "method_minus_reference": 0.6232531321381922,
+          "paired_bootstrap_ci95": [
+            -0.9285995869960422,
+            2.1398984707973034
+          ]
+        },
+        "mnre": {
+          "method_minus_reference": -0.05061547715962802,
+          "paired_bootstrap_ci95": [
+            -0.15399338058958958,
+            0.05806526098143113
+          ]
+        }
+      },
+      "failed_scene_ids": [
+        "B07YM1FZSJ_ATVPDKIKX0DER",
+        "B07YLZTGZ9_ATVPDKIKX0DER",
+        "B075X463J2_ATVPDKIKX0DER",
+        "B074KMVVK7_ATVPDKIKX0DER",
+        "B0723DD7Z6",
+        "B07YM1D7B7_ATVPDKIKX0DER",
+        "B07HPQ358H_ATVPDKIKX0DER"
+      ]
+    },
+    "construction_mass_kg": {
+      "coverage": 43,
+      "metrics": {
+        "num_scenes": 43,
+        "ade_kg": 9.750272081015265,
+        "alde": 1.0651193263595964,
+        "ape": 0.7703120627223966,
+        "mnre": 0.47202597539240376,
+        "rmse_kg": 26.764152595319036
+      },
+      "full_cohort": false,
+      "paired_delta_vs_nerf_cache": {
+        "ade_kg": {
+          "method_minus_reference": 1.371978337973713,
+          "paired_bootstrap_ci95": [
+            -4.419484500023161,
+            9.115471032742176
+          ]
+        },
+        "alde": {
+          "method_minus_reference": 0.20340119633049902,
+          "paired_bootstrap_ci95": [
+            -0.09586084666945635,
+            0.507767339809547
+          ]
+        },
+        "ape": {
+          "method_minus_reference": -0.9227703959708016,
+          "paired_bootstrap_ci95": [
+            -2.112044494630762,
+            0.04424330582977234
+          ]
+        },
+        "mnre": {
+          "method_minus_reference": -0.03678947346032575,
+          "paired_bootstrap_ci95": [
+            -0.13346657628365124,
+            0.06269959923531336
+          ]
+        }
+      },
+      "failed_scene_ids": [
+        "B07YM1FZSJ_ATVPDKIKX0DER",
+        "B07YLZTGZ9_ATVPDKIKX0DER",
+        "B075X463J2_ATVPDKIKX0DER",
+        "B074KMVVK7_ATVPDKIKX0DER",
+        "B0723DD7Z6",
+        "B07YM1D7B7_ATVPDKIKX0DER",
+        "B07HPQ358H_ATVPDKIKX0DER"
+      ]
+    }
+  },
+  "baseline": {
+    "num_scenes": 50,
+    "ade_kg": 8.87226038857523,
+    "alde": 0.8104698234308443,
+    "ape": 1.5638601805928514,
+    "mnre": 0.5291353017563533,
+    "rmse_kg": 15.47590605738486
+  },
+  "construction_vs_all_solid": {
+    "matched_objects": 43,
+    "paired_delta": {
+      "ade_kg": {
+        "method_minus_reference": -21.706124775477615,
+        "paired_bootstrap_ci95": [
+          -37.33676007350057,
+          -10.129023226902254
+        ]
+      },
+      "alde": {
+        "method_minus_reference": -0.015747887243993234,
+        "paired_bootstrap_ci95": [
+          -0.3002490563431158,
+          0.2605880021077696
+        ]
+      },
+      "ape": {
+        "method_minus_reference": -1.546023528108994,
+        "paired_bootstrap_ci95": [
+          -2.758905187453545,
+          -0.5964116611590385
+        ]
+      },
+      "mnre": {
+        "method_minus_reference": 0.013826003699302262,
+        "paired_bootstrap_ci95": [
+          -0.0962557377160779,
+          0.12419183485495962
+        ]
+      }
+    }
+  }
+}

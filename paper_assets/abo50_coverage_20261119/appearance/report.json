@@ -1,0 +1,76 @@
+{
+  "scenes": [
+    {
+      "scene_id": "B07TWQTVXL_ATVPDKIKX0DER",
+      "view_08_density_coverage": 0.5724461431549688,
+      "material_source_view_coverage": [
+        {
+          "view": 0,
+          "original": 0.0,
+          "filled": 0.0
+        },
+        {
+          "view": 10,
+          "original": 0.9975372828020249,
+          "filled": 1.0
+        },
+        {
+          "view": 20,
+          "original": 0.9985443959243085,
+          "filled": 1.0
+        }
+      ]
+    },
+    {
+      "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+      "view_08_density_coverage": 0.9644473831442958,
+      "material_source_view_coverage": [
+        {
+          "view": 0,
+          "original": 0.99187590054876,
+          "filled": 1.0
+        },
+        {
+          "view": 10,
+          "original": 0.9918422102171784,
+          "filled": 0.9999637431565208
+        },
+        {
+          "view": 20,
+          "original": 0.9907585275946212,
+          "filled": 0.9999480816157001
+        }
+      ]
+    },
+    {
+      "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+      "view_08_density_coverage": 0.917385493864658,
+      "material_source_view_coverage": [
+        {
+          "view": 0,
+          "original": 0.9044085866589828,
+          "filled": 0.9971185708111223
+        },
+        {
+          "view": 10,
+          "original": 0.9928007023705004,
+          "filled": 0.9997366110623354
+        },
+        {
+          "view": 20,
+          "original": 0.9954585152838428,
+          "filled": 0.9993013100436681
+        }
+      ]
+    }
+  ],
+  "input_views": [
+    0,
+    10,
+    20
+  ],
+  "color_radius": 0.18,
+  "spatial_radius": 0.14,
+  "competitor_ratio": 1.25,
+  "mesh_appearance_completion": true
+}

@@ -107,7 +107,7 @@ def density_figure(directory: Path, output: Path) -> None:
     pugs = "pugs_foreground_coverage" in manifest["scenes"][0]
     if replay:
         keys.append("propagated")
-        titles.append("Ours · local propagation")
+        titles.append(manifest.get("density_variant_label", "Ours · local propagation"))
     if pugs:
         keys = ["nerf", "pugs", "propagated"]
         titles = [
@@ -167,7 +167,10 @@ def density_figure(directory: Path, output: Path) -> None:
         [100, 300, 1000, 3000, 8000], labels=["100", "300", "1,000", "3,000", "8,000"]
     )
     bar.set_label("Estimated density (kg m$^{-3}$)")
-    name = "density_coverage_ablation" if replay else "shared_density_maps"
+    name = manifest.get(
+        "density_variant_filename",
+        "density_coverage_ablation" if replay else "shared_density_maps",
+    )
     save(figure, output / ("pugs_rack_density" if pugs else name))
 
 

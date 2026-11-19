@@ -15,7 +15,7 @@ from run_abo50_density_maps import CASES
 from tactile3d.vision.part_lifting import NORMAL_COSINE, finalize_votes
 
 
-def assign(mesh, tokens, votes):
+def assign(mesh, tokens, votes, *, abstain_unknown=False):
     parts = tokens["parts"]
     names = sorted({p["surface_material"] for p in parts})
     material_indices = {name: i + 1 for i, name in enumerate(names)}
@@ -24,6 +24,10 @@ def assign(mesh, tokens, votes):
         grouped[:, material_indices[part["surface_material"]]] += votes[
             :, part["part_index"]
         ]
+    if abstain_unknown:
+        # An empty segmentation abstains from the material decision. Geometry
+        # visibility still comes from the unmodified votes below.
+        grouped[:, 0] = 0
     labels, _, _ = finalize_votes(mesh, grouped)
     # One view-equivalent of positive evidence is required for a seed.
     labels[grouped[:, 1:].sum(axis=1) < 1] = 0
@@ -63,6 +67,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--abstain-unknown", action="store_true")
     args = parser.parse_args()
     baseline = read_json(args.source / "density_manifest.json")
     meshes = read_json(args.source / "meshes.json")
@@ -81,7 +86,9 @@ def main() -> None:
         if tokens["mesh_sha256"] != meshes[scene]["sha256"]:
             raise ValueError("Votes are bound to a different mesh")
         with np.load(field / "surface_fields.npz") as stored:
-            names, grouped, propagated = assign(mesh, tokens, stored["votes"])
+            names, grouped, propagated = assign(
+                mesh, tokens, stored["votes"], abstain_unknown=args.abstain_unknown
+            )
         density = np.array(
             [
                 np.nan,
@@ -121,7 +128,14 @@ def main() -> None:
             },
         )
         np.savez_compressed(field / "surface_fields.npz", labels=propagated)
-    write_json(args.output / "density_manifest.json", {**baseline, "scenes": reports})
+    write_json(
+        args.output / "density_manifest.json",
+        {
+            **baseline,
+            "scenes": reports,
+            "unknown_votes_abstain": args.abstain_unknown,
+        },
+    )
 
 
 if __name__ == "__main__":

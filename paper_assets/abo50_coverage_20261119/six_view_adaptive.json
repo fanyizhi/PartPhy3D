@@ -1,0 +1,1869 @@
+{
+  "requested": 50,
+  "valid": 50,
+  "metrics": {
+    "instantmesh": {
+      "iou": 0.9177604716287032,
+      "recall": 0.9673374523728472,
+      "precision": 0.9438140699969492
+    },
+    "adaptive": {
+      "iou": 0.9171784393513807,
+      "recall": 0.9735827429475675,
+      "precision": 0.9404476140593213
+    }
+  },
+  "adaptive_threshold": 0.8,
+  "scenes": [
+    {
+      "scene_id": "B07TWQTVXL_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.5233828919270577,
+      "visual_hull_selected": true,
+      "pitch": 0.005621153279228827,
+      "method_face_counts": {
+        "instantmesh": 24128,
+        "adaptive": 121824
+      },
+      "visual_hull_sha256": "d4fafd4d76d1d9bcc57e280daf5a266d0c2988a2c31b96c404ad770363d3a4a7",
+      "instantmesh": {
+        "iou": 0.48593804696093085,
+        "recall": 0.7683828185024398,
+        "precision": 0.5681484254160644
+      },
+      "adaptive": {
+        "iou": 0.5252092053978253,
+        "recall": 1.0,
+        "precision": 0.5252092053978253
+      }
+    },
+    {
+      "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9511356733573667,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 83336,
+        "adaptive": 83336
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9496809139597259,
+        "recall": 0.9887942485258199,
+        "precision": 0.9600483518537514
+      },
+      "adaptive": {
+        "iou": 0.9496809139597259,
+        "recall": 0.9887942485258199,
+        "precision": 0.9600483518537514
+      }
+    },
+    {
+      "scene_id": "B07TDMJPWG_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.8913026538009023,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 117476,
+        "adaptive": 117476
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9018941701610149,
+        "recall": 0.9630914242077236,
+        "precision": 0.9333737738104357
+      },
+      "adaptive": {
+        "iou": 0.9018941701610149,
+        "recall": 0.9630914242077236,
+        "precision": 0.9333737738104357
+      }
+    },
+    {
+      "scene_id": "B01MRT550V",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.8281800261452733,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 8424,
+        "adaptive": 8424
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.8012968899341965,
+        "recall": 0.8818352901260441,
+        "precision": 0.8925549986849296
+      },
+      "adaptive": {
+        "iou": 0.8012968899341965,
+        "recall": 0.8818352901260441,
+        "precision": 0.8925549986849296
+      }
+    },
+    {
+      "scene_id": "B0727Q5F94_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9343512742026606,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 185532,
+        "adaptive": 185532
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9304712473103648,
+        "recall": 0.9698965105172892,
+        "precision": 0.9581088166734512
+      },
+      "adaptive": {
+        "iou": 0.9304712473103648,
+        "recall": 0.9698965105172892,
+        "precision": 0.9581088166734512
+      }
+    },
+    {
+      "scene_id": "B07YM1FZSJ_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.8270923381455965,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 53920,
+        "adaptive": 53920
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.8577359774229948,
+        "recall": 0.907297291760088,
+        "precision": 0.9385610123012013
+      },
+      "adaptive": {
+        "iou": 0.8577359774229948,
+        "recall": 0.907297291760088,
+        "precision": 0.9385610123012013
+      }
+    },
+    {
+      "scene_id": "B07DBB76JV_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9626674425405845,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 64816,
+        "adaptive": 64816
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.957362493070423,
+        "recall": 0.9864681468600741,
+        "precision": 0.9701733394795095
+      },
+      "adaptive": {
+        "iou": 0.957362493070423,
+        "recall": 0.9864681468600741,
+        "precision": 0.9701733394795095
+      }
+    },
+    {
+      "scene_id": "B01MXTX8MC",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.8340459191680409,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 8284,
+        "adaptive": 8284
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.8122633424271969,
+        "recall": 0.8739475346465078,
+        "precision": 0.9170128128316781
+      },
+      "adaptive": {
+        "iou": 0.8122633424271969,
+        "recall": 0.8739475346465078,
+        "precision": 0.9170128128316781
+      }
+    },
+    {
+      "scene_id": "B07YLZTGZ9_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.8377592993364948,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 69620,
+        "adaptive": 69620
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.8708580957666622,
+        "recall": 0.9025532327657348,
+        "precision": 0.9598773674628056
+      },
+      "adaptive": {
+        "iou": 0.8708580957666622,
+        "recall": 0.9025532327657348,
+        "precision": 0.9598773674628056
+      }
+    },
+    {
+      "scene_id": "B082Q989SF_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.973615865215207,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 101596,
+        "adaptive": 101596
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.971370562659323,
+        "recall": 0.9894290615587197,
+        "precision": 0.9815955559117278
+      },
+      "adaptive": {
+        "iou": 0.971370562659323,
+        "recall": 0.9894290615587197,
+        "precision": 0.9815955559117278
+      }
+    },
+    {
+      "scene_id": "B075X463J2_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9448398127153976,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 73520,
+        "adaptive": 73520
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9555258668177832,
+        "recall": 0.9796046758688634,
+        "precision": 0.9748454195174586
+      },
+      "adaptive": {
+        "iou": 0.9555258668177832,
+        "recall": 0.9796046758688634,
+        "precision": 0.9748454195174586
+      }
+    },
+    {
+      "scene_id": "B01LP0UKJE_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.897298436317932,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 18624,
+        "adaptive": 18624
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9044848482373083,
+        "recall": 0.968317893581542,
+        "precision": 0.9329311208545623
+      },
+      "adaptive": {
+        "iou": 0.9044848482373083,
+        "recall": 0.968317893581542,
+        "precision": 0.9329311208545623
+      }
+    },
+    {
+      "scene_id": "B07QFP4PV5_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9594758267879314,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 55872,
+        "adaptive": 55872
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9540697093043553,
+        "recall": 0.9889764223249934,
+        "precision": 0.9644228030233402
+      },
+      "adaptive": {
+        "iou": 0.9540697093043553,
+        "recall": 0.9889764223249934,
+        "precision": 0.9644228030233402
+      }
+    },
+    {
+      "scene_id": "B07MBFDKYY_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9749215221102006,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 97240,
+        "adaptive": 97240
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.973393879366792,
+        "recall": 0.9936455101139071,
+        "precision": 0.979507959365533
+      },
+      "adaptive": {
+        "iou": 0.973393879366792,
+        "recall": 0.9936455101139071,
+        "precision": 0.979507959365533
+      }
+    },
+    {
+      "scene_id": "B074KMVVK7_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9587805657080134,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 63896,
+        "adaptive": 63896
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.948543582124396,
+        "recall": 0.9832939211407913,
+        "precision": 0.9642432317297202
+      },
+      "adaptive": {
+        "iou": 0.948543582124396,
+        "recall": 0.9832939211407913,
+        "precision": 0.9642432317297202
+      }
+    },
+    {
+      "scene_id": "B0723DD7Z6",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9400212343939446,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 44120,
+        "adaptive": 44120
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9544254441359042,
+        "recall": 0.9907074390791526,
+        "precision": 0.9634287735175296
+      },
+      "adaptive": {
+        "iou": 0.9544254441359042,
+        "recall": 0.9907074390791526,
+        "precision": 0.9634287735175296
+      }
+    },
+    {
+      "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.8459310596654722,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 31180,
+        "adaptive": 31180
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.8747370948616586,
+        "recall": 0.9414853117062876,
+        "precision": 0.9242674059430186
+      },
+      "adaptive": {
+        "iou": 0.8747370948616586,
+        "recall": 0.9414853117062876,
+        "precision": 0.9242674059430186
+      }
+    },
+    {
+      "scene_id": "B07YM1D7B7_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.8378215255248946,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 69640,
+        "adaptive": 69640
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.8711367137870673,
+        "recall": 0.9029003176440088,
+        "precision": 0.9598228009858621
+      },
+      "adaptive": {
+        "iou": 0.8711367137870673,
+        "recall": 0.9029003176440088,
+        "precision": 0.9598228009858621
+      }
+    },
+    {
+      "scene_id": "B01LP0VI3G_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9076398322228479,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 18788,
+        "adaptive": 18788
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9241061599709054,
+        "recall": 0.9752877705209029,
+        "precision": 0.9472359496680375
+      },
+      "adaptive": {
+        "iou": 0.9241061599709054,
+        "recall": 0.9752877705209029,
+        "precision": 0.9472359496680375
+      }
+    },
+    {
+      "scene_id": "B012S0S20Y_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9552991264545664,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 26968,
+        "adaptive": 26968
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9577061446543916,
+        "recall": 0.9909601400386182,
+        "precision": 0.9661413296130439
+      },
+      "adaptive": {
+        "iou": 0.9577061446543916,
+        "recall": 0.9909601400386182,
+        "precision": 0.9661413296130439
+      }
+    },
+    {
+      "scene_id": "B07Y3Q7MDR",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.8630498798729583,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 37684,
+        "adaptive": 37684
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.8784069115985065,
+        "recall": 0.9541899401793313,
+        "precision": 0.9164994499687641
+      },
+      "adaptive": {
+        "iou": 0.8784069115985065,
+        "recall": 0.9541899401793313,
+        "precision": 0.9164994499687641
+      }
+    },
+    {
+      "scene_id": "B076YJFGCN_A1F83G8C2ARO7P",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9581197264266792,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 26752,
+        "adaptive": 26752
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9568345491593595,
+        "recall": 0.9909590164506028,
+        "precision": 0.9653005854295277
+      },
+      "adaptive": {
+        "iou": 0.9568345491593595,
+        "recall": 0.9909590164506028,
+        "precision": 0.9653005854295277
+      }
+    },
+    {
+      "scene_id": "B07Y2B738L_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9660331999077313,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 119784,
+        "adaptive": 119784
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9627250282962155,
+        "recall": 0.9881058890212486,
+        "precision": 0.9740345174753143
+      },
+      "adaptive": {
+        "iou": 0.9627250282962155,
+        "recall": 0.9881058890212486,
+        "precision": 0.9740345174753143
+      }
+    },
+    {
+      "scene_id": "B01DN8TEA2_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9579642534231684,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 44216,
+        "adaptive": 44216
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9495623921623441,
+        "recall": 0.991630045298386,
+        "precision": 0.9574466103871414
+      },
+      "adaptive": {
+        "iou": 0.9495623921623441,
+        "recall": 0.991630045298386,
+        "precision": 0.9574466103871414
+      }
+    },
+    {
+      "scene_id": "B07F3T4RSD_A13V1IB3VIYZZH",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9583989337624819,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 165632,
+        "adaptive": 165632
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9107792603979785,
+        "recall": 0.9945576868899219,
+        "precision": 0.9153970886530262
+      },
+      "adaptive": {
+        "iou": 0.9107792603979785,
+        "recall": 0.9945576868899219,
+        "precision": 0.9153970886530262
+      }
+    },
+    {
+      "scene_id": "B07JL5PLPN_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9357563134779928,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 51844,
+        "adaptive": 51844
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9321336101690932,
+        "recall": 0.9775913244383201,
+        "precision": 0.9524486917012296
+      },
+      "adaptive": {
+        "iou": 0.9321336101690932,
+        "recall": 0.9775913244383201,
+        "precision": 0.9524486917012296
+      }
+    },
+    {
+      "scene_id": "B075YNL7R3_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9118263552021902,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 43768,
+        "adaptive": 43768
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9268674705177921,
+        "recall": 0.9819770350507939,
+        "precision": 0.9426464350525908
+      },
+      "adaptive": {
+        "iou": 0.9268674705177921,
+        "recall": 0.9819770350507939,
+        "precision": 0.9426464350525908
+      }
+    },
+    {
+      "scene_id": "B07JQMLQ2C",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9362880868457859,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 22780,
+        "adaptive": 22780
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9354074373694342,
+        "recall": 0.9813429718890813,
+        "precision": 0.9524756575021577
+      },
+      "adaptive": {
+        "iou": 0.9354074373694342,
+        "recall": 0.9813429718890813,
+        "precision": 0.9524756575021577
+      }
+    },
+    {
+      "scene_id": "B07SRSJFBH",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9494113061054638,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 34000,
+        "adaptive": 34000
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9490920843493669,
+        "recall": 0.9811146231913636,
+        "precision": 0.966922232955144
+      },
+      "adaptive": {
+        "iou": 0.9490920843493669,
+        "recall": 0.9811146231913636,
+        "precision": 0.966922232955144
+      }
+    },
+    {
+      "scene_id": "B082L28P18_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9549610718354143,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 95984,
+        "adaptive": 95984
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9569164873056105,
+        "recall": 0.9756040990116315,
+        "precision": 0.9805680788921617
+      },
+      "adaptive": {
+        "iou": 0.9569164873056105,
+        "recall": 0.9756040990116315,
+        "precision": 0.9805680788921617
+      }
+    },
+    {
+      "scene_id": "B07GFRP9RY_A1F83G8C2ARO7P",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9676775545938585,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 125276,
+        "adaptive": 125276
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9606727686956901,
+        "recall": 0.9839167311849826,
+        "precision": 0.9761623021651777
+      },
+      "adaptive": {
+        "iou": 0.9606727686956901,
+        "recall": 0.9839167311849826,
+        "precision": 0.9761623021651777
+      }
+    },
+    {
+      "scene_id": "B07WQ4VQ74_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.7705950966749938,
+      "visual_hull_selected": true,
+      "pitch": 0.0068148107388642815,
+      "method_face_counts": {
+        "instantmesh": 20996,
+        "adaptive": 103284
+      },
+      "visual_hull_sha256": "70594a114631ebc980d0fd7bb39d2bcb917539d83c8bc79b7b6c1d009d5c80dd",
+      "instantmesh": {
+        "iou": 0.7889669072927864,
+        "recall": 0.9193526527615399,
+        "precision": 0.8459777118529012
+      },
+      "adaptive": {
+        "iou": 0.7205941349897548,
+        "recall": 1.0,
+        "precision": 0.7205941349897548
+      }
+    },
+    {
+      "scene_id": "B07K6S2G5Z_A1F83G8C2ARO7P",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9482236168022228,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 91800,
+        "adaptive": 91800
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9432250807036411,
+        "recall": 0.9822351267151364,
+        "precision": 0.9595541093455754
+      },
+      "adaptive": {
+        "iou": 0.9432250807036411,
+        "recall": 0.9822351267151364,
+        "precision": 0.9595541093455754
+      }
+    },
+    {
+      "scene_id": "B00WRDS0AU_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9367706097699285,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 124260,
+        "adaptive": 124260
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9442136358045915,
+        "recall": 0.9905639963697578,
+        "precision": 0.9529036843232084
+      },
+      "adaptive": {
+        "iou": 0.9442136358045915,
+        "recall": 0.9905639963697578,
+        "precision": 0.9529036843232084
+      }
+    },
+    {
+      "scene_id": "B075HXHKVF_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.974644406577967,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 130676,
+        "adaptive": 130676
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9730100373573585,
+        "recall": 0.9961523151543018,
+        "precision": 0.976685684698257
+      },
+      "adaptive": {
+        "iou": 0.9730100373573585,
+        "recall": 0.9961523151543018,
+        "precision": 0.976685684698257
+      }
+    },
+    {
+      "scene_id": "B084W368ML_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9122555607216407,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 47484,
+        "adaptive": 47484
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9282063082149027,
+        "recall": 0.9821942762190877,
+        "precision": 0.9440523525903449
+      },
+      "adaptive": {
+        "iou": 0.9282063082149027,
+        "recall": 0.9821942762190877,
+        "precision": 0.9440523525903449
+      }
+    },
+    {
+      "scene_id": "B07XHQQ95Y_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9574716311819649,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 78792,
+        "adaptive": 78792
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9567036968424509,
+        "recall": 0.9853152397308947,
+        "precision": 0.9705699701442763
+      },
+      "adaptive": {
+        "iou": 0.9567036968424509,
+        "recall": 0.9853152397308947,
+        "precision": 0.9705699701442763
+      }
+    },
+    {
+      "scene_id": "B07WQ4P35G",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.8372520662303851,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 44740,
+        "adaptive": 44740
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.8580266528051638,
+        "recall": 0.9596436998960005,
+        "precision": 0.8895245602279506
+      },
+      "adaptive": {
+        "iou": 0.8580266528051638,
+        "recall": 0.9596436998960005,
+        "precision": 0.8895245602279506
+      }
+    },
+    {
+      "scene_id": "B075YLJM75",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9645870977993599,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 68488,
+        "adaptive": 68488
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9527426604029742,
+        "recall": 0.9916982758256111,
+        "precision": 0.9603977577885221
+      },
+      "adaptive": {
+        "iou": 0.9527426604029742,
+        "recall": 0.9916982758256111,
+        "precision": 0.9603977577885221
+      }
+    },
+    {
+      "scene_id": "B075YQ46MP_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.84215849877961,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 75712,
+        "adaptive": 75712
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.8629112110292944,
+        "recall": 0.9540907539378626,
+        "precision": 0.8987805802548574
+      },
+      "adaptive": {
+        "iou": 0.8629112110292944,
+        "recall": 0.9540907539378626,
+        "precision": 0.8987805802548574
+      }
+    },
+    {
+      "scene_id": "B07N6RT9SM_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9682625238414578,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 64240,
+        "adaptive": 64240
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9655540793974801,
+        "recall": 0.9953270359246332,
+        "precision": 0.9700051880515081
+      },
+      "adaptive": {
+        "iou": 0.9655540793974801,
+        "recall": 0.9953270359246332,
+        "precision": 0.9700051880515081
+      }
+    },
+    {
+      "scene_id": "B07DB9638P_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.8921418436667469,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 47008,
+        "adaptive": 47008
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9015963774447515,
+        "recall": 0.9658594944910203,
+        "precision": 0.9310398034850976
+      },
+      "adaptive": {
+        "iou": 0.9015963774447515,
+        "recall": 0.9658594944910203,
+        "precision": 0.9310398034850976
+      }
+    },
+    {
+      "scene_id": "B07HPQ358H_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9591357678259406,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 94392,
+        "adaptive": 94392
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.953604362377018,
+        "recall": 0.985810239520159,
+        "precision": 0.9670076607784823
+      },
+      "adaptive": {
+        "iou": 0.953604362377018,
+        "recall": 0.985810239520159,
+        "precision": 0.9670076607784823
+      }
+    },
+    {
+      "scene_id": "B075YZPG5Y_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.971005752670138,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 70356,
+        "adaptive": 70356
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9561745221535345,
+        "recall": 0.9900342319885057,
+        "precision": 0.9655407980357172
+      },
+      "adaptive": {
+        "iou": 0.9561745221535345,
+        "recall": 0.9900342319885057,
+        "precision": 0.9655407980357172
+      }
+    },
+    {
+      "scene_id": "B078GTTCCF_A1F83G8C2ARO7P",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9587018814702267,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 50376,
+        "adaptive": 50376
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9446744971376994,
+        "recall": 0.988118978761721,
+        "precision": 0.9560683924868622
+      },
+      "adaptive": {
+        "iou": 0.9446744971376994,
+        "recall": 0.988118978761721,
+        "precision": 0.9560683924868622
+      }
+    },
+    {
+      "scene_id": "B072PZ4LVN_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.966596989733127,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 54868,
+        "adaptive": 54868
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9593613624745562,
+        "recall": 0.9836293420117301,
+        "precision": 0.9749516448357891
+      },
+      "adaptive": {
+        "iou": 0.9593613624745562,
+        "recall": 0.9836293420117301,
+        "precision": 0.9749516448357891
+      }
+    },
+    {
+      "scene_id": "B07B8PXMRT_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9589511361471601,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 54064,
+        "adaptive": 54064
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9393503976076246,
+        "recall": 0.9943335059537896,
+        "precision": 0.9444345567948466
+      },
+      "adaptive": {
+        "iou": 0.9393503976076246,
+        "recall": 0.9943335059537896,
+        "precision": 0.9444345567948466
+      }
+    },
+    {
+      "scene_id": "B003LSTD38_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9670463826143462,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 65416,
+        "adaptive": 65416
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.961142449433984,
+        "recall": 0.9865438679870313,
+        "precision": 0.9740575772522554
+      },
+      "adaptive": {
+        "iou": 0.961142449433984,
+        "recall": 0.9865438679870313,
+        "precision": 0.9740575772522554
+      }
+    },
+    {
+      "scene_id": "B07JM6HFVP_ATVPDKIKX0DER",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9759825208170514,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 161824,
+        "adaptive": 161824
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9750873020643743,
+        "recall": 0.9929466929350946,
+        "precision": 0.981909428116157
+      },
+      "adaptive": {
+        "iou": 0.9750873020643743,
+        "recall": 0.9929466929350946,
+        "precision": 0.981909428116157
+      }
+    },
+    {
+      "scene_id": "B07GFRNHYW_A1RKKUPIHCS9HS",
+      "input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_views": [
+        13,
+        5,
+        29,
+        11,
+        9,
+        22
+      ],
+      "instantmesh_input_iou": 0.9416643468523884,
+      "visual_hull_selected": false,
+      "pitch": null,
+      "method_face_counts": {
+        "instantmesh": 54656,
+        "adaptive": 54656
+      },
+      "visual_hull_sha256": null,
+      "instantmesh": {
+        "iou": 0.9470728579361959,
+        "recall": 0.97515856836331,
+        "precision": 0.9710391399589516
+      },
+      "adaptive": {
+        "iou": 0.9470728579361959,
+        "recall": 0.97515856836331,
+        "precision": 0.9710391399589516
+      }
+    }
+  ]
+}

@@ -1,0 +1,266 @@
+{
+  "views": [
+    0,
+    10,
+    20
+  ],
+  "margin": 0.015,
+  "minimum_agreeing_views": 2,
+  "clip_sha256": "80905176486d952914c1deb3b753b8e653ab54aa4ffb14208bc5007cf7643a16",
+  "scenes": [
+    {
+      "scene_id": "B07TWQTVXL_ATVPDKIKX0DER",
+      "view": 8,
+      "mesh_sha256": "0c1841499118e456fea866d3c01c876e61b79373c7f507d611fcc2338be0b780",
+      "shared_mesh_foreground_coverage": 0.5724461431549688,
+      "ours_foreground_coverage": 0.080090340514246,
+      "coverage_after": 0.3823835997220292,
+      "changes": [],
+      "crop_predictions": {
+        "1": [
+          {
+            "view": 0,
+            "choice": "steel",
+            "margin": 0.009016424417495728
+          },
+          {
+            "view": 10,
+            "choice": "aluminum",
+            "margin": 0.002908661961555481
+          },
+          {
+            "view": 20,
+            "choice": "aluminum",
+            "margin": 0.007829025387763977
+          }
+        ],
+        "2": [
+          {
+            "view": 0,
+            "choice": "aluminum",
+            "margin": 0.004788294434547424
+          },
+          {
+            "view": 10,
+            "choice": "aluminum",
+            "margin": 0.002868086099624634
+          },
+          {
+            "view": 20,
+            "choice": "aluminum",
+            "margin": 0.007829025387763977
+          }
+        ],
+        "3": [
+          {
+            "view": 0,
+            "choice": "steel",
+            "margin": 0.002602875232696533
+          },
+          {
+            "view": 10,
+            "choice": "aluminum",
+            "margin": 0.002868086099624634
+          },
+          {
+            "view": 20,
+            "choice": "aluminum",
+            "margin": 0.007829025387763977
+          }
+        ],
+        "4": [
+          {
+            "view": 0,
+            "choice": "aluminum",
+            "margin": 0.004788294434547424
+          },
+          {
+            "view": 10,
+            "choice": "aluminum",
+            "margin": 0.002868086099624634
+          },
+          {
+            "view": 20,
+            "choice": "aluminum",
+            "margin": 0.007829025387763977
+          }
+        ],
+        "5": [
+          {
+            "view": 0,
+            "choice": "aluminum",
+            "margin": 0.004788294434547424
+          },
+          {
+            "view": 10,
+            "choice": "aluminum",
+            "margin": 0.002868086099624634
+          },
+          {
+            "view": 20,
+            "choice": "aluminum",
+            "margin": 0.007829025387763977
+          }
+        ]
+      }
+    },
+    {
+      "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+      "view": 8,
+      "mesh_sha256": "f431ead3d2a32003de12474f02f0a853f9a75b75304ee8f53ef3ca1de696f0c2",
+      "shared_mesh_foreground_coverage": 0.9814353288235593,
+      "ours_foreground_coverage": 0.5781496363358934,
+      "coverage_after": 0.6553583235847618,
+      "changes": [],
+      "crop_predictions": {
+        "1": [
+          {
+            "view": 0,
+            "choice": "foam",
+            "margin": 0.0004641711711883545
+          },
+          {
+            "view": 10,
+            "choice": "fabric",
+            "margin": 0.008382268249988556
+          },
+          {
+            "view": 20,
+            "choice": "foam",
+            "margin": 0.0004478245973587036
+          }
+        ],
+        "2": [
+          {
+            "view": 0,
+            "choice": "rubber",
+            "margin": 0.009439334273338318
+          },
+          {
+            "view": 10,
+            "choice": "wood",
+            "margin": 0.0029360800981521606
+          },
+          {
+            "view": 20,
+            "choice": "rubber",
+            "margin": 0.012883931398391724
+          }
+        ]
+      }
+    },
+    {
+      "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+      "view": 8,
+      "mesh_sha256": "579a2b7fd7629786f5727029c44c86b6dfb6f644d2fd0a248bb003bb9ead1127",
+      "shared_mesh_foreground_coverage": 0.9183574292309561,
+      "ours_foreground_coverage": 0.5399100959786174,
+      "coverage_after": 0.5855910581946301,
+      "changes": [],
+      "crop_predictions": {
+        "1": [
+          {
+            "view": 0,
+            "choice": "rubber",
+            "margin": 0.01733282208442688
+          },
+          {
+            "view": 10,
+            "choice": "rubber",
+            "margin": 0.013973027467727661
+          },
+          {
+            "view": 20,
+            "choice": "rubber",
+            "margin": 0.007224783301353455
+          }
+        ],
+        "2": [
+          {
+            "view": 0,
+            "choice": "rubber",
+            "margin": 0.021766409277915955
+          },
+          {
+            "view": 10,
+            "choice": "rubber",
+            "margin": 0.01140749454498291
+          },
+          {
+            "view": 20,
+            "choice": "rubber",
+            "margin": 0.006256565451622009
+          }
+        ],
+        "3": [
+          {
+            "view": 0,
+            "choice": "steel",
+            "margin": 0.007371887564659119
+          },
+          {
+            "view": 10,
+            "choice": "steel",
+            "margin": 0.01571737229824066
+          },
+          {
+            "view": 20,
+            "choice": "steel",
+            "margin": 0.005957216024398804
+          }
+        ],
+        "4": [
+          {
+            "view": 0,
+            "choice": "steel",
+            "margin": 0.007371887564659119
+          },
+          {
+            "view": 10,
+            "choice": "steel",
+            "margin": 0.01844996213912964
+          },
+          {
+            "view": 20,
+            "choice": "steel",
+            "margin": 0.0018473491072654724
+          }
+        ],
+        "5": [
+          {
+            "view": 0,
+            "choice": "steel",
+            "margin": 0.007371887564659119
+          },
+          {
+            "view": 10,
+            "choice": "steel",
+            "margin": 0.01936832070350647
+          },
+          {
+            "view": 20,
+            "choice": "steel",
+            "margin": 0.0030001550912857056
+          }
+        ],
+        "6": [
+          {
+            "view": 0,
+            "choice": "steel",
+            "margin": 0.007371887564659119
+          },
+          {
+            "view": 10,
+            "choice": "steel",
+            "margin": 0.01936832070350647
+          },
+          {
+            "view": 20,
+            "choice": "steel",
+            "margin": 0.0030001550912857056
+          }
+        ]
+      }
+    }
+  ]
+}

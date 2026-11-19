@@ -1,0 +1,136 @@
+{
+  "scene": "B07TWQTVXL_ATVPDKIKX0DER",
+  "rows": [
+    {
+      "view": 1,
+      "instantmesh": {
+        "geometry_coverage": 0.5232148104613576,
+        "density_coverage": 0.4645900675874229
+      },
+      "hull": {
+        "geometry_coverage": 0.9955921245959447,
+        "density_coverage": 0.8530708198648251
+      },
+      "hull_abstention": {
+        "geometry_coverage": 0.9955921245959447,
+        "density_coverage": 0.8530708198648251
+      },
+      "hull_material_consensus": {
+        "geometry_coverage": 0.9955921245959447,
+        "density_coverage": 0.9955921245959447
+      }
+    },
+    {
+      "view": 7,
+      "instantmesh": {
+        "geometry_coverage": 0.6780258519388954,
+        "density_coverage": 0.581864473168821
+      },
+      "hull": {
+        "geometry_coverage": 0.9982373678025852,
+        "density_coverage": 0.600078339208774
+      },
+      "hull_abstention": {
+        "geometry_coverage": 0.9982373678025852,
+        "density_coverage": 0.600078339208774
+      },
+      "hull_material_consensus": {
+        "geometry_coverage": 0.9982373678025852,
+        "density_coverage": 0.9982373678025852
+      }
+    },
+    {
+      "view": 16,
+      "instantmesh": {
+        "geometry_coverage": 0.449768875192604,
+        "density_coverage": 0.39661016949152544
+      },
+      "hull": {
+        "geometry_coverage": 0.9953775038520801,
+        "density_coverage": 0.7802773497688752
+      },
+      "hull_abstention": {
+        "geometry_coverage": 0.9953775038520801,
+        "density_coverage": 0.7802773497688752
+      },
+      "hull_material_consensus": {
+        "geometry_coverage": 0.9953775038520801,
+        "density_coverage": 0.9953775038520801
+      }
+    },
+    {
+      "view": 23,
+      "instantmesh": {
+        "geometry_coverage": 0.6602335387609471,
+        "density_coverage": 0.4951346091469348
+      },
+      "hull": {
+        "geometry_coverage": 0.9886474213428479,
+        "density_coverage": 0.5606552059682128
+      },
+      "hull_abstention": {
+        "geometry_coverage": 0.9886474213428479,
+        "density_coverage": 0.5606552059682128
+      },
+      "hull_material_consensus": {
+        "geometry_coverage": 0.9886474213428479,
+        "density_coverage": 0.9886474213428479
+      }
+    },
+    {
+      "view": 28,
+      "instantmesh": {
+        "geometry_coverage": 0.5468477882270986,
+        "density_coverage": 0.3322884012539185
+      },
+      "hull": {
+        "geometry_coverage": 0.9914663880181122,
+        "density_coverage": 0.45419714385231624
+      },
+      "hull_abstention": {
+        "geometry_coverage": 0.9914663880181122,
+        "density_coverage": 0.45419714385231624
+      },
+      "hull_material_consensus": {
+        "geometry_coverage": 0.9914663880181122,
+        "density_coverage": 0.9914663880181122
+      }
+    }
+  ],
+  "material_input_views": [
+    0,
+    10,
+    20
+  ],
+  "geometry_input_views": [
+    13,
+    5,
+    29,
+    11,
+    9,
+    22
+  ],
+  "high_coverage_material_input_views": [
+    10,
+    20
+  ],
+  "single_material_prior_applied": true,
+  "metrics": {
+    "instantmesh": {
+      "geometry_coverage": 0.5716181729161806,
+      "density_coverage": 0.45409754412972453
+    },
+    "hull": {
+      "geometry_coverage": 0.993864161122314,
+      "density_coverage": 0.6496557717326006
+    },
+    "hull_abstention": {
+      "geometry_coverage": 0.993864161122314,
+      "density_coverage": 0.6496557717326006
+    },
+    "hull_material_consensus": {
+      "geometry_coverage": 0.993864161122314,
+      "density_coverage": 0.993864161122314
+    }
+  }
+}
