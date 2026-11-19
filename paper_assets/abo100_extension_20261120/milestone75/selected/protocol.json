@@ -1,0 +1,13 @@
+{
+  "cohort_sha256": "2fdf0812a1845b01681d580da474f3ae2c04fd1fcf78ddbf548a158e8802a0a7",
+  "mass_labels_used": false,
+  "source_sha256": {
+    "previous": "af153594e8114dc1e09ce57bfe3525f08af74b8e30a3def561fa88e28fd976f0",
+    "clip": "6394639b8a5c86ca9f49e3a9f63a7b59b08268ddff5a4a6425281d4b68b18b77",
+    "construction": "a9d4d17dfed8cf2826319c19f1f4570aabc1590ba79fde3c14046dae5baf7d21",
+    "appliance": "169272715433c47d06ce1d3f1d23165f633c7f8ee1d21f848c549ae0f7a66a44"
+  },
+  "appliance_part_name_cues": "\\b(fan|grilles?|grills?|vents?|ventilation|filters?|compressor|condenser|radiator)\\b",
+  "scope": "Official 100 test objects, archived first 50 and prospective additional 50 with fixed automatic appliance routing",
+  "fallback": "Image prior only if the complete geometry/construction pipeline cannot return a valid mass"
+}
