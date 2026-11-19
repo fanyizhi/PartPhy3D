@@ -1,0 +1,59 @@
+{
+  "max_length_m": 1.6,
+  "parts": [
+    {
+      "name": "seat cushion",
+      "evidence": "visible as tufted, upholstered section",
+      "material": "foam",
+      "volume_share": 0.3,
+      "area_share": 0.25,
+      "construction": "solid",
+      "thickness_mm": null
+    },
+    {
+      "name": "backrest",
+      "evidence": "visible as tufted, upholstered section",
+      "material": "foam",
+      "volume_share": 0.2,
+      "area_share": 0.25,
+      "construction": "solid",
+      "thickness_mm": null
+    },
+    {
+      "name": "upholstery fabric",
+      "evidence": "visible covering all surfaces",
+      "material": "fabric",
+      "volume_share": 0.0,
+      "area_share": 0.5,
+      "construction": "shell",
+      "thickness_mm": 5
+    },
+    {
+      "name": "wooden legs",
+      "evidence": "visible as thin legs at base",
+      "material": "wood",
+      "volume_share": 0.02,
+      "area_share": 0.05,
+      "construction": "solid",
+      "thickness_mm": null
+    },
+    {
+      "name": "internal frame",
+      "evidence": "inferred to support structure",
+      "material": "wood",
+      "volume_share": 0.15,
+      "area_share": 0.1,
+      "construction": "shell",
+      "thickness_mm": 20
+    },
+    {
+      "name": "internal support structure",
+      "evidence": "inferred to hold cushions",
+      "material": "wood",
+      "volume_share": 0.05,
+      "area_share": 0.05,
+      "construction": "partial",
+      "occupied_fraction": 0.5
+    }
+  ]
+}

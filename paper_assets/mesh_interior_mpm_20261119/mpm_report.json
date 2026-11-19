@@ -1,0 +1,169 @@
+{
+  "sofa": {
+    "quadrature_n": 1873503,
+    "mpm_n": 4492,
+    "mpm_mass_kg": 40.278372627172516,
+    "mpm_volume_normalization": 1.0,
+    "mesh_volume_m3": 0.4676656916183896,
+    "mpm_grid_m": 0.12307692307692308,
+    "quadrature_volume_m3": 0.46759868938576693,
+    "mesh_volume_relative_error": -0.00014326950602427946,
+    "coarse_volume_m3": 0.46776277553411777,
+    "material_volume_m3": {
+      "fabric": 0.021982529493463753,
+      "foam": 0.4394290882480668,
+      "wood": 0.0061870716434400804
+    },
+    "coarse_material_volume_m3": {
+      "fabric": 0.019865833049339237,
+      "foam": 0.4393825537955561,
+      "wood": 0.00851438868887213
+    },
+    "material_mass_kg": {
+      "fabric": 7.6938853228197805,
+      "foam": 28.562890735034838,
+      "wood": 4.021596568247192
+    },
+    "free_fall": {
+      "dt_s": 4.868088507236086e-06,
+      "duration_s": 5.841706208683303e-05,
+      "elastic_energy_j": 0.0,
+      "max_p2g_mass_residual_kg": 1.4210854715202004e-14,
+      "max_step_momentum_residual_kg_m_s": 1.9098228104371297e-18,
+      "max_deviation_from_ballistic_m": 3.0833630480224487e-17,
+      "min_J": 1.0,
+      "max_J": 1.0
+    },
+    "compression": {
+      "dt_s": 4.863922864366482e-06,
+      "duration_s": 0.0005836707437239778,
+      "elastic_energy_j": 21.309602901007683,
+      "max_p2g_mass_residual_kg": 1.4210854715202004e-14,
+      "max_step_momentum_residual_kg_m_s": 5.506856704438842e-15,
+      "max_deviation_from_ballistic_m": 0.0014378655151989607,
+      "min_J": 0.9946563044487299,
+      "max_J": 1.000138782813827
+    },
+    "uniform_foam_stiffness_ablation": {
+      "dt_s": 4.863922864366482e-06,
+      "duration_s": 0.0005836707437239778,
+      "elastic_energy_j": 16.094387136113276,
+      "max_p2g_mass_residual_kg": 1.4210854715202004e-14,
+      "max_step_momentum_residual_kg_m_s": 6.231919631722163e-15,
+      "max_deviation_from_ballistic_m": 0.00016571531431429845,
+      "min_J": 0.9944355239748727,
+      "max_J": 0.9951128970746862
+    },
+    "construction": {
+      "surface": "fabric",
+      "core": "foam",
+      "thickness_m": 0.005,
+      "frame": "wood",
+      "frame_boxes": [
+        [
+          [
+            -0.6072308360845462,
+            -0.257984288623166,
+            0.18190574150755157
+          ],
+          [
+            0.608769163915454,
+            -0.23798428862316603,
+            0.2502611556777007
+          ]
+        ],
+        [
+          [
+            -0.6072308360845462,
+            0.2539313310481761,
+            0.18190574150755157
+          ],
+          [
+            0.608769163915454,
+            0.27393133104817613,
+            0.2502611556777007
+          ]
+        ],
+        [
+          [
+            -0.6072308360845462,
+            -0.257984288623166,
+            0.18190574150755157
+          ],
+          [
+            -0.5872308360845462,
+            0.27393133104817613,
+            0.2502611556777007
+          ]
+        ],
+        [
+          [
+            0.588769163915454,
+            -0.257984288623166,
+            0.18190574150755157
+          ],
+          [
+            0.608769163915454,
+            0.27393133104817613,
+            0.2502611556777007
+          ]
+        ]
+      ],
+      "support_top_m": 0.14462463705382073
+    }
+  },
+  "stool": {
+    "quadrature_n": 1540800,
+    "mpm_n": 2172,
+    "mpm_mass_kg": 5.407999373912848,
+    "mpm_volume_normalization": 0.9998845212937689,
+    "mesh_volume_m3": 0.008319999036788879,
+    "mpm_grid_m": 0.036,
+    "quadrature_volume_m3": 0.008320959930476251,
+    "mesh_volume_relative_error": 0.00011549204310279393,
+    "coarse_volume_m3": 0.008228288936464052,
+    "material_volume_m3": {
+      "wood": 0.008320959930862572
+    },
+    "coarse_material_volume_m3": {
+      "wood": 0.00822828893652213
+    },
+    "material_mass_kg": {
+      "wood": 5.408623954717922
+    },
+    "free_fall": {
+      "dt_s": 1.4239158883665737e-06,
+      "duration_s": 1.7086990660398884e-05,
+      "elastic_energy_j": 0.0,
+      "max_p2g_mass_residual_kg": 0.0,
+      "max_step_momentum_residual_kg_m_s": 5.307970578814284e-20,
+      "max_deviation_from_ballistic_m": 2.6782544449519005e-17,
+      "min_J": 1.0,
+      "max_J": 1.0
+    },
+    "compression": {
+      "dt_s": 1.4228749934777128e-06,
+      "duration_s": 0.00017074499921732554,
+      "elastic_energy_j": 0.5134898623519648,
+      "max_p2g_mass_residual_kg": 8.881784197001252e-16,
+      "max_step_momentum_residual_kg_m_s": 2.586994600248435e-16,
+      "max_deviation_from_ballistic_m": 0.0005477366289386665,
+      "min_J": 0.9995917850175646,
+      "max_J": 1.0002129283579277
+    },
+    "uniform_foam_stiffness_ablation": null,
+    "construction": {
+      "surface": "wood",
+      "core": "wood",
+      "thickness_m": 0.0,
+      "frame": null,
+      "frame_boxes": [],
+      "support_top_m": null
+    }
+  },
+  "inputs": {
+    "mesh": "8b86ea9caec5ecbd13dfd26835062e10db107ed3141a1bb9cac0e4b375a57c74",
+    "proposal": "6c3bbe7a300bec8ba63df28ca02cf650d523e34a1776ab42edad484846eedcd2",
+    "rgb_npz": "60a88b8acbd353e68dc5f75ca06c53e4ea7715fdb017603f2caf7a966dc3f33a"
+  }
+}
