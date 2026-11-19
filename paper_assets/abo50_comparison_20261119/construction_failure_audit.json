@@ -1,0 +1,149 @@
+[
+  {
+    "scene_id": "B07TDMJPWG_ATVPDKIKX0DER",
+    "initial_failure": "Envelope must have consistent winding and positive closed volume",
+    "winding_repaired": true,
+    "mass_recovered": true,
+    "replay_failure": null
+  },
+  {
+    "scene_id": "B0727Q5F94_ATVPDKIKX0DER",
+    "initial_failure": "Envelope must have consistent winding and positive closed volume",
+    "winding_repaired": true,
+    "mass_recovered": true,
+    "replay_failure": null
+  },
+  {
+    "scene_id": "B07YM1FZSJ_ATVPDKIKX0DER",
+    "initial_failure": "volume_share must be finite and positive",
+    "winding_repaired": false,
+    "mass_recovered": false,
+    "replay_failure": "No reusable construction hypothesis"
+  },
+  {
+    "scene_id": "B07YLZTGZ9_ATVPDKIKX0DER",
+    "initial_failure": "volume_share must be finite and positive",
+    "winding_repaired": false,
+    "mass_recovered": false,
+    "replay_failure": "No reusable construction hypothesis"
+  },
+  {
+    "scene_id": "B075X463J2_ATVPDKIKX0DER",
+    "initial_failure": "'metal'",
+    "winding_repaired": false,
+    "mass_recovered": false,
+    "replay_failure": "No reusable construction hypothesis"
+  },
+  {
+    "scene_id": "B07MBFDKYY_ATVPDKIKX0DER",
+    "initial_failure": "'void'",
+    "winding_repaired": false,
+    "mass_recovered": false,
+    "replay_failure": "No reusable construction hypothesis"
+  },
+  {
+    "scene_id": "B074KMVVK7_ATVPDKIKX0DER",
+    "initial_failure": "'solid'",
+    "winding_repaired": false,
+    "mass_recovered": false,
+    "replay_failure": "No reusable construction hypothesis"
+  },
+  {
+    "scene_id": "B0723DD7Z6",
+    "initial_failure": "volume_share must be finite and positive",
+    "winding_repaired": false,
+    "mass_recovered": false,
+    "replay_failure": "No reusable construction hypothesis"
+  },
+  {
+    "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+    "initial_failure": "Envelope must have consistent winding and positive closed volume",
+    "winding_repaired": true,
+    "mass_recovered": true,
+    "replay_failure": null
+  },
+  {
+    "scene_id": "B07YM1D7B7_ATVPDKIKX0DER",
+    "initial_failure": "volume_share must be finite and positive",
+    "winding_repaired": false,
+    "mass_recovered": false,
+    "replay_failure": "No reusable construction hypothesis"
+  },
+  {
+    "scene_id": "B012S0S20Y_ATVPDKIKX0DER",
+    "initial_failure": "Envelope must have consistent winding and positive closed volume",
+    "winding_repaired": true,
+    "mass_recovered": false,
+    "replay_failure": "'partial'"
+  },
+  {
+    "scene_id": "B07Y2B738L_ATVPDKIKX0DER",
+    "initial_failure": "'partial'",
+    "winding_repaired": false,
+    "mass_recovered": false,
+    "replay_failure": "No reusable construction hypothesis"
+  },
+  {
+    "scene_id": "B07SRSJFBH",
+    "initial_failure": "Envelope must have consistent winding and positive closed volume",
+    "winding_repaired": true,
+    "mass_recovered": true,
+    "replay_failure": null
+  },
+  {
+    "scene_id": "B082L28P18_ATVPDKIKX0DER",
+    "initial_failure": "'partial'",
+    "winding_repaired": false,
+    "mass_recovered": false,
+    "replay_failure": "No reusable construction hypothesis"
+  },
+  {
+    "scene_id": "B07GFRP9RY_A1F83G8C2ARO7P",
+    "initial_failure": "volume_share must be finite and positive",
+    "winding_repaired": false,
+    "mass_recovered": false,
+    "replay_failure": "No reusable construction hypothesis"
+  },
+  {
+    "scene_id": "B075HXHKVF_ATVPDKIKX0DER",
+    "initial_failure": "Envelope must have consistent winding and positive closed volume",
+    "winding_repaired": true,
+    "mass_recovered": true,
+    "replay_failure": null
+  },
+  {
+    "scene_id": "B084W368ML_ATVPDKIKX0DER",
+    "initial_failure": "Envelope must have consistent winding and positive closed volume",
+    "winding_repaired": true,
+    "mass_recovered": true,
+    "replay_failure": null
+  },
+  {
+    "scene_id": "B075YLJM75",
+    "initial_failure": "occupied_fraction must be finite and positive",
+    "winding_repaired": false,
+    "mass_recovered": false,
+    "replay_failure": "No reusable construction hypothesis"
+  },
+  {
+    "scene_id": "B07HPQ358H_ATVPDKIKX0DER",
+    "initial_failure": "'partial'",
+    "winding_repaired": false,
+    "mass_recovered": false,
+    "replay_failure": "No reusable construction hypothesis"
+  },
+  {
+    "scene_id": "B07B8PXMRT_ATVPDKIKX0DER",
+    "initial_failure": "Envelope must have consistent winding and positive closed volume",
+    "winding_repaired": true,
+    "mass_recovered": true,
+    "replay_failure": null
+  },
+  {
+    "scene_id": "B003LSTD38_ATVPDKIKX0DER",
+    "initial_failure": "Envelope must have consistent winding and positive closed volume",
+    "winding_repaired": true,
+    "mass_recovered": true,
+    "replay_failure": null
+  }
+]

@@ -1,0 +1,173 @@
+{
+  "annotation_archive_sha256": "d327bd3804f011aa8bf8c3d749f31d07ec4f4748fd2b7030c0277183c404d367",
+  "evaluation_area": "pixels belonging to exactly one released class mask",
+  "view_count": 10,
+  "scene_count": 2,
+  "class_iou": {
+    "fabric": 0.6813637883522236,
+    "wood": 0.15431024480798236
+  },
+  "miou": 0.41783701658010297,
+  "rows": [
+    {
+      "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+      "view": 1,
+      "counts": {
+        "fabric": {
+          "intersection": 25989,
+          "union": 31513
+        },
+        "wood": {
+          "intersection": 407,
+          "union": 917
+        }
+      },
+      "annotated_pixels": 32426,
+      "predicted_pixels": 26400
+    },
+    {
+      "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+      "view": 9,
+      "counts": {
+        "fabric": {
+          "intersection": 28383,
+          "union": 29485
+        },
+        "wood": {
+          "intersection": 1475,
+          "union": 1910
+        }
+      },
+      "annotated_pixels": 31331,
+      "predicted_pixels": 29922
+    },
+    {
+      "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+      "view": 17,
+      "counts": {
+        "fabric": {
+          "intersection": 2322,
+          "union": 22022
+        },
+        "wood": {
+          "intersection": 580,
+          "union": 3374
+        }
+      },
+      "annotated_pixels": 25375,
+      "predicted_pixels": 2923
+    },
+    {
+      "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+      "view": 23,
+      "counts": {
+        "fabric": {
+          "intersection": 20610,
+          "union": 25004
+        },
+        "wood": {
+          "intersection": 0,
+          "union": 113
+        }
+      },
+      "annotated_pixels": 25117,
+      "predicted_pixels": 20610
+    },
+    {
+      "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+      "view": 27,
+      "counts": {
+        "fabric": {
+          "intersection": 1461,
+          "union": 19985
+        },
+        "wood": {
+          "intersection": 198,
+          "union": 2024
+        }
+      },
+      "annotated_pixels": 21999,
+      "predicted_pixels": 1669
+    },
+    {
+      "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+      "view": 3,
+      "counts": {
+        "fabric": {
+          "intersection": 8884,
+          "union": 9144
+        },
+        "wood": {
+          "intersection": 0,
+          "union": 2051
+        }
+      },
+      "annotated_pixels": 11193,
+      "predicted_pixels": 9726
+    },
+    {
+      "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+      "view": 7,
+      "counts": {
+        "fabric": {
+          "intersection": 9604,
+          "union": 10051
+        },
+        "wood": {
+          "intersection": 0,
+          "union": 288
+        }
+      },
+      "annotated_pixels": 10339,
+      "predicted_pixels": 9696
+    },
+    {
+      "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+      "view": 14,
+      "counts": {
+        "fabric": {
+          "intersection": 12533,
+          "union": 12956
+        },
+        "wood": {
+          "intersection": 0,
+          "union": 1630
+        }
+      },
+      "annotated_pixels": 14574,
+      "predicted_pixels": 13213
+    },
+    {
+      "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+      "view": 18,
+      "counts": {
+        "fabric": {
+          "intersection": 2388,
+          "union": 6528
+        },
+        "wood": {
+          "intersection": 0,
+          "union": 2018
+        }
+      },
+      "annotated_pixels": 8546,
+      "predicted_pixels": 2478
+    },
+    {
+      "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+      "view": 26,
+      "counts": {
+        "fabric": {
+          "intersection": 6014,
+          "union": 6770
+        },
+        "wood": {
+          "intersection": 0,
+          "union": 2913
+        }
+      },
+      "annotated_pixels": 9651,
+      "predicted_pixels": 7447
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "scenes": [
+    {
+      "scene_id": "B07TWQTVXL_ATVPDKIKX0DER",
+      "view": 8,
+      "mesh_sha256": "0c1841499118e456fea866d3c01c876e61b79373c7f507d611fcc2338be0b780",
+      "shared_mesh_foreground_coverage": 0.5724461431549688,
+      "ours_foreground_coverage": 0.080090340514246,
+      "grouped_foreground_coverage": 0.2543432939541348,
+      "propagated_foreground_coverage": 0.3823835997220292,
+      "pugs_foreground_coverage": 0.5547255038220987,
+      "pugs_max_transfer_distance_camera_units": 0.023059086799621584,
+      "pugs_source_points_sha256": "80683476bfc7213363d17f63ad3f91411631e352cb9efc8cca2f881f7f9057c0",
+      "pugs_density_interval_sha256": "e8f4512ca50fdfd3e4f9cf540d060ae334026c0b3a0ead3d49c98868a02c81ba",
+      "pugs_mass_interval_kg": [
+        156.0,
+        160.0
+      ]
+    }
+  ],
+  "units": "kg/m^3",
+  "label": "reported density estimates; no measured density target"
+}

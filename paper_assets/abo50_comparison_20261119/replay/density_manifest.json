@@ -1,0 +1,33 @@
+{
+  "scenes": [
+    {
+      "scene_id": "B07TWQTVXL_ATVPDKIKX0DER",
+      "view": 8,
+      "mesh_sha256": "0c1841499118e456fea866d3c01c876e61b79373c7f507d611fcc2338be0b780",
+      "shared_mesh_foreground_coverage": 0.5724461431549688,
+      "ours_foreground_coverage": 0.080090340514246,
+      "grouped_foreground_coverage": 0.2543432939541348,
+      "propagated_foreground_coverage": 0.3823835997220292
+    },
+    {
+      "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+      "view": 8,
+      "mesh_sha256": "f431ead3d2a32003de12474f02f0a853f9a75b75304ee8f53ef3ca1de696f0c2",
+      "shared_mesh_foreground_coverage": 0.9814353288235593,
+      "ours_foreground_coverage": 0.5781496363358934,
+      "grouped_foreground_coverage": 0.6098875947306851,
+      "propagated_foreground_coverage": 0.6553583235847618
+    },
+    {
+      "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+      "view": 8,
+      "mesh_sha256": "579a2b7fd7629786f5727029c44c86b6dfb6f644d2fd0a248bb003bb9ead1127",
+      "shared_mesh_foreground_coverage": 0.9183574292309561,
+      "ours_foreground_coverage": 0.5399100959786174,
+      "grouped_foreground_coverage": 0.5582553760174949,
+      "propagated_foreground_coverage": 0.5855910581946301
+    }
+  ],
+  "units": "kg/m^3",
+  "label": "reported density estimates; no measured density target"
+}
