@@ -1,0 +1,74 @@
+{
+  "B07TWQTVXL_ATVPDKIKX0DER": {
+    "interval_kg": [
+      156.0,
+      160.0
+    ],
+    "mass_kg": 158.0,
+    "sha256": "7ee70e34379c69b2a5c92a61c15a92ffbf669d1d9bd66e9dc8c6efadff6f63fc"
+  },
+  "B07DBDX15Y_ATVPDKIKX0DER": {
+    "interval_kg": [
+      3.4756040573120117,
+      9.689000129699707
+    ],
+    "mass_kg": 6.582302093505859,
+    "sha256": "9d3ccd4feb691b9afcd11f2fc4d8e1c8ed6bb99e75e4f9d04fc7d4e3e93599a7"
+  },
+  "B07TDMJPWG_ATVPDKIKX0DER": {
+    "interval_kg": [
+      311.9992980957031,
+      319.9992980957031
+    ],
+    "mass_kg": 315.9992980957031,
+    "sha256": "baeaa47fd7b1a440ad3187bc04cabaab9cc90f2159baf86ee39a3a83f9245076"
+  },
+  "B01MRT550V": {
+    "interval_kg": [
+      20.755945205688477,
+      21.400066375732422
+    ],
+    "mass_kg": 21.07800579071045,
+    "sha256": "e105e4b7419b0825bee330f60911b8e79888aed30bdca003d36c9323ca08adf7"
+  },
+  "B0727Q5F94_ATVPDKIKX0DER": {
+    "interval_kg": [
+      29.50430679321289,
+      37.682769775390625
+    ],
+    "mass_kg": 33.59353828430176,
+    "sha256": "f7387d6db5df529dfe242a4d4c0885307d02522b75a69233d9de819cf231fc7c"
+  },
+  "B07YM1FZSJ_ATVPDKIKX0DER": {
+    "interval_kg": [
+      52.64958190917969,
+      61.681427001953125
+    ],
+    "mass_kg": 57.165504455566406,
+    "sha256": "99b1d5b7cb301b64ad4931dba45a954466312c34f9ff72836b7c377aa2a5cea7"
+  },
+  "B07DBB76JV_ATVPDKIKX0DER": {
+    "interval_kg": [
+      44.1367073059082,
+      52.3136100769043
+    ],
+    "mass_kg": 48.22515869140625,
+    "sha256": "7f351c5a1ffd86e036dbee102b54f4a3230a9d3957e8cb9b84d3db15fcc0c074"
+  },
+  "B01MXTX8MC": {
+    "interval_kg": [
+      14.308734893798828,
+      16.663986206054688
+    ],
+    "mass_kg": 15.486360549926758,
+    "sha256": "c4bbee59f7af4435fba5e7ee52127118597403b7a872779686772269ccf2b966"
+  },
+  "B07YLZTGZ9_ATVPDKIKX0DER": {
+    "interval_kg": [
+      47.232696533203125,
+      56.87569046020508
+    ],
+    "mass_kg": 52.0541934967041,
+    "sha256": "428c4bf11c8855f70ced14166ddfc21abdec1a106116cf6264fa2d4d3dadb799"
+  }
+}

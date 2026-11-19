@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import math
 from pathlib import Path
 
 import numpy as np
@@ -151,9 +152,7 @@ def predict(dataset: Path, checkpoint: Path, output: Path) -> None:
 
 def evaluate(args):
     clip_path = args.run / "predictions.json"
-    if digest(clip_path) != read_json(args.run / "prediction_seal.json")["sha256"]:
-        raise ValueError("Image head prediction seal mismatch")
-    clip = read_json(clip_path)
+    clip = read_sealed_clip(args.run)
     old = sealed_rows(args.prior)
     appliance = sealed_rows(args.appliance) if args.appliance else {}
     winding = sealed_rows(args.winding)
@@ -209,7 +208,9 @@ def evaluate(args):
                 if args.appliance:
                     corrected = appliance.get(scene, {}).get("role_mass_kg", physical)
                     item["physical_role_replay"] = corrected
-                    item["physical_role_clip"] = (corrected * item["clip"]) ** 0.5
+                    item["physical_role_clip"] = combine_role_mass(
+                        corrected, item["clip"]
+                    )
             items.append(item)
         ref = "direct" if all("direct" in r for r in items) else "nerf"
         correction = None
@@ -273,6 +274,65 @@ def evaluate(args):
     )
 
 
+def read_sealed_clip(run: Path) -> dict:
+    source = run / "predictions.json"
+    if digest(source) != read_json(run / "prediction_seal.json")["sha256"]:
+        raise ValueError("Image head prediction seal mismatch")
+    return read_json(source)
+
+
+def combine_role_mass(physical_kg: float, prior_kg: float) -> float:
+    """Equal log-domain weighting keeps the prediction between the two inputs."""
+    if not all(math.isfinite(mass) and mass > 0 for mass in (physical_kg, prior_kg)):
+        raise ValueError("Mass inputs must be finite and positive")
+    return math.exp((math.log(physical_kg) + math.log(prior_kg)) / 2)
+
+
+def select_abo50(args):
+    """Write the selected 50-object replay before opening any evaluation labels."""
+    scenes = read_json(args.cohort)["object_ids"]
+    if len(scenes) != 50 or len(set(scenes)) != 50:
+        raise ValueError("The selected replay requires 50 distinct frozen objects")
+    prior = sealed_rows(args.prior)
+    clip = read_sealed_clip(args.run)
+    appliance = sealed_rows(args.appliance)
+    if not set(scenes) <= (prior.keys() & clip.keys()) or not appliance.keys() <= set(
+        scenes
+    ):
+        raise ValueError("Prediction sources do not cover the requested cohort")
+    rows = []
+    for scene in scenes:
+        corrected = appliance.get(scene, {}).get("role_mass_kg")
+        volume_mass = (
+            prior[scene]["construction_mass_kg"] if corrected is None else corrected
+        )
+        prior_mass = clip[scene]["mass_kg"]
+        rows.append(
+            dict(
+                scene_id=scene,
+                mass_kg=combine_role_mass(volume_mass, prior_mass),
+                construction_mass_kg=volume_mass,
+                image_prior_kg=prior_mass,
+                appliance_replay_used=corrected is not None,
+            )
+        )
+    args.output.mkdir(parents=True, exist_ok=False)
+    write_json(
+        args.output / "protocol.json",
+        dict(
+            cohort_sha256=digest(args.cohort),
+            sources={
+                name: digest(getattr(args, name) / "predictions.json")
+                for name in ("run", "prior", "appliance")
+            },
+            scope="Exploratory selected fusion replay, no evaluation labels loaded",
+        ),
+    )
+    output = args.output / "predictions.json"
+    write_json(output, rows)
+    write_json(args.output / "prediction_seal.json", {"sha256": digest(output)})
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="action", required=True)
@@ -287,15 +347,20 @@ def main():
         score.add_argument(f"--{name}", type=Path, required=True)
     score.add_argument("--evaluation", type=Path, nargs="+", required=True)
     score.add_argument("--appliance", type=Path)
-    for child in (pack, run, score):
+    select = sub.add_parser("select")
+    for name in ("run", "prior", "appliance", "cohort"):
+        select.add_argument(f"--{name}", type=Path, required=True)
+    for child in (pack, run, score, select):
         child.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     if args.action == "prepare":
         prepare(args.source, args.evaluation, args.output)
     elif args.action == "predict":
         predict(args.dataset, args.checkpoint, args.output)
-    else:
+    elif args.action == "score":
         evaluate(args)
+    else:
+        select_abo50(args)
 
 
 if __name__ == "__main__":

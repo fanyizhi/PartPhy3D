@@ -1,0 +1,352 @@
+[
+  {
+    "scene_id": "B07TWQTVXL_ATVPDKIKX0DER",
+    "mass_kg": 7.199104825028036,
+    "construction_mass_kg": 13.40471730907212,
+    "image_prior_kg": 3.8663337007984584,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+    "mass_kg": 4.680187077654798,
+    "construction_mass_kg": 4.499206796484583,
+    "image_prior_kg": 4.868447278076124,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B07TDMJPWG_ATVPDKIKX0DER",
+    "mass_kg": 16.00838083597004,
+    "construction_mass_kg": 30.46549566927033,
+    "image_prior_kg": 8.41175406339911,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B01MRT550V",
+    "mass_kg": 0.6427002158823777,
+    "construction_mass_kg": 0.5588830127935318,
+    "image_prior_kg": 0.7390877125260794,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B0727Q5F94_ATVPDKIKX0DER",
+    "mass_kg": 7.058254789233607,
+    "construction_mass_kg": 7.554506252760522,
+    "image_prior_kg": 6.5946018181578205,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B07YM1FZSJ_ATVPDKIKX0DER",
+    "mass_kg": 13.760071242661349,
+    "construction_mass_kg": 14.673528345109887,
+    "image_prior_kg": 12.903478710096017,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B07DBB76JV_ATVPDKIKX0DER",
+    "mass_kg": 30.07147615526856,
+    "construction_mass_kg": 40.53593682745581,
+    "image_prior_kg": 22.308444035870643,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B01MXTX8MC",
+    "mass_kg": 0.5162529640347697,
+    "construction_mass_kg": 0.3654792048272728,
+    "image_prior_kg": 0.7292265041471853,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B07YLZTGZ9_ATVPDKIKX0DER",
+    "mass_kg": 17.779186975599252,
+    "construction_mass_kg": 19.833097064230056,
+    "image_prior_kg": 15.937979252036168,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B082Q989SF_ATVPDKIKX0DER",
+    "mass_kg": 6.989095084921223,
+    "construction_mass_kg": 4.3600613867894396,
+    "image_prior_kg": 11.203385863802975,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B075X463J2_ATVPDKIKX0DER",
+    "mass_kg": 12.408138770067248,
+    "construction_mass_kg": 31.338603372355173,
+    "image_prior_kg": 4.912851600561782,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B01LP0UKJE_ATVPDKIKX0DER",
+    "mass_kg": 0.16654529554858757,
+    "construction_mass_kg": 0.02419906533232996,
+    "image_prior_kg": 1.1462151570089485,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B07QFP4PV5_ATVPDKIKX0DER",
+    "mass_kg": 30.203537571098835,
+    "construction_mass_kg": 45.30039068502486,
+    "image_prior_kg": 20.137876694082152,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B07MBFDKYY_ATVPDKIKX0DER",
+    "mass_kg": 0.8147027341990164,
+    "construction_mass_kg": 0.5268489597568005,
+    "image_prior_kg": 1.2598307974599465,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B074KMVVK7_ATVPDKIKX0DER",
+    "mass_kg": 18.47095972307839,
+    "construction_mass_kg": 15.016840704496666,
+    "image_prior_kg": 22.719582620958462,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B0723DD7Z6",
+    "mass_kg": 9.233600609050269,
+    "construction_mass_kg": 12.371847613071257,
+    "image_prior_kg": 6.8914023898398336,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+    "mass_kg": 8.296914485514439,
+    "construction_mass_kg": 5.399609945686072,
+    "image_prior_kg": 12.74884494850168,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B07YM1D7B7_ATVPDKIKX0DER",
+    "mass_kg": 17.50234907414178,
+    "construction_mass_kg": 19.833097064230056,
+    "image_prior_kg": 15.445506171882576,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B01LP0VI3G_ATVPDKIKX0DER",
+    "mass_kg": 0.35272253999008907,
+    "construction_mass_kg": 0.09055390993357772,
+    "image_prior_kg": 1.373912957577628,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B012S0S20Y_ATVPDKIKX0DER",
+    "mass_kg": 0.5417625409924135,
+    "construction_mass_kg": 0.35246109160895434,
+    "image_prior_kg": 0.8327348970143743,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B07Y3Q7MDR",
+    "mass_kg": 4.34692273349008,
+    "construction_mass_kg": 1.5970407731580611,
+    "image_prior_kg": 11.831718744141755,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B076YJFGCN_A1F83G8C2ARO7P",
+    "mass_kg": 0.08482356047400788,
+    "construction_mass_kg": 0.031006369386681748,
+    "image_prior_kg": 0.23205027076076112,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B07Y2B738L_ATVPDKIKX0DER",
+    "mass_kg": 18.93917437851583,
+    "construction_mass_kg": 10.8516975,
+    "image_prior_kg": 33.05402920970019,
+    "appliance_replay_used": true
+  },
+  {
+    "scene_id": "B01DN8TEA2_ATVPDKIKX0DER",
+    "mass_kg": 0.8611005430903591,
+    "construction_mass_kg": 0.29424617123158747,
+    "image_prior_kg": 2.519978908160256,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B07F3T4RSD_A13V1IB3VIYZZH",
+    "mass_kg": 1.4856461383572492,
+    "construction_mass_kg": 0.9709200487343006,
+    "image_prior_kg": 2.273250461037506,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B07JL5PLPN_ATVPDKIKX0DER",
+    "mass_kg": 0.20420668700309197,
+    "construction_mass_kg": 0.06780765832985637,
+    "image_prior_kg": 0.6149802550904149,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B075YNL7R3_ATVPDKIKX0DER",
+    "mass_kg": 2.5180627287230553,
+    "construction_mass_kg": 0.9294810305141769,
+    "image_prior_kg": 6.82169909618988,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B07JQMLQ2C",
+    "mass_kg": 0.9461600741707693,
+    "construction_mass_kg": 0.3413217438782033,
+    "image_prior_kg": 2.62280063315944,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B07SRSJFBH",
+    "mass_kg": 7.158373294930771,
+    "construction_mass_kg": 5.10659439197654,
+    "image_prior_kg": 10.034536580796338,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B082L28P18_ATVPDKIKX0DER",
+    "mass_kg": 9.519978046783766,
+    "construction_mass_kg": 9.51463137237161,
+    "image_prior_kg": 9.52532772571877,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B07GFRP9RY_A1F83G8C2ARO7P",
+    "mass_kg": 17.305182195754995,
+    "construction_mass_kg": 17.883481293813666,
+    "image_prior_kg": 16.74558358678572,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B07WQ4VQ74_ATVPDKIKX0DER",
+    "mass_kg": 6.381889218651412,
+    "construction_mass_kg": 6.105368592527252,
+    "image_prior_kg": 6.670933848120054,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B07K6S2G5Z_A1F83G8C2ARO7P",
+    "mass_kg": 25.092958822969294,
+    "construction_mass_kg": 21.082902210444676,
+    "image_prior_kg": 29.865745057589574,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B00WRDS0AU_ATVPDKIKX0DER",
+    "mass_kg": 1.3573427094527086,
+    "construction_mass_kg": 1.084217364407888,
+    "image_prior_kg": 1.6992710976461614,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B075HXHKVF_ATVPDKIKX0DER",
+    "mass_kg": 0.7086715435850354,
+    "construction_mass_kg": 0.6517865822436191,
+    "image_prior_kg": 0.7705211650084,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B084W368ML_ATVPDKIKX0DER",
+    "mass_kg": 7.896376622821082,
+    "construction_mass_kg": 10.50209791521171,
+    "image_prior_kg": 5.937172198625259,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B07XHQQ95Y_ATVPDKIKX0DER",
+    "mass_kg": 7.544175537937559,
+    "construction_mass_kg": 7.68605,
+    "image_prior_kg": 7.404919893471347,
+    "appliance_replay_used": true
+  },
+  {
+    "scene_id": "B07WQ4P35G",
+    "mass_kg": 5.0535007984337215,
+    "construction_mass_kg": 5.642695297796953,
+    "image_prior_kg": 4.525828344787796,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B075YLJM75",
+    "mass_kg": 1.4791640307521121,
+    "construction_mass_kg": 0.47241855614913847,
+    "image_prior_kg": 4.6313299962335215,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B075YQ46MP_ATVPDKIKX0DER",
+    "mass_kg": 11.977960440769479,
+    "construction_mass_kg": 8.657807565521042,
+    "image_prior_kg": 16.57134733416823,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B07N6RT9SM_ATVPDKIKX0DER",
+    "mass_kg": 7.608564104565764,
+    "construction_mass_kg": 9.360315,
+    "image_prior_kg": 6.184647389888762,
+    "appliance_replay_used": true
+  },
+  {
+    "scene_id": "B07DB9638P_ATVPDKIKX0DER",
+    "mass_kg": 8.340707940126205,
+    "construction_mass_kg": 8.150461100121792,
+    "image_prior_kg": 8.535395493323042,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B07HPQ358H_ATVPDKIKX0DER",
+    "mass_kg": 6.410877191443256,
+    "construction_mass_kg": 11.51881434104445,
+    "image_prior_kg": 3.568018820940624,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B075YZPG5Y_ATVPDKIKX0DER",
+    "mass_kg": 50.79459602361336,
+    "construction_mass_kg": 68.0082139027302,
+    "image_prior_kg": 37.93793186352893,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B078GTTCCF_A1F83G8C2ARO7P",
+    "mass_kg": 1.2125429336414304,
+    "construction_mass_kg": 0.5966322199215577,
+    "image_prior_kg": 2.4642657852388012,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B072PZ4LVN_ATVPDKIKX0DER",
+    "mass_kg": 55.110433163411315,
+    "construction_mass_kg": 52.48789672768305,
+    "image_prior_kg": 57.86400356669226,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B07B8PXMRT_ATVPDKIKX0DER",
+    "mass_kg": 0.31274645362876247,
+    "construction_mass_kg": 0.05602103496510086,
+    "image_prior_kg": 1.7459574661250032,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B003LSTD38_ATVPDKIKX0DER",
+    "mass_kg": 0.08187111898285743,
+    "construction_mass_kg": 0.0410773092680702,
+    "image_prior_kg": 0.1631771954623964,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B07JM6HFVP_ATVPDKIKX0DER",
+    "mass_kg": 0.5870742355219625,
+    "construction_mass_kg": 0.5611803135179901,
+    "image_prior_kg": 0.6141629521054961,
+    "appliance_replay_used": false
+  },
+  {
+    "scene_id": "B07GFRNHYW_A1RKKUPIHCS9HS",
+    "mass_kg": 24.880389445869685,
+    "construction_mass_kg": 20.410677110026338,
+    "image_prior_kg": 30.328919302439797,
+    "appliance_replay_used": false
+  }
+]

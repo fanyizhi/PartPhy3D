@@ -20,7 +20,7 @@ m_{\mathrm{filled}} &= \rho_s\bigl(\lvert\Omega_o\rvert-\lvert\Omega_i\rvert\big
 
 ## 程序验证
 
-四组使用同一 0.20 m 立方体外壳和相同模拟载荷。显式内边界为 0.16 m 立方体。视觉空心行输入事先指定的 20 mm 假设，用于验证接口和积分。较粗采样曾低估显式薄壳 5.45%，后用已知内外域的独立体积积分做守恒校正，同时加密视觉分支的采样。
+五组使用同一 0.20 m 立方体外壳和相同模拟载荷。显式内边界为 0.16 m 立方体。视觉空心行输入事先指定的 20 mm 假设，用于验证接口和积分。较粗采样曾低估显式薄壳 5.45%，后用已知内外域的独立体积积分做守恒校正，同时加密视觉分支的采样。混合组将内部划为木支撑、泡沫填充和空气三个相邻闭合域，允许共面，拒绝正体积重叠。在输出前校验外壳与内部域的总体积闭合。
 
 | 条件 | 解析质量 (kg) | MPM 导入质量 (kg) | 芯部粒子数 |
 | --- | ---: | ---: | ---: |
@@ -28,8 +28,9 @@ m_{\mathrm{filled}} &= \rho_s\bigl(\lvert\Omega_o\rvert-\lvert\Omega_i\rvert\big
 | 生成空腔 | 4.0992 | 4.0992 | 0 |
 | 给定视觉空心假设 | 4.0992 | 4.0137 | 0 |
 | 生成泡沫芯 | 4.3654 | 4.3654 | 2,347 |
+| 生成木支撑与部分泡沫填充 | 4.5651 | 4.5651 | 1,960 |
 
-所有行将各自粒子 NPZ 导出后重新读取并执行 80 步三维 MPM。显式模型的质量对解析体积闭合。视觉壁厚路径的 2.09% 误差来自离散积分。该控制固定了真实内部构造，尚未覆盖真实照片的分类正确率。复现运行 `python scripts/run_matched_construction_mpm.py --output outputs/matched_construction_mpm`。[模拟输入与验证结果](../../paper_assets/abo50_mass_stability_20261119/matched_mpm/)
+所有行将各自粒子 NPZ 导出后重新读取并执行 80 步三维 MPM。显式模型的质量对解析体积闭合，混合组的空气域没有粒子。视觉壁厚路径的 2.09% 误差来自离散积分。该控制固定了真实内部构造，尚未覆盖真实照片的分类正确率。复现运行 `python scripts/run_matched_construction_mpm.py --output outputs/matched_construction_mpm`。[模拟输入与验证结果](../../paper_assets/abo50_mass_stability_20261119/matched_mpm/)
 
 ## 从几何、占据和材质归因
 

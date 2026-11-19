@@ -62,6 +62,22 @@
       "elastic_energy_j": 0.37945517562664355,
       "min_J": 0.999330793155291,
       "mass_transfer_residual_kg": 1.7763568394002505e-15
+    },
+    {
+      "case": "generated_frame_partial_infill",
+      "mpm_particles": 5145,
+      "cavity_particles": 1960,
+      "materials": [
+        "plastic",
+        "wood",
+        "foam"
+      ],
+      "analytic_mass_kg": 4.565120000000002,
+      "particle_mass_kg": 4.56512066390039,
+      "relative_error": 1.4542890180990753e-07,
+      "elastic_energy_j": 0.5688509533192725,
+      "min_J": 0.9993269637781022,
+      "mass_transfer_residual_kg": 8.881784197001252e-16
     }
   ]
 }

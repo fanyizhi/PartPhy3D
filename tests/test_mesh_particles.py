@@ -3,7 +3,12 @@ import pytest
 import trimesh
 
 from tactile3d.physics.materials import MaterialPrior, ScalarPrior
-from tactile3d.physics.mesh_particles import Construction, sample_mesh_particles
+from tactile3d.physics.mesh_particles import (
+    Construction,
+    InteriorDomain,
+    sample_disjoint_material_domains,
+    sample_mesh_particles,
+)
 from tactile3d.physics.mpm_validation import coarsen_material_points, run_mpm
 
 
@@ -86,3 +91,41 @@ def test_generated_void_and_visual_wall_thickness_emit_no_core_points():
     assert generated["mass_kg"].sum() == pytest.approx(
         1000 * (0.2**3 - 0.16**3), rel=1e-10
     )
+
+
+def test_disjoint_material_domains_conserve_mass_and_reject_overlap():
+    pytest.importorskip("igl")
+    outer = trimesh.creation.box((0.2,) * 3)
+    air = trimesh.creation.box((0.07,) * 3)
+    fill = air.copy()
+    air.apply_translation((0.04, 0, 0))
+    fill.apply_translation((-0.04, 0, 0))
+    priors = [
+        MaterialPrior(name, ScalarPrior(d, 0, d, d), ScalarPrior(1e5, 0, 1e5, 1e5))
+        for name, d in (("plastic", 1000), ("foam", 60))
+    ]
+    settings = dict(finest_m=0.004, bulk_m=0.02, poisson={"plastic": 0.3, "foam": 0.25})
+    data = sample_disjoint_material_domains(
+        outer,
+        "plastic",
+        (InteriorDomain(air, "void"), InteriorDomain(fill, "foam")),
+        priors,
+        **settings,
+    )
+    assert set(data["material_names"]) == {"plastic", "foam"}
+    assert not np.any(
+        np.all(
+            (data["position_m"] > air.bounds[0]) & (data["position_m"] < air.bounds[1]),
+            axis=1,
+        )
+    )
+    mass = 1000 * (outer.volume - air.volume - fill.volume) + 60 * fill.volume
+    assert data["mass_kg"].sum() == pytest.approx(mass, rel=1e-7)
+    with pytest.raises(ValueError, match="overlap"):
+        sample_disjoint_material_domains(
+            outer,
+            "plastic",
+            (InteriorDomain(air, "void"), InteriorDomain(air, "foam")),
+            priors,
+            **settings,
+        )

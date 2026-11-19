@@ -2,21 +2,20 @@
 
 [固定六视角的覆盖率修复与复跑](abo50_coverage_repair_20261119_zh.md)
 
-[最新的 50 对象局部构造回放、PUGS-Qwen 进度与五件密度图](abo50_local_assembly_20261119_zh.md)
+[50 件逐对象质量对比](abo50_mass_50_objects_zh.md) · [质量修复和消融](abo50_mass_stability_20261119_zh.md) · [内部构造和粒子](construction_mass_attribution_zh.md)
 
 ## 表 1　Ours 与基线的质量指标
 
-| 方法 | ABO-500 口径 | ADE (kg) ↓ | ALDE ↓ | APE (%) ↓ | MnRE ↑ | 出处 |
-| --- | --- | ---: | ---: | ---: | ---: | --- |
-| NeRF2Physics | 原论文测试集，100 个对象 | 8.730 | 0.771 | 106.1 | 0.552 | [原论文表 1](https://arxiv.org/html/2404.04242#S4.T1) |
-| NeRF2Physics（PUGS 报告的对照） | PUGS 表 I 的 ABO-500 协议 | 12.725 | 0.736 | 104.0 | 0.564 | [PUGS 表 I](https://marcyu0303.github.io/assets/pdfs/gs_physics.pdf#page=5) |
-| PUGS | 论文 ABO-500 表 I | 9.461 | 0.661 | 76.7 | 0.576 | [PUGS 表 I](https://marcyu0303.github.io/assets/pdfs/gs_physics.pdf#page=5) |
-| PhysVGGT（global mass head） | ABO-500 测试集，100 个对象 | 4.73 | 0.574 | 78.7 | 0.655 | [表 1](https://arxiv.org/html/2609.18920v1#S4.T1) · [表 13](https://arxiv.org/html/2609.18920v1#A1.T13) |
-| GS2Physics | Test1 + Test2 + Test3，500 个对象 | 9.884 | 0.720 | 88.8 | 0.559 | [原论文表 I，第 8741 页](https://ieeexplore.ieee.org/document/11653536/) |
-| Gen2Physics | ABO-500，参考资产输入 | 8.447 | 0.651 | 117.0 | 0.600 | [表 1](https://arxiv.org/html/2608.23869v1#S4.T1) |
-| **Ours（完整构造积分）** | **ABO-50，37/50 个对象获得有效预测** | 5.813 | 1.0049 | 71.33 | 0.5031 | [本地实验，表 3](#表-3构造质量消融) |
+| 方法 | 结果来源与样本 | ADE (kg) ↓ | ALDE ↓ | APE (%) ↓ | MnRE ↑ |
+| --- | --- | ---: | ---: | ---: | ---: |
+| NeRF2Physics | 同一 ABO-50，官方发布缓存逐对象评分 | 8.872 | 0.8105 | 156.39 | 0.5291 |
+| PUGS | [原论文表 I](https://marcyu0303.github.io/assets/pdfs/gs_physics.pdf#page=5)，全 ABO-500 | 9.461 | 0.661 | 76.7 | 0.576 |
+| PhysVGGT（global mass head） | [原论文表 1 和表 13](https://arxiv.org/html/2609.18920v1#A1.T13)，ABO-500 测试 100 件 | 4.730 | 0.574 | 78.7 | 0.655 |
+| GS2Physics | [原论文表 I](https://ieeexplore.ieee.org/document/11653536/)，三组共 500 件 | 9.884 | 0.720 | 88.8 | 0.559 |
+| Gen2Physics | [原论文表 1](https://arxiv.org/html/2608.23869v1#S4.T1)，ABO-500 参考资产输入 | 8.447 | 0.651 | 117.0 | 0.600 |
+| **Ours（局部构造＋图像先验）** | **同一 ABO-50，50/50 件，探索性回放** | **5.405** | **0.6445** | **57.36** | **0.5958** |
 
-APE 已统一为百分比。Ours 使用图像估计尺度和经三角面绕向修复的网格进行构造积分，四项指标基于 37 个有效预测。基线数值沿用各自论文的样本和协议，表 3 给出相同 37 个对象上的配对结果。GS2Physics 表 I 同一 500 对象协议中的 NeRF2Physics 为 13.480 / 0.748 / 204.0% / 0.563，PUGS 为 12.449 / 0.806 / 231.0% / 0.536。
+APE 已统一为百分比。Ours 选取当前实跑版本中 50 件 ADE 最低的一行，其中家电规则来自同批诊断。与 NeRF2Physics 有完整的 50 件配对，其他行暂录论文结果，当作不同协议的参照。PUGS-Qwen 的同对象复现仍在进行，逐件页保留已封存结果。表 3 的 37 件结果属于早期构造消融。
 
 GS2Physics 的分尺寸结果也出自[原论文表 I](https://ieeexplore.ieee.org/document/11653536/)。
 

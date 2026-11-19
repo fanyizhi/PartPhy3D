@@ -1,12 +1,20 @@
 """Adaptive material-point quadrature of a closed metric mesh."""
 
 from dataclasses import dataclass
-from itertools import product
+from itertools import combinations, product
 
 import numpy as np
 import trimesh
 
 from tactile3d.physics.materials import MaterialPrior
+
+
+@dataclass(frozen=True)
+class InteriorDomain:
+    """Closed metric subdomain. The label ``void`` reserves air without exporting particles."""
+
+    mesh: trimesh.Trimesh
+    material: str
 
 
 @dataclass(frozen=True)
@@ -246,3 +254,96 @@ def sample_mesh_particles(
         material_id=material_id,
         material_names=np.asarray(labels),
     )
+
+
+def sample_disjoint_material_domains(
+    outer: trimesh.Trimesh,
+    outer_material: str,
+    interior: tuple[InteriorDomain, ...],
+    priors: list[MaterialPrior],
+    *,
+    finest_m: float,
+    bulk_m: float,
+    poisson: dict[str, float],
+) -> dict[str, np.ndarray]:
+    """Export SI particle fields from disjoint interior meshes and the outer remainder.
+
+    Interior domains may share a boundary. Positive-volume overlaps and material
+    domains outside the exterior are rejected before any points are sampled.
+    """
+    if (
+        not outer.is_volume
+        or not np.isfinite(outer.vertices).all()
+        or not interior
+        or not outer_material
+        or outer_material == "void"
+    ):
+        raise ValueError(
+            "Explicit partition needs a closed exterior and internal domains"
+        )
+    outer_min, outer_max = outer.bounds
+    for region in interior:
+        child = region.mesh
+        if (
+            not region.material
+            or not child.is_volume
+            or not np.isfinite(child.vertices).all()
+        ):
+            raise ValueError(
+                "Each internal domain needs a material and closed finite geometry"
+            )
+        if np.any(child.bounds[0] <= outer_min) or np.any(child.bounds[1] >= outer_max):
+            raise ValueError("Internal domain bounds must lie inside the exterior")
+        outside = trimesh.boolean.difference([child, outer], engine="manifold")
+        if not outside.is_empty and abs(outside.volume) > 1e-8 * child.volume:
+            raise ValueError("An internal domain extends outside the exterior")
+    for a, b in combinations(interior, 2):
+        # Box rejection skips Boolean intersection for separated or face-touching pieces.
+        if np.any(
+            np.minimum(a.mesh.bounds[1], b.mesh.bounds[1])
+            <= np.maximum(a.mesh.bounds[0], b.mesh.bounds[0])
+        ):
+            continue
+        overlap = trimesh.boolean.intersection([a.mesh, b.mesh], engine="manifold")
+        if not overlap.is_empty and abs(overlap.volume) > 1e-8 * min(
+            a.mesh.volume, b.mesh.volume
+        ):
+            raise ValueError("Explicit internal domains overlap")
+
+    remainder = trimesh.boolean.difference(
+        [outer, *(r.mesh for r in interior)], engine="manifold"
+    )
+    if not remainder.is_volume:
+        raise ValueError("Explicit domains leave no closed outer material")
+    partition_volume = remainder.volume + sum(r.mesh.volume for r in interior)
+    if not np.isclose(partition_volume, outer.volume, rtol=1e-6, atol=0):
+        raise ValueError("Explicit domain volumes do not conserve the exterior volume")
+
+    physical = [
+        r
+        for r in (InteriorDomain(remainder, outer_material), *interior)
+        if r.material != "void"
+    ]
+    names = list(dict.fromkeys(r.material for r in physical))
+    material_ids = {name: i for i, name in enumerate(names)}
+    chunks = []
+    for region in physical:
+        data = sample_mesh_particles(
+            region.mesh,
+            Construction.from_evidence(surface=region.material, solid=True),
+            priors,
+            finest_m=finest_m,
+            bulk_m=bulk_m,
+            poisson=poisson,
+        )
+        # Correct each domain independently, retaining its local material density.
+        factor = region.mesh.volume / data["volume_m3"].sum()
+        data["mass_kg"] *= factor
+        data["volume_m3"] *= factor
+        data["material_id"][:] = material_ids[region.material]
+        chunks.append(data)
+    return {
+        name: np.concatenate([chunk[name] for chunk in chunks])
+        for name in chunks[0]
+        if name != "material_names"
+    } | {"material_names": np.asarray(names)}
