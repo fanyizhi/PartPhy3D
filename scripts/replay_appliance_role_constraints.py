@@ -97,6 +97,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--run", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--skip-invalid", action="store_true")
     args = parser.parse_args()
     records = sealed_rows(args.run)
     priors = ROOT / "configs/material_priors.yaml"
@@ -105,7 +106,15 @@ def main():
     corrected = []
     for row in records.values():
         if "parts" in row:
-            parts = allocate(row["parts"], density)
+            try:
+                parts = allocate(row["parts"], density)
+                if args.skip_invalid and not any("attribution" in p for p in parts):
+                    raise ValueError("No supported physical role")
+            except (KeyError, TypeError, ValueError) as error:
+                if not args.skip_invalid:
+                    raise
+                corrected.append(row | {"role_replay_error": str(error)})
+                continue
             total = sum(r["mass_kg"] for r in parts)
             attributed = {
                 factor: math.fsum(

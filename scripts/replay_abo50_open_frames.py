@@ -166,6 +166,7 @@ def main() -> None:
     source_mode.add_argument("--model", type=Path)
     source_mode.add_argument("--raw-run", type=Path)
     parser.add_argument("--panel-enclosures", action="store_true")
+    parser.add_argument("--keep-valid-source-on-failure", action="store_true")
     args = parser.parse_args()
     source = args.source / "predictions.json"
     seal = digest(source)
@@ -207,7 +208,7 @@ def main() -> None:
         },
     )
     for row in rows:
-        if not route(row):
+        if "construction_mass_kg" not in row or not route(row):
             continue
         scene = row["scene_id"]
         child = args.output / scene
@@ -252,6 +253,9 @@ def main() -> None:
                 )
                 row["construction_mass_kg"] = sum(g["mass_kg"] for g in groups)
                 break
+        if args.keep_valid_source_on_failure and "construction_mass_kg" not in row:
+            row["construction_mass_kg"] = row["envelope_construction_mass_kg"]
+            row["retained_valid_source"] = True
         write_json(child / "result.json", row)
         print(
             scene,

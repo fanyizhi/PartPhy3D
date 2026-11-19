@@ -14,9 +14,17 @@ from prepare_abo50_benchmark import digest, read_json, write_json
 from run_abo50_mass_hypotheses import ROOT, VIEWS
 from run_component_mass_stability import sealed_rows
 from tactile3d.models.calibration import mass_metrics
-from tactile3d.models.scale_ridge import fit_log_scale, scale_metrics
+from tactile3d.models.scale_ridge import LogScaleRidge, fit_log_scale, scale_metrics
 
 ALPHAS = (0.001, 0.01, 0.1, 1.0, 10.0)
+
+
+def convert_observation(original: Path, derived: Path) -> None:
+    with Image.open(original) as image:
+        rgba = image.convert("RGBA")
+        white = Image.alpha_composite(Image.new("RGBA", rgba.size, "white"), rgba)
+        white.thumbnail((256, 256), Image.Resampling.LANCZOS)
+        white.convert("RGB").save(derived, quality=93, subsampling=0)
 
 
 def prepare(source: Path, evaluation: list[Path], output: Path) -> None:
@@ -42,13 +50,7 @@ def prepare(source: Path, evaluation: list[Path], output: Path) -> None:
                 name = f"{scene}_{view:02d}"
                 original = source / "scenes" / scene / "images" / f"{name}.png"
                 derived = output / f"{name}.jpg"
-                with Image.open(original) as image:
-                    rgba = image.convert("RGBA")
-                    white = Image.alpha_composite(
-                        Image.new("RGBA", rgba.size, "white"), rgba
-                    )
-                    white.thumbnail((256, 256), Image.Resampling.LANCZOS)
-                    white.convert("RGB").save(derived, quality=93, subsampling=0)
+                convert_observation(original, derived)
                 files[derived.name] = digest(derived)
             rows.append(dict(scene_id=scene, split=split, files=files))
     write_json(output / "manifest.json", rows)
@@ -68,7 +70,9 @@ def prepare(source: Path, evaluation: list[Path], output: Path) -> None:
     write_json(output / "train_val_labels.json", training)
 
 
-def predict(dataset: Path, checkpoint: Path, output: Path) -> None:
+def predict(
+    dataset: Path, checkpoint: Path, output: Path, frozen_head: Path | None = None
+) -> None:
     import open_clip
     import torch
 
@@ -80,7 +84,7 @@ def predict(dataset: Path, checkpoint: Path, output: Path) -> None:
         raise ValueError("CLIP checkpoint mismatch")
     manifest = dataset / "manifest.json"
     rows = read_json(manifest)
-    labels = read_json(dataset / "train_val_labels.json")
+    labels = read_json(dataset / "train_val_labels.json") if frozen_head is None else {}
     if labels.keys() != {r["scene_id"] for r in rows if r["split"] in {"train", "val"}}:
         raise ValueError("Only train and validation products may supply labels")
     output.mkdir(parents=True, exist_ok=False)
@@ -111,13 +115,26 @@ def predict(dataset: Path, checkpoint: Path, output: Path) -> None:
     outputs = {r["scene_id"]: {} for r in rows if r["split"] == "test"}
     protocol = dict(
         manifest_sha256=digest(manifest),
-        labels_sha256=digest(dataset / "train_val_labels.json"),
+        labels_sha256=(
+            digest(dataset / "train_val_labels.json") if frozen_head is None else None
+        ),
         checkpoint_sha256=checkpoint_hash,
         n_views=len(VIEWS),
         heads={},
     )
     test = np.array([r["split"] == "test" for r in rows])
-    for field in ("length_m", "mass_kg"):
+    if frozen_head is not None:
+        with np.load(frozen_head, allow_pickle=False) as head:
+            fit = LogScaleRidge(
+                head["feature_mean"],
+                head["coefficients"],
+                float(head["log_length_mean"]),
+                float(head["alpha"]),
+            )
+        protocol["frozen_mass_head_sha256"] = digest(frozen_head)
+        for scene, value in zip(outputs, fit.predict(x[test]), strict=True):
+            outputs[scene]["mass_kg"] = float(value)
+    for field in ("length_m", "mass_kg") if frozen_head is None else ():
         targets = [labels.get(r["scene_id"], {}).get(field) for r in rows]
         y = np.array([float(t) if t is not None else np.nan for t in targets])
         train = np.array([r["split"] == "train" for r in rows]) & np.isfinite(y)
@@ -342,6 +359,7 @@ def main():
     run = sub.add_parser("predict")
     run.add_argument("--dataset", type=Path, required=True)
     run.add_argument("--checkpoint", type=Path, required=True)
+    run.add_argument("--frozen-head", type=Path)
     score = sub.add_parser("score")
     for name in ("run", "prior", "weights", "nerf", "winding", "catalog-scale"):
         score.add_argument(f"--{name}", type=Path, required=True)
@@ -356,7 +374,7 @@ def main():
     if args.action == "prepare":
         prepare(args.source, args.evaluation, args.output)
     elif args.action == "predict":
-        predict(args.dataset, args.checkpoint, args.output)
+        predict(args.dataset, args.checkpoint, args.output, args.frozen_head)
     elif args.action == "score":
         evaluate(args)
     else:

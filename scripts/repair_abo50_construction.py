@@ -141,6 +141,10 @@ def main() -> None:
         row = dict(old)
         run = args.benchmark / "reconstructions" / scene
         mesh_path = run / "camera_space.ply"
+        if not mesh_path.is_file() or not (run / "report.json").is_file():
+            row["error"] = "No completed mesh for construction integration"
+            rows.append(row)
+            continue
         mesh_hash = digest(mesh_path)
         if mesh_hash != read_json(run / "report.json")["mesh_sha256"]:
             raise ValueError(f"Mesh changed for {scene}")
@@ -156,8 +160,10 @@ def main() -> None:
             with Image.open(path) as image:
                 images.append(image.copy())
         response_path = original / scene / "construction.txt"
-        prior_response = response_path.read_text(encoding="utf-8")
-        row["repair_original_response_sha256"] = digest(response_path)
+        prior_response = ""
+        if response_path.is_file():
+            prior_response = response_path.read_text(encoding="utf-8")
+            row["repair_original_response_sha256"] = digest(response_path)
         error = original_rows[scene]["errors"].get("construction", row.get("error", ""))
         child = args.output / scene
         child.mkdir()
