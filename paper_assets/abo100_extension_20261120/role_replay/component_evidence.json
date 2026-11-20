@@ -1,0 +1,5015 @@
+{
+  "sha256": {
+    "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/panels": "a9d4d17dfed8cf2826319c19f1f4570aabc1590ba79fde3c14046dae5baf7d21",
+    "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/panels": "8977f450a5b6931de5b13867e952e22b7a641d5e5889d4da6bd73ba5a0b60f4d",
+    "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact": "9b949be7ace0f7ac0bf8739463ccf7e31535ab91aecb9c3da465c35450888507",
+    "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_replay": "7e3d7569202231c79cc0d298a7e56a46436c343b4ba572b9402ff1c52c73c21d",
+    "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/construction_weighted": "c48a3b71d3a2c8af5cacb6c441457b507ef44f03a90b7ffdf8ec3c7038ba2efb"
+  },
+  "scenes": {
+    "B07B4G5RBN_ATVPDKIKX0DER": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/panels",
+      "area_m2": 5.412025205186881,
+      "parts": [
+        {
+          "name": "main seating cushion",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 10,
+          "area_share": 0.45,
+          "outer_volume_m3": 0.31103075930186774,
+          "density_kg_m3": 350.0,
+          "mass_kg": 8.11803780778032
+        },
+        {
+          "name": "backrest cushion",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 10,
+          "area_share": 0.25,
+          "outer_volume_m3": 0.10367691976728925,
+          "density_kg_m3": 350.0,
+          "mass_kg": 4.5100210043224
+        },
+        {
+          "name": "armrests",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 8,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.025919229941822313,
+          "density_kg_m3": 350.0,
+          "mass_kg": 1.443206721383168
+        },
+        {
+          "name": "wooden frame",
+          "material": "wood",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.025919229941822313,
+          "density_kg_m3": 650.0,
+          "mass_kg": 16.847499462184505
+        },
+        {
+          "name": "legs",
+          "material": "wood",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.010367691976728927,
+          "density_kg_m3": 650.0,
+          "mass_kg": 6.738999784873802
+        },
+        {
+          "name": "internal structural foam",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.04147076790691571,
+          "density_kg_m3": 65.0,
+          "mass_kg": 2.695599913949521
+        }
+      ]
+    },
+    "B076YKYHCB_A1F83G8C2ARO7P": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/panels",
+      "area_m2": 0.0034205226897243562,
+      "parts": [
+        {
+          "name": "main body",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.3333333333333333,
+          "outer_volume_m3": 9.59381718974879e-06,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.0011971829414035248
+        },
+        {
+          "name": "USB ports",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.3333333333333333,
+          "outer_volume_m3": 5.329898438749328e-07,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.0005596393360686794
+        },
+        {
+          "name": "USB-C input port",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.3333333333333333,
+          "outer_volume_m3": 5.329898438749328e-07,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.0005596393360686794
+        }
+      ]
+    },
+    "B07WTFJGRG": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/panels",
+      "area_m2": 0.6517319895206071,
+      "parts": [
+        {
+          "name": "main frame legs",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.4,
+          "outer_volume_m3": 0.0030100513200995637,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.9598234754758034
+        },
+        {
+          "name": "rungs/steps",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1.0,
+          "area_share": 0.3,
+          "outer_volume_m3": 0.001003350440033188,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.4799117377379016
+        },
+        {
+          "name": "top platform",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1.0,
+          "area_share": 0.2,
+          "outer_volume_m3": 0.000501675220016594,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.31994115849193444
+        },
+        {
+          "name": "handrail",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1.0,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.000250837610008297,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.15997057924596722
+        },
+        {
+          "name": "feet pads",
+          "material": "rubber",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.00010033504400331879,
+          "density_kg_m3": 1100.0,
+          "mass_kg": 0.11036854840365067
+        },
+        {
+          "name": "textured surface coating",
+          "material": "rubber",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0001505025660049782,
+          "density_kg_m3": 1100.0,
+          "mass_kg": 0.08277641130273801
+        }
+      ]
+    },
+    "B073WGP8XN": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/panels",
+      "area_m2": 0.20679388617720362,
+      "parts": [
+        {
+          "name": "central rectangular panel",
+          "material": "glass",
+          "construction": "shell",
+          "thickness_mm": 5,
+          "area_share": 0.4,
+          "outer_volume_m3": 0.0004924932160396335,
+          "density_kg_m3": 2500.0,
+          "mass_kg": 0.861641192405015
+        },
+        {
+          "name": "outer mesh frame",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.6,
+          "outer_volume_m3": 0.0014774796481189004,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.4187576195088372
+        },
+        {
+          "name": "internal support struts",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1.0,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.00024624660801981677,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.04652862438987081
+        },
+        {
+          "name": "corner reinforcement brackets",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 2.0,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.00012312330400990839,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.04652862438987081
+        },
+        {
+          "name": "backing plate",
+          "material": "steel",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.00012312330400990839,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.9665179364777808
+        }
+      ]
+    },
+    "B013TGFGWS_A1F83G8C2ARO7P": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/panels",
+      "area_m2": 0.09310874609779626,
+      "parts": [
+        {
+          "name": "main body",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.98,
+          "outer_volume_m3": 0.0010525852054017765,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.09571318654808428
+        },
+        {
+          "name": "flap",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.02,
+          "outer_volume_m3": 5.539922133693561e-05,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.001953330337716006
+        },
+        {
+          "name": "orange label",
+          "material": "fabric",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.001,
+          "outer_volume_m3": 1.1079844267387123e-06,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.0003877945493585493
+        }
+      ]
+    },
+    "B075YLPZB1": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/panels",
+      "area_m2": 0.04879702636834409,
+      "parts": [
+        {
+          "name": "wooden frame",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.47368421052631576,
+          "outer_volume_m3": 3.597625684994416e-05,
+          "density_kg_m3": 650.0,
+          "mass_kg": 0.023384566952463704
+        },
+        {
+          "name": "backing panel",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05263157894736842,
+          "outer_volume_m3": 4.497032106243021e-05,
+          "density_kg_m3": 65.0,
+          "mass_kg": 0.0029230708690579634
+        },
+        {
+          "name": "printed front panel",
+          "material": "paper_cardboard",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.47368421052631576,
+          "outer_volume_m3": 4.497032106243021e-05,
+          "density_kg_m3": 550.0,
+          "mass_kg": 0.024733676584336613
+        }
+      ]
+    },
+    "B082VML3QJ_ATVPDKIKX0DER": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/panels",
+      "area_m2": 1.4035824139873712,
+      "parts": [
+        {
+          "name": "upholstered seat cushion",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 5,
+          "area_share": 0.95,
+          "outer_volume_m3": 0.04905395974285546,
+          "density_kg_m3": 350.0,
+          "mass_kg": 2.102212399327932
+        },
+        {
+          "name": "wooden legs",
+          "material": "wood",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.00288552704369738,
+          "density_kg_m3": 650.0,
+          "mass_kg": 1.875592578403297
+        },
+        {
+          "name": "wooden base frame",
+          "material": "wood",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.00288552704369738,
+          "density_kg_m3": 650.0,
+          "mass_kg": 1.875592578403297
+        },
+        {
+          "name": "internal foam core",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.0,
+          "outer_volume_m3": 0.04039737861176332,
+          "density_kg_m3": 65.0,
+          "mass_kg": 2.6258296097646157
+        },
+        {
+          "name": "fabric backing",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.00288552704369738,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.04425710314374594
+        },
+        {
+          "name": "wooden leg caps",
+          "material": "wood",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.01,
+          "outer_volume_m3": 0.000577105408739476,
+          "density_kg_m3": 650.0,
+          "mass_kg": 0.3751185156806594
+        }
+      ]
+    },
+    "B07B8F6V9M_ATVPDKIKX0DER": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/panels",
+      "area_m2": 0.5850689193388435,
+      "parts": [
+        {
+          "name": "circular upholstered seat",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 10,
+          "area_share": 0.6,
+          "outer_volume_m3": 0.005456242062051484,
+          "density_kg_m3": 350.0,
+          "mass_kg": 1.1169497551014285
+        },
+        {
+          "name": "metal leg frame",
+          "material": "steel",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.2,
+          "outer_volume_m3": 0.0036374947080343224,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 28.55433345806943
+        },
+        {
+          "name": "seat base ring",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0009093736770085806,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.41752645607362926
+        },
+        {
+          "name": "leg connectors",
+          "material": "steel",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.0009093736770085806,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 7.138583364517357
+        },
+        {
+          "name": "internal support foam",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.0036374947080343224,
+          "density_kg_m3": 65.0,
+          "mass_kg": 0.23643715602223095
+        },
+        {
+          "name": "seat padding",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.002728121031025742,
+          "density_kg_m3": 65.0,
+          "mass_kg": 0.17732786701667322
+        }
+      ]
+    },
+    "B07PXFVNXR_ATVPDKIKX0DER": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/panels",
+      "area_m2": 3.0447672381436015,
+      "parts": [
+        {
+          "name": "drawer front panels",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 12,
+          "area_share": 0.3,
+          "outer_volume_m3": 0.05085078345948771,
+          "density_kg_m3": 650.0,
+          "mass_kg": 8.284599229367476
+        },
+        {
+          "name": "drawer side panels",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 12,
+          "area_share": 0.3,
+          "outer_volume_m3": 0.05085078345948771,
+          "density_kg_m3": 650.0,
+          "mass_kg": 8.284599229367476
+        },
+        {
+          "name": "drawer back panel",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 12,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.05085078345948771,
+          "density_kg_m3": 650.0,
+          "mass_kg": 2.761533076455825
+        },
+        {
+          "name": "drawer bottom panel",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 12,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.05085078345948771,
+          "density_kg_m3": 650.0,
+          "mass_kg": 2.761533076455825
+        },
+        {
+          "name": "drawer interior divider",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 6,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.05085078345948771,
+          "density_kg_m3": 650.0,
+          "mass_kg": 0.6903832691139562
+        },
+        {
+          "name": "drawer handle",
+          "material": "plastic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.01,
+          "outer_volume_m3": 0.00508507834594877,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 5.339332263246209
+        }
+      ]
+    },
+    "B01LR5RBZ8_ATVPDKIKX0DER": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/panels",
+      "area_m2": 0.06070026179557136,
+      "parts": [
+        {
+          "name": "handle",
+          "material": "plastic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.6,
+          "outer_volume_m3": 0.0004341110399720651,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.45581659197066837
+        },
+        {
+          "name": "end_plate",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.4,
+          "outer_volume_m3": 0.00028940735998137673,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.0764823298624199
+        }
+      ]
+    },
+    "B07124WMX5_ATVPDKIKX0DER": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/panels",
+      "area_m2": 4.92126419253884,
+      "parts": [
+        {
+          "name": "seat cushion",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.4,
+          "outer_volume_m3": 0.14762338849045542,
+          "density_kg_m3": 65.0,
+          "mass_kg": 9.595520251879602
+        },
+        {
+          "name": "backrest cushion",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.3,
+          "outer_volume_m3": 0.0984155923269703,
+          "density_kg_m3": 65.0,
+          "mass_kg": 6.39701350125307
+        },
+        {
+          "name": "upholstered frame",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 5,
+          "area_share": 0.2,
+          "outer_volume_m3": 0.04920779616348515,
+          "density_kg_m3": 350.0,
+          "mass_kg": 1.5658567885350856
+        },
+        {
+          "name": "wooden base",
+          "material": "wood",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.07381169424522771,
+          "density_kg_m3": 650.0,
+          "mass_kg": 47.977601259398014
+        },
+        {
+          "name": "legs",
+          "material": "wood",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.024603898081742574,
+          "density_kg_m3": 650.0,
+          "mass_kg": 15.992533753132673
+        },
+        {
+          "name": "internal frame structure",
+          "material": "wood",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0984155923269703,
+          "density_kg_m3": 650.0,
+          "mass_kg": 31.985067506265345
+        }
+      ]
+    },
+    "B07YPTDRLV_ATVPDKIKX0DER": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/panels",
+      "area_m2": 1.2764181296000112,
+      "parts": [
+        {
+          "name": "main body shell",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.95,
+          "outer_volume_m3": 0.031085253213275252,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 3.7818626265624093
+        },
+        {
+          "name": "lid rim",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.03,
+          "outer_volume_m3": 0.00031719646135995155,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.11942724083881293
+        },
+        {
+          "name": "foot pedal",
+          "material": "plastic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.01,
+          "outer_volume_m3": 0.00015859823067997577,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.16652814221397455
+        },
+        {
+          "name": "side wall ribs",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.02,
+          "outer_volume_m3": 0.00015859823067997577,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.07961816055920862
+        }
+      ]
+    },
+    "B07XMV34PX_ATVPDKIKX0DER": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/panels",
+      "area_m2": 0.7254082789865038,
+      "parts": [
+        {
+          "name": "outer mesh cage",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 1.2,
+          "area_share": 0.95,
+          "outer_volume_m3": 0.004738249919329123,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 6.293435471304143
+        },
+        {
+          "name": "support stand",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 1.0,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.00027872058348994846,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.27602787154842734
+        },
+        {
+          "name": "fan blades",
+          "material": "plastic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.02,
+          "outer_volume_m3": 0.00016723235009396902,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.17559396759866747
+        },
+        {
+          "name": "motor housing",
+          "material": "plastic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.01,
+          "outer_volume_m3": 0.00011148823339597937,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.11706264506577833
+        },
+        {
+          "name": "power cord",
+          "material": "plastic",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.001,
+          "outer_volume_m3": 5.574411669798968e-06,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.00029265661266444584
+        },
+        {
+          "name": "control switch",
+          "material": "plastic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.0005,
+          "outer_volume_m3": 2.787205834899484e-06,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.002926566126644458
+        }
+      ]
+    },
+    "B074VLQDGN": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/panels",
+      "area_m2": 0.6221182701728544,
+      "parts": [
+        {
+          "name": "outer fabric shell",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 1.0,
+          "outer_volume_m3": 0.0191684357759081,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.43117107833762186
+        },
+        {
+          "name": "inner foam core",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.0,
+          "outer_volume_m3": 0.01815957073507083,
+          "density_kg_m3": 65.0,
+          "mass_kg": 1.180372097779604
+        },
+        {
+          "name": "fabric seam",
+          "material": "fabric",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.01,
+          "outer_volume_m3": 0.0,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.0
+        }
+      ]
+    },
+    "B07N6RTLP7_ATVPDKIKX0DER": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/panels",
+      "area_m2": 1.691696031831535,
+      "parts": [
+        {
+          "name": "front grille",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.15,
+          "outer_volume_m3": 0.008254391130441465,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.5609307895020352
+        },
+        {
+          "name": "top control panel",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.003301756452176586,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.1402326973755088
+        },
+        {
+          "name": "side vent grille",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.08,
+          "outer_volume_m3": 0.004952634678264878,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.29916308773441885
+        },
+        {
+          "name": "rear exhaust grille",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.006603512904353172,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.3739538596680235
+        },
+        {
+          "name": "main body shell",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.55,
+          "outer_volume_m3": 0.12381586695662196,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 3.085119342261194
+        },
+        {
+          "name": "base feet",
+          "material": "plastic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.02,
+          "outer_volume_m3": 0.001650878226088293,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 1.7334221373927077
+        }
+      ]
+    },
+    "B07TYYNGQ1_ATVPDKIKX0DER": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/panels",
+      "area_m2": 0.42037167520125657,
+      "parts": [
+        {
+          "name": "horizontal rails",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.4,
+          "outer_volume_m3": 0.0012257357165091408,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 2.6399341202638915
+        },
+        {
+          "name": "vertical supports",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.2,
+          "outer_volume_m3": 0.0004085785721697136,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 1.3199670601319458
+        },
+        {
+          "name": "cross braces",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.2,
+          "outer_volume_m3": 0.0002042892860848568,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 1.3199670601319458
+        },
+        {
+          "name": "end brackets",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.0001021446430424284,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.6599835300659729
+        },
+        {
+          "name": "central connector",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.0001021446430424284,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.6599835300659729
+        }
+      ]
+    },
+    "B071FJR4FW_ATVPDKIKX0DER": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/panels",
+      "area_m2": 13.465883265722578,
+      "parts": [
+        {
+          "name": "headboard",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 20,
+          "area_share": 0.25,
+          "outer_volume_m3": 0.19062342845260444,
+          "density_kg_m3": 650.0,
+          "mass_kg": 43.76412061359837
+        },
+        {
+          "name": "footboard",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 20,
+          "area_share": 0.25,
+          "outer_volume_m3": 0.19062342845260444,
+          "density_kg_m3": 650.0,
+          "mass_kg": 43.76412061359837
+        },
+        {
+          "name": "side rails",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 20,
+          "area_share": 0.15,
+          "outer_volume_m3": 0.12708228563506963,
+          "density_kg_m3": 650.0,
+          "mass_kg": 26.258472368159023
+        },
+        {
+          "name": "bed frame base",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 20,
+          "area_share": 0.2,
+          "outer_volume_m3": 0.25416457127013925,
+          "density_kg_m3": 650.0,
+          "mass_kg": 35.0112964908787
+        },
+        {
+          "name": "metal support legs",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 5,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.06354114281753481,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 26.426795908980555
+        },
+        {
+          "name": "mattress cover",
+          "material": "fabric",
+          "construction": "solid",
+          "thickness_mm": 10,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.3812468569052089,
+          "density_kg_m3": 350.0,
+          "mass_kg": 133.43639991682312
+        }
+      ]
+    },
+    "B076YNV36K_A1F83G8C2ARO7P": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/panels",
+      "area_m2": 0.014556226953525805,
+      "parts": [
+        {
+          "name": "Main housing",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.98,
+          "outer_volume_m3": 7.83051855495236e-05,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.027357730657859458
+        },
+        {
+          "name": "USB ports",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.05,
+          "outer_volume_m3": 1.648530222095234e-06,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.0006979012922923333
+        },
+        {
+          "name": "USB port bezels",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.03,
+          "outer_volume_m3": 8.24265111047617e-07,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.00041874077537539986
+        },
+        {
+          "name": "Bottom USB port",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.02,
+          "outer_volume_m3": 8.24265111047617e-07,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.0002791605169169333
+        },
+        {
+          "name": "Internal circuit board",
+          "material": "plastic",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.01,
+          "outer_volume_m3": 8.24265111047617e-07,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.00025964350997999936
+        },
+        {
+          "name": "Internal connectors",
+          "material": "plastic",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.005,
+          "outer_volume_m3": 4.121325555238085e-07,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 8.654783665999978e-05
+        }
+      ]
+    },
+    "B07WQWGQJK": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/panels",
+      "area_m2": 0.7551665303800432,
+      "parts": [
+        {
+          "name": "main frame legs",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.3,
+          "outer_volume_m3": 0.002822989382047522,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 1.0794439228373558
+        },
+        {
+          "name": "side rails",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.2,
+          "outer_volume_m3": 0.001411494691023761,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.7196292818915707
+        },
+        {
+          "name": "steps",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.2,
+          "outer_volume_m3": 0.001411494691023761,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.7196292818915707
+        },
+        {
+          "name": "foot caps",
+          "material": "plastic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0003528736727559402,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.37051735639373723
+        },
+        {
+          "name": "connecting joints",
+          "material": "plastic",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0003528736727559402,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.11115520691812117
+        },
+        {
+          "name": "handrail support",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0003528736727559402,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.17990732047289268
+        }
+      ]
+    },
+    "B07BBWMPJM": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/panels",
+      "area_m2": 9.963561434391424,
+      "parts": [
+        {
+          "name": "headboard",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 25,
+          "area_share": 0.25,
+          "outer_volume_m3": 0.12470467786302344,
+          "density_kg_m3": 650.0,
+          "mass_kg": 42.607335081279125
+        },
+        {
+          "name": "footboard",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 25,
+          "area_share": 0.25,
+          "outer_volume_m3": 0.12470467786302344,
+          "density_kg_m3": 650.0,
+          "mass_kg": 42.607335081279125
+        },
+        {
+          "name": "side rails",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 25,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.041568225954341155,
+          "density_kg_m3": 650.0,
+          "mass_kg": 17.04293403251165
+        },
+        {
+          "name": "bed frame base",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 25,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.041568225954341155,
+          "density_kg_m3": 650.0,
+          "mass_kg": 17.04293403251165
+        },
+        {
+          "name": "mattress support slats",
+          "material": "wood",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.041568225954341155,
+          "density_kg_m3": 650.0,
+          "mass_kg": 13.509673435160876
+        },
+        {
+          "name": "mattress",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.2,
+          "outer_volume_m3": 0.37411403358907036,
+          "density_kg_m3": 65.0,
+          "mass_kg": 24.317412183289573
+        }
+      ]
+    },
+    "B07B8K1DL3_ATVPDKIKX0DER": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/panels",
+      "area_m2": 0.22529260511375213,
+      "parts": [
+        {
+          "name": "base_plate",
+          "material": "steel",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.25,
+          "outer_volume_m3": 0.0004799322527136782,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 3.767468183802374
+        },
+        {
+          "name": "vertical_supports",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.00015997741757122608,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.33160255315180387
+        },
+        {
+          "name": "horizontal_racks",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.2,
+          "outer_volume_m3": 0.00031995483514245216,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.6632051063036077
+        },
+        {
+          "name": "curved_supports",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.15,
+          "outer_volume_m3": 0.00015997741757122608,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.49740382972770564
+        },
+        {
+          "name": "top_rack",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.05,
+          "outer_volume_m3": 6.399096702849042e-05,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.16580127657590193
+        },
+        {
+          "name": "side_brace",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.05,
+          "outer_volume_m3": 9.598645054273565e-05,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.16580127657590193
+        }
+      ]
+    },
+    "B01E3R7GWA_ATVPDKIKX0DER": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/panels",
+      "area_m2": 0.6260485721914508,
+      "parts": [
+        {
+          "name": "main body shell",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.95,
+          "outer_volume_m3": 0.028109306187162602,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 1.7674059927197325
+        },
+        {
+          "name": "top lid shell",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0009166078104509543,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.062014245358587114
+        },
+        {
+          "name": "feed slot",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.02,
+          "outer_volume_m3": 0.0003055359368169848,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.01240284907171742
+        },
+        {
+          "name": "control panel",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.01,
+          "outer_volume_m3": 0.0001527679684084924,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.00620142453585871
+        },
+        {
+          "name": "internal shredder mechanism",
+          "material": "steel",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.01,
+          "outer_volume_m3": 0.0006110718736339696,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 1.4390742624079984
+        },
+        {
+          "name": "collection bin",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.02,
+          "outer_volume_m3": 0.0009166078104509543,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.02480569814343484
+        }
+      ]
+    },
+    "B07Y3Q8JWL": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/panels",
+      "area_m2": 0.47867819845458326,
+      "parts": [
+        {
+          "name": "seat",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.35,
+          "outer_volume_m3": 0.0019315925661247703,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.55551864610124
+        },
+        {
+          "name": "backrest",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.3,
+          "outer_volume_m3": 0.001073106981180428,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.4761588395153486
+        },
+        {
+          "name": "leg_frame",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.2,
+          "outer_volume_m3": 0.0006438641887082568,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.4081361481560132
+        },
+        {
+          "name": "seat-to-backrest-connector",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0002146213962360856,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.1020340370390033
+        },
+        {
+          "name": "leg-to-backrest-connector",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0002146213962360856,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.1020340370390033
+        }
+      ]
+    },
+    "B07S62HZR7_ATVPDKIKX0DER": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/panels",
+      "area_m2": 0.4008282074561162,
+      "parts": [
+        {
+          "name": "central vertical post",
+          "material": "steel",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.3,
+          "outer_volume_m3": 0.0008236982836689406,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 6.466031526801184
+        },
+        {
+          "name": "tripod legs",
+          "material": "steel",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.4,
+          "outer_volume_m3": 0.0011531775971365167,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 9.052444137521656
+        },
+        {
+          "name": "horizontal crossbar",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.00032947931346757626,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.6293002857061024
+        },
+        {
+          "name": "adjustment collar",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.00016473965673378813,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.0631304426743383
+        },
+        {
+          "name": "foot caps",
+          "material": "rubber",
+          "construction": "shell",
+          "thickness_mm": 5,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.00016473965673378813,
+          "density_kg_m3": 1100.0,
+          "mass_kg": 0.11022775705043195
+        },
+        {
+          "name": "internal bracing struts",
+          "material": "steel",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.00032947931346757626,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 1.2932063053602367
+        }
+      ]
+    },
+    "B07B4Z6JZ4": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/panels",
+      "area_m2": 0.3638925051822727,
+      "parts": [
+        {
+          "name": "lampshade",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.4,
+          "outer_volume_m3": 0.001764449264131825,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.10188990145103632
+        },
+        {
+          "name": "metal_support_structure",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.2,
+          "outer_volume_m3": 0.0008822246320659126,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.5713112331361679
+        },
+        {
+          "name": "base_plate",
+          "material": "ceramic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.0004411123160329563,
+          "density_kg_m3": 2600.0,
+          "mass_kg": 1.1468920216856864
+        },
+        {
+          "name": "metal_mesh_cylinder",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.2,
+          "outer_volume_m3": 0.002646673896197737,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.1965019527984272
+        },
+        {
+          "name": "central_support_rod",
+          "material": "steel",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0004411123160329563,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 3.462731680858707
+        },
+        {
+          "name": "internal_support_frame",
+          "material": "steel",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0004411123160329563,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 1.0388195042576118
+        }
+      ]
+    },
+    "B003QTD4Y6_A1F83G8C2ARO7P": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/panels",
+      "area_m2": 0.4469016999901373,
+      "parts": [
+        {
+          "name": "base surface",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.5,
+          "outer_volume_m3": 0.002208460001123866,
+          "density_kg_m3": 65.0,
+          "mass_kg": 0.1435499000730513
+        },
+        {
+          "name": "edge profile",
+          "material": "rubber",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.5,
+          "outer_volume_m3": 0.00024538444456931845,
+          "density_kg_m3": 1100.0,
+          "mass_kg": 0.2699228890262503
+        }
+      ]
+    },
+    "B07B4YXRLC_ATVPDKIKX0DER": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/panels",
+      "area_m2": 11.337120061371152,
+      "parts": [
+        {
+          "name": "headboard",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 5,
+          "area_share": 0.3,
+          "outer_volume_m3": 0.24618076129405103,
+          "density_kg_m3": 350.0,
+          "mass_kg": 5.951988032219855
+        },
+        {
+          "name": "bed frame base",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.2,
+          "outer_volume_m3": 0.4103012688234184,
+          "density_kg_m3": 65.0,
+          "mass_kg": 26.669582473522194
+        },
+        {
+          "name": "bed legs",
+          "material": "wood",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.03282410150587347,
+          "density_kg_m3": 650.0,
+          "mass_kg": 21.335665978817755
+        },
+        {
+          "name": "bed skirt",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.08,
+          "outer_volume_m3": 0.08206025376468368,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.9523180851551769
+        },
+        {
+          "name": "mattress cover",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.25,
+          "outer_volume_m3": 0.49236152258810206,
+          "density_kg_m3": 350.0,
+          "mass_kg": 1.9839960107399517
+        },
+        {
+          "name": "mattress core",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.12,
+          "outer_volume_m3": 0.4103012688234184,
+          "density_kg_m3": 65.0,
+          "mass_kg": 26.669582473522194
+        }
+      ]
+    },
+    "B07WBYQQ84_ATVPDKIKX0DER": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/panels",
+      "area_m2": 0.9641294591141789,
+      "parts": [
+        {
+          "name": "handle",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0002694057881532167,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.14461941886712681
+        },
+        {
+          "name": "frame",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.25,
+          "outer_volume_m3": 0.0013470289407660836,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.9296962641458153
+        },
+        {
+          "name": "fabric body",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.6,
+          "outer_volume_m3": 0.017511376229959085,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.38565178364567154
+        },
+        {
+          "name": "wheels",
+          "material": "rubber",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0005388115763064334,
+          "density_kg_m3": 1100.0,
+          "mass_kg": 0.5926927339370768
+        },
+        {
+          "name": "frame cross-braces",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0005388115763064334,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.18593925282916307
+        },
+        {
+          "name": "base frame",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0002694057881532167,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.18593925282916307
+        }
+      ]
+    },
+    "B075X5HB29_ATVPDKIKX0DER": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/panels",
+      "area_m2": 5.863438285351449,
+      "parts": [
+        {
+          "name": "seat cushions",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.3,
+          "outer_volume_m3": 0.2383969697624477,
+          "density_kg_m3": 65.0,
+          "mass_kg": 15.495803034559101
+        },
+        {
+          "name": "backrest cushions",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.2,
+          "outer_volume_m3": 0.11919848488122385,
+          "density_kg_m3": 65.0,
+          "mass_kg": 7.7479015172795505
+        },
+        {
+          "name": "outer frame shell",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 5,
+          "area_share": 0.4,
+          "outer_volume_m3": 0.17879772732183577,
+          "density_kg_m3": 350.0,
+          "mass_kg": 3.9089588569009655
+        },
+        {
+          "name": "legs",
+          "material": "wood",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.029799621220305963,
+          "density_kg_m3": 650.0,
+          "mass_kg": 19.369753793198875
+        },
+        {
+          "name": "internal structural frame",
+          "material": "wood",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.029799621220305963,
+          "density_kg_m3": 650.0,
+          "mass_kg": 9.684876896599437
+        },
+        {
+          "name": "fabric backing",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.029799621220305963,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.2931719142675724
+        }
+      ]
+    },
+    "B075HWK9M3_ATVPDKIKX0DER": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/panels",
+      "area_m2": 0.1586554972190652,
+      "parts": [
+        {
+          "name": "outer cylindrical shell",
+          "material": "ceramic",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.98,
+          "outer_volume_m3": 0.0015430920301272063,
+          "density_kg_m3": 2600.0,
+          "mass_kg": 1.1889829615122884
+        },
+        {
+          "name": "inner cylindrical cavity",
+          "material": "ceramic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.02,
+          "outer_volume_m3": 8.121537000669507e-05,
+          "density_kg_m3": 2600.0,
+          "mass_kg": 0.2111599620174072
+        },
+        {
+          "name": "base ring",
+          "material": "stone",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.01,
+          "outer_volume_m3": 3.2486148002678025e-05,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.008399408676303451
+        },
+        {
+          "name": "patterned relief",
+          "material": "ceramic",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.01,
+          "outer_volume_m3": 1.6243074001339013e-05,
+          "density_kg_m3": 2600.0,
+          "mass_kg": 0.004044159733034995
+        }
+      ]
+    },
+    "B07YPV3KSY_ATVPDKIKX0DER": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/panels",
+      "area_m2": 1.8226915532134986,
+      "parts": [
+        {
+          "name": "outer shell",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.8,
+          "outer_volume_m3": 0.11829151605747458,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 3.827652261748347
+        },
+        {
+          "name": "front grille",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.15,
+          "outer_volume_m3": 0.007886101070498306,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.47845653271854327
+        },
+        {
+          "name": "side vent grille",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.004731660642298983,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.31897102181236225
+        },
+        {
+          "name": "top control panel",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.003154440428199322,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.15948551090618113
+        },
+        {
+          "name": "base housing",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.015772202140996613,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.2392282663592717
+        },
+        {
+          "name": "internal fan housing",
+          "material": "plastic",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.007886101070498306,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 1.6560812248046446
+        }
+      ]
+    },
+    "B07BLC96G2_ATVPDKIKX0DER": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/panels",
+      "area_m2": 0.07636327843275968,
+      "parts": [
+        {
+          "name": "pan body",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.6,
+          "outer_volume_m3": 0.0007036525406516011,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.5395065621274472
+        },
+        {
+          "name": "lid",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 1.2,
+          "area_share": 0.25,
+          "outer_volume_m3": 0.00014073050813032023,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.17983552070914902
+        },
+        {
+          "name": "handle",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 1.0,
+          "area_share": 0.1,
+          "outer_volume_m3": 4.691016937677341e-05,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.059945173569716355
+        },
+        {
+          "name": "lid handle",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 0.8,
+          "area_share": 0.03,
+          "outer_volume_m3": 1.8764067750709365e-05,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.014386841656731925
+        },
+        {
+          "name": "side handles",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 1.0,
+          "area_share": 0.02,
+          "outer_volume_m3": 2.8146101626064045e-05,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.011989034713943272
+        }
+      ]
+    },
+    "B07GFRWJS7_A13V1IB3VIYZZH": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/panels",
+      "area_m2": 8.366052111581174,
+      "parts": [
+        {
+          "name": "headboard panel",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 15,
+          "area_share": 0.25,
+          "outer_volume_m3": 0.055142554687855665,
+          "density_kg_m3": 650.0,
+          "mass_kg": 20.39225202197911
+        },
+        {
+          "name": "bed base frame",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 20,
+          "area_share": 0.45,
+          "outer_volume_m3": 0.3859978828149896,
+          "density_kg_m3": 650.0,
+          "mass_kg": 48.941404852749876
+        },
+        {
+          "name": "mattress cover",
+          "material": "fabric",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.25,
+          "outer_volume_m3": 0.49628299219070093,
+          "density_kg_m3": 350.0,
+          "mass_kg": 173.69904726674534
+        },
+        {
+          "name": "internal support frame",
+          "material": "wood",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.165427664063567,
+          "density_kg_m3": 650.0,
+          "mass_kg": 64.51678898479112
+        }
+      ]
+    },
+    "B07QC9Y62K_ATVPDKIKX0DER": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/panels",
+      "area_m2": 0.22152696614172415,
+      "parts": [
+        {
+          "name": "central bar",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.45,
+          "outer_volume_m3": 0.0009370885543598724,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.5126766930708473
+        },
+        {
+          "name": "lampshade",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.3,
+          "outer_volume_m3": 0.0006693489673999089,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.06645808984251725
+        },
+        {
+          "name": "mounting bracket",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.15,
+          "outer_volume_m3": 0.0002677395869599636,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.12816917326771182
+        },
+        {
+          "name": "base plate",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0001338697934799818,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.02848203850393596
+        },
+        {
+          "name": "internal support",
+          "material": "plastic",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0001338697934799818,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.07028164157699045
+        },
+        {
+          "name": "light socket",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0001338697934799818,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.011076348307086207
+        }
+      ]
+    },
+    "B075X1TB14_ATVPDKIKX0DER": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/panels",
+      "area_m2": 0.45512921624954333,
+      "parts": [
+        {
+          "name": "ceiling mount",
+          "material": "aluminum",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.15,
+          "outer_volume_m3": 0.0015572798089155317,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 4.204655484071936
+        },
+        {
+          "name": "hanging wires",
+          "material": "steel",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0007786399044577659,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 6.112323249993462
+        },
+        {
+          "name": "shade outer frame",
+          "material": "wood",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.3,
+          "outer_volume_m3": 0.006229119235662127,
+          "density_kg_m3": 650.0,
+          "mass_kg": 2.8342492522262677
+        },
+        {
+          "name": "inner diffuser",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.4,
+          "outer_volume_m3": 0.0038931995222888293,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.3823085416496165
+        },
+        {
+          "name": "central support rod",
+          "material": "steel",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.0015572798089155317,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 12.224646499986925
+        }
+      ]
+    },
+    "B076YJ1XZS_A1F83G8C2ARO7P": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/panels",
+      "area_m2": 0.01470606744764767,
+      "parts": [
+        {
+          "name": "Main housing",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.98,
+          "outer_volume_m3": 8.245706384531956e-05,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.028851369692334518
+        },
+        {
+          "name": "USB ports",
+          "material": "plastic",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 1.735938186217254e-06,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.000546820528658435
+        },
+        {
+          "name": "Port labels",
+          "material": "plastic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.002,
+          "outer_volume_m3": 8.679690931086269e-08,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 9.113675477640582e-05
+        },
+        {
+          "name": "Brand logo",
+          "material": "plastic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.002,
+          "outer_volume_m3": 8.679690931086269e-08,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 9.113675477640582e-05
+        },
+        {
+          "name": "Internal circuitry",
+          "material": "plastic",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.01,
+          "outer_volume_m3": 1.735938186217254e-06,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.0009113675477640583
+        },
+        {
+          "name": "Internal connectors",
+          "material": "plastic",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.005,
+          "outer_volume_m3": 8.67969093108627e-07,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.00018227350955281167
+        }
+      ]
+    },
+    "B07H8JWNQH_APJ6JRA9NG5V4": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/panels",
+      "area_m2": 1.2945639834196192,
+      "parts": [
+        {
+          "name": "top drawer front panel",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 12,
+          "area_share": 0.15,
+          "outer_volume_m3": 0.012784134088671413,
+          "density_kg_m3": 650.0,
+          "mass_kg": 1.4425141529532903
+        },
+        {
+          "name": "middle drawer front panel",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 12,
+          "area_share": 0.15,
+          "outer_volume_m3": 0.012784134088671413,
+          "density_kg_m3": 650.0,
+          "mass_kg": 1.4425141529532903
+        },
+        {
+          "name": "bottom drawer front panel",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 12,
+          "area_share": 0.15,
+          "outer_volume_m3": 0.012784134088671413,
+          "density_kg_m3": 650.0,
+          "mass_kg": 1.4425141529532903
+        },
+        {
+          "name": "side panel left",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 12,
+          "area_share": 0.2,
+          "outer_volume_m3": 0.015980167610839268,
+          "density_kg_m3": 650.0,
+          "mass_kg": 1.9233522039377204
+        },
+        {
+          "name": "side panel right",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 12,
+          "area_share": 0.2,
+          "outer_volume_m3": 0.015980167610839268,
+          "density_kg_m3": 650.0,
+          "mass_kg": 1.9233522039377204
+        },
+        {
+          "name": "back panel",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 12,
+          "area_share": 0.2,
+          "outer_volume_m3": 0.015980167610839268,
+          "density_kg_m3": 650.0,
+          "mass_kg": 1.9233522039377204
+        }
+      ]
+    },
+    "B07HKF5F8P_ATVPDKIKX0DER": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/panels",
+      "area_m2": 0.3606159499238156,
+      "parts": [
+        {
+          "name": "central motor housing",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.15,
+          "outer_volume_m3": 0.0003040705377384439,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.34364578757445957
+        },
+        {
+          "name": "blade",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.45,
+          "outer_volume_m3": 0.0015203526886922196,
+          "density_kg_m3": 650.0,
+          "mass_kg": 0.3722829365389979
+        },
+        {
+          "name": "blade connector",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.00012162821509537758,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.0572742979290766
+        },
+        {
+          "name": "central hub",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.00018244232264306634,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.2290971917163064
+        },
+        {
+          "name": "mounting bracket",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.00012162821509537758,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.0572742979290766
+        },
+        {
+          "name": "internal motor components",
+          "material": "aluminum",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0003040705377384439,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.574693316325659
+        }
+      ]
+    },
+    "B073WHKXD4": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/panels",
+      "area_m2": 0.5434019708213248,
+      "parts": [
+        {
+          "name": "arched mirror glass",
+          "material": "glass",
+          "construction": "shell",
+          "thickness_mm": 5,
+          "area_share": 0.6,
+          "outer_volume_m3": 0.0,
+          "density_kg_m3": 2500.0,
+          "mass_kg": 0.0
+        },
+        {
+          "name": "wooden frame",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 15,
+          "area_share": 0.3,
+          "outer_volume_m3": 0.0028878300932488484,
+          "density_kg_m3": 650.0,
+          "mass_kg": 1.5582850633846816
+        },
+        {
+          "name": "base plate",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 15,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.0028878300932488484,
+          "density_kg_m3": 650.0,
+          "mass_kg": 0.5194283544615607
+        },
+        {
+          "name": "side mounting bracket",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.02,
+          "outer_volume_m3": 0.0,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.0
+        }
+      ]
+    },
+    "B00MIBN16O_ATVPDKIKX0DER": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/panels",
+      "area_m2": 0.787644778102431,
+      "parts": [
+        {
+          "name": "mounting plate",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.15,
+          "outer_volume_m3": 0.0012374755114288789,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 3.352235154996189
+        },
+        {
+          "name": "articulating arm",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.45,
+          "outer_volume_m3": 0.00866232858000215,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 2.305996157576997
+        },
+        {
+          "name": "base plate",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.15,
+          "outer_volume_m3": 0.0012374755114288789,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 3.352235154996189
+        },
+        {
+          "name": "pivot joint",
+          "material": "steel",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0004949902045715515,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 1.9428365529433396
+        },
+        {
+          "name": "clamping mechanism",
+          "material": "steel",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.02,
+          "outer_volume_m3": 0.00024749510228577574,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 1.9428365529433396
+        },
+        {
+          "name": "adjustment knob",
+          "material": "plastic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.01,
+          "outer_volume_m3": 0.00012374755114288787,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.12993492870003226
+        }
+      ]
+    },
+    "B07RD8B8ZB_ATVPDKIKX0DER": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/panels",
+      "area_m2": 0.04019473444240933,
+      "parts": [
+        {
+          "name": "central_hub",
+          "material": "plastic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.2,
+          "outer_volume_m3": 3.7592707085232584e-05,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.03947234243949421
+        },
+        {
+          "name": "arm_1",
+          "material": "plastic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.15,
+          "outer_volume_m3": 2.5061804723488393e-05,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.026314894959662813
+        },
+        {
+          "name": "arm_2",
+          "material": "plastic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.15,
+          "outer_volume_m3": 2.5061804723488393e-05,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.026314894959662813
+        },
+        {
+          "name": "arm_3",
+          "material": "plastic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.15,
+          "outer_volume_m3": 2.5061804723488393e-05,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.026314894959662813
+        },
+        {
+          "name": "claw_mount",
+          "material": "plastic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 1.2530902361744197e-05,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.013157447479831406
+        },
+        {
+          "name": "base_hook",
+          "material": "plastic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 1.2530902361744197e-05,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.013157447479831406
+        }
+      ]
+    },
+    "B07WGNQVGM": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/panels",
+      "area_m2": 0.5530391619016584,
+      "parts": [
+        {
+          "name": "top_slats",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.6,
+          "outer_volume_m3": 0.003293981896830537,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 1.791846884561373
+        },
+        {
+          "name": "legs",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.3,
+          "outer_volume_m3": 0.002561985919757084,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.6719425817105149
+        },
+        {
+          "name": "foot_pads",
+          "material": "rubber",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.00036599798853672634,
+          "density_kg_m3": 1100.0,
+          "mass_kg": 0.402597787390399
+        },
+        {
+          "name": "connecting_braces",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0010979939656101789,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.07466028685672388
+        }
+      ]
+    },
+    "B07DHNHZ2Y_ATVPDKIKX0DER": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/panels",
+      "area_m2": 0.15642367952223013,
+      "parts": [
+        {
+          "name": "central vertical post",
+          "material": "aluminum",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.4,
+          "outer_volume_m3": 0.0003662123900339403,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.9887734530916388
+        },
+        {
+          "name": "horizontal mounting arms",
+          "material": "aluminum",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.3,
+          "outer_volume_m3": 0.0002615802785956717,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.7062667522083135
+        },
+        {
+          "name": "VESA mounting plates",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.15,
+          "outer_volume_m3": 0.00010463211143826867,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.33488887752259267
+        },
+        {
+          "name": "base mount bracket",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.15,
+          "outer_volume_m3": 0.000156948167157403,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.33488887752259267
+        },
+        {
+          "name": "adjustment pivot joints",
+          "material": "steel",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 5.2316055719134336e-05,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.20534051869760228
+        },
+        {
+          "name": "screws and fasteners",
+          "material": "steel",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 5.2316055719134336e-05,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.41068103739520456
+        }
+      ]
+    },
+    "B0753P16BL_ATVPDKIKX0DER": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/panels",
+      "area_m2": 1.7034587601645221,
+      "parts": [
+        {
+          "name": "base",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.24242424242424243,
+          "outer_volume_m3": 0.021109361989126187,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 6.48346728111103
+        },
+        {
+          "name": "tower frame",
+          "material": "aluminum",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.21212121212121213,
+          "outer_volume_m3": 0.03518226998187698,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 9.499212895106785
+        },
+        {
+          "name": "top canopy",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.2727272727272727,
+          "outer_volume_m3": 0.007036453996375395,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 2.508730174060478
+        },
+        {
+          "name": "inner burner cage",
+          "material": "aluminum",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.18181818181818182,
+          "outer_volume_m3": 0.01407290799275079,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 7.599370316085428
+        },
+        {
+          "name": "wheels",
+          "material": "rubber",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.09090909090909091,
+          "outer_volume_m3": 0.0035182269981876976,
+          "density_kg_m3": 1100.0,
+          "mass_kg": 3.870049698006467
+        }
+      ]
+    },
+    "B07VD8DQ5N_ATVPDKIKX0DER": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/panels",
+      "area_m2": 0.4893374096178702,
+      "parts": [
+        {
+          "name": "main mat body",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 1.0,
+          "outer_volume_m3": 0.003719379974024104,
+          "density_kg_m3": 65.0,
+          "mass_kg": 0.24175969831156677
+        },
+        {
+          "name": "surface pattern layer",
+          "material": "fabric",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.0
+        },
+        {
+          "name": "edge trim",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.02,
+          "outer_volume_m3": 3.9151368147622154e-05,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.018683792003591406
+        },
+        {
+          "name": "backing layer",
+          "material": "rubber",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.03,
+          "outer_volume_m3": 7.830273629524431e-05,
+          "density_kg_m3": 1100.0,
+          "mass_kg": 0.014680122288536103
+        }
+      ]
+    },
+    "B07SVY2C6F": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/panels",
+      "area_m2": 0.7115332406169387,
+      "parts": [
+        {
+          "name": "Top Cover",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 5,
+          "area_share": 0.5,
+          "outer_volume_m3": 0.004946241894019006,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.31129579276991065
+        },
+        {
+          "name": "Bottom Cover",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 5,
+          "area_share": 0.5,
+          "outer_volume_m3": 0.004946241894019006,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.31129579276991065
+        },
+        {
+          "name": "Middle Layer",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 1.0,
+          "outer_volume_m3": 0.009892483788038012,
+          "density_kg_m3": 65.0,
+          "mass_kg": 0.6430114462224708
+        }
+      ]
+    },
+    "B0719WQ4GK_ATVPDKIKX0DER": {
+      "source": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/panels",
+      "area_m2": 2.1099142424678248,
+      "parts": [
+        {
+          "name": "outer shell",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 5,
+          "area_share": 0.98,
+          "outer_volume_m3": 0.11546065172151225,
+          "density_kg_m3": 350.0,
+          "mass_kg": 2.3650345920472673
+        },
+        {
+          "name": "seat cushion",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.25,
+          "outer_volume_m3": 0.018230629219186143,
+          "density_kg_m3": 65.0,
+          "mass_kg": 1.1849908992470992
+        },
+        {
+          "name": "backrest cushion",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.2,
+          "outer_volume_m3": 0.014584503375348916,
+          "density_kg_m3": 65.0,
+          "mass_kg": 0.9479927193976795
+        },
+        {
+          "name": "armrests",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 5,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.003646125843837229,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.12066503020649325
+        },
+        {
+          "name": "internal frame",
+          "material": "wood",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.03,
+          "outer_volume_m3": 0.0024307505625581526,
+          "density_kg_m3": 650.0,
+          "mass_kg": 0.47399635969883974
+        },
+        {
+          "name": "base skirt",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.02,
+          "outer_volume_m3": 0.0012153752812790763,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.028959607249558383
+        }
+      ]
+    },
+    "B07TWQTVXL_ATVPDKIKX0DER": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 0.8641896550236382,
+      "parts": [
+        {
+          "name": "horizontal rails",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.4,
+          "outer_volume_m3": 0.0026258782389531506,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 5.4271110335484485
+        },
+        {
+          "name": "vertical supports",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.3,
+          "outer_volume_m3": 0.000875292746317717,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 4.070333275161336
+        },
+        {
+          "name": "diagonal braces",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.2,
+          "outer_volume_m3": 0.0004376463731588585,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 2.7135555167742242
+        },
+        {
+          "name": "end caps",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.00021882318657942925,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.6783888791935561
+        },
+        {
+          "name": "corner connectors",
+          "material": "steel",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.00021882318657942925,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.5153286043945559
+        }
+      ]
+    },
+    "B07DBDX15Y_ATVPDKIKX0DER": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 1.3391119873972552,
+      "parts": [
+        {
+          "name": "upholstered seat shell",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 5,
+          "area_share": 0.95,
+          "outer_volume_m3": 0.046242272278168614,
+          "density_kg_m3": 350.0,
+          "mass_kg": 2.0238851627708514
+        },
+        {
+          "name": "wooden legs",
+          "material": "wood",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0027201336634216835,
+          "density_kg_m3": 650.0,
+          "mass_kg": 1.7680868812240942
+        },
+        {
+          "name": "internal frame",
+          "material": "wood",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0027201336634216835,
+          "density_kg_m3": 650.0,
+          "mass_kg": 0.5304260643672283
+        },
+        {
+          "name": "foam cushioning",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0027201336634216835,
+          "density_kg_m3": 65.0,
+          "mass_kg": 0.17680868812240944
+        }
+      ]
+    },
+    "B07TDMJPWG_ATVPDKIKX0DER": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 2.7032090311757857,
+      "parts": [
+        {
+          "name": "top shelf",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.25,
+          "outer_volume_m3": 0.009314626671202845,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 8.376391142656546
+        },
+        {
+          "name": "middle shelf",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.25,
+          "outer_volume_m3": 0.009314626671202845,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 8.376391142656546
+        },
+        {
+          "name": "bottom shelf",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.25,
+          "outer_volume_m3": 0.009314626671202845,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 8.376391142656546
+        },
+        {
+          "name": "side frame",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.0014113070713943703,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 3.3505564570626185
+        },
+        {
+          "name": "handle",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0005645228285577482,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 1.6752782285313093
+        },
+        {
+          "name": "casters",
+          "material": "rubber",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0005645228285577482,
+          "density_kg_m3": 1100.0,
+          "mass_kg": 0.3104875557067615
+        }
+      ]
+    },
+    "B01MRT550V": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 0.09588221050450234,
+      "parts": [
+        {
+          "name": "main bar",
+          "material": "wood",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.6,
+          "outer_volume_m3": 0.0004172943182715077,
+          "density_kg_m3": 650.0,
+          "mass_kg": 0.27124130687648
+        },
+        {
+          "name": "hook",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.25,
+          "outer_volume_m3": 8.942021105818023e-05,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.19807246117377456
+        },
+        {
+          "name": "mounting bracket",
+          "material": "wood",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 2.980673701939341e-05,
+          "density_kg_m3": 650.0,
+          "mass_kg": 0.019374379062605716
+        },
+        {
+          "name": "wall mounting plate",
+          "material": "steel",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 2.980673701939341e-05,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.07019486568067147
+        }
+      ]
+    },
+    "B0727Q5F94_ATVPDKIKX0DER": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 0.6142012098189902,
+      "parts": [
+        {
+          "name": "pink dumbbell head",
+          "material": "plastic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.2,
+          "outer_volume_m3": 0.0020406415007296007,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 2.142673575766081
+        },
+        {
+          "name": "green dumbbell head",
+          "material": "plastic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.2,
+          "outer_volume_m3": 0.0020406415007296007,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 2.142673575766081
+        },
+        {
+          "name": "black grip handle",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 5,
+          "area_share": 0.15,
+          "outer_volume_m3": 0.0008162566002918403,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.4836834527324548
+        },
+        {
+          "name": "stacking base plate",
+          "material": "plastic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.25,
+          "outer_volume_m3": 0.0012243849004377604,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 1.2856041454596485
+        },
+        {
+          "name": "dumbbell stack assembly",
+          "material": "plastic",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.2,
+          "outer_volume_m3": 0.0020406415007296007,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 1.4998715030362564
+        }
+      ]
+    },
+    "B07DBB76JV_ATVPDKIKX0DER": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 2.9442730370338888,
+      "parts": [
+        {
+          "name": "top panel",
+          "material": "wood",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.2,
+          "outer_volume_m3": 0.01424483094032938,
+          "density_kg_m3": 650.0,
+          "mass_kg": 9.259140111214098
+        },
+        {
+          "name": "side panels",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 12,
+          "area_share": 0.35,
+          "outer_volume_m3": 0.04273449282098814,
+          "density_kg_m3": 650.0,
+          "mass_kg": 7.655109896288107
+        },
+        {
+          "name": "bottom panel",
+          "material": "wood",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.15,
+          "outer_volume_m3": 0.01424483094032938,
+          "density_kg_m3": 650.0,
+          "mass_kg": 9.259140111214098
+        },
+        {
+          "name": "internal partition walls",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 10,
+          "area_share": 0.2,
+          "outer_volume_m3": 0.0712241547016469,
+          "density_kg_m3": 650.0,
+          "mass_kg": 3.6452904268038617
+        },
+        {
+          "name": "front apron",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 8,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.01424483094032938,
+          "density_kg_m3": 650.0,
+          "mass_kg": 1.4581161707215446
+        },
+        {
+          "name": "back panel",
+          "material": "wood",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.01424483094032938,
+          "density_kg_m3": 650.0,
+          "mass_kg": 9.259140111214098
+        }
+      ]
+    },
+    "B01MXTX8MC": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 0.09364656769876438,
+      "parts": [
+        {
+          "name": "wooden plank",
+          "material": "wood",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.95,
+          "outer_volume_m3": 0.000512498591282407,
+          "density_kg_m3": 650.0,
+          "mass_kg": 0.3331240843335646
+        },
+        {
+          "name": "metal hooks",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.02,
+          "outer_volume_m3": 1.0789444026998044e-05,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.014556941711590107
+        },
+        {
+          "name": "mounting brackets",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.01,
+          "outer_volume_m3": 5.394722013499022e-06,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.007278470855795053
+        },
+        {
+          "name": "wooden end caps",
+          "material": "wood",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.01,
+          "outer_volume_m3": 5.394722013499022e-06,
+          "density_kg_m3": 650.0,
+          "mass_kg": 0.0035065693087743643
+        },
+        {
+          "name": "wooden backplate",
+          "material": "wood",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.01,
+          "outer_volume_m3": 5.394722013499022e-06,
+          "density_kg_m3": 650.0,
+          "mass_kg": 0.0035065693087743643
+        },
+        {
+          "name": "wooden mounting plate",
+          "material": "wood",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.01,
+          "outer_volume_m3": 5.394722013499022e-06,
+          "density_kg_m3": 650.0,
+          "mass_kg": 0.0035065693087743643
+        }
+      ]
+    },
+    "B082Q989SF_ATVPDKIKX0DER": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 1.0868823837544461,
+      "parts": [
+        {
+          "name": "outer fabric shell",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 5,
+          "area_share": 1.0,
+          "outer_volume_m3": 0.041387371108354894,
+          "density_kg_m3": 350.0,
+          "mass_kg": 1.8114706395907434
+        },
+        {
+          "name": "internal foam core",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.0,
+          "outer_volume_m3": 0.03920908841844148,
+          "density_kg_m3": 65.0,
+          "mass_kg": 2.548590747198696
+        },
+        {
+          "name": "fabric seam stitching",
+          "material": "fabric",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.0
+        }
+      ]
+    },
+    "B075X463J2_ATVPDKIKX0DER": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 1.46194955669886,
+      "parts": [
+        {
+          "name": "upholstered top",
+          "material": "fabric",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.2727272727272727,
+          "outer_volume_m3": 0.05703932705351303,
+          "density_kg_m3": 350.0,
+          "mass_kg": 19.96376446872956
+        },
+        {
+          "name": "studded trim",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.24242424242424243,
+          "outer_volume_m3": 0.009506554508918838,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 5.564268615799299
+        },
+        {
+          "name": "wooden legs",
+          "material": "wood",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.21212121212121213,
+          "outer_volume_m3": 0.019013109017837676,
+          "density_kg_m3": 650.0,
+          "mass_kg": 3.7075562584783466
+        },
+        {
+          "name": "casters",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.18181818181818182,
+          "outer_volume_m3": 0.004753277254459419,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.5581989216486557
+        },
+        {
+          "name": "internal frame",
+          "material": "wood",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.09090909090909091,
+          "outer_volume_m3": 0.004753277254459419,
+          "density_kg_m3": 650.0,
+          "mass_kg": 1.544815107699311
+        }
+      ]
+    },
+    "B01LP0UKJE_ATVPDKIKX0DER": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 0.01616374693820756,
+      "parts": [
+        {
+          "name": "rectangular body",
+          "material": "plastic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.98,
+          "outer_volume_m3": 2.2184527395534345e-05,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.02329375376531106
+        },
+        {
+          "name": "rounded corners",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.01,
+          "outer_volume_m3": 4.6704268201124946e-07,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.00016971934285117936
+        },
+        {
+          "name": "end caps",
+          "material": "plastic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.01,
+          "outer_volume_m3": 7.005640230168741e-07,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.0007355922241677178
+        }
+      ]
+    },
+    "B07QFP4PV5_ATVPDKIKX0DER": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 4.792210223787477,
+      "parts": [
+        {
+          "name": "seat cushion",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.25,
+          "outer_volume_m3": 0.19486071065225144,
+          "density_kg_m3": 65.0,
+          "mass_kg": 12.665946192396344
+        },
+        {
+          "name": "backrest",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.25,
+          "outer_volume_m3": 0.12990714043483428,
+          "density_kg_m3": 65.0,
+          "mass_kg": 8.443964128264229
+        },
+        {
+          "name": "upholstery fabric",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 5,
+          "area_share": 0.5,
+          "outer_volume_m3": 0.0,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.0
+        },
+        {
+          "name": "wooden legs",
+          "material": "wood",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.012990714043483429,
+          "density_kg_m3": 650.0,
+          "mass_kg": 8.443964128264229
+        },
+        {
+          "name": "internal frame",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 20,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.09743035532612572,
+          "density_kg_m3": 650.0,
+          "mass_kg": 5.191561075769767
+        },
+        {
+          "name": "internal support structure",
+          "material": "wood",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.03247678510870857,
+          "density_kg_m3": 650.0,
+          "mass_kg": 10.554955160330286
+        }
+      ]
+    },
+    "B07MBFDKYY_ATVPDKIKX0DER": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 0.06382137392331662,
+      "parts": [
+        {
+          "name": "ceramic body",
+          "material": "ceramic",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.65,
+          "outer_volume_m3": 0.0011055390025739842,
+          "density_kg_m3": 2600.0,
+          "mass_kg": 0.4525515605471542
+        },
+        {
+          "name": "ceramic lid",
+          "material": "ceramic",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.05,
+          "outer_volume_m3": 7.370260017159895e-05,
+          "density_kg_m3": 2600.0,
+          "mass_kg": 0.034811658503627246
+        },
+        {
+          "name": "lid knob",
+          "material": "ceramic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.01,
+          "outer_volume_m3": 1.4740520034319788e-05,
+          "density_kg_m3": 2600.0,
+          "mass_kg": 0.03832535208923145
+        },
+        {
+          "name": "lid seal interface",
+          "material": "ceramic",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.005,
+          "outer_volume_m3": 7.370260017159894e-06,
+          "density_kg_m3": 2600.0,
+          "mass_kg": 0.0011603886167875748
+        }
+      ]
+    },
+    "B0723DD7Z6": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 3.5657605959081007,
+      "parts": [
+        {
+          "name": "central medallion",
+          "material": "fabric",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.26666666666666666,
+          "outer_volume_m3": 0.014139254414938579,
+          "density_kg_m3": 350.0,
+          "mass_kg": 4.9487390452285025
+        },
+        {
+          "name": "border pattern",
+          "material": "fabric",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.3,
+          "outer_volume_m3": 0.010604440811203934,
+          "density_kg_m3": 350.0,
+          "mass_kg": 3.7115542839213767
+        },
+        {
+          "name": "outer edge",
+          "material": "fabric",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.23333333333333334,
+          "outer_volume_m3": 0.007069627207469289,
+          "density_kg_m3": 350.0,
+          "mass_kg": 2.4743695226142512
+        },
+        {
+          "name": "background field",
+          "material": "fabric",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.2,
+          "outer_volume_m3": 0.0035348136037346447,
+          "density_kg_m3": 350.0,
+          "mass_kg": 1.2371847613071256
+        }
+      ]
+    },
+    "B07QFRSC43_ATVPDKIKX0DER": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 0.6096907551383905,
+      "parts": [
+        {
+          "name": "upholstered seat cushion",
+          "material": "fabric",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.35,
+          "outer_volume_m3": 0.004582415747733302,
+          "density_kg_m3": 350.0,
+          "mass_kg": 1.6038455117066557
+        },
+        {
+          "name": "upholstered backrest",
+          "material": "fabric",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.3,
+          "outer_volume_m3": 0.0036659325981866424,
+          "density_kg_m3": 350.0,
+          "mass_kg": 1.2830764093653249
+        },
+        {
+          "name": "metal frame",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.2,
+          "outer_volume_m3": 0.0027494494486399812,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 1.4358217283509098
+        },
+        {
+          "name": "seat base support",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0009164831495466606,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.35895543208772746
+        },
+        {
+          "name": "rear leg support",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0009164831495466606,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.35895543208772746
+        },
+        {
+          "name": "front leg support",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0009164831495466606,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.35895543208772746
+        }
+      ]
+    },
+    "B01LP0VI3G_ATVPDKIKX0DER": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 0.04333759747957775,
+      "parts": [
+        {
+          "name": "main body",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.99,
+          "outer_volume_m3": 8.858513947044589e-05,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.09009886516004215
+        },
+        {
+          "name": "edge reinforcement",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.01,
+          "outer_volume_m3": 1.8078599891927734e-06,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.00045504477353556643
+        }
+      ]
+    },
+    "B012S0S20Y_ATVPDKIKX0DER": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 0.08663144846098908,
+      "parts": [
+        {
+          "name": "top circular plate",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.25,
+          "outer_volume_m3": 0.00018321231971660452,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.06497358634574181
+        },
+        {
+          "name": "central stem",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.35,
+          "outer_volume_m3": 0.0003053538661943409,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.06064201392269235
+        },
+        {
+          "name": "base flange",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.35,
+          "outer_volume_m3": 0.00042749541267207713,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.09096302088403853
+        },
+        {
+          "name": "brown base ring",
+          "material": "wood",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 6.107077323886817e-05,
+          "density_kg_m3": 650.0,
+          "mass_kg": 0.03969600260526431
+        },
+        {
+          "name": "internal cavity",
+          "material": "plastic",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.00018321231971660452,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.09618646785121737
+        }
+      ]
+    },
+    "B07Y3Q7MDR": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 0.46697098630352657,
+      "parts": [
+        {
+          "name": "seat",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.35,
+          "outer_volume_m3": 0.0018129316608051452,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.5148355123996381
+        },
+        {
+          "name": "backrest",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.35,
+          "outer_volume_m3": 0.0010071842560028586,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.5148355123996381
+        },
+        {
+          "name": "leg_frame",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.2,
+          "outer_volume_m3": 0.0006043105536017151,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.3782464989058566
+        },
+        {
+          "name": "armrests",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.0002014368512005717,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.1891232494529283
+        }
+      ]
+    },
+    "B076YJFGCN_A1F83G8C2ARO7P": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 0.014711228904749135,
+      "parts": [
+        {
+          "name": "Main housing",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.98,
+          "outer_volume_m3": 8.25244864920105e-05,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.02899972134671812
+        },
+        {
+          "name": "USB ports",
+          "material": "plastic",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.02,
+          "outer_volume_m3": 8.68678805179058e-07,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.0002736338236314033
+        },
+        {
+          "name": "Port labels",
+          "material": "plastic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.002,
+          "outer_volume_m3": 8.68678805179058e-08,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 9.121127454380108e-05
+        },
+        {
+          "name": "Brand logo",
+          "material": "plastic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.002,
+          "outer_volume_m3": 8.68678805179058e-08,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 9.121127454380108e-05
+        },
+        {
+          "name": "Internal circuit board",
+          "material": "plastic",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.03,
+          "outer_volume_m3": 2.606036415537174e-06,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.0013681691181570163
+        },
+        {
+          "name": "Internal connectors",
+          "material": "plastic",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.01,
+          "outer_volume_m3": 8.68678805179058e-07,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.0001824225490876022
+        }
+      ]
+    },
+    "B01DN8TEA2_ATVPDKIKX0DER": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 0.06911261282233627,
+      "parts": [
+        {
+          "name": "cover",
+          "material": "paper_cardboard",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.45,
+          "outer_volume_m3": 2.8194533380542582e-05,
+          "density_kg_m3": 550.0,
+          "mass_kg": 0.011796808050709123
+        },
+        {
+          "name": "spine",
+          "material": "paper_cardboard",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.15,
+          "outer_volume_m3": 1.6916720028325546e-05,
+          "density_kg_m3": 550.0,
+          "mass_kg": 0.003932269350236374
+        },
+        {
+          "name": "binding_band",
+          "material": "rubber",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.05,
+          "outer_volume_m3": 2.819453338054258e-06,
+          "density_kg_m3": 1100.0,
+          "mass_kg": 0.003101398671859684
+        },
+        {
+          "name": "inner_pages",
+          "material": "paper_cardboard",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.35,
+          "outer_volume_m3": 0.00047930706746922384,
+          "density_kg_m3": 550.0,
+          "mass_kg": 0.26361888710807313
+        },
+        {
+          "name": "back_cover",
+          "material": "paper_cardboard",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.45,
+          "outer_volume_m3": 2.8194533380542582e-05,
+          "density_kg_m3": 550.0,
+          "mass_kg": 0.011796808050709123
+        }
+      ]
+    },
+    "B07F3T4RSD_A13V1IB3VIYZZH": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 1.4355746434857157,
+      "parts": [
+        {
+          "name": "outer mesh shell",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.98,
+          "outer_volume_m3": 0.015079254378182689,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.9515016477596145
+        },
+        {
+          "name": "inner mesh panel",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.02,
+          "outer_volume_m3": 0.0007936449672727732,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.019418400974686015
+        },
+        {
+          "name": "top rim frame",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.01,
+          "outer_volume_m3": 0.0,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.0
+        },
+        {
+          "name": "side support ribs",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.01,
+          "outer_volume_m3": 0.0,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.0
+        },
+        {
+          "name": "handle",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.005,
+          "outer_volume_m3": 0.0,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.0
+        },
+        {
+          "name": "base panel",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.01,
+          "outer_volume_m3": 0.0,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.0
+        }
+      ]
+    },
+    "B07JL5PLPN_ATVPDKIKX0DER": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 0.09686808332836627,
+      "parts": [
+        {
+          "name": "outer fabric shell",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.95,
+          "outer_volume_m3": 0.00039931402603270134,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.03320478114090906
+        },
+        {
+          "name": "inner patterned fabric liner",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.95,
+          "outer_volume_m3": 0.00039931402603270134,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.03320478114090906
+        },
+        {
+          "name": "seam reinforcement",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.01,
+          "outer_volume_m3": 4.20330553718633e-06,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.00034952401200956905
+        },
+        {
+          "name": "base panel",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.01,
+          "outer_volume_m3": 4.20330553718633e-06,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.00034952401200956905
+        },
+        {
+          "name": "side panel",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.01,
+          "outer_volume_m3": 4.20330553718633e-06,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.00034952401200956905
+        },
+        {
+          "name": "top rim",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.01,
+          "outer_volume_m3": 4.20330553718633e-06,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.00034952401200956905
+        }
+      ]
+    },
+    "B075YNL7R3_ATVPDKIKX0DER": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 0.2859941632351313,
+      "parts": [
+        {
+          "name": "wooden shelf",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 5,
+          "area_share": 0.95,
+          "outer_volume_m3": 0.0014850534740032764,
+          "density_kg_m3": 650.0,
+          "mass_kg": 0.8742643356321467
+        },
+        {
+          "name": "wooden back panel",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 5,
+          "area_share": 0.02,
+          "outer_volume_m3": 3.126428366322687e-05,
+          "density_kg_m3": 650.0,
+          "mass_kg": 0.01840556496067677
+        },
+        {
+          "name": "wooden side panel",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 5,
+          "area_share": 0.01,
+          "outer_volume_m3": 1.5632141831613435e-05,
+          "density_kg_m3": 650.0,
+          "mass_kg": 0.009202782480338385
+        },
+        {
+          "name": "wooden top cap",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 5,
+          "area_share": 0.01,
+          "outer_volume_m3": 1.5632141831613435e-05,
+          "density_kg_m3": 650.0,
+          "mass_kg": 0.009202782480338385
+        },
+        {
+          "name": "wooden bottom cap",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 5,
+          "area_share": 0.01,
+          "outer_volume_m3": 1.5632141831613435e-05,
+          "density_kg_m3": 650.0,
+          "mass_kg": 0.009202782480338385
+        },
+        {
+          "name": "wooden internal divider",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 5,
+          "area_share": 0.01,
+          "outer_volume_m3": 1.5632141831613435e-05,
+          "density_kg_m3": 650.0,
+          "mass_kg": 0.009202782480338385
+        }
+      ]
+    },
+    "B07JQMLQ2C": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 0.33515168932172573,
+      "parts": [
+        {
+          "name": "main body",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.98,
+          "outer_volume_m3": 0.004362013838506764,
+          "density_kg_m3": 65.0,
+          "mass_kg": 0.28353089950293964
+        },
+        {
+          "name": "edge trim",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.02,
+          "outer_volume_m3": 9.183187028435293e-05,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.004555459854858408
+        },
+        {
+          "name": "corner reinforcement",
+          "material": "plastic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.01,
+          "outer_volume_m3": 4.591593514217647e-05,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.04821173189928529
+        },
+        {
+          "name": "attachment loops",
+          "material": "fabric",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.01,
+          "outer_volume_m3": 4.591593514217647e-05,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.0016070577299761764
+        },
+        {
+          "name": "outer sheath",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.01,
+          "outer_volume_m3": 4.591593514217647e-05,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.0034165948911438057
+        }
+      ]
+    },
+    "B07SRSJFBH": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 1.6557354968992255,
+      "parts": [
+        {
+          "name": "outer fabric cover",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.95,
+          "outer_volume_m3": 0.0036656574640176612,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.579507423914729
+        },
+        {
+          "name": "inner foam core",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.85,
+          "outer_volume_m3": 0.06231617688830023,
+          "density_kg_m3": 65.0,
+          "mass_kg": 4.050551497739515
+        },
+        {
+          "name": "edge foam trim",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0036656574640176612,
+          "density_kg_m3": 65.0,
+          "mass_kg": 0.238267735161148
+        },
+        {
+          "name": "bottom support layer",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0036656574640176612,
+          "density_kg_m3": 65.0,
+          "mass_kg": 0.238267735161148
+        }
+      ]
+    },
+    "B082L28P18_ATVPDKIKX0DER": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 0.8803128932429882,
+      "parts": [
+        {
+          "name": "top surface",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 10,
+          "area_share": 0.2,
+          "outer_volume_m3": 0.002238359459948784,
+          "density_kg_m3": 650.0,
+          "mass_kg": 1.1444067612158846
+        },
+        {
+          "name": "side panels",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 10,
+          "area_share": 0.4,
+          "outer_volume_m3": 0.017906875679590272,
+          "density_kg_m3": 650.0,
+          "mass_kg": 2.288813522431769
+        },
+        {
+          "name": "base plinth",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 10,
+          "area_share": 0.15,
+          "outer_volume_m3": 0.004476718919897568,
+          "density_kg_m3": 650.0,
+          "mass_kg": 0.8583050709119134
+        },
+        {
+          "name": "drawer fronts",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 10,
+          "area_share": 0.15,
+          "outer_volume_m3": 0.0067150783798463525,
+          "density_kg_m3": 650.0,
+          "mass_kg": 0.8583050709119134
+        },
+        {
+          "name": "drawer interiors",
+          "material": "wood",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.013430156759692705,
+          "density_kg_m3": 650.0,
+          "mass_kg": 4.364800946900129
+        }
+      ]
+    },
+    "B07GFRP9RY_A1F83G8C2ARO7P": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 1.8586452942220695,
+      "parts": [
+        {
+          "name": "top_surface",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 6,
+          "area_share": 0.15,
+          "outer_volume_m3": 0.0163611763789963,
+          "density_kg_m3": 650.0,
+          "mass_kg": 1.2081194412443452
+        },
+        {
+          "name": "side_walls",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 6,
+          "area_share": 0.35,
+          "outer_volume_m3": 0.0818058818949815,
+          "density_kg_m3": 650.0,
+          "mass_kg": 2.8189453629034715
+        },
+        {
+          "name": "front_panel",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 6,
+          "area_share": 0.15,
+          "outer_volume_m3": 0.0163611763789963,
+          "density_kg_m3": 650.0,
+          "mass_kg": 1.2081194412443452
+        },
+        {
+          "name": "drawer_fronts",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 6,
+          "area_share": 0.25,
+          "outer_volume_m3": 0.0163611763789963,
+          "density_kg_m3": 650.0,
+          "mass_kg": 2.0135324020739085
+        },
+        {
+          "name": "internal_drawer_shelves",
+          "material": "wood",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.0,
+          "outer_volume_m3": 0.0163611763789963,
+          "density_kg_m3": 650.0,
+          "mass_kg": 5.317382323173798
+        },
+        {
+          "name": "internal_drawer_beds",
+          "material": "wood",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.0,
+          "outer_volume_m3": 0.0163611763789963,
+          "density_kg_m3": 650.0,
+          "mass_kg": 5.317382323173798
+        }
+      ]
+    },
+    "B07WQ4VQ74_ATVPDKIKX0DER": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 0.938552710799558,
+      "parts": [
+        {
+          "name": "main frame legs",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.35,
+          "outer_volume_m3": 0.0034228039506297822,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 1.3303984675583735
+        },
+        {
+          "name": "step treads",
+          "material": "plastic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.4,
+          "outer_volume_m3": 0.0021392524691436136,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 2.2462150926007944
+        },
+        {
+          "name": "foot caps",
+          "material": "rubber",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0004278504938287228,
+          "density_kg_m3": 1100.0,
+          "mass_kg": 0.47063554321159506
+        },
+        {
+          "name": "top platform",
+          "material": "plastic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.0008557009876574456,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.8984860370403178
+        },
+        {
+          "name": "connecting struts",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1.2,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0004278504938287228,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.1520455391495284
+        },
+        {
+          "name": "pivot joints",
+          "material": "steel",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0004278504938287228,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 1.007587912966642
+        }
+      ]
+    },
+    "B00WRDS0AU_ATVPDKIKX0DER": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 0.27074188006973576,
+      "parts": [
+        {
+          "name": "main body shell",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.6,
+          "outer_volume_m3": 0.0005908052894386066,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.6579027685694578
+        },
+        {
+          "name": "top plate",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.25,
+          "outer_volume_m3": 0.00011816105788772132,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.2741261535706075
+        },
+        {
+          "name": "side mounting flanges",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.05,
+          "outer_volume_m3": 1.5754807718362845e-05,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.04253798083957968
+        },
+        {
+          "name": "curved support arm",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.05,
+          "outer_volume_m3": 3.938701929590711e-05,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.0548252307141215
+        },
+        {
+          "name": "internal support ribs",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.05,
+          "outer_volume_m3": 2.3632211577544262e-05,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.0548252307141215
+        }
+      ]
+    },
+    "B075HXHKVF_ATVPDKIKX0DER": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 0.08644384379888845,
+      "parts": [
+        {
+          "name": "lid",
+          "material": "ceramic",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.25,
+          "outer_volume_m3": 9.682626597885824e-05,
+          "density_kg_m3": 2600.0,
+          "mass_kg": 0.134852396326266
+        },
+        {
+          "name": "body",
+          "material": "ceramic",
+          "construction": "shell",
+          "thickness_mm": 4,
+          "area_share": 0.5,
+          "outer_volume_m3": 0.0014523939896828736,
+          "density_kg_m3": 2600.0,
+          "mass_kg": 0.35960639020337604
+        },
+        {
+          "name": "base",
+          "material": "ceramic",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.25,
+          "outer_volume_m3": 0.0002904787979365747,
+          "density_kg_m3": 2600.0,
+          "mass_kg": 0.134852396326266
+        },
+        {
+          "name": "glaze_layer",
+          "material": "ceramic",
+          "construction": "shell",
+          "thickness_mm": 0.5,
+          "area_share": 0.25,
+          "outer_volume_m3": 9.682626597885824e-05,
+          "density_kg_m3": 2600.0,
+          "mass_kg": 0.022475399387711002
+        }
+      ]
+    },
+    "B084W368ML_ATVPDKIKX0DER": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 0.9877281883985467,
+      "parts": [
+        {
+          "name": "seat cushion",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 5,
+          "area_share": 0.35,
+          "outer_volume_m3": 0.007147792988018069,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.6049835153941099
+        },
+        {
+          "name": "backrest",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 5,
+          "area_share": 0.35,
+          "outer_volume_m3": 0.007147792988018069,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.6049835153941099
+        },
+        {
+          "name": "wooden legs",
+          "material": "wood",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.25,
+          "outer_volume_m3": 0.010006910183225297,
+          "density_kg_m3": 650.0,
+          "mass_kg": 6.504491619096443
+        },
+        {
+          "name": "X-brace support",
+          "material": "wood",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.004288675792810842,
+          "density_kg_m3": 650.0,
+          "mass_kg": 2.787639265327047
+        }
+      ]
+    },
+    "B07WQ4P35G": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 0.7337082730755459,
+      "parts": [
+        {
+          "name": "step_treads",
+          "material": "plastic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.4,
+          "outer_volume_m3": 0.0033692150666353817,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 3.5376758199671507
+        },
+        {
+          "name": "frame_legs",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.3,
+          "outer_volume_m3": 0.0022461433777569216,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 1.087140916813156
+        },
+        {
+          "name": "handrail",
+          "material": "plastic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0005615358444392304,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.5896126366611919
+        },
+        {
+          "name": "foot_pads",
+          "material": "rubber",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.02,
+          "outer_volume_m3": 0.00022461433777569212,
+          "density_kg_m3": 1100.0,
+          "mass_kg": 0.24707577155326133
+        },
+        {
+          "name": "frame_connectors",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 1.5,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0003369215066635382,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.18119015280219272
+        }
+      ]
+    },
+    "B075YLJM75": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 0.14557181324981291,
+      "parts": [
+        {
+          "name": "outer frame",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 6,
+          "area_share": 0.8,
+          "outer_volume_m3": 0.0008415922527564041,
+          "density_kg_m3": 650.0,
+          "mass_kg": 0.45418405733941636
+        },
+        {
+          "name": "inner panel",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.2,
+          "outer_volume_m3": 0.00028053075091880134,
+          "density_kg_m3": 65.0,
+          "mass_kg": 0.018234498809722086
+        }
+      ]
+    },
+    "B075YQ46MP_ATVPDKIKX0DER": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 1.6770342127885889,
+      "parts": [
+        {
+          "name": "top shelf",
+          "material": "wood",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.25,
+          "outer_volume_m3": 0.0035061204385526895,
+          "density_kg_m3": 650.0,
+          "mass_kg": 2.278978285059248
+        },
+        {
+          "name": "middle shelf",
+          "material": "wood",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.25,
+          "outer_volume_m3": 0.0035061204385526895,
+          "density_kg_m3": 650.0,
+          "mass_kg": 2.278978285059248
+        },
+        {
+          "name": "bottom shelf",
+          "material": "wood",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.25,
+          "outer_volume_m3": 0.0035061204385526895,
+          "density_kg_m3": 650.0,
+          "mass_kg": 2.278978285059248
+        },
+        {
+          "name": "metal frame",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.15,
+          "outer_volume_m3": 0.0010624607389553605,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 1.4004100127409864
+        },
+        {
+          "name": "casters",
+          "material": "rubber",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.00021249214779107208,
+          "density_kg_m3": 1100.0,
+          "mass_kg": 0.23374136257017927
+        },
+        {
+          "name": "handle",
+          "material": "aluminum",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.02,
+          "outer_volume_m3": 0.00010624607389553604,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.18672133503213154
+        }
+      ]
+    },
+    "B07DB9638P_ATVPDKIKX0DER": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 1.0449309102720248,
+      "parts": [
+        {
+          "name": "top shelf",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 12,
+          "area_share": 0.35,
+          "outer_volume_m3": 0.006720267976342809,
+          "density_kg_m3": 650.0,
+          "mass_kg": 3.1696237611584746
+        },
+        {
+          "name": "bottom shelf",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 12,
+          "area_share": 0.35,
+          "outer_volume_m3": 0.005226875092711074,
+          "density_kg_m3": 650.0,
+          "mass_kg": 3.1696237611584746
+        },
+        {
+          "name": "leg 1",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 12,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0007466964418158677,
+          "density_kg_m3": 650.0,
+          "mass_kg": 0.4528033944512107
+        },
+        {
+          "name": "leg 2",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 12,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0007466964418158677,
+          "density_kg_m3": 650.0,
+          "mass_kg": 0.4528033944512107
+        },
+        {
+          "name": "leg 3",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 12,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0007466964418158677,
+          "density_kg_m3": 650.0,
+          "mass_kg": 0.4528033944512107
+        },
+        {
+          "name": "leg 4",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 12,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.0007466964418158677,
+          "density_kg_m3": 650.0,
+          "mass_kg": 0.4528033944512107
+        }
+      ]
+    },
+    "B07HPQ358H_ATVPDKIKX0DER": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 1.0521434915780579,
+      "parts": [
+        {
+          "name": "top slats",
+          "material": "wood",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.2857142857142857,
+          "outer_volume_m3": 0.00759482264244689,
+          "density_kg_m3": 650.0,
+          "mass_kg": 3.4556443023133347
+        },
+        {
+          "name": "side panels",
+          "material": "wood",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.32142857142857145,
+          "outer_volume_m3": 0.010126430189929187,
+          "density_kg_m3": 650.0,
+          "mass_kg": 4.60752573641778
+        },
+        {
+          "name": "support legs",
+          "material": "wood",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.21428571428571427,
+          "outer_volume_m3": 0.005063215094964594,
+          "density_kg_m3": 650.0,
+          "mass_kg": 2.30376286820889
+        },
+        {
+          "name": "base frame",
+          "material": "wood",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.17857142857142858,
+          "outer_volume_m3": 0.002531607547482297,
+          "density_kg_m3": 650.0,
+          "mass_kg": 1.151881434104445
+        }
+      ]
+    },
+    "B075YZPG5Y_ATVPDKIKX0DER": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 3.509695651640532,
+      "parts": [
+        {
+          "name": "top_surface",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 12,
+          "area_share": 0.15,
+          "outer_volume_m3": 0.021794414246217798,
+          "density_kg_m3": 650.0,
+          "mass_kg": 3.7330399203812927
+        },
+        {
+          "name": "side_walls",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 12,
+          "area_share": 0.45,
+          "outer_volume_m3": 0.10897207123108897,
+          "density_kg_m3": 650.0,
+          "mass_kg": 11.19911976114388
+        },
+        {
+          "name": "front_panel",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 12,
+          "area_share": 0.25,
+          "outer_volume_m3": 0.06538324273865338,
+          "density_kg_m3": 650.0,
+          "mass_kg": 6.221733200635489
+        },
+        {
+          "name": "drawer_fronts",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 12,
+          "area_share": 0.15,
+          "outer_volume_m3": 0.06538324273865338,
+          "density_kg_m3": 650.0,
+          "mass_kg": 3.7330399203812927
+        },
+        {
+          "name": "drawer_interior",
+          "material": "wood",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.13076648547730677,
+          "density_kg_m3": 650.0,
+          "mass_kg": 42.499107780124696
+        },
+        {
+          "name": "internal_dividers",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 6,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.021794414246217798,
+          "density_kg_m3": 650.0,
+          "mass_kg": 0.6221733200635489
+        }
+      ]
+    },
+    "B078GTTCCF_A1F83G8C2ARO7P": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 0.1126401157521849,
+      "parts": [
+        {
+          "name": "cover",
+          "material": "paper_cardboard",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.45,
+          "outer_volume_m3": 5.6792309691327596e-05,
+          "density_kg_m3": 550.0,
+          "mass_kg": 0.03123577033023018
+        },
+        {
+          "name": "spine",
+          "material": "paper_cardboard",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.15,
+          "outer_volume_m3": 3.4075385814796555e-05,
+          "density_kg_m3": 550.0,
+          "mass_kg": 0.016896017362827736
+        },
+        {
+          "name": "binding_edge",
+          "material": "paper_cardboard",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.1,
+          "outer_volume_m3": 2.2716923876531038e-05,
+          "density_kg_m3": 550.0,
+          "mass_kg": 0.005632005787609245
+        },
+        {
+          "name": "elastic_band",
+          "material": "fabric",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 5.6792309691327595e-06,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.0005963192517589398
+        },
+        {
+          "name": "page_stack",
+          "material": "paper_cardboard",
+          "construction": "solid",
+          "thickness_mm": 0,
+          "area_share": 0.25,
+          "outer_volume_m3": 0.0009654692647525691,
+          "density_kg_m3": 550.0,
+          "mass_kg": 0.531008095613913
+        },
+        {
+          "name": "inner_cover",
+          "material": "paper_cardboard",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.1,
+          "outer_volume_m3": 2.2716923876531038e-05,
+          "density_kg_m3": 550.0,
+          "mass_kg": 0.01126401157521849
+        }
+      ]
+    },
+    "B072PZ4LVN_ATVPDKIKX0DER": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 5.953824875764563,
+      "parts": [
+        {
+          "name": "seat cushions",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.4,
+          "outer_volume_m3": 0.18376558612032354,
+          "density_kg_m3": 65.0,
+          "mass_kg": 11.94476309782103
+        },
+        {
+          "name": "backrest cushions",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.3,
+          "outer_volume_m3": 0.12251039074688237,
+          "density_kg_m3": 65.0,
+          "mass_kg": 7.963175398547354
+        },
+        {
+          "name": "outer frame",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 5,
+          "area_share": 0.3,
+          "outer_volume_m3": 0.24502078149376474,
+          "density_kg_m3": 350.0,
+          "mass_kg": 2.718050486762083
+        },
+        {
+          "name": "legs",
+          "material": "wood",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.05,
+          "outer_volume_m3": 0.030627597686720593,
+          "density_kg_m3": 650.0,
+          "mass_kg": 19.907938496368384
+        },
+        {
+          "name": "internal frame",
+          "material": "wood",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.030627597686720593,
+          "density_kg_m3": 650.0,
+          "mass_kg": 9.953969248184192
+        }
+      ]
+    },
+    "B07B8PXMRT_ATVPDKIKX0DER": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 0.025164295442929776,
+      "parts": [
+        {
+          "name": "clock face",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.75,
+          "outer_volume_m3": 7.644834123411278e-05,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.03943658241056158
+        },
+        {
+          "name": "hour/minute hands",
+          "material": "aluminum",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.01,
+          "outer_volume_m3": 1.0193112164548372e-06,
+          "density_kg_m3": 2700.0,
+          "mass_kg": 0.0027521402844280602
+        },
+        {
+          "name": "hour/minute hand pivot",
+          "material": "steel",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.005,
+          "outer_volume_m3": 5.096556082274186e-07,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.0040007965245852355
+        },
+        {
+          "name": "mounting bracket",
+          "material": "steel",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.02,
+          "outer_volume_m3": 2.0386224329096743e-06,
+          "density_kg_m3": 7850.0,
+          "mass_kg": 0.003931138691084552
+        },
+        {
+          "name": "back cover",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.2,
+          "outer_volume_m3": 2.038622432909674e-05,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.005258210988074878
+        },
+        {
+          "name": "internal mechanism housing",
+          "material": "plastic",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.02,
+          "outer_volume_m3": 2.0386224329096743e-06,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.0006421660663665475
+        }
+      ]
+    },
+    "B003LSTD38_ATVPDKIKX0DER": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 0.027993335012710896,
+      "parts": [
+        {
+          "name": "outer shell",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 2,
+          "area_share": 0.98,
+          "outer_volume_m3": 0.00015491469338161536,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.030807638211849744
+        },
+        {
+          "name": "zipper track",
+          "material": "plastic",
+          "construction": "shell",
+          "thickness_mm": 1,
+          "area_share": 0.02,
+          "outer_volume_m3": 1.6306809829643722e-06,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.0003143636552229566
+        },
+        {
+          "name": "zipper pull tab",
+          "material": "plastic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.01,
+          "outer_volume_m3": 8.153404914821861e-07,
+          "density_kg_m3": 1050.0,
+          "mass_kg": 0.0008561075160562954
+        },
+        {
+          "name": "internal foam liner",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.85,
+          "outer_volume_m3": 0.00013860788355197161,
+          "density_kg_m3": 65.0,
+          "mass_kg": 0.009009512430878155
+        },
+        {
+          "name": "seam sealant",
+          "material": "rubber",
+          "construction": "partial",
+          "thickness_mm": null,
+          "area_share": 0.01,
+          "outer_volume_m3": 8.153404914821861e-07,
+          "density_kg_m3": 1100.0,
+          "mass_kg": 8.968745406304047e-05
+        }
+      ]
+    },
+    "B07JM6HFVP_ATVPDKIKX0DER": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 0.06625321414109754,
+      "parts": [
+        {
+          "name": "outer ceramic shell",
+          "material": "ceramic",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.98,
+          "outer_volume_m3": 0.00033708796496802174,
+          "density_kg_m3": 2600.0,
+          "mass_kg": 0.25321978444727483
+        },
+        {
+          "name": "inner ceramic shell",
+          "material": "ceramic",
+          "construction": "shell",
+          "thickness_mm": 3,
+          "area_share": 0.98,
+          "outer_volume_m3": 0.00033708796496802174,
+          "density_kg_m3": 2600.0,
+          "mass_kg": 0.25321978444727483
+        },
+        {
+          "name": "ceramic base ring",
+          "material": "ceramic",
+          "construction": "shell",
+          "thickness_mm": 5,
+          "area_share": 0.02,
+          "outer_volume_m3": 1.7741471840422197e-05,
+          "density_kg_m3": 2600.0,
+          "mass_kg": 0.008612917838342681
+        },
+        {
+          "name": "ceramic base cap",
+          "material": "ceramic",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.02,
+          "outer_volume_m3": 1.7741471840422197e-05,
+          "density_kg_m3": 2600.0,
+          "mass_kg": 0.04612782678509771
+        }
+      ]
+    },
+    "B07GFRNHYW_A1RKKUPIHCS9HS": {
+      "source": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+      "area_m2": 2.833699914351863,
+      "parts": [
+        {
+          "name": "base frame",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 20,
+          "area_share": 0.3,
+          "outer_volume_m3": 0.03564411547105126,
+          "density_kg_m3": 650.0,
+          "mass_kg": 9.209524721643554
+        },
+        {
+          "name": "top cushion",
+          "material": "foam",
+          "construction": "solid",
+          "thickness_mm": null,
+          "area_share": 0.6,
+          "outer_volume_m3": 0.10693234641315376,
+          "density_kg_m3": 65.0,
+          "mass_kg": 6.950602516854994
+        },
+        {
+          "name": "side trim",
+          "material": "fabric",
+          "construction": "shell",
+          "thickness_mm": 5,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.008911028867762814,
+          "density_kg_m3": 350.0,
+          "mass_kg": 0.41324790417631335
+        },
+        {
+          "name": "corner supports",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 15,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.008911028867762814,
+          "density_kg_m3": 650.0,
+          "mass_kg": 2.3023811804108885
+        },
+        {
+          "name": "underframe",
+          "material": "wood",
+          "construction": "shell",
+          "thickness_mm": 10,
+          "area_share": 0.1,
+          "outer_volume_m3": 0.01782205773552563,
+          "density_kg_m3": 650.0,
+          "mass_kg": 1.5349207869405923
+        }
+      ]
+    }
+  }
+}
