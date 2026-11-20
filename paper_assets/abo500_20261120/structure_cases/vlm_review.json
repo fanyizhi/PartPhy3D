@@ -1,0 +1,31 @@
+{
+  "model": "Qwen3-VL-8B-Instruct",
+  "device": "cpu",
+  "dtype": "bfloat16",
+  "prompt": "Inspect views 00, 08 and 20 in order. Compare two plausible internal\nconstructions consistent with the exterior. Cite specific visible boundaries by view.\nIdentify parts that can actually be counted. State whether internal void, wall\nthickness and hidden support material are visually identifiable. State one observation\nthat could discriminate the hypotheses. Keep your answer under 110 words.",
+  "system": "Audit physical structure using only these views. Do not estimate mass.",
+  "views": [
+    0,
+    8,
+    20
+  ],
+  "greedy": true,
+  "cases": {
+    "B07H8VCM68_A1RKKUPIHCS9HS": {
+      "image_sha256": [
+        "468d893da085adb113c5bd57f032439b41f8819ea3434d10860782779ea868ad",
+        "1ea9d3028903a295e86e57d4d8bbc04819f82b201a0d3be73e25dec1e9b29697",
+        "d5f30def1591851559210092621267f13975891ef13174efc79ef08a1c82f501"
+      ],
+      "answer": "View 00 shows two doors with black frames, implying internal partitions. View 08\u2019s top edge and View 20\u2019s side reveal consistent wood grain thickness. Countable parts: 2 doors, 2 vertical frames. Internal voids and hidden supports are not visually identifiable. Discriminating observation: If internal partitions exist, View 00 should show visible seams or gaps between doors; none are apparent."
+    },
+    "B07QHYD94M_ATVPDKIKX0DER": {
+      "image_sha256": [
+        "7310267247737856b2965745de6f748803213fe23caddbfa457f38e52da5aced",
+        "1cbaa67626fa11412d42c367175d33595e57e599961f2c15569edb609c4727b4",
+        "d5da1cec5190cea8ea471d2aa41b92e747e248de5b80a83a72a13bb288a1d46f"
+      ],
+      "answer": "View 00 shows 3 seat cushions and 3 back cushions. View 08 confirms 3 seat cushions. View 20 shows 1 back cushion. Countable parts: 3 seat cushions, 3 back cushions. Internal voids and wall thickness are not visually identifiable. Hidden support material is not visible. Discriminating observation: View 00\u2019s tufted back cushions suggest internal dividers, while View 20\u2019s single back cushion implies a continuous back frame."
+    }
+  }
+}
