@@ -1,0 +1,92 @@
+{
+  "generated_solid": {
+    "target_mass_kg": 8.400000000000002,
+    "particle_mass_kg": 8.399999999999988,
+    "target_com_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "particle_com_m": [
+      -0.00022569323368996637,
+      -0.00022351481331754083,
+      -0.00021864645152618227
+    ],
+    "particle_com_error_mm": 0.38561973273005634,
+    "uniform_com_error_mm": 0.0,
+    "particle_inertia_relative": 0.012485534982300284,
+    "uniform_inertia_relative": 0.0
+  },
+  "generated_hollow": {
+    "target_mass_kg": 4.0992000000000015,
+    "particle_mass_kg": 4.099200000008596,
+    "target_com_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "particle_com_m": [
+      -0.000268396597990116,
+      -0.0002799473645003361,
+      -0.0003068316139843305
+    ],
+    "particle_com_error_mm": 0.49452290143488925,
+    "uniform_com_error_mm": 0.0,
+    "particle_inertia_relative": 0.0017044023370883564,
+    "uniform_inertia_relative": 0.2741551642075202
+  },
+  "visual_hollow_hypothesis": {
+    "target_mass_kg": 4.0992000000000015,
+    "particle_mass_kg": 4.0136704477232925,
+    "target_com_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "particle_com_m": [
+      -0.0002818483167230384,
+      -0.0002571652169050048,
+      -0.0002340564262547678
+    ],
+    "particle_com_error_mm": 0.44761013515844555,
+    "uniform_com_error_mm": 0.0,
+    "particle_inertia_relative": 0.021595293079567934,
+    "uniform_inertia_relative": 0.2741551642075202
+  },
+  "generated_foam_core": {
+    "target_mass_kg": 4.365440000000001,
+    "particle_mass_kg": 4.365439999996964,
+    "target_com_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "particle_com_m": [
+      -0.00025862412856031403,
+      -0.0002694239584805335,
+      -0.0002946057312414484
+    ],
+    "particle_com_error_mm": 0.4756766193089699,
+    "uniform_com_error_mm": 0.0,
+    "particle_inertia_relative": 0.001976334757855294,
+    "uniform_inertia_relative": 0.24965128200615133
+  },
+  "generated_frame_partial_infill": {
+    "target_mass_kg": 4.565120000000001,
+    "particle_mass_kg": 4.56512066390039,
+    "target_com_m": [
+      -0.0056862470208888264,
+      0.0,
+      0.0
+    ],
+    "particle_com_m": [
+      -0.005913078420618293,
+      -0.0002627338116226093,
+      -0.00027500827516542835
+    ],
+    "particle_com_error_mm": 0.4428443192392083,
+    "uniform_com_error_mm": 5.6862470208888265,
+    "particle_inertia_relative": 0.0026737631687275614,
+    "uniform_inertia_relative": 0.240281638612386
+  }
+}

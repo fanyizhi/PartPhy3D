@@ -1,0 +1,1406 @@
+{
+  "description": "Three white-composited 32px foreground crops. Low RGB distance flags candidates for manual product-family review.",
+  "n_train": 300,
+  "rows": [
+    {
+      "scene_id": "B07SCCB1H5",
+      "split": "val",
+      "train_nearest": "B07SCC6M4Q_ATVPDKIKX0DER",
+      "rgb_rmse": 0.0,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07YPV3KSY_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07YPV3KTC_ATVPDKIKX0DER",
+      "rgb_rmse": 0.00010807806999042172,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07SX37TCM",
+      "split": "val",
+      "train_nearest": "B07SRSJMZK",
+      "rgb_rmse": 0.00018719670840739558,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B076YKYHCB_A1F83G8C2ARO7P",
+      "split": "test",
+      "train_nearest": "B076YRSWH2_A1F83G8C2ARO7P",
+      "rgb_rmse": 0.0004084967076778412,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B076YNV36K_A1F83G8C2ARO7P",
+      "split": "test",
+      "train_nearest": "B076YFLYFR_A1F83G8C2ARO7P",
+      "rgb_rmse": 0.0004798749896950748,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07YM1FZSJ_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07YM1FZTN_ATVPDKIKX0DER",
+      "rgb_rmse": 0.0007868202422689685,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B074DZ5YL9_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B074DZNJ3T_ATVPDKIKX0DER",
+      "rgb_rmse": 0.0008210682207599366,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07XMRCXJ7_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07XKGLMR8_ATVPDKIKX0DER",
+      "rgb_rmse": 0.0015894669361708167,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07XHQQ95Y_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07XKGLMR8_ATVPDKIKX0DER",
+      "rgb_rmse": 0.0020024673798345618,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07Y2B3ZXV_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07Y2C57KD_ATVPDKIKX0DER",
+      "rgb_rmse": 0.002336658332188475,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07YM1FJ1M_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07YLZQ8W6_ATVPDKIKX0DER",
+      "rgb_rmse": 0.008869553847458913,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07VD8DQ5N_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07VD8CVJD",
+      "rgb_rmse": 0.01116100921409368,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B082QBBY8X_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B082Q91XSS_ATVPDKIKX0DER",
+      "rgb_rmse": 0.020524715845191548,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07B4SMR2G",
+      "split": "val",
+      "train_nearest": "B071777YNX",
+      "rgb_rmse": 0.032154918957419606,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07QGG4ZLB",
+      "split": "val",
+      "train_nearest": "B071777YNX",
+      "rgb_rmse": 0.035027038455880975,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07SRSJFBH",
+      "split": "test",
+      "train_nearest": "B07SX38JWP",
+      "rgb_rmse": 0.035264364065176655,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07B4YXRLC_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07B4Z7XVD_ATVPDKIKX0DER",
+      "rgb_rmse": 0.03594817676751504,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07SVY2C6F",
+      "split": "test",
+      "train_nearest": "B07SVY2HW1",
+      "rgb_rmse": 0.038571067298077265,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07B4WH5JB",
+      "split": "val",
+      "train_nearest": "B07B51BJLK",
+      "rgb_rmse": 0.03981761808000497,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07TVD4QNC",
+      "split": "val",
+      "train_nearest": "B071777YNX",
+      "rgb_rmse": 0.04121166971793605,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B01LP0VI3G_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B01LP0VBDI_ATVPDKIKX0DER",
+      "rgb_rmse": 0.04469366568816302,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07VC8B7GP",
+      "split": "val",
+      "train_nearest": "B07VD8CVJD",
+      "rgb_rmse": 0.04534565538527397,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B082L28P18_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B079VPLVH5_A1F83G8C2ARO7P",
+      "rgb_rmse": 0.04613781793292979,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B082XMRGZG_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07HKGL3J8_ATVPDKIKX0DER",
+      "rgb_rmse": 0.046140512872431254,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B075YLPZB1",
+      "split": "test",
+      "train_nearest": "B075YMJC9D",
+      "rgb_rmse": 0.0549016428014645,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07Y3Q8JWL",
+      "split": "test",
+      "train_nearest": "B07Y3QM18T",
+      "rgb_rmse": 0.05498428158051793,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07B4Z6Q2W_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07B4W5TDF_ATVPDKIKX0DER",
+      "rgb_rmse": 0.05737150130162316,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07GFRNHYW_A1RKKUPIHCS9HS",
+      "split": "test",
+      "train_nearest": "B07SY1TX76",
+      "rgb_rmse": 0.057793565054015804,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07Y3QQXY8",
+      "split": "val",
+      "train_nearest": "B07Y3QXV1Q",
+      "rgb_rmse": 0.058860296720770595,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07WTFJGRG",
+      "split": "test",
+      "train_nearest": "B07WSFZWBF_ATVPDKIKX0DER",
+      "rgb_rmse": 0.06168281355962895,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07B4SF24F",
+      "split": "val",
+      "train_nearest": "B01LP0VBDI_ATVPDKIKX0DER",
+      "rgb_rmse": 0.06343594967364276,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07TWQTVXL_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07TVN114C_ATVPDKIKX0DER",
+      "rgb_rmse": 0.06551994657536972,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B075YLJM75",
+      "split": "test",
+      "train_nearest": "B075YMJC9D",
+      "rgb_rmse": 0.06855204387586704,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07Y3PYBD9",
+      "split": "val",
+      "train_nearest": "B07Y3QM18T",
+      "rgb_rmse": 0.06902134563143948,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07WBYQQ84_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07W6NTK71_ATVPDKIKX0DER",
+      "rgb_rmse": 0.06913253176654552,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B01MXTX8MC",
+      "split": "test",
+      "train_nearest": "B01N2PLWIL",
+      "rgb_rmse": 0.07027386036307086,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07TTYD8YG",
+      "split": "val",
+      "train_nearest": "B07TTYCKJS",
+      "rgb_rmse": 0.07100899573801439,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B00NUS5GXA_A1F83G8C2ARO7P",
+      "split": "val",
+      "train_nearest": "B07TTYC9XD",
+      "rgb_rmse": 0.07828432014361378,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B078JG4N1G_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07B8PXSGV_ATVPDKIKX0DER",
+      "rgb_rmse": 0.0793741496453132,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07GFRWJS7_A13V1IB3VIYZZH",
+      "split": "test",
+      "train_nearest": "B07GFS1W12_A1PA6795UKMFR9",
+      "rgb_rmse": 0.08091893949771223,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07Y3Q7MDR",
+      "split": "test",
+      "train_nearest": "B07Y3Q62Y7",
+      "rgb_rmse": 0.08387810519807365,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07B4ZFC5H_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07B4SC7DG_ATVPDKIKX0DER",
+      "rgb_rmse": 0.08584842232378487,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B0723DD7Z6",
+      "split": "test",
+      "train_nearest": "B07VB3TJF3_ATVPDKIKX0DER",
+      "rgb_rmse": 0.08587668790315693,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B071FJR4FW_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07B4YXRL6_ATVPDKIKX0DER",
+      "rgb_rmse": 0.08624737792374433,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07PXFVNXR_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B071JLRR3T_A1RKKUPIHCS9HS",
+      "rgb_rmse": 0.08794009115756325,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07RPPBPTP",
+      "split": "val",
+      "train_nearest": "B07RRR2NDK",
+      "rgb_rmse": 0.08795689815273315,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B01LP0UKJE_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B01LP0UX9G_ATVPDKIKX0DER",
+      "rgb_rmse": 0.09006776095713287,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07WQWGQJK",
+      "split": "test",
+      "train_nearest": "B07WSFZWBF_ATVPDKIKX0DER",
+      "rgb_rmse": 0.09044813596864705,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07RRR2NCS",
+      "split": "val",
+      "train_nearest": "B07RSSZTRL",
+      "rgb_rmse": 0.0922833299330274,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B012S0S20Y_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07B8PXSGV_ATVPDKIKX0DER",
+      "rgb_rmse": 0.09476638611074534,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07YPXCY4Q_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07YPV3KTC_ATVPDKIKX0DER",
+      "rgb_rmse": 0.09502437182376217,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07YPV7SN6_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07YPV3KTC_ATVPDKIKX0DER",
+      "rgb_rmse": 0.09502643518525654,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07WJWRY5B_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07WQ53V18_ATVPDKIKX0DER",
+      "rgb_rmse": 0.09643416925857105,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07PKZMKJC_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07TTYC9XD",
+      "rgb_rmse": 0.09833452535560189,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B073WR319C_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07SX38JWP",
+      "rgb_rmse": 0.099603292941918,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07K7NSKQ3_A1RKKUPIHCS9HS",
+      "split": "val",
+      "train_nearest": "B07GFS1W12_A1PA6795UKMFR9",
+      "rgb_rmse": 0.0997852557250946,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07QV18PGY_APJ6JRA9NG5V4",
+      "split": "val",
+      "train_nearest": "B07QV194QK_A1F83G8C2ARO7P",
+      "rgb_rmse": 0.10084748931566473,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07WQ4VQ74_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07WJWRDFW_ATVPDKIKX0DER",
+      "rgb_rmse": 0.10094958262932359,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07N6RTLP7_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07TY5GXBQ_A1PA6795UKMFR9",
+      "rgb_rmse": 0.10099431805879287,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B013TGFGWS_A1F83G8C2ARO7P",
+      "split": "test",
+      "train_nearest": "B075NHVPPN_A1F83G8C2ARO7P",
+      "rgb_rmse": 0.10157181954137114,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B074VLQDGN",
+      "split": "test",
+      "train_nearest": "B07JL5PT18",
+      "rgb_rmse": 0.10263952159706656,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07HK3YLG9_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07HK8YJ69_ATVPDKIKX0DER",
+      "rgb_rmse": 0.10465686319226358,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07MQF769H_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07MCCRNLV_ATVPDKIKX0DER",
+      "rgb_rmse": 0.10609891429058488,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07YLZTGZ9_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07YLZQ8W6_ATVPDKIKX0DER",
+      "rgb_rmse": 0.10646486146505225,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07YM1D7B7_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07YLZQ8W6_ATVPDKIKX0DER",
+      "rgb_rmse": 0.10647035494629319,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B073P14BDC",
+      "split": "val",
+      "train_nearest": "B075YLKB8C",
+      "rgb_rmse": 0.10697591234593422,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B084T7K1P4",
+      "split": "val",
+      "train_nearest": "B07WSFZWBF_ATVPDKIKX0DER",
+      "rgb_rmse": 0.10751789325569067,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07JQMLQ2C",
+      "split": "test",
+      "train_nearest": "B01LP0V4JY_ATVPDKIKX0DER",
+      "rgb_rmse": 0.10808047517085025,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07JL5PLPN_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07JLGBYYD_ATVPDKIKX0DER",
+      "rgb_rmse": 0.10817095451040044,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07H8JWNQH_APJ6JRA9NG5V4",
+      "split": "test",
+      "train_nearest": "B07H8SH3WJ_A1RKKUPIHCS9HS",
+      "rgb_rmse": 0.10877742695574545,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07JLGBY2C",
+      "split": "val",
+      "train_nearest": "B07JL5PT18",
+      "rgb_rmse": 0.10946464759750224,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B074VM1T62",
+      "split": "val",
+      "train_nearest": "B074VLRNLC",
+      "rgb_rmse": 0.1102685706311311,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B082XMF2RV_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07HKGL3J8_ATVPDKIKX0DER",
+      "rgb_rmse": 0.11098111084749866,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07B4Z6JZ4",
+      "split": "test",
+      "train_nearest": "B07QJL73XD_ATVPDKIKX0DER",
+      "rgb_rmse": 0.11217130334997877,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B0719WQ4GK_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B075X5TN2K_ATVPDKIKX0DER",
+      "rgb_rmse": 0.11241773795790762,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07Y3PKFSC",
+      "split": "val",
+      "train_nearest": "B07Y3QXV1Q",
+      "rgb_rmse": 0.11328287866163318,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07N6RT9SM_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07TY5GXBQ_A1PA6795UKMFR9",
+      "rgb_rmse": 0.11335998115589636,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07BLC96G2_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07BL7H8N5_ATVPDKIKX0DER",
+      "rgb_rmse": 0.11350559784848883,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B072PZ4LVN_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07QCMB7LV_ATVPDKIKX0DER",
+      "rgb_rmse": 0.11375964471598131,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B082XM1MZT_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07B8PXSGV_ATVPDKIKX0DER",
+      "rgb_rmse": 0.1140175427900082,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B075X5HB29_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07HPQYW7G_A1F83G8C2ARO7P",
+      "rgb_rmse": 0.1140721219787519,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07H8PWFDF_A1F83G8C2ARO7P",
+      "split": "val",
+      "train_nearest": "B075HWK9QT_ATVPDKIKX0DER",
+      "rgb_rmse": 0.11437928772600837,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07S62HZR7_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07S74D9T7_ATVPDKIKX0DER",
+      "rgb_rmse": 0.11507900161869905,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B085W6LSW8",
+      "split": "val",
+      "train_nearest": "B07SRSJ5G3",
+      "rgb_rmse": 0.11612442750698793,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07B4GSPNR_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07HPQYW7G_A1F83G8C2ARO7P",
+      "rgb_rmse": 0.11782926676906104,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B075YNL7R3_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B071JLRR3T_A1RKKUPIHCS9HS",
+      "rgb_rmse": 0.11785760969045793,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B01557QQSW_APJ6JRA9NG5V4",
+      "split": "val",
+      "train_nearest": "B07H8SH3WJ_A1RKKUPIHCS9HS",
+      "rgb_rmse": 0.11931830814405352,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07QHYD94M_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07B4D48Q5_ATVPDKIKX0DER",
+      "rgb_rmse": 0.1197156932311581,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07N6Q9JB1_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07YPV3KTC_ATVPDKIKX0DER",
+      "rgb_rmse": 0.12096591763787247,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B086VNNCNG_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07SVY2HW1",
+      "rgb_rmse": 0.12111132720438984,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07H8T5XPT_A1PA6795UKMFR9",
+      "split": "val",
+      "train_nearest": "B07TR659GF_A1F83G8C2ARO7P",
+      "rgb_rmse": 0.12130236545472328,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07124WMX5_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B082QB8SZB_ATVPDKIKX0DER",
+      "rgb_rmse": 0.12174206527817251,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B072C8Q4WQ_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07124WCKT_ATVPDKIKX0DER",
+      "rgb_rmse": 0.12188349369900059,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07Y2B738L_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07Y2C57KD_ATVPDKIKX0DER",
+      "rgb_rmse": 0.12308184567419095,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07B4MRLT8_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B082QB8SZB_ATVPDKIKX0DER",
+      "rgb_rmse": 0.1264454065615625,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07JM714D5",
+      "split": "val",
+      "train_nearest": "B075YLKB8C",
+      "rgb_rmse": 0.1286899509471143,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07GFRP9RY_A1F83G8C2ARO7P",
+      "split": "test",
+      "train_nearest": "B07H8JNCF3_A1PA6795UKMFR9",
+      "rgb_rmse": 0.12974813066186472,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07BLB6644_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07BL7H8N5_ATVPDKIKX0DER",
+      "rgb_rmse": 0.1305063146012382,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07TFQM3JZ_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07TGQHR9H_ATVPDKIKX0DER",
+      "rgb_rmse": 0.1306200015823165,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07H8VCM68_A1RKKUPIHCS9HS",
+      "split": "val",
+      "train_nearest": "B07MF1TZGD",
+      "rgb_rmse": 0.13163264350703535,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07BBWMPJM",
+      "split": "test",
+      "train_nearest": "B07H93GTMN_A1PA6795UKMFR9",
+      "rgb_rmse": 0.1322132755341857,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07HSLVMP2_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07B4Z2WDQ_ATVPDKIKX0DER",
+      "rgb_rmse": 0.13340460454272765,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B075YM7Q9M",
+      "split": "val",
+      "train_nearest": "B075YMJC9D",
+      "rgb_rmse": 0.13442614455419713,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B074VL1JQC",
+      "split": "val",
+      "train_nearest": "B07MF1TZGD",
+      "rgb_rmse": 0.13497820446105144,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07WGNQVGM",
+      "split": "test",
+      "train_nearest": "B017DORX3M_A1F83G8C2ARO7P",
+      "rgb_rmse": 0.13580594028699292,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07JM6HFVP_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B078JGLJMQ_ATVPDKIKX0DER",
+      "rgb_rmse": 0.1370254623141122,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B082Q8RSQ7_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07HZ7634C_ATVPDKIKX0DER",
+      "rgb_rmse": 0.13860073009496218,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07WFNW44K_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07WJWRDFW_ATVPDKIKX0DER",
+      "rgb_rmse": 0.13924815011294275,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07JXDPKGC",
+      "split": "val",
+      "train_nearest": "B074VLRNLC",
+      "rgb_rmse": 0.13946544512260275,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B082Q989SF_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07B4MPXKJ_ATVPDKIKX0DER",
+      "rgb_rmse": 0.1407320905016534,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B01MRT550V",
+      "split": "test",
+      "train_nearest": "B01N2PLWIL",
+      "rgb_rmse": 0.1412810300460224,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07TYYNGQ1_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07GFDXXDL_A1F83G8C2ARO7P",
+      "rgb_rmse": 0.147778246942201,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07B8W8FBV_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07MF1SFKD_ATVPDKIKX0DER",
+      "rgb_rmse": 0.14818361332300686,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B079V7XFKW",
+      "split": "val",
+      "train_nearest": "B074VMF3L5",
+      "rgb_rmse": 0.1488502124994627,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07K6S2G5Z_A1F83G8C2ARO7P",
+      "split": "test",
+      "train_nearest": "B07HPQYW7G_A1F83G8C2ARO7P",
+      "rgb_rmse": 0.1495245119407816,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B075YZPG5Y_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B007IHF36E",
+      "rgb_rmse": 0.15064025578497167,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B075X463J2_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07HZ6LL1P_ATVPDKIKX0DER",
+      "rgb_rmse": 0.15072205337496217,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B075HWK9M3_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B078JGLJMQ_ATVPDKIKX0DER",
+      "rgb_rmse": 0.1510564476107355,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B072JT7WFN_A1PA6795UKMFR9",
+      "split": "val",
+      "train_nearest": "B071JLRR3T_A1RKKUPIHCS9HS",
+      "rgb_rmse": 0.15106546621903813,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B0753P16BL_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B075HR7LD2_ATVPDKIKX0DER",
+      "rgb_rmse": 0.1531624072426523,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B06X6H2WF7_A1F83G8C2ARO7P",
+      "split": "val",
+      "train_nearest": "B07VD8BKJQ",
+      "rgb_rmse": 0.15672914781339423,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07M6PKXBB_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07H8SSY4F_A1F83G8C2ARO7P",
+      "rgb_rmse": 0.1581138160303103,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B076YJFGCN_A1F83G8C2ARO7P",
+      "split": "test",
+      "train_nearest": "B076YS4SJT_A1F83G8C2ARO7P",
+      "rgb_rmse": 0.15933670775305078,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B076YJ1XZS_A1F83G8C2ARO7P",
+      "split": "test",
+      "train_nearest": "B076YS4SJT_A1F83G8C2ARO7P",
+      "rgb_rmse": 0.15933894890900185,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07F3T4RSD_A13V1IB3VIYZZH",
+      "split": "test",
+      "train_nearest": "B075HWDS7Y_ATVPDKIKX0DER",
+      "rgb_rmse": 0.16034123351727228,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07HKF5F8P_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B071777YNX",
+      "rgb_rmse": 0.16056728291215341,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B075HWDSDK_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07B4MRP16_ATVPDKIKX0DER",
+      "rgb_rmse": 0.16071142531994728,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07HPQ358H_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07YPV3KTC_ATVPDKIKX0DER",
+      "rgb_rmse": 0.16089218971316424,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B01LR5RBZ8_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07QV194QK_A1F83G8C2ARO7P",
+      "rgb_rmse": 0.1616970192138166,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B075HXHKVF_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B078JGLJMQ_ATVPDKIKX0DER",
+      "rgb_rmse": 0.16253560542903303,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B00WRDS0AU_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07SVY2HW1",
+      "rgb_rmse": 0.16318348524007323,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07B82PXCM_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07GFG6JMM_A1F83G8C2ARO7P",
+      "rgb_rmse": 0.1639448795162844,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B075YQXRBS_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07Y3QSCQ8",
+      "rgb_rmse": 0.16441087891736425,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B01DN8TEA2_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B0772KHYF7",
+      "rgb_rmse": 0.16463179815518642,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B01DN8TCEU_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B0772KHYF7",
+      "rgb_rmse": 0.16463502641584646,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B078GTTCCF_A1F83G8C2ARO7P",
+      "split": "test",
+      "train_nearest": "B0772KHYF7",
+      "rgb_rmse": 0.16710290243827108,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B06X3W3YQD_A1F83G8C2ARO7P",
+      "split": "val",
+      "train_nearest": "B07VD8BKJQ",
+      "rgb_rmse": 0.16726050968448566,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07NPJB964_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07HKGL3J8_ATVPDKIKX0DER",
+      "rgb_rmse": 0.16776987741182733,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07WQ4P35G",
+      "split": "test",
+      "train_nearest": "B07WMRJ68R_ATVPDKIKX0DER",
+      "rgb_rmse": 0.1678880691549751,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07B4W2MFG_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07QCMB7LV_ATVPDKIKX0DER",
+      "rgb_rmse": 0.16832469260927108,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07MF1SFJ5_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07HSKKD1S_ATVPDKIKX0DER",
+      "rgb_rmse": 0.17169843941648943,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07WGNR6BF_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07WMRJ68R_ATVPDKIKX0DER",
+      "rgb_rmse": 0.1722873134266754,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B079VPLVH5_A1F83G8C2ARO7P",
+      "rgb_rmse": 0.1729068019898704,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B079V39YYF",
+      "split": "val",
+      "train_nearest": "B074VLCFNC",
+      "rgb_rmse": 0.173325500335518,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07B78RCTR_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07H8SH3WJ_A1RKKUPIHCS9HS",
+      "rgb_rmse": 0.1734447664512887,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07B4G5RBN_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07H93GTMN_A1PA6795UKMFR9",
+      "rgb_rmse": 0.1740748613638917,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B075X1TB14_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B078JGYJTG_ATVPDKIKX0DER",
+      "rgb_rmse": 0.17437395151481014,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B003QTD4Y6_A1F83G8C2ARO7P",
+      "split": "test",
+      "train_nearest": "B07VD8BKJQ",
+      "rgb_rmse": 0.1747668206829284,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B084W2S628_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B084W2SXW9_ATVPDKIKX0DER",
+      "rgb_rmse": 0.17833677889097807,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07B8PXQ49_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07Y2C57KD_ATVPDKIKX0DER",
+      "rgb_rmse": 0.17886043870604842,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B073WGP8XN",
+      "split": "test",
+      "train_nearest": "B07B8XC5QS_ATVPDKIKX0DER",
+      "rgb_rmse": 0.18073561141506692,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07TDMJPWG_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07BG69MRW_ATVPDKIKX0DER",
+      "rgb_rmse": 0.18295505864863418,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07B8PXMRT_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07B8NZQF3_ATVPDKIKX0DER",
+      "rgb_rmse": 0.18342576781915224,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07B8K1DL3_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B075HR7LD2_ATVPDKIKX0DER",
+      "rgb_rmse": 0.18426918592754493,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07MBFDKYY_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07MF1SFKD_ATVPDKIKX0DER",
+      "rgb_rmse": 0.18432491838148554,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B084W368ML_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07MHMJCZN_ATVPDKIKX0DER",
+      "rgb_rmse": 0.1852027391083542,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07QFP4PV5_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07B4G612M_ATVPDKIKX0DER",
+      "rgb_rmse": 0.1859861653304177,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07DBB76JV_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07B4Z2WDQ_ATVPDKIKX0DER",
+      "rgb_rmse": 0.18638878570537842,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B074KMVVK7_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07B4Z2WDQ_ATVPDKIKX0DER",
+      "rgb_rmse": 0.1870932984476529,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07B4Y45GY_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07B4Z2WDQ_ATVPDKIKX0DER",
+      "rgb_rmse": 0.18905515583291432,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B06VVXMJ1S_A1F83G8C2ARO7P",
+      "split": "val",
+      "train_nearest": "B07VD8BKJQ",
+      "rgb_rmse": 0.19036749896900038,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B075Z93NHP_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B082QB8SZB_ATVPDKIKX0DER",
+      "rgb_rmse": 0.1910513077198652,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07Q16JDH5_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07MSYK43S_ATVPDKIKX0DER",
+      "rgb_rmse": 0.1918610089788105,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07QC9Y62K_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07H8P3K2R_A1F83G8C2ARO7P",
+      "rgb_rmse": 0.19797387391491061,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07B8F6V9M_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B0842H1DPF_ATVPDKIKX0DER",
+      "rgb_rmse": 0.19905079613512774,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07QGG6BJY_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B078JGLJMQ_ATVPDKIKX0DER",
+      "rgb_rmse": 0.2002061838977901,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B083YFP9DH_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B078JGLJMQ_ATVPDKIKX0DER",
+      "rgb_rmse": 0.20163121524330666,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B082VML3QJ_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B075X4WBNH_ATVPDKIKX0DER",
+      "rgb_rmse": 0.20425922981633826,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B075YQ46MP_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B075HXQJYH_ATVPDKIKX0DER",
+      "rgb_rmse": 0.20703476698495993,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07DHNHZ2Y_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07HKGL3J8_ATVPDKIKX0DER",
+      "rgb_rmse": 0.20991622172183722,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B079VKDKC1_A1F83G8C2ARO7P",
+      "split": "val",
+      "train_nearest": "B07TX2D39D_A1RKKUPIHCS9HS",
+      "rgb_rmse": 0.2160980475821287,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07DBDWL5H_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B075X4WBNH_ATVPDKIKX0DER",
+      "rgb_rmse": 0.21758637001371892,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B06XZV3F8F",
+      "split": "val",
+      "train_nearest": "B07H8JNCF3_A1PA6795UKMFR9",
+      "rgb_rmse": 0.21763612275242175,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07WTFY4N8_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B0828DTSRD_ATVPDKIKX0DER",
+      "rgb_rmse": 0.22053747013485392,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B01E3R7GWA_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07DMGM9T6",
+      "rgb_rmse": 0.2212607101083839,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B073WHKXD4",
+      "split": "test",
+      "train_nearest": "B0772KHYF7",
+      "rgb_rmse": 0.22245340494005836,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07YPRSX86_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07DMGM9T6",
+      "rgb_rmse": 0.2250205708758424,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07DBDSGD6_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07MF1SRM6_ATVPDKIKX0DER",
+      "rgb_rmse": 0.2254818489650571,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07Y3Q62Y7",
+      "rgb_rmse": 0.2276654225453317,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07K8193NL_A13V1IB3VIYZZH",
+      "split": "val",
+      "train_nearest": "B07TQ79FFZ_A1RKKUPIHCS9HS",
+      "rgb_rmse": 0.22973832666333446,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07GFL8FCV_A13V1IB3VIYZZH",
+      "split": "val",
+      "train_nearest": "B07LC84ZYV_A21TJRUUN4KGV",
+      "rgb_rmse": 0.23069738789943192,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07YLYRSB6_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07YM19Q9K_ATVPDKIKX0DER",
+      "rgb_rmse": 0.23171998689873385,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07L48L3BH",
+      "split": "val",
+      "train_nearest": "B07HSHYZKN_ATVPDKIKX0DER",
+      "rgb_rmse": 0.23198276279816013,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B003LSTD38_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B00DUGZFLK_ATVPDKIKX0DER",
+      "rgb_rmse": 0.23326429566313114,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07YPLQ7KW_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07YPLBD42_ATVPDKIKX0DER",
+      "rgb_rmse": 0.23563612565203249,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B073PB1H88",
+      "split": "val",
+      "train_nearest": "B07TX2D39D_A1RKKUPIHCS9HS",
+      "rgb_rmse": 0.23610301519346233,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07DB9638P_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07QVRTT6J_A1PA6795UKMFR9",
+      "rgb_rmse": 0.2425518497323197,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07YPTDRLV_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B00TS18AEA_ATVPDKIKX0DER",
+      "rgb_rmse": 0.249070625373193,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B00DIHVMEA_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07DMGM9T6",
+      "rgb_rmse": 0.25058729867024937,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B00WRDS8H0_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B075X5HB6G_ATVPDKIKX0DER",
+      "rgb_rmse": 0.2547417564818391,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B0727Q5F94_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B01LR5SM74_ATVPDKIKX0DER",
+      "rgb_rmse": 0.2562018071019652,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B071WSFSGC_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B01LR5SIRI_ATVPDKIKX0DER",
+      "rgb_rmse": 0.25749250326869727,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07YPV6SNV_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07DMGM9T6",
+      "rgb_rmse": 0.2591518512128738,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07XMV34PX_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B0842H1DPF_ATVPDKIKX0DER",
+      "rgb_rmse": 0.25977307901985014,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B00MIBN16O_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07HKGL3J8_ATVPDKIKX0DER",
+      "rgb_rmse": 0.2620735461809898,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B072ZMT5R7_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07W422B7M_A1F83G8C2ARO7P",
+      "rgb_rmse": 0.2634584632766439,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07DHK5DHN_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07SX38JWP",
+      "rgb_rmse": 0.2663418920584692,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B0831PH1MB_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07QFB5MW6_ATVPDKIKX0DER",
+      "rgb_rmse": 0.2690052559434399,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07RD8B8ZB_ATVPDKIKX0DER",
+      "split": "test",
+      "train_nearest": "B07GFG6JMM_A1F83G8C2ARO7P",
+      "rgb_rmse": 0.28646369392201254,
+      "identical_three_views": false
+    },
+    {
+      "scene_id": "B07QWC7NYS_ATVPDKIKX0DER",
+      "split": "val",
+      "train_nearest": "B07R1PVS26_ATVPDKIKX0DER",
+      "rgb_rmse": 0.30194103110326675,
+      "identical_three_views": false
+    }
+  ]
+}
