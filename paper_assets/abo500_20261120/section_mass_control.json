@@ -1,0 +1,36 @@
+{
+  "case": "Synthetic steel support with a square section, 1 m long and capped ends",
+  "density_kg_m3": 7850,
+  "results": {
+    "20mm_section_1mm_wall": {
+      "solid_kg": 3.14,
+      "section_kg": 0.6016868000000001,
+      "volume_fraction": 0.19162000000000004
+    },
+    "20mm_section_2mm_wall": {
+      "solid_kg": 3.14,
+      "section_kg": 1.1384384000000005,
+      "volume_fraction": 0.3625600000000001
+    },
+    "20mm_section_4mm_wall": {
+      "solid_kg": 3.14,
+      "section_kg": 2.0186432,
+      "volume_fraction": 0.64288
+    },
+    "40mm_section_1mm_wall": {
+      "solid_kg": 12.56,
+      "section_kg": 1.2472708,
+      "volume_fraction": 0.09930499999999999
+    },
+    "40mm_section_2mm_wall": {
+      "solid_kg": 12.56,
+      "section_kg": 2.4270944,
+      "volume_fraction": 0.19324
+    },
+    "40mm_section_4mm_wall": {
+      "solid_kg": 12.56,
+      "section_kg": 4.5859072,
+      "volume_fraction": 0.36512000000000006
+    }
+  }
+}
