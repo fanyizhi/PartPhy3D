@@ -43,35 +43,38 @@ def sealed(directory):
 def show_test_examples(dataset, ids, truth, ours, baseline):
     """Choose six mass ranks before comparing errors and use one shared camera view."""
     ranked = sorted(ids, key=lambda i: (truth[i], i))
-    fig, axes = plt.subplots(
-        2,
-        6,
-        figsize=(10.5, 3.7),
-        layout="constrained",
-        gridspec_kw={"height_ratios": (1, 0.7)},
-    )
-    for j, rank in enumerate(np.rint(np.linspace(0, len(ids) - 1, 6)).astype(int)):
-        scene = ranked[rank]
-        path = dataset / "scenes" / scene / "images" / f"{scene}_08.png"
-        with Image.open(path) as source:
-            rgb = source.convert("RGBA")
-            bg = Image.new("RGBA", rgb.size, "white")
-            bg.alpha_composite(rgb)
-            axes[0, j].imshow(bg.convert("RGB"))
-        axes[0, j].set_title(scene.split("_")[0], fontsize=9)
-        axes[0, j].axis("off")
-        ax = axes[1, j]
-        values = [truth[scene], baseline[scene], ours[scene]["updated"]]
-        ax.bar(range(3), values, color=["#333333", "#a0abb5", "#4679a1"])
-        ax.set_ylim(0, max(values) * 1.3)
-        ax.set_xticks(range(3), ["GT", "N2P", "Ours"], fontsize=8)
-        for k, v in enumerate(values):
-            ax.text(k, v, f"{v:.2f}", ha="center", va="bottom", fontsize=8)
-        ax.spines[["top", "right"]].set_visible(False)
-        if j == 0:
-            ax.set_ylabel("Mass (kg)")
+    chosen = [ranked[j] for j in np.rint(np.linspace(0, len(ids) - 1, 6)).astype(int)]
+    fig = plt.figure(figsize=(7.1, 5.2), layout="constrained")
+    grid = fig.add_gridspec(6, 2, width_ratios=(1, 5))
+    ax = fig.add_subplot(grid[:, 1])
+    series = [
+        ("Catalogue", lambda i: truth[i], "#30363b", "D", .19),
+        ("NeRF2Physics", lambda i: baseline[i], "#856aa1", "s", 0.),
+        ("Ours", lambda i: ours[i]["updated"], "#15796f", "o", -.19),
+    ]
+    for j, scene in enumerate(chosen):
+        photo = fig.add_subplot(grid[j, 0])
+        with Image.open(dataset / "scenes" / scene / "images" / f"{scene}_08.png") as source:
+            rgba = source.convert("RGBA")
+            bounds = rgba.getchannel("A").getbbox()
+            rgba = rgba.crop(bounds) if bounds else rgba
+            white = Image.new("RGBA", rgba.size, "white")
+            white.alpha_composite(rgba)
+            photo.imshow(white.convert("RGB"))
+        photo.set_axis_off()
+    for label, mass, color, marker, offset in series:
+        ax.scatter([mass(i) for i in chosen], np.arange(6) + offset,
+                   color=color, marker=marker, s=26, label=label, zorder=3)
+    ax.set(xscale="log", ylim=(5.5, -.5), xlabel="Mass (kg, logarithmic scale)")
+    ax.set_yticks(range(6), [s.split("_")[0] for s in chosen], fontsize=8)
+    ax.tick_params(axis="y", length=0)
+    ax.grid(axis="x", color="#dedede", linewidth=.6)
+    for j in range(5):
+        ax.axhline(j + .5, color="#eeeeee", linewidth=.6)
+    ax.spines[["top", "left", "right"]].set_visible(False)
+    ax.legend(loc="lower center", bbox_to_anchor=(.5, 1.01), ncol=3, frameon=False, fontsize=8)
     for ext in ("pdf", "png"):
-        fig.savefig(ROOT / f"test_examples.{ext}", dpi=240)
+        fig.savefig(ROOT / f"test_examples.{ext}", dpi=300)
     plt.close(fig)
 
 
