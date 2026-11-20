@@ -342,6 +342,15 @@ def build(dataset, weights):
             "[逐对象散点矢量图](split_mass.pdf) · [封存的测试实验](../../docs/results/abo100_role_replay_zh.md)",
         ]
     )
+    if (ROOT / "paired_review.json").exists():
+        lines.extend([
+            "", "## 配对比较与内部构造验证", "",
+            "四个面板统一以正值表示完整方法优于对照。误差线为按对象配对、按官方划分分层的 10,000 次 bootstrap 的 95% 百分位区间。APE 单位为百分点。", "",
+            "![质量指标配对比较](paired_mass.png)", "",
+            "五个已知构造共享立方体外轮廓。均匀对照获得正确总质量；剖面和惯量揭示内部质量分布的差异。", "",
+            "![材料点剖面、质心误差与惯量误差](particle_moments.png)", "",
+            "[同物体配对源数据](paired_review.json) · [两件外观与结构诊断](structure_cases/README.md) · [创新边界、已知构造和投稿审查](../../docs/results/abo500_submission_review_zh.md)",
+        ])
     (ROOT / "README.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
