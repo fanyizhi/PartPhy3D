@@ -1,0 +1,36 @@
+{
+  "matched": 98,
+  "triggers": {
+    "B074VM1T62": {
+      "part": "inner foam core",
+      "evidence": "shape and volume suggest internal filling, inferred from shell volume and typical pillow construction",
+      "share": 0.6544218720357258
+    },
+    "B07B4GSPNR_ATVPDKIKX0DER": {
+      "part": "internal frame",
+      "evidence": "inferred to support structure, not visible",
+      "share": 0.7448276530136354
+    },
+    "B07QHYD94M_ATVPDKIKX0DER": {
+      "part": "internal frame",
+      "evidence": "inferred from structural need to support cushions",
+      "share": 0.9172868603533999
+    }
+  },
+  "frozen": {
+    "num_scenes": 100,
+    "ade_kg": 12.420114647490102,
+    "alde": 0.6880071410642425,
+    "ape": 0.8360697617037836,
+    "mnre": 0.5737995598831552,
+    "rmse_kg": 27.605946710519646
+  },
+  "fallback": {
+    "num_scenes": 100,
+    "ade_kg": 12.023463028580748,
+    "alde": 0.6830633741868908,
+    "ape": 0.8253483943326974,
+    "mnre": 0.5762521967338174,
+    "rmse_kg": 26.429277783494527
+  }
+}
