@@ -75,6 +75,78 @@ def show_test_examples(dataset, ids, truth, ours, baseline):
     plt.close(fig)
 
 
+def show_benchmark_comparison(groups):
+    """Display measured and published values with a common metric scale."""
+    panels = ("val", "test", "all")
+    heights = [len(groups[split]) + 1 for split in panels]
+    fig, axes = plt.subplots(
+        3,
+        4,
+        figsize=(13, 7.5),
+        sharex="col",
+        layout="constrained",
+        gridspec_kw={"height_ratios": heights},
+    )
+    for row, split in enumerate(panels):
+        entries = groups[split]
+        labels = [entry[0] for entry in entries]
+        ypos = np.arange(len(labels))
+        for col, (metric, precision) in enumerate(
+            (("ADE (kg) ↓", 2), ("ALDE ↓", 3), ("APE (%) ↓", 1), ("MnRE ↑", 3))
+        ):
+            ax = axes[row, col]
+            values = [entry[1][col] for entry in entries]
+            for pos, (label, _, published), value in zip(ypos, entries, values):
+                color = "#276aa0" if label == "Ours" else "#65727d"
+                ax.scatter(
+                    value,
+                    pos,
+                    s=30,
+                    facecolor="white" if published else color,
+                    edgecolor=color,
+                    zorder=3,
+                )
+                ax.annotate(
+                    f"{value:.{precision}f}",
+                    (value, pos),
+                    xytext=(6, 0),
+                    textcoords="offset points",
+                    va="center",
+                    fontsize=8,
+                )
+            ax.set_yticks(ypos, labels if col == 0 else [""] * len(labels))
+            ax.set_ylim(len(labels) - 0.45, -0.55)
+            ax.tick_params(axis="y", length=0)
+            ax.grid(axis="x", color="#e4e9ed", linewidth=0.7)
+            ax.spines[["top", "right", "left"]].set_visible(False)
+            ax.margins(x=0.22)
+            if row == 0:
+                ax.set_title(metric)
+        axes[row, 0].set_ylabel(
+            {"val": "Validation · 100", "test": "Test · 100", "all": "Full benchmark"}[
+                split
+            ],
+            fontweight="semibold",
+        )
+    fig.text(
+        0.5,
+        1.005,
+        "Filled markers: this benchmark · Open markers: values reported in papers",
+        ha="center",
+        fontsize=10,
+    )
+    with plt.rc_context({"svg.fonttype": "none", "pdf.fonttype": 42}):
+        for ext in ("svg", "pdf", "png"):
+            fig.savefig(
+                ROOT / f"mass_baseline_comparison.{ext}", dpi=240, bbox_inches="tight"
+            )
+    svg = ROOT / "mass_baseline_comparison.svg"
+    svg.write_bytes(
+        b"\n".join(line.rstrip() for line in svg.read_bytes().splitlines()) + b"\n"
+    )
+    plt.close(fig)
+
+
 def build(dataset, weights):
     splits = read_json(ROOT / "splits.json")
     raw = read_json(BASE / "final100/score.json")["per_scene"]
@@ -96,7 +168,21 @@ def build(dataset, weights):
     control = {i: r["mass_kg"] for i, r in sealed(ROOT / "control").items()}
     # Keep all test controls on the original device and frozen evaluation protocol.
     control.update({r["scene_id"]: r["image_prior_kg"] for r in raw})
-    ours = sealed(ROOT) if (ROOT / "prediction_seal.json").exists() else test
+    ours = dict(test)
+    for batch in sorted((ROOT / "batches").glob("*")):
+        split, start = batch.name.split("_")
+        chunk = sealed(batch)
+        ids = [row["scene_id"] for row in chunk]
+        if ids != splits[split][int(start) : int(start) + 25] or set(ids) & ours.keys():
+            raise ValueError(f"Invalid or overlapping sealed batch {batch.name}")
+        ours.update(zip(ids, chunk))
+    if (ROOT / "prediction_seal.json").exists():
+        final = sealed(ROOT)
+        if set(final) != set(sum(splits.values(), [])) or any(
+            final[i]["updated"] != r["updated"] for i, r in ours.items()
+        ):
+            raise ValueError("Full record differs from earlier sealed batches")
+        ours = final
     if not all(ours[i]["updated"] == test[i]["updated"] for i in test):
         raise ValueError("Frozen test predictions changed")
     all_ids = splits["train"] + splits["val"] + splits["test"]
@@ -129,6 +215,7 @@ def build(dataset, weights):
         )
         * 1.2,
     ]
+    comparison = {split: [] for split in groups}
     for number, (split, ids) in enumerate(groups.items(), 1):
         truth = [y[i] for i in ids]
         present = sum(i in ours for i in ids)
@@ -148,28 +235,35 @@ def build(dataset, weights):
                 f"| {label} | {scope} | {a:.3f} | {b:.4f} | {c:.2f} | {d:.4f} |"
             )
 
-        def measured(label, values):
+        def measured(label, figure_label, values):
             m = mass_metrics(truth, values)
-            row(
-                label,
-                "同对象逐件评分",
-                [m["ade_kg"], m["alde"], 100 * m["ape"], m["mnre"]],
-            )
+            scores = [m["ade_kg"], m["alde"], 100 * m["ape"], m["mnre"]]
+            row(label, "同对象逐件评分", scores)
+            comparison[split].append((figure_label, scores, False))
 
         if present == len(ids):
-            measured("Ours，完整方法", [ours[i]["updated"] for i in ids])
+            measured("Ours，完整方法", "Ours", [ours[i]["updated"] for i in ids])
         else:
             lines.append(
                 f"| Ours，完整方法 | 已汇入 {present}/{len(ids)}，等待整组封存 | — | — | — | — |"
             )
-        measured("仅图像先验（消融）", [control[i] for i in ids])
+        measured("仅图像先验（消融）", "Image prior", [control[i] for i in ids])
         if all(i in baseline for i in ids):
-            measured("NeRF2Physics 官方缓存", [baseline[i] for i in ids])
+            measured(
+                "NeRF2Physics 官方缓存", "NeRF2Physics", [baseline[i] for i in ids]
+            )
         for name, scope, *vals in PAPER.get(split, []):
             row(
                 f"[{name}]({LINKS[name] if name != 'NeRF2Physics' else LINKS['PUGS']})",
                 scope,
                 vals,
+            )
+            comparison[split].append(
+                (
+                    "NeRF2Physics (PUGS Table I)" if name == "NeRF2Physics" else name,
+                    vals,
+                    True,
+                )
             )
         if split != "all":
             ax = axes[number - 1]
@@ -205,11 +299,16 @@ def build(dataset, weights):
     for ext in ("pdf", "png"):
         fig.savefig(ROOT / f"split_mass.{ext}", dpi=240)
     plt.close(fig)
+    show_benchmark_comparison(comparison)
     show_test_examples(dataset, splits["test"], y, ours, baseline)
     lines.extend(
         [
             "",
             "NeRF2Physics 的同对象行使用作者缓存的 30 视角属性阶段，区间取算术中点。论文原表按作者的数据范围列在表 3、4。物理输入、训练监督和测试对象的接触历史影响跨论文比较。",
+            "",
+            "![验证、测试及全量的四项质量指标对比](mass_baseline_comparison.png)",
+            "",
+            "实心点为本实验逐对象评分，空心点为各论文报告值。全量面板的完整方法一行在 500 件封存后生成。[质量对比图 PDF](mass_baseline_comparison.pdf) · [可编辑 SVG](mass_baseline_comparison.svg)",
             "",
             "![逐对象质量，横纵均使用对数坐标；虚线为等值线](split_mass.png)",
             "",
@@ -220,6 +319,12 @@ def build(dataset, weights):
             "RGB 来源为 Amazon Berkeley Objects，Collins 等，CVPR 2022，CC BY 4.0。使用原帧白底合成。[数据来源](https://amazon-berkeley-objects.s3.amazonaws.com/index.html)",
             "",
             "## 材质、物性与模拟图",
+            "",
+            "下图对应 PUGS、GS2Physics、Gen2Physics 的材质分区以及 PhysVGGT 的分属性视图。以两把有 PhysSeg 标注的椅子为例，每件固定取按帧编号排序的第 1、3 个标注视图；评测使用全部 10 张。用相同的相机和裁剪排列输入、公开标注、预测材质与按材质赋予的杨氏模量先验。两类 mIoU 为 64.13%（织物 95.55%、木材 32.71%）。蓝椅细腿被预测成钢，公开标注为木材，这个分歧同时影响材质评分和刚度图。该小样本来自原有外观补全诊断。",
+            "",
+            "![同视角材质和杨氏模量](physseg_material_modulus.png)",
+            "",
+            "[PhysSeg-15 作者标注](https://github.com/momaiyc/GS2Physics) · [十视角计数](../abo50_coverage_20261119/appearance/physseg_overlap.json) · [材质与模量矢量图](physseg_material_modulus.pdf)",
             "",
             "沙发和木凳图依次展示输入、构造剖面、内部粒子和压缩响应。沙发内部结构采用模型假设，木凳是有构造真值的合成对照，图中位移放大 35 倍。对应 Gen2Physics 的部件与模拟、PUGS 的物性到任务验证。",
             "",

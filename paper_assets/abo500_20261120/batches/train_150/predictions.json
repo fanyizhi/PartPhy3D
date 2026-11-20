@@ -1,0 +1,252 @@
+[
+  {
+    "scene_id": "B07T9FMMV5_ATVPDKIKX0DER",
+    "image_prior_kg": 18.290246292825778,
+    "construction_mass_kg": 20.144811743015165,
+    "updated": 19.189193137005454,
+    "role_only": 19.195144393891812,
+    "bounded_only": 19.189193137005454,
+    "edits": [],
+    "physical_after_projection_kg": 20.144811743015165
+  },
+  {
+    "scene_id": "B07QFB5MW6_ATVPDKIKX0DER",
+    "image_prior_kg": 1.034658492754846,
+    "construction_mass_kg": 0.35640389378223064,
+    "updated": 0.7543464245854453,
+    "role_only": 0.6072530901960738,
+    "bounded_only": 0.7543464245854453,
+    "edits": [],
+    "physical_after_projection_kg": 0.35640389378223064
+  },
+  {
+    "scene_id": "B07HSKKD1S_ATVPDKIKX0DER",
+    "image_prior_kg": 8.47106271023763,
+    "construction_mass_kg": 2.661598356451693,
+    "updated": 6.133670209001944,
+    "role_only": 4.748322502417849,
+    "bounded_only": 6.133670209001944,
+    "edits": [],
+    "physical_after_projection_kg": 2.661598356451693
+  },
+  {
+    "scene_id": "B07B8PXQ1Q_ATVPDKIKX0DER",
+    "image_prior_kg": 2.091518409980679,
+    "construction_mass_kg": 0.09484858030021832,
+    "updated": 1.47906312447134,
+    "role_only": 0.44539594953079376,
+    "bounded_only": 1.47906312447134,
+    "edits": [],
+    "physical_after_projection_kg": 0.09484858030021832
+  },
+  {
+    "scene_id": "B075X5HB6G_ATVPDKIKX0DER",
+    "image_prior_kg": 37.18356966788469,
+    "construction_mass_kg": 17.602153780512865,
+    "updated": 28.250323610128653,
+    "role_only": 25.58341086334111,
+    "bounded_only": 28.250323610128653,
+    "edits": [],
+    "physical_after_projection_kg": 17.602153780512865
+  },
+  {
+    "scene_id": "B0857JYVBP_ATVPDKIKX0DER",
+    "image_prior_kg": 5.47530262652927,
+    "construction_mass_kg": 2.9563280765014968,
+    "updated": 4.279541544983732,
+    "role_only": 4.023281109014242,
+    "bounded_only": 4.279541544983732,
+    "edits": [],
+    "physical_after_projection_kg": 2.9563280765014968
+  },
+  {
+    "scene_id": "B07B4MPXKJ_ATVPDKIKX0DER",
+    "image_prior_kg": 26.72842534827911,
+    "construction_mass_kg": 40.0437165302211,
+    "updated": 32.062099580687054,
+    "role_only": 32.7155236538507,
+    "bounded_only": 32.062099580687054,
+    "edits": [],
+    "physical_after_projection_kg": 40.0437165302211
+  },
+  {
+    "scene_id": "B014RWWURC",
+    "image_prior_kg": 0.07150284978012017,
+    "construction_mass_kg": 0.07593222632955604,
+    "updated": 0.07367872973472381,
+    "role_only": 0.07368426272083023,
+    "bounded_only": 0.07367872973472381,
+    "edits": [],
+    "physical_after_projection_kg": 0.07593222632955604
+  },
+  {
+    "scene_id": "B00WRDRRWW_ATVPDKIKX0DER",
+    "image_prior_kg": 1.4040093004257448,
+    "construction_mass_kg": 0.553114328400977,
+    "updated": 1.0375991837648804,
+    "role_only": 0.8812364389162033,
+    "bounded_only": 1.0375991837648804,
+    "edits": [],
+    "physical_after_projection_kg": 0.553114328400977
+  },
+  {
+    "scene_id": "B0831PL1FX_ATVPDKIKX0DER",
+    "image_prior_kg": 7.5081407032484195,
+    "construction_mass_kg": 18.498175255525794,
+    "updated": 10.122033757135497,
+    "role_only": 11.785028747179021,
+    "bounded_only": 10.122033757135497,
+    "edits": [],
+    "physical_after_projection_kg": 18.498175255525794
+  },
+  {
+    "scene_id": "B07Y3P85T1",
+    "image_prior_kg": 8.57548771221674,
+    "construction_mass_kg": 1.5928751324488637,
+    "updated": 6.096288672422966,
+    "role_only": 3.6959005838105066,
+    "bounded_only": 6.096288672422966,
+    "edits": [],
+    "physical_after_projection_kg": 1.5928751324488637
+  },
+  {
+    "scene_id": "B07124WCKT_ATVPDKIKX0DER",
+    "image_prior_kg": 57.03289321003322,
+    "construction_mass_kg": 33.489333449514625,
+    "updated": 45.59528842452038,
+    "role_only": 43.703473297912616,
+    "bounded_only": 45.59528842452038,
+    "edits": [],
+    "physical_after_projection_kg": 33.489333449514625
+  },
+  {
+    "scene_id": "B07BG61THW_ATVPDKIKX0DER",
+    "image_prior_kg": 1.2804848572026226,
+    "construction_mass_kg": 0.17482215131525183,
+    "updated": 0.907441952016685,
+    "role_only": 0.47313541133883175,
+    "bounded_only": 0.907441952016685,
+    "edits": [],
+    "physical_after_projection_kg": 0.17482215131525183
+  },
+  {
+    "scene_id": "B07YLZQ8W6_ATVPDKIKX0DER",
+    "image_prior_kg": 10.840121279305587,
+    "construction_mass_kg": 10.623528345109884,
+    "updated": 10.731308975885163,
+    "role_only": 10.731278380283111,
+    "bounded_only": 10.731308975885163,
+    "edits": [],
+    "physical_after_projection_kg": 10.623528345109884
+  },
+  {
+    "scene_id": "B07SVY2HW1",
+    "image_prior_kg": 18.911830572077214,
+    "construction_mass_kg": 1.179403730863264,
+    "updated": 13.375772865636643,
+    "role_only": 4.722783451965779,
+    "bounded_only": 13.375772865636643,
+    "edits": [],
+    "physical_after_projection_kg": 1.179403730863264
+  },
+  {
+    "scene_id": "B075X2LLTY_ATVPDKIKX0DER",
+    "image_prior_kg": 2.830542037916966,
+    "construction_mass_kg": 11.974733726487125,
+    "updated": 3.960647057746765,
+    "role_only": 5.821940158201894,
+    "bounded_only": 3.960647057746765,
+    "edits": [],
+    "physical_after_projection_kg": 11.974733726487125
+  },
+  {
+    "scene_id": "B073P16J7Y",
+    "image_prior_kg": 2.0488746362536188,
+    "construction_mass_kg": 0.08574577153386875,
+    "updated": 1.448879039123366,
+    "role_only": 0.4191447679045287,
+    "bounded_only": 1.448879039123366,
+    "edits": [],
+    "physical_after_projection_kg": 0.08574577153386875
+  },
+  {
+    "scene_id": "B07W422B7M_A1F83G8C2ARO7P",
+    "image_prior_kg": 7.837422572793723,
+    "construction_mass_kg": 9.257789071911564,
+    "updated": 8.504717750233581,
+    "role_only": 8.518051716581835,
+    "bounded_only": 8.504717750233581,
+    "edits": [],
+    "physical_after_projection_kg": 9.257789071911564
+  },
+  {
+    "scene_id": "B07W6NTK71_ATVPDKIKX0DER",
+    "image_prior_kg": 8.193465719597206,
+    "construction_mass_kg": 1.7298019665934479,
+    "updated": 5.838488207148066,
+    "role_only": 3.7647142142499006,
+    "bounded_only": 5.838488207148066,
+    "edits": [],
+    "physical_after_projection_kg": 1.7298019665934479
+  },
+  {
+    "scene_id": "B01IJ5A2UA_A1F83G8C2ARO7P",
+    "image_prior_kg": 0.17067515851055404,
+    "construction_mass_kg": 0.2813513492333073,
+    "updated": 0.2114115673153841,
+    "role_only": 0.21913394563041338,
+    "bounded_only": 0.2114115673153841,
+    "edits": [],
+    "physical_after_projection_kg": 0.2813513492333073
+  },
+  {
+    "scene_id": "B07JKJSJ8G",
+    "image_prior_kg": 0.6541465765751221,
+    "construction_mass_kg": 1.2173871013930688,
+    "updated": 0.8379192716381633,
+    "role_only": 0.8923842248398315,
+    "bounded_only": 0.8379192716381633,
+    "edits": [],
+    "physical_after_projection_kg": 1.2173871013930688
+  },
+  {
+    "scene_id": "B07WQ4CWS8",
+    "image_prior_kg": 4.024215532896342,
+    "construction_mass_kg": 3.768899693078894,
+    "updated": 3.8948450216210593,
+    "role_only": 3.894465905206559,
+    "bounded_only": 3.8948450216210593,
+    "edits": [],
+    "physical_after_projection_kg": 3.768899693078894
+  },
+  {
+    "scene_id": "B07GFS1W12_A1PA6795UKMFR9",
+    "image_prior_kg": 34.0790329119052,
+    "construction_mass_kg": 135.7072543363734,
+    "updated": 47.59033505964026,
+    "role_only": 68.0056761374634,
+    "bounded_only": 47.59033505964026,
+    "edits": [],
+    "physical_after_projection_kg": 135.7072543363734
+  },
+  {
+    "scene_id": "B075HXJY3Y_ATVPDKIKX0DER",
+    "image_prior_kg": 0.5153692529138134,
+    "construction_mass_kg": 0.05153543892346675,
+    "updated": 0.3647496677233897,
+    "role_only": 0.16297171735173108,
+    "bounded_only": 0.3647496677233897,
+    "edits": [],
+    "physical_after_projection_kg": 0.05153543892346675
+  },
+  {
+    "scene_id": "B0842H1DPF_ATVPDKIKX0DER",
+    "image_prior_kg": 3.7629595547011347,
+    "construction_mass_kg": 6.654563616845608,
+    "updated": 4.757077370437686,
+    "role_only": 5.004083706771472,
+    "bounded_only": 4.757077370437686,
+    "edits": [],
+    "physical_after_projection_kg": 6.654563616845608
+  }
+]

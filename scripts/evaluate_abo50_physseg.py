@@ -96,6 +96,37 @@ def evaluate(args: argparse.Namespace) -> None:
                         "predicted_pixels": int(np.count_nonzero(face_label)),
                     }
                 )
+                # Export the same pixels used for scoring at two fixed camera ranks.
+                if args.figure_data and view in (entries[0][0], entries[2][0]):
+                    args.figure_data.mkdir(parents=True, exist_ok=True)
+                    with Image.open(source / frame["file_path"]) as raw:
+                        rgb = raw.convert("RGBA").resize(
+                            (SIZE, SIZE), Image.Resampling.LANCZOS
+                        )
+                    rgb = np.asarray(rgb)
+                    target_class = np.zeros(ids.shape, np.uint8)
+                    predicted_class = np.zeros_like(target_class)
+                    modulus = np.full(ids.shape, np.nan, dtype=np.float32)
+                    for index, name in enumerate(classes, 1):
+                        target_class[target[name] & annotated] = index
+                    # Steel is a prediction outside the two annotated categories.
+                    display = ("fabric", "wood", "steel")
+                    for part in tokens["parts"]:
+                        name = part["surface_material"]
+                        pixels = (ids >= 0) & (
+                            labels[ids.clip(min=0)] == part["part_index"]
+                        )
+                        predicted_class[pixels] = display.index(name) + 1
+                        modulus[pixels] = tokens["material_priors"][name][
+                            "youngs_mean_pa"
+                        ]
+                    np.savez_compressed(
+                        args.figure_data / f"{scene}_{view:02d}.npz",
+                        rgba=rgb,
+                        target=target_class,
+                        prediction=predicted_class,
+                        modulus_pa=modulus,
+                    )
     if len(rows) != 10 or len({row["scene_id"] for row in rows}) != 2:
         raise ValueError(
             "Expected two frozen overlapping scenes with five labelled views each"
@@ -123,4 +154,5 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ("observations", "density-run", "physseg", "output"):
         parser.add_argument(f"--{name}", type=Path, required=True)
+    parser.add_argument("--figure-data", type=Path)
     evaluate(parser.parse_args())
