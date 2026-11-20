@@ -7,6 +7,7 @@ models=${3:?model directory}
 prior=${4:?archived artifacts directory}
 weights=${5:?evaluation weights}
 nerf=${6:?official baseline directory}
+mode=${7:-full}
 
 run() { "$py" "scripts/$1.py" "${@:2}"; }
 wait_for_reconstruction() {
@@ -23,11 +24,7 @@ wait_for_reconstruction() {
 
 full_base=$base
 model="$models/Qwen3-VL-8B-Instruct"
-run run_abo100_extension partition --cohort "$full_base/cohort100.json" \
-  --observations "$full_base/observations" --output "$full_base"
-
-run_batch() {
-# Use different directories for each half, sharing the completed reconstruction files.
+prepare_batch() {
 repair_base="$base/repaired_pipeline"
 mkdir "$repair_base"
 ln -s "$base/observations" "$repair_base/observations"
@@ -39,6 +36,10 @@ run run_abo50_mass_hypotheses --observations "$base/observations" --reconstructi
   --model "$model" --output "$repair_base/mass_hypotheses"
 run replay_abo50_mass_hypotheses --image-only-run "$repair_base/mass_hypotheses" \
   --repair-winding --reconstructions "$repair_base/reconstructions" --output "$repair_base/winding_only"
+}
+
+finish_batch() {
+repair_base="$base/repaired_pipeline"
 run repair_abo50_construction --benchmark "$repair_base" --model "$model" --output "$repair_base/construction_retry"
 run repair_abo50_construction --benchmark "$repair_base" --model "$model" --weighted-followup --output "$base/weighted"
 run replay_abo50_open_frames --benchmark "$repair_base" --source "$base/weighted" --model "$model" \
@@ -58,15 +59,34 @@ run run_abo100_extension select --cohort "$base/cohort75.json" --previous "$prio
   --clip "$base/clip" --construction "$base/panels" --output "$base/selected" "${select_args[@]}"
 }
 
-wait_for_reconstruction 25
-base="$full_base/batch_00"
-run_batch
-run run_abo100_extension score --cohort "$base/cohort75.json" --run "$base/selected" \
-  --weights "$weights" --nerf "$nerf" --output "$full_base/score75.json"
-base=$full_base
-wait_for_reconstruction 50
-base="$full_base/batch_25"
-run_batch
+if [[ "$mode" == full ]]; then
+  run run_abo100_extension partition --cohort "$full_base/cohort100.json" \
+    --observations "$full_base/observations" --output "$full_base"
+  wait_for_reconstruction 25
+  base="$full_base/batch_00"
+  prepare_batch
+  finish_batch
+  run run_abo100_extension score --cohort "$base/cohort75.json" --run "$base/selected" \
+    --weights "$weights" --nerf "$nerf" --output "$full_base/score75.json"
+  base=$full_base
+  wait_for_reconstruction 50
+  base="$full_base/batch_25"
+  prepare_batch
+elif [[ "$mode" == resume-after-winding ]]; then
+  base="$full_base/batch_25"
+  # All three completed inputs must match their sealed bytes before reusing them.
+  "$py" -c 'import sys, hashlib, json; from pathlib import Path
+for directory in sys.argv[1:]:
+    p = Path(directory)
+    actual = hashlib.sha256((p / "predictions.json").read_bytes()).hexdigest()
+    if actual != json.loads((p / "prediction_seal.json").read_text())["sha256"]:
+        raise ValueError(f"Prediction seal mismatch: {p}")' \
+    "$base/clip" "$base/repaired_pipeline/mass_hypotheses" "$base/repaired_pipeline/winding_only"
+else
+  echo "Unknown run mode: $mode" >&2
+  exit 2
+fi
+finish_batch
 run run_abo100_extension merge --cohort "$full_base/cohort100.json" \
   --first "$full_base/batch_00/selected" --second "$full_base/batch_25/selected" --output "$full_base/selected"
 run run_abo100_extension score --cohort "$full_base/cohort100.json" --run "$full_base/selected" \

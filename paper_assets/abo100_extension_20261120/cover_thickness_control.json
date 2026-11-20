@@ -1,0 +1,45 @@
+{
+  "scope": "Analytic geometry controls with specified material priors and inner interfaces; no ABO labels or visible thickness estimation",
+  "cases": [
+    {
+      "shape": "box",
+      "thickness_m": 0.002,
+      "analytic_mass_kg": 0.03714303999999999,
+      "all_fabric_mass_kg": 0.112,
+      "area_thickness_mass_kg": 0.03812800000000001,
+      "explicit_domain_particle_mass_kg": 0.03714303999996889,
+      "relative_error": 8.373068676476726e-13,
+      "particle_count": 1036
+    },
+    {
+      "shape": "cylinder",
+      "thickness_m": 0.002,
+      "analytic_mass_kg": 0.03569150847372751,
+      "all_fabric_mass_kg": 0.10995574287564278,
+      "area_thickness_mass_kg": 0.036524208449653664,
+      "explicit_domain_particle_mass_kg": 0.035677176660897564,
+      "relative_error": 0.0004015468508566453,
+      "particle_count": 1124
+    },
+    {
+      "shape": "box",
+      "thickness_m": 0.008,
+      "analytic_mass_kg": 0.07522816,
+      "all_fabric_mass_kg": 0.112,
+      "area_thickness_mass_kg": 0.09011200000000003,
+      "explicit_domain_particle_mass_kg": 0.07522815999964852,
+      "relative_error": 4.672222899091467e-12,
+      "particle_count": 942
+    },
+    {
+      "shape": "cylinder",
+      "thickness_m": 0.008,
+      "analytic_mass_kg": 0.07205003989966519,
+      "all_fabric_mass_kg": 0.10995574287564278,
+      "area_thickness_mass_kg": 0.08486037623799697,
+      "explicit_domain_particle_mass_kg": 0.07202110843272261,
+      "relative_error": 0.0004015468552531946,
+      "particle_count": 1008
+    }
+  ]
+}
