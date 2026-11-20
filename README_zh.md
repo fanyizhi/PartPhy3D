@@ -2,7 +2,8 @@
 
 多视角 VLM 与 Mesh 几何约束结合的部件物理推断、减面与编辑研究。
 
-[最新图件](paper_assets/chaise_reference_20261111_final/README.md) ·
+[ABO-500 四张质量表与论文图](paper_assets/abo500_20261120/README.md) ·
+[躺椅物性图件](paper_assets/chaise_reference_20261111_final/README.md) ·
 [实验结果](docs/results/chaise_reference_20261111_zh.md) ·
 [方法与复现](docs/REFERENCE_MESH_STUDY_zh.md) ·
 [服务器安装](docs/SERVER_SETUP_zh.md) · [数据准备](docs/DATA.md) · [English](README.md)

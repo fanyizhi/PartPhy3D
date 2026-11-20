@@ -71,7 +71,11 @@ def prepare(source: Path, evaluation: list[Path], output: Path) -> None:
 
 
 def predict(
-    dataset: Path, checkpoint: Path, output: Path, frozen_head: Path | None = None
+    dataset: Path,
+    checkpoint: Path,
+    output: Path,
+    frozen_head: Path | None = None,
+    device: str = "cuda",
 ) -> None:
     import open_clip
     import torch
@@ -85,13 +89,15 @@ def predict(
     manifest = dataset / "manifest.json"
     rows = read_json(manifest)
     labels = read_json(dataset / "train_val_labels.json") if frozen_head is None else {}
-    if labels.keys() != {r["scene_id"] for r in rows if r["split"] in {"train", "val"}}:
+    if frozen_head is None and labels.keys() != {
+        r["scene_id"] for r in rows if r["split"] in {"train", "val"}
+    }:
         raise ValueError("Only train and validation products may supply labels")
     output.mkdir(parents=True, exist_ok=False)
     model, _, preprocess = open_clip.create_model_and_transforms(
         "ViT-B-16", pretrained=str(checkpoint)
     )
-    model = model.to("cuda").eval()
+    model = model.to(device).eval()
     features = []
     for start in range(0, len(rows), 12):
         chunk = rows[start : start + 12]
@@ -105,14 +111,18 @@ def predict(
                     imgs.append(preprocess(image))
         with torch.inference_mode():
             z = torch.nn.functional.normalize(
-                model.encode_image(torch.stack(imgs).to("cuda"))
+                model.encode_image(torch.stack(imgs).to(device))
             )
             z = torch.nn.functional.normalize(
                 z.reshape(len(chunk), len(VIEWS), -1).mean(1)
             )
         features.append(z.float().cpu().numpy())
     x = np.concatenate(features)
-    outputs = {r["scene_id"]: {} for r in rows if r["split"] == "test"}
+    outputs = {
+        r["scene_id"]: {}
+        for r in rows
+        if frozen_head is not None or r["split"] == "test"
+    }
     protocol = dict(
         manifest_sha256=digest(manifest),
         labels_sha256=(
@@ -132,7 +142,7 @@ def predict(
                 float(head["alpha"]),
             )
         protocol["frozen_mass_head_sha256"] = digest(frozen_head)
-        for scene, value in zip(outputs, fit.predict(x[test]), strict=True):
+        for scene, value in zip(outputs, fit.predict(x), strict=True):
             outputs[scene]["mass_kg"] = float(value)
     for field in ("length_m", "mass_kg") if frozen_head is None else ():
         targets = [labels.get(r["scene_id"], {}).get(field) for r in rows]
@@ -360,6 +370,7 @@ def main():
     run.add_argument("--dataset", type=Path, required=True)
     run.add_argument("--checkpoint", type=Path, required=True)
     run.add_argument("--frozen-head", type=Path)
+    run.add_argument("--device", choices=("cpu", "cuda"), default="cuda")
     score = sub.add_parser("score")
     for name in ("run", "prior", "weights", "nerf", "winding", "catalog-scale"):
         score.add_argument(f"--{name}", type=Path, required=True)
@@ -374,7 +385,9 @@ def main():
     if args.action == "prepare":
         prepare(args.source, args.evaluation, args.output)
     elif args.action == "predict":
-        predict(args.dataset, args.checkpoint, args.output, args.frozen_head)
+        predict(
+            args.dataset, args.checkpoint, args.output, args.frozen_head, args.device
+        )
     elif args.action == "score":
         evaluate(args)
     else:

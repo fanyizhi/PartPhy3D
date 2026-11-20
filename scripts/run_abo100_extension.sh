@@ -59,7 +59,12 @@ run run_abo100_extension select --cohort "$base/cohort75.json" --previous "$prio
   --clip "$base/clip" --construction "$base/panels" --output "$base/selected" "${select_args[@]}"
 }
 
-if [[ "$mode" == full ]]; then
+if [[ "$mode" == standalone-batch ]]; then
+  # Standalone batches already have verified reconstructions and a selection manifest.
+  prepare_batch
+  finish_batch
+  exit 0
+elif [[ "$mode" == full ]]; then
   run run_abo100_extension partition --cohort "$full_base/cohort100.json" \
     --observations "$full_base/observations" --output "$full_base"
   wait_for_reconstruction 25

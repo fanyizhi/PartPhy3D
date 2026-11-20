@@ -3,7 +3,8 @@
 Part-level physical inference, task-aware mesh simplification and editing with
 multi-view VLM evidence and geometric constraints.
 
-[Latest figures](paper_assets/chaise_reference_20261111_final/README.md) ·
+[ABO-500 split tables and figures](paper_assets/abo500_20261120/README.md) ·
+[Chaise figures](paper_assets/chaise_reference_20261111_final/README.md) ·
 [Results](docs/results/chaise_reference_20261111_zh.md) ·
 [Reproduction](docs/REFERENCE_MESH_STUDY_zh.md) ·
 [ABO-50 benchmark and results](docs/results/abo50_20261119.md) ·

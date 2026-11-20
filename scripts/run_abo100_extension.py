@@ -69,7 +69,11 @@ def prepare_clip(observations, output):
             derived = output / f"{name}.jpg"
             convert_observation(observations / relative, derived)
             files[derived.name] = digest(derived)
-        rows.append(dict(scene_id=scene, split="test", files=files))
+        rows.append(
+            dict(
+                scene_id=scene, split=cohort.get("official_split", "test"), files=files
+            )
+        )
     write_json(output / "manifest.json", rows)
 
 

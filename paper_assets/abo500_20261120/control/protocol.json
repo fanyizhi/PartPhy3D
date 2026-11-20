@@ -1,0 +1,8 @@
+{
+  "manifest_sha256": "b49a243abb03fea21eebd426c7618cfe285a1ddb51d04024cd2710515edf78c7",
+  "labels_sha256": null,
+  "checkpoint_sha256": "80905176486d952914c1deb3b753b8e653ab54aa4ffb14208bc5007cf7643a16",
+  "n_views": 3,
+  "heads": {},
+  "frozen_mass_head_sha256": "ae07191a65820bd011078ee289a48b16f5fae464dc4bd1123853f7f6fe49af3c"
+}
