@@ -87,6 +87,12 @@ def build(dataset, weights):
     if set(test) != set(splits["test"]):
         raise ValueError("Archived test cohort mismatch")
     baseline = {r["scene_id"]: r["nerf_mass_kg"] for r in raw}
+    if (ROOT / "nerf_run/prediction_seal.json").is_file():
+        intervals = sealed(ROOT / "nerf_run")
+        midpoint = {i: sum(v) / 2 for i, v in intervals.items()}
+        if any(midpoint[i] != value for i, value in baseline.items()):
+            raise ValueError("Archived NeRF2Physics test results changed")
+        baseline = midpoint
     control = {i: r["mass_kg"] for i, r in sealed(ROOT / "control").items()}
     # Keep all test controls on the original device and frozen evaluation protocol.
     control.update({r["scene_id"]: r["image_prior_kg"] for r in raw})
@@ -157,7 +163,7 @@ def build(dataset, weights):
                 f"| Ours，完整方法 | 已汇入 {present}/{len(ids)}，等待整组封存 | — | — | — | — |"
             )
         measured("仅图像先验（消融）", [control[i] for i in ids])
-        if split == "test":
+        if all(i in baseline for i in ids):
             measured("NeRF2Physics 官方缓存", [baseline[i] for i in ids])
         for name, scope, *vals in PAPER.get(split, []):
             row(
@@ -203,7 +209,7 @@ def build(dataset, weights):
     lines.extend(
         [
             "",
-            "训练与验证表缺少五种基线在相同对象上的完整预测。论文原表按作者的数据范围列在表 3、4。物理输入、训练监督和测试对象的接触历史影响跨论文比较。",
+            "NeRF2Physics 的同对象行使用作者缓存的 30 视角属性阶段，区间取算术中点。论文原表按作者的数据范围列在表 3、4。物理输入、训练监督和测试对象的接触历史影响跨论文比较。",
             "",
             "![逐对象质量，横纵均使用对数坐标；虚线为等值线](split_mass.png)",
             "",
