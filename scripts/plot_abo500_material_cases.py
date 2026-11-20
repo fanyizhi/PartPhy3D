@@ -18,11 +18,13 @@ def render(source):
     paths = sorted(source.glob("*.npz"))
     if len(paths) != 4:
         raise ValueError("Expected two fixed camera ranks for each of two cases")
-    fig, axes = plt.subplots(4, 4, figsize=(8.0, 7.4), layout="constrained")
+    plt.rcParams.update({"font.size": 8, "pdf.fonttype": 42, "svg.fonttype": "none"})
+    fig, axes = plt.subplots(4, 5, figsize=(7.3, 5.9), layout="constrained")
+    errors = np.array([[1., 1., 1.], [.85, .87, .88], [.71, .22, .25]])
     for col, title in enumerate(
-        ("RGB input", "PhysSeg annotation", "Ours material", "Young's modulus prior")
+        ("RGB input", "Annotation", "Ours", "Disagreement", "Modulus prior")
     ):
-        axes[0, col].set_title(title, fontsize=10)
+        axes[0, col].set_title(title, fontsize=8, fontweight="semibold")
     for row, path in enumerate(paths):
         with np.load(path) as record:
             rgba = record["rgba"] / 255
@@ -49,7 +51,12 @@ def render(source):
             ]
             for ax, panel in zip(axes[row, :3], panels):
                 ax.imshow(panel[crop], interpolation="nearest")
-            ax = axes[row, 3]
+            # Only annotated pixels can establish a disagreement. Unknown predictions
+            # at annotated pixels are counted as disagreements as in the evaluation.
+            evaluated = (target > 0).astype(int)
+            evaluated[(target > 0) & (target != pred)] = 2
+            axes[row, 3].imshow(errors[evaluated][crop], interpolation="nearest")
+            ax = axes[row, 4]
             ax.imshow(
                 np.where(keep[..., None], COLORS[0], 1)[crop], interpolation="nearest"
             )
@@ -65,18 +72,20 @@ def render(source):
             ax.set_xticks([])
             ax.set_yticks([])
             ax.spines[:].set_visible(False)
-    fig.colorbar(layer, ax=axes[:, 3], shrink=0.62, label="Young's modulus (GPa)")
+    fig.colorbar(layer, ax=axes[:, 4], shrink=0.53, aspect=24, label="GPa")
     fig.legend(
         handles=[
             Patch(color=c, label=n)
             for c, n in zip(COLORS, ["Unassigned", "Fabric", "Wood", "Steel"])
-        ],
+        ] + [Patch(color=errors[1], label="Agreement"), Patch(color=errors[2], label="Disagreement")],
         loc="outside lower center",
-        ncol=4,
+        ncol=6,
+        fontsize=7,
+        columnspacing=1.2,
         frameon=False,
     )
-    for ext in ("pdf", "png"):
-        fig.savefig(OUT / f"physseg_material_modulus.{ext}", dpi=240)
+    for ext in ("pdf", "svg", "png"):
+        fig.savefig(OUT / f"physseg_material_modulus.{ext}", dpi=320)
     plt.close(fig)
 
 
