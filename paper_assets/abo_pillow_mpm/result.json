@@ -1,0 +1,17 @@
+{
+  "scene": "B074VM1T62",
+  "particles": 7689,
+  "total_mass_kg": 1.6841831849804325,
+  "shell_mm": 2,
+  "speed_m_s": -3.0,
+  "grid_m": 0.034,
+  "dt_s": 8e-06,
+  "initial_height_mm": 165.5341796875,
+  "min_height_mm": 163.774185095541,
+  "final_height_mm": 166.15614293901248,
+  "time_of_min_ms": 0.72,
+  "final_min_J": 0.9981835838864201,
+  "mesh_sha256": "8bd0d9d16e80ce3734d4578d606a8596f8233c5813e647580a03f91f0c18ecfa",
+  "rgb_sha256": "f8ec4c9d834f037c33984228f5347469e9c57478c4d31e2a849f9fde2f9c951a",
+  "p2g_residual_kg": 4.440892098500626e-16
+}
