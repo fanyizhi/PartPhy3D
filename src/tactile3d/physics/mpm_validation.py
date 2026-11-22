@@ -40,6 +40,7 @@ def run_mpm(
     steps: int,
     strain_rate: float = 0.0,
     timestep_s: float | None = None,
+    on_step=None,
 ) -> dict:
     """Advance compressible neo-Hookean points in free space with gravity.
 
@@ -80,7 +81,7 @@ def run_mpm(
     initial_velocity = v.copy()
     max_mass_residual = 0.0
     max_momentum_residual = 0.0
-    for _ in range(steps):
+    for step in range(1, steps + 1):
         cells = (x - origin) / dx
         base = np.floor(cells - 0.5).astype(int)
         nodes = base[:, None, :] + offsets
@@ -140,6 +141,8 @@ def run_mpm(
         c = (4 / dx**2) * np.einsum("pni,pnj->pij", weighted_velocity, relative)
         deformation = (eye + dt * c) @ deformation
         x += dt * v
+        if on_step is not None:
+            on_step(step, step * dt, x.copy())
     jacobian = np.linalg.det(deformation)
     if not (
         np.isfinite(x).all() and np.isfinite(jacobian).all() and np.all(jacobian > 0)
