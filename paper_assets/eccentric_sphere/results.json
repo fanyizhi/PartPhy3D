@@ -1,0 +1,17 @@
+{
+  "exact_mass_kg": 0.5259243919199963,
+  "particle_mass_kg": 0.5214208,
+  "true_com_mm": 4.477826485880311,
+  "segmented_com_mm": [
+    4.406912804399154,
+    -3.492612562822093e-17,
+    4.294695099051585e-17
+  ],
+  "segmented_angle_rmse_deg": 0.5634641610698164,
+  "uniform_angle_rmse_deg": 123.83710500571986,
+  "particles": 4854,
+  "fine_particles": 4384,
+  "core_particles": 512,
+  "final_min_J": 0.9503198521090165,
+  "mass_transfer_residual_kg": 2.220446049250313e-16
+}

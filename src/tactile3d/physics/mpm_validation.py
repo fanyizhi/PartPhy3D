@@ -41,6 +41,8 @@ def run_mpm(
     strain_rate: float = 0.0,
     timestep_s: float | None = None,
     on_step=None,
+    floor_z_m: float | None = None,
+    initial_vertical_speed: float = 0.,
 ) -> dict:
     """Advance compressible neo-Hookean points in free space with gravity.
 
@@ -60,6 +62,7 @@ def run_mpm(
     gravity = np.array([0.0, 0.0, -9.81])
     v = np.zeros_like(x)
     v[:, 2] = -strain_rate * (x[:, 2] - x[:, 2].mean())
+    v[:, 2] += initial_vertical_speed
     c = np.zeros((len(x), 3, 3))
     c[:, 2, 2] = -strain_rate
     dt = (
@@ -81,6 +84,7 @@ def run_mpm(
     initial_velocity = v.copy()
     max_mass_residual = 0.0
     max_momentum_residual = 0.0
+    floor_nodes = (origin[2] + np.arange(np.prod(shape)) % shape[2] * dx <= floor_z_m) if floor_z_m is not None else None
     for step in range(1, steps + 1):
         cells = (x - origin) / dx
         base = np.floor(cells - 0.5).astype(int)
@@ -127,6 +131,9 @@ def run_mpm(
         occupied = grid_mass > 0
         grid_momentum[occupied] /= grid_mass[occupied, None]
         grid_momentum[occupied] += dt * gravity
+        if floor_nodes is not None:
+            # Frictionless contact on background nodes, with no tensile reaction.
+            grid_momentum[floor_nodes, 2] = np.maximum(0., grid_momentum[floor_nodes, 2])
         weighted_velocity = w[:, :, None] * grid_momentum[indices].reshape(
             relative.shape
         )
