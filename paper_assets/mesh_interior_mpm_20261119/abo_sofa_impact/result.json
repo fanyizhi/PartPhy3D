@@ -1,0 +1,27 @@
+{
+  "scene": "B07QFP4PV5_ATVPDKIKX0DER",
+  "rgb_view": 0,
+  "grid_m": 0.12307692307692308,
+  "dt_s": 4.8e-06,
+  "steps": 800,
+  "speed_m_s": -2.0,
+  "particles": 4492,
+  "mass_kg": 40.278372627172516,
+  "floor_z_m": 0.023802720249093315,
+  "assigned": {
+    "energy_j": 2.7609289220502964,
+    "min_J": 0.9978874661497434,
+    "p2g_residual_kg": 1.4210854715202004e-14
+  },
+  "uniform_foam": {
+    "energy_j": 40.893395019892964,
+    "min_J": 0.980592682399528,
+    "p2g_residual_kg": 1.4210854715202004e-14
+  },
+  "max_local_mm": 2.221453994739317,
+  "input_sha256": {
+    "B07QFP4PV5_ATVPDKIKX0DER_00.png": "c218edc3eecdaba55503ae73a8fb0563b24bdfca84e058ff4892084352ea5076",
+    "corrected_camera_space.ply": "8b86ea9caec5ecbd13dfd26835062e10db107ed3141a1bb9cac0e4b375a57c74",
+    "sofa_mpm_input.npz": "aa8972aa10911f2e0794287dc46a83958fedf08fe75a63bb00b9e6fe2672651d"
+  }
+}
