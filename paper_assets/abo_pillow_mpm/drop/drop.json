@@ -1,0 +1,45 @@
+{
+  "scene": "B074VM1T62",
+  "release_height_m": 0.4587155963302752,
+  "ballistic_duration_s": 0.3058103975535168,
+  "contact_duration_ms": 12.0,
+  "soft_E_factor": 0.25,
+  "max_compression_mm": [
+    1.7599945919590243,
+    3.2911298953094414
+  ],
+  "particles": 7689,
+  "p2g_mass_residual_kg": [
+    4.440892098500626e-16,
+    4.440892098500626e-16
+  ],
+  "source_trajectory_sha256": "5571c12e51f366714da11fad94e65ba2a84b72574b461f326c997fd426d88bd4",
+  "materials": {
+    "fabric": {
+      "n": 2389,
+      "mass_kg": 0.3554079144946859,
+      "density_kg_m3": [
+        350.0
+      ],
+      "E_pa": [
+        100000000.0
+      ],
+      "poisson": [
+        0.33
+      ]
+    },
+    "foam": {
+      "n": 5300,
+      "mass_kg": 1.3287752704857465,
+      "density_kg_m3": [
+        65.0
+      ],
+      "E_pa": [
+        2000000.0
+      ],
+      "poisson": [
+        0.25
+      ]
+    }
+  }
+}
