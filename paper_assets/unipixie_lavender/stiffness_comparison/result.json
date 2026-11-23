@@ -1,0 +1,70 @@
+{
+  "asset_sha256": "ed26132edfdc427c6892ba9e0f4c7c764889246b63328023ae7eb1b5f5e60065",
+  "asset_id": "18f5fba66f944aad9ae84ea2172b9b78",
+  "height_m": 0.45,
+  "beam_radius_m": 0.0025,
+  "youngs_pa": [
+    90000000.0,
+    360000000.0
+  ],
+  "density_kg_m3": 650.0,
+  "drag_width_m": 0.008,
+  "peak_wind_m_s": 1.0,
+  "damping_ratio": 0.15,
+  "model": "MuJoCo reduced beam coordinates",
+  "longest_beam_peak_mm": [
+    13.581282880362776,
+    2.778963223329359
+  ],
+  "longest_beam_peak_s": [
+    0.96,
+    0.84
+  ],
+  "modal_validation": [
+    [
+      {
+        "frequency_hz": 3.0936617651276435,
+        "max_residual_m": 2.596568973289165e-09
+      },
+      {
+        "frequency_hz": 8.040995960607587,
+        "max_residual_m": 3.262508381399014e-10
+      },
+      {
+        "frequency_hz": 1.347138408825671,
+        "max_residual_m": 1.9603291170899872e-08
+      },
+      {
+        "frequency_hz": 2.0077374484246295,
+        "max_residual_m": 8.815290068221737e-09
+      },
+      {
+        "frequency_hz": 2.9761424567928167,
+        "max_residual_m": 2.8879254456576353e-09
+      }
+    ],
+    [
+      {
+        "frequency_hz": 6.187323530255287,
+        "max_residual_m": 5.612227594003864e-10
+      },
+      {
+        "frequency_hz": 16.081991921215174,
+        "max_residual_m": 7.971987141057978e-11
+      },
+      {
+        "frequency_hz": 2.694276817651342,
+        "max_residual_m": 3.8472116352036845e-09
+      },
+      {
+        "frequency_hz": 4.015474896849259,
+        "max_residual_m": 1.4228460814072474e-09
+      },
+      {
+        "frequency_hz": 5.9522849135856335,
+        "max_residual_m": 6.088722163174326e-10
+      }
+    ]
+  ],
+  "longest_beam_index": 2
+}
