@@ -11,11 +11,11 @@
 
 ### 靠枕下落与弹性接触
 
-![ABO-500 靠枕自适应材料点与刚度对照](paper_assets/gallery/pillow_drop.gif)
+![ABO-500 cushion surface motion driven by MLS-MPM](paper_assets/gallery/cushion_motion.gif)
 
-两组共用 ABO-500 靠枕 B074VM1T62 的几何、材料点位置、质量及初始条件。对照将各粒子的杨氏模量降至原赋值的 25%。自由落体使用解析轨迹，接触使用 MLS-MPM。画面以一倍位移慢放。
+两列使用同一个 ABO-500 条纹靠枕重建网格。外表随 MLS-MPM 求解得到的织物粒子运动。左列用原始赋值，右列只将杨氏模量降至 25%。掉落段采用解析轨迹，接触段采用 MLS-MPM，按一倍位移慢放。该对象缺实拍运动真值。
 
-[高清视频](paper_assets/gallery/pillow_drop.mp4) · [静态论文图](paper_assets/gallery/pillow_drop.pdf)
+[高清外观视频](paper_assets/gallery/cushion_motion.mp4) · [内部粒子动图](paper_assets/gallery/pillow_drop.gif) · [压缩曲线 PDF](paper_assets/gallery/pillow_drop.pdf)
 
 ### 空间物性图
 

@@ -13,11 +13,11 @@ multi-view VLM evidence and geometric constraints.
 
 ### Free fall and elastic contact
 
-![ABO-500 cushion with matched particle layouts and two stiffness assignments](paper_assets/gallery/pillow_drop.gif)
+![ABO-500 cushion surface motion driven by MLS-MPM](paper_assets/gallery/cushion_motion.gif)
 
-Adaptive material points from ABO-500 cushion B074VM1T62. The left contact view uses the assigned Young’s moduli. The right contact view uses 25% of those moduli with the same particle masses, geometry and initial conditions. The free-fall segment uses the analytic trajectory. The contact segment shows the MLS-MPM result at 1× displacement with slowed playback.
+Both columns show the colored reconstruction of ABO-500 cushion B074VM1T62. The surface follows the simulated textile particles. Original material properties are on the left, 25% Young’s modulus on the right. The fall is analytic and contact is MLS-MPM. Both are shown at 1× displacement with slowed playback. No physical ground-truth trajectory is available for this object.
 
-[HD video](paper_assets/gallery/pillow_drop.mp4) · [Figure PDF](paper_assets/gallery/pillow_drop.pdf)
+[HD surface video](paper_assets/gallery/cushion_motion.mp4) · [Particle section GIF](paper_assets/gallery/pillow_drop.gif) · [Compression curves PDF](paper_assets/gallery/pillow_drop.pdf)
 
 ### Spatial material properties
 
