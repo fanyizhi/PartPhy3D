@@ -9,6 +9,14 @@
 
 ## 物理演示
 
+### YCB 扫描锤的全程抛投
+
+![MuJoCo 飞行姿态叠帧、质心与几何中心轨迹](paper_assets/gallery/flight_overlay.gif)
+
+三组使用同一个扫描锤和起抛冲量。红色实线追踪质心，蓝色虚线追踪几何中心。各组展示至触地前。
+
+[完整视频](paper_assets/gallery/flight_overlay.mp4) · [论文轨迹图](paper_assets/gallery/flight_overlay.pdf) · [Blender 近景与同步曲线](paper_assets/gallery/ycb_hammer_research.mp4) · [山毛榉实测荷载–位移图](paper_assets/gallery/measured_buckling.pdf)
+
 ### 材质编辑与抛物线运动
 
 ![MuJoCo 原生渲染及换材前后轨迹](paper_assets/gallery/mallet_material_edit.gif)

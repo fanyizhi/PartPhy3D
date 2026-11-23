@@ -11,6 +11,14 @@ multi-view VLM evidence and geometric constraints.
 
 ## Physics demonstrations
 
+### Scanned YCB hammer in flight
+
+![MuJoCo flight overlay showing center of mass and geometric center](paper_assets/gallery/flight_overlay.gif)
+
+Same scan and launch impulses in all three panels. Solid red tracks the estimated centre of mass. Dashed blue tracks the geometric centre. The plotted footage stops at first ground contact.
+
+[Full flight video](paper_assets/gallery/flight_overlay.mp4) · [Trajectory figure](paper_assets/gallery/flight_overlay.pdf) · [Blender close-ups and synchronized plots](paper_assets/gallery/ycb_hammer_research.mp4) · [Measured beech load–displacement curves](paper_assets/gallery/measured_buckling.pdf)
+
 ### Material editing and projectile motion
 
 ![Native MuJoCo render and curves for rubber-to-aluminum head replacement](paper_assets/gallery/mallet_material_edit.gif)
