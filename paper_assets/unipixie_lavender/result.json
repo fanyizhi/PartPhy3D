@@ -1,0 +1,12 @@
+{
+  "asset_sha256": "ed26132edfdc427c6892ba9e0f4c7c764889246b63328023ae7eb1b5f5e60065",
+  "asset_id": "18f5fba66f944aad9ae84ea2172b9b78",
+  "height_m": 0.45,
+  "beam_radius_m": 0.0025,
+  "youngs_pa": 90000000.0,
+  "density_kg_m3": 650.0,
+  "drag_width_m": 0.008,
+  "peak_wind_m_s": 1.0,
+  "longest_beam_peak_mm": 13.581301953642791,
+  "model": "conditional damped Euler-Bernoulli beam approximation"
+}
