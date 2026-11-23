@@ -9,6 +9,24 @@ multi-view VLM evidence and geometric constraints.
 [Mass baselines](docs/baseline_mapping.md) ·
 [Server setup](docs/SERVER_SETUP_zh.md) · [Data](docs/DATA.md) · [中文](README_zh.md)
 
+## Physics demonstrations
+
+### Free fall and elastic contact
+
+![ABO-500 cushion with matched particle layouts and two stiffness assignments](paper_assets/gallery/pillow_drop.gif)
+
+Adaptive material points from ABO-500 cushion B074VM1T62. The left contact view uses the assigned Young’s moduli. The right contact view uses 25% of those moduli with the same particle masses, geometry and initial conditions. The free-fall segment uses the analytic trajectory. The contact segment shows the MLS-MPM result at 1× displacement with slowed playback.
+
+[HD video](paper_assets/gallery/pillow_drop.mp4) · [Figure PDF](paper_assets/gallery/pillow_drop.pdf)
+
+### Spatial material properties
+
+![Matched ABO views of RGB, material assignments, friction, Young’s modulus and density](paper_assets/gallery/surface_priors.png)
+
+Friction, Young’s modulus and density are material-conditioned priors. Grey marks missing assignments. The friction prior specifies contact with a dry stainless-steel slider.
+
+[Property maps PDF](paper_assets/gallery/surface_priors.pdf)
+
 ## Run
 
 ```bash

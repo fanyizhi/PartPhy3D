@@ -7,6 +7,24 @@
 [方法与复现](docs/REFERENCE_MESH_STUDY_zh.md) ·
 [服务器安装](docs/SERVER_SETUP_zh.md) · [数据准备](docs/DATA.md) · [English](README.md)
 
+## 物理演示
+
+### 靠枕下落与弹性接触
+
+![ABO-500 靠枕自适应材料点与刚度对照](paper_assets/gallery/pillow_drop.gif)
+
+两组共用 ABO-500 靠枕 B074VM1T62 的几何、材料点位置、质量及初始条件。对照将各粒子的杨氏模量降至原赋值的 25%。自由落体使用解析轨迹，接触使用 MLS-MPM。画面以一倍位移慢放。
+
+[高清视频](paper_assets/gallery/pillow_drop.mp4) · [静态论文图](paper_assets/gallery/pillow_drop.pdf)
+
+### 空间物性图
+
+![ABO 物体同视角原图、材料、摩擦、杨氏模量和密度](paper_assets/gallery/surface_priors.png)
+
+摩擦、杨氏模量和密度来自材料先验。灰色表示缺少赋值。摩擦先验以干燥不锈钢滑块为接触条件。
+
+[属性图 PDF](paper_assets/gallery/surface_priors.pdf)
+
 ## 运行
 
 ```bash
