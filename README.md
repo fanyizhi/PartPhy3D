@@ -19,6 +19,14 @@ Both columns show the colored reconstruction of ABO-500 cushion B074VM1T62. The 
 
 [HD surface video](paper_assets/gallery/cushion_motion.mp4) · [Particle section GIF](paper_assets/gallery/pillow_drop.gif) · [Compression curves PDF](paper_assets/gallery/pillow_drop.pdf)
 
+### Canopy under a wind gust
+
+![ABO-500 canopy under a prescribed gust](paper_assets/gallery/canopy_wind.gif)
+
+The assigned textile parameters drive a reduced membrane model. The supports stay fixed. The input pressure and calculated displacement are shown on the same time axis.
+
+[HD video](paper_assets/gallery/canopy_wind.mp4) · [Figure PDF](paper_assets/gallery/canopy_wind.pdf)
+
 ### Spatial material properties
 
 ![Matched ABO views of RGB, material assignments, friction, Young’s modulus and density](paper_assets/gallery/surface_priors.png)

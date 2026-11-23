@@ -17,6 +17,14 @@
 
 [高清外观视频](paper_assets/gallery/cushion_motion.mp4) · [内部粒子动图](paper_assets/gallery/pillow_drop.gif) · [压缩曲线 PDF](paper_assets/gallery/pillow_drop.pdf)
 
+### 遮阳棚受阵风时的响应
+
+![ABO-500 遮阳棚风载响应](paper_assets/gallery/canopy_wind.gif)
+
+织物赋值进入降阶膜模型。支架保持固定，载荷与计算位移使用同一时间轴。
+
+[高清视频](paper_assets/gallery/canopy_wind.mp4) · [论文图 PDF](paper_assets/gallery/canopy_wind.pdf)
+
 ### 空间物性图
 
 ![ABO 物体同视角原图、材料、摩擦、杨氏模量和密度](paper_assets/gallery/surface_priors.png)
