@@ -11,6 +11,14 @@ multi-view VLM evidence and geometric constraints.
 
 ## Physics demonstrations
 
+### Material editing and projectile motion
+
+![Native MuJoCo render and curves for rubber-to-aluminum head replacement](paper_assets/gallery/mallet_material_edit.gif)
+
+Only the head material is replaced. The part edit updates mass, centre of mass and inertia before exporting to MuJoCo. Matched impulses produce different launch velocities and trajectories.
+
+[Video](paper_assets/gallery/mallet_material_edit.mp4) · [Paper figure](paper_assets/gallery/mallet_material_edit.pdf) · [MuJoCo MJCF scene](paper_assets/gallery/mallet_material_edit.xml)
+
 ### Centre of mass and rigid motion in MuJoCo
 
 ![Matched-mass mallet, centre-of-mass paths and angular trajectories](paper_assets/gallery/mallet_com.gif)

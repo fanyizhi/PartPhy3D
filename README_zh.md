@@ -9,6 +9,14 @@
 
 ## 物理演示
 
+### 材质编辑与抛物线运动
+
+![MuJoCo 原生渲染及换材前后轨迹](paper_assets/gallery/mallet_material_edit.gif)
+
+只替换锤头材质，重新积分总质量、质心和惯量后导出到 MuJoCo。两组受到相同冲量，由各自的质量和惯量决定离手速度与转动。
+
+[视频](paper_assets/gallery/mallet_material_edit.mp4) · [论文图](paper_assets/gallery/mallet_material_edit.pdf) · [MuJoCo MJCF 场景](paper_assets/gallery/mallet_material_edit.xml)
+
 ### MuJoCo 质心与刚体轨迹
 
 ![木柄橡胶锤、同总质量对照及运动曲线](paper_assets/gallery/mallet_com.gif)
