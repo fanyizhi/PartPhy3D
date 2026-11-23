@@ -9,6 +9,14 @@
 
 ## 物理演示
 
+### MuJoCo 质心与刚体轨迹
+
+![木柄橡胶锤、同总质量对照及运动曲线](paper_assets/gallery/mallet_com.gif)
+
+木柄和橡胶头的界面由解析算例给定。两组使用相同几何、总质量和铰链。彩色模型、质心标记与右侧轨迹游标同步。
+
+[木柄锤视频](paper_assets/gallery/mallet_com.mp4) · [木柄锤论文图](paper_assets/gallery/mallet_com.pdf) · [ABO-500 沙发视频](paper_assets/gallery/sofa_com.mp4) · [沙发论文图](paper_assets/gallery/sofa_com.pdf)
+
 ### 靠枕下落与弹性接触
 
 ![ABO-500 cushion surface motion driven by MLS-MPM](paper_assets/gallery/cushion_motion.gif)

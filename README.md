@@ -11,6 +11,14 @@ multi-view VLM evidence and geometric constraints.
 
 ## Physics demonstrations
 
+### Centre of mass and rigid motion in MuJoCo
+
+![Matched-mass mallet, centre-of-mass paths and angular trajectories](paper_assets/gallery/mallet_com.gif)
+
+The designed rubber-head and wood-handle mallet has an analytic centre of mass. Both simulations use the same geometry, total mass and hinge. The colored mesh, centre-of-mass marker and trajectory cursor are synchronized.
+
+[Mallet video](paper_assets/gallery/mallet_com.mp4) · [Mallet figure PDF](paper_assets/gallery/mallet_com.pdf) · [ABO-500 sofa video](paper_assets/gallery/sofa_com.mp4) · [ABO-500 sofa figure PDF](paper_assets/gallery/sofa_com.pdf)
+
 ### Free fall and elastic contact
 
 ![ABO-500 cushion surface motion driven by MLS-MPM](paper_assets/gallery/cushion_motion.gif)
