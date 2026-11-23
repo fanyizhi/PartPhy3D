@@ -1,0 +1,28 @@
+{
+  "scene": "B07YLYRWJ7_ATVPDKIKX0DER",
+  "mesh_sha256": "ead3643421a7a3d053a214fde9a0f4512990fadeb1f16a4412f15c265b501fa2",
+  "blue_vertices": 25889,
+  "sheet": {
+    "name": "Canopy Fabric",
+    "material": "fabric",
+    "kind": "sheet",
+    "count": 1,
+    "dimensions": [
+      2500,
+      2500,
+      2
+    ],
+    "area_m2": 6.25,
+    "thickness_mm": 2.0,
+    "volume_m3": 0.0125,
+    "mass_kg": 4.375
+  },
+  "density_kg_m3": 350.0,
+  "youngs_pa": 100000000.0,
+  "pretension_n_per_m": 200.0,
+  "assumed_prestrain": 0.001,
+  "assumed_damping_ratio": 0.16,
+  "peak_net_pressure_pa": 12.0,
+  "natural_frequency_hz": 4.780914437337574,
+  "peak_modal_displacement_mm": 31.09955299461097
+}
