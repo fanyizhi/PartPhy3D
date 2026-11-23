@@ -1,0 +1,56 @@
+{
+  "geometry_source": "two disjoint reference cuboids",
+  "parts": [
+    {
+      "part_id": "handle",
+      "orientation": "asset frame",
+      "size_m": [
+        0.028,
+        0.032,
+        0.3
+      ],
+      "centre_m": [
+        0,
+        0,
+        0.15
+      ],
+      "material": "wood",
+      "density_kg_m3": 650.0
+    },
+    {
+      "part_id": "head",
+      "orientation": "asset frame",
+      "size_m": [
+        0.16,
+        0.074,
+        0.082
+      ],
+      "centre_m": [
+        0,
+        0,
+        0.341
+      ],
+      "material": "rubber",
+      "density_kg_m3": 1100.0
+    }
+  ],
+  "edit": {
+    "target_part_id": "head",
+    "material_before": "rubber",
+    "material_after": "aluminum",
+    "density_before_kg_m3": 1100,
+    "density_after_kg_m3": 2700,
+    "unchanged_parts": [
+      "handle"
+    ],
+    "geometry_changed": false
+  },
+  "update_order": [
+    "part material",
+    "component mass",
+    "whole-body COM and inertia",
+    "MuJoCo inertial and launch velocity",
+    "simulated trajectory"
+  ],
+  "result": "result.json"
+}

@@ -1,0 +1,15 @@
+<mujoco model="PartPhy3D mallet COM">
+  <compiler angle="radian"/>
+  <option timestep=".001" integrator="RK4"/>
+  <visual><global offwidth="1280" offheight="720"/><quality shadowsize="2048"/></visual>
+  <asset><texture name="ground" type="2d" builtin="checker" rgb1=".82 .86 .88" rgb2=".89 .92 .94" width="128" height="128"/>
+    <material name="ground" texture="ground" texrepeat="7 7" reflectance=".08"/>
+  </asset>
+  <worldbody>
+    <light pos="0 -1.5 2" dir="0 .6 -1" diffuse=".86 .86 .86"/>
+    <geom type="plane" size="1 1 .01" material="ground" contype="0" conaffinity="0"/>
+    <geom type="capsule" fromto="-.28 0 .5 .28 0 .5" size=".006" rgba=".19 .28 .32 1" contype="0" conaffinity="0"/>
+    <body name="assigned_materials" pos="-0.18 0 .5"><joint type="hinge" axis="1 0 0" ref="0"/><inertial pos="-8.315684996155484e-20 -9.065459872858029e-20 -0.10043974433458303" mass="1.2426879999999998" fullinertia="0.007885695443934002 0.009673109420931345 0.002788765735001697 1.4773309889888143e-21 -1.778658652683837e-19 1.3493450888008134e-19"/><site name="com_0" pos="-8.315684996155484e-20 -9.065459872858029e-20 -0.10043974433458303" rgba=".01 .72 .68 1" size=".012"/><geom type="box" size="0.014 0.016 0.15" pos="0.0 -2.1811632776801276e-20 -0.2645854414041683" rgba="0.6784313725490196 0.4588235294117647 0.26666666666666666 1.0" contype="0" conaffinity="0"/><geom type="box" size="0.08 0.037 0.041" pos="0.0 -2.1811632776801276e-20 -0.07358544140416828" rgba="0.2235294117647059 0.29411764705882354 0.32941176470588235 1.0" contype="0" conaffinity="0"/></body><body name="uniform_density" pos="0.18 0 .5"><joint type="hinge" axis="1 0 0" ref="0"/><inertial pos="0.0 0.0 -0.11499999999999999" mass="1.2426879999999998" fullinertia="0.010728626772180165 0.012355286723602508 0.0025577072776047597 8.253465792301359e-21 -1.0442614106185869e-19 -2.4875915891120347e-19"/><site name="com_1" pos="0.0 0.0 -0.11499999999999999" rgba="1 .36 .08 1" size=".012"/><geom type="box" size="0.014 0.016 0.15" pos="0.0 -2.1811632776801276e-20 -0.2645854414041683" rgba="0.6784313725490196 0.4588235294117647 0.26666666666666666 1.0" contype="0" conaffinity="0"/><geom type="box" size="0.08 0.037 0.041" pos="0.0 -2.1811632776801276e-20 -0.07358544140416828" rgba="0.2235294117647059 0.29411764705882354 0.32941176470588235 1.0" contype="0" conaffinity="0"/></body>
+  </worldbody>
+  <keyframe><key name="release_28deg" qpos="0.4886921905584123 0.4886921905584123"/></keyframe>
+</mujoco>
