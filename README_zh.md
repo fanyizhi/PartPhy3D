@@ -33,6 +33,14 @@
 
 [高清外观视频](paper_assets/gallery/cushion_motion.mp4) · [内部粒子动图](paper_assets/gallery/pillow_drop.gif) · [压缩曲线 PDF](paper_assets/gallery/pillow_drop.pdf)
 
+### 紫花同风载刚度对照
+
+![紫花刚度对照与同步尖端位移曲线](paper_assets/gallery/lavender_wind.gif)
+
+同一网格和阵风，比较两档设定模量。降阶梁模态由 MuJoCo 求解，同视角视频由 Blender 4.3.2 渲染。
+
+[Blender 视频](paper_assets/gallery/lavender_blender.mp4) · [论文图 PDF](paper_assets/gallery/lavender_wind.pdf)
+
 ### 遮阳棚受阵风时的响应
 
 ![ABO-500 遮阳棚风载响应](paper_assets/gallery/canopy_wind.gif)

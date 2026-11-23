@@ -35,6 +35,14 @@ Both columns show the colored reconstruction of ABO-500 cushion B074VM1T62. The 
 
 [HD surface video](paper_assets/gallery/cushion_motion.mp4) · [Particle section GIF](paper_assets/gallery/pillow_drop.gif) · [Compression curves PDF](paper_assets/gallery/pillow_drop.pdf)
 
+### Lavender under matched wind load
+
+![Lavender stiffness comparison and synchronized tip displacement curves](paper_assets/gallery/lavender_wind.gif)
+
+Two assigned stiffness values on the same textured asset and gust. MuJoCo integrates reduced beam coordinates. Blender 4.3.2 renders the matched views.
+
+[Blender video](paper_assets/gallery/lavender_blender.mp4) · [Figure PDF](paper_assets/gallery/lavender_wind.pdf)
+
 ### Canopy under a wind gust
 
 ![ABO-500 canopy under a prescribed gust](paper_assets/gallery/canopy_wind.gif)
