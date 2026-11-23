@@ -1,0 +1,17 @@
+{
+  "S03": {
+    "points": 618,
+    "peak_force_kN": 192.6,
+    "displacement_at_peak_mm": 63.1411585
+  },
+  "S04": {
+    "points": 370,
+    "peak_force_kN": 568.8,
+    "displacement_at_peak_mm": 49.7197965
+  },
+  "S05": {
+    "points": 393,
+    "peak_force_kN": 585.12,
+    "displacement_at_peak_mm": 49.8823645
+  }
+}
