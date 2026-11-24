@@ -52,7 +52,15 @@ def main():
         action="store_true",
         help="Run the prespecified extreme-cover sensitivity on the verified ledger",
     )
+    parser.add_argument("--residual-structure", action="store_true")
     args = parser.parse_args()
+    if args.residual_structure and not (
+        args.nonlinear and args.routed_ledger and args.areal_replay
+    ):
+        parser.error(
+            "--residual-structure requires --nonlinear --routed-ledger --areal-replay"
+        )
+
     if args.areal_replay and not args.routed_ledger:
         parser.error("--areal-replay requires --routed-ledger")
     if args.routed_ledger and not args.nonlinear:
@@ -211,6 +219,8 @@ def main():
                             features[i].get(material, 0.0) + mass / total
                         )
 
+            log_physical = np.array([f["log_base"] for f in features])
+
             def predict(fit_ids, eval_ids, leaf, blend, weight_power):
                 model = make_pipeline(
                     DictVectorizer(sparse=False),
@@ -227,12 +237,18 @@ def main():
                     0.25,
                     8.0,
                 )
+                target = np.log(truth[fit_ids])
+                if args.residual_structure:
+                    target = target - log_physical[fit_ids]
                 model.fit(
                     [features[i] for i in fit_ids],
-                    np.log(truth[fit_ids]),
+                    target,
                     extratreesregressor__sample_weight=reliability,
                 )
-                return np.exp(model.predict([features[i] for i in eval_ids]))
+                estimate = model.predict([features[i] for i in eval_ids])
+                if args.residual_structure:
+                    estimate = log_physical[eval_ids] + estimate
+                return np.exp(estimate)
 
             trials = []
             powers = (0.0, 0.25, 0.5, 1.0) if args.mass_weights else (0.0,)
@@ -283,6 +299,8 @@ def main():
                 if args.mass_weights
                 else "areal_structure_control.json"
             )
+        if args.residual_structure:
+            filename = "areal_residual_structure_control.json"
         (WORK / filename).write_text(json.dumps(summaries, indent=2))
         print({k: v["metrics"] for k, v in summaries.items()})
         return
