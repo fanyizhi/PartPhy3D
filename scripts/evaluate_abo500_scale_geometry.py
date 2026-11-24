@@ -179,6 +179,7 @@ def main():
                         else [""]
                     ),
                     correction=float(factors[i]),
+                    before_calibration_component_kg=parts[i],
                 )
                 for i, k in enumerate(ids)
             },

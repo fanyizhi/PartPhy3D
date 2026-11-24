@@ -80,11 +80,13 @@ def main():
     for maximum in (1.5, 3.0, 6.0):
         bounds = (-np.log(30.0), np.log(maximum))
         train_oof = np.zeros(len(train))
+        oof_parts = {}
         for build, held in folds:
-            train_oof[held] = fit(train[build], train[held], *bounds)[0]
+            train_oof[held], held_parts = fit(train[build], train[held], *bounds)
+            oof_parts.update(zip(train[held], held_parts, strict=True))
         stats = errors(truth[train], train_oof).mean(0).tolist()
-        trials.append((maximum, stats, train_oof))
-    maximum, _, selected_oof = min(trials, key=lambda t: t[1][1])
+        trials.append((maximum, stats, train_oof, oof_parts))
+    maximum, _, selected_oof, selected_parts = min(trials, key=lambda t: t[1][1])
     predicted, individual = fit(
         train, np.arange(len(ids)), -np.log(30.0), np.log(maximum)
     )
@@ -119,6 +121,14 @@ def main():
                     for p, v in zip(
                         [p for p in parts[i] if p["mass_kg"] > 0],
                         individual[i],
+                        strict=True,
+                    )
+                ],
+                scored_parts=[
+                    dict(name=p["name"], raw_kg=p["mass_kg"], mass_kg=float(v))
+                    for p, v in zip(
+                        [p for p in parts[i] if p["mass_kg"] > 0],
+                        selected_parts.get(i, individual[i]),
                         strict=True,
                     )
                 ],
