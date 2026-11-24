@@ -33,7 +33,7 @@ strictly above zero and at most one. Give a positive maximum length in meters.
 Return only JSON. Do not derive or estimate mass."""
 
 WEIGHT_CONTRACT = """Describe the real object seen in these images. Return JSON with
-max_length_m and parts. Use one to five material-bearing components. Each part has
+max_length_m and parts. Use one to six material-bearing components. Each part has
 name, evidence, material_id, construction_id, v, a and parameter.
 Choose material_id by number from this list: {materials}.
 Use construction_id 1 for filled material, 2 for a hollow thin shell and 3 for an
@@ -47,8 +47,8 @@ max_length_m. Return JSON only. Do not estimate mass."""
 
 def decode_weights(payload: dict, material_names: list[str]) -> dict:
     parts = payload["parts"]
-    if not isinstance(parts, list) or not 1 <= len(parts) <= 5:
-        raise ValueError("Expected one to five material components")
+    if not isinstance(parts, list) or not 1 <= len(parts) <= 6:
+        raise ValueError("Expected one to six material components")
     volumes = [positive(part["v"], "relative component size") for part in parts]
     areas = [float(part["a"]) for part in parts]
     area_total = positive(sum(areas), "total visible area weight")
