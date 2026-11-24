@@ -119,6 +119,7 @@ def main():
                     else []
                 ),
                 recovered_parts=parts if recovered else None,
+                recovered_panel=panel if recovered else None,
             )
     # Seal all geometry predictions before looking up any mass labels.
     (WORK / "geometry_predictions.json").write_text(json.dumps(rows, indent=2))
