@@ -1,5 +1,6 @@
 """Fit bounded component corrections using object weights from the training split."""
 
+import argparse
 import json
 
 import numpy as np
@@ -12,6 +13,13 @@ from evaluate_structure_cues import ROOT, WORK, errors, read
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--balanced",
+        action="store_true",
+        help="Fit absolute and relative errors jointly",
+    )
+    args = parser.parse_args()
     rows = read(WORK / "geometry_predictions.json")
     labels = read(ROOT / "weights.json")
     ids = list(rows)
@@ -41,7 +49,7 @@ def main():
             "role=" + part["construction"]: 1.0,
         }
 
-    def fit(train, evaluate, lower, upper):
+    def fit(train, evaluate, lower, upper, objective):
         vec = DictVectorizer(sparse=False)
         vec.fit([features(p) for i in train for p in parts[i] if p["mass_kg"] > 0])
 
@@ -61,11 +69,20 @@ def main():
                 mass * np.exp(np.clip(design @ coefficients, lower, upper)), start
             )
 
+        med = np.median(truth[train])
+
+        def smooth_absolute(residual):
+            return residual * np.sqrt(2.0 / (np.hypot(1.0, residual) + 1.0))
+
         def residual(coefficients):
-            # Smooth log-ratio, with smaller influence for extreme outliers.
-            z = np.log(total(coefficients) / truth[train])
-            robust = z * np.sqrt(2.0 / (np.hypot(1.0, z) + 1.0))
-            return np.r_[robust, coefficients]
+            estimate = total(coefficients)
+            target = truth[train]
+            terms = [smooth_absolute(np.log(estimate / target))]
+            if objective in {"absolute", "joint"}:
+                terms.append(smooth_absolute((estimate - target) / med))
+            if objective in {"relative", "joint"}:
+                terms.append(smooth_absolute((estimate - target) / target))
+            return np.concatenate([*terms, coefficients])
 
         result = least_squares(residual, np.zeros(design.shape[1]), max_nfev=400)
         if not result.success:
@@ -77,18 +94,31 @@ def main():
     train = groups["train"]
     folds = list(KFold(5, shuffle=True, random_state=25).split(train))
     trials = []
-    for maximum in (1.5, 3.0, 6.0):
-        bounds = (-np.log(30.0), np.log(maximum))
-        train_oof = np.zeros(len(train))
-        oof_parts = {}
-        for build, held in folds:
-            train_oof[held], held_parts = fit(train[build], train[held], *bounds)
-            oof_parts.update(zip(train[held], held_parts, strict=True))
-        stats = errors(truth[train], train_oof).mean(0).tolist()
-        trials.append((maximum, stats, train_oof, oof_parts))
-    maximum, _, selected_oof, selected_parts = min(trials, key=lambda t: t[1][1])
+    objectives = ("log", "absolute", "relative", "joint") if args.balanced else ("log",)
+    for objective in objectives:
+        for maximum in (1.5, 3.0, 6.0):
+            bounds = (-np.log(30.0), np.log(maximum))
+            train_oof = np.zeros(len(train))
+            oof_parts = {}
+            for build, held in folds:
+                train_oof[held], held_parts = fit(
+                    train[build], train[held], *bounds, objective
+                )
+                oof_parts.update(zip(train[held], held_parts, strict=True))
+            stats = errors(truth[train], train_oof).mean(0).tolist()
+            trials.append((maximum, stats, train_oof, oof_parts, objective))
+    baseline = np.array(
+        min((t for t in trials if t[4] == "log"), key=lambda t: t[1][1])[1][:3]
+    )
+
+    def rank(trial):
+        if args.balanced:
+            return np.mean(np.array(trial[1][:3]) / baseline)
+        return trial[1][1]
+
+    maximum, _, selected_oof, selected_parts, objective = min(trials, key=rank)
     predicted, individual = fit(
-        train, np.arange(len(ids)), -np.log(30.0), np.log(maximum)
+        train, np.arange(len(ids)), -np.log(30.0), np.log(maximum), objective
     )
     full_fit = predicted.copy()
     predicted[train] = selected_oof
@@ -109,7 +139,8 @@ def main():
         metrics=summary,
         below_one_kg=light,
         maximum_multiplier=maximum,
-        training_candidates={str(t[0]): t[1] for t in trials},
+        objective=objective,
+        training_candidates={f"{t[4]}/{t[0]}": t[1] for t in trials},
         predictions={
             k: dict(
                 split=rows[k]["split"],
@@ -136,8 +167,10 @@ def main():
             for i, k in enumerate(ids)
         },
     )
-    (WORK / "bounded_components.json").write_text(json.dumps(result, indent=2))
-    print(maximum, summary, light)
+    output = "balanced_components.json" if args.balanced else "bounded_components.json"
+    (WORK / output).write_text(json.dumps(result, indent=2))
+    print(objective, maximum, summary, light)
+    print(result["training_candidates"])
 
 
 if __name__ == "__main__":
