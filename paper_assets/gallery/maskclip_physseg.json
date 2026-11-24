@@ -1,0 +1,162 @@
+{
+  "annotation_sha256": "d327bd3804f011aa8bf8c3d749f31d07ec4f4748fd2b7030c0277183c404d367",
+  "rows": [
+    {
+      "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+      "view": 1,
+      "rgb_sha256": "cf3124919e58a535be5444864a33d041c684af4f8350f4c3ddd738671f937c90",
+      "counts": {
+        "fabric": [
+          22709,
+          31530
+        ],
+        "wood": [
+          835,
+          1114
+        ]
+      }
+    },
+    {
+      "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+      "view": 9,
+      "rgb_sha256": "7dbffed81bb75cc04799f5f2bef7909cd8a184eb09f56dc4172cddf343cf0b2f",
+      "counts": {
+        "fabric": [
+          20204,
+          29538
+        ],
+        "wood": [
+          1701,
+          2971
+        ]
+      }
+    },
+    {
+      "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+      "view": 17,
+      "rgb_sha256": "71bb550a7a501de62399386577ef404f844672a3ca0234e61bde14ebcbe3844e",
+      "counts": {
+        "fabric": [
+          14035,
+          22018
+        ],
+        "wood": [
+          3155,
+          3646
+        ]
+      }
+    },
+    {
+      "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+      "view": 23,
+      "rgb_sha256": "e3fe33a29e3a6fb8338fabcfd71d3695e2aa246f31a4b7e7ac1bcf24a2e02b6b",
+      "counts": {
+        "fabric": [
+          15407,
+          25004
+        ],
+        "wood": [
+          86,
+          461
+        ]
+      }
+    },
+    {
+      "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+      "view": 27,
+      "rgb_sha256": "81349934050b7b71b37692d3b09b04871778a210f366310964e29121beb625d4",
+      "counts": {
+        "fabric": [
+          13619,
+          19978
+        ],
+        "wood": [
+          1895,
+          2209
+        ]
+      }
+    },
+    {
+      "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+      "view": 3,
+      "rgb_sha256": "0ff9ea9683f2886712af4f8935e944fde3bb4cc00e8c18495103423baf256ef3",
+      "counts": {
+        "fabric": [
+          6304,
+          9171
+        ],
+        "wood": [
+          173,
+          2230
+        ]
+      }
+    },
+    {
+      "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+      "view": 7,
+      "rgb_sha256": "8ac3247575a2c9582d15efe753fc82e17cec7db2ef99a889090dccf73160ff4b",
+      "counts": {
+        "fabric": [
+          8015,
+          10051
+        ],
+        "wood": [
+          0,
+          318
+        ]
+      }
+    },
+    {
+      "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+      "view": 14,
+      "rgb_sha256": "9465c4b7ba1cdb2dc7ce7603f339b6692036bfe85e94bc4c48875e357c31542b",
+      "counts": {
+        "fabric": [
+          10574,
+          12944
+        ],
+        "wood": [
+          180,
+          1640
+        ]
+      }
+    },
+    {
+      "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+      "view": 18,
+      "rgb_sha256": "44314d43196688e63d24f6944927dd7d9612cd1df487f05a177cc12c2f74b76d",
+      "counts": {
+        "fabric": [
+          4562,
+          6533
+        ],
+        "wood": [
+          323,
+          2064
+        ]
+      }
+    },
+    {
+      "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+      "view": 26,
+      "rgb_sha256": "c2aab38c238ef80fbfdb71c4fc3b69548db9293c9dcd431fbad9ed0fc82d2957",
+      "counts": {
+        "fabric": [
+          4997,
+          6777
+        ],
+        "wood": [
+          2020,
+          2967
+        ]
+      }
+    }
+  ],
+  "metrics": {
+    "class_iou": {
+      "fabric": 0.6939220024892823,
+      "wood": 0.5284403669724771
+    },
+    "miou": 0.6111811847308797
+  }
+}

@@ -11,17 +11,23 @@ multi-view VLM evidence and geometric constraints.
 
 ## Mass comparison and matched material validation
 
-[ABO-500 full-method mass results against five papers and method summary](https://github.com/fanyizhi/PartPhy3D/blob/codex/mesh-structure-study/paper_assets/abo500_comparison_20261124/README.md)
+[ABO-500 mass results against five papers](https://github.com/fanyizhi/PartPhy3D/blob/codex/mesh-structure-study/paper_assets/abo500_comparison_20261124/README.md) · [Method and implementation notes (中文)](https://github.com/fanyizhi/PartPhy3D/blob/codex/mesh-structure-study/docs/PARTPHY3D_METHODS_zh.md)
 
-![Shared PhysSeg views comparing NeRF2Physics, PUGS-Qwen and Ours](paper_assets/gallery/paired_material.png)
+![Four selected ABO objects showing RGB input, region evidence, Ours, NeRF2Physics and MaskCLIP](paper_assets/gallery/material_selected.png)
 
-[Material comparison PDF](paper_assets/gallery/paired_material.pdf) · [Ten-view scores](paper_assets/gallery/paired_material.json)
+Four illustrative objects were selected by Ours foreground assignment coverage among seven cached cases. Each column shares a camera and crop. Region evidence visualizes the multiview part votes. MaskCLIP predicts materials directly from each RGB image.
+
+[Selected examples (PDF)](paper_assets/gallery/material_selected.pdf) · [Full seven-object figure (PDF)](paper_assets/gallery/region_material_seven.pdf)
+
+![Two PhysSeg objects with annotations and predictions from Ours, NeRF2Physics, PUGS-Qwen and MaskCLIP](paper_assets/gallery/paired_material.png)
+
+[Matched comparison (PDF)](paper_assets/gallery/paired_material.pdf) · [Three-dimensional methods, ten-view scores](paper_assets/gallery/paired_material.json) · [MaskCLIP ten-view scores](paper_assets/gallery/maskclip_physseg.json)
 
 ## Coverage and local editing
 
 ![PartPhy3D method with chaise lounge local editing and recorded cushion particle response](paper_assets/gallery/partphy3d_pipeline.png)
 
-[Seven-object material comparison](paper_assets/gallery/region_material_seven.pdf) · [Method overview](paper_assets/gallery/partphy3d_pipeline.pdf) · [Region evidence and material segmentation](paper_assets/gallery/region_material_comparison.pdf)
+[Method overview](paper_assets/gallery/partphy3d_pipeline.pdf) · [Region evidence and material segmentation](paper_assets/gallery/region_material_comparison.pdf)
 
 ![Metal shoe rack and two accent chairs under a fixed camera and mesh per object](paper_assets/gallery/shared_density.png)
 
