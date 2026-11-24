@@ -15,7 +15,7 @@ from scipy.spatial import cKDTree
 import trimesh
 
 
-def render(mesh_file, particles_file, comparison, output):
+def render(mesh_file, particles_file, comparison, output, *, storyboard_only=False):
     output.mkdir(parents=True, exist_ok=True)
     source = json.loads((particles_file.parent/"result.json").read_bytes())
     drop = json.loads((comparison.parent/"drop.json").read_bytes())
@@ -56,6 +56,10 @@ def render(mesh_file, particles_file, comparison, output):
     up=np.array([-right[1]*.30,right[0]*.30,np.sqrt(1-.30**2)])
     camera=np.stack([right,up,np.cross(right,up)],axis=1)
     ground=np.array([[-.58,-.38,0],[.58,-.38,0],[.58,.38,0],[-.58,.38,0]])@camera
+    if storyboard_only:
+        storyboard(output, rest, original, faces, rgb, camera, ground, neighbor,
+                   weights, paths, times, compression, drop)
+        return
     plt.rcParams.update({"animation.ffmpeg_path":imageio_ffmpeg.get_ffmpeg_exe()})
     fig, axes=plt.subplots(1,2,figsize=(10,5.25),facecolor="#f5f7f8")
     fig.subplots_adjust(left=.026,right=.974,top=.81,bottom=.14,wspace=.025)
@@ -108,14 +112,173 @@ def render(mesh_file, particles_file, comparison, output):
                 label.set_text(f"Envelope compression   {curve[i]:+.2f} mm")
             writer.grab_frame()
             writer.grab_frame()
-            if i==int(np.argmax(compression[1])):
-                fig.savefig(output/"cushion_motion.png",dpi=170)
+            if i == int(np.argmax(compression[1])):
+                fig.savefig(output / "cushion_motion.png", dpi=170)
     plt.close(fig)
 
 
-if __name__=="__main__":
-    parser=argparse.ArgumentParser(description=__doc__)
-    for key in ("mesh","particles","comparison","output"):
-        parser.add_argument(key,type=Path)
-    args=parser.parse_args()
-    render(args.mesh,args.particles,args.comparison,args.output)
+def storyboard(
+    output,
+    rest,
+    reference,
+    faces,
+    face_rgb,
+    camera,
+    ground,
+    neighbors,
+    weights,
+    paths,
+    times,
+    compression,
+    drop,
+):
+    """Use identical floor coordinates in all four airborne/first-contact panels."""
+    plt.rcParams.update(
+        {
+            "font.family": "DejaVu Sans",
+            "svg.fonttype": "none",
+            "pdf.fonttype": 42,
+            "font.size": 7,
+        }
+    )
+    fig = plt.figure(figsize=(7.2, 4.7), facecolor="white")
+    fig.text(
+        0.06,
+        0.965,
+        "Striped cushion drop and contact response",
+        va="top",
+        weight="bold",
+        size=13,
+        color="#192b3b",
+    )
+    fig.text(
+        0.06,
+        0.894,
+        "ABO-500  ·  Analytic free fall, then MLS-MPM at floor contact",
+        size=7.5,
+        color="#4f6574",
+    )
+    top = fig.add_gridspec(
+        1, 4, left=0.06, right=0.967, top=0.824, bottom=0.48, wspace=0.11
+    )
+
+    def frame(ax, positions, limits):
+        ax.set_facecolor("#eef3f5")
+        ax.fill(*ground[:, :2].T, color="#d7e2e7", ec="#adbec9", lw=0.65)
+        for x in np.linspace(-0.53, 0.53, 8):
+            line = np.array([[x, -0.38, 0], [x, 0.38, 0]]) @ camera
+            ax.plot(*line[:, :2].T, color="#bfcfd8", lw=0.35, zorder=2)
+        tri = (positions @ camera)[faces]
+        normals = np.cross(tri[:, 1] - tri[:, 0], tri[:, 2] - tri[:, 0])
+        cosine = (normals @ np.array([-0.25, 0.65, 0.72])) / np.maximum(
+            np.linalg.norm(normals, axis=1), 1e-12
+        )
+        order = np.argsort(tri[:, :, 2].mean(1))
+        tint = (0.76 + 0.24 * np.clip(cosine, 0, 1))[:, None]
+        ax.add_collection(
+            PolyCollection(
+                tri[order, :, :2],
+                facecolors=(face_rgb * tint)[order],
+                linewidth=0,
+                antialiased=False,
+                rasterized=True,
+                zorder=3,
+            )
+        )
+        ax.set(xlim=limits[0], ylim=limits[1], xticks=[], yticks=[])
+        ax.spines[:].set_visible(False)
+        ax.set_aspect("equal", adjustable="box")
+
+    end = drop["ballistic_duration_s"]
+    for i, (fraction, title) in enumerate(
+        zip(
+            (0, 0.60, 0.84, 1.0),
+            ("Release", "In flight", "Approach", "First contact"),
+            strict=True,
+        )
+    ):
+        ax = fig.add_subplot(top[i])
+        t = end * fraction
+        height = max(0, drop["release_height_m"] - 4.905 * t * t)
+        frame(ax, rest + [0, 0, height], [(-0.36, 0.36), (-0.14, 0.67)])
+        ax.set_title(f"{title}\n{t*1000:.0f} ms", fontsize=7.4, pad=4)
+    fig.text(
+        0.061,
+        0.437,
+        "Peak compression after contact",
+        size=8.3,
+        weight="bold",
+        color="#192b3b",
+    )
+    lower = fig.add_gridspec(
+        1,
+        3,
+        left=0.06,
+        right=0.95,
+        top=0.404,
+        bottom=0.13,
+        wspace=0.33,
+        width_ratios=(1, 1, 1.37),
+    )
+    for i, (path, title) in enumerate(
+        zip(paths, ("Assigned stiffness", "0.25× Young’s modulus"), strict=True)
+    ):
+        step = int(np.argmax(compression[i]))
+        moved = rest + np.sum(
+            weights[:, :, None] * (path[step] - reference)[neighbors], axis=1
+        )
+        ax = fig.add_subplot(lower[i])
+        frame(ax, moved, [(-0.34, 0.34), (-0.09, 0.22)])
+        ax.set_title(title, fontsize=7.3, pad=3)
+        ax.text(
+            0.5,
+            -0.16,
+            f"{compression[i][step]:.2f} mm  ·  {times[step]:.2f} ms",
+            ha="center",
+            fontsize=6.8,
+            transform=ax.transAxes,
+        )
+    ax = fig.add_subplot(lower[2])
+    for values, color, label in zip(
+        compression, ("#187c88", "#b88151"), ("Assigned", "0.25× E"), strict=True
+    ):
+        ax.plot(times, values, color=color, lw=1.15, label=label)
+    ax.legend(loc="upper right", fontsize=6, frameon=False)
+    ax.set(xlabel="Time since contact (ms)", ylabel="Compression (mm)")
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.tick_params(labelsize=6.4)
+    fig.text(
+        0.06,
+        0.034,
+        "Same reconstructed mesh and release conditions  ·  Displayed displacement at physical scale",
+        size=6.7,
+        color="#4f6574",
+    )
+    for fmt in ("png", "pdf", "svg"):
+        path = output / f"cushion_drop_storyboard.{fmt}"
+        fig.savefig(path, dpi=360)
+        if fmt == "svg":
+            path.write_text(
+                "\n".join(
+                    line.rstrip()
+                    for line in path.read_text(encoding="utf-8").splitlines()
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+    plt.close(fig)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    for key in ("mesh", "particles", "comparison", "output"):
+        parser.add_argument(key, type=Path)
+    parser.add_argument("--storyboard-only", action="store_true")
+    args = parser.parse_args()
+    render(
+        args.mesh,
+        args.particles,
+        args.comparison,
+        args.output,
+        storyboard_only=args.storyboard_only,
+    )

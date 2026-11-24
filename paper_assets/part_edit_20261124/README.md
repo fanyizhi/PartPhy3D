@@ -8,6 +8,14 @@ The top row follows the upholstered chaise lounge reference mesh. It shows three
 
 The face-evidence row displays PCA colors of the recorded multi-view part votes, with color intensity modulated by support. The material rows use a different, shared categorical palette. PUGS–Qwen labels come from the class probabilities transferred to the same mesh and camera. The striped chair legs and blue chair legs are both annotated as wood; the blue chair remains a material error for PartPhy3D. [PDF](region_material_comparison.pdf) · [Source registration](region_comparison_manifest.json)
 
+![Seven named ABO objects with RGB, face evidence and two sets of predicted materials](region_material_seven.png)
+
+The seven-object plate shows an illustrative selection, including difficult thin geometry and ambiguous materials. NeRF2Physics material labels are argmax results from the authors' official query using cached features. PartPhy3D uses its completed face labels. The figure uses shared display families for related materials while the source file retains each method's original labels. [PDF](region_material_seven.pdf) · [Scene and display-family records](region_material_seven_data.json)
+
+![Striped cushion above a fixed floor at four points during its drop, then in contact](cushion_drop_storyboard.png)
+
+The textured mesh is reconstructed from the real ABO asset. Four frames show the analytic free-flight segment from a 0.459 m release height. The bottom row replays the first 12 ms of MLS-MPM contact. It compares the assigned parameters with a control at 0.25 times the Young's moduli. The predicted peak compressions are 1.76 mm and 3.29 mm. The contact render displays physical-scale displacement. [PDF](cushion_drop_storyboard.pdf)
+
 ## Thin-structure recovery
 
 ![The same metal shoe rack at two held-out viewpoints](coverage_repair.png)

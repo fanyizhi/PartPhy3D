@@ -1,0 +1,184 @@
+[
+  {
+    "scene_id": "B076YJFGCN_A1F83G8C2ARO7P",
+    "object": "USB hub",
+    "view": 8,
+    "mesh_sha256": "a5a54dab2ee2dac4952fa3506d73a803f128984df0ef2107c02db44f92217537",
+    "nerf_classes": [
+      "plastic",
+      "metal",
+      "circuit board",
+      "copper",
+      "wires"
+    ],
+    "partphy3d_classes": [
+      "plastic"
+    ],
+    "ours_display_families": [
+      "Plastic"
+    ],
+    "nerf_display_families": [
+      "Plastic",
+      "Metal",
+      "Electronics",
+      "Metal",
+      "Electronics"
+    ]
+  },
+  {
+    "scene_id": "B075YQ46MP_ATVPDKIKX0DER",
+    "object": "Wood shelving unit",
+    "view": 8,
+    "mesh_sha256": "18a5fa600314e459d56266cf8c44186bda3747ba2bdd5e90a9613d5bd07d2210",
+    "nerf_classes": [
+      "wood",
+      "metal"
+    ],
+    "partphy3d_classes": [
+      "aluminum",
+      "rubber",
+      "wood"
+    ],
+    "ours_display_families": [
+      "Metal",
+      "Rubber",
+      "Wood"
+    ],
+    "nerf_display_families": [
+      "Wood",
+      "Metal"
+    ]
+  },
+  {
+    "scene_id": "B07TWQTVXL_ATVPDKIKX0DER",
+    "object": "Metal shoe rack",
+    "view": 8,
+    "mesh_sha256": "0c1841499118e456fea866d3c01c876e61b79373c7f507d611fcc2338be0b780",
+    "nerf_classes": [
+      "metal",
+      "black paint",
+      "white paint"
+    ],
+    "partphy3d_classes": [
+      "steel"
+    ],
+    "ours_display_families": [
+      "Metal"
+    ],
+    "nerf_display_families": [
+      "Metal",
+      "Paint",
+      "Paint"
+    ]
+  },
+  {
+    "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+    "object": "Patterned accent chair",
+    "view": 8,
+    "mesh_sha256": "f431ead3d2a32003de12474f02f0a853f9a75b75304ee8f53ef3ca1de696f0c2",
+    "nerf_classes": [
+      "fabric",
+      "wood",
+      "foam",
+      "metal",
+      "plastic"
+    ],
+    "partphy3d_classes": [
+      "fabric",
+      "wood"
+    ],
+    "ours_display_families": [
+      "Fabric",
+      "Wood"
+    ],
+    "nerf_display_families": [
+      "Fabric",
+      "Wood",
+      "Foam",
+      "Metal",
+      "Plastic"
+    ]
+  },
+  {
+    "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+    "object": "Blue accent chair",
+    "view": 8,
+    "mesh_sha256": "579a2b7fd7629786f5727029c44c86b6dfb6f644d2fd0a248bb003bb9ead1127",
+    "nerf_classes": [
+      "wood",
+      "metal",
+      "plastic",
+      "leather",
+      "fabric"
+    ],
+    "partphy3d_classes": [
+      "fabric",
+      "steel"
+    ],
+    "ours_display_families": [
+      "Fabric",
+      "Metal"
+    ],
+    "nerf_display_families": [
+      "Wood",
+      "Metal",
+      "Plastic",
+      "Leather",
+      "Fabric"
+    ]
+  },
+  {
+    "scene_id": "B07Y3Q7MDR",
+    "object": "Purple desk chair",
+    "view": 8,
+    "mesh_sha256": "87111a0bf05c31e1e2dda143cab11259cb8dfd9efd8160376a16ba6f244e8695",
+    "nerf_classes": [
+      "wood",
+      "metal",
+      "plastic",
+      "leather",
+      "fabric"
+    ],
+    "partphy3d_classes": [
+      "aluminum",
+      "plastic"
+    ],
+    "ours_display_families": [
+      "Metal",
+      "Plastic"
+    ],
+    "nerf_display_families": [
+      "Wood",
+      "Metal",
+      "Plastic",
+      "Leather",
+      "Fabric"
+    ]
+  },
+  {
+    "scene_id": "B07K6S2G5Z_A1F83G8C2ARO7P",
+    "object": "Writing desk",
+    "view": 8,
+    "mesh_sha256": "86df8579e526321653fd6772b6bd60556bda168c4b7603980741636080b5bec8",
+    "nerf_classes": [
+      "white wood",
+      "particle board",
+      "plywood",
+      "mdf",
+      "bamboo"
+    ],
+    "partphy3d_classes": [
+      "wood"
+    ],
+    "ours_display_families": [
+      "Wood"
+    ],
+    "nerf_display_families": [
+      "Wood",
+      "Wood",
+      "Wood",
+      "Wood",
+      "Wood"
+    ]
+  }
+]
