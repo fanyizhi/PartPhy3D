@@ -9,6 +9,18 @@ multi-view VLM evidence and geometric constraints.
 [Mass baselines](docs/baseline_mapping.md) ·
 [Server setup](docs/SERVER_SETUP_zh.md) · [Data](docs/DATA.md) · [中文](README_zh.md)
 
+## Coverage and local editing
+
+![PartPhy3D method with chaise lounge local editing and recorded cushion particle response](paper_assets/gallery/partphy3d_pipeline.png)
+
+[Method overview](paper_assets/gallery/partphy3d_pipeline.pdf) · [Region evidence and material segmentation](paper_assets/gallery/region_material_comparison.pdf)
+
+![Metal shoe rack and two accent chairs under a fixed camera and mesh per object](paper_assets/gallery/shared_density.png)
+
+Foreground percentages report an available density estimate. The camera and mesh are shared within each object. PUGS–Qwen preserves the PUGS reconstruction with a local Qwen proposal stage.
+
+[Density comparison](paper_assets/gallery/shared_density.pdf) · [Held-out thin-structure repair](paper_assets/gallery/coverage_repair.pdf) · [Chaise lounge material edit](paper_assets/gallery/material_edit.pdf)
+
 ## Physics demonstrations
 
 ### Scanned YCB hammer in flight
