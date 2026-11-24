@@ -1,0 +1,114 @@
+{
+  "val": {
+    "at_least_1kg": {
+      "count": 82,
+      "mean_ape": 64.9860358587366,
+      "largest_relative_errors": [
+        {
+          "id": "B07NPJB964_ATVPDKIKX0DER",
+          "gt_kg": 2.99824312,
+          "estimate_kg": 15.33589003951339,
+          "absolute_error_kg": 12.337646919513391,
+          "ape_percent": 411.4958802778272
+        },
+        {
+          "id": "B073WR319C_ATVPDKIKX0DER",
+          "gt_kg": 11.929469600000001,
+          "estimate_kg": 54.34612072446243,
+          "absolute_error_kg": 42.41665112446243,
+          "ape_percent": 355.5619197391846
+        },
+        {
+          "id": "B07MQF769H_ATVPDKIKX0DER",
+          "gt_kg": 15.87572,
+          "estimate_kg": 51.07996504863408,
+          "absolute_error_kg": 35.20424504863408,
+          "ape_percent": 221.7489666524358
+        }
+      ]
+    },
+    "under_1kg": {
+      "count": 18,
+      "mean_ape": 553.6949057547673,
+      "largest_relative_errors": [
+        {
+          "id": "B06VVXMJ1S_A1F83G8C2ARO7P",
+          "gt_kg": 0.24947560000000002,
+          "estimate_kg": 10.57856502513339,
+          "absolute_error_kg": 10.32908942513339,
+          "ape_percent": 4140.32050634747
+        },
+        {
+          "id": "B06X6H2WF7_A1F83G8C2ARO7P",
+          "gt_kg": 0.07427569,
+          "estimate_kg": 1.1049015077167101,
+          "absolute_error_kg": 1.03062581771671,
+          "ape_percent": 1387.5681501130587
+        },
+        {
+          "id": "B07B8PXQ49_ATVPDKIKX0DER",
+          "gt_kg": 0.37648136,
+          "estimate_kg": 3.6399831928919353,
+          "absolute_error_kg": 3.263501832891935,
+          "ape_percent": 866.8428718202504
+        }
+      ]
+    }
+  },
+  "test": {
+    "at_least_1kg": {
+      "count": 78,
+      "mean_ape": 59.686272373196495,
+      "largest_relative_errors": [
+        {
+          "id": "B07HPQ358H_ATVPDKIKX0DER",
+          "gt_kg": 1.4968536,
+          "estimate_kg": 14.661920497517729,
+          "absolute_error_kg": 13.165066897517729,
+          "ape_percent": 879.5159992612323
+        },
+        {
+          "id": "B07VD8DQ5N_ATVPDKIKX0DER",
+          "gt_kg": 1.1974828800000001,
+          "estimate_kg": 5.3300631150890165,
+          "absolute_error_kg": 4.132580235089017,
+          "ape_percent": 345.10557972144164
+        },
+        {
+          "id": "B075YNL7R3_ATVPDKIKX0DER",
+          "gt_kg": 2.4720764,
+          "estimate_kg": 7.441247252022823,
+          "absolute_error_kg": 4.969170852022822,
+          "ape_percent": 201.012025842843
+        }
+      ]
+    },
+    "under_1kg": {
+      "count": 21,
+      "mean_ape": 545.8633573237666,
+      "largest_relative_errors": [
+        {
+          "id": "B003QTD4Y6_A1F83G8C2ARO7P",
+          "gt_kg": 0.0907184,
+          "estimate_kg": 4.6194441426691615,
+          "absolute_error_kg": 4.528725742669161,
+          "ape_percent": 4992.069682301673
+        },
+        {
+          "id": "B078GTTCCF_A1F83G8C2ARO7P",
+          "gt_kg": 0.719396912,
+          "estimate_kg": 10.44073317988661,
+          "absolute_error_kg": 9.72133626788661,
+          "ape_percent": 1351.3174863178465
+        },
+        {
+          "id": "B003LSTD38_ATVPDKIKX0DER",
+          "gt_kg": 0.1,
+          "estimate_kg": 1.3517844903063891,
+          "absolute_error_kg": 1.251784490306389,
+          "ape_percent": 1251.784490306389
+        }
+      ]
+    }
+  }
+}
