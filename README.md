@@ -9,6 +9,14 @@ multi-view VLM evidence and geometric constraints.
 [Mass baselines](docs/baseline_mapping.md) ·
 [Server setup](docs/SERVER_SETUP_zh.md) · [Data](docs/DATA.md) · [中文](README_zh.md)
 
+## Mass comparison and matched material validation
+
+[ABO-500 full-method mass results against five papers and method summary](https://github.com/fanyizhi/PartPhy3D/blob/codex/mesh-structure-study/paper_assets/abo500_comparison_20261124/README.md)
+
+![Shared PhysSeg views comparing NeRF2Physics, PUGS-Qwen and Ours](paper_assets/gallery/paired_material.png)
+
+[Material comparison PDF](paper_assets/gallery/paired_material.pdf) · [Ten-view scores](paper_assets/gallery/paired_material.json)
+
 ## Coverage and local editing
 
 ![PartPhy3D method with chaise lounge local editing and recorded cushion particle response](paper_assets/gallery/partphy3d_pipeline.png)

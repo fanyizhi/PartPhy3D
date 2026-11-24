@@ -1,0 +1,589 @@
+{
+  "annotation_sha256": "d327bd3804f011aa8bf8c3d749f31d07ec4f4748fd2b7030c0277183c404d367",
+  "objects": 2,
+  "views": 10,
+  "classes": [
+    "fabric",
+    "wood"
+  ],
+  "metrics": {
+    "NeRF2Physics": {
+      "class_iou": {
+        "fabric": 0.9633446633383583,
+        "wood": 0.34571603087345215
+      },
+      "miou": 0.6545303471059052
+    },
+    "PUGS\u2013Qwen": {
+      "class_iou": {
+        "fabric": 0.8133765191152451,
+        "wood": 0.00029134133550868195
+      },
+      "miou": 0.4068339302253769
+    },
+    "Ours": {
+      "class_iou": {
+        "fabric": 0.955452857627333,
+        "wood": 0.32705350414468726
+      },
+      "miou": 0.6412531808860101
+    }
+  },
+  "rows": [
+    {
+      "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+      "object": "Patterned accent chair",
+      "view": 1,
+      "counts": {
+        "NeRF2Physics": {
+          "fabric": [
+            30950,
+            31696
+          ],
+          "wood": [
+            559,
+            1063
+          ]
+        },
+        "PUGS\u2013Qwen": {
+          "fabric": [
+            28446,
+            32257
+          ],
+          "wood": [
+            0,
+            914
+          ]
+        },
+        "Ours": {
+          "fabric": [
+            31089,
+            31519
+          ],
+          "wood": [
+            705,
+            920
+          ]
+        }
+      },
+      "wood_pixels": 914,
+      "wood_missing_geometry": 169,
+      "wood_assigned_metal": 0,
+      "wood_unassigned_on_mesh": 33,
+      "wood_other_material": 7,
+      "wood_correct": 705,
+      "rgb_foreground_pixels": 32394,
+      "geometry": {
+        "original": {
+          "wood_rays_hit": 745,
+          "rgb_foreground_true_positive": 31884,
+          "rgb_foreground_predicted": 32393
+        },
+        "subpixel_hull": {
+          "wood_rays_hit": 877,
+          "rgb_foreground_true_positive": 32382,
+          "rgb_foreground_predicted": 35971
+        }
+      }
+    },
+    {
+      "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+      "object": "Patterned accent chair",
+      "view": 9,
+      "counts": {
+        "NeRF2Physics": {
+          "fabric": [
+            28464,
+            29620
+          ],
+          "wood": [
+            1319,
+            2067
+          ]
+        },
+        "PUGS\u2013Qwen": {
+          "fabric": [
+            26262,
+            30957
+          ],
+          "wood": [
+            5,
+            1846
+          ]
+        },
+        "Ours": {
+          "fabric": [
+            28639,
+            29487
+          ],
+          "wood": [
+            1475,
+            1913
+          ]
+        }
+      },
+      "wood_pixels": 1846,
+      "wood_missing_geometry": 369,
+      "wood_assigned_metal": 0,
+      "wood_unassigned_on_mesh": 0,
+      "wood_other_material": 2,
+      "wood_correct": 1475,
+      "rgb_foreground_pixels": 31273,
+      "geometry": {
+        "original": {
+          "wood_rays_hit": 1477,
+          "rgb_foreground_true_positive": 30162,
+          "rgb_foreground_predicted": 30371
+        }
+      }
+    },
+    {
+      "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+      "object": "Patterned accent chair",
+      "view": 17,
+      "counts": {
+        "NeRF2Physics": {
+          "fabric": [
+            21489,
+            22192
+          ],
+          "wood": [
+            2623,
+            3645
+          ]
+        },
+        "PUGS\u2013Qwen": {
+          "fabric": [
+            21702,
+            24812
+          ],
+          "wood": [
+            0,
+            3366
+          ]
+        },
+        "Ours": {
+          "fabric": [
+            19813,
+            22167
+          ],
+          "wood": [
+            2113,
+            3381
+          ]
+        }
+      },
+      "wood_pixels": 3366,
+      "wood_missing_geometry": 560,
+      "wood_assigned_metal": 0,
+      "wood_unassigned_on_mesh": 535,
+      "wood_other_material": 158,
+      "wood_correct": 2113,
+      "rgb_foreground_pixels": 25229,
+      "geometry": {
+        "original": {
+          "wood_rays_hit": 2806,
+          "rgb_foreground_true_positive": 24522,
+          "rgb_foreground_predicted": 25055
+        },
+        "subpixel_hull": {
+          "wood_rays_hit": 3191,
+          "rgb_foreground_true_positive": 25143,
+          "rgb_foreground_predicted": 25359
+        }
+      }
+    },
+    {
+      "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+      "object": "Patterned accent chair",
+      "view": 23,
+      "counts": {
+        "NeRF2Physics": {
+          "fabric": [
+            24450,
+            25011
+          ],
+          "wood": [
+            105,
+            225
+          ]
+        },
+        "PUGS\u2013Qwen": {
+          "fabric": [
+            22655,
+            25116
+          ],
+          "wood": [
+            0,
+            113
+          ]
+        },
+        "Ours": {
+          "fabric": [
+            24627,
+            25011
+          ],
+          "wood": [
+            98,
+            113
+          ]
+        }
+      },
+      "wood_pixels": 113,
+      "wood_missing_geometry": 1,
+      "wood_assigned_metal": 0,
+      "wood_unassigned_on_mesh": 7,
+      "wood_other_material": 7,
+      "wood_correct": 98,
+      "rgb_foreground_pixels": 25117,
+      "geometry": {
+        "original": {
+          "wood_rays_hit": 112,
+          "rgb_foreground_true_positive": 24735,
+          "rgb_foreground_predicted": 25176
+        },
+        "subpixel_hull": {
+          "wood_rays_hit": 113,
+          "rgb_foreground_true_positive": 25109,
+          "rgb_foreground_predicted": 27929
+        }
+      }
+    },
+    {
+      "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+      "object": "Patterned accent chair",
+      "view": 27,
+      "counts": {
+        "NeRF2Physics": {
+          "fabric": [
+            19769,
+            20166
+          ],
+          "wood": [
+            1580,
+            2109
+          ]
+        },
+        "PUGS\u2013Qwen": {
+          "fabric": [
+            19845,
+            21738
+          ],
+          "wood": [
+            0,
+            2023
+          ]
+        },
+        "Ours": {
+          "fabric": [
+            18230,
+            20118
+          ],
+          "wood": [
+            1251,
+            2024
+          ]
+        }
+      },
+      "wood_pixels": 2023,
+      "wood_missing_geometry": 253,
+      "wood_assigned_metal": 0,
+      "wood_unassigned_on_mesh": 377,
+      "wood_other_material": 142,
+      "wood_correct": 1251,
+      "rgb_foreground_pixels": 21848,
+      "geometry": {
+        "original": {
+          "wood_rays_hit": 1770,
+          "rgb_foreground_true_positive": 21521,
+          "rgb_foreground_predicted": 22597
+        },
+        "subpixel_hull": {
+          "wood_rays_hit": 1948,
+          "rgb_foreground_true_positive": 21794,
+          "rgb_foreground_predicted": 23553
+        }
+      }
+    },
+    {
+      "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+      "object": "Blue accent chair",
+      "view": 3,
+      "counts": {
+        "NeRF2Physics": {
+          "fabric": [
+            8750,
+            9144
+          ],
+          "wood": [
+            9,
+            2051
+          ]
+        },
+        "PUGS\u2013Qwen": {
+          "fabric": [
+            5737,
+            9148
+          ],
+          "wood": [
+            0,
+            2051
+          ]
+        },
+        "Ours": {
+          "fabric": [
+            8884,
+            9144
+          ],
+          "wood": [
+            0,
+            2051
+          ]
+        }
+      },
+      "wood_pixels": 2051,
+      "wood_missing_geometry": 1206,
+      "wood_assigned_metal": 842,
+      "wood_unassigned_on_mesh": 1,
+      "wood_other_material": 2,
+      "wood_correct": 0,
+      "rgb_foreground_pixels": 10765,
+      "geometry": {
+        "original": {
+          "wood_rays_hit": 845,
+          "rgb_foreground_true_positive": 9689,
+          "rgb_foreground_predicted": 9976
+        },
+        "subpixel_hull": {
+          "wood_rays_hit": 1496,
+          "rgb_foreground_true_positive": 10585,
+          "rgb_foreground_predicted": 10754
+        }
+      }
+    },
+    {
+      "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+      "object": "Blue accent chair",
+      "view": 7,
+      "counts": {
+        "NeRF2Physics": {
+          "fabric": [
+            9358,
+            10051
+          ],
+          "wood": [
+            1,
+            288
+          ]
+        },
+        "PUGS\u2013Qwen": {
+          "fabric": [
+            7060,
+            10051
+          ],
+          "wood": [
+            0,
+            288
+          ]
+        },
+        "Ours": {
+          "fabric": [
+            9622,
+            10051
+          ],
+          "wood": [
+            0,
+            288
+          ]
+        }
+      },
+      "wood_pixels": 288,
+      "wood_missing_geometry": 214,
+      "wood_assigned_metal": 74,
+      "wood_unassigned_on_mesh": 0,
+      "wood_other_material": 0,
+      "wood_correct": 0,
+      "rgb_foreground_pixels": 10249,
+      "geometry": {
+        "original": {
+          "wood_rays_hit": 74,
+          "rgb_foreground_true_positive": 9699,
+          "rgb_foreground_predicted": 9802
+        },
+        "subpixel_hull": {
+          "wood_rays_hit": 219,
+          "rgb_foreground_true_positive": 10223,
+          "rgb_foreground_predicted": 10639
+        }
+      }
+    },
+    {
+      "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+      "object": "Blue accent chair",
+      "view": 14,
+      "counts": {
+        "NeRF2Physics": {
+          "fabric": [
+            12331,
+            12963
+          ],
+          "wood": [
+            12,
+            1630
+          ]
+        },
+        "PUGS\u2013Qwen": {
+          "fabric": [
+            7195,
+            12957
+          ],
+          "wood": [
+            0,
+            1630
+          ]
+        },
+        "Ours": {
+          "fabric": [
+            12542,
+            12956
+          ],
+          "wood": [
+            0,
+            1630
+          ]
+        }
+      },
+      "wood_pixels": 1630,
+      "wood_missing_geometry": 964,
+      "wood_assigned_metal": 654,
+      "wood_unassigned_on_mesh": 0,
+      "wood_other_material": 12,
+      "wood_correct": 0,
+      "rgb_foreground_pixels": 14213,
+      "geometry": {
+        "original": {
+          "wood_rays_hit": 666,
+          "rgb_foreground_true_positive": 13110,
+          "rgb_foreground_predicted": 13395
+        },
+        "subpixel_hull": {
+          "wood_rays_hit": 1164,
+          "rgb_foreground_true_positive": 14076,
+          "rgb_foreground_predicted": 14283
+        }
+      }
+    },
+    {
+      "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+      "object": "Blue accent chair",
+      "view": 18,
+      "counts": {
+        "NeRF2Physics": {
+          "fabric": [
+            6109,
+            6560
+          ],
+          "wood": [
+            1,
+            2018
+          ]
+        },
+        "PUGS\u2013Qwen": {
+          "fabric": [
+            4826,
+            6565
+          ],
+          "wood": [
+            0,
+            2018
+          ]
+        },
+        "Ours": {
+          "fabric": [
+            6321,
+            6550
+          ],
+          "wood": [
+            0,
+            2018
+          ]
+        }
+      },
+      "wood_pixels": 2018,
+      "wood_missing_geometry": 1116,
+      "wood_assigned_metal": 842,
+      "wood_unassigned_on_mesh": 38,
+      "wood_other_material": 22,
+      "wood_correct": 0,
+      "rgb_foreground_pixels": 8017,
+      "geometry": {
+        "original": {
+          "wood_rays_hit": 902,
+          "rgb_foreground_true_positive": 7095,
+          "rgb_foreground_predicted": 7455
+        },
+        "subpixel_hull": {
+          "wood_rays_hit": 1424,
+          "rgb_foreground_true_positive": 7869,
+          "rgb_foreground_predicted": 8483
+        }
+      }
+    },
+    {
+      "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+      "object": "Blue accent chair",
+      "view": 26,
+      "counts": {
+        "NeRF2Physics": {
+          "fabric": [
+            6398,
+            7060
+          ],
+          "wood": [
+            17,
+            2913
+          ]
+        },
+        "PUGS\u2013Qwen": {
+          "fabric": [
+            3180,
+            7014
+          ],
+          "wood": [
+            0,
+            2913
+          ]
+        },
+        "Ours": {
+          "fabric": [
+            6456,
+            6970
+          ],
+          "wood": [
+            0,
+            2913
+          ]
+        }
+      },
+      "wood_pixels": 2913,
+      "wood_missing_geometry": 1063,
+      "wood_assigned_metal": 1432,
+      "wood_unassigned_on_mesh": 186,
+      "wood_other_material": 232,
+      "wood_correct": 0,
+      "rgb_foreground_pixels": 9612,
+      "geometry": {
+        "original": {
+          "wood_rays_hit": 1850,
+          "rgb_foreground_true_positive": 8366,
+          "rgb_foreground_predicted": 8886
+        },
+        "subpixel_hull": {
+          "wood_rays_hit": 2673,
+          "rgb_foreground_true_positive": 9382,
+          "rgb_foreground_predicted": 9606
+        }
+      }
+    }
+  ]
+}
