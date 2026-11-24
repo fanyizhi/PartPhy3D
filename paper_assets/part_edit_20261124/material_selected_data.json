@@ -1,0 +1,170 @@
+[
+  {
+    "scene_id": "B076YJFGCN_A1F83G8C2ARO7P",
+    "object": "USB hub",
+    "view": 8,
+    "mesh_sha256": "a5a54dab2ee2dac4952fa3506d73a803f128984df0ef2107c02db44f92217537",
+    "nerf_classes": [
+      "plastic",
+      "metal",
+      "circuit board",
+      "copper",
+      "wires"
+    ],
+    "partphy3d_classes": [
+      "plastic"
+    ],
+    "ours_foreground_coverage": 0.9728506787330317,
+    "ours_display_families": [
+      "Plastic"
+    ],
+    "nerf_display_families": [
+      "Plastic",
+      "Metal",
+      "Electronics",
+      "Metal",
+      "Electronics"
+    ],
+    "maskclip_display_families": [
+      "Wood",
+      "Metal",
+      "Fabric",
+      "Plastic",
+      "Rubber",
+      "Foam",
+      "Leather",
+      "Electronics",
+      "Paint",
+      "Glass",
+      "Ceramic",
+      "Stone"
+    ]
+  },
+  {
+    "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+    "object": "Patterned accent chair",
+    "view": 8,
+    "mesh_sha256": "f431ead3d2a32003de12474f02f0a853f9a75b75304ee8f53ef3ca1de696f0c2",
+    "nerf_classes": [
+      "fabric",
+      "wood",
+      "foam",
+      "metal",
+      "plastic"
+    ],
+    "partphy3d_classes": [
+      "fabric",
+      "wood"
+    ],
+    "ours_foreground_coverage": 0.9644473831442958,
+    "ours_display_families": [
+      "Fabric",
+      "Wood"
+    ],
+    "nerf_display_families": [
+      "Fabric",
+      "Wood",
+      "Foam",
+      "Metal",
+      "Plastic"
+    ],
+    "maskclip_display_families": [
+      "Wood",
+      "Metal",
+      "Fabric",
+      "Plastic",
+      "Rubber",
+      "Foam",
+      "Leather",
+      "Electronics",
+      "Paint",
+      "Glass",
+      "Ceramic",
+      "Stone"
+    ]
+  },
+  {
+    "scene_id": "B07Y3Q7MDR",
+    "object": "Purple desk chair",
+    "view": 8,
+    "mesh_sha256": "87111a0bf05c31e1e2dda143cab11259cb8dfd9efd8160376a16ba6f244e8695",
+    "nerf_classes": [
+      "wood",
+      "metal",
+      "plastic",
+      "leather",
+      "fabric"
+    ],
+    "partphy3d_classes": [
+      "aluminum",
+      "plastic"
+    ],
+    "ours_foreground_coverage": 0.9527167525540187,
+    "ours_display_families": [
+      "Metal",
+      "Plastic"
+    ],
+    "nerf_display_families": [
+      "Wood",
+      "Metal",
+      "Plastic",
+      "Leather",
+      "Fabric"
+    ],
+    "maskclip_display_families": [
+      "Wood",
+      "Metal",
+      "Fabric",
+      "Plastic",
+      "Rubber",
+      "Foam",
+      "Leather",
+      "Electronics",
+      "Paint",
+      "Glass",
+      "Ceramic",
+      "Stone"
+    ]
+  },
+  {
+    "scene_id": "B07K6S2G5Z_A1F83G8C2ARO7P",
+    "object": "Writing desk",
+    "view": 8,
+    "mesh_sha256": "86df8579e526321653fd6772b6bd60556bda168c4b7603980741636080b5bec8",
+    "nerf_classes": [
+      "white wood",
+      "particle board",
+      "plywood",
+      "mdf",
+      "bamboo"
+    ],
+    "partphy3d_classes": [
+      "wood"
+    ],
+    "ours_foreground_coverage": 0.9520447668933207,
+    "ours_display_families": [
+      "Wood"
+    ],
+    "nerf_display_families": [
+      "Wood",
+      "Wood",
+      "Wood",
+      "Wood",
+      "Wood"
+    ],
+    "maskclip_display_families": [
+      "Wood",
+      "Metal",
+      "Fabric",
+      "Plastic",
+      "Rubber",
+      "Foam",
+      "Leather",
+      "Electronics",
+      "Paint",
+      "Glass",
+      "Ceramic",
+      "Stone"
+    ]
+  }
+]

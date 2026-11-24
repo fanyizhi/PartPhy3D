@@ -1,6 +1,7 @@
 """Draw seven ABO scenes with actual projected evidence and NeRF2Physics labels."""
 
 import argparse
+import hashlib
 import json
 from pathlib import Path
 
@@ -23,6 +24,9 @@ MATERIALS = {
     "Leather": "#b85f63",
     "Electronics": "#2c97a9",
     "Paint": "#87915d",
+    "Glass": "#50b6c2",
+    "Ceramic": "#777e8b",
+    "Stone": "#626d57",
     "Unassigned": "#bcc7d1",
 }
 FAMILIES = {
@@ -36,10 +40,50 @@ FAMILIES = {
 }
 
 
+def add_local_legend(ax, names):
+    """Keep each method's observed families next to the prediction."""
+    handles = [
+        Patch(facecolor=MATERIALS[name], edgecolor="none", label=name)
+        for name in MATERIALS
+        if name in names and name != "Unassigned"
+    ]
+    if not handles:
+        return
+    ax.legend(
+        handles=handles,
+        loc="upper center",
+        bbox_to_anchor=(0.5, 0.96),
+        ncols=min(2, len(handles)),
+        frameon=False,
+        fontsize=5.6,
+        columnspacing=0.54,
+        handlelength=0.68,
+        handletextpad=0.28,
+        labelspacing=0.26,
+        borderaxespad=0,
+    )
+
+
+def load_maskclip(root, source):
+    """Verify that the baseline saw the exact displayed input archive."""
+    manifest = json.loads((root / "manifest.json").read_text(encoding="utf-8"))
+    record = next(row for row in manifest["views"] if row["file"] == source.name)
+    predicted = root / source.name
+    if any(
+        hashlib.sha256(path.read_bytes()).hexdigest() != record[key]
+        for path, key in ((source, "input_sha256"), (predicted, "labels_sha256"))
+    ):
+        raise ValueError(f"MaskCLIP provenance mismatch for {source.name}")
+    with np.load(predicted) as data:
+        return data["maskclip"], data["maskclip_names"]
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--data", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--maskclip", type=Path)
+    parser.add_argument("--top-coverage", type=int)
     args = parser.parse_args()
     mpl.rcParams.update(
         {
@@ -50,78 +94,88 @@ def main():
         }
     )
     manifest = json.loads((args.data / "manifest.json").read_text(encoding="utf-8"))
-    fig, axes = plt.subplots(4, len(manifest), figsize=(9.3, 4.5))
+    selected = manifest
+    if args.top_coverage is not None:
+        if not 1 <= args.top_coverage <= len(manifest):
+            parser.error("--top-coverage must select at least one available object")
+        for record in manifest:
+            with np.load(args.data / f"{record['scene_id']}.npz") as data:
+                record["ours_foreground_coverage"] = float(
+                    (data["ours"][data["foreground"]] > 0).mean()
+                )
+        selected = sorted(manifest, key=lambda r: -r["ours_foreground_coverage"])[
+            : args.top_coverage
+        ]
+
+    methods = [("ours", "Ours"), ("nerf", "NeRF2Physics")]
+    if args.maskclip is not None:
+        methods.append(("maskclip", "MaskCLIP (2D)"))
+    labels = ["RGB input", "Region evidence", *(label for _, label in methods)]
+    heights = (1, 1) + (1, 0.29) * len(methods)
+    image_rows = (0, 1, *range(2, len(heights), 2))
+    fig = plt.figure(figsize=(7.2, 4.9 if args.maskclip else 4.02))
+    grid = fig.add_gridspec(len(heights), len(selected), height_ratios=heights)
     fig.subplots_adjust(
-        left=0.135, right=0.982, top=0.80, bottom=0.18, wspace=0.14, hspace=0.16
+        left=0.134, right=0.987, top=0.916, bottom=0.025, wspace=0.085, hspace=0.035
     )
-    fig.text(
-        0.052,
-        0.965,
-        "Region evidence and material predictions across ABO-500",
-        va="top",
-        size=14,
-        weight="bold",
-    )
-    for index, label in enumerate(
-        ("RGB input", "Face evidence", "Ours", "NeRF2Physics")
-    ):
-        pos = axes[index, 0].get_position()
+    for panel, (row, label) in enumerate(zip(image_rows, labels, strict=True)):
+        pos = grid[row, 0].get_position(fig)
         fig.text(
-            0.052, (pos.y0 + pos.y1) / 2, label, va="center", size=7.4, weight="bold"
+            0.009,
+            (pos.y0 + pos.y1) / 2,
+            f"({chr(97 + panel)}) {label}",
+            va="center",
+            size=7.1,
+            weight="bold" if label == "Ours" else "normal",
         )
-    rendered_materials = set()
-    for column, record in enumerate(manifest):
-        with np.load(args.data / f"{record['scene_id']}.npz") as data:
+    fig.legend(
+        handles=[Patch(facecolor=MATERIALS["Unassigned"], label="Unassigned")],
+        loc="lower left",
+        bbox_to_anchor=(0.009, 0.025),
+        frameon=False,
+        fontsize=5.6,
+        handlelength=0.68,
+        handletextpad=0.28,
+        borderaxespad=0,
+    )
+    for column, record in enumerate(selected):
+        source = args.data / f"{record['scene_id']}.npz"
+        with np.load(source) as data:
             fg = data["foreground"]
             layers = [data["rgb"], data["evidence"]]
-            for method in ("ours", "nerf"):
+            for step, (method, _) in enumerate(methods):
+                if method == "maskclip":
+                    prediction, names = load_maskclip(args.maskclip, source)
+                else:
+                    prediction, names = data[method], data[f"{method}_names"]
                 groups = [
                     "Unassigned",
-                    *[
-                        FAMILIES.get(n.lower(), n.title())
-                        for n in data[f"{method}_names"]
-                    ],
+                    *[FAMILIES.get(n.lower(), n.title()) for n in names],
                 ]
                 record[f"{method}_display_families"] = groups[1:]
                 rgb = np.array([to_rgb(MATERIALS[n]) for n in groups])
-                rendered_materials.update(
-                    groups[i] for i in np.unique(data[method][fg])
-                )
+                legend = fig.add_subplot(grid[3 + 2 * step, column])
+                legend.axis("off")
+                add_local_legend(legend, {groups[i] for i in np.unique(prediction[fg])})
                 raster = np.ones(fg.shape + (3,))
-                raster[fg] = rgb[data[method][fg]]
+                raster[fg] = rgb[prediction[fg]]
                 layers.append(raster)
             y, x = np.nonzero(fg)
-        for ax, layer in zip(axes[:, column], layers, strict=True):
+        for row, layer in zip(image_rows, layers, strict=True):
+            ax = fig.add_subplot(grid[row, column])
             ax.imshow(layer, interpolation="nearest")
             ax.set(xlim=(x.min() - 5, x.max() + 5), ylim=(y.max() + 5, y.min() - 5))
             ax.axis("off")
-        title = record["object"]
-        if len(title.split()) > 2:
-            words = title.split()
-            title = " ".join(words[:-1]) + "\n" + words[-1]
-        axes[0, column].set_title(title, size=7.2, weight="bold", pad=6)
-    fig.legend(
-        handles=[
-            Patch(color=color, label=name)
-            for name, color in MATERIALS.items()
-            if name in rendered_materials
-        ],
-        loc="lower center",
-        bbox_to_anchor=(0.553, 0.072),
-        ncols=len(rendered_materials),
-        columnspacing=0.86,
-        fontsize=6.7,
-        frameon=False,
-        handlelength=0.9,
-        handletextpad=0.4,
-    )
-    fig.text(
-        0.052,
-        0.036,
-        "Shared cameras and meshes within each column  ·  Face-evidence colors show PCA of fused part votes",
-        size=7,
-        color="#526171",
-    )
+        words = record["object"].split()
+        title = (
+            "\n".join((" ".join(words[:-1]), words[-1]))
+            if len(words) > 2
+            else record["object"]
+        )
+        box = grid[0, column].get_position(fig)
+        fig.text(
+            (box.x0 + box.x1) / 2, 0.948, title, ha="center", va="center", size=6.8
+        )
     for fmt in ("png", "pdf", "svg"):
         out = args.output.with_suffix(f".{fmt}")
         fig.savefig(out, dpi=360, facecolor="white")
@@ -135,7 +189,7 @@ def main():
             )
     plt.close(fig)
     args.output.with_name(args.output.name + "_data.json").write_text(
-        json.dumps(manifest, indent=2) + "\n", encoding="utf-8"
+        json.dumps(selected, indent=2) + "\n", encoding="utf-8"
     )
 
 

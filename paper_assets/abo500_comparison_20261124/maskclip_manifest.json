@@ -1,0 +1,71 @@
+{
+  "method": "MaskCLIP (ViT-B/16, frozen DataComp OpenCLIP weights)",
+  "backbone_sha256": "80905176486d952914c1deb3b753b8e653ab54aa4ffb14208bc5007cf7643a16",
+  "input_pixels": 448,
+  "materials": [
+    "wood",
+    "metal",
+    "fabric",
+    "plastic",
+    "rubber",
+    "foam",
+    "leather",
+    "electronics",
+    "paint",
+    "glass",
+    "ceramic",
+    "stone"
+  ],
+  "text_templates": [
+    "a photo of {} material",
+    "a close-up of a {} surface"
+  ],
+  "output": "foreground argmax, direct 2D without mesh or optional refinements",
+  "views": [
+    {
+      "file": "B075YQ46MP_ATVPDKIKX0DER.npz",
+      "input_sha256": "60c606b2dd52931d98ad9fe20cd5ded409b6f739cb015bade1a60094ece23d47",
+      "labels_sha256": "93708f355d7ff6163f35ec3232d7e12c99914a5284fd705017d4a1efa1ac6f1c"
+    },
+    {
+      "file": "B076YJFGCN_A1F83G8C2ARO7P.npz",
+      "input_sha256": "56058a97de93417c423399ba723386788202e862dce86f6459f188fee2195a5a",
+      "labels_sha256": "e6d7271f820d29c7c79676491a29bdc67a09de4672031ff29e857e2009001677"
+    },
+    {
+      "file": "B07DBDX15Y_ATVPDKIKX0DER.npz",
+      "input_sha256": "df1d8b02400866c20815628df39f3c2ac0e0075a84366d06ea86cb27bbde7e4d",
+      "labels_sha256": "bb74d4f20c888b48cd987fe115f9f2585814f5ecab22fc22c9ad5aaf3cc8c8d3"
+    },
+    {
+      "file": "B07K6S2G5Z_A1F83G8C2ARO7P.npz",
+      "input_sha256": "6c79641ac6b8abd7a08ee395d907e2670c8af9d423e5ffb7da83f2889b7a4f69",
+      "labels_sha256": "2a3e8db6d4bf37280d906d3721235e5b6988b5f50deaee6627c6e33a2caaee3f"
+    },
+    {
+      "file": "B07QFRSC43_ATVPDKIKX0DER.npz",
+      "input_sha256": "49239da6bcb7a57a88c298f2700d6fb31fda8d9f78603cadf5c9d43279432853",
+      "labels_sha256": "2c268679ee2f9d3c86083fe34726792a3b819b084f42daf592557f90dcdecf7b"
+    },
+    {
+      "file": "B07TWQTVXL_ATVPDKIKX0DER.npz",
+      "input_sha256": "114d5991e53f3956039d7c216af8440ff836fea37f42379783f97e7b13757111",
+      "labels_sha256": "468c00dcea210d78697ea1a355662a0c8f6d5a0489615fb423b30cfcb38ecb54"
+    },
+    {
+      "file": "B07Y3Q7MDR.npz",
+      "input_sha256": "318b18fdcbd0fc6ff4f1aacb2e904074f8376b94980dba1c33c3d09e446eaf61",
+      "labels_sha256": "06b5767b7c9da83e589dfff1f4db479e811363dc678e774b4a6571103a70b843"
+    },
+    {
+      "file": "B07DBDX15Y_ATVPDKIKX0DER_01.npz",
+      "input_sha256": "fca8efa857e63b65b957d0e9046ede4ca1f4701c03a99066d0ec45338ec57977",
+      "labels_sha256": "cb931c36e8a783088e46a4b3bbc0861256a81116f39bd1f0996d8517160708ff"
+    },
+    {
+      "file": "B07QFRSC43_ATVPDKIKX0DER_03.npz",
+      "input_sha256": "e4bdbc50adc87af6d626daadc809049e6641196582846681104878e34cfe7a24",
+      "labels_sha256": "6e20cc0af7f3d4633b91b62d852af754202faefe33df851b53e1907f616efb4f"
+    }
+  ]
+}

@@ -8,9 +8,9 @@ The top row follows the upholstered chaise lounge reference mesh. It shows three
 
 The face-evidence row displays PCA colors of the recorded multi-view part votes, with color intensity modulated by support. The material rows use a different, shared categorical palette. PUGS–Qwen labels come from the class probabilities transferred to the same mesh and camera. The striped chair legs and blue chair legs are both annotated as wood; the blue chair remains a material error for PartPhy3D. [PDF](region_material_comparison.pdf) · [Source registration](region_comparison_manifest.json)
 
-![Seven named ABO objects with RGB, face evidence and two sets of predicted materials](region_material_seven.png)
+![Four selected ABO objects with RGB, region evidence and three sets of predicted materials](material_selected.png)
 
-The seven-object plate shows an illustrative selection, including difficult thin geometry and ambiguous materials. NeRF2Physics material labels are argmax results from the authors' official query using cached features. PartPhy3D uses its completed face labels. The figure uses shared display families for related materials while the source file retains each method's original labels. [PDF](region_material_seven.pdf) · [Scene and display-family records](region_material_seven_data.json)
+Each column shows one ABO object from a fixed view and uses a common crop. Four out of seven recorded objects are selected by the fraction of foreground that Ours assigns a material. Region evidence is a PCA view of the recorded multi-view part votes. NeRF2Physics uses the author's cached features and official query. MaskCLIP uses the corresponding RGB frame and a fixed set of text prompts. [PDF](material_selected.pdf) · [Selection scores](material_selected_data.json) · [Full seven-object figure](region_material_seven.pdf) · [Annotated comparison with PUGS–Qwen](../abo500_comparison_20261124/README.md) · [Method details](../../docs/PARTPHY3D_METHODS_zh.md)
 
 ![Striped cushion above a fixed floor at four points during its drop, then in contact](cushion_drop_storyboard.png)
 
