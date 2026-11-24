@@ -19,6 +19,8 @@ Accent chair, counter stool, upholstered sofa and shoe rack. All three predictio
 
 [Matched material comparison (PDF)](paper_assets/gallery/material_front.pdf) · [PUGS, Fig. 5](https://arxiv.org/html/2502.12231v2#S3.F5) · [GS2Physics, Fig. 8](https://ieeexplore.ieee.org/document/11653536/) · [Gen2Physics, Fig. 4](https://arxiv.org/html/2608.23869v1#S4.F4) · [PhysVGGT, Fig. 4](https://arxiv.org/html/2609.18920v1#S4.F4)
 
+[Editable method diagram in Visio (中文)](https://github.com/fanyizhi/PartPhy3D/blob/codex/mesh-structure-study/paper_assets/method_overview/PartPhy3D_pipeline_zh.vsdx) · [Four-page PDF](https://github.com/fanyizhi/PartPhy3D/blob/codex/mesh-structure-study/paper_assets/method_overview/PartPhy3D_pipeline_zh.pdf)
+
 ## Coverage and local editing
 
 ![PartPhy3D method with chaise lounge local editing and recorded cushion particle response](paper_assets/gallery/partphy3d_pipeline.png)
