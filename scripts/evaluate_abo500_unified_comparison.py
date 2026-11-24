@@ -15,7 +15,9 @@ from evaluate_structure_cues import ROOT, WORK, errors, read
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--areal-replay", action="store_true")
+    replay = parser.add_mutually_exclusive_group()
+    replay.add_argument("--areal-replay", action="store_true")
+    replay.add_argument("--thin-replay", action="store_true")
     args = parser.parse_args()
     splits = read(ROOT / "splits.json")
     cohorts = {s: splits[s] for s in ("train", "val", "test")}
@@ -30,11 +32,13 @@ def main():
         if args.areal_replay
         else "nonlinear_structure_control.json"
     )
+    if args.thin_replay:
+        structure_filename = "thin_structure_control.json"
     structure_details = read(WORK / structure_filename)["structure"]
     archived = structure_details["objects"]
     structure = np.array([archived[k]["mass_kg"] for k in ids])
     localized = np.array([raw[k]["component_evidence"] for k in ids])
-    if args.areal_replay:
+    if args.areal_replay or args.thin_replay:
         ledger = read(WORK / "abo500_component_ledger.json")["objects"]
         localized = np.array([bool(ledger[k]["components"]) for k in ids])
     x = visual(ids)
@@ -131,6 +135,8 @@ def main():
     filename = (
         "areal_unified_500.json" if args.areal_replay else "unified_comparison_500.json"
     )
+    if args.thin_replay:
+        filename = "thin_unified_500.json"
     (WORK / filename).write_text(json.dumps(output, indent=2, allow_nan=False))
     print(output["parameters"], results)
 

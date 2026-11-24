@@ -53,7 +53,14 @@ def main():
         help="Run the prespecified extreme-cover sensitivity on the verified ledger",
     )
     parser.add_argument("--residual-structure", action="store_true")
+    parser.add_argument("--thin-replay", action="store_true")
     args = parser.parse_args()
+    if args.thin_replay and not (
+        args.nonlinear and args.routed_ledger and args.areal_replay
+    ):
+        parser.error(
+            "--thin-replay requires --nonlinear --routed-ledger --areal-replay"
+        )
     if args.residual_structure and not (
         args.nonlinear and args.routed_ledger and args.areal_replay
     ):
@@ -219,6 +226,30 @@ def main():
                             features[i].get(material, 0.0) + mass / total
                         )
 
+            if args.thin_replay:
+                thin = read(WORK / "abo500_thin_structure_integrals.json")["objects"]
+                for i, key in enumerate(ids):
+                    amended = thin[key]
+                    if not amended["changes"]:
+                        continue
+                    panel_parts = archive[key]["panel"]["parts"]
+                    if amended["names"] != [p["name"] for p in panel_parts]:
+                        raise ValueError(
+                            f"Thin replay disagrees with the archived parts for {key}"
+                        )
+                    total = amended["mass_kg"]
+                    masses = amended["parts_kg"]
+                    parts[i] = masses
+                    features[i]["log_base"] = math.log(total)
+                    for field in ("material", "construction"):
+                        prefix = field + "/"
+                        entry = features[i]
+                        for name in [k for k in entry if k.startswith(prefix)]:
+                            del entry[name]
+                        for part, mass in zip(panel_parts, masses, strict=True):
+                            name = prefix + part[field]
+                            entry[name] = entry.get(name, 0.0) + mass / total
+
             log_physical = np.array([f["log_base"] for f in features])
 
             def predict(fit_ids, eval_ids, leaf, blend, weight_power):
@@ -301,6 +332,8 @@ def main():
             )
         if args.residual_structure:
             filename = "areal_residual_structure_control.json"
+        if args.thin_replay:
+            filename = "thin_structure_control.json"
         (WORK / filename).write_text(json.dumps(summaries, indent=2))
         print({k: v["metrics"] for k, v in summaries.items()})
         return
