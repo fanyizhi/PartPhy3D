@@ -21,9 +21,9 @@ ADE 是平均绝对质量误差，ALDE 是平均绝对自然对数误差，APE �
 
 ## 同视角的物体材质对比
 
-![花纹椅、灰沙发和金属鞋架的 RGB、区域证据、Ours、PUGS–Qwen 与 NeRF2Physics 材质结果](material_paper_baselines.png)
+![四件 ABO 物体的正面材质预测](material_front.png)
 
-三件代表物体分别展示织物与木腿、软包表面和单一金属构件。每列统一使用第 08 帧、同一相机、网格、裁剪和材料色板，灰色标出未赋值像素。区域证据用多视角部件投票的 PCA 显色。PUGS–Qwen 复用 PUGS 的原版高斯重建和物性传播，由 Qwen3-VL-8B 提议材料。导出时核对作者代码提交、原始图像、标定和缓存预测的来源。三例用于定性展示。 [主图 PDF](material_paper_baselines.pdf) · [源数据及哈希](material_inputs/manifest.json) · [PUGS 作者代码](https://github.com/EverNorif/PUGS)
+从每件物体的 30 张原始 RGB 图中，按椅腿、支架和坐面轮廓的可见性选择视角。花纹椅、高脚椅、沙发、鞋架分别取相机帧 26、09、10、10。每列三种方法共享相机、网格、前景、裁切和材料色板。灰色表示未赋值。PUGS–Qwen 使用作者的高斯重建与物性传播，并用 Qwen3-VL-8B 提议材料。换展示视角后重新栅格化网格，读取已有逐面分割与高斯预测，在同一组可见面中心查询 NeRF2Physics。沙发前缘的绿色表示 Ours 在该处预测泡沫，缺少对应位置的外表面材料真值。 [正面图 PDF](material_front.pdf) · [逐例相机与校验值](front_rasters/manifest.json) · [先前第 08 帧与区域特征](material_paper_baselines.pdf)
 
 ### 两把椅子的标注定量验证
 

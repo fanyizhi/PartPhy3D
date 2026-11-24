@@ -28,6 +28,28 @@ PAPER_CASES = (
     ("B07TWQTVXL_ATVPDKIKX0DER", "Metal shoe rack"),
 )
 
+# Select from the original RGB turntables before inspecting any method output.
+FRONT_CASES = (
+    ("B07DBDX15Y_ATVPDKIKX0DER", "Accent chair", 26),
+    ("B07QFRSC43_ATVPDKIKX0DER", "Counter stool", 9),
+    ("B07QFP4PV5_ATVPDKIKX0DER", "Upholstered sofa", 10),
+    ("B07TWQTVXL_ATVPDKIKX0DER", "Shoe rack", 10),
+)
+
+
+def camera_raster(mesh, scene_dir, view, size=512):
+    from PIL import Image
+    from tactile3d.vision.part_lifting import rasterize_faces
+
+    camera = read(scene_dir / "transforms.json")
+    frame = camera["frames"][view]
+    ids, _ = rasterize_faces(mesh, np.asarray(frame["transform_matrix"]), camera, size)
+    with Image.open(scene_dir / frame["file_path"]) as source:
+        rgba = source.convert("RGBA").resize((size, size), Image.Resampling.LANCZOS)
+    fg = np.asarray(rgba.getchannel("A")) >= 128
+    rgb = Image.alpha_composite(Image.new("RGBA", rgba.size, "white"), rgba)
+    return np.asarray(rgb.convert("RGB")), fg, ids
+
 
 def pugs_projection(root, scene, mesh, face_ids, inverse, visible):
     report = root / "reports" / scene
@@ -66,7 +88,7 @@ def pugs_projection(root, scene, mesh, face_ids, inverse, visible):
     )
 
 
-def export(case, args, query, model, tokenizer, torch):
+def export(case, args, query, model, tokenizer, torch, view=8):
     scene, name = case
     if (args.benchmark / "appearance_fill_final" / f"{scene}.npz").exists():
         base, completion, cache = (
@@ -97,8 +119,12 @@ def export(case, args, query, model, tokenizer, torch):
     ):
         raise ValueError("Mesh and surface field have different provenance")
     mesh = trimesh.load_mesh(mesh_path, process=False)
-    with np.load(completion / f"{scene}.npz") as maps:
-        rgb, fg, ids = (maps[key] for key in ("rgb", "foreground", "face_ids"))
+    scene_path = args.benchmark / "observations" / "scenes" / scene
+    if args.front:
+        rgb, fg, ids = camera_raster(mesh, scene_path, view)
+    else:
+        with np.load(completion / f"{scene}.npz") as maps:
+            rgb, fg, ids = (maps[key] for key in ("rgb", "foreground", "face_ids"))
     visible = fg & (ids >= 0)
     original = cache / "scenes" / scene
     records = list(args.nerf_runs.glob(f"batch_*/{scene}/input_hashes.json"))
@@ -155,7 +181,7 @@ def export(case, args, query, model, tokenizer, torch):
     metadata = {
         "scene_id": scene,
         "object": name,
-        "view": 8,
+        "view": view,
         "mesh_sha256": data["sha256"],
         "nerf_classes": list(names),
         "partphy3d_classes": ours_names,
@@ -194,6 +220,11 @@ def main():
     parser.add_argument(
         "--pugs", type=Path, help="Export scenes with PUGS–Qwen outputs"
     )
+    parser.add_argument(
+        "--front",
+        action="store_true",
+        help="Project the frozen fields into front-facing ABO cameras",
+    )
     args = parser.parse_args()
     import open_clip
     import torch
@@ -214,9 +245,19 @@ def main():
     model = model.cuda().eval()
     tokenizer = open_clip.get_tokenizer("ViT-B-16")
     args.output.mkdir(exist_ok=False)
+    cases = PAPER_CASES if args.pugs is not None else CASES
+    views = FRONT_CASES if args.front else [(scene, name, 8) for scene, name in cases]
     manifest = [
-        export(case, args, predict_physical_property_query, model, tokenizer, torch)
-        for case in (PAPER_CASES if args.pugs is not None else CASES)
+        export(
+            (scene, name),
+            args,
+            predict_physical_property_query,
+            model,
+            tokenizer,
+            torch,
+            view,
+        )
+        for scene, name, view in views
     ]
     (args.output / "manifest.json").write_text(
         json.dumps(manifest, indent=2) + "\n", encoding="utf-8"

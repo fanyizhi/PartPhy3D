@@ -1,0 +1,119 @@
+[
+  {
+    "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+    "object": "Accent chair",
+    "view": 26,
+    "mesh_sha256": "f431ead3d2a32003de12474f02f0a853f9a75b75304ee8f53ef3ca1de696f0c2",
+    "nerf_classes": [
+      "fabric",
+      "wood",
+      "foam",
+      "metal",
+      "plastic"
+    ],
+    "partphy3d_classes": [
+      "fabric",
+      "wood"
+    ],
+    "pugs_classes": [
+      "fabric",
+      "wood"
+    ],
+    "camera_sha256": "297e698f657b35d91215e89b8f0c108eb80bb75192bf90e9355d1e0849b96f69",
+    "rgb_sha256": "fe3e0675ae326ecd80a2f0b7d3cd40166d4d2fdae190e55b71ae987e4f95ab8c",
+    "pugs_scores_sha256": "d58b12e63373b3ea3e6efd971ccb77bebb30d7246ef02d2d713b037de9f3f497",
+    "pugs_points_sha256": "b84c90c784214139d96e5dde0a1b54a3ba1fdeeab5bd6e522c1bc63d6fc7705f",
+    "pugs_proposal": "PUGS-Qwen3-VL-8B-NF4",
+    "pugs_upstream_commit": "ef7fd8c52543ab0fe6eb2a7a99e5267523133a09",
+    "pugs_transfer_limit_camera_units": 0.017225804596673697,
+    "raster_sha256": "93408be0aa08f9035ddd067592a40680bda62e1df53bb574619e2c08f8d241f6"
+  },
+  {
+    "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+    "object": "Counter stool",
+    "view": 9,
+    "mesh_sha256": "579a2b7fd7629786f5727029c44c86b6dfb6f644d2fd0a248bb003bb9ead1127",
+    "nerf_classes": [
+      "wood",
+      "metal",
+      "plastic",
+      "leather",
+      "fabric"
+    ],
+    "partphy3d_classes": [
+      "fabric",
+      "steel"
+    ],
+    "pugs_classes": [
+      "fabric",
+      "metal",
+      "foam"
+    ],
+    "camera_sha256": "28b6a5cf639ae7267fe88b66e40c1388be8ee82e3d7b943edaf6f0dd757a2db2",
+    "rgb_sha256": "a19156a4df31ba63fc40e0765030a5d99d8946328f3690c0b0c27cbd12a1690c",
+    "pugs_scores_sha256": "2e9d5709885ad93c0bf77e17daa62ac0b17a5e2170323eebd1883ce11d628109",
+    "pugs_points_sha256": "d454098a44155dbd5260cf42fa20f2c7f31c67e164038004404d99c575378f4e",
+    "pugs_proposal": "PUGS-Qwen3-VL-8B-NF4",
+    "pugs_upstream_commit": "ef7fd8c52543ab0fe6eb2a7a99e5267523133a09",
+    "pugs_transfer_limit_camera_units": 0.021720034684985876,
+    "raster_sha256": "dc5e0af7ba911d7a3564747bd074b7560406beedae06f92a1d106b1f91306846"
+  },
+  {
+    "scene_id": "B07QFP4PV5_ATVPDKIKX0DER",
+    "object": "Upholstered sofa",
+    "view": 10,
+    "mesh_sha256": "8b86ea9caec5ecbd13dfd26835062e10db107ed3141a1bb9cac0e4b375a57c74",
+    "nerf_classes": [
+      "fabric",
+      "wood",
+      "foam",
+      "metal",
+      "polyester"
+    ],
+    "partphy3d_classes": [
+      "fabric",
+      "foam",
+      "wood"
+    ],
+    "pugs_classes": [
+      "fabric",
+      "foam",
+      "wood",
+      "metal",
+      "plastic"
+    ],
+    "camera_sha256": "41a23e979e004b1a43451ca3a982a810a4db1b5a7b049665c96b4ce3365a4ef0",
+    "rgb_sha256": "76a90027e059cb5a250d5d6ba4dbeb52a0d0b3d37ded1fee826a91b91b11947d",
+    "pugs_scores_sha256": "e19d413b4badd46b853f4728dcc0abba30b3034184c56a292ecdb324f116e680",
+    "pugs_points_sha256": "72e3e7cac5e127e6d84e140db8213bb362ec33c72a591694fc8e7fda52f55711",
+    "pugs_proposal": "PUGS-Qwen3-VL-8B-NF4",
+    "pugs_upstream_commit": "ef7fd8c52543ab0fe6eb2a7a99e5267523133a09",
+    "pugs_transfer_limit_camera_units": 0.03721264958381653,
+    "raster_sha256": "4f4f1c9bf0cade4397da8949abb4335f8d19cf9c928d50732ef53bdbfa13fc83"
+  },
+  {
+    "scene_id": "B07TWQTVXL_ATVPDKIKX0DER",
+    "object": "Shoe rack",
+    "view": 10,
+    "mesh_sha256": "0c1841499118e456fea866d3c01c876e61b79373c7f507d611fcc2338be0b780",
+    "nerf_classes": [
+      "metal",
+      "black paint",
+      "white paint"
+    ],
+    "partphy3d_classes": [
+      "steel"
+    ],
+    "pugs_classes": [
+      "steel"
+    ],
+    "camera_sha256": "9b1e1e67a44a763b56302a1ff8a2cd6fa1470f285b5afff472fac41fa9544288",
+    "rgb_sha256": "25dfea9a03647d44620051fe27b494a6c174c70ce80e0bb2ff2235104e26ab12",
+    "pugs_scores_sha256": "85f437d8a6f98dadeb232c5c3febfc2d254ab9e84979cbebc354159f3b8ccbdf",
+    "pugs_points_sha256": "80683476bfc7213363d17f63ad3f91411631e352cb9efc8cca2f881f7f9057c0",
+    "pugs_proposal": "PUGS-Qwen3-VL-8B-NF4",
+    "pugs_upstream_commit": "ef7fd8c52543ab0fe6eb2a7a99e5267523133a09",
+    "pugs_transfer_limit_camera_units": 0.023059086799621584,
+    "raster_sha256": "9559768426fb44de06ff90c21c819e01cddd10d1bb0eaf12f26d64718ef7c317"
+  }
+]
