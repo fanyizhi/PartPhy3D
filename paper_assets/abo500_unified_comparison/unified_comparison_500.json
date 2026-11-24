@@ -1,0 +1,3842 @@
+{
+  "parameters": {
+    "image_alpha": 0.1,
+    "structure_weight": 0.25,
+    "ratio_cap": "3.0",
+    "structure_weight_multiplier_if_missing": 1.0
+  },
+  "splits": {
+    "train": {
+      "n": 300,
+      "metrics": {
+        "structure": [
+          7.41045186186236,
+          0.7366380213971716,
+          277.7811809760287,
+          0.592548566691957
+        ],
+        "image": [
+          7.494571309604691,
+          0.5983390881324012,
+          140.77549692140173,
+          0.6244028089574113
+        ],
+        "joint": [
+          7.157897958944383,
+          0.5787627030251489,
+          142.51706277529402,
+          0.6283611026020312
+        ]
+      },
+      "joint_minus_image_ci95": [
+        [
+          -0.6506786843875312,
+          -0.037654855174079474,
+          -7.030451294387772,
+          -0.006302433998587711
+        ],
+        [
+          -0.03366174831740981,
+          -0.00162984087065916,
+          15.633910201211474,
+          0.014115799052331953
+        ]
+      ]
+    },
+    "val": {
+      "n": 100,
+      "metrics": {
+        "structure": [
+          10.690201455800409,
+          0.7194286294125402,
+          118.17056784681844,
+          0.5893977379104469
+        ],
+        "image": [
+          11.485607531429276,
+          0.6714943079772437,
+          91.1811036800677,
+          0.5812283486428129
+        ],
+        "joint": [
+          10.869421874643486,
+          0.6464319111762745,
+          88.13845555071065,
+          0.5988643714373003
+        ]
+      },
+      "joint_minus_image_ci95": [
+        [
+          -1.2733910278417557,
+          -0.052224624083235624,
+          -9.140066950497104,
+          0.002592529019522405
+        ],
+        [
+          -0.05235555523779914,
+          0.0028206636703192057,
+          3.4676304997903515,
+          0.032730339016118895
+        ]
+      ]
+    },
+    "test": {
+      "n": 100,
+      "metrics": {
+        "structure": [
+          5.253848785130032,
+          0.5478910267357971,
+          104.89775809101431,
+          0.6610138675221152
+        ],
+        "image": [
+          5.154564289954326,
+          0.5747592441939299,
+          76.82270286528652,
+          0.6292682327631245
+        ],
+        "joint": [
+          4.9757910693009,
+          0.5343153845515232,
+          73.6785903586543,
+          0.6451290182339542
+        ]
+      },
+      "joint_minus_image_ci95": [
+        [
+          -0.5064196071992317,
+          -0.06872596634365918,
+          -9.318529495433896,
+          0.0004750848586516335
+        ],
+        [
+          0.15867730850145556,
+          -0.01227904568520526,
+          3.2824740115224564,
+          0.031044000408763088
+        ]
+      ]
+    },
+    "all": {
+      "n": 500,
+      "metrics": {
+        "structure": [
+          7.635081165303512,
+          0.6954467440679702,
+          211.2823737731838,
+          0.6056114611016865
+        ],
+        "image": [
+          7.824777150039532,
+          0.6082541633136759,
+          118.06605946191186,
+          0.6167410016556342
+        ],
+        "joint": [
+          7.4637813641555075,
+          0.5834070809606491,
+          117.87364684704951,
+          0.6258153394954695
+        ]
+      },
+      "joint_minus_image_ci95": [
+        [
+          -0.5970611378731798,
+          -0.03816190364272465,
+          -5.880998232634625,
+          0.0015671570077307663
+        ],
+        [
+          -0.13576537006226527,
+          -0.01145896186629742,
+          8.495391566532806,
+          0.016453157041898873
+        ]
+      ]
+    }
+  },
+  "trials": [
+    {
+      "score": 1.0,
+      "weight": 0.0,
+      "ratio_cap": "1.5",
+      "fallback": 0.0
+    },
+    {
+      "score": 1.0,
+      "weight": 0.0,
+      "ratio_cap": "1.5",
+      "fallback": 1.0
+    },
+    {
+      "score": 1.0,
+      "weight": 0.0,
+      "ratio_cap": "3.0",
+      "fallback": 0.0
+    },
+    {
+      "score": 1.0,
+      "weight": 0.0,
+      "ratio_cap": "3.0",
+      "fallback": 1.0
+    },
+    {
+      "score": 1.0,
+      "weight": 0.0,
+      "ratio_cap": "inf",
+      "fallback": 0.0
+    },
+    {
+      "score": 1.0,
+      "weight": 0.0,
+      "ratio_cap": "inf",
+      "fallback": 1.0
+    },
+    {
+      "score": 0.9889850125245654,
+      "weight": 0.25,
+      "ratio_cap": "1.5",
+      "fallback": 0.0
+    },
+    {
+      "score": 0.9857613458127021,
+      "weight": 0.25,
+      "ratio_cap": "1.5",
+      "fallback": 1.0
+    },
+    {
+      "score": 0.9839162092907107,
+      "weight": 0.25,
+      "ratio_cap": "3.0",
+      "fallback": 0.0
+    },
+    {
+      "score": 0.978243684972489,
+      "weight": 0.25,
+      "ratio_cap": "3.0",
+      "fallback": 1.0
+    },
+    {
+      "score": 0.9996195292349371,
+      "weight": 0.25,
+      "ratio_cap": "inf",
+      "fallback": 0.0
+    },
+    {
+      "score": 0.9929827193027941,
+      "weight": 0.25,
+      "ratio_cap": "inf",
+      "fallback": 1.0
+    },
+    {
+      "score": 0.9957783616122505,
+      "weight": 0.5,
+      "ratio_cap": "1.5",
+      "fallback": 0.0
+    },
+    {
+      "score": 0.9894610928599309,
+      "weight": 0.5,
+      "ratio_cap": "1.5",
+      "fallback": 1.0
+    },
+    {
+      "score": 1.0007942682311795,
+      "weight": 0.5,
+      "ratio_cap": "3.0",
+      "fallback": 0.0
+    },
+    {
+      "score": 0.9901374910898016,
+      "weight": 0.5,
+      "ratio_cap": "3.0",
+      "fallback": 1.0
+    },
+    {
+      "score": 1.0495996706832402,
+      "weight": 0.5,
+      "ratio_cap": "inf",
+      "fallback": 0.0
+    },
+    {
+      "score": 1.037450337096949,
+      "weight": 0.5,
+      "ratio_cap": "inf",
+      "fallback": 1.0
+    },
+    {
+      "score": 1.009947287700725,
+      "weight": 0.75,
+      "ratio_cap": "1.5",
+      "fallback": 0.0
+    },
+    {
+      "score": 1.0013539621680108,
+      "weight": 0.75,
+      "ratio_cap": "1.5",
+      "fallback": 1.0
+    },
+    {
+      "score": 1.042452831260815,
+      "weight": 0.75,
+      "ratio_cap": "3.0",
+      "fallback": 0.0
+    },
+    {
+      "score": 1.0280138768176859,
+      "weight": 0.75,
+      "ratio_cap": "3.0",
+      "fallback": 1.0
+    },
+    {
+      "score": 1.1647293335668094,
+      "weight": 0.75,
+      "ratio_cap": "inf",
+      "fallback": 0.0
+    },
+    {
+      "score": 1.1497085093547883,
+      "weight": 0.75,
+      "ratio_cap": "inf",
+      "fallback": 1.0
+    },
+    {
+      "score": 1.031912578742393,
+      "weight": 1.0,
+      "ratio_cap": "1.5",
+      "fallback": 0.0
+    },
+    {
+      "score": 1.021813864542939,
+      "weight": 1.0,
+      "ratio_cap": "1.5",
+      "fallback": 1.0
+    },
+    {
+      "score": 1.1154960051803133,
+      "weight": 1.0,
+      "ratio_cap": "3.0",
+      "fallback": 0.0
+    },
+    {
+      "score": 1.0998812504816382,
+      "weight": 1.0,
+      "ratio_cap": "3.0",
+      "fallback": 1.0
+    },
+    {
+      "score": 1.4114357195953346,
+      "weight": 1.0,
+      "ratio_cap": "inf",
+      "fallback": 0.0
+    },
+    {
+      "score": 1.3977117017815663,
+      "weight": 1.0,
+      "ratio_cap": "inf",
+      "fallback": 1.0
+    }
+  ],
+  "objects": {
+    "B07RVZJ1SB": {
+      "target_kg": 3.039,
+      "has_parts": true,
+      "structure": 2.1887410038795423,
+      "image": 3.4699738218749934,
+      "joint": 3.0923827521835463
+    },
+    "B07SY1TX76": {
+      "target_kg": 27.6,
+      "has_parts": true,
+      "structure": 1.5428410339101448,
+      "image": 8.996683518575509,
+      "joint": 6.836001189927204
+    },
+    "B07TVN114C_ATVPDKIKX0DER": {
+      "target_kg": 1.84611944,
+      "has_parts": true,
+      "structure": 4.317456702508145,
+      "image": 9.445625253693017,
+      "joint": 7.766583776591508
+    },
+    "B078JGYJTG_ATVPDKIKX0DER": {
+      "target_kg": 1.0251179199999998,
+      "has_parts": true,
+      "structure": 0.9509538458932338,
+      "image": 1.2290372151986875,
+      "joint": 1.1526929445500294
+    },
+    "B076YRSWGW_A1F83G8C2ARO7P": {
+      "target_kg": 0.103475675,
+      "has_parts": true,
+      "structure": 0.29826191940576596,
+      "image": 0.32261557209211184,
+      "joint": 0.3163468007395918
+    },
+    "B079LFHRV7_ATVPDKIKX0DER": {
+      "target_kg": 0.93893544,
+      "has_parts": true,
+      "structure": 0.760062700271734,
+      "image": 2.6139597428541617,
+      "joint": 1.9861798934772525
+    },
+    "B07MHMJCZN_ATVPDKIKX0DER": {
+      "target_kg": 11.280833040000001,
+      "has_parts": true,
+      "structure": 6.675767850916178,
+      "image": 9.207834162415155,
+      "joint": 8.496565760677901
+    },
+    "B07MF1S1WL_ATVPDKIKX0DER": {
+      "target_kg": 1.39706336,
+      "has_parts": true,
+      "structure": 3.9465416934105457,
+      "image": 1.3517880497033556,
+      "joint": 1.7669962422561492
+    },
+    "B07GFFQZQ1_A1F83G8C2ARO7P": {
+      "target_kg": 60.5,
+      "has_parts": true,
+      "structure": 49.43807497914515,
+      "image": 36.601179930279,
+      "joint": 39.45814846942827
+    },
+    "B071777YNX": {
+      "target_kg": 12.700576,
+      "has_parts": true,
+      "structure": 15.14655419986308,
+      "image": 12.758531933386276,
+      "joint": 13.317692700497142
+    },
+    "B07B4MRP16_ATVPDKIKX0DER": {
+      "target_kg": 16.329312,
+      "has_parts": true,
+      "structure": 20.069042385475985,
+      "image": 21.95138508858863,
+      "joint": 21.464862408632456
+    },
+    "B0772KHYF7": {
+      "target_kg": 16.329312,
+      "has_parts": true,
+      "structure": 2.1375012336527623,
+      "image": 5.509542955938514,
+      "joint": 4.348237664693526
+    },
+    "B07TF7YLJC_APJ6JRA9NG5V4": {
+      "target_kg": 10.4,
+      "has_parts": true,
+      "structure": 6.14951680898557,
+      "image": 13.496385922855227,
+      "joint": 11.088514389390808
+    },
+    "B07QJL73XD_ATVPDKIKX0DER": {
+      "target_kg": 0.9979024000000001,
+      "has_parts": true,
+      "structure": 1.9021645030302607,
+      "image": 1.2292814409673416,
+      "joint": 1.37104121993537
+    },
+    "B07HSDY9FC_ATVPDKIKX0DER": {
+      "target_kg": 12.700576,
+      "has_parts": true,
+      "structure": 12.433825610145364,
+      "image": 17.97403520582186,
+      "joint": 16.39212978658446
+    },
+    "B075X4J15G_ATVPDKIKX0DER": {
+      "target_kg": 52.94325824,
+      "has_parts": true,
+      "structure": 30.629339725907624,
+      "image": 25.543328050358983,
+      "joint": 26.7296036774195
+    },
+    "B00TS18AEA_ATVPDKIKX0DER": {
+      "target_kg": 0.113398,
+      "has_parts": true,
+      "structure": 1.6777925226415387,
+      "image": 0.5658792419594687,
+      "joint": 0.7425528784792245
+    },
+    "B07B4YXRL6_ATVPDKIKX0DER": {
+      "target_kg": 77.11064,
+      "has_parts": true,
+      "structure": 50.62474636654357,
+      "image": 82.60037432227632,
+      "joint": 73.08482757068246
+    },
+    "B073G94FRB_ATVPDKIKX0DER": {
+      "target_kg": 5.896696,
+      "has_parts": true,
+      "structure": 3.975969898778247,
+      "image": 6.799335085501462,
+      "joint": 5.945804227165276
+    },
+    "B085W6V8CN": {
+      "target_kg": 80.0,
+      "has_parts": true,
+      "structure": 46.51737202016722,
+      "image": 41.435800049222294,
+      "joint": 42.65162570888059
+    },
+    "B075X2LKPV": {
+      "target_kg": 1.587572,
+      "has_parts": true,
+      "structure": 2.9538265185924777,
+      "image": 1.5909128761871472,
+      "joint": 1.857081843328272
+    },
+    "B07RSSZTRL": {
+      "target_kg": 2.005,
+      "has_parts": true,
+      "structure": 6.595513455573019,
+      "image": 2.1655712581739883,
+      "joint": 2.8500520560796185
+    },
+    "B07YLYRWJ7_ATVPDKIKX0DER": {
+      "target_kg": 15.4674872,
+      "has_parts": false,
+      "structure": 18.559489249979507,
+      "image": 13.123508388900154,
+      "joint": 14.3112961877567
+    },
+    "B075X5TN2K_ATVPDKIKX0DER": {
+      "target_kg": 36.28736,
+      "has_parts": true,
+      "structure": 30.568447885442595,
+      "image": 35.295001947433455,
+      "joint": 34.04891322499439
+    },
+    "B085W6GGN5_A21TJRUUN4KGV": {
+      "target_kg": 35.0,
+      "has_parts": true,
+      "structure": 6.1604485840898775,
+      "image": 10.486438116201327,
+      "joint": 9.180663787274081
+    },
+    "B07WFNW48N": {
+      "target_kg": 3.45183512,
+      "has_parts": true,
+      "structure": 3.8793550036259425,
+      "image": 3.4134321672408965,
+      "joint": 3.524384955167692
+    },
+    "B00DUGZFLK_ATVPDKIKX0DER": {
+      "target_kg": 0.39916096,
+      "has_parts": true,
+      "structure": 0.9665283984083122,
+      "image": 0.3970161812604228,
+      "joint": 0.4959179299683652
+    },
+    "B07K7NY646_A1PA6795UKMFR9": {
+      "target_kg": 30.5,
+      "has_parts": true,
+      "structure": 6.428745691634189,
+      "image": 3.9456297704210117,
+      "joint": 4.457781837081212
+    },
+    "B075HXQJYH_ATVPDKIKX0DER": {
+      "target_kg": 0.5080230400000001,
+      "has_parts": true,
+      "structure": 1.0892810904927521,
+      "image": 1.8543546424017747,
+      "joint": 1.6234151256242964
+    },
+    "B089L8FL6Q_ATVPDKIKX0DER": {
+      "target_kg": 0.907184,
+      "has_parts": true,
+      "structure": 0.11408335565369755,
+      "image": 4.984166644979974,
+      "joint": 3.7871476800901567
+    },
+    "B075X4WBNH_ATVPDKIKX0DER": {
+      "target_kg": 29.48348,
+      "has_parts": true,
+      "structure": 5.390299523086133,
+      "image": 14.6429297883019,
+      "joint": 11.405759491556083
+    },
+    "B07K7NNS3L_A1RKKUPIHCS9HS": {
+      "target_kg": 7.6,
+      "has_parts": true,
+      "structure": 7.407611119359153,
+      "image": 10.334995685553888,
+      "joint": 9.509381447092291
+    },
+    "B07TX2D39D_A1RKKUPIHCS9HS": {
+      "target_kg": 4.3600001335144,
+      "has_parts": true,
+      "structure": 14.487708114444741,
+      "image": 10.845294037557323,
+      "joint": 11.659526671619915
+    },
+    "B01LP0VBDI_ATVPDKIKX0DER": {
+      "target_kg": 1.12490816,
+      "has_parts": true,
+      "structure": 1.036201439358544,
+      "image": 1.1208859769596307,
+      "joint": 1.0990871357815417
+    },
+    "B07B4W5TDF_ATVPDKIKX0DER": {
+      "target_kg": 37.194544,
+      "has_parts": true,
+      "structure": 35.83985945662867,
+      "image": 24.409221366484605,
+      "joint": 26.869341246071482
+    },
+    "B07ZT3QBG3_ATVPDKIKX0DER": {
+      "target_kg": 41.004716800000004,
+      "has_parts": true,
+      "structure": 30.63364194088379,
+      "image": 44.008003776746214,
+      "joint": 40.197441316869174
+    },
+    "B07B8NY189_ATVPDKIKX0DER": {
+      "target_kg": 0.54884632,
+      "has_parts": true,
+      "structure": 1.9556882568191465,
+      "image": 2.1930854306935825,
+      "joint": 2.131162517761905
+    },
+    "B074DZNJ3T_ATVPDKIKX0DER": {
+      "target_kg": 22.6796,
+      "has_parts": true,
+      "structure": 4.884365316703015,
+      "image": 15.09242572056271,
+      "joint": 11.467763645529498
+    },
+    "B07HKGHTGT_ATVPDKIKX0DER": {
+      "target_kg": 4.4905608,
+      "has_parts": true,
+      "structure": 7.189709875259096,
+      "image": 4.251935088079516,
+      "joint": 4.848616228647766
+    },
+    "B01LR5SM74_ATVPDKIKX0DER": {
+      "target_kg": 14.514944,
+      "has_parts": true,
+      "structure": 2.018315727824865,
+      "image": 11.332670787928683,
+      "joint": 8.610967678409564
+    },
+    "B07HSBDCX8_ATVPDKIKX0DER": {
+      "target_kg": 19.050864,
+      "has_parts": true,
+      "structure": 8.792670968424146,
+      "image": 9.865397649223766,
+      "joint": 9.585530465977184
+    },
+    "B07HKGHTC1_ATVPDKIKX0DER": {
+      "target_kg": 5.59732528,
+      "has_parts": true,
+      "structure": 3.91697106248381,
+      "image": 20.95435913591945,
+      "joint": 15.921869841431068
+    },
+    "B07DBB1S8N_ATVPDKIKX0DER": {
+      "target_kg": 24.267172,
+      "has_parts": true,
+      "structure": 15.892626329332026,
+      "image": 42.707760962311006,
+      "joint": 33.35638828042986
+    },
+    "B075QJDGPN_ATVPDKIKX0DER": {
+      "target_kg": 31.4339256,
+      "has_parts": true,
+      "structure": 24.502580508467666,
+      "image": 5.734887616176842,
+      "joint": 7.547536558853409
+    },
+    "B075HRC94H": {
+      "target_kg": 1.814368,
+      "has_parts": true,
+      "structure": 1.0379753165646315,
+      "image": 1.8863655688432586,
+      "joint": 1.6246737069689925
+    },
+    "B0853NLYDD_ATVPDKIKX0DER": {
+      "target_kg": 9.979023999999999,
+      "has_parts": true,
+      "structure": 10.830709695877177,
+      "image": 5.038210800060442,
+      "joint": 6.10058495994963
+    },
+    "B07MSYK43S_ATVPDKIKX0DER": {
+      "target_kg": 1.3834556,
+      "has_parts": true,
+      "structure": 0.6249231540707125,
+      "image": 5.70676075384684,
+      "joint": 4.336200470248813
+    },
+    "B07RKJCGXR_ATVPDKIKX0DER": {
+      "target_kg": 6.5317248,
+      "has_parts": true,
+      "structure": 7.9032263843707975,
+      "image": 21.477502734287594,
+      "joint": 16.72780444746534
+    },
+    "B07TTYC9XD": {
+      "target_kg": 5.34999990463257,
+      "has_parts": true,
+      "structure": 0.9949546847094572,
+      "image": 3.8066910508103726,
+      "joint": 2.892459704656281
+    },
+    "B07BW8PYZ9_ATVPDKIKX0DER": {
+      "target_kg": 78.017824,
+      "has_parts": true,
+      "structure": 56.33272347219406,
+      "image": 81.3545357539078,
+      "joint": 74.21240660967578
+    },
+    "B07B4Z2WDQ_ATVPDKIKX0DER": {
+      "target_kg": 96.161504,
+      "has_parts": true,
+      "structure": 23.48844616300892,
+      "image": 34.34852921621764,
+      "joint": 31.235228050317517
+    },
+    "B0742D9X4G": {
+      "target_kg": 1.360776,
+      "has_parts": true,
+      "structure": 3.484859436231909,
+      "image": 1.500825763967886,
+      "joint": 1.852652742396003
+    },
+    "B01GGKYZQM": {
+      "target_kg": 0.018994165,
+      "has_parts": true,
+      "structure": 0.1130588605360913,
+      "image": 0.0737031308607655,
+      "joint": 0.08202393564511366
+    },
+    "B08DWMY83P_ATVPDKIKX0DER": {
+      "target_kg": 20.184844,
+      "has_parts": true,
+      "structure": 30.98753622550295,
+      "image": 41.78467028585527,
+      "joint": 38.77568659717143
+    },
+    "B0853Q3Z93_ATVPDKIKX0DER": {
+      "target_kg": 17.2818552,
+      "has_parts": true,
+      "structure": 13.851051316786148,
+      "image": 14.52742105124185,
+      "joint": 14.355293542513975
+    },
+    "B01LR5SIRI_ATVPDKIKX0DER": {
+      "target_kg": 18.14368,
+      "has_parts": true,
+      "structure": 7.3604764641634866,
+      "image": 4.43148477256469,
+      "joint": 5.030815937460655
+    },
+    "B076VG6LF3_A21TJRUUN4KGV": {
+      "target_kg": 0.78,
+      "has_parts": true,
+      "structure": 0.6594761525093804,
+      "image": 0.4211730398613909,
+      "joint": 0.47113481317110684
+    },
+    "B078JMJC49_ATVPDKIKX0DER": {
+      "target_kg": 1.0886208,
+      "has_parts": true,
+      "structure": 1.2683526628108834,
+      "image": 0.47703175041805884,
+      "joint": 0.6091447011116166
+    },
+    "B07QJ23K4C_ATVPDKIKX0DER": {
+      "target_kg": 66.47844352,
+      "has_parts": true,
+      "structure": 7.679692625483033,
+      "image": 27.831442787547147,
+      "joint": 21.147323413148957
+    },
+    "B07B8NZMZF_ATVPDKIKX0DER": {
+      "target_kg": 3.8509960800000003,
+      "has_parts": true,
+      "structure": 3.02593120759037,
+      "image": 2.403972872138066,
+      "joint": 2.5463138629902233
+    },
+    "B075YMJC9D": {
+      "target_kg": 4.53592,
+      "has_parts": true,
+      "structure": 1.1563024124355419,
+      "image": 6.204005750350393,
+      "joint": 4.714024963103913
+    },
+    "B07WQ53V18_ATVPDKIKX0DER": {
+      "target_kg": 3.89181936,
+      "has_parts": true,
+      "structure": 4.300910408926598,
+      "image": 2.4887242795175135,
+      "joint": 2.8534659039092816
+    },
+    "B08FTN8KHY": {
+      "target_kg": 28.0,
+      "has_parts": true,
+      "structure": 51.40149516763818,
+      "image": 47.879861906149735,
+      "joint": 48.736978916394335
+    },
+    "B073WH6N3Q": {
+      "target_kg": 7.665704799999999,
+      "has_parts": true,
+      "structure": 13.834785999664248,
+      "image": 2.4667227289853937,
+      "joint": 3.2463896807769306
+    },
+    "B01LONQBDG": {
+      "target_kg": 0.009979024,
+      "has_parts": true,
+      "structure": 1.4027547303326182,
+      "image": 0.026018218023655292,
+      "joint": 0.03424190060426489
+    },
+    "B07WRBJBGD_ATVPDKIKX0DER": {
+      "target_kg": 1.87787088,
+      "has_parts": true,
+      "structure": 4.615676330660262,
+      "image": 3.039189292001589,
+      "joint": 3.373860715732226
+    },
+    "B075HR7LD2_ATVPDKIKX0DER": {
+      "target_kg": 0.80739376,
+      "has_parts": true,
+      "structure": 1.7985385021168574,
+      "image": 2.0831120182849197,
+      "joint": 2.008003212377568
+    },
+    "B07MQD17DM_ATVPDKIKX0DER": {
+      "target_kg": 17.690088,
+      "has_parts": true,
+      "structure": 34.60129233722445,
+      "image": 59.28750099583333,
+      "joint": 51.81976494006796
+    },
+    "B072Z1WN4S_ATVPDKIKX0DER": {
+      "target_kg": 10.99053416,
+      "has_parts": true,
+      "structure": 9.458551623597891,
+      "image": 4.6028143792140215,
+      "joint": 5.5109155450406675
+    },
+    "B07Y3Q62Y7": {
+      "target_kg": 14.968536,
+      "has_parts": true,
+      "structure": 7.983972795438471,
+      "image": 8.018449125317495,
+      "joint": 8.009816110828282
+    },
+    "B07TP5LKBH_APJ6JRA9NG5V4": {
+      "target_kg": 32.0,
+      "has_parts": true,
+      "structure": 32.831852720868184,
+      "image": 40.695955702871835,
+      "joint": 38.56890300680028
+    },
+    "B075HWK9QT_ATVPDKIKX0DER": {
+      "target_kg": 1.27912944,
+      "has_parts": true,
+      "structure": 0.9076544263785862,
+      "image": 0.8457919360658179,
+      "joint": 0.8608506022264388
+    },
+    "B07MF1SFKD_ATVPDKIKX0DER": {
+      "target_kg": 4.082328,
+      "has_parts": true,
+      "structure": 1.2209938522227073,
+      "image": 2.7096710136521014,
+      "joint": 2.2200655284754314
+    },
+    "B07B4G612M_ATVPDKIKX0DER": {
+      "target_kg": 54.884631999999996,
+      "has_parts": true,
+      "structure": 32.830215832462805,
+      "image": 46.668901888308596,
+      "joint": 42.740453018354096
+    },
+    "B07QC8CFCY_ATVPDKIKX0DER": {
+      "target_kg": 0.9979024000000001,
+      "has_parts": true,
+      "structure": 0.6084845843421365,
+      "image": 0.26409562528875363,
+      "joint": 0.32537434019502576
+    },
+    "B07TQ8KH1V_A1F83G8C2ARO7P": {
+      "target_kg": 43.0,
+      "has_parts": true,
+      "structure": 25.110081253514167,
+      "image": 24.46491176773794,
+      "joint": 24.62463318646188
+    },
+    "B0735CJJDM": {
+      "target_kg": 5.11651776,
+      "has_parts": true,
+      "structure": 6.002163832697914,
+      "image": 2.601900258628622,
+      "joint": 3.2066011545645674
+    },
+    "B07B8XC5QS_ATVPDKIKX0DER": {
+      "target_kg": 2.5401152,
+      "has_parts": true,
+      "structure": 1.1051756207422925,
+      "image": 3.8919353347821746,
+      "joint": 2.957231353615874
+    },
+    "B07B4D48Q5_ATVPDKIKX0DER": {
+      "target_kg": 65.317248,
+      "has_parts": true,
+      "structure": 5.378884249489631,
+      "image": 53.4585248876488,
+      "joint": 40.61969491192935
+    },
+    "B078J9MF2W": {
+      "target_kg": 1.1,
+      "has_parts": true,
+      "structure": 6.462157906322075,
+      "image": 1.493669850269817,
+      "joint": 1.9657800738707463
+    },
+    "B07SRSJMZK": {
+      "target_kg": 29.0,
+      "has_parts": true,
+      "structure": 1.0254638236242732,
+      "image": 26.41898782112437,
+      "joint": 20.07408972528511
+    },
+    "B076YS4SJT_A1F83G8C2ARO7P": {
+      "target_kg": 0.29596878,
+      "has_parts": true,
+      "structure": 0.31647276669816193,
+      "image": 0.3186376632424318,
+      "joint": 0.31809505466569565
+    },
+    "B07M9KPR1P_ATVPDKIKX0DER": {
+      "target_kg": 6.209674479999999,
+      "has_parts": true,
+      "structure": 17.123725569049085,
+      "image": 10.420419615217638,
+      "joint": 11.798137968967724
+    },
+    "B07HZ7634C_ATVPDKIKX0DER": {
+      "target_kg": 39.916095999999996,
+      "has_parts": true,
+      "structure": 49.97752452099743,
+      "image": 23.20382461025334,
+      "joint": 28.110163123094033
+    },
+    "B079VPLVH5_A1F83G8C2ARO7P": {
+      "target_kg": 9.7,
+      "has_parts": true,
+      "structure": 18.057444492955295,
+      "image": 24.131118664420026,
+      "joint": 22.443839979727077
+    },
+    "B07WHRXD58": {
+      "target_kg": 4.45880936,
+      "has_parts": true,
+      "structure": 5.994475166715994,
+      "image": 3.511759331432401,
+      "joint": 4.014036804301051
+    },
+    "B076YRSWH2_A1F83G8C2ARO7P": {
+      "target_kg": 0.29596878,
+      "has_parts": true,
+      "structure": 0.2504091686397013,
+      "image": 0.23981614063622778,
+      "joint": 0.2424216281932726
+    },
+    "B01GGKYUKI": {
+      "target_kg": 0.0453592,
+      "has_parts": true,
+      "structure": 0.0331152504381199,
+      "image": 0.05135587364730628,
+      "joint": 0.046020316611174596
+    },
+    "B07B4W5T8B_ATVPDKIKX0DER": {
+      "target_kg": 77.11064,
+      "has_parts": true,
+      "structure": 69.41050823536989,
+      "image": 57.87579410679544,
+      "joint": 60.56601898154944
+    },
+    "B073P5QKLB": {
+      "target_kg": 0.453592,
+      "has_parts": true,
+      "structure": 1.3062382252755043,
+      "image": 1.12546971760181,
+      "joint": 1.1681697550718821
+    },
+    "B07B4Z6PXF_ATVPDKIKX0DER": {
+      "target_kg": 77.11064,
+      "has_parts": true,
+      "structure": 64.33868962021904,
+      "image": 67.95231438299527,
+      "joint": 67.03031225919398
+    },
+    "B01LP0U5X0_ATVPDKIKX0DER": {
+      "target_kg": 1.1113004,
+      "has_parts": true,
+      "structure": 0.5885162552908474,
+      "image": 0.8433089021513157,
+      "joint": 0.7707785663311731
+    },
+    "B07B8PXMTK_ATVPDKIKX0DER": {
+      "target_kg": 0.8618248,
+      "has_parts": true,
+      "structure": 3.1615471774465926,
+      "image": 1.2713115203552352,
+      "joint": 1.5964815488017619
+    },
+    "B07WGNT4GG_ATVPDKIKX0DER": {
+      "target_kg": 3.9916096000000003,
+      "has_parts": true,
+      "structure": 7.291692423337941,
+      "image": 4.000340325060935,
+      "joint": 4.6481463143849675
+    },
+    "B07WJWRDFW_ATVPDKIKX0DER": {
+      "target_kg": 5.58825344,
+      "has_parts": true,
+      "structure": 8.709779350154617,
+      "image": 4.905894079248699,
+      "joint": 5.662919834805938
+    },
+    "B07MF1SRM6_ATVPDKIKX0DER": {
+      "target_kg": 23.10144056,
+      "has_parts": true,
+      "structure": 27.755277012479404,
+      "image": 42.42096292916442,
+      "joint": 38.15239303474069
+    },
+    "B07HK3TN5H_ATVPDKIKX0DER": {
+      "target_kg": 4.5994228800000005,
+      "has_parts": true,
+      "structure": 1.6541645537632954,
+      "image": 0.8362693077486653,
+      "joint": 0.9917547654744813
+    },
+    "B07HSKY884_ATVPDKIKX0DER": {
+      "target_kg": 67.585208,
+      "has_parts": true,
+      "structure": 5.936466183207687,
+      "image": 5.078703669720611,
+      "joint": 5.2807627306451765
+    },
+    "B07B4SC9RP_ATVPDKIKX0DER": {
+      "target_kg": 17.2818552,
+      "has_parts": true,
+      "structure": 15.977822948212813,
+      "image": 25.11829950594024,
+      "joint": 22.432210778011452
+    },
+    "B07CPLZ69W": {
+      "target_kg": 9.07184,
+      "has_parts": true,
+      "structure": 12.411458816326128,
+      "image": 17.13306472755166,
+      "joint": 15.806364742375699
+    },
+    "B07QBMQ737_ATVPDKIKX0DER": {
+      "target_kg": 48.080752,
+      "has_parts": true,
+      "structure": 30.06895877443472,
+      "image": 18.164117160225658,
+      "joint": 20.60346756299767
+    },
+    "B075HWDT12_ATVPDKIKX0DER": {
+      "target_kg": 0.7030676,
+      "has_parts": true,
+      "structure": 0.7701080611033221,
+      "image": 0.734026962096998,
+      "joint": 0.7428855772178016
+    },
+    "B006ZT4VA0_ATVPDKIKX0DER": {
+      "target_kg": 0.0856,
+      "has_parts": true,
+      "structure": 0.18941925784449348,
+      "image": 0.6999243117638936,
+      "joint": 0.5318274693333371
+    },
+    "B07S74D9T7_ATVPDKIKX0DER": {
+      "target_kg": 2.89845288,
+      "has_parts": true,
+      "structure": 2.318900818161272,
+      "image": 1.44587592106771,
+      "joint": 1.6271171116792864
+    },
+    "B07QF9Y234_ATVPDKIKX0DER": {
+      "target_kg": 40.3243288,
+      "has_parts": true,
+      "structure": 19.315957802449763,
+      "image": 35.84240928116485,
+      "joint": 30.709797874277264
+    },
+    "B07TQ79FFZ_A1RKKUPIHCS9HS": {
+      "target_kg": 35.0,
+      "has_parts": true,
+      "structure": 26.73401987953113,
+      "image": 17.253200984203357,
+      "joint": 19.24945011192534
+    },
+    "B07YM19Q9K_ATVPDKIKX0DER": {
+      "target_kg": 15.648924,
+      "has_parts": false,
+      "structure": 17.41845803980086,
+      "image": 20.973885294551074,
+      "joint": 20.02219068164772
+    },
+    "B07H8SH3WJ_A1RKKUPIHCS9HS": {
+      "target_kg": 42.0,
+      "has_parts": true,
+      "structure": 24.269594486803722,
+      "image": 84.52279270318455,
+      "joint": 64.22343414681166
+    },
+    "B07Y2C57KD_ATVPDKIKX0DER": {
+      "target_kg": 25.990821599999997,
+      "has_parts": false,
+      "structure": 16.465766937451704,
+      "image": 70.19393375702826,
+      "joint": 53.33585578485404
+    },
+    "B07B4WKMRB": {
+      "target_kg": 9.979023999999999,
+      "has_parts": true,
+      "structure": 9.256696638328238,
+      "image": 2.5742991793726366,
+      "joint": 3.387968251537254
+    },
+    "B075YMY2J7_ATVPDKIKX0DER": {
+      "target_kg": 6.9853168,
+      "has_parts": true,
+      "structure": 8.279606260903115,
+      "image": 17.85860247472706,
+      "joint": 14.736285389929819
+    },
+    "B074VMF3JW": {
+      "target_kg": 0.453592,
+      "has_parts": true,
+      "structure": 0.6691222777685888,
+      "image": 0.6074370723888732,
+      "joint": 0.6223036420171532
+    },
+    "B07S95P9P1_ATVPDKIKX0DER": {
+      "target_kg": 1.94137376,
+      "has_parts": true,
+      "structure": 2.8832110330885063,
+      "image": 2.203740894952368,
+      "joint": 2.3568910434806862
+    },
+    "B073NZS57V_ATVPDKIKX0DER": {
+      "target_kg": 3.628736,
+      "has_parts": true,
+      "structure": 3.987772229988198,
+      "image": 0.3084152858820494,
+      "joint": 0.40589734294667895
+    },
+    "B07VGFXLFQ_ATVPDKIKX0DER": {
+      "target_kg": 1.1974828800000001,
+      "has_parts": true,
+      "structure": 1.626639897970025,
+      "image": 1.8725601752896313,
+      "joint": 1.8077971283365055
+    },
+    "B014I8UQJY_ATVPDKIKX0DER": {
+      "target_kg": 0.1187,
+      "has_parts": true,
+      "structure": 4.493076259558908,
+      "image": 0.14810233757176525,
+      "joint": 0.19491363773571777
+    },
+    "B07JL5PT18": {
+      "target_kg": 0.680388,
+      "has_parts": true,
+      "structure": 3.1529747779128794,
+      "image": 0.3433365414292232,
+      "joint": 0.45185629987198744
+    },
+    "B07RJWX5CZ_ATVPDKIKX0DER": {
+      "target_kg": 1.9504456,
+      "has_parts": true,
+      "structure": 2.1377606861294844,
+      "image": 5.309222267364772,
+      "joint": 4.229246045582904
+    },
+    "B07QZ77FGN_APJ6JRA9NG5V4": {
+      "target_kg": 45.0,
+      "has_parts": true,
+      "structure": 26.60433084253138,
+      "image": 7.57183929705553,
+      "joint": 9.965100929107251
+    },
+    "B07MF1TZGD": {
+      "target_kg": 0.3175144,
+      "has_parts": true,
+      "structure": 0.7659159835977523,
+      "image": 0.7677191700520675,
+      "joint": 0.7672679758390629
+    },
+    "B007IHF36E": {
+      "target_kg": 19.998871280000003,
+      "has_parts": true,
+      "structure": 31.684088723145038,
+      "image": 39.89498891335779,
+      "joint": 37.66162603880806
+    },
+    "B082XD1PKG_ATVPDKIKX0DER": {
+      "target_kg": 6.735841199999999,
+      "has_parts": true,
+      "structure": 4.196551145143423,
+      "image": 23.987541700042193,
+      "joint": 18.22659019474773
+    },
+    "B01LP0UQX4_ATVPDKIKX0DER": {
+      "target_kg": 1.1113004,
+      "has_parts": true,
+      "structure": 0.5187168262382684,
+      "image": 1.593190013230257,
+      "joint": 1.2105626260760822
+    },
+    "B07B4ZK8BR_ATVPDKIKX0DER": {
+      "target_kg": 7.0760352,
+      "has_parts": true,
+      "structure": 8.110558316855464,
+      "image": 4.5258134655925275,
+      "joint": 5.236428471258451
+    },
+    "B082VGJ58Z_ATVPDKIKX0DER": {
+      "target_kg": 32.50440272,
+      "has_parts": true,
+      "structure": 31.576833647227982,
+      "image": 4.144520398474407,
+      "joint": 5.454495592583676
+    },
+    "B07HSHYZKN_ATVPDKIKX0DER": {
+      "target_kg": 52.9795456,
+      "has_parts": true,
+      "structure": 24.459167107310144,
+      "image": 40.8607853534946,
+      "joint": 35.941024146831694
+    },
+    "B07WBYQQ8F_ATVPDKIKX0DER": {
+      "target_kg": 8.7996848,
+      "has_parts": true,
+      "structure": 5.4798583163289605,
+      "image": 8.600640422196436,
+      "joint": 7.684054308530059
+    },
+    "B088HFR6W1_ATVPDKIKX0DER": {
+      "target_kg": 1.84611944,
+      "has_parts": true,
+      "structure": 3.0275628499895055,
+      "image": 2.6072445627475647,
+      "joint": 2.7065098981304367
+    },
+    "B074DZHYS6_ATVPDKIKX0DER": {
+      "target_kg": 15.87572,
+      "has_parts": true,
+      "structure": 3.9980949226988423,
+      "image": 14.134061950199088,
+      "joint": 10.739564652971609
+    },
+    "B07GFDXXDL_A1F83G8C2ARO7P": {
+      "target_kg": 24.5,
+      "has_parts": true,
+      "structure": 31.193611346732293,
+      "image": 29.374537318660405,
+      "joint": 29.819110903359906
+    },
+    "B073G856N6_ATVPDKIKX0DER": {
+      "target_kg": 39.008912,
+      "has_parts": true,
+      "structure": 37.07378896926301,
+      "image": 38.05561814803058,
+      "joint": 37.80774968119484
+    },
+    "B079L8TCVJ_ATVPDKIKX0DER": {
+      "target_kg": 0.29029888,
+      "has_parts": true,
+      "structure": 1.1386739511476112,
+      "image": 1.6290744916018178,
+      "joint": 1.4895516057104268
+    },
+    "B07HSBJ7FW_ATVPDKIKX0DER": {
+      "target_kg": 19.0055048,
+      "has_parts": true,
+      "structure": 32.658937001595575,
+      "image": 29.345349169845004,
+      "joint": 30.140813677829016
+    },
+    "B07QBQDGJ7_ATVPDKIKX0DER": {
+      "target_kg": 29.48348,
+      "has_parts": true,
+      "structure": 31.89302901203812,
+      "image": 29.152200687305523,
+      "joint": 29.81449452831394
+    },
+    "B07YM1FZTN_ATVPDKIKX0DER": {
+      "target_kg": 16.465389599999998,
+      "has_parts": false,
+      "structure": 17.18814363658509,
+      "image": 12.072261273826797,
+      "joint": 13.187082194654343
+    },
+    "B07BG69MRW_ATVPDKIKX0DER": {
+      "target_kg": 0.226796,
+      "has_parts": true,
+      "structure": 63.85629042715588,
+      "image": 45.88107654690432,
+      "joint": 49.834042827710206
+    },
+    "B07DMGM9T6": {
+      "target_kg": 21.318824,
+      "has_parts": true,
+      "structure": 9.2751322808364,
+      "image": 19.37167973828029,
+      "joint": 16.114078997783995
+    },
+    "B073WHXXM9": {
+      "target_kg": 4.53592,
+      "has_parts": true,
+      "structure": 1.170304081763913,
+      "image": 5.572488113773778,
+      "joint": 4.234175326714648
+    },
+    "B07KR4BT31_ATVPDKIKX0DER": {
+      "target_kg": 4.64024616,
+      "has_parts": true,
+      "structure": 5.102962404124619,
+      "image": 1.8360640583829864,
+      "joint": 2.3706719661815256
+    },
+    "B07XKGLMR8_ATVPDKIKX0DER": {
+      "target_kg": 17.7808064,
+      "has_parts": true,
+      "structure": 15.989957700173129,
+      "image": 5.1785320827496815,
+      "joint": 6.815331499347602
+    },
+    "B07Y3QXV1Q": {
+      "target_kg": 9.98809584,
+      "has_parts": true,
+      "structure": 9.190088044072203,
+      "image": 15.655352712032375,
+      "joint": 13.703359788622492
+    },
+    "B082Q91XSS_ATVPDKIKX0DER": {
+      "target_kg": 62.142103999999996,
+      "has_parts": true,
+      "structure": 57.243877749827014,
+      "image": 43.68636456533225,
+      "joint": 46.74032099520049
+    },
+    "B07QCMB7LV_ATVPDKIKX0DER": {
+      "target_kg": 46.9014128,
+      "has_parts": true,
+      "structure": 53.077972285016536,
+      "image": 44.56093209154843,
+      "joint": 46.55263634025701
+    },
+    "B07WJWRY82": {
+      "target_kg": 5.74701064,
+      "has_parts": true,
+      "structure": 4.189390622830582,
+      "image": 4.609045433924223,
+      "joint": 4.500346529320017
+    },
+    "B00DUGZFA6_ATVPDKIKX0DER": {
+      "target_kg": 0.34926584,
+      "has_parts": true,
+      "structure": 0.8431869426941396,
+      "image": 0.5485170635301068,
+      "joint": 0.6107642028086764
+    },
+    "B07QV194QK_A1F83G8C2ARO7P": {
+      "target_kg": 32.0,
+      "has_parts": true,
+      "structure": 2.117094276955572,
+      "image": 4.681098019594659,
+      "joint": 3.838803223963074
+    },
+    "B07SX38JWP": {
+      "target_kg": 17.8,
+      "has_parts": true,
+      "structure": 21.18230140706395,
+      "image": 17.96599023720684,
+      "joint": 18.72111259882621
+    },
+    "B07HK8YJ69_ATVPDKIKX0DER": {
+      "target_kg": 7.2121128,
+      "has_parts": true,
+      "structure": 2.5790121755144697,
+      "image": 6.419995927904244,
+      "joint": 5.111100405330968
+    },
+    "B076YRSWH3_A1F83G8C2ARO7P": {
+      "target_kg": 0.29596878,
+      "has_parts": true,
+      "structure": 0.3289777449503163,
+      "image": 0.32879354962092583,
+      "joint": 0.32883958878245295
+    },
+    "B0714MJLPX": {
+      "target_kg": 12.700576,
+      "has_parts": true,
+      "structure": 16.620115490518387,
+      "image": 8.32042079796244,
+      "joint": 9.891621218711489
+    },
+    "B07T9FMMV5_ATVPDKIKX0DER": {
+      "target_kg": 16.1932344,
+      "has_parts": true,
+      "structure": 12.712443259968968,
+      "image": 18.171153418922216,
+      "joint": 16.618588271635872
+    },
+    "B07QFB5MW6_ATVPDKIKX0DER": {
+      "target_kg": 1.360776,
+      "has_parts": true,
+      "structure": 1.0154411524766072,
+      "image": 0.7424019694522972,
+      "joint": 0.8028659256731437
+    },
+    "B07HSKKD1S_ATVPDKIKX0DER": {
+      "target_kg": 8.164656,
+      "has_parts": true,
+      "structure": 6.7517825954607655,
+      "image": 6.189897553684717,
+      "joint": 6.325825511558875
+    },
+    "B07B8PXQ1Q_ATVPDKIKX0DER": {
+      "target_kg": 0.907184,
+      "has_parts": true,
+      "structure": 0.9130445493814635,
+      "image": 2.4925611501463956,
+      "joint": 1.9391319333313266
+    },
+    "B075X5HB6G_ATVPDKIKX0DER": {
+      "target_kg": 44.452016,
+      "has_parts": true,
+      "structure": 29.216879120781947,
+      "image": 32.31687576337196,
+      "joint": 31.51232757999757
+    },
+    "B0857JYVBP_ATVPDKIKX0DER": {
+      "target_kg": 6.00102216,
+      "has_parts": true,
+      "structure": 7.231839928112302,
+      "image": 5.546298446879019,
+      "joint": 5.926722969626146
+    },
+    "B07B4MPXKJ_ATVPDKIKX0DER": {
+      "target_kg": 11.3398,
+      "has_parts": true,
+      "structure": 37.10965642157878,
+      "image": 42.55806350452455,
+      "joint": 41.125209853318445
+    },
+    "B014RWWURC": {
+      "target_kg": 0.117,
+      "has_parts": true,
+      "structure": 1.2741286702868015,
+      "image": 0.0916261266649885,
+      "joint": 0.12058676421128478
+    },
+    "B00WRDRRWW_ATVPDKIKX0DER": {
+      "target_kg": 2.00034072,
+      "has_parts": true,
+      "structure": 2.3690487237491125,
+      "image": 1.1583279635921735,
+      "joint": 1.3852148985201511
+    },
+    "B0831PL1FX_ATVPDKIKX0DER": {
+      "target_kg": 8.13290456,
+      "has_parts": true,
+      "structure": 5.057274344492033,
+      "image": 5.827876897123866,
+      "joint": 5.624862435346715
+    },
+    "B07Y3P85T1": {
+      "target_kg": 8.49124224,
+      "has_parts": true,
+      "structure": 12.802399445767772,
+      "image": 8.450708253239336,
+      "joint": 9.375461934168934
+    },
+    "B07124WCKT_ATVPDKIKX0DER": {
+      "target_kg": 75.749864,
+      "has_parts": true,
+      "structure": 49.85643773095557,
+      "image": 54.60555489114235,
+      "joint": 53.37746318560611
+    },
+    "B07BG61THW_ATVPDKIKX0DER": {
+      "target_kg": 1.57850016,
+      "has_parts": true,
+      "structure": 1.65333948271035,
+      "image": 1.1627562389417774,
+      "joint": 1.2697172449999388
+    },
+    "B07YLZQ8W6_ATVPDKIKX0DER": {
+      "target_kg": 15.4674872,
+      "has_parts": false,
+      "structure": 16.329139966962643,
+      "image": 10.599937975989826,
+      "joint": 11.809141350514892
+    },
+    "B07SVY2HW1": {
+      "target_kg": 23.2,
+      "has_parts": true,
+      "structure": 1.3947339744521112,
+      "image": 14.06323392070904,
+      "joint": 10.685746988620688
+    },
+    "B075X2LLTY_ATVPDKIKX0DER": {
+      "target_kg": 3.33843712,
+      "has_parts": true,
+      "structure": 2.8942669714378373,
+      "image": 2.2112885631288504,
+      "joint": 2.3652045835497884
+    },
+    "B073P16J7Y": {
+      "target_kg": 2.1364183199999998,
+      "has_parts": true,
+      "structure": 1.532613205708907,
+      "image": 2.1456885853864667,
+      "joint": 1.9725733390037223
+    },
+    "B07W422B7M_A1F83G8C2ARO7P": {
+      "target_kg": 6.0,
+      "has_parts": true,
+      "structure": 5.658869660088017,
+      "image": 11.668594372181682,
+      "joint": 9.737474424502663
+    },
+    "B07W6NTK71_ATVPDKIKX0DER": {
+      "target_kg": 8.7996848,
+      "has_parts": true,
+      "structure": 4.5787098900397805,
+      "image": 9.569335432479335,
+      "joint": 7.958791279032365
+    },
+    "B01IJ5A2UA_A1F83G8C2ARO7P": {
+      "target_kg": 0.165844575,
+      "has_parts": true,
+      "structure": 1.7204145041233445,
+      "image": 0.34031831266348017,
+      "joint": 0.44788408742824737
+    },
+    "B07JKJSJ8G": {
+      "target_kg": 0.6350288,
+      "has_parts": true,
+      "structure": 0.5142045986834696,
+      "image": 0.5642666364753836,
+      "joint": 0.551311775102069
+    },
+    "B07WQ4CWS8": {
+      "target_kg": 1.8551912799999999,
+      "has_parts": true,
+      "structure": 1.8189723969787386,
+      "image": 7.087361453314747,
+      "joint": 5.385230149340078
+    },
+    "B07GFS1W12_A1PA6795UKMFR9": {
+      "target_kg": 67.0,
+      "has_parts": true,
+      "structure": 8.621578220981236,
+      "image": 25.144467793374368,
+      "joint": 19.24103940621866
+    },
+    "B075HXJY3Y_ATVPDKIKX0DER": {
+      "target_kg": 0.2041164,
+      "has_parts": true,
+      "structure": 0.46058239530166467,
+      "image": 1.6896603175142997,
+      "joint": 1.2838642058767655
+    },
+    "B0842H1DPF_ATVPDKIKX0DER": {
+      "target_kg": 5.53835832,
+      "has_parts": true,
+      "structure": 7.397490452912356,
+      "image": 3.2715271465894924,
+      "joint": 4.011751277649916
+    },
+    "B07Y3QM18T": {
+      "target_kg": 13.471682399999999,
+      "has_parts": true,
+      "structure": 3.883022032612514,
+      "image": 10.393083364010863,
+      "joint": 8.125512669591469
+    },
+    "B07WMRJ68R_ATVPDKIKX0DER": {
+      "target_kg": 4.4905608,
+      "has_parts": true,
+      "structure": 5.009716926091851,
+      "image": 3.410881764793455,
+      "joint": 3.754942540131504
+    },
+    "B076YFLYFR_A1F83G8C2ARO7P": {
+      "target_kg": 0.103475675,
+      "has_parts": true,
+      "structure": 0.29826191940576596,
+      "image": 0.2998853482613796,
+      "joint": 0.2994786645206645
+    },
+    "B07QBQD983_ATVPDKIKX0DER": {
+      "target_kg": 29.48348,
+      "has_parts": true,
+      "structure": 55.91102561795708,
+      "image": 31.49154713316284,
+      "joint": 36.35129297036831
+    },
+    "B07ZVM8FJH_ATVPDKIKX0DER": {
+      "target_kg": 4.53592,
+      "has_parts": true,
+      "structure": 8.293430262959367,
+      "image": 5.1084552824726375,
+      "joint": 5.766346642588799
+    },
+    "B07WQ4P373": {
+      "target_kg": 6.4682219199999995,
+      "has_parts": true,
+      "structure": 6.288448683240582,
+      "image": 4.91510297979072,
+      "joint": 5.227395340418813
+    },
+    "B075QDV397_ATVPDKIKX0DER": {
+      "target_kg": 47.808596800000004,
+      "has_parts": true,
+      "structure": 42.02198139876477,
+      "image": 29.066768518505167,
+      "joint": 31.87254152068821
+    },
+    "B07TLDMQS2_APJ6JRA9NG5V4": {
+      "target_kg": 26.0,
+      "has_parts": true,
+      "structure": 35.244060987731004,
+      "image": 24.723743581132105,
+      "joint": 27.015136052822875
+    },
+    "B07B4FZXL1_ATVPDKIKX0DER": {
+      "target_kg": 11.3398,
+      "has_parts": true,
+      "structure": 15.053197941312147,
+      "image": 2.4871334469326185,
+      "joint": 3.273251696252976
+    },
+    "B07B8PXSGV_ATVPDKIKX0DER": {
+      "target_kg": 1.01151016,
+      "has_parts": true,
+      "structure": 1.1270262500727066,
+      "image": 1.0733131701453593,
+      "joint": 1.086496550182639
+    },
+    "B07HZ6YX5Q_ATVPDKIKX0DER": {
+      "target_kg": 77.11064,
+      "has_parts": true,
+      "structure": 44.372902154097,
+      "image": 68.38744129926438,
+      "joint": 61.37785753190278
+    },
+    "B07WFNV31N_ATVPDKIKX0DER": {
+      "target_kg": 2.79412672,
+      "has_parts": true,
+      "structure": 3.333299727750407,
+      "image": 2.908148385996715,
+      "joint": 3.009061149204318
+    },
+    "B07HPMBN4B_ATVPDKIKX0DER": {
+      "target_kg": 0.8845044,
+      "has_parts": true,
+      "structure": 1.8113041457265586,
+      "image": 0.8618648468568683,
+      "joint": 1.0377129125469207
+    },
+    "B01LP0V4JY_ATVPDKIKX0DER": {
+      "target_kg": 1.0659412,
+      "has_parts": true,
+      "structure": 1.4453492424489431,
+      "image": 1.168415067984375,
+      "joint": 1.232227967362006
+    },
+    "B07JYN8DBM": {
+      "target_kg": 12.246984,
+      "has_parts": true,
+      "structure": 9.484779822375346,
+      "image": 16.410102318236476,
+      "joint": 14.30837389037534
+    },
+    "B07LC84ZYV_A21TJRUUN4KGV": {
+      "target_kg": 135.0,
+      "has_parts": true,
+      "structure": 60.93433781664266,
+      "image": 38.672011594108575,
+      "joint": 43.32744667588669
+    },
+    "B075NHVPPN_A1F83G8C2ARO7P": {
+      "target_kg": 0.84,
+      "has_parts": true,
+      "structure": 2.9854138053991455,
+      "image": 3.8832875283730623,
+      "joint": 3.636225391959354
+    },
+    "B07VD8BKJQ": {
+      "target_kg": 1.1974828800000001,
+      "has_parts": true,
+      "structure": 1.5183915564662698,
+      "image": 1.1015769560279423,
+      "joint": 1.1935952360248854
+    },
+    "B07B4ZFR24_ATVPDKIKX0DER": {
+      "target_kg": 77.11064,
+      "has_parts": true,
+      "structure": 73.53797721916519,
+      "image": 41.080699543586796,
+      "joint": 47.51779643702213
+    },
+    "B088HFYZS4_ATVPDKIKX0DER": {
+      "target_kg": 1.8511089520000001,
+      "has_parts": true,
+      "structure": 2.4838001065366737,
+      "image": 8.37966496516038,
+      "joint": 6.3671684743332655
+    },
+    "B07TR659GF_A1F83G8C2ARO7P": {
+      "target_kg": 32.0,
+      "has_parts": true,
+      "structure": 30.643283865040637,
+      "image": 26.8902076469475,
+      "joint": 27.78301945139561
+    },
+    "B075HWDS7Y_ATVPDKIKX0DER": {
+      "target_kg": 0.98883056,
+      "has_parts": true,
+      "structure": 0.8448649655673902,
+      "image": 3.1041887630047107,
+      "joint": 2.358673397129653
+    },
+    "B071JLRR3T_A1RKKUPIHCS9HS": {
+      "target_kg": 20.41164,
+      "has_parts": true,
+      "structure": 10.982024159219483,
+      "image": 5.565760627557547,
+      "joint": 6.596506456909154
+    },
+    "B07V152DQ8_A1F83G8C2ARO7P": {
+      "target_kg": 3.85999989509583,
+      "has_parts": true,
+      "structure": 13.156928206333088,
+      "image": 12.39342606936288,
+      "joint": 12.580044041356892
+    },
+    "B074VLRNLC": {
+      "target_kg": 0.453592,
+      "has_parts": true,
+      "structure": 1.2104618766065898,
+      "image": 0.526252074643173,
+      "joint": 0.6480867533174177
+    },
+    "B07GF7CSLF_A1F83G8C2ARO7P": {
+      "target_kg": 8.6,
+      "has_parts": true,
+      "structure": 7.352299134753746,
+      "image": 3.8767833721459364,
+      "joint": 4.549455722791563
+    },
+    "B07HZ6LL1P_ATVPDKIKX0DER": {
+      "target_kg": 9.979023999999999,
+      "has_parts": true,
+      "structure": 15.743501497283237,
+      "image": 26.558014800226392,
+      "joint": 23.303547508842176
+    },
+    "B075HX2J97": {
+      "target_kg": 2.721552,
+      "has_parts": true,
+      "structure": 3.293057460673453,
+      "image": 3.6951655901353164,
+      "joint": 3.590254671714979
+    },
+    "B07JLGBYYD_ATVPDKIKX0DER": {
+      "target_kg": 0.680388,
+      "has_parts": true,
+      "structure": 1.4357368537576922,
+      "image": 0.5771976307700096,
+      "joint": 0.7248733228488381
+    },
+    "B075YLKB8C": {
+      "target_kg": 4.53592,
+      "has_parts": true,
+      "structure": 1.5170038324457829,
+      "image": 3.919038812653116,
+      "joint": 3.091230166547311
+    },
+    "B082QB8SZB_ATVPDKIKX0DER": {
+      "target_kg": 62.142103999999996,
+      "has_parts": true,
+      "structure": 53.80395131282301,
+      "image": 47.18950465616656,
+      "joint": 48.762684521009874
+    },
+    "B089LB2454_ATVPDKIKX0DER": {
+      "target_kg": 1.7690088,
+      "has_parts": true,
+      "structure": 0.43932780162130003,
+      "image": 1.5675610916610294,
+      "joint": 1.1910888568830171
+    },
+    "B07TBGH48M_ATVPDKIKX0DER": {
+      "target_kg": 12.246984,
+      "has_parts": true,
+      "structure": 12.38692924557127,
+      "image": 14.32316188417276,
+      "joint": 13.812429984039259
+    },
+    "B084W2SXW9_ATVPDKIKX0DER": {
+      "target_kg": 8.00136288,
+      "has_parts": true,
+      "structure": 8.405427112721286,
+      "image": 9.676484823304598,
+      "joint": 9.341748296053087
+    },
+    "B0825CXG81_ATVPDKIKX0DER": {
+      "target_kg": 0.6123492,
+      "has_parts": true,
+      "structure": 5.222277532003519,
+      "image": 3.09417134581903,
+      "joint": 3.5267384848370393
+    },
+    "B07K6RH9HS_A1PA6795UKMFR9": {
+      "target_kg": 51.0,
+      "has_parts": true,
+      "structure": 29.615421598300415,
+      "image": 17.733369716029827,
+      "joint": 20.15918318770998
+    },
+    "B07B4SC7DG_ATVPDKIKX0DER": {
+      "target_kg": 86.18248,
+      "has_parts": true,
+      "structure": 15.048476163955526,
+      "image": 40.67027507589681,
+      "joint": 31.71983821213534
+    },
+    "B07QVC3SLK_ATVPDKIKX0DER": {
+      "target_kg": 4.49963264,
+      "has_parts": true,
+      "structure": 6.563483269665289,
+      "image": 9.513277375515251,
+      "joint": 8.670241916009866
+    },
+    "B07DTF7N9Q_ATVPDKIKX0DER": {
+      "target_kg": 1.7962243199999999,
+      "has_parts": true,
+      "structure": 0.9907560827919973,
+      "image": 1.427928927208174,
+      "joint": 1.303231686024579
+    },
+    "B000S6N026_A1F83G8C2ARO7P": {
+      "target_kg": 6.68,
+      "has_parts": true,
+      "structure": 7.498329597391225,
+      "image": 7.204960513693553,
+      "joint": 7.277208789272381
+    },
+    "B07QC8CGKK_ATVPDKIKX0DER": {
+      "target_kg": 2.26796,
+      "has_parts": true,
+      "structure": 2.2407294068819015,
+      "image": 4.252532919742641,
+      "joint": 3.623123322551983
+    },
+    "B07DBHB6D4_ATVPDKIKX0DER": {
+      "target_kg": 4.4905608,
+      "has_parts": true,
+      "structure": 3.972982654161096,
+      "image": 3.8423147235415605,
+      "joint": 3.874573184912868
+    },
+    "B07H93GTMN_A1PA6795UKMFR9": {
+      "target_kg": 52.0,
+      "has_parts": true,
+      "structure": 68.33102071212298,
+      "image": 21.372821799682683,
+      "joint": 28.1282153540269
+    },
+    "B07H8SSY4F_A1F83G8C2ARO7P": {
+      "target_kg": 56.0,
+      "has_parts": true,
+      "structure": 31.679995740272716,
+      "image": 28.83983763775473,
+      "joint": 29.525066668097857
+    },
+    "B07B4Z9BS4_ATVPDKIKX0DER": {
+      "target_kg": 1.3154168,
+      "has_parts": true,
+      "structure": 2.4182657951128324,
+      "image": 3.1879396840051095,
+      "joint": 2.9751480373427914
+    },
+    "B078JGHZT3_ATVPDKIKX0DER": {
+      "target_kg": 0.6168851200000001,
+      "has_parts": true,
+      "structure": 0.8169709412151677,
+      "image": 0.36866362045820295,
+      "joint": 0.4498050895477076
+    },
+    "B07YPV3KTC_ATVPDKIKX0DER": {
+      "target_kg": 31.19805776,
+      "has_parts": true,
+      "structure": 15.74920246955314,
+      "image": 19.726209612133037,
+      "joint": 18.646502095153586
+    },
+    "B00JM5TTWO": {
+      "target_kg": 0.23586784,
+      "has_parts": true,
+      "structure": 2.2404707651147326,
+      "image": 0.15837687921984991,
+      "joint": 0.20843569499376008
+    },
+    "B082JHJKGM": {
+      "target_kg": 0.7711064,
+      "has_parts": true,
+      "structure": 3.171889579865279,
+      "image": 0.7018919181064786,
+      "joint": 0.9237417133213154
+    },
+    "B074VMF3L5": {
+      "target_kg": 0.453592,
+      "has_parts": true,
+      "structure": 1.039150799809685,
+      "image": 1.4370463395190625,
+      "joint": 1.3251734423062644
+    },
+    "B07BL7H8N5_ATVPDKIKX0DER": {
+      "target_kg": 1.8960145599999998,
+      "has_parts": true,
+      "structure": 1.0688071920441253,
+      "image": 1.1187653768889019,
+      "joint": 1.10606106563603
+    },
+    "B08GGSFH94": {
+      "target_kg": 3.0,
+      "has_parts": true,
+      "structure": 5.040863613001396,
+      "image": 4.6769252854034296,
+      "joint": 4.765369280271859
+    },
+    "B07P8STD74_ATVPDKIKX0DER": {
+      "target_kg": 37.920291199999994,
+      "has_parts": true,
+      "structure": 23.44224960847949,
+      "image": 18.59394398594046,
+      "joint": 19.70282319667502
+    },
+    "B07FFSKHK4_A1F83G8C2ARO7P": {
+      "target_kg": 0.19050863999999998,
+      "has_parts": true,
+      "structure": 1.313437089588686,
+      "image": 1.0756054802770045,
+      "joint": 1.130686153355522
+    },
+    "B07SSSBKPQ": {
+      "target_kg": 30.0,
+      "has_parts": true,
+      "structure": 1.5866811545954327,
+      "image": 21.269137899263185,
+      "joint": 16.161049978904916
+    },
+    "B07SRSJ5G3": {
+      "target_kg": 17.4,
+      "has_parts": true,
+      "structure": 24.801866253946542,
+      "image": 15.239675975226884,
+      "joint": 17.212854202422314
+    },
+    "B07RT5N887_A13V1IB3VIYZZH": {
+      "target_kg": 13.2,
+      "has_parts": true,
+      "structure": 6.825850763660432,
+      "image": 13.984979232285106,
+      "joint": 11.689220917690372
+    },
+    "B07SCC6M4Q_ATVPDKIKX0DER": {
+      "target_kg": 2.89845288,
+      "has_parts": true,
+      "structure": 2.318900818161272,
+      "image": 1.5686098039298257,
+      "joint": 1.7296440500978711
+    },
+    "B07JZ7RK6W": {
+      "target_kg": 26.761928,
+      "has_parts": true,
+      "structure": 17.776866568906176,
+      "image": 25.471246088286083,
+      "joint": 23.280990144539647
+    },
+    "B08DW4FPM7_ATVPDKIKX0DER": {
+      "target_kg": 9.979023999999999,
+      "has_parts": true,
+      "structure": 10.322906177015014,
+      "image": 12.891386499440157,
+      "joint": 12.194815019767153
+    },
+    "B01N2PLWIL": {
+      "target_kg": 0.57152592,
+      "has_parts": true,
+      "structure": 2.0561306302858533,
+      "image": 1.4431606621548363,
+      "joint": 1.5766986197560793
+    },
+    "B078JGLJMQ_ATVPDKIKX0DER": {
+      "target_kg": 0.71667536,
+      "has_parts": true,
+      "structure": 0.9048491205977202,
+      "image": 0.3257931708484061,
+      "joint": 0.4205818476603433
+    },
+    "B07TZ9BMJZ": {
+      "target_kg": 8.74499988555908,
+      "has_parts": true,
+      "structure": 14.100621580539373,
+      "image": 14.06936812442012,
+      "joint": 14.077174988193104
+    },
+    "B0828DTSRD_ATVPDKIKX0DER": {
+      "target_kg": 0.3628736,
+      "has_parts": true,
+      "structure": 2.4043706914938667,
+      "image": 0.8881286598688116,
+      "joint": 1.1392191324948828
+    },
+    "B073GCWSTH_ATVPDKIKX0DER": {
+      "target_kg": 17.236496,
+      "has_parts": true,
+      "structure": 18.389855669181593,
+      "image": 19.388527732082476,
+      "joint": 19.133886978820943
+    },
+    "B01LR5RSG0_ATVPDKIKX0DER": {
+      "target_kg": 5.443104,
+      "has_parts": true,
+      "structure": 7.703961546962353,
+      "image": 5.707064840484272,
+      "joint": 6.151600615195516
+    },
+    "B01LONQ3TS": {
+      "target_kg": 0.011793392,
+      "has_parts": true,
+      "structure": 0.08581507669029224,
+      "image": 0.023255409941559863,
+      "joint": 0.030605840684643976
+    },
+    "B01IJ5A0PC_A1F83G8C2ARO7P": {
+      "target_kg": 0.165844575,
+      "has_parts": true,
+      "structure": 2.2076281342961295,
+      "image": 0.5137683319738235,
+      "joint": 0.6761571503886983
+    },
+    "B07VB3TJF3_ATVPDKIKX0DER": {
+      "target_kg": 1.1974828800000001,
+      "has_parts": true,
+      "structure": 2.128610755564995,
+      "image": 1.9355188499309897,
+      "joint": 1.9820842793934395
+    },
+    "B07DBB7FN6_ATVPDKIKX0DER": {
+      "target_kg": 28.122704,
+      "has_parts": true,
+      "structure": 17.08663174879588,
+      "image": 49.05096269465198,
+      "joint": 37.68337277208275
+    },
+    "B07B4Z7XVD_ATVPDKIKX0DER": {
+      "target_kg": 77.11064,
+      "has_parts": true,
+      "structure": 70.15997608234642,
+      "image": 60.73209600547157,
+      "joint": 62.963093917791475
+    },
+    "B01LONQ7R6": {
+      "target_kg": 0.009979024,
+      "has_parts": true,
+      "structure": 0.9582405437836574,
+      "image": 0.02921842389242165,
+      "joint": 0.03845360838424634
+    },
+    "B076YRSWGH_A1F83G8C2ARO7P": {
+      "target_kg": 0.29596878,
+      "has_parts": true,
+      "structure": 0.3564724281825747,
+      "image": 0.28382252233425836,
+      "joint": 0.30046343475814247
+    },
+    "B07B8NZQ68_ATVPDKIKX0DER": {
+      "target_kg": 1.03872568,
+      "has_parts": true,
+      "structure": 1.715491140969333,
+      "image": 0.285138755844386,
+      "joint": 0.37526370665240205
+    },
+    "B07HKGL3J8_ATVPDKIKX0DER": {
+      "target_kg": 7.2121128,
+      "has_parts": true,
+      "structure": 2.69421681008167,
+      "image": 7.523024884008034,
+      "joint": 5.819725613167089
+    },
+    "B07QC6VKWB_ATVPDKIKX0DER": {
+      "target_kg": 3.4019399999999997,
+      "has_parts": true,
+      "structure": 4.906299337812811,
+      "image": 2.390908378836043,
+      "joint": 2.8616117529317373
+    },
+    "B07TGQHR9H_ATVPDKIKX0DER": {
+      "target_kg": 10.477975200000001,
+      "has_parts": true,
+      "structure": 10.868351703666786,
+      "image": 15.336132303926066,
+      "joint": 14.071092106891681
+    },
+    "B07L8F4XLN": {
+      "target_kg": 24.94756,
+      "has_parts": true,
+      "structure": 20.04104411666271,
+      "image": 21.14018433984535,
+      "joint": 20.8598731678075
+    },
+    "B08BGFJZR2_A21TJRUUN4KGV": {
+      "target_kg": 0.9,
+      "has_parts": true,
+      "structure": 18.374186046765818,
+      "image": 3.6088714217938516,
+      "joint": 4.749541894309801
+    },
+    "B07QBQD97R_ATVPDKIKX0DER": {
+      "target_kg": 29.48348,
+      "has_parts": true,
+      "structure": 26.549476693085822,
+      "image": 36.46804279007856,
+      "joint": 33.68591380935977
+    },
+    "B073WHZKBF": {
+      "target_kg": 4.4905608,
+      "has_parts": true,
+      "structure": 1.1847953449751438,
+      "image": 4.912602708376384,
+      "joint": 3.73277084725304
+    },
+    "B07B4SC2KW_ATVPDKIKX0DER": {
+      "target_kg": 3.5380176,
+      "has_parts": true,
+      "structure": 1.0189340114441154,
+      "image": 1.22701009995034,
+      "joint": 1.1713120682465108
+    },
+    "B07GFG6JMM_A1F83G8C2ARO7P": {
+      "target_kg": 7.8,
+      "has_parts": true,
+      "structure": 4.728243499500484,
+      "image": 13.10040951611576,
+      "joint": 10.154033979745922
+    },
+    "B07D4BD47F_ATVPDKIKX0DER": {
+      "target_kg": 7.5432349599999995,
+      "has_parts": true,
+      "structure": 6.938533476578427,
+      "image": 4.490948690984464,
+      "joint": 5.006918150920648
+    },
+    "B073GGGF7H_ATVPDKIKX0DER": {
+      "target_kg": 17.236496,
+      "has_parts": true,
+      "structure": 14.27971631345118,
+      "image": 17.898544443303745,
+      "joint": 16.91582489002593
+    },
+    "B07B4W2MFM_ATVPDKIKX0DER": {
+      "target_kg": 88.45044,
+      "has_parts": true,
+      "structure": 15.273933298474143,
+      "image": 22.1160343518954,
+      "joint": 20.16128293173929
+    },
+    "B07SY36LZ3": {
+      "target_kg": 20.3,
+      "has_parts": true,
+      "structure": 1.1188793076200843,
+      "image": 21.64952836580661,
+      "joint": 16.450084229866267
+    },
+    "B07HPQYW7G_A1F83G8C2ARO7P": {
+      "target_kg": 60.0,
+      "has_parts": true,
+      "structure": 49.64924806771097,
+      "image": 57.374348868139485,
+      "joint": 55.33711280934465
+    },
+    "B017DORX3M_A1F83G8C2ARO7P": {
+      "target_kg": 1.23830616,
+      "has_parts": true,
+      "structure": 4.811315219521115,
+      "image": 1.8625960208466426,
+      "joint": 2.361320600126931
+    },
+    "B082L6NQZ7_ATVPDKIKX0DER": {
+      "target_kg": 0.6168851200000001,
+      "has_parts": true,
+      "structure": 0.7155359146928357,
+      "image": 1.258983472868341,
+      "joint": 1.0931326874803076
+    },
+    "B08G1VJ5RS": {
+      "target_kg": 4.69014128,
+      "has_parts": true,
+      "structure": 0.614356456234188,
+      "image": 1.0976301027073736,
+      "joint": 0.9493953789095303
+    },
+    "B07T9FMSSP_ATVPDKIKX0DER": {
+      "target_kg": 10.477975200000001,
+      "has_parts": true,
+      "structure": 9.187163852016507,
+      "image": 8.12347776838116,
+      "joint": 8.377257456151955
+    },
+    "B07GFFPKBG_A1F83G8C2ARO7P": {
+      "target_kg": 33.0,
+      "has_parts": true,
+      "structure": 20.866995825704496,
+      "image": 20.863523596245535,
+      "joint": 20.864391599440346
+    },
+    "B07QVRTT6J_A1PA6795UKMFR9": {
+      "target_kg": 17.0,
+      "has_parts": true,
+      "structure": 19.400197471449566,
+      "image": 43.192440430400396,
+      "joint": 35.359600112325076
+    },
+    "B07B51BJLK": {
+      "target_kg": 9.979023999999999,
+      "has_parts": true,
+      "structure": 1.1628960588058908,
+      "image": 11.544319261217835,
+      "joint": 8.77178574122834
+    },
+    "B074DZ6NJB_ATVPDKIKX0DER": {
+      "target_kg": 20.41164,
+      "has_parts": true,
+      "structure": 1.718753828873644,
+      "image": 10.836572189668038,
+      "joint": 8.234014259849394
+    },
+    "B07RRR2NDK": {
+      "target_kg": 5.6699,
+      "has_parts": true,
+      "structure": 2.957324889658426,
+      "image": 2.2440991319193473,
+      "joint": 2.4043976117331147
+    },
+    "B07PWRJT5R_ATVPDKIKX0DER": {
+      "target_kg": 6.43193456,
+      "has_parts": true,
+      "structure": 6.51476857789656,
+      "image": 1.1107333617024266,
+      "joint": 1.4618073126559248
+    },
+    "B07B4W5RF7_ATVPDKIKX0DER": {
+      "target_kg": 24.94756,
+      "has_parts": true,
+      "structure": 20.616676660726473,
+      "image": 18.26037991563028,
+      "joint": 18.822921094584903
+    },
+    "B07H8P3K2R_A1F83G8C2ARO7P": {
+      "target_kg": 32.0,
+      "has_parts": true,
+      "structure": 32.111807578430756,
+      "image": 25.108407189899168,
+      "joint": 26.701186519560352
+    },
+    "B074VLCFNC": {
+      "target_kg": 0.453592,
+      "has_parts": true,
+      "structure": 3.7917842647329496,
+      "image": 0.581447073944668,
+      "joint": 0.7652273839258438
+    },
+    "B07T9NM5QR_ATVPDKIKX0DER": {
+      "target_kg": 4.930545039999999,
+      "has_parts": true,
+      "structure": 5.778103202622925,
+      "image": 5.71365033073991,
+      "joint": 5.729695831812472
+    },
+    "B07TTYCKJS": {
+      "target_kg": 5.5,
+      "has_parts": true,
+      "structure": 2.9252018369977235,
+      "image": 4.760016403449311,
+      "joint": 4.214492607356138
+    },
+    "B07R1PVS26_ATVPDKIKX0DER": {
+      "target_kg": 4.49963264,
+      "has_parts": true,
+      "structure": 5.555546084630212,
+      "image": 5.47881816890513,
+      "joint": 5.4979002254420966
+    },
+    "B07QHK238C_ATVPDKIKX0DER": {
+      "target_kg": 0.9979024000000001,
+      "has_parts": true,
+      "structure": 3.668007371124287,
+      "image": 1.1580855723028158,
+      "joint": 1.5241263264829505
+    },
+    "B07WHRYJM7": {
+      "target_kg": 4.19119008,
+      "has_parts": true,
+      "structure": 4.929655805969069,
+      "image": 3.432009421897467,
+      "joint": 3.7572102887504677
+    },
+    "B07TX2D4WW_APJ6JRA9NG5V4": {
+      "target_kg": 5.41800022125244,
+      "has_parts": true,
+      "structure": 6.741092118834684,
+      "image": 15.17257361301459,
+      "joint": 12.387309977130375
+    },
+    "B017DOS5C0_A1F83G8C2ARO7P": {
+      "target_kg": 1.23830616,
+      "has_parts": true,
+      "structure": 2.116435682249124,
+      "image": 1.6422056076928337,
+      "joint": 1.7497335404100605
+    },
+    "B07B8TGC99_ATVPDKIKX0DER": {
+      "target_kg": 1.020582,
+      "has_parts": true,
+      "structure": 0.6976705356772361,
+      "image": 1.029037715937385,
+      "joint": 0.9337617181938972
+    },
+    "B089L9L87H_ATVPDKIKX0DER": {
+      "target_kg": 2.2226008,
+      "has_parts": true,
+      "structure": 1.3272122953057996,
+      "image": 0.9621709744917722,
+      "joint": 1.0427358081978684
+    },
+    "B079L7YJBB_ATVPDKIKX0DER": {
+      "target_kg": 0.5443104,
+      "has_parts": true,
+      "structure": 1.6107342170782175,
+      "image": 2.238115139052222,
+      "joint": 2.0614261921117767
+    },
+    "B07L9BVBCJ_ATVPDKIKX0DER": {
+      "target_kg": 2.91206064,
+      "has_parts": true,
+      "structure": 9.902963413150632,
+      "image": 20.177768644260766,
+      "joint": 16.888697123003375
+    },
+    "B07VD8CVJD": {
+      "target_kg": 1.1974828800000001,
+      "has_parts": true,
+      "structure": 1.9408304657370525,
+      "image": 1.84964630458337,
+      "joint": 1.8720326417298423
+    },
+    "B07TY5GXBQ_A1PA6795UKMFR9": {
+      "target_kg": 4.65000009536743,
+      "has_parts": true,
+      "structure": 10.593306353210213,
+      "image": 5.465497458910572,
+      "joint": 6.448818522670937
+    },
+    "B07H8JNCF3_A1PA6795UKMFR9": {
+      "target_kg": 24.0,
+      "has_parts": true,
+      "structure": 11.858149542890907,
+      "image": 19.6130069833258,
+      "joint": 17.29467351669476
+    },
+    "B07Y3QSCQ8": {
+      "target_kg": 14.968536,
+      "has_parts": true,
+      "structure": 8.044551376338886,
+      "image": 12.407700683079149,
+      "joint": 11.133813405788393
+    },
+    "B07B4VY11Z_ATVPDKIKX0DER": {
+      "target_kg": 56.699,
+      "has_parts": true,
+      "structure": 70.27541956287519,
+      "image": 68.18677588844686,
+      "joint": 68.70304386420023
+    },
+    "B07YLZRWKX_ATVPDKIKX0DER": {
+      "target_kg": 19.27766,
+      "has_parts": false,
+      "structure": 17.354650875396093,
+      "image": 8.38624579659422,
+      "joint": 10.058417560152606
+    },
+    "B07B8NZQF3_ATVPDKIKX0DER": {
+      "target_kg": 1.020582,
+      "has_parts": true,
+      "structure": 0.5037284747398143,
+      "image": 1.1917370839784476,
+      "joint": 0.9609138778177139
+    },
+    "B07YPLBD42_ATVPDKIKX0DER": {
+      "target_kg": 17.44514832,
+      "has_parts": true,
+      "structure": 6.568416065941715,
+      "image": 3.318262749422004,
+      "joint": 3.935937943550349
+    },
+    "B01LP0UX9G_ATVPDKIKX0DER": {
+      "target_kg": 1.12490816,
+      "has_parts": true,
+      "structure": 1.0570915734513446,
+      "image": 1.2927495568317091,
+      "joint": 1.2293171796072844
+    },
+    "B07MCCRNLV_ATVPDKIKX0DER": {
+      "target_kg": 12.020188,
+      "has_parts": true,
+      "structure": 40.48822865373284,
+      "image": 49.00236935303338,
+      "joint": 46.719157652019035
+    },
+    "B01MG6BPC6": {
+      "target_kg": 17.5,
+      "has_parts": true,
+      "structure": 47.00994937585692,
+      "image": 18.935007530710916,
+      "joint": 23.768214463888327
+    },
+    "B082Q985HZ_ATVPDKIKX0DER": {
+      "target_kg": 52.16308,
+      "has_parts": true,
+      "structure": 29.221110496244844,
+      "image": 21.482946077086954,
+      "joint": 23.200351132116364
+    },
+    "B07WSFZWBF_ATVPDKIKX0DER": {
+      "target_kg": 5.13012552,
+      "has_parts": true,
+      "structure": 4.453390808009254,
+      "image": 4.678867054174822,
+      "joint": 4.621449705645945
+    },
+    "B07B4SMR2G": {
+      "target_kg": 35.380176,
+      "has_parts": true,
+      "structure": 1.6006596484130104,
+      "image": 6.271730876667119,
+      "joint": 4.765484930894624
+    },
+    "B084W2S628_ATVPDKIKX0DER": {
+      "target_kg": 10.9769264,
+      "has_parts": true,
+      "structure": 8.659049339853562,
+      "image": 9.549694891169604,
+      "joint": 9.318793235995694
+    },
+    "B072JT7WFN_A1PA6795UKMFR9": {
+      "target_kg": 27.215519999999998,
+      "has_parts": true,
+      "structure": 17.47199683267034,
+      "image": 8.325932185638205,
+      "joint": 10.020982126368637
+    },
+    "B082XM1MZT_ATVPDKIKX0DER": {
+      "target_kg": 2.721552,
+      "has_parts": true,
+      "structure": 1.6833420037730382,
+      "image": 2.9187458729892195,
+      "joint": 2.5435501390129476
+    },
+    "B075HWDSDK_ATVPDKIKX0DER": {
+      "target_kg": 1.96405336,
+      "has_parts": true,
+      "structure": 1.118706338377371,
+      "image": 2.341878945826204,
+      "joint": 1.9469390518376193
+    },
+    "B074VL1JQC": {
+      "target_kg": 0.453592,
+      "has_parts": true,
+      "structure": 1.6591326519201883,
+      "image": 1.4850786353259133,
+      "joint": 1.526800752415515
+    },
+    "B073PB1H88": {
+      "target_kg": 0.40369688,
+      "has_parts": true,
+      "structure": 5.254839022302122,
+      "image": 4.775942906024878,
+      "joint": 4.8914114841692475
+    },
+    "B07B4Y45GY_ATVPDKIKX0DER": {
+      "target_kg": 98.429464,
+      "has_parts": true,
+      "structure": 27.303939114247022,
+      "image": 35.734683025212156,
+      "joint": 33.4097924214442
+    },
+    "B082Q8RSQ7_ATVPDKIKX0DER": {
+      "target_kg": 61.23492,
+      "has_parts": true,
+      "structure": 65.20099639349985,
+      "image": 35.789619130253776,
+      "joint": 41.57970135264258
+    },
+    "B07YPLQ7KW_ATVPDKIKX0DER": {
+      "target_kg": 22.253223520000002,
+      "has_parts": true,
+      "structure": 14.200083056455748,
+      "image": 11.348056573617185,
+      "joint": 12.002282380928799
+    },
+    "B07QGG6BJY_ATVPDKIKX0DER": {
+      "target_kg": 1.4378866399999999,
+      "has_parts": true,
+      "structure": 0.7379906325843893,
+      "image": 2.375871766934837,
+      "joint": 1.8052721530491926
+    },
+    "B07M6PKXBB_ATVPDKIKX0DER": {
+      "target_kg": 19.72671608,
+      "has_parts": true,
+      "structure": 32.309150053462034,
+      "image": 27.638419904019653,
+      "joint": 28.73864524041739
+    },
+    "B07B4MRLT8_ATVPDKIKX0DER": {
+      "target_kg": 64.410064,
+      "has_parts": true,
+      "structure": 48.82996050454512,
+      "image": 19.894815354560542,
+      "joint": 24.901558439362084
+    },
+    "B0831PH1MB_ATVPDKIKX0DER": {
+      "target_kg": 0.829166176,
+      "has_parts": true,
+      "structure": 1.1506340402805926,
+      "image": 1.3160808309696095,
+      "joint": 1.2726126244870635
+    },
+    "B075YQXRBS_ATVPDKIKX0DER": {
+      "target_kg": 4.6719976,
+      "has_parts": true,
+      "structure": 4.640028334109743,
+      "image": 16.05968589274154,
+      "joint": 12.202722441660477
+    },
+    "B07B4Z6Q2W_ATVPDKIKX0DER": {
+      "target_kg": 29.937072,
+      "has_parts": true,
+      "structure": 52.57971191456407,
+      "image": 42.331113318291855,
+      "joint": 44.68886437290957
+    },
+    "B083YFP9DH_ATVPDKIKX0DER": {
+      "target_kg": 0.5352385599999999,
+      "has_parts": true,
+      "structure": 0.8743406382174848,
+      "image": 0.9498687125292965,
+      "joint": 0.9303960398239222
+    },
+    "B06VVXMJ1S_A1F83G8C2ARO7P": {
+      "target_kg": 0.24947560000000002,
+      "has_parts": true,
+      "structure": 3.3387258482580937,
+      "image": 0.7389229032109299,
+      "joint": 0.9724772304913146
+    },
+    "B07JLGBY2C": {
+      "target_kg": 0.69853168,
+      "has_parts": true,
+      "structure": 0.6149466687209442,
+      "image": 0.9172835449989042,
+      "joint": 0.8300171489880517
+    },
+    "B07B4ZFC5H_ATVPDKIKX0DER": {
+      "target_kg": 90.7184,
+      "has_parts": true,
+      "structure": 29.784127503584006,
+      "image": 38.72082830025033,
+      "joint": 36.262246003906
+    },
+    "B07B8W8FBV_ATVPDKIKX0DER": {
+      "target_kg": 0.98429464,
+      "has_parts": true,
+      "structure": 1.162953753187986,
+      "image": 1.5998859988781005,
+      "joint": 1.4772615339288442
+    },
+    "B085W6LSW8": {
+      "target_kg": 25.0,
+      "has_parts": true,
+      "structure": 2.9253618718281995,
+      "image": 11.44724854360763,
+      "joint": 8.698027945956298
+    },
+    "B075YM7Q9M": {
+      "target_kg": 4.53592,
+      "has_parts": true,
+      "structure": 1.6390497533490387,
+      "image": 2.5217477078610986,
+      "joint": 2.264249394393005
+    },
+    "B07GFL8FCV_A13V1IB3VIYZZH": {
+      "target_kg": 43.3,
+      "has_parts": true,
+      "structure": 8.564989748193652,
+      "image": 14.481879266997119,
+      "joint": 12.699902996125202
+    },
+    "B07WFNW44K_ATVPDKIKX0DER": {
+      "target_kg": 8.38238016,
+      "has_parts": true,
+      "structure": 4.448189034858139,
+      "image": 8.883193749420986,
+      "joint": 7.4726159005208075
+    },
+    "B07SX37TCM": {
+      "target_kg": 29.0,
+      "has_parts": true,
+      "structure": 11.862026418967256,
+      "image": 24.18658519934661,
+      "joint": 20.24047215161583
+    },
+    "B07MF1SFJ5_ATVPDKIKX0DER": {
+      "target_kg": 11.24000976,
+      "has_parts": true,
+      "structure": 9.911732453786756,
+      "image": 13.703906187291054,
+      "joint": 12.637776639439238
+    },
+    "B07HSLVMP2_ATVPDKIKX0DER": {
+      "target_kg": 51.255896,
+      "has_parts": true,
+      "structure": 32.40277431233804,
+      "image": 51.079951290838885,
+      "joint": 45.586201393045926
+    },
+    "B07RRR2NCS": {
+      "target_kg": 2.005,
+      "has_parts": true,
+      "structure": 3.9810327334924938,
+      "image": 2.5045245137239656,
+      "joint": 2.812178620775713
+    },
+    "B07B4W2MFG_ATVPDKIKX0DER": {
+      "target_kg": 37.44855552,
+      "has_parts": true,
+      "structure": 2.4296523102753502,
+      "image": 5.663743633588358,
+      "joint": 4.583674004481215
+    },
+    "B07K7NSKQ3_A1RKKUPIHCS9HS": {
+      "target_kg": 64.0,
+      "has_parts": true,
+      "structure": 57.87439847369613,
+      "image": 69.06140179265978,
+      "joint": 66.07667248960678
+    },
+    "B07DHK5DHN_ATVPDKIKX0DER": {
+      "target_kg": 2.53557928,
+      "has_parts": true,
+      "structure": 3.091788208451398,
+      "image": 0.6784523428258339,
+      "joint": 0.8928934974198153
+    },
+    "B07H8T5XPT_A1PA6795UKMFR9": {
+      "target_kg": 50.0,
+      "has_parts": true,
+      "structure": 22.105846024975435,
+      "image": 22.864511274054838,
+      "joint": 22.672438226637823
+    },
+    "B074VM1T62": {
+      "target_kg": 0.453592,
+      "has_parts": true,
+      "structure": 0.47570187441565964,
+      "image": 0.6024900878809092,
+      "joint": 0.5679317460666667
+    },
+    "B086VNNCNG_ATVPDKIKX0DER": {
+      "target_kg": 21.6816976,
+      "has_parts": true,
+      "structure": 34.89383373272799,
+      "image": 67.67055231596325,
+      "joint": 57.34386519377599
+    },
+    "B07RPPBPTP": {
+      "target_kg": 3.039,
+      "has_parts": true,
+      "structure": 4.542598427784446,
+      "image": 2.5718102734465424,
+      "joint": 2.964867446668674
+    },
+    "B075Z93NHP_ATVPDKIKX0DER": {
+      "target_kg": 97.52228,
+      "has_parts": true,
+      "structure": 24.947513172974755,
+      "image": 47.15844090129149,
+      "joint": 40.218548621998714
+    },
+    "B078JG4N1G_ATVPDKIKX0DER": {
+      "target_kg": 0.9979024000000001,
+      "has_parts": true,
+      "structure": 1.1432402152173133,
+      "image": 0.37991029358917605,
+      "joint": 0.4999900646458665
+    },
+    "B071WSFSGC_ATVPDKIKX0DER": {
+      "target_kg": 18.14368,
+      "has_parts": true,
+      "structure": 2.223363314415103,
+      "image": 4.943569394184421,
+      "joint": 4.048396912825566
+    },
+    "B07Y3PYBD9": {
+      "target_kg": 13.471682399999999,
+      "has_parts": true,
+      "structure": 9.56067873799196,
+      "image": 12.214570337015006,
+      "joint": 11.488962907653383
+    },
+    "B07H8PWFDF_A1F83G8C2ARO7P": {
+      "target_kg": 62.0,
+      "has_parts": true,
+      "structure": 13.400914131720052,
+      "image": 5.3355628449603465,
+      "joint": 6.716898502239545
+    },
+    "B07WJWRY5B_ATVPDKIKX0DER": {
+      "target_kg": 4.9895119999999995,
+      "has_parts": true,
+      "structure": 3.3541834729793027,
+      "image": 5.698553625929431,
+      "joint": 4.991374814594105
+    },
+    "B07WTFY4N8_ATVPDKIKX0DER": {
+      "target_kg": 3.4110118399999996,
+      "has_parts": true,
+      "structure": 4.556020055372785,
+      "image": 5.09188581010339,
+      "joint": 4.952282360304432
+    },
+    "B06X6H2WF7_A1F83G8C2ARO7P": {
+      "target_kg": 0.07427569,
+      "has_parts": true,
+      "structure": 1.5941551639253897,
+      "image": 0.40634753931275097,
+      "joint": 0.5347834367167028
+    },
+    "B06X3W3YQD_A1F83G8C2ARO7P": {
+      "target_kg": 0.1190679,
+      "has_parts": true,
+      "structure": 1.5775420433415015,
+      "image": 0.4491586438651335,
+      "joint": 0.5911260188838856
+    },
+    "B07NPJB964_ATVPDKIKX0DER": {
+      "target_kg": 2.99824312,
+      "has_parts": true,
+      "structure": 2.9759975809409087,
+      "image": 3.6344213311581695,
+      "joint": 3.4572803519491973
+    },
+    "B082XMF2RV_ATVPDKIKX0DER": {
+      "target_kg": 6.0781328,
+      "has_parts": true,
+      "structure": 5.194793515931325,
+      "image": 12.048384568144234,
+      "joint": 9.763121371292199
+    },
+    "B07B82PXCM_ATVPDKIKX0DER": {
+      "target_kg": 40.188251199999996,
+      "has_parts": true,
+      "structure": 24.795568200186935,
+      "image": 20.245479537742018,
+      "joint": 21.298036510174292
+    },
+    "B07DBDSGD6_ATVPDKIKX0DER": {
+      "target_kg": 28.122704,
+      "has_parts": true,
+      "structure": 29.29118161864097,
+      "image": 26.40848502617516,
+      "joint": 27.101407025122477
+    },
+    "B07B78RCTR_ATVPDKIKX0DER": {
+      "target_kg": 43.09124,
+      "has_parts": true,
+      "structure": 23.834221194152537,
+      "image": 16.00893732964716,
+      "joint": 17.68365851448439
+    },
+    "B07YPRSX86_ATVPDKIKX0DER": {
+      "target_kg": 0.907184,
+      "has_parts": true,
+      "structure": 2.7627403347008324,
+      "image": 2.02448681844257,
+      "joint": 2.188120485623617
+    },
+    "B07TFQM3JZ_ATVPDKIKX0DER": {
+      "target_kg": 10.477975200000001,
+      "has_parts": true,
+      "structure": 10.812806057120206,
+      "image": 8.515355670525281,
+      "joint": 9.039339492728367
+    },
+    "B07QV18PGY_APJ6JRA9NG5V4": {
+      "target_kg": 26.0,
+      "has_parts": true,
+      "structure": 17.046100035899876,
+      "image": 17.722920607399338,
+      "joint": 17.551236859208217
+    },
+    "B01DN8TCEU_ATVPDKIKX0DER": {
+      "target_kg": 0.32,
+      "has_parts": true,
+      "structure": 1.271223688376121,
+      "image": 2.5498556750907437,
+      "joint": 2.1426053940202383
+    },
+    "B01557QQSW_APJ6JRA9NG5V4": {
+      "target_kg": 32.0,
+      "has_parts": true,
+      "structure": 40.72563487909071,
+      "image": 30.313983339865654,
+      "joint": 32.63617261871362
+    },
+    "B07YPV6SNV_ATVPDKIKX0DER": {
+      "target_kg": 0.34472992,
+      "has_parts": true,
+      "structure": 2.651404637379228,
+      "image": 2.6937773594364804,
+      "joint": 2.683121113352588
+    },
+    "B072ZMT5R7_ATVPDKIKX0DER": {
+      "target_kg": 8.182799679999999,
+      "has_parts": true,
+      "structure": 12.108492530365645,
+      "image": 16.757171867561016,
+      "joint": 15.449807140940495
+    },
+    "B07JM714D5": {
+      "target_kg": 5.70165144,
+      "has_parts": true,
+      "structure": 1.720876266003147,
+      "image": 4.9271993631472055,
+      "joint": 3.7878041230333737
+    },
+    "B07N6Q9JB1_ATVPDKIKX0DER": {
+      "target_kg": 33.88785832,
+      "has_parts": true,
+      "structure": 20.836975039865298,
+      "image": 12.429461727875765,
+      "joint": 14.143207364388331
+    },
+    "B07B8PXQ49_ATVPDKIKX0DER": {
+      "target_kg": 0.37648136,
+      "has_parts": true,
+      "structure": 1.6723435243154219,
+      "image": 0.83632766936475,
+      "joint": 0.9945204601515827
+    },
+    "B07SCCB1H5": {
+      "target_kg": 1.94137376,
+      "has_parts": true,
+      "structure": 2.988223508115374,
+      "image": 2.1552478937031077,
+      "joint": 2.3387090245373146
+    },
+    "B082XMRGZG_ATVPDKIKX0DER": {
+      "target_kg": 5.189092479999999,
+      "has_parts": true,
+      "structure": 4.5344540304124985,
+      "image": 6.708832280385092,
+      "joint": 6.0829808872005575
+    },
+    "B07JXDPKGC": {
+      "target_kg": 0.907184,
+      "has_parts": true,
+      "structure": 1.8782332955648795,
+      "image": 1.499120056029552,
+      "joint": 1.586042039763545
+    },
+    "B073P14BDC": {
+      "target_kg": 1.360776,
+      "has_parts": true,
+      "structure": 0.5686827780540181,
+      "image": 2.003930915361621,
+      "joint": 1.5226582210722208
+    },
+    "B07H8VCM68_A1RKKUPIHCS9HS": {
+      "target_kg": 205.0,
+      "has_parts": true,
+      "structure": 12.319607798102721,
+      "image": 12.380307101535596,
+      "joint": 12.365104295415074
+    },
+    "B00DIHVMEA_ATVPDKIKX0DER": {
+      "target_kg": 1.3331976064,
+      "has_parts": true,
+      "structure": 0.8484876744037297,
+      "image": 3.0287800668855946,
+      "joint": 2.301375178809892
+    },
+    "B07TVD4QNC": {
+      "target_kg": 4.853434399999999,
+      "has_parts": true,
+      "structure": 7.727587019013121,
+      "image": 9.411904136449854,
+      "joint": 8.95919723040981
+    },
+    "B07Y3PKFSC": {
+      "target_kg": 8.49124224,
+      "has_parts": true,
+      "structure": 7.3575451339057985,
+      "image": 13.991072955086263,
+      "joint": 11.914381430404223
+    },
+    "B084T7K1P4": {
+      "target_kg": 14.6963808,
+      "has_parts": true,
+      "structure": 4.926708039026591,
+      "image": 10.963946985191587,
+      "joint": 8.976652261508137
+    },
+    "B00WRDS8H0_ATVPDKIKX0DER": {
+      "target_kg": 1.1022285600000001,
+      "has_parts": true,
+      "structure": 5.079153679248047,
+      "image": 5.8559084648143465,
+      "joint": 5.65123735140968
+    },
+    "B07DBDWL5H_ATVPDKIKX0DER": {
+      "target_kg": 29.438120800000004,
+      "has_parts": true,
+      "structure": 30.73969029748127,
+      "image": 39.41668456588302,
+      "joint": 37.04119087796468
+    },
+    "B07TTYD8YG": {
+      "target_kg": 7.01999998092651,
+      "has_parts": true,
+      "structure": 5.194529692511526,
+      "image": 6.292474170054141,
+      "joint": 5.997947214490431
+    },
+    "B07YPV7SN6_ATVPDKIKX0DER": {
+      "target_kg": 34.10104656,
+      "has_parts": true,
+      "structure": 26.50144296433255,
+      "image": 21.915744451555625,
+      "joint": 22.981827000184623
+    },
+    "B07B4SF24F": {
+      "target_kg": 4.082328,
+      "has_parts": true,
+      "structure": 1.306369272995237,
+      "image": 1.5431855619663346,
+      "joint": 1.4802330705861144
+    },
+    "B082QBBY8X_ATVPDKIKX0DER": {
+      "target_kg": 62.142103999999996,
+      "has_parts": true,
+      "structure": 59.401812028566376,
+      "image": 40.79298233451107,
+      "joint": 44.8114519938391
+    },
+    "B07B4GSPNR_ATVPDKIKX0DER": {
+      "target_kg": 78.017824,
+      "has_parts": true,
+      "structure": 42.30687423746674,
+      "image": 57.508083166912975,
+      "joint": 53.25978439126883
+    },
+    "B07QWC7NYS_ATVPDKIKX0DER": {
+      "target_kg": 5.19816432,
+      "has_parts": true,
+      "structure": 7.810636535757326,
+      "image": 11.83233784579928,
+      "joint": 10.665335662686472
+    },
+    "B07QGG4ZLB": {
+      "target_kg": 4.53592,
+      "has_parts": true,
+      "structure": 8.663750908981122,
+      "image": 7.9054219702173025,
+      "joint": 8.088542683587299
+    },
+    "B00NUS5GXA_A1F83G8C2ARO7P": {
+      "target_kg": 9.07,
+      "has_parts": true,
+      "structure": 3.9498985815132945,
+      "image": 3.9437001644903336,
+      "joint": 3.945248856249925
+    },
+    "B07HK3YLG9_ATVPDKIKX0DER": {
+      "target_kg": 7.484268,
+      "has_parts": true,
+      "structure": 3.7536644521341755,
+      "image": 5.832220582923502,
+      "joint": 5.223833399815388
+    },
+    "B07YPXCY4Q_ATVPDKIKX0DER": {
+      "target_kg": 33.29818872,
+      "has_parts": true,
+      "structure": 27.594753095092578,
+      "image": 21.658695197144855,
+      "joint": 23.010753773174578
+    },
+    "B07VC8B7GP": {
+      "target_kg": 1.1974828800000001,
+      "has_parts": true,
+      "structure": 1.5425949421561431,
+      "image": 1.696777967126967,
+      "joint": 1.656844452135014
+    },
+    "B079VKDKC1_A1F83G8C2ARO7P": {
+      "target_kg": 9.7,
+      "has_parts": true,
+      "structure": 16.45871333302238,
+      "image": 17.394177852615638,
+      "joint": 17.15544153164176
+    },
+    "B079V7XFKW": {
+      "target_kg": 0.680388,
+      "has_parts": true,
+      "structure": 1.2447320441357725,
+      "image": 1.3483718766439348,
+      "joint": 1.3216797371754023
+    },
+    "B07L48L3BH": {
+      "target_kg": 23.50060152,
+      "has_parts": true,
+      "structure": 29.081600780977357,
+      "image": 12.669799115910934,
+      "joint": 15.594874132205513
+    },
+    "B073WR319C_ATVPDKIKX0DER": {
+      "target_kg": 11.929469600000001,
+      "has_parts": true,
+      "structure": 43.335487996864394,
+      "image": 13.104925053851357,
+      "joint": 17.247051305063813
+    },
+    "B07XMRCXJ7_ATVPDKIKX0DER": {
+      "target_kg": 18.9147864,
+      "has_parts": false,
+      "structure": 18.15844900307925,
+      "image": 10.689578311668805,
+      "joint": 12.203660509557444
+    },
+    "B07B4WH5JB": {
+      "target_kg": 7.711064,
+      "has_parts": true,
+      "structure": 11.086677404989395,
+      "image": 7.239703570625011,
+      "joint": 8.053616418831824
+    },
+    "B07Y3QQXY8": {
+      "target_kg": 9.98809584,
+      "has_parts": true,
+      "structure": 6.227407372827825,
+      "image": 16.95187998147399,
+      "joint": 13.197455941537736
+    },
+    "B07Y2B3ZXV_ATVPDKIKX0DER": {
+      "target_kg": 30.7081784,
+      "has_parts": false,
+      "structure": 18.367628555346734,
+      "image": 38.19409260426862,
+      "joint": 31.806099966247114
+    },
+    "B07QHYD94M_ATVPDKIKX0DER": {
+      "target_kg": 55.338224,
+      "has_parts": true,
+      "structure": 43.43678286872831,
+      "image": 107.83765783261927,
+      "joint": 85.90970900491371
+    },
+    "B07BLB6644_ATVPDKIKX0DER": {
+      "target_kg": 1.606622864,
+      "has_parts": true,
+      "structure": 1.5629685672651323,
+      "image": 2.4075570675115423,
+      "joint": 2.1610758178619367
+    },
+    "B072C8Q4WQ_ATVPDKIKX0DER": {
+      "target_kg": 39.008912,
+      "has_parts": true,
+      "structure": 16.926638279093098,
+      "image": 42.988847046159194,
+      "joint": 34.05332525745964
+    },
+    "B06XZV3F8F": {
+      "target_kg": 9.5,
+      "has_parts": true,
+      "structure": 11.818845902002838,
+      "image": 22.44370692914038,
+      "joint": 19.118979578922918
+    },
+    "B079V39YYF": {
+      "target_kg": 0.6350288,
+      "has_parts": true,
+      "structure": 0.6787956836459551,
+      "image": 0.5940404359695176,
+      "joint": 0.6141815613351957
+    },
+    "B07Q16JDH5_ATVPDKIKX0DER": {
+      "target_kg": 4.740036399999999,
+      "has_parts": true,
+      "structure": 4.704606592379158,
+      "image": 5.262926573271191,
+      "joint": 5.117422937251707
+    },
+    "B07MQF769H_ATVPDKIKX0DER": {
+      "target_kg": 15.87572,
+      "has_parts": true,
+      "structure": 21.3457155300693,
+      "image": 29.269124298485682,
+      "joint": 27.04798868558374
+    },
+    "B07WGNR6BF_ATVPDKIKX0DER": {
+      "target_kg": 3.69223888,
+      "has_parts": true,
+      "structure": 4.238123849779378,
+      "image": 4.167585325536021,
+      "joint": 4.185109120791287
+    },
+    "B07K8193NL_A13V1IB3VIYZZH": {
+      "target_kg": 12.0,
+      "has_parts": true,
+      "structure": 13.506685655227647,
+      "image": 29.629133136463366,
+      "joint": 24.345932143313586
+    },
+    "B074DZ5YL9_ATVPDKIKX0DER": {
+      "target_kg": 6.8038799999999995,
+      "has_parts": true,
+      "structure": 9.663099347173466,
+      "image": 17.034040668343344,
+      "joint": 14.783163187007242
+    },
+    "B07B4G5RBN_ATVPDKIKX0DER": {
+      "target_kg": 29.029888,
+      "has_parts": true,
+      "structure": 46.80096514279796,
+      "image": 32.08603663954906,
+      "joint": 35.26149802715599
+    },
+    "B076YKYHCB_A1F83G8C2ARO7P": {
+      "target_kg": 0.29596878,
+      "has_parts": true,
+      "structure": 0.3322095228027725,
+      "image": 0.2552515734031651,
+      "joint": 0.2726335761081254
+    },
+    "B07WTFJGRG": {
+      "target_kg": 4.4406656799999995,
+      "has_parts": true,
+      "structure": 4.540916895379316,
+      "image": 4.037909495416278,
+      "joint": 4.158180370167183
+    },
+    "B073WGP8XN": {
+      "target_kg": 7.8471416000000005,
+      "has_parts": true,
+      "structure": 2.905457759693197,
+      "image": 2.474865933653079,
+      "joint": 2.57612777302997
+    },
+    "B013TGFGWS_A1F83G8C2ARO7P": {
+      "target_kg": 0.14968536000000002,
+      "has_parts": true,
+      "structure": 0.9922722209867529,
+      "image": 1.5514588894414219,
+      "joint": 1.387435851180543
+    },
+    "B075YLPZB1": {
+      "target_kg": 4.53592,
+      "has_parts": true,
+      "structure": 2.4444010625077217,
+      "image": 4.836370836660763,
+      "joint": 4.077864691241871
+    },
+    "B082VML3QJ_ATVPDKIKX0DER": {
+      "target_kg": 8.500314079999999,
+      "has_parts": true,
+      "structure": 13.303183125364777,
+      "image": 13.688868304342815,
+      "joint": 13.591411179826428
+    },
+    "B07B8F6V9M_ATVPDKIKX0DER": {
+      "target_kg": 7.500340125336001,
+      "has_parts": true,
+      "structure": 4.402918019174357,
+      "image": 15.896084589494059,
+      "joint": 12.078412333233933
+    },
+    "B07PXFVNXR_ATVPDKIKX0DER": {
+      "target_kg": 44.394,
+      "has_parts": true,
+      "structure": 46.24398384434466,
+      "image": 19.45349030400779,
+      "joint": 24.155273536144186
+    },
+    "B01LR5RBZ8_ATVPDKIKX0DER": {
+      "target_kg": 1.814368,
+      "has_parts": true,
+      "structure": 2.299689185328357,
+      "image": 2.95683430994602,
+      "joint": 2.7767547754244557
+    },
+    "B07124WMX5_ATVPDKIKX0DER": {
+      "target_kg": 50.7115856,
+      "has_parts": true,
+      "structure": 41.832881274988424,
+      "image": 45.767208424246206,
+      "joint": 44.75022899801258
+    },
+    "B07YPTDRLV_ATVPDKIKX0DER": {
+      "target_kg": 3.175144,
+      "has_parts": true,
+      "structure": 9.156385730662173,
+      "image": 3.4275984828857773,
+      "joint": 4.382011131201181
+    },
+    "B07WQ4VQ74_ATVPDKIKX0DER": {
+      "target_kg": 4.72189272,
+      "has_parts": true,
+      "structure": 5.608776549288617,
+      "image": 6.670933848120057,
+      "joint": 6.38788383920403
+    },
+    "B01DN8TEA2_ATVPDKIKX0DER": {
+      "target_kg": 0.34472992,
+      "has_parts": true,
+      "structure": 1.136442798358698,
+      "image": 2.519978908160257,
+      "joint": 2.0650690346816636
+    },
+    "B0723DD7Z6": {
+      "target_kg": 27.215519999999998,
+      "has_parts": true,
+      "structure": 15.31076727064871,
+      "image": 6.89140238983984,
+      "joint": 8.413562895650685
+    },
+    "B072PZ4LVN_ATVPDKIKX0DER": {
+      "target_kg": 42.410852,
+      "has_parts": true,
+      "structure": 48.896520688447424,
+      "image": 57.86400356669226,
+      "joint": 55.478645391281624
+    },
+    "B07XMV34PX_ATVPDKIKX0DER": {
+      "target_kg": 3.9916096000000003,
+      "has_parts": true,
+      "structure": 5.274079772837174,
+      "image": 2.9483428763215973,
+      "joint": 3.4097313668177955
+    },
+    "B075X463J2_ATVPDKIKX0DER": {
+      "target_kg": 12.246984,
+      "has_parts": true,
+      "structure": 19.16930266222426,
+      "image": 4.912851600561785,
+      "joint": 6.465676320991424
+    },
+    "B074VLQDGN": {
+      "target_kg": 0.453592,
+      "has_parts": true,
+      "structure": 0.5663160217465781,
+      "image": 0.7308038638128455,
+      "joint": 0.6856702999429597
+    },
+    "B075YNL7R3_ATVPDKIKX0DER": {
+      "target_kg": 2.4720764,
+      "has_parts": true,
+      "structure": 2.0568006468857942,
+      "image": 6.821699096189883,
+      "joint": 5.183370410062289
+    },
+    "B07GFRNHYW_A1RKKUPIHCS9HS": {
+      "target_kg": 20.3,
+      "has_parts": true,
+      "structure": 41.00348032092807,
+      "image": 30.32891930243988,
+      "joint": 32.703774669621225
+    },
+    "B07N6RTLP7_ATVPDKIKX0DER": {
+      "target_kg": 19.998871280000003,
+      "has_parts": true,
+      "structure": 23.580038423814866,
+      "image": 8.579146851032514,
+      "joint": 11.046360272638628
+    },
+    "B075HXHKVF_ATVPDKIKX0DER": {
+      "target_kg": 0.71667536,
+      "has_parts": true,
+      "structure": 0.9541211182644495,
+      "image": 0.7705211650084024,
+      "joint": 0.8128105024904059
+    },
+    "B07YLYRSB6_ATVPDKIKX0DER": {
+      "target_kg": 18.2797576,
+      "has_parts": false,
+      "structure": 18.275846675329305,
+      "image": 16.4256686887545,
+      "joint": 16.86986745964825
+    },
+    "B07TYYNGQ1_ATVPDKIKX0DER": {
+      "target_kg": 0.8391452,
+      "has_parts": true,
+      "structure": 4.2016859561350115,
+      "image": 4.820024542915122,
+      "joint": 4.657392446429832
+    },
+    "B071FJR4FW_ATVPDKIKX0DER": {
+      "target_kg": 66.678024,
+      "has_parts": true,
+      "structure": 38.52270508624798,
+      "image": 68.37317258447423,
+      "joint": 59.23705961281007
+    },
+    "B07DBB76JV_ATVPDKIKX0DER": {
+      "target_kg": 28.122704,
+      "has_parts": true,
+      "structure": 31.877471294490423,
+      "image": 22.308444035870604,
+      "joint": 24.390624829207834
+    },
+    "B07YLZTGZ9_ATVPDKIKX0DER": {
+      "target_kg": 19.27766,
+      "has_parts": false,
+      "structure": 17.553487515512128,
+      "image": 15.937979252036182,
+      "joint": 16.327353532252257
+    },
+    "B07MBFDKYY_ATVPDKIKX0DER": {
+      "target_kg": 4.082328,
+      "has_parts": true,
+      "structure": 1.1904512544922201,
+      "image": 1.2598307974599423,
+      "joint": 1.2421157533667002
+    },
+    "B075YZPG5Y_ATVPDKIKX0DER": {
+      "target_kg": 60.327736,
+      "has_parts": true,
+      "structure": 22.37745089574403,
+      "image": 37.93793186352903,
+      "joint": 33.24741561050582
+    },
+    "B076YNV36K_A1F83G8C2ARO7P": {
+      "target_kg": 0.103475675,
+      "has_parts": true,
+      "structure": 0.10625359778067107,
+      "image": 0.14887507927041738,
+      "joint": 0.13683664433686557
+    },
+    "B07Y3Q7MDR": {
+      "target_kg": 13.471682399999999,
+      "has_parts": true,
+      "structure": 10.73193125790275,
+      "image": 11.83171874414177,
+      "joint": 11.546632633321178
+    },
+    "B07WQWGQJK": {
+      "target_kg": 3.7920291199999996,
+      "has_parts": true,
+      "structure": 3.9499284575081184,
+      "image": 3.097136802653067,
+      "joint": 3.2913009796900825
+    },
+    "B07BBWMPJM": {
+      "target_kg": 36.7,
+      "has_parts": true,
+      "structure": 62.94734061847586,
+      "image": 32.92201322626837,
+      "joint": 38.71320573161293
+    },
+    "B07B8K1DL3_ATVPDKIKX0DER": {
+      "target_kg": 1.4968536,
+      "has_parts": true,
+      "structure": 2.98931025457965,
+      "image": 0.8653586227281145,
+      "joint": 1.1388759952568315
+    },
+    "B01LP0VI3G_ATVPDKIKX0DER": {
+      "target_kg": 0.9979024000000001,
+      "has_parts": true,
+      "structure": 0.5489231062816846,
+      "image": 1.3739129575776268,
+      "joint": 1.0923134785883826
+    },
+    "B07QFRSC43_ATVPDKIKX0DER": {
+      "target_kg": 16.319819226624002,
+      "has_parts": true,
+      "structure": 5.227035679063399,
+      "image": 12.748844948501647,
+      "joint": 10.20156956961103
+    },
+    "B01E3R7GWA_ATVPDKIKX0DER": {
+      "target_kg": 2.83495,
+      "has_parts": true,
+      "structure": 6.18244407491139,
+      "image": 5.186102858642075,
+      "joint": 5.419021744877604
+    },
+    "B07Y3Q8JWL": {
+      "target_kg": 13.471682399999999,
+      "has_parts": true,
+      "structure": 10.566182019590807,
+      "image": 10.985128191802286,
+      "joint": 10.878859526361813
+    },
+    "B076YJFGCN_A1F83G8C2ARO7P": {
+      "target_kg": 0.103475675,
+      "has_parts": true,
+      "structure": 0.12095467477763325,
+      "image": 0.23205027076076035,
+      "joint": 0.1971706300190679
+    },
+    "B084W368ML_ATVPDKIKX0DER": {
+      "target_kg": 6.99892456,
+      "has_parts": true,
+      "structure": 16.70138566891833,
+      "image": 5.9371721986252535,
+      "joint": 7.689053099493601
+    },
+    "B07HPQ358H_ATVPDKIKX0DER": {
+      "target_kg": 1.4968536,
+      "has_parts": true,
+      "structure": 15.299247160541182,
+      "image": 3.5680188209406247,
+      "joint": 4.695776847965348
+    },
+    "B07JL5PLPN_ATVPDKIKX0DER": {
+      "target_kg": 0.680388,
+      "has_parts": true,
+      "structure": 0.49887968031397345,
+      "image": 0.6149802550904144,
+      "joint": 0.5836397100360042
+    },
+    "B01MRT550V": {
+      "target_kg": 0.56699,
+      "has_parts": true,
+      "structure": 1.5228884808426462,
+      "image": 0.7390877125260776,
+      "joint": 0.8855009103369123
+    },
+    "B07PKZMKJC_ATVPDKIKX0DER": {
+      "target_kg": 0.69853168,
+      "has_parts": true,
+      "structure": 0.4470095064208312,
+      "image": 0.6367600355107128,
+      "joint": 0.5828556873103321
+    },
+    "B07SRSJFBH": {
+      "target_kg": 13.8,
+      "has_parts": true,
+      "structure": 10.558374748875684,
+      "image": 10.034536580796338,
+      "joint": 10.163007790278236
+    },
+    "B07S62HZR7_ATVPDKIKX0DER": {
+      "target_kg": 3.35204488,
+      "has_parts": true,
+      "structure": 3.082638727849005,
+      "image": 2.083250531807159,
+      "joint": 2.297665395916522
+    },
+    "B07B4Z6JZ4": {
+      "target_kg": 0.907184,
+      "has_parts": true,
+      "structure": 3.310131612987001,
+      "image": 4.35749780848845,
+      "joint": 4.068077317686604
+    },
+    "B012S0S20Y_ATVPDKIKX0DER": {
+      "target_kg": 1.474174,
+      "has_parts": true,
+      "structure": 2.461402467196436,
+      "image": 0.832734897014376,
+      "joint": 1.0918820626614865
+    },
+    "B07TDMJPWG_ATVPDKIKX0DER": {
+      "target_kg": 11.9748288,
+      "has_parts": true,
+      "structure": 11.825473488164628,
+      "image": 8.41175406339911,
+      "joint": 9.159453446325273
+    },
+    "B003QTD4Y6_A1F83G8C2ARO7P": {
+      "target_kg": 0.0907184,
+      "has_parts": true,
+      "structure": 2.534247983429898,
+      "image": 0.49435504996025903,
+      "joint": 0.650607834424528
+    },
+    "B07K6S2G5Z_A1F83G8C2ARO7P": {
+      "target_kg": 47.0,
+      "has_parts": false,
+      "structure": 17.553487515512128,
+      "image": 29.86574505758969,
+      "joint": 26.14995036164953
+    },
+    "B07B4YXRLC_ATVPDKIKX0DER": {
+      "target_kg": 77.11064,
+      "has_parts": true,
+      "structure": 65.1832644668713,
+      "image": 47.12612981921884,
+      "joint": 51.10699643253871
+    },
+    "B07WBYQQ84_ATVPDKIKX0DER": {
+      "target_kg": 8.7996848,
+      "has_parts": true,
+      "structure": 6.817780297178945,
+      "image": 10.528854549976009,
+      "joint": 9.444883277266175
+    },
+    "B075X5HB29_ATVPDKIKX0DER": {
+      "target_kg": 61.23492,
+      "has_parts": true,
+      "structure": 54.831733492389226,
+      "image": 50.12037108795987,
+      "joint": 51.25883157887794
+    },
+    "B01LP0UKJE_ATVPDKIKX0DER": {
+      "target_kg": 1.07954896,
+      "has_parts": true,
+      "structure": 1.2403626340885954,
+      "image": 1.1462151570089478,
+      "joint": 1.169059940259128
+    },
+    "B075HWK9M3_ATVPDKIKX0DER": {
+      "target_kg": 0.6168851200000001,
+      "has_parts": true,
+      "structure": 1.7472885633620143,
+      "image": 1.169114972758918,
+      "joint": 1.2926593012352292
+    },
+    "B07YPV3KSY_ATVPDKIKX0DER": {
+      "target_kg": 26.988724,
+      "has_parts": true,
+      "structure": 25.278950000257783,
+      "image": 19.648143221513084,
+      "joint": 20.925743332155967
+    },
+    "B07JQMLQ2C": {
+      "target_kg": 0.78925008,
+      "has_parts": true,
+      "structure": 1.4559943780964748,
+      "image": 2.62280063315944,
+      "joint": 2.263934639062825
+    },
+    "B07BLC96G2_ATVPDKIKX0DER": {
+      "target_kg": 2.0277376767999997,
+      "has_parts": true,
+      "structure": 2.049576657243668,
+      "image": 1.7273932687625169,
+      "joint": 1.8028494375820245
+    },
+    "B07B8PXMRT_ATVPDKIKX0DER": {
+      "target_kg": 2.3359988,
+      "has_parts": true,
+      "structure": 0.4221119453701795,
+      "image": 1.7459574661250001,
+      "joint": 1.3266407883916067
+    },
+    "B07YM1D7B7_ATVPDKIKX0DER": {
+      "target_kg": 18.2797576,
+      "has_parts": false,
+      "structure": 17.553487515512128,
+      "image": 15.445506171882576,
+      "joint": 15.947494560259493
+    },
+    "B07GFRWJS7_A13V1IB3VIYZZH": {
+      "target_kg": 60.5,
+      "has_parts": true,
+      "structure": 35.54680221353151,
+      "image": 66.19313201192072,
+      "joint": 56.664339718004705
+    },
+    "B078GTTCCF_A1F83G8C2ARO7P": {
+      "target_kg": 0.719396912,
+      "has_parts": true,
+      "structure": 0.9022160286270361,
+      "image": 2.4642657852388012,
+      "joint": 1.9168728004665987
+    },
+    "B07YM1FZSJ_ATVPDKIKX0DER": {
+      "target_kg": 15.648924,
+      "has_parts": false,
+      "structure": 17.111933254422098,
+      "image": 12.903478710096024,
+      "joint": 13.846973995215867
+    },
+    "B07XHQQ95Y_ATVPDKIKX0DER": {
+      "target_kg": 18.597272,
+      "has_parts": false,
+      "structure": 18.15844900307925,
+      "image": 7.40491989347134,
+      "joint": 9.266376910371164
+    },
+    "B07QC9Y62K_ATVPDKIKX0DER": {
+      "target_kg": 2.1999212,
+      "has_parts": true,
+      "structure": 2.1168130101313443,
+      "image": 1.3653054030988394,
+      "joint": 1.523501831686931
+    },
+    "B0727Q5F94_ATVPDKIKX0DER": {
+      "target_kg": 9.07184,
+      "has_parts": true,
+      "structure": 3.871578751369319,
+      "image": 6.594601818157822,
+      "joint": 5.772493570929073
+    },
+    "B075X1TB14_ATVPDKIKX0DER": {
+      "target_kg": 4.082328,
+      "has_parts": true,
+      "structure": 3.492065893834224,
+      "image": 4.421323923534268,
+      "joint": 4.168068599893054
+    },
+    "B076YJ1XZS_A1F83G8C2ARO7P": {
+      "target_kg": 0.103475675,
+      "has_parts": true,
+      "structure": 0.11905480052547707,
+      "image": 0.23786711914560538,
+      "joint": 0.2000725638624021
+    },
+    "B003LSTD38_ATVPDKIKX0DER": {
+      "target_kg": 0.1,
+      "has_parts": true,
+      "structure": 0.8227153274356026,
+      "image": 0.16317719546239687,
+      "joint": 0.21475326645452988
+    },
+    "B074KMVVK7_ATVPDKIKX0DER": {
+      "target_kg": 23.359988,
+      "has_parts": false,
+      "structure": 17.13084215646218,
+      "image": 22.719582620958462,
+      "joint": 21.171173922752164
+    },
+    "B07JM6HFVP_ATVPDKIKX0DER": {
+      "target_kg": 2.26796,
+      "has_parts": true,
+      "structure": 1.059768454884518,
+      "image": 0.6141629521054958,
+      "joint": 0.7039072825404626
+    },
+    "B07GFRP9RY_A1F83G8C2ARO7P": {
+      "target_kg": 40.0,
+      "has_parts": true,
+      "structure": 25.606256452357655,
+      "image": 16.745583586785756,
+      "joint": 18.621374663090783
+    },
+    "B07H8JWNQH_APJ6JRA9NG5V4": {
+      "target_kg": 47.0,
+      "has_parts": true,
+      "structure": 34.93646025027313,
+      "image": 12.95374641712271,
+      "joint": 16.60031267856493
+    },
+    "B082L28P18_ATVPDKIKX0DER": {
+      "target_kg": 18.14368,
+      "has_parts": true,
+      "structure": 14.479640304628786,
+      "image": 9.525327725718773,
+      "joint": 10.576680575156175
+    },
+    "B07QFP4PV5_ATVPDKIKX0DER": {
+      "target_kg": 41.4129496,
+      "has_parts": true,
+      "structure": 46.04619036697984,
+      "image": 20.13787669408211,
+      "joint": 24.763309414397614
+    },
+    "B082Q989SF_ATVPDKIKX0DER": {
+      "target_kg": 14.514944,
+      "has_parts": true,
+      "structure": 6.368895146436289,
+      "image": 11.203385863802964,
+      "joint": 9.728099306106847
+    },
+    "B07TWQTVXL_ATVPDKIKX0DER": {
+      "target_kg": 1.84611944,
+      "has_parts": true,
+      "structure": 6.092467239186418,
+      "image": 3.8663337007984575,
+      "joint": 4.331843936373822
+    },
+    "B01MXTX8MC": {
+      "target_kg": 0.56699,
+      "has_parts": true,
+      "structure": 0.6842760414451508,
+      "image": 0.7292265041471838,
+      "joint": 0.7177193700714405
+    },
+    "B07HKF5F8P_ATVPDKIKX0DER": {
+      "target_kg": 6.123492,
+      "has_parts": true,
+      "structure": 5.191791828278487,
+      "image": 5.30402754103994,
+      "joint": 5.275743171351677
+    },
+    "B07DB9638P_ATVPDKIKX0DER": {
+      "target_kg": 16.329312,
+      "has_parts": true,
+      "structure": 11.33715194895956,
+      "image": 8.535395493323042,
+      "joint": 9.163127483248003
+    },
+    "B075YQ46MP_ATVPDKIKX0DER": {
+      "target_kg": 14.106711200000001,
+      "has_parts": true,
+      "structure": 13.993971155870726,
+      "image": 16.57134733416823,
+      "joint": 15.885599485911124
+    },
+    "B073WHKXD4": {
+      "target_kg": 6.22781816,
+      "has_parts": true,
+      "structure": 6.081581714886976,
+      "image": 2.9096626114531237,
+      "joint": 3.4985341034963984
+    },
+    "B07Y2B738L_ATVPDKIKX0DER": {
+      "target_kg": 51.8909248,
+      "has_parts": false,
+      "structure": 17.33914014290626,
+      "image": 33.054029209700126,
+      "joint": 28.13035378122306
+    },
+    "B00MIBN16O_ATVPDKIKX0DER": {
+      "target_kg": 3.5380176,
+      "has_parts": true,
+      "structure": 5.190104827960391,
+      "image": 0.6108618928908064,
+      "joint": 0.8039394627365591
+    },
+    "B07RD8B8ZB_ATVPDKIKX0DER": {
+      "target_kg": 0.5987414400000001,
+      "has_parts": true,
+      "structure": 0.9117268726391426,
+      "image": 1.094744243712484,
+      "joint": 1.0458049464365806
+    },
+    "B07WGNQVGM": {
+      "target_kg": 2.8757732799999998,
+      "has_parts": true,
+      "structure": 2.9574531894797116,
+      "image": 4.172407764884541,
+      "joint": 3.8284195786237274
+    },
+    "B07DBDX15Y_ATVPDKIKX0DER": {
+      "target_kg": 15.667067679999999,
+      "has_parts": true,
+      "structure": 16.703149999308202,
+      "image": 4.868447278076115,
+      "joint": 6.407236946105271
+    },
+    "B00WRDS0AU_ATVPDKIKX0DER": {
+      "target_kg": 2.00034072,
+      "has_parts": true,
+      "structure": 1.8419097657533432,
+      "image": 1.699271097646162,
+      "joint": 1.7338602518082296
+    },
+    "B07DHNHZ2Y_ATVPDKIKX0DER": {
+      "target_kg": 4.2864444,
+      "has_parts": true,
+      "structure": 2.259055697066372,
+      "image": 0.5645275634830818,
+      "joint": 0.7429600558954723
+    },
+    "B07F3T4RSD_A13V1IB3VIYZZH": {
+      "target_kg": 0.37,
+      "has_parts": true,
+      "structure": 3.943453214545183,
+      "image": 2.273250461037503,
+      "joint": 2.6088832175946193
+    },
+    "B0753P16BL_ATVPDKIKX0DER": {
+      "target_kg": 29.48348,
+      "has_parts": true,
+      "structure": 19.41339080954525,
+      "image": 7.72060236190915,
+      "joint": 9.72218180995379
+    },
+    "B07YM1FJ1M_ATVPDKIKX0DER": {
+      "target_kg": 15.648924,
+      "has_parts": false,
+      "structure": 17.41002079267916,
+      "image": 13.68327797486082,
+      "joint": 14.532570374924273
+    },
+    "B075YLJM75": {
+      "target_kg": 4.53592,
+      "has_parts": true,
+      "structure": 2.9289601122885984,
+      "image": 4.631329862934406,
+      "joint": 4.130072259603109
+    },
+    "B07VD8DQ5N_ATVPDKIKX0DER": {
+      "target_kg": 1.1974828800000001,
+      "has_parts": true,
+      "structure": 1.583903975129468,
+      "image": 1.1806608290517535,
+      "joint": 1.2706504023406315
+    },
+    "B07WQ4P35G": {
+      "target_kg": 5.76969024,
+      "has_parts": true,
+      "structure": 5.282622884924613,
+      "image": 4.525828538809939,
+      "joint": 4.7042021342443405
+    },
+    "B07N6RT9SM_ATVPDKIKX0DER": {
+      "target_kg": 25.30136176,
+      "has_parts": false,
+      "structure": 18.073572636171463,
+      "image": 6.184646875570709,
+      "joint": 8.08625035188102
+    },
+    "B07SVY2C6F": {
+      "target_kg": 29.3,
+      "has_parts": true,
+      "structure": 2.229322138371859,
+      "image": 20.45949755188396,
+      "joint": 15.545856350422827
+    },
+    "B0719WQ4GK_ATVPDKIKX0DER": {
+      "target_kg": 33.339012,
+      "has_parts": true,
+      "structure": 15.467044433671683,
+      "image": 23.25959803122058,
+      "joint": 21.004071455400187
+    }
+  }
+}

@@ -1,0 +1,895 @@
+{
+  "archives_checked": 172,
+  "skipped_invalid_seals": [
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/000",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/010",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/020",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/030",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/040",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/050",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/060",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/070",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/080",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/090",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/100",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/110",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/120",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/130",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/140",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/150",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/160",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/170",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/180",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/190",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/200",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/210",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/220",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/230",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/240",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/250",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/260",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/270",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/280",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/290",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/300",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/310",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/320",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/330",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/340",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/350",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/360",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/370",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/380",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/390",
+      "error": "KeyError"
+    }
+  ],
+  "unresolved_counts": {
+    "train": 6,
+    "val": 2,
+    "test": 10
+  },
+  "forced_image_fallback_metrics": {
+    "train": [
+      7.234543813753868,
+      0.5813823831244758,
+      142.85667942045666,
+      0.6268213840497264
+    ],
+    "val": [
+      10.948442623002586,
+      0.6495868055442017,
+      88.42652561421335,
+      0.5964491216339932
+    ],
+    "test": [
+      4.942826377253466,
+      0.5377272765406892,
+      73.80013499416488,
+      0.6439135718788488
+    ]
+  },
+  "objects": {
+    "B07YLYRWJ7_ATVPDKIKX0DER": {
+      "split": "train",
+      "archived_total_kg": 14.673528345109887,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_000/canopies",
+          "part_sum_kg": 854.0484853959447,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_000/panels",
+          "part_sum_kg": 854.0484853959447,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_000/weighted",
+          "part_sum_kg": 854.0484853959447,
+          "matches": false
+        }
+      ]
+    },
+    "B07YM19Q9K_ATVPDKIKX0DER": {
+      "split": "train",
+      "archived_total_kg": 6.796477651384043,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_100/canopies",
+          "part_sum_kg": 412.29107541589883,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_100/panels",
+          "part_sum_kg": 412.29107541589883,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_100/weighted",
+          "part_sum_kg": 412.29107541589883,
+          "matches": false
+        }
+      ]
+    },
+    "B07Y2C57KD_ATVPDKIKX0DER": {
+      "split": "train",
+      "archived_total_kg": 9.09155625,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_100/appliance",
+          "part_sum_kg": 234.9375,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_100/appliance_raw",
+          "part_sum_kg": 234.9375,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_100/canopies",
+          "part_sum_kg": 22.865830472061592,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_100/panels",
+          "part_sum_kg": 22.865830472061592,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_100/repaired_pipeline/construction_retry",
+          "part_sum_kg": 22.865830472061592,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_100/repaired_pipeline/mass_hypotheses",
+          "part_sum_kg": 22.865830472061592,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_100/repaired_pipeline/winding_only",
+          "part_sum_kg": 22.865830472061592,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_100/weighted",
+          "part_sum_kg": 22.865830472061592,
+          "matches": false
+        }
+      ]
+    },
+    "B07YM1FZTN_ATVPDKIKX0DER": {
+      "split": "train",
+      "archived_total_kg": 15.216395555650204,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_125/canopies",
+          "part_sum_kg": 316.42453932016065,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_125/panels",
+          "part_sum_kg": 316.42453932016065,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_125/repaired_pipeline/construction_retry",
+          "part_sum_kg": 316.42453932016065,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_125/weighted",
+          "part_sum_kg": 316.42453932016065,
+          "matches": false
+        }
+      ]
+    },
+    "B07YLZQ8W6_ATVPDKIKX0DER": {
+      "split": "train",
+      "archived_total_kg": 10.623528345109884,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_150/canopies",
+          "part_sum_kg": 497.8574360317144,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_150/panels",
+          "part_sum_kg": 497.8574360317144,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_150/weighted",
+          "part_sum_kg": 497.8574360317144,
+          "matches": false
+        }
+      ]
+    },
+    "B07YLZRWKX_ATVPDKIKX0DER": {
+      "split": "train",
+      "archived_total_kg": 21.791194128460106,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_275/canopies",
+          "part_sum_kg": 1427.0476258819267,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_275/panels",
+          "part_sum_kg": 1427.0476258819267,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_275/weighted",
+          "part_sum_kg": 1427.0476258819267,
+          "matches": false
+        }
+      ]
+    },
+    "B07XMRCXJ7_ATVPDKIKX0DER": {
+      "split": "val",
+      "archived_total_kg": 7.686050000000001,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/appliance",
+          "part_sum_kg": 88.83375000000001,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/appliance_raw",
+          "part_sum_kg": 88.83375000000001,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/canopies",
+          "part_sum_kg": 2.3852338241577598,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/panels",
+          "part_sum_kg": 2.3852338241577598,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/repaired_pipeline/construction_retry",
+          "part_sum_kg": 2.3852338241577598,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/repaired_pipeline/mass_hypotheses",
+          "part_sum_kg": 2.3852338241577598,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/repaired_pipeline/winding_only",
+          "part_sum_kg": 2.3852338241577598,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/weighted",
+          "part_sum_kg": 2.3852338241577598,
+          "matches": false
+        }
+      ]
+    },
+    "B07Y2B3ZXV_ATVPDKIKX0DER": {
+      "split": "val",
+      "archived_total_kg": 9.09155625,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/appliance",
+          "part_sum_kg": 234.9375,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/appliance_raw",
+          "part_sum_kg": 234.9375,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/canopies",
+          "part_sum_kg": 344.86070820516557,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/panels",
+          "part_sum_kg": 344.86070820516557,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/repaired_pipeline/construction_retry",
+          "part_sum_kg": 344.86070820516557,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/repaired_pipeline/mass_hypotheses",
+          "part_sum_kg": 344.86070820516557,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/repaired_pipeline/winding_only",
+          "part_sum_kg": 344.86070820516557,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/weighted",
+          "part_sum_kg": 344.86070820516557,
+          "matches": false
+        }
+      ]
+    },
+    "B07YLYRSB6_ATVPDKIKX0DER": {
+      "split": "test",
+      "archived_total_kg": 38.92352834510989,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/canopies",
+          "part_sum_kg": 3111.587977941171,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/panels",
+          "part_sum_kg": 3111.587977941171,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/weighted",
+          "part_sum_kg": 3111.587977941171,
+          "matches": false
+        }
+      ]
+    },
+    "B07YLZTGZ9_ATVPDKIKX0DER": {
+      "split": "test",
+      "archived_total_kg": 19.833097064230056,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/construction_weighted",
+          "part_sum_kg": 1116.075452575103,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_compact",
+          "part_sum_kg": 1116.075452575103,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_nested",
+          "part_sum_kg": 1116.075452575103,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_replay",
+          "part_sum_kg": 1116.075452575103,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+          "part_sum_kg": 1116.075452575103,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_replay",
+          "part_sum_kg": 1116.075452575103,
+          "matches": false
+        }
+      ]
+    },
+    "B07K6S2G5Z_A1F83G8C2ARO7P": {
+      "split": "test",
+      "archived_total_kg": 21.082902210444676,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/catalog_and_winding",
+          "part_sum_kg": 116.37945829971312,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/catalog_scale",
+          "part_sum_kg": 116.37945829971312,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/construction_retry",
+          "part_sum_kg": 75.5376168171858,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/construction_weighted",
+          "part_sum_kg": 75.5376168171858,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_compact",
+          "part_sum_kg": 75.5376168171858,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_nested",
+          "part_sum_kg": 75.5376168171858,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_replay",
+          "part_sum_kg": 75.5376168171858,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/mass_hypotheses",
+          "part_sum_kg": 75.5376168171858,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+          "part_sum_kg": 75.5376168171858,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_replay",
+          "part_sum_kg": 75.5376168171858,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/winding_only",
+          "part_sum_kg": 75.5376168171858,
+          "matches": false
+        }
+      ]
+    },
+    "B07YM1D7B7_ATVPDKIKX0DER": {
+      "split": "test",
+      "archived_total_kg": 19.833097064230056,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/construction_weighted",
+          "part_sum_kg": 1930.1342055746522,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_compact",
+          "part_sum_kg": 1930.1342055746522,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_nested",
+          "part_sum_kg": 1930.1342055746522,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_replay",
+          "part_sum_kg": 1930.1342055746522,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+          "part_sum_kg": 1930.1342055746522,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_replay",
+          "part_sum_kg": 1930.1342055746522,
+          "matches": false
+        }
+      ]
+    },
+    "B07YM1FZSJ_ATVPDKIKX0DER": {
+      "split": "test",
+      "archived_total_kg": 14.673528345109887,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/construction_weighted",
+          "part_sum_kg": 925.8928907181687,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_compact",
+          "part_sum_kg": 925.8928907181687,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_nested",
+          "part_sum_kg": 925.8928907181687,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_replay",
+          "part_sum_kg": 925.8928907181687,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+          "part_sum_kg": 925.8928907181687,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_replay",
+          "part_sum_kg": 925.8928907181687,
+          "matches": false
+        }
+      ]
+    },
+    "B07XHQQ95Y_ATVPDKIKX0DER": {
+      "split": "test",
+      "archived_total_kg": 7.68605,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/appliance_probe_bf16",
+          "part_sum_kg": 99.65975,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/appliance_probe_r1",
+          "part_sum_kg": 88.83375000000001,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/catalog_and_winding",
+          "part_sum_kg": 2.4182946827475904,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/catalog_scale",
+          "part_sum_kg": 2.4182946827475904,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/construction_retry",
+          "part_sum_kg": 2.714101564191872,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/construction_weighted",
+          "part_sum_kg": 2.714101564191872,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_compact",
+          "part_sum_kg": 2.714101564191872,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_nested",
+          "part_sum_kg": 2.714101564191872,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_replay",
+          "part_sum_kg": 2.714101564191872,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/mass_hypotheses",
+          "part_sum_kg": 2.714101564191872,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+          "part_sum_kg": 2.714101564191872,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_replay",
+          "part_sum_kg": 2.714101564191872,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/winding_only",
+          "part_sum_kg": 2.714101564191872,
+          "matches": false
+        }
+      ]
+    },
+    "B074KMVVK7_ATVPDKIKX0DER": {
+      "split": "test",
+      "archived_total_kg": 15.016840704496666,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/construction_weighted",
+          "part_sum_kg": 190.84010315943308,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_compact",
+          "part_sum_kg": 190.84010315943308,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_nested",
+          "part_sum_kg": 190.84010315943308,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_replay",
+          "part_sum_kg": 190.84010315943308,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+          "part_sum_kg": 190.84010315943308,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_replay",
+          "part_sum_kg": 190.84010315943308,
+          "matches": false
+        }
+      ]
+    },
+    "B07Y2B738L_ATVPDKIKX0DER": {
+      "split": "test",
+      "archived_total_kg": 10.8516975,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/appliance_probe_bf16",
+          "part_sum_kg": 34.3605,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/appliance_probe_r1",
+          "part_sum_kg": 150.77175000000003,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/component_stability_r1",
+          "part_sum_kg": 71.00924999999998,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/construction_retry",
+          "part_sum_kg": 216.58395584846718,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/construction_weighted",
+          "part_sum_kg": 216.58395584846718,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_compact",
+          "part_sum_kg": 216.58395584846718,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_nested",
+          "part_sum_kg": 216.58395584846718,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_replay",
+          "part_sum_kg": 216.58395584846718,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+          "part_sum_kg": 216.58395584846718,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_replay",
+          "part_sum_kg": 216.58395584846718,
+          "matches": false
+        }
+      ]
+    },
+    "B07YM1FJ1M_ATVPDKIKX0DER": {
+      "split": "test",
+      "archived_total_kg": 10.623528345109884,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/canopies",
+          "part_sum_kg": 541.060657856374,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/panels",
+          "part_sum_kg": 541.060657856374,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/weighted",
+          "part_sum_kg": 541.060657856374,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/component_stability_r1",
+          "part_sum_kg": 52.95364601285851,
+          "matches": false
+        }
+      ]
+    },
+    "B07N6RT9SM_ATVPDKIKX0DER": {
+      "split": "test",
+      "archived_total_kg": 9.360315,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/appliance_probe_bf16",
+          "part_sum_kg": 105.47625,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/appliance_probe_r1",
+          "part_sum_kg": 97.82,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/catalog_and_winding",
+          "part_sum_kg": 2.1761623241826418,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/catalog_scale",
+          "part_sum_kg": 2.1761623241826418,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/component_stability_r1",
+          "part_sum_kg": 56.75564999999999,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/construction_retry",
+          "part_sum_kg": 2.4763624446181263,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/construction_weighted",
+          "part_sum_kg": 2.4763624446181263,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_compact",
+          "part_sum_kg": 2.4763624446181263,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_nested",
+          "part_sum_kg": 2.4763624446181263,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_replay",
+          "part_sum_kg": 2.4763624446181263,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/mass_hypotheses",
+          "part_sum_kg": 2.4763624446181263,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+          "part_sum_kg": 2.4763624446181263,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_replay",
+          "part_sum_kg": 2.4763624446181263,
+          "matches": false
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/winding_only",
+          "part_sum_kg": 2.4763624446181263,
+          "matches": false
+        }
+      ]
+    }
+  }
+}
