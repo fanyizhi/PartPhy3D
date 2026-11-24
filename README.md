@@ -13,11 +13,11 @@ multi-view VLM evidence and geometric constraints.
 
 [ABO-500 mass results against five papers](https://github.com/fanyizhi/PartPhy3D/blob/codex/mesh-structure-study/paper_assets/abo500_comparison_20261124/README.md) · [Method and implementation notes (中文)](https://github.com/fanyizhi/PartPhy3D/blob/codex/mesh-structure-study/docs/PARTPHY3D_METHODS_zh.md)
 
-![Three ABO objects showing RGB input, region evidence, Ours, PUGS–Qwen and NeRF2Physics](paper_assets/gallery/material_paper_baselines.png)
+![Four ABO objects in front-facing views with matched material predictions](paper_assets/gallery/material_front.png)
 
-Patterned chair, upholstered sofa and metal rack. Each column uses a common view, mesh and crop. PUGS–Qwen uses the PUGS pipeline and local Qwen material proposals.
+Accent chair, counter stool, upholstered sofa and shoe rack. All three predictions in a column use the same calibrated camera and visible mesh. Gray marks unassigned pixels. PUGS–Qwen uses the PUGS pipeline and local Qwen material proposals.
 
-[Matched material comparison (PDF)](paper_assets/gallery/material_paper_baselines.pdf) · [PUGS, Fig. 5](https://arxiv.org/html/2502.12231v2#S3.F5) · [GS2Physics, Fig. 8](https://ieeexplore.ieee.org/document/11653536/) · [Gen2Physics, Fig. 4](https://arxiv.org/html/2608.23869v1#S4.F4) · [PhysVGGT, Fig. 4](https://arxiv.org/html/2609.18920v1#S4.F4)
+[Matched material comparison (PDF)](paper_assets/gallery/material_front.pdf) · [PUGS, Fig. 5](https://arxiv.org/html/2502.12231v2#S3.F5) · [GS2Physics, Fig. 8](https://ieeexplore.ieee.org/document/11653536/) · [Gen2Physics, Fig. 4](https://arxiv.org/html/2608.23869v1#S4.F4) · [PhysVGGT, Fig. 4](https://arxiv.org/html/2609.18920v1#S4.F4)
 
 ## Coverage and local editing
 
