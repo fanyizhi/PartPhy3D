@@ -63,7 +63,7 @@ def main():
         weight="bold",
     )
     for index, label in enumerate(
-        ("RGB input", "Face evidence", "PartPhy3D", "NeRF2Physics")
+        ("RGB input", "Face evidence", "Ours", "NeRF2Physics")
     ):
         pos = axes[index, 0].get_position()
         fig.text(
