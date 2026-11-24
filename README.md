@@ -13,7 +13,7 @@ multi-view VLM evidence and geometric constraints.
 
 ![PartPhy3D method with chaise lounge local editing and recorded cushion particle response](paper_assets/gallery/partphy3d_pipeline.png)
 
-[Method overview](paper_assets/gallery/partphy3d_pipeline.pdf) · [Region evidence and material segmentation](paper_assets/gallery/region_material_comparison.pdf)
+[Seven-object material comparison](paper_assets/gallery/region_material_seven.pdf) · [Method overview](paper_assets/gallery/partphy3d_pipeline.pdf) · [Region evidence and material segmentation](paper_assets/gallery/region_material_comparison.pdf)
 
 ![Metal shoe rack and two accent chairs under a fixed camera and mesh per object](paper_assets/gallery/shared_density.png)
 
@@ -53,7 +53,7 @@ The designed rubber-head and wood-handle mallet has an analytic centre of mass. 
 
 Both columns show the colored reconstruction of ABO-500 cushion B074VM1T62. The surface follows the simulated textile particles. Original material properties are on the left, 25% Young’s modulus on the right. The fall is analytic and contact is MLS-MPM. Both are shown at 1× displacement with slowed playback. No physical ground-truth trajectory is available for this object.
 
-[HD surface video](paper_assets/gallery/cushion_motion.mp4) · [Particle section GIF](paper_assets/gallery/pillow_drop.gif) · [Compression curves PDF](paper_assets/gallery/pillow_drop.pdf)
+[Floor-referenced frame sequence](paper_assets/gallery/cushion_drop_storyboard.pdf) · [HD surface video](paper_assets/gallery/cushion_motion.mp4) · [Particle section GIF](paper_assets/gallery/pillow_drop.gif) · [Compression curves PDF](paper_assets/gallery/pillow_drop.pdf)
 
 ### Lavender under matched wind load
 
