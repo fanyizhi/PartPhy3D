@@ -116,6 +116,34 @@ def main():
         )
         for j, k in enumerate(ids)
     }
+    # Sensitivity to over-amplifying a component. Select the upper bound
+    # using out-of-fold object APE, then apply it unchanged to both holdouts.
+    caps = (1.0, 2.0, 4.0, 8.0, 16.0, float("inf"))
+
+    def capped_total(i, values, cap):
+        raw = np.array([p["mass_kg"] for p in segments[i]])
+        return np.minimum(values, cap * raw).sum()
+
+    cv = np.zeros((len(caps), len(train)))
+    for a, b in folds:
+        _, held_parts = run(train[a], train[b], strength)
+        for j, cap in enumerate(caps):
+            cv[j, b] = [capped_total(i, v, cap) for i, v in zip(train[b], held_parts)]
+    ape = [errors(y[train], v).mean(0)[2] for v in cv]
+    best = int(np.argmin(ape))
+    cap = caps[best]
+    bounded = np.array([capped_total(i, v, cap) for i, v in enumerate(parts)])
+    bounded[train] = cv[best]
+    cap_audit = dict(
+        selected_cap=str(cap),
+        training_ape_by_cap=dict(zip(map(str, caps), ape)),
+        metrics={
+            name: errors(y[idx], bounded[idx]).mean(0).tolist()
+            for name, idx in zip(("train_oof", "val", "test"), sections)
+        },
+        predictions=dict(zip(ids, bounded.tolist())),
+    )
+    (WORK / "part_cap_audit.json").write_text(json.dumps(cap_audit, indent=2))
     pred[train] = oof
     metrics = {
         name: errors(y[idx], pred[idx]).mean(0).tolist()

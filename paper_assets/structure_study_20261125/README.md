@@ -32,3 +32,7 @@
 ## 复查文件
 
 structural_ablation.json 存放原始及校准预测和置乱对照。matched_models.json 存放同条件图像与联合模型和配对区间。part_mass_calibration.json 保留逐部件质量，训练折外质量存于 training_oof。scale_diagnostic.json 记录尺寸替换敏感性。paired_baselines.json 记录两组同对象比较及其 ID。relative_error_audit.json 记录轻物体误差与最大偏差样本。
+
+## 限制部件校准倍数的检验
+
+验证集中一块 0.249 kg 的鼠标垫，原始包边质量 0.244 kg，经模型放大为 8.163 kg，整件预测达 10.579 kg。固定先前逐部件模型，用训练折外 APE 在上限 1、2、4、8、16、无限制中选择。选中上限 1，即允许调低部件质量，禁止超过原始估计。验证四项为 14.276、1.268、70.11、0.421；测试四项为 6.908、1.003、63.18、0.491。APE 明显下降，同时其余三项变差，因此保留为误差诊断。候选和逐对象预测见 part_cap_audit.json。
