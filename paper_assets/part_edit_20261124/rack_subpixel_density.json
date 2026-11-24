@@ -1,0 +1,223 @@
+{
+  "scene": "B07TWQTVXL_ATVPDKIKX0DER",
+  "rows": [
+    {
+      "view": 1,
+      "instantmesh": {
+        "geometry_coverage": 0.5232148104613576,
+        "density_coverage": 0.4645900675874229,
+        "geometry_precision": 0.5638062064597846,
+        "geometry_iou": 0.37245058048321306
+      },
+      "hull": {
+        "geometry_coverage": 0.97472818101675,
+        "density_coverage": 0.8834851601528063,
+        "geometry_precision": 0.8223627122846163,
+        "geometry_iou": 0.8051948051948052
+      },
+      "hull_abstention": {
+        "geometry_coverage": 0.97472818101675,
+        "density_coverage": 0.8834851601528063,
+        "geometry_precision": 0.8223627122846163,
+        "geometry_iou": 0.8051948051948052
+      },
+      "hull_material_consensus": {
+        "geometry_coverage": 0.97472818101675,
+        "density_coverage": 0.97472818101675,
+        "geometry_precision": 0.8223627122846163,
+        "geometry_iou": 0.8051948051948052
+      },
+      "legacy_hull_material_consensus": {
+        "geometry_coverage": 0.9955921245959447,
+        "density_coverage": 0.9955921245959447,
+        "geometry_precision": 0.6315004659832246,
+        "geometry_iou": 0.6297397769516728
+      }
+    },
+    {
+      "view": 7,
+      "instantmesh": {
+        "geometry_coverage": 0.6780258519388954,
+        "density_coverage": 0.581864473168821,
+        "geometry_precision": 0.7592105263157894,
+        "geometry_iou": 0.558027079303675
+      },
+      "hull": {
+        "geometry_coverage": 0.9866823345084215,
+        "density_coverage": 0.781433607520564,
+        "geometry_precision": 0.7760320394331485,
+        "geometry_iou": 0.7679878048780487
+      },
+      "hull_abstention": {
+        "geometry_coverage": 0.9866823345084215,
+        "density_coverage": 0.781433607520564,
+        "geometry_precision": 0.7760320394331485,
+        "geometry_iou": 0.7679878048780487
+      },
+      "hull_material_consensus": {
+        "geometry_coverage": 0.9866823345084215,
+        "density_coverage": 0.9866823345084215,
+        "geometry_precision": 0.7760320394331485,
+        "geometry_iou": 0.7679878048780487
+      },
+      "legacy_hull_material_consensus": {
+        "geometry_coverage": 0.9982373678025852,
+        "density_coverage": 0.9982373678025852,
+        "geometry_precision": 0.6289486673247778,
+        "geometry_iou": 0.6282509552569949
+      }
+    },
+    {
+      "view": 16,
+      "instantmesh": {
+        "geometry_coverage": 0.449768875192604,
+        "density_coverage": 0.39661016949152544,
+        "geometry_precision": 0.4483182306865305,
+        "geometry_iou": 0.2895258877206903
+      },
+      "hull": {
+        "geometry_coverage": 0.9822804314329738,
+        "density_coverage": 0.8681047765793528,
+        "geometry_precision": 0.7717917675544794,
+        "geometry_iou": 0.7611940298507462
+      },
+      "hull_abstention": {
+        "geometry_coverage": 0.9822804314329738,
+        "density_coverage": 0.8681047765793528,
+        "geometry_precision": 0.7717917675544794,
+        "geometry_iou": 0.7611940298507462
+      },
+      "hull_material_consensus": {
+        "geometry_coverage": 0.9822804314329738,
+        "density_coverage": 0.9822804314329738,
+        "geometry_precision": 0.7717917675544794,
+        "geometry_iou": 0.7611940298507462
+      },
+      "legacy_hull_material_consensus": {
+        "geometry_coverage": 0.9953775038520801,
+        "density_coverage": 0.9953775038520801,
+        "geometry_precision": 0.6023871689668034,
+        "geometry_iou": 0.6007067137809188
+      }
+    },
+    {
+      "view": 23,
+      "instantmesh": {
+        "geometry_coverage": 0.6602335387609471,
+        "density_coverage": 0.4951346091469348,
+        "geometry_precision": 0.773072540827953,
+        "geometry_iou": 0.5530498573563375
+      },
+      "hull": {
+        "geometry_coverage": 0.9695102173207915,
+        "density_coverage": 0.7226727213752838,
+        "geometry_precision": 0.8008037508372404,
+        "geometry_iou": 0.7811315823859925
+      },
+      "hull_abstention": {
+        "geometry_coverage": 0.9695102173207915,
+        "density_coverage": 0.7226727213752838,
+        "geometry_precision": 0.8008037508372404,
+        "geometry_iou": 0.7811315823859925
+      },
+      "hull_material_consensus": {
+        "geometry_coverage": 0.9695102173207915,
+        "density_coverage": 0.9695102173207915,
+        "geometry_precision": 0.8008037508372404,
+        "geometry_iou": 0.7811315823859925
+      },
+      "legacy_hull_material_consensus": {
+        "geometry_coverage": 0.9886474213428479,
+        "density_coverage": 0.9886474213428479,
+        "geometry_precision": 0.6638353479255146,
+        "geometry_iou": 0.658813357829893
+      }
+    },
+    {
+      "view": 28,
+      "instantmesh": {
+        "geometry_coverage": 0.5468477882270986,
+        "density_coverage": 0.3322884012539185,
+        "geometry_precision": 0.5042556608318612,
+        "geometry_iou": 0.35564616604371957
+      },
+      "hull": {
+        "geometry_coverage": 0.9599442702890979,
+        "density_coverage": 0.567398119122257,
+        "geometry_precision": 0.7935502447451771,
+        "geometry_iou": 0.7681159420289855
+      },
+      "hull_abstention": {
+        "geometry_coverage": 0.9599442702890979,
+        "density_coverage": 0.567398119122257,
+        "geometry_precision": 0.7935502447451771,
+        "geometry_iou": 0.7681159420289855
+      },
+      "hull_material_consensus": {
+        "geometry_coverage": 0.9599442702890979,
+        "density_coverage": 0.9599442702890979,
+        "geometry_precision": 0.7935502447451771,
+        "geometry_iou": 0.7681159420289855
+      },
+      "legacy_hull_material_consensus": {
+        "geometry_coverage": 0.9914663880181122,
+        "density_coverage": 0.9914663880181122,
+        "geometry_precision": 0.6195451082816411,
+        "geometry_iou": 0.6162589305044381
+      }
+    }
+  ],
+  "material_input_views": [
+    0,
+    10,
+    20
+  ],
+  "geometry_input_views": [
+    13,
+    5,
+    29,
+    11,
+    9,
+    22
+  ],
+  "high_coverage_material_input_views": [
+    10,
+    20
+  ],
+  "single_material_prior_applied": true,
+  "density_values_kg_m3": {
+    "steel": 7850.0
+  },
+  "metrics": {
+    "instantmesh": {
+      "geometry_coverage": 0.5716181729161806,
+      "density_coverage": 0.45409754412972453,
+      "geometry_precision": 0.6097326330243837,
+      "geometry_iou": 0.425739914181527
+    },
+    "hull": {
+      "geometry_coverage": 0.9746290869136068,
+      "density_coverage": 0.7646188769500528,
+      "geometry_precision": 0.7929081029709324,
+      "geometry_iou": 0.7767248328677157
+    },
+    "hull_abstention": {
+      "geometry_coverage": 0.9746290869136068,
+      "density_coverage": 0.7646188769500528,
+      "geometry_precision": 0.7929081029709324,
+      "geometry_iou": 0.7767248328677157
+    },
+    "hull_material_consensus": {
+      "geometry_coverage": 0.9746290869136068,
+      "density_coverage": 0.9746290869136068,
+      "geometry_precision": 0.7929081029709324,
+      "geometry_iou": 0.7767248328677157
+    },
+    "legacy_hull_material_consensus": {
+      "geometry_coverage": 0.993864161122314,
+      "density_coverage": 0.993864161122314,
+      "geometry_precision": 0.6292433516963923,
+      "geometry_iou": 0.6267539468647836
+    }
+  }
+}

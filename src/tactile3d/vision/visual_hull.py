@@ -3,12 +3,23 @@
 from __future__ import annotations
 
 import numpy as np
-from scipy.ndimage import binary_dilation
+from scipy.ndimage import binary_dilation, distance_transform_edt, map_coordinates
 from scipy.optimize import linprog
 
 
-def build_visual_hull(poses, camera, masks, resolution: int = 144):
-    """Intersect silhouette cones on an isotropic grid, then extract their boundary."""
+def build_visual_hull(
+    poses,
+    camera,
+    masks,
+    resolution: int = 144,
+    *,
+    boundary_offset_px: float | None = None,
+):
+    """Extract a hull from binary cones or bilinearly sampled signed contours.
+
+    The optional offset is measured in source-image pixels. Zero preserves the
+    interpolated mask boundary. Omitting it retains legacy binary carving.
+    """
     if resolution < 32 or len(poses) != len(masks) or len(masks) < 3:
         raise ValueError("Visual hull requires at least three calibrated masks")
     rows, bounds = [], []
@@ -44,29 +55,78 @@ def build_visual_hull(poses, camera, masks, resolution: int = 144):
     if not np.isfinite(pitch) or pitch <= 0:
         raise ValueError("Degenerate visual-hull extent")
     shape = tuple(np.ceil((upper - lower) / pitch).astype(int) + 1)
-    indices = np.indices(shape, dtype=np.int32).reshape(3, -1).T
-    active = np.arange(len(indices))
+    active = np.arange(np.prod(shape), dtype=np.int64)
+    field = (
+        None
+        if boundary_offset_px is None
+        else np.full(len(active), np.inf, dtype=np.float32)
+    )
+    if field is not None and not (
+        np.isfinite(boundary_offset_px) and abs(boundary_offset_px) <= 1.5
+    ):
+        raise ValueError("Boundary offset must be within 1.5 input pixels")
     for pose, mask in zip(poses, masks, strict=True):
-        xyz = lower + pitch * indices[active]
-        local = (xyz - pose[:3, 3]) @ pose[:3, :3]
-        front = local[:, 2] < -1e-8
-        depth = np.where(front, -local[:, 2], 1)
-        u = np.rint(cx + fx * local[:, 0] / depth).astype(int)
-        v = np.rint(cy - fy * local[:, 1] / depth).astype(int)
-        good = front & (u >= 0) & (u < mask.shape[1]) & (v >= 0) & (v < mask.shape[0])
-        allowed = binary_dilation(mask, iterations=1)
-        good[good] = allowed[v[good], u[good]]
-        active = active[good]
+        if field is None:
+            allowed = binary_dilation(mask, iterations=1)
+        else:
+            # Pixel centers sit half a pixel away from an axis-aligned mask edge.
+            signed = np.where(
+                mask,
+                distance_transform_edt(mask) - 0.5,
+                0.5 - distance_transform_edt(~mask),
+            )
+        survivors = []
+        for start in range(0, len(active), 500_000):
+            subset = active[start : start + 500_000]
+            indices = np.column_stack(np.unravel_index(subset, shape))
+            xyz = lower + pitch * indices
+            local = (xyz - pose[:3, 3]) @ pose[:3, :3]
+            front = local[:, 2] < -1e-8
+            depth = np.where(front, -local[:, 2], 1)
+            u = cx + fx * local[:, 0] / depth
+            v = cy - fy * local[:, 1] / depth
+            if field is None:
+                ix, iy = np.rint(u).astype(int), np.rint(v).astype(int)
+                good = (
+                    front
+                    & (ix >= 0)
+                    & (ix < mask.shape[1])
+                    & (iy >= 0)
+                    & (iy < mask.shape[0])
+                )
+                good[good] = allowed[iy[good], ix[good]]
+            else:
+                distance = map_coordinates(
+                    signed, [v, u], order=1, mode="constant", cval=-1e6
+                )
+                distance += boundary_offset_px
+                field[subset] = np.minimum(field[subset], distance)
+                # Keep one projected voxel of negative space for isosurface interpolation.
+                margin = 1 + np.sqrt(3) * max(fx, fy) * pitch / depth
+                good = front & (distance > -margin)
+            survivors.append(subset[good])
+        active = np.concatenate(survivors)
         if not len(active):
             raise ValueError("Silhouette carving removed all voxels")
-    occupied = np.zeros(shape, dtype=bool)
-    occupied.flat[active] = True
 
     from skimage.measure import marching_cubes
     import trimesh
 
-    padded = np.pad(occupied, 1)
-    vertices, faces, _, _ = marching_cubes(padded, level=0.5, allow_degenerate=False)
+    if field is None:
+        occupied = np.zeros(shape, dtype=bool)
+        occupied.flat[active] = True
+        padded = np.pad(occupied, 1)
+        level = 0.5
+    else:
+        occupied = np.full(shape, -2.0, dtype=np.float32)
+        occupied.flat[active] = field[active]
+        if not (occupied > 0).any():
+            raise ValueError(
+                "Subpixel silhouette intersection has no positive interior"
+            )
+        padded = np.pad(occupied, 1, constant_values=-2)
+        level = 0.0
+    vertices, faces, _, _ = marching_cubes(padded, level=level, allow_degenerate=False)
     mesh = trimesh.Trimesh(
         vertices=lower + pitch * (vertices - 1), faces=faces[:, ::-1], process=False
     )

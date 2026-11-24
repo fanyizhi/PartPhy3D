@@ -1,0 +1,32 @@
+[
+  {
+    "scene_id": "B07TWQTVXL_ATVPDKIKX0DER",
+    "object": "Metal shoe rack",
+    "shared_mesh_coverage_pct": 57.244614315496875,
+    "density_coverage_pct": {
+      "NeRF2Physics": 57.244614315496875,
+      "PUGS\u2013Qwen": 55.47255038220987,
+      "PartPhy3D": 57.244614315496875
+    }
+  },
+  {
+    "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+    "object": "Patterned accent chair",
+    "shared_mesh_coverage_pct": 98.14353288235593,
+    "density_coverage_pct": {
+      "NeRF2Physics": 98.14353288235593,
+      "PUGS\u2013Qwen": 94.5831849855043,
+      "PartPhy3D": 96.44473831442959
+    }
+  },
+  {
+    "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+    "object": "Blue accent chair",
+    "shared_mesh_coverage_pct": 91.83574292309561,
+    "density_coverage_pct": {
+      "NeRF2Physics": 91.83574292309561,
+      "PUGS\u2013Qwen": 71.631636496173,
+      "PartPhy3D": 91.7385493864658
+    }
+  }
+]

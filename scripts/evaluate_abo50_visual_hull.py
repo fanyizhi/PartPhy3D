@@ -11,12 +11,12 @@ import numpy as np
 import trimesh
 from PIL import Image
 
-from prepare_abo50_benchmark import digest, read_json, write_json
-from run_abo50_density_maps import CASES
-
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from tactile3d.vision.silhouette import iou, silhouette
 from tactile3d.vision.visual_hull import build_visual_hull
+
+from prepare_abo50_benchmark import digest, read_json, write_json
+from run_abo50_density_maps import CASES
 
 SIZE = 256
 
@@ -28,6 +28,7 @@ def evaluate(
     resolution: int,
     extra_views: int,
     adaptive_threshold: float | None,
+    boundary_offset_px: float | None = None,
 ) -> dict:
     source = benchmark / "observations" / "scenes" / scene
     run = benchmark / "reconstructions" / scene
@@ -78,7 +79,13 @@ def evaluate(
         )
     selected = input_iou is None or input_iou < adaptive_threshold
     candidate, pitch = (
-        build_visual_hull(poses[ids], camera, [inputs[i] for i in ids], resolution)
+        build_visual_hull(
+            poses[ids],
+            camera,
+            [inputs[i] for i in ids],
+            resolution,
+            boundary_offset_px=boundary_offset_px,
+        )
         if selected
         else (original, None)
     )
@@ -140,6 +147,11 @@ def main() -> None:
     parser.add_argument("--resolution", type=int, default=144)
     parser.add_argument("--extra-views", type=int, choices=range(19), default=0)
     parser.add_argument("--adaptive-threshold", type=float)
+    parser.add_argument(
+        "--boundary-offset-px",
+        type=float,
+        help="Continuous signed-distance contour, in original image pixels",
+    )
     parser.add_argument("--workers", type=int, default=4)
     args = parser.parse_args()
     if args.adaptive_threshold is not None and not 0 < args.adaptive_threshold < 1:
@@ -160,6 +172,7 @@ def main() -> None:
                 args.resolution,
                 args.extra_views,
                 args.adaptive_threshold,
+                args.boundary_offset_px,
             )
             for s in cases
         }
@@ -187,6 +200,7 @@ def main() -> None:
             "valid": len(scored),
             "metrics": metrics,
             "adaptive_threshold": args.adaptive_threshold,
+            "boundary_offset_px": args.boundary_offset_px,
             "scenes": rows,
         },
     )

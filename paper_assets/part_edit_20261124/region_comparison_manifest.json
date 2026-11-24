@@ -1,0 +1,40 @@
+[
+  {
+    "scene_id": "B07TWQTVXL_ATVPDKIKX0DER",
+    "view": 8,
+    "pugs_scores_sha256": "85f437d8a6f98dadeb232c5c3febfc2d254ab9e84979cbebc354159f3b8ccbdf",
+    "pugs_classes": [
+      "steel"
+    ],
+    "partphy3d_classes": [
+      "steel"
+    ]
+  },
+  {
+    "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+    "view": 1,
+    "pugs_scores_sha256": "d58b12e63373b3ea3e6efd971ccb77bebb30d7246ef02d2d713b037de9f3f497",
+    "pugs_classes": [
+      "fabric",
+      "wood"
+    ],
+    "partphy3d_classes": [
+      "fabric",
+      "wood"
+    ]
+  },
+  {
+    "scene_id": "B07QFRSC43_ATVPDKIKX0DER",
+    "view": 3,
+    "pugs_scores_sha256": "2e9d5709885ad93c0bf77e17daa62ac0b17a5e2170323eebd1883ce11d628109",
+    "pugs_classes": [
+      "fabric",
+      "metal",
+      "foam"
+    ],
+    "partphy3d_classes": [
+      "fabric",
+      "steel"
+    ]
+  }
+]
