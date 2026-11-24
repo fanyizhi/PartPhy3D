@@ -55,8 +55,8 @@ def main():
     args = parser.parse_args()
     if args.areal_replay and not args.routed_ledger:
         parser.error("--areal-replay requires --routed-ledger")
-    if args.routed_ledger and (not args.nonlinear or args.mass_weights):
-        parser.error("--routed-ledger requires --nonlinear without --mass-weights")
+    if args.routed_ledger and not args.nonlinear:
+        parser.error("--routed-ledger requires --nonlinear")
     rows = read(WORK / "geometry_predictions.json")
     catalog = read(WORK / "abo500_catalog_dimensions.json")["objects"]
     panels = read(WORK / "component_evidence.json")["scenes"]
@@ -272,9 +272,17 @@ def main():
             else "nonlinear_structure_control.json"
         )
         if args.routed_ledger:
-            filename = "routed_structure_control.json"
+            filename = (
+                "routed_weighted_structure_control.json"
+                if args.mass_weights
+                else "routed_structure_control.json"
+            )
         if args.areal_replay:
-            filename = "areal_structure_control.json"
+            filename = (
+                "areal_weighted_structure_control.json"
+                if args.mass_weights
+                else "areal_structure_control.json"
+            )
         (WORK / filename).write_text(json.dumps(summaries, indent=2))
         print({k: v["metrics"] for k, v in summaries.items()})
         return
