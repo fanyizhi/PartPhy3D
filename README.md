@@ -13,15 +13,11 @@ multi-view VLM evidence and geometric constraints.
 
 [ABO-500 mass results against five papers](https://github.com/fanyizhi/PartPhy3D/blob/codex/mesh-structure-study/paper_assets/abo500_comparison_20261124/README.md) · [Method and implementation notes (中文)](https://github.com/fanyizhi/PartPhy3D/blob/codex/mesh-structure-study/docs/PARTPHY3D_METHODS_zh.md)
 
-![Four selected ABO objects showing RGB input, region evidence, Ours, NeRF2Physics and MaskCLIP](paper_assets/gallery/material_selected.png)
+![Three ABO objects showing RGB input, region evidence, Ours, PUGS–Qwen and NeRF2Physics](paper_assets/gallery/material_paper_baselines.png)
 
-Four illustrative objects were selected by Ours foreground assignment coverage among seven cached cases. Each column shares a camera and crop. Region evidence visualizes the multiview part votes. MaskCLIP predicts materials directly from each RGB image.
+Patterned chair, upholstered sofa and metal rack. Each column uses a common view, mesh and crop. PUGS–Qwen uses the PUGS pipeline and local Qwen material proposals.
 
-[Selected examples (PDF)](paper_assets/gallery/material_selected.pdf) · [Full seven-object figure (PDF)](paper_assets/gallery/region_material_seven.pdf)
-
-![Two PhysSeg objects with annotations and predictions from Ours, NeRF2Physics, PUGS-Qwen and MaskCLIP](paper_assets/gallery/paired_material.png)
-
-[Matched comparison (PDF)](paper_assets/gallery/paired_material.pdf) · [Three-dimensional methods, ten-view scores](paper_assets/gallery/paired_material.json) · [MaskCLIP ten-view scores](paper_assets/gallery/maskclip_physseg.json)
+[Matched material comparison (PDF)](paper_assets/gallery/material_paper_baselines.pdf) · [PUGS, Fig. 5](https://arxiv.org/html/2502.12231v2#S3.F5) · [GS2Physics, Fig. 8](https://ieeexplore.ieee.org/document/11653536/) · [Gen2Physics, Fig. 4](https://arxiv.org/html/2608.23869v1#S4.F4) · [PhysVGGT, Fig. 4](https://arxiv.org/html/2609.18920v1#S4.F4)
 
 ## Coverage and local editing
 
