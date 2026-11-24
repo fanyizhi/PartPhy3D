@@ -1,0 +1,3865 @@
+{
+  "archives_checked": 174,
+  "skipped_invalid_seals": [
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/000",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/010",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/020",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/030",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/040",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/050",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/060",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/070",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/080",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/090",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/100",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/110",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/120",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/130",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/140",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/150",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/160",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/170",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/180",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/190",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/200",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/210",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/220",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/230",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/240",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/250",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/260",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/270",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/280",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/290",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/300",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/310",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/320",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/330",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/340",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/350",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/360",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/370",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/380",
+      "error": "KeyError"
+    },
+    {
+      "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/nerf_run/390",
+      "error": "KeyError"
+    }
+  ],
+  "canonical_coverage": {
+    "train": 300,
+    "val": 100,
+    "test": 100
+  },
+  "original_unresolved_counts": {
+    "train": 6,
+    "val": 2,
+    "test": 10
+  },
+  "recovered": [
+    "B07YLYRWJ7_ATVPDKIKX0DER",
+    "B07YM19Q9K_ATVPDKIKX0DER",
+    "B07Y2C57KD_ATVPDKIKX0DER",
+    "B07YM1FZTN_ATVPDKIKX0DER",
+    "B07YLZQ8W6_ATVPDKIKX0DER",
+    "B07YLZRWKX_ATVPDKIKX0DER",
+    "B07XMRCXJ7_ATVPDKIKX0DER",
+    "B07Y2B3ZXV_ATVPDKIKX0DER",
+    "B07YLYRSB6_ATVPDKIKX0DER",
+    "B07YLZTGZ9_ATVPDKIKX0DER",
+    "B07K6S2G5Z_A1F83G8C2ARO7P",
+    "B07YM1D7B7_ATVPDKIKX0DER",
+    "B07YM1FZSJ_ATVPDKIKX0DER",
+    "B07XHQQ95Y_ATVPDKIKX0DER",
+    "B074KMVVK7_ATVPDKIKX0DER",
+    "B07Y2B738L_ATVPDKIKX0DER",
+    "B07YM1FJ1M_ATVPDKIKX0DER",
+    "B07N6RT9SM_ATVPDKIKX0DER"
+  ],
+  "forced_image_fallback_metrics": {
+    "train": [
+      7.234543813753868,
+      0.5813823831244758,
+      142.85667942045666,
+      0.6268213840497264
+    ],
+    "val": [
+      10.948442623002586,
+      0.6495868055442017,
+      88.42652561421335,
+      0.5964491216339932
+    ],
+    "test": [
+      4.942826377253466,
+      0.5377272765406892,
+      73.80013499416488,
+      0.6439135718788488
+    ]
+  },
+  "objects": {
+    "B07YLYRWJ7_ATVPDKIKX0DER": {
+      "split": "train",
+      "archived_total_kg": 14.673528345109887,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_000/canopies",
+          "field": "open_frame_groups",
+          "part_sum_kg": 14.673528345109887,
+          "matches": true,
+          "components": [
+            {
+              "name": "Canopy Fabric",
+              "material": "fabric",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": [
+                2500,
+                2500,
+                2
+              ],
+              "area_m2": 6.25,
+              "thickness_mm": 2.0,
+              "volume_m3": 0.0125,
+              "mass_kg": 4.375
+            },
+            {
+              "name": "Support Tubes",
+              "material": "aluminum",
+              "kind": "tube",
+              "count": 4,
+              "dimensions": [
+                2500,
+                40,
+                1.5
+              ],
+              "length_m": 2.5,
+              "diameter_mm": 40.0,
+              "wall_mm": 1.5,
+              "volume_m3": 0.0018142697574481054,
+              "mass_kg": 4.898528345109884
+            },
+            {
+              "name": "Base Fittings",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                100,
+                100,
+                50
+              ],
+              "dimensions_mm": [
+                100.0,
+                100.0,
+                50.0
+              ],
+              "volume_m3": 0.0020000000000000005,
+              "mass_kg": 5.400000000000001
+            }
+          ]
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_000/canopies",
+          "field": "parts",
+          "part_sum_kg": 854.0484853959447,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_000/panels",
+          "field": "open_frame_groups",
+          "part_sum_kg": 14.673528345109887,
+          "matches": true,
+          "components": [
+            {
+              "name": "Canopy Fabric",
+              "material": "fabric",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": [
+                2500,
+                2500,
+                2
+              ],
+              "area_m2": 6.25,
+              "thickness_mm": 2.0,
+              "volume_m3": 0.0125,
+              "mass_kg": 4.375
+            },
+            {
+              "name": "Support Tubes",
+              "material": "aluminum",
+              "kind": "tube",
+              "count": 4,
+              "dimensions": [
+                2500,
+                40,
+                1.5
+              ],
+              "length_m": 2.5,
+              "diameter_mm": 40.0,
+              "wall_mm": 1.5,
+              "volume_m3": 0.0018142697574481054,
+              "mass_kg": 4.898528345109884
+            },
+            {
+              "name": "Base Fittings",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                100,
+                100,
+                50
+              ],
+              "dimensions_mm": [
+                100.0,
+                100.0,
+                50.0
+              ],
+              "volume_m3": 0.0020000000000000005,
+              "mass_kg": 5.400000000000001
+            }
+          ]
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_000/panels",
+          "field": "parts",
+          "part_sum_kg": 854.0484853959447,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_000/weighted",
+          "field": "parts",
+          "part_sum_kg": 854.0484853959447,
+          "matches": false,
+          "components": null
+        }
+      ]
+    },
+    "B07YM19Q9K_ATVPDKIKX0DER": {
+      "split": "train",
+      "archived_total_kg": 6.796477651384043,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_100/canopies",
+          "field": "open_frame_groups",
+          "part_sum_kg": 6.796477651384043,
+          "matches": true,
+          "components": [
+            {
+              "name": "roof fabric",
+              "material": "fabric",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": [
+                2000,
+                2000,
+                2
+              ],
+              "area_m2": 4.0,
+              "thickness_mm": 2.0,
+              "volume_m3": 0.008,
+              "mass_kg": 2.8000000000000003
+            },
+            {
+              "name": "support tubes",
+              "material": "aluminum",
+              "kind": "tube",
+              "count": 4,
+              "dimensions": [
+                2000,
+                40,
+                1
+              ],
+              "length_m": 2.0,
+              "diameter_mm": 40.0,
+              "wall_mm": 1.0,
+              "volume_m3": 0.0009801769079200156,
+              "mass_kg": 2.6464776513840422
+            },
+            {
+              "name": "base fittings",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                50,
+                50,
+                50
+              ],
+              "dimensions_mm": [
+                50.0,
+                50.0,
+                50.0
+              ],
+              "volume_m3": 0.0005000000000000001,
+              "mass_kg": 1.3500000000000003
+            }
+          ]
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_100/canopies",
+          "field": "parts",
+          "part_sum_kg": 412.29107541589883,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_100/panels",
+          "field": "open_frame_groups",
+          "part_sum_kg": 6.796477651384043,
+          "matches": true,
+          "components": [
+            {
+              "name": "roof fabric",
+              "material": "fabric",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": [
+                2000,
+                2000,
+                2
+              ],
+              "area_m2": 4.0,
+              "thickness_mm": 2.0,
+              "volume_m3": 0.008,
+              "mass_kg": 2.8000000000000003
+            },
+            {
+              "name": "support tubes",
+              "material": "aluminum",
+              "kind": "tube",
+              "count": 4,
+              "dimensions": [
+                2000,
+                40,
+                1
+              ],
+              "length_m": 2.0,
+              "diameter_mm": 40.0,
+              "wall_mm": 1.0,
+              "volume_m3": 0.0009801769079200156,
+              "mass_kg": 2.6464776513840422
+            },
+            {
+              "name": "base fittings",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                50,
+                50,
+                50
+              ],
+              "dimensions_mm": [
+                50.0,
+                50.0,
+                50.0
+              ],
+              "volume_m3": 0.0005000000000000001,
+              "mass_kg": 1.3500000000000003
+            }
+          ]
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_100/panels",
+          "field": "parts",
+          "part_sum_kg": 412.29107541589883,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_100/weighted",
+          "field": "parts",
+          "part_sum_kg": 412.29107541589883,
+          "matches": false,
+          "components": null
+        }
+      ]
+    },
+    "B07Y2C57KD_ATVPDKIKX0DER": {
+      "split": "train",
+      "archived_total_kg": 9.09155625,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_100/appliance",
+          "field": "role_parts",
+          "part_sum_kg": 9.09155625,
+          "matches": true,
+          "components": [
+            {
+              "name": "covering shell",
+              "material": "plastic",
+              "shape": "block",
+              "count": 1,
+              "dims_cm": [
+                55.0,
+                40.0,
+                25.0
+              ],
+              "occupied_fraction": 0.8,
+              "evidence": "visible",
+              "volume_m3": 0.0017156250000000001,
+              "mass_kg": 1.80140625,
+              "material_volumes_m3": {
+                "plastic": 0.0017156250000000001
+              },
+              "attribution": {
+                "before": {
+                  "geometry": 0.055,
+                  "occupancy": 0.8,
+                  "density": 1050.0
+                },
+                "after": {
+                  "geometry": 0.0022875,
+                  "occupancy": 0.75,
+                  "density": 1050.0
+                },
+                "delta_kg": {
+                  "geometry": -42.894796875,
+                  "occupancy": -1.503796875000001,
+                  "density": 0.0
+                }
+              }
+            },
+            {
+              "name": "chassis",
+              "material": "plastic",
+              "shape": "block",
+              "count": 1,
+              "dims_cm": [
+                55.0,
+                40.0,
+                25.0
+              ],
+              "occupied_fraction": 0.8,
+              "evidence": "visible",
+              "volume_m3": 0.0008800000000000001,
+              "mass_kg": 0.9240000000000002,
+              "material_volumes_m3": {
+                "plastic": 0.0008800000000000001
+              },
+              "attribution": {
+                "before": {
+                  "geometry": 0.055,
+                  "occupancy": 0.8,
+                  "density": 1050.0
+                },
+                "after": {
+                  "geometry": 0.0008800000000000001,
+                  "occupancy": 1.0,
+                  "density": 1050.0
+                },
+                "delta_kg": {
+                  "geometry": -51.1434,
+                  "occupancy": 5.867399999999999,
+                  "density": 0.0
+                }
+              }
+            },
+            {
+              "name": "heat exchangers",
+              "material": "copper",
+              "shape": "sheet",
+              "count": 1,
+              "dims_cm": [
+                50.0,
+                35.0,
+                10.0
+              ],
+              "occupied_fraction": 0.9,
+              "evidence": "visible",
+              "volume_m3": 0.0011025,
+              "mass_kg": 4.94865,
+              "material_volumes_m3": {
+                "aluminum": 0.0007875,
+                "copper": 0.00031499999999999996
+              },
+              "attribution": {
+                "before": {
+                  "geometry": 0.017499999999999998,
+                  "occupancy": 0.9,
+                  "density": 8960.0
+                },
+                "after": {
+                  "geometry": 0.010499999999999999,
+                  "occupancy": 0.10500000000000001,
+                  "density": 4488.571428571428
+                },
+                "delta_kg": {
+                  "geometry": -25.7263,
+                  "occupancy": -76.91492500000001,
+                  "density": -33.530125000000005
+                }
+              }
+            },
+            {
+              "name": "compressor and fan assemblies",
+              "material": "aluminum",
+              "shape": "block",
+              "count": 1,
+              "dims_cm": [
+                15.0,
+                10.0,
+                5.0
+              ],
+              "occupied_fraction": 0.7,
+              "evidence": "inferred",
+              "volume_m3": 0.000525,
+              "mass_kg": 1.4175
+            }
+          ]
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_100/appliance",
+          "field": "parts",
+          "part_sum_kg": 234.9375,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_100/appliance_raw",
+          "field": "parts",
+          "part_sum_kg": 234.9375,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_100/canopies",
+          "field": "parts",
+          "part_sum_kg": 22.865830472061592,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_100/panels",
+          "field": "parts",
+          "part_sum_kg": 22.865830472061592,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_100/repaired_pipeline/construction_retry",
+          "field": "parts",
+          "part_sum_kg": 22.865830472061592,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_100/repaired_pipeline/mass_hypotheses",
+          "field": "parts",
+          "part_sum_kg": 22.865830472061592,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_100/repaired_pipeline/winding_only",
+          "field": "parts",
+          "part_sum_kg": 22.865830472061592,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_100/weighted",
+          "field": "parts",
+          "part_sum_kg": 22.865830472061592,
+          "matches": false,
+          "components": null
+        }
+      ]
+    },
+    "B07YM1FZTN_ATVPDKIKX0DER": {
+      "split": "train",
+      "archived_total_kg": 15.216395555650204,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_125/canopies",
+          "field": "open_frame_groups",
+          "part_sum_kg": 15.216395555650204,
+          "matches": true,
+          "components": [
+            {
+              "name": "Canopy Fabric",
+              "material": "fabric",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": [
+                2500,
+                2500,
+                2
+              ],
+              "area_m2": 6.25,
+              "thickness_mm": 2.0,
+              "volume_m3": 0.0125,
+              "mass_kg": 4.375
+            },
+            {
+              "name": "Support Tubes",
+              "material": "aluminum",
+              "kind": "tube",
+              "count": 4,
+              "dimensions": [
+                2500,
+                40,
+                1.5
+              ],
+              "length_m": 2.5,
+              "diameter_mm": 40.0,
+              "wall_mm": 1.5,
+              "volume_m3": 0.0018142697574481054,
+              "mass_kg": 4.898528345109884
+            },
+            {
+              "name": "Base Fittings",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                100,
+                100,
+                50
+              ],
+              "dimensions_mm": [
+                100.0,
+                100.0,
+                50.0
+              ],
+              "volume_m3": 0.0020000000000000005,
+              "mass_kg": 5.400000000000001
+            },
+            {
+              "name": "Leg Braces",
+              "material": "aluminum",
+              "kind": "rod",
+              "count": 4,
+              "dimensions": [
+                1000,
+                8
+              ],
+              "length_m": 1.0,
+              "diameter_mm": 8.0,
+              "volume_m3": 0.00020106192982974675,
+              "mass_kg": 0.5428672105403162
+            }
+          ]
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_125/canopies",
+          "field": "parts",
+          "part_sum_kg": 316.42453932016065,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_125/panels",
+          "field": "open_frame_groups",
+          "part_sum_kg": 15.216395555650204,
+          "matches": true,
+          "components": [
+            {
+              "name": "Canopy Fabric",
+              "material": "fabric",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": [
+                2500,
+                2500,
+                2
+              ],
+              "area_m2": 6.25,
+              "thickness_mm": 2.0,
+              "volume_m3": 0.0125,
+              "mass_kg": 4.375
+            },
+            {
+              "name": "Support Tubes",
+              "material": "aluminum",
+              "kind": "tube",
+              "count": 4,
+              "dimensions": [
+                2500,
+                40,
+                1.5
+              ],
+              "length_m": 2.5,
+              "diameter_mm": 40.0,
+              "wall_mm": 1.5,
+              "volume_m3": 0.0018142697574481054,
+              "mass_kg": 4.898528345109884
+            },
+            {
+              "name": "Base Fittings",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                100,
+                100,
+                50
+              ],
+              "dimensions_mm": [
+                100.0,
+                100.0,
+                50.0
+              ],
+              "volume_m3": 0.0020000000000000005,
+              "mass_kg": 5.400000000000001
+            },
+            {
+              "name": "Leg Braces",
+              "material": "aluminum",
+              "kind": "rod",
+              "count": 4,
+              "dimensions": [
+                1000,
+                8
+              ],
+              "length_m": 1.0,
+              "diameter_mm": 8.0,
+              "volume_m3": 0.00020106192982974675,
+              "mass_kg": 0.5428672105403162
+            }
+          ]
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_125/panels",
+          "field": "parts",
+          "part_sum_kg": 316.42453932016065,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_125/repaired_pipeline/construction_retry",
+          "field": "parts",
+          "part_sum_kg": 316.42453932016065,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_125/weighted",
+          "field": "parts",
+          "part_sum_kg": 316.42453932016065,
+          "matches": false,
+          "components": null
+        }
+      ]
+    },
+    "B07YLZQ8W6_ATVPDKIKX0DER": {
+      "split": "train",
+      "archived_total_kg": 10.623528345109884,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_150/canopies",
+          "field": "open_frame_groups",
+          "part_sum_kg": 10.623528345109884,
+          "matches": true,
+          "components": [
+            {
+              "name": "Canopy Fabric",
+              "material": "fabric",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": [
+                2500,
+                2500,
+                2
+              ],
+              "area_m2": 6.25,
+              "thickness_mm": 2.0,
+              "volume_m3": 0.0125,
+              "mass_kg": 4.375
+            },
+            {
+              "name": "Support Tubes",
+              "material": "aluminum",
+              "kind": "tube",
+              "count": 4,
+              "dimensions": [
+                2500,
+                40,
+                1.5
+              ],
+              "length_m": 2.5,
+              "diameter_mm": 40.0,
+              "wall_mm": 1.5,
+              "volume_m3": 0.0018142697574481054,
+              "mass_kg": 4.898528345109884
+            },
+            {
+              "name": "Base Fittings",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                50,
+                50,
+                50
+              ],
+              "dimensions_mm": [
+                50.0,
+                50.0,
+                50.0
+              ],
+              "volume_m3": 0.0005000000000000001,
+              "mass_kg": 1.3500000000000003
+            }
+          ]
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_150/canopies",
+          "field": "parts",
+          "part_sum_kg": 497.8574360317144,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_150/panels",
+          "field": "open_frame_groups",
+          "part_sum_kg": 10.623528345109884,
+          "matches": true,
+          "components": [
+            {
+              "name": "Canopy Fabric",
+              "material": "fabric",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": [
+                2500,
+                2500,
+                2
+              ],
+              "area_m2": 6.25,
+              "thickness_mm": 2.0,
+              "volume_m3": 0.0125,
+              "mass_kg": 4.375
+            },
+            {
+              "name": "Support Tubes",
+              "material": "aluminum",
+              "kind": "tube",
+              "count": 4,
+              "dimensions": [
+                2500,
+                40,
+                1.5
+              ],
+              "length_m": 2.5,
+              "diameter_mm": 40.0,
+              "wall_mm": 1.5,
+              "volume_m3": 0.0018142697574481054,
+              "mass_kg": 4.898528345109884
+            },
+            {
+              "name": "Base Fittings",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                50,
+                50,
+                50
+              ],
+              "dimensions_mm": [
+                50.0,
+                50.0,
+                50.0
+              ],
+              "volume_m3": 0.0005000000000000001,
+              "mass_kg": 1.3500000000000003
+            }
+          ]
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_150/panels",
+          "field": "parts",
+          "part_sum_kg": 497.8574360317144,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_150/weighted",
+          "field": "parts",
+          "part_sum_kg": 497.8574360317144,
+          "matches": false,
+          "components": null
+        }
+      ]
+    },
+    "B07YLZRWKX_ATVPDKIKX0DER": {
+      "split": "train",
+      "archived_total_kg": 21.791194128460106,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_275/canopies",
+          "field": "open_frame_groups",
+          "part_sum_kg": 21.791194128460106,
+          "matches": true,
+          "components": [
+            {
+              "name": "roof fabric",
+              "material": "fabric",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": [
+                2500,
+                2500,
+                2
+              ],
+              "area_m2": 6.25,
+              "thickness_mm": 2.0,
+              "volume_m3": 0.0125,
+              "mass_kg": 4.375
+            },
+            {
+              "name": "support tubes",
+              "material": "aluminum",
+              "kind": "tube",
+              "count": 4,
+              "dimensions": [
+                2500,
+                40,
+                1
+              ],
+              "length_m": 2.5,
+              "diameter_mm": 40.0,
+              "wall_mm": 1.0,
+              "volume_m3": 0.0012252211349000194,
+              "mass_kg": 3.3080970642300525
+            },
+            {
+              "name": "corner support tubes",
+              "material": "aluminum",
+              "kind": "tube",
+              "count": 4,
+              "dimensions": [
+                2500,
+                40,
+                1
+              ],
+              "length_m": 2.5,
+              "diameter_mm": 40.0,
+              "wall_mm": 1.0,
+              "volume_m3": 0.0012252211349000194,
+              "mass_kg": 3.3080970642300525
+            },
+            {
+              "name": "base fittings",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                100,
+                100,
+                100
+              ],
+              "dimensions_mm": [
+                100.0,
+                100.0,
+                100.0
+              ],
+              "volume_m3": 0.004000000000000001,
+              "mass_kg": 10.800000000000002
+            }
+          ]
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_275/canopies",
+          "field": "parts",
+          "part_sum_kg": 1427.0476258819267,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_275/panels",
+          "field": "open_frame_groups",
+          "part_sum_kg": 21.791194128460106,
+          "matches": true,
+          "components": [
+            {
+              "name": "roof fabric",
+              "material": "fabric",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": [
+                2500,
+                2500,
+                2
+              ],
+              "area_m2": 6.25,
+              "thickness_mm": 2.0,
+              "volume_m3": 0.0125,
+              "mass_kg": 4.375
+            },
+            {
+              "name": "support tubes",
+              "material": "aluminum",
+              "kind": "tube",
+              "count": 4,
+              "dimensions": [
+                2500,
+                40,
+                1
+              ],
+              "length_m": 2.5,
+              "diameter_mm": 40.0,
+              "wall_mm": 1.0,
+              "volume_m3": 0.0012252211349000194,
+              "mass_kg": 3.3080970642300525
+            },
+            {
+              "name": "corner support tubes",
+              "material": "aluminum",
+              "kind": "tube",
+              "count": 4,
+              "dimensions": [
+                2500,
+                40,
+                1
+              ],
+              "length_m": 2.5,
+              "diameter_mm": 40.0,
+              "wall_mm": 1.0,
+              "volume_m3": 0.0012252211349000194,
+              "mass_kg": 3.3080970642300525
+            },
+            {
+              "name": "base fittings",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                100,
+                100,
+                100
+              ],
+              "dimensions_mm": [
+                100.0,
+                100.0,
+                100.0
+              ],
+              "volume_m3": 0.004000000000000001,
+              "mass_kg": 10.800000000000002
+            }
+          ]
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_275/panels",
+          "field": "parts",
+          "part_sum_kg": 1427.0476258819267,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/train_275/weighted",
+          "field": "parts",
+          "part_sum_kg": 1427.0476258819267,
+          "matches": false,
+          "components": null
+        }
+      ]
+    },
+    "B07XMRCXJ7_ATVPDKIKX0DER": {
+      "split": "val",
+      "archived_total_kg": 7.686050000000001,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/appliance",
+          "field": "role_parts",
+          "part_sum_kg": 7.686050000000001,
+          "matches": true,
+          "components": [
+            {
+              "name": "covering shell",
+              "material": "plastic",
+              "shape": "block",
+              "count": 1,
+              "dims_cm": [
+                45.0,
+                30.0,
+                30.0
+              ],
+              "occupied_fraction": 0.8,
+              "evidence": "visible",
+              "volume_m3": 0.00135,
+              "mass_kg": 1.4175,
+              "material_volumes_m3": {
+                "plastic": 0.00135
+              },
+              "attribution": {
+                "before": {
+                  "geometry": 0.0405,
+                  "occupancy": 0.8,
+                  "density": 1050.0
+                },
+                "after": {
+                  "geometry": 0.0018,
+                  "occupancy": 0.7500000000000001,
+                  "density": 1050.0
+                },
+                "delta_kg": {
+                  "geometry": -31.492125000000005,
+                  "occupancy": -1.1103749999999977,
+                  "density": 0.0
+                }
+              }
+            },
+            {
+              "name": "chassis",
+              "material": "plastic",
+              "shape": "block",
+              "count": 1,
+              "dims_cm": [
+                45.0,
+                30.0,
+                30.0
+              ],
+              "occupied_fraction": 0.8,
+              "evidence": "visible",
+              "volume_m3": 0.00054,
+              "mass_kg": 0.5670000000000001,
+              "material_volumes_m3": {
+                "plastic": 0.00054
+              },
+              "attribution": {
+                "before": {
+                  "geometry": 0.0405,
+                  "occupancy": 0.8,
+                  "density": 1050.0
+                },
+                "after": {
+                  "geometry": 0.00054,
+                  "occupancy": 1.0,
+                  "density": 1050.0
+                },
+                "delta_kg": {
+                  "geometry": -37.7622,
+                  "occupancy": 4.309199999999998,
+                  "density": 0.0
+                }
+              }
+            },
+            {
+              "name": "heat exchangers",
+              "material": "copper",
+              "shape": "sheet",
+              "count": 1,
+              "dims_cm": [
+                40.0,
+                25.0,
+                10.0
+              ],
+              "occupied_fraction": 0.2,
+              "evidence": "inferred",
+              "volume_m3": 0.0006299999999999999,
+              "mass_kg": 2.8278,
+              "material_volumes_m3": {
+                "aluminum": 0.00045,
+                "copper": 0.00017999999999999998
+              },
+              "attribution": {
+                "before": {
+                  "geometry": 0.01,
+                  "occupancy": 0.2,
+                  "density": 8960.0
+                },
+                "after": {
+                  "geometry": 0.006,
+                  "occupancy": 0.10499999999999998,
+                  "density": 4488.571428571429
+                },
+                "delta_kg": {
+                  "geometry": -4.243409523809524,
+                  "occupancy": -5.2520523809523825,
+                  "density": -5.596738095238095
+                }
+              }
+            },
+            {
+              "name": "compressor",
+              "material": "steel",
+              "shape": "block",
+              "count": 1,
+              "dims_cm": [
+                10.0,
+                10.0,
+                5.0
+              ],
+              "occupied_fraction": 0.5,
+              "evidence": "inferred",
+              "volume_m3": 0.00025,
+              "mass_kg": 1.9625000000000001
+            },
+            {
+              "name": "fan assemblies",
+              "material": "aluminum",
+              "shape": "block",
+              "count": 1,
+              "dims_cm": [
+                15.0,
+                15.0,
+                5.0
+              ],
+              "occupied_fraction": 0.3,
+              "evidence": "inferred",
+              "volume_m3": 0.00033749999999999996,
+              "mass_kg": 0.9112499999999999
+            }
+          ]
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/appliance",
+          "field": "parts",
+          "part_sum_kg": 88.83375000000001,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/appliance_raw",
+          "field": "parts",
+          "part_sum_kg": 88.83375000000001,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/canopies",
+          "field": "parts",
+          "part_sum_kg": 2.3852338241577598,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/panels",
+          "field": "parts",
+          "part_sum_kg": 2.3852338241577598,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/repaired_pipeline/construction_retry",
+          "field": "parts",
+          "part_sum_kg": 2.3852338241577598,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/repaired_pipeline/mass_hypotheses",
+          "field": "parts",
+          "part_sum_kg": 2.3852338241577598,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/repaired_pipeline/winding_only",
+          "field": "parts",
+          "part_sum_kg": 2.3852338241577598,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/weighted",
+          "field": "parts",
+          "part_sum_kg": 2.3852338241577598,
+          "matches": false,
+          "components": null
+        }
+      ]
+    },
+    "B07Y2B3ZXV_ATVPDKIKX0DER": {
+      "split": "val",
+      "archived_total_kg": 9.09155625,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/appliance",
+          "field": "role_parts",
+          "part_sum_kg": 9.09155625,
+          "matches": true,
+          "components": [
+            {
+              "name": "covering shell",
+              "material": "plastic",
+              "shape": "block",
+              "count": 1,
+              "dims_cm": [
+                55.0,
+                40.0,
+                25.0
+              ],
+              "occupied_fraction": 0.8,
+              "evidence": "visible",
+              "volume_m3": 0.0017156250000000001,
+              "mass_kg": 1.80140625,
+              "material_volumes_m3": {
+                "plastic": 0.0017156250000000001
+              },
+              "attribution": {
+                "before": {
+                  "geometry": 0.055,
+                  "occupancy": 0.8,
+                  "density": 1050.0
+                },
+                "after": {
+                  "geometry": 0.0022875,
+                  "occupancy": 0.75,
+                  "density": 1050.0
+                },
+                "delta_kg": {
+                  "geometry": -42.894796875,
+                  "occupancy": -1.503796875000001,
+                  "density": 0.0
+                }
+              }
+            },
+            {
+              "name": "chassis",
+              "material": "plastic",
+              "shape": "block",
+              "count": 1,
+              "dims_cm": [
+                55.0,
+                40.0,
+                25.0
+              ],
+              "occupied_fraction": 0.8,
+              "evidence": "visible",
+              "volume_m3": 0.0008800000000000001,
+              "mass_kg": 0.9240000000000002,
+              "material_volumes_m3": {
+                "plastic": 0.0008800000000000001
+              },
+              "attribution": {
+                "before": {
+                  "geometry": 0.055,
+                  "occupancy": 0.8,
+                  "density": 1050.0
+                },
+                "after": {
+                  "geometry": 0.0008800000000000001,
+                  "occupancy": 1.0,
+                  "density": 1050.0
+                },
+                "delta_kg": {
+                  "geometry": -51.1434,
+                  "occupancy": 5.867399999999999,
+                  "density": 0.0
+                }
+              }
+            },
+            {
+              "name": "heat exchangers",
+              "material": "copper",
+              "shape": "sheet",
+              "count": 1,
+              "dims_cm": [
+                50.0,
+                35.0,
+                10.0
+              ],
+              "occupied_fraction": 0.9,
+              "evidence": "inferred",
+              "volume_m3": 0.0011025,
+              "mass_kg": 4.94865,
+              "material_volumes_m3": {
+                "aluminum": 0.0007875,
+                "copper": 0.00031499999999999996
+              },
+              "attribution": {
+                "before": {
+                  "geometry": 0.017499999999999998,
+                  "occupancy": 0.9,
+                  "density": 8960.0
+                },
+                "after": {
+                  "geometry": 0.010499999999999999,
+                  "occupancy": 0.10500000000000001,
+                  "density": 4488.571428571428
+                },
+                "delta_kg": {
+                  "geometry": -25.7263,
+                  "occupancy": -76.91492500000001,
+                  "density": -33.530125000000005
+                }
+              }
+            },
+            {
+              "name": "compressor and fan assemblies",
+              "material": "aluminum",
+              "shape": "block",
+              "count": 1,
+              "dims_cm": [
+                15.0,
+                10.0,
+                5.0
+              ],
+              "occupied_fraction": 0.7,
+              "evidence": "inferred",
+              "volume_m3": 0.000525,
+              "mass_kg": 1.4175
+            }
+          ]
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/appliance",
+          "field": "parts",
+          "part_sum_kg": 234.9375,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/appliance_raw",
+          "field": "parts",
+          "part_sum_kg": 234.9375,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/canopies",
+          "field": "parts",
+          "part_sum_kg": 344.86070820516557,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/panels",
+          "field": "open_frame_groups",
+          "part_sum_kg": 6.9984311917772,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/panels",
+          "field": "parts",
+          "part_sum_kg": 344.86070820516557,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/repaired_pipeline/construction_retry",
+          "field": "parts",
+          "part_sum_kg": 344.86070820516557,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/repaired_pipeline/mass_hypotheses",
+          "field": "parts",
+          "part_sum_kg": 344.86070820516557,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/repaired_pipeline/winding_only",
+          "field": "parts",
+          "part_sum_kg": 344.86070820516557,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo500_20261120/val_075/weighted",
+          "field": "parts",
+          "part_sum_kg": 344.86070820516557,
+          "matches": false,
+          "components": null
+        }
+      ]
+    },
+    "B07YLYRSB6_ATVPDKIKX0DER": {
+      "split": "test",
+      "archived_total_kg": 38.92352834510989,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/canopies",
+          "field": "open_frame_groups",
+          "part_sum_kg": 38.92352834510989,
+          "matches": true,
+          "components": [
+            {
+              "name": "roof fabric",
+              "material": "fabric",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": [
+                2500,
+                2500,
+                10
+              ],
+              "area_m2": 6.25,
+              "thickness_mm": 10.0,
+              "volume_m3": 0.0625,
+              "mass_kg": 21.875
+            },
+            {
+              "name": "support tubes",
+              "material": "aluminum",
+              "kind": "tube",
+              "count": 4,
+              "dimensions": [
+                2500,
+                40,
+                1.5
+              ],
+              "length_m": 2.5,
+              "diameter_mm": 40.0,
+              "wall_mm": 1.5,
+              "volume_m3": 0.0018142697574481054,
+              "mass_kg": 4.898528345109884
+            },
+            {
+              "name": "corner fittings",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                100,
+                100,
+                100
+              ],
+              "dimensions_mm": [
+                100.0,
+                100.0,
+                100.0
+              ],
+              "volume_m3": 0.004000000000000001,
+              "mass_kg": 10.800000000000002
+            },
+            {
+              "name": "base feet",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                50,
+                50,
+                50
+              ],
+              "dimensions_mm": [
+                50.0,
+                50.0,
+                50.0
+              ],
+              "volume_m3": 0.0005000000000000001,
+              "mass_kg": 1.3500000000000003
+            }
+          ]
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/canopies",
+          "field": "parts",
+          "part_sum_kg": 3111.587977941171,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/panels",
+          "field": "open_frame_groups",
+          "part_sum_kg": 38.92352834510989,
+          "matches": true,
+          "components": [
+            {
+              "name": "roof fabric",
+              "material": "fabric",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": [
+                2500,
+                2500,
+                10
+              ],
+              "area_m2": 6.25,
+              "thickness_mm": 10.0,
+              "volume_m3": 0.0625,
+              "mass_kg": 21.875
+            },
+            {
+              "name": "support tubes",
+              "material": "aluminum",
+              "kind": "tube",
+              "count": 4,
+              "dimensions": [
+                2500,
+                40,
+                1.5
+              ],
+              "length_m": 2.5,
+              "diameter_mm": 40.0,
+              "wall_mm": 1.5,
+              "volume_m3": 0.0018142697574481054,
+              "mass_kg": 4.898528345109884
+            },
+            {
+              "name": "corner fittings",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                100,
+                100,
+                100
+              ],
+              "dimensions_mm": [
+                100.0,
+                100.0,
+                100.0
+              ],
+              "volume_m3": 0.004000000000000001,
+              "mass_kg": 10.800000000000002
+            },
+            {
+              "name": "base feet",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                50,
+                50,
+                50
+              ],
+              "dimensions_mm": [
+                50.0,
+                50.0,
+                50.0
+              ],
+              "volume_m3": 0.0005000000000000001,
+              "mass_kg": 1.3500000000000003
+            }
+          ]
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/panels",
+          "field": "parts",
+          "part_sum_kg": 3111.587977941171,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_00/weighted",
+          "field": "parts",
+          "part_sum_kg": 3111.587977941171,
+          "matches": false,
+          "components": null
+        }
+      ]
+    },
+    "B07YLZTGZ9_ATVPDKIKX0DER": {
+      "split": "test",
+      "archived_total_kg": 19.833097064230056,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/construction_weighted",
+          "field": "parts",
+          "part_sum_kg": 1116.075452575103,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_compact",
+          "field": "open_frame_groups",
+          "part_sum_kg": 19.833097064230056,
+          "matches": true,
+          "components": [
+            {
+              "name": "roof fabric",
+              "material": "fabric",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": [
+                2500,
+                2500,
+                2
+              ],
+              "area_m2": 6.25,
+              "thickness_mm": 2.0,
+              "volume_m3": 0.0125,
+              "mass_kg": 4.375
+            },
+            {
+              "name": "support tubes",
+              "material": "aluminum",
+              "kind": "tube",
+              "count": 4,
+              "dimensions": [
+                2500,
+                40,
+                1
+              ],
+              "length_m": 2.5,
+              "diameter_mm": 40.0,
+              "wall_mm": 1.0,
+              "volume_m3": 0.0012252211349000194,
+              "mass_kg": 3.3080970642300525
+            },
+            {
+              "name": "corner fittings",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                100,
+                100,
+                100
+              ],
+              "dimensions_mm": [
+                100.0,
+                100.0,
+                100.0
+              ],
+              "volume_m3": 0.004000000000000001,
+              "mass_kg": 10.800000000000002
+            },
+            {
+              "name": "base feet",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                50,
+                50,
+                50
+              ],
+              "dimensions_mm": [
+                50.0,
+                50.0,
+                50.0
+              ],
+              "volume_m3": 0.0005000000000000001,
+              "mass_kg": 1.3500000000000003
+            }
+          ]
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_compact",
+          "field": "parts",
+          "part_sum_kg": 1116.075452575103,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_nested",
+          "field": "open_frame_groups",
+          "part_sum_kg": 19.833097064230056,
+          "matches": true,
+          "components": [
+            {
+              "name": "roof fabric",
+              "material": "fabric",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": [
+                2500,
+                2500,
+                2
+              ],
+              "area_m2": 6.25,
+              "thickness_mm": 2.0,
+              "volume_m3": 0.0125,
+              "mass_kg": 4.375
+            },
+            {
+              "name": "support tubes",
+              "material": "aluminum",
+              "kind": "tube",
+              "count": 4,
+              "dimensions": [
+                2500,
+                40,
+                1
+              ],
+              "length_m": 2.5,
+              "diameter_mm": 40.0,
+              "wall_mm": 1.0,
+              "volume_m3": 0.0012252211349000194,
+              "mass_kg": 3.3080970642300525
+            },
+            {
+              "name": "corner fittings",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                100,
+                100,
+                100
+              ],
+              "dimensions_mm": [
+                100.0,
+                100.0,
+                100.0
+              ],
+              "volume_m3": 0.004000000000000001,
+              "mass_kg": 10.800000000000002
+            },
+            {
+              "name": "base feet",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                50,
+                50,
+                50
+              ],
+              "dimensions_mm": [
+                50.0,
+                50.0,
+                50.0
+              ],
+              "volume_m3": 0.0005000000000000001,
+              "mass_kg": 1.3500000000000003
+            }
+          ]
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_nested",
+          "field": "parts",
+          "part_sum_kg": 1116.075452575103,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_replay",
+          "field": "parts",
+          "part_sum_kg": 1116.075452575103,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+          "field": "open_frame_groups",
+          "part_sum_kg": 19.833097064230056,
+          "matches": true,
+          "components": [
+            {
+              "name": "roof fabric",
+              "material": "fabric",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": [
+                2500,
+                2500,
+                2
+              ],
+              "area_m2": 6.25,
+              "thickness_mm": 2.0,
+              "volume_m3": 0.0125,
+              "mass_kg": 4.375
+            },
+            {
+              "name": "support tubes",
+              "material": "aluminum",
+              "kind": "tube",
+              "count": 4,
+              "dimensions": [
+                2500,
+                40,
+                1
+              ],
+              "length_m": 2.5,
+              "diameter_mm": 40.0,
+              "wall_mm": 1.0,
+              "volume_m3": 0.0012252211349000194,
+              "mass_kg": 3.3080970642300525
+            },
+            {
+              "name": "corner fittings",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                100,
+                100,
+                100
+              ],
+              "dimensions_mm": [
+                100.0,
+                100.0,
+                100.0
+              ],
+              "volume_m3": 0.004000000000000001,
+              "mass_kg": 10.800000000000002
+            },
+            {
+              "name": "base feet",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                50,
+                50,
+                50
+              ],
+              "dimensions_mm": [
+                50.0,
+                50.0,
+                50.0
+              ],
+              "volume_m3": 0.0005000000000000001,
+              "mass_kg": 1.3500000000000003
+            }
+          ]
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+          "field": "parts",
+          "part_sum_kg": 1116.075452575103,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_replay",
+          "field": "parts",
+          "part_sum_kg": 1116.075452575103,
+          "matches": false,
+          "components": null
+        }
+      ]
+    },
+    "B07K6S2G5Z_A1F83G8C2ARO7P": {
+      "split": "test",
+      "archived_total_kg": 21.082902210444676,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/catalog_and_winding",
+          "field": "parts",
+          "part_sum_kg": 116.37945829971312,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/catalog_scale",
+          "field": "parts",
+          "part_sum_kg": 116.37945829971312,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/construction_retry",
+          "field": "parts",
+          "part_sum_kg": 75.5376168171858,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/construction_weighted",
+          "field": "parts",
+          "part_sum_kg": 75.5376168171858,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_compact",
+          "field": "parts",
+          "part_sum_kg": 75.5376168171858,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_nested",
+          "field": "open_frame_groups",
+          "part_sum_kg": 21.082902210444676,
+          "matches": true,
+          "components": [
+            {
+              "name": "Top Panel",
+              "material": "wood",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": {
+                "area_m2": 0.6,
+                "thickness_mm": 18
+              },
+              "solid_fraction": 1.0,
+              "area_m2": 0.6,
+              "thickness_mm": 18,
+              "volume_m3": 0.0108,
+              "mass_kg": 7.0200000000000005
+            },
+            {
+              "name": "Side Panel Left",
+              "material": "wood",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": {
+                "area_m2": 0.25,
+                "thickness_mm": 18
+              },
+              "solid_fraction": 1.0,
+              "area_m2": 0.25,
+              "thickness_mm": 18,
+              "volume_m3": 0.0045000000000000005,
+              "mass_kg": 2.9250000000000003
+            },
+            {
+              "name": "Side Panel Right",
+              "material": "wood",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": {
+                "area_m2": 0.25,
+                "thickness_mm": 18
+              },
+              "solid_fraction": 1.0,
+              "area_m2": 0.25,
+              "thickness_mm": 18,
+              "volume_m3": 0.0045000000000000005,
+              "mass_kg": 2.9250000000000003
+            },
+            {
+              "name": "Front Panel",
+              "material": "wood",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": {
+                "area_m2": 0.25,
+                "thickness_mm": 18
+              },
+              "solid_fraction": 1.0,
+              "area_m2": 0.25,
+              "thickness_mm": 18,
+              "volume_m3": 0.0045000000000000005,
+              "mass_kg": 2.9250000000000003
+            },
+            {
+              "name": "Back Panel",
+              "material": "wood",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": {
+                "area_m2": 0.25,
+                "thickness_mm": 18
+              },
+              "solid_fraction": 1.0,
+              "area_m2": 0.25,
+              "thickness_mm": 18,
+              "volume_m3": 0.0045000000000000005,
+              "mass_kg": 2.9250000000000003
+            },
+            {
+              "name": "Storage Drawer Front Panel",
+              "material": "wood",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": {
+                "area_m2": 0.05,
+                "thickness_mm": 18
+              },
+              "solid_fraction": 1.0,
+              "area_m2": 0.05,
+              "thickness_mm": 18,
+              "volume_m3": 0.0009000000000000002,
+              "mass_kg": 0.5850000000000001
+            },
+            {
+              "name": "Storage Drawer Side Panel",
+              "material": "wood",
+              "kind": "sheet",
+              "count": 2,
+              "dimensions": {
+                "area_m2": 0.05,
+                "thickness_mm": 18
+              },
+              "solid_fraction": 1.0,
+              "area_m2": 0.05,
+              "thickness_mm": 18,
+              "volume_m3": 0.0018000000000000004,
+              "mass_kg": 1.1700000000000002
+            },
+            {
+              "name": "Storage Drawer Bottom Panel",
+              "material": "wood",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": {
+                "area_m2": 0.05,
+                "thickness_mm": 18
+              },
+              "solid_fraction": 1.0,
+              "area_m2": 0.05,
+              "thickness_mm": 18,
+              "volume_m3": 0.0009000000000000002,
+              "mass_kg": 0.5850000000000001
+            },
+            {
+              "name": "Drawer Slide Rail (plausible hidden)",
+              "material": "aluminum",
+              "kind": "rod",
+              "count": 2,
+              "dimensions": {
+                "length_m": 0.15,
+                "diameter_mm": 6
+              },
+              "length_m": 0.15,
+              "diameter_mm": 6,
+              "volume_m3": 8.482300164692441e-06,
+              "mass_kg": 0.022902210444669592
+            }
+          ]
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_nested",
+          "field": "parts",
+          "part_sum_kg": 75.5376168171858,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_replay",
+          "field": "parts",
+          "part_sum_kg": 75.5376168171858,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/mass_hypotheses",
+          "field": "parts",
+          "part_sum_kg": 75.5376168171858,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+          "field": "parts",
+          "part_sum_kg": 75.5376168171858,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_replay",
+          "field": "parts",
+          "part_sum_kg": 75.5376168171858,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/winding_only",
+          "field": "parts",
+          "part_sum_kg": 75.5376168171858,
+          "matches": false,
+          "components": null
+        }
+      ]
+    },
+    "B07YM1D7B7_ATVPDKIKX0DER": {
+      "split": "test",
+      "archived_total_kg": 19.833097064230056,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/construction_weighted",
+          "field": "parts",
+          "part_sum_kg": 1930.1342055746522,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_compact",
+          "field": "open_frame_groups",
+          "part_sum_kg": 19.833097064230056,
+          "matches": true,
+          "components": [
+            {
+              "name": "roof fabric",
+              "material": "fabric",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": [
+                2500,
+                2500,
+                2
+              ],
+              "area_m2": 6.25,
+              "thickness_mm": 2.0,
+              "volume_m3": 0.0125,
+              "mass_kg": 4.375
+            },
+            {
+              "name": "support tubes",
+              "material": "aluminum",
+              "kind": "tube",
+              "count": 4,
+              "dimensions": [
+                2500,
+                40,
+                1
+              ],
+              "length_m": 2.5,
+              "diameter_mm": 40.0,
+              "wall_mm": 1.0,
+              "volume_m3": 0.0012252211349000194,
+              "mass_kg": 3.3080970642300525
+            },
+            {
+              "name": "corner fittings",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                100,
+                100,
+                100
+              ],
+              "dimensions_mm": [
+                100.0,
+                100.0,
+                100.0
+              ],
+              "volume_m3": 0.004000000000000001,
+              "mass_kg": 10.800000000000002
+            },
+            {
+              "name": "base feet",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                50,
+                50,
+                50
+              ],
+              "dimensions_mm": [
+                50.0,
+                50.0,
+                50.0
+              ],
+              "volume_m3": 0.0005000000000000001,
+              "mass_kg": 1.3500000000000003
+            }
+          ]
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_compact",
+          "field": "parts",
+          "part_sum_kg": 1930.1342055746522,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_nested",
+          "field": "open_frame_groups",
+          "part_sum_kg": 19.833097064230056,
+          "matches": true,
+          "components": [
+            {
+              "name": "roof fabric",
+              "material": "fabric",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": [
+                2500,
+                2500,
+                2
+              ],
+              "area_m2": 6.25,
+              "thickness_mm": 2.0,
+              "volume_m3": 0.0125,
+              "mass_kg": 4.375
+            },
+            {
+              "name": "support tubes",
+              "material": "aluminum",
+              "kind": "tube",
+              "count": 4,
+              "dimensions": [
+                2500,
+                40,
+                1
+              ],
+              "length_m": 2.5,
+              "diameter_mm": 40.0,
+              "wall_mm": 1.0,
+              "volume_m3": 0.0012252211349000194,
+              "mass_kg": 3.3080970642300525
+            },
+            {
+              "name": "corner fittings",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                100,
+                100,
+                100
+              ],
+              "dimensions_mm": [
+                100.0,
+                100.0,
+                100.0
+              ],
+              "volume_m3": 0.004000000000000001,
+              "mass_kg": 10.800000000000002
+            },
+            {
+              "name": "base feet",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                50,
+                50,
+                50
+              ],
+              "dimensions_mm": [
+                50.0,
+                50.0,
+                50.0
+              ],
+              "volume_m3": 0.0005000000000000001,
+              "mass_kg": 1.3500000000000003
+            }
+          ]
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_nested",
+          "field": "parts",
+          "part_sum_kg": 1930.1342055746522,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_replay",
+          "field": "parts",
+          "part_sum_kg": 1930.1342055746522,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+          "field": "open_frame_groups",
+          "part_sum_kg": 19.833097064230056,
+          "matches": true,
+          "components": [
+            {
+              "name": "roof fabric",
+              "material": "fabric",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": [
+                2500,
+                2500,
+                2
+              ],
+              "area_m2": 6.25,
+              "thickness_mm": 2.0,
+              "volume_m3": 0.0125,
+              "mass_kg": 4.375
+            },
+            {
+              "name": "support tubes",
+              "material": "aluminum",
+              "kind": "tube",
+              "count": 4,
+              "dimensions": [
+                2500,
+                40,
+                1
+              ],
+              "length_m": 2.5,
+              "diameter_mm": 40.0,
+              "wall_mm": 1.0,
+              "volume_m3": 0.0012252211349000194,
+              "mass_kg": 3.3080970642300525
+            },
+            {
+              "name": "corner fittings",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                100,
+                100,
+                100
+              ],
+              "dimensions_mm": [
+                100.0,
+                100.0,
+                100.0
+              ],
+              "volume_m3": 0.004000000000000001,
+              "mass_kg": 10.800000000000002
+            },
+            {
+              "name": "base feet",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                50,
+                50,
+                50
+              ],
+              "dimensions_mm": [
+                50.0,
+                50.0,
+                50.0
+              ],
+              "volume_m3": 0.0005000000000000001,
+              "mass_kg": 1.3500000000000003
+            }
+          ]
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+          "field": "parts",
+          "part_sum_kg": 1930.1342055746522,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_replay",
+          "field": "parts",
+          "part_sum_kg": 1930.1342055746522,
+          "matches": false,
+          "components": null
+        }
+      ]
+    },
+    "B07YM1FZSJ_ATVPDKIKX0DER": {
+      "split": "test",
+      "archived_total_kg": 14.673528345109887,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/construction_weighted",
+          "field": "parts",
+          "part_sum_kg": 925.8928907181687,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_compact",
+          "field": "open_frame_groups",
+          "part_sum_kg": 14.673528345109887,
+          "matches": true,
+          "components": [
+            {
+              "name": "Canopy Fabric",
+              "material": "fabric",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": [
+                2500,
+                2500,
+                2
+              ],
+              "area_m2": 6.25,
+              "thickness_mm": 2.0,
+              "volume_m3": 0.0125,
+              "mass_kg": 4.375
+            },
+            {
+              "name": "Support Tubes",
+              "material": "aluminum",
+              "kind": "tube",
+              "count": 4,
+              "dimensions": [
+                2500,
+                40,
+                1.5
+              ],
+              "length_m": 2.5,
+              "diameter_mm": 40.0,
+              "wall_mm": 1.5,
+              "volume_m3": 0.0018142697574481054,
+              "mass_kg": 4.898528345109884
+            },
+            {
+              "name": "Base Fittings",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                100,
+                100,
+                50
+              ],
+              "dimensions_mm": [
+                100.0,
+                100.0,
+                50.0
+              ],
+              "volume_m3": 0.0020000000000000005,
+              "mass_kg": 5.400000000000001
+            }
+          ]
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_compact",
+          "field": "parts",
+          "part_sum_kg": 925.8928907181687,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_nested",
+          "field": "open_frame_groups",
+          "part_sum_kg": 14.673528345109887,
+          "matches": true,
+          "components": [
+            {
+              "name": "Canopy Fabric",
+              "material": "fabric",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": [
+                2500,
+                2500,
+                2
+              ],
+              "area_m2": 6.25,
+              "thickness_mm": 2.0,
+              "volume_m3": 0.0125,
+              "mass_kg": 4.375
+            },
+            {
+              "name": "Support Tubes",
+              "material": "aluminum",
+              "kind": "tube",
+              "count": 4,
+              "dimensions": [
+                2500,
+                40,
+                1.5
+              ],
+              "length_m": 2.5,
+              "diameter_mm": 40.0,
+              "wall_mm": 1.5,
+              "volume_m3": 0.0018142697574481054,
+              "mass_kg": 4.898528345109884
+            },
+            {
+              "name": "Base Fittings",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                100,
+                100,
+                50
+              ],
+              "dimensions_mm": [
+                100.0,
+                100.0,
+                50.0
+              ],
+              "volume_m3": 0.0020000000000000005,
+              "mass_kg": 5.400000000000001
+            }
+          ]
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_nested",
+          "field": "parts",
+          "part_sum_kg": 925.8928907181687,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_replay",
+          "field": "parts",
+          "part_sum_kg": 925.8928907181687,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+          "field": "open_frame_groups",
+          "part_sum_kg": 14.673528345109887,
+          "matches": true,
+          "components": [
+            {
+              "name": "Canopy Fabric",
+              "material": "fabric",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": [
+                2500,
+                2500,
+                2
+              ],
+              "area_m2": 6.25,
+              "thickness_mm": 2.0,
+              "volume_m3": 0.0125,
+              "mass_kg": 4.375
+            },
+            {
+              "name": "Support Tubes",
+              "material": "aluminum",
+              "kind": "tube",
+              "count": 4,
+              "dimensions": [
+                2500,
+                40,
+                1.5
+              ],
+              "length_m": 2.5,
+              "diameter_mm": 40.0,
+              "wall_mm": 1.5,
+              "volume_m3": 0.0018142697574481054,
+              "mass_kg": 4.898528345109884
+            },
+            {
+              "name": "Base Fittings",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                100,
+                100,
+                50
+              ],
+              "dimensions_mm": [
+                100.0,
+                100.0,
+                50.0
+              ],
+              "volume_m3": 0.0020000000000000005,
+              "mass_kg": 5.400000000000001
+            }
+          ]
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+          "field": "parts",
+          "part_sum_kg": 925.8928907181687,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_replay",
+          "field": "parts",
+          "part_sum_kg": 925.8928907181687,
+          "matches": false,
+          "components": null
+        }
+      ]
+    },
+    "B07XHQQ95Y_ATVPDKIKX0DER": {
+      "split": "test",
+      "archived_total_kg": 7.68605,
+      "alternatives": [
+        {
+          "directory": "/autodl-fs/data/PartPhy3D/structure_study_1125/appliance_archive_replay_bf16",
+          "field": "role_parts",
+          "part_sum_kg": 5.20322,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/autodl-fs/data/PartPhy3D/structure_study_1125/appliance_archive_replay_bf16",
+          "field": "parts",
+          "part_sum_kg": 99.65975,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/autodl-fs/data/PartPhy3D/structure_study_1125/appliance_archive_replay_r1",
+          "field": "role_parts",
+          "part_sum_kg": 7.686050000000001,
+          "matches": true,
+          "components": [
+            {
+              "name": "covering shell",
+              "material": "plastic",
+              "shape": "block",
+              "count": 1,
+              "dims_cm": [
+                45.0,
+                30.0,
+                30.0
+              ],
+              "occupied_fraction": 0.8,
+              "evidence": "visible",
+              "volume_m3": 0.00135,
+              "mass_kg": 1.4175,
+              "material_volumes_m3": {
+                "plastic": 0.00135
+              },
+              "attribution": {
+                "before": {
+                  "geometry": 0.0405,
+                  "occupancy": 0.8,
+                  "density": 1050.0
+                },
+                "after": {
+                  "geometry": 0.0018,
+                  "occupancy": 0.7500000000000001,
+                  "density": 1050.0
+                },
+                "delta_kg": {
+                  "geometry": -31.492125000000005,
+                  "occupancy": -1.1103749999999977,
+                  "density": 0.0
+                }
+              }
+            },
+            {
+              "name": "chassis",
+              "material": "plastic",
+              "shape": "block",
+              "count": 1,
+              "dims_cm": [
+                45.0,
+                30.0,
+                30.0
+              ],
+              "occupied_fraction": 0.8,
+              "evidence": "visible",
+              "volume_m3": 0.00054,
+              "mass_kg": 0.5670000000000001,
+              "material_volumes_m3": {
+                "plastic": 0.00054
+              },
+              "attribution": {
+                "before": {
+                  "geometry": 0.0405,
+                  "occupancy": 0.8,
+                  "density": 1050.0
+                },
+                "after": {
+                  "geometry": 0.00054,
+                  "occupancy": 1.0,
+                  "density": 1050.0
+                },
+                "delta_kg": {
+                  "geometry": -37.7622,
+                  "occupancy": 4.309199999999998,
+                  "density": 0.0
+                }
+              }
+            },
+            {
+              "name": "heat exchangers",
+              "material": "copper",
+              "shape": "sheet",
+              "count": 1,
+              "dims_cm": [
+                40.0,
+                25.0,
+                10.0
+              ],
+              "occupied_fraction": 0.2,
+              "evidence": "inferred",
+              "volume_m3": 0.0006299999999999999,
+              "mass_kg": 2.8278,
+              "material_volumes_m3": {
+                "aluminum": 0.00045,
+                "copper": 0.00017999999999999998
+              },
+              "attribution": {
+                "before": {
+                  "geometry": 0.01,
+                  "occupancy": 0.2,
+                  "density": 8960.0
+                },
+                "after": {
+                  "geometry": 0.006,
+                  "occupancy": 0.10499999999999998,
+                  "density": 4488.571428571429
+                },
+                "delta_kg": {
+                  "geometry": -4.243409523809524,
+                  "occupancy": -5.2520523809523825,
+                  "density": -5.596738095238095
+                }
+              }
+            },
+            {
+              "name": "compressor",
+              "material": "steel",
+              "shape": "block",
+              "count": 1,
+              "dims_cm": [
+                10.0,
+                10.0,
+                5.0
+              ],
+              "occupied_fraction": 0.5,
+              "evidence": "inferred",
+              "volume_m3": 0.00025,
+              "mass_kg": 1.9625000000000001
+            },
+            {
+              "name": "fan assemblies",
+              "material": "aluminum",
+              "shape": "block",
+              "count": 1,
+              "dims_cm": [
+                15.0,
+                15.0,
+                5.0
+              ],
+              "occupied_fraction": 0.3,
+              "evidence": "inferred",
+              "volume_m3": 0.00033749999999999996,
+              "mass_kg": 0.9112499999999999
+            }
+          ]
+        },
+        {
+          "directory": "/autodl-fs/data/PartPhy3D/structure_study_1125/appliance_archive_replay_r1",
+          "field": "parts",
+          "part_sum_kg": 88.83375000000001,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/appliance_probe_bf16",
+          "field": "parts",
+          "part_sum_kg": 99.65975,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/appliance_probe_r1",
+          "field": "parts",
+          "part_sum_kg": 88.83375000000001,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/catalog_and_winding",
+          "field": "parts",
+          "part_sum_kg": 2.4182946827475904,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/catalog_scale",
+          "field": "parts",
+          "part_sum_kg": 2.4182946827475904,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/construction_retry",
+          "field": "parts",
+          "part_sum_kg": 2.714101564191872,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/construction_weighted",
+          "field": "parts",
+          "part_sum_kg": 2.714101564191872,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_compact",
+          "field": "parts",
+          "part_sum_kg": 2.714101564191872,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_nested",
+          "field": "parts",
+          "part_sum_kg": 2.714101564191872,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_replay",
+          "field": "parts",
+          "part_sum_kg": 2.714101564191872,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/mass_hypotheses",
+          "field": "parts",
+          "part_sum_kg": 2.714101564191872,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+          "field": "parts",
+          "part_sum_kg": 2.714101564191872,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_replay",
+          "field": "parts",
+          "part_sum_kg": 2.714101564191872,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/winding_only",
+          "field": "parts",
+          "part_sum_kg": 2.714101564191872,
+          "matches": false,
+          "components": null
+        }
+      ]
+    },
+    "B074KMVVK7_ATVPDKIKX0DER": {
+      "split": "test",
+      "archived_total_kg": 15.016840704496666,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/construction_weighted",
+          "field": "parts",
+          "part_sum_kg": 190.84010315943308,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_compact",
+          "field": "parts",
+          "part_sum_kg": 190.84010315943308,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_nested",
+          "field": "open_frame_groups",
+          "part_sum_kg": 15.016840704496666,
+          "matches": true,
+          "components": [
+            {
+              "name": "Top Panel",
+              "material": "wood",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": {
+                "area_m2": 0.36,
+                "thickness_mm": 20
+              },
+              "solid_fraction": 1.0,
+              "area_m2": 0.36,
+              "thickness_mm": 20,
+              "volume_m3": 0.0072,
+              "mass_kg": 4.68
+            },
+            {
+              "name": "Side Panel Left",
+              "material": "wood",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": {
+                "area_m2": 0.18,
+                "thickness_mm": 20
+              },
+              "solid_fraction": 1.0,
+              "area_m2": 0.18,
+              "thickness_mm": 20,
+              "volume_m3": 0.0036,
+              "mass_kg": 2.34
+            },
+            {
+              "name": "Side Panel Right",
+              "material": "wood",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": {
+                "area_m2": 0.18,
+                "thickness_mm": 20
+              },
+              "solid_fraction": 1.0,
+              "area_m2": 0.18,
+              "thickness_mm": 20,
+              "volume_m3": 0.0036,
+              "mass_kg": 2.34
+            },
+            {
+              "name": "Back Panel",
+              "material": "wood",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": {
+                "area_m2": 0.18,
+                "thickness_mm": 20
+              },
+              "solid_fraction": 1.0,
+              "area_m2": 0.18,
+              "thickness_mm": 20,
+              "volume_m3": 0.0036,
+              "mass_kg": 2.34
+            },
+            {
+              "name": "Front Panel Left (with grille)",
+              "material": "wood",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": {
+                "area_m2": 0.18,
+                "thickness_mm": 20
+              },
+              "solid_fraction": 0.7,
+              "area_m2": 0.18,
+              "thickness_mm": 20,
+              "volume_m3": 0.0025199999999999997,
+              "mass_kg": 1.6379999999999997
+            },
+            {
+              "name": "Front Panel Right (with grille)",
+              "material": "wood",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": {
+                "area_m2": 0.18,
+                "thickness_mm": 20
+              },
+              "solid_fraction": 0.7,
+              "area_m2": 0.18,
+              "thickness_mm": 20,
+              "volume_m3": 0.0025199999999999997,
+              "mass_kg": 1.6379999999999997
+            },
+            {
+              "name": "Legs (Front Left)",
+              "material": "wood",
+              "kind": "rod",
+              "count": 1,
+              "dimensions": {
+                "length_m": 0.05,
+                "diameter_mm": 20
+              },
+              "length_m": 0.05,
+              "diameter_mm": 20,
+              "volume_m3": 1.5707963267948967e-05,
+              "mass_kg": 0.01021017612416683
+            },
+            {
+              "name": "Legs (Front Right)",
+              "material": "wood",
+              "kind": "rod",
+              "count": 1,
+              "dimensions": {
+                "length_m": 0.05,
+                "diameter_mm": 20
+              },
+              "length_m": 0.05,
+              "diameter_mm": 20,
+              "volume_m3": 1.5707963267948967e-05,
+              "mass_kg": 0.01021017612416683
+            },
+            {
+              "name": "Legs (Rear Left)",
+              "material": "wood",
+              "kind": "rod",
+              "count": 1,
+              "dimensions": {
+                "length_m": 0.05,
+                "diameter_mm": 20
+              },
+              "length_m": 0.05,
+              "diameter_mm": 20,
+              "volume_m3": 1.5707963267948967e-05,
+              "mass_kg": 0.01021017612416683
+            },
+            {
+              "name": "Legs (Rear Right)",
+              "material": "wood",
+              "kind": "rod",
+              "count": 1,
+              "dimensions": {
+                "length_m": 0.05,
+                "diameter_mm": 20
+              },
+              "length_m": 0.05,
+              "diameter_mm": 20,
+              "volume_m3": 1.5707963267948967e-05,
+              "mass_kg": 0.01021017612416683
+            }
+          ]
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_nested",
+          "field": "parts",
+          "part_sum_kg": 190.84010315943308,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_replay",
+          "field": "parts",
+          "part_sum_kg": 190.84010315943308,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+          "field": "parts",
+          "part_sum_kg": 190.84010315943308,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_replay",
+          "field": "parts",
+          "part_sum_kg": 190.84010315943308,
+          "matches": false,
+          "components": null
+        }
+      ]
+    },
+    "B07Y2B738L_ATVPDKIKX0DER": {
+      "split": "test",
+      "archived_total_kg": 10.8516975,
+      "alternatives": [
+        {
+          "directory": "/autodl-fs/data/PartPhy3D/structure_study_1125/appliance_archive_replay_bf16",
+          "field": "role_parts",
+          "part_sum_kg": 4.535456249999999,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/autodl-fs/data/PartPhy3D/structure_study_1125/appliance_archive_replay_bf16",
+          "field": "parts",
+          "part_sum_kg": 34.3605,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/autodl-fs/data/PartPhy3D/structure_study_1125/appliance_archive_replay_r1",
+          "field": "role_parts",
+          "part_sum_kg": 10.8516975,
+          "matches": true,
+          "components": [
+            {
+              "name": "covering shell",
+              "material": "plastic",
+              "shape": "block",
+              "count": 1,
+              "dims_cm": [
+                52.0,
+                38.0,
+                25.0
+              ],
+              "occupied_fraction": 0.8,
+              "evidence": "visible",
+              "volume_m3": 0.0015847499999999998,
+              "mass_kg": 1.6639874999999997,
+              "material_volumes_m3": {
+                "plastic": 0.0015847499999999998
+              },
+              "attribution": {
+                "before": {
+                  "geometry": 0.0494,
+                  "occupancy": 0.8,
+                  "density": 1050.0
+                },
+                "after": {
+                  "geometry": 0.002113,
+                  "occupancy": 0.75,
+                  "density": 1050.0
+                },
+                "delta_kg": {
+                  "geometry": -38.47979625,
+                  "occupancy": -1.352216250000003,
+                  "density": 0.0
+                }
+              }
+            },
+            {
+              "name": "chassis",
+              "material": "plastic",
+              "shape": "block",
+              "count": 1,
+              "dims_cm": [
+                52.0,
+                38.0,
+                25.0
+              ],
+              "occupied_fraction": 0.8,
+              "evidence": "visible",
+              "volume_m3": 0.0007904,
+              "mass_kg": 0.82992,
+              "material_volumes_m3": {
+                "plastic": 0.0007904
+              },
+              "attribution": {
+                "before": {
+                  "geometry": 0.0494,
+                  "occupancy": 0.8,
+                  "density": 1050.0
+                },
+                "after": {
+                  "geometry": 0.0007904,
+                  "occupancy": 1.0,
+                  "density": 1050.0
+                },
+                "delta_kg": {
+                  "geometry": -45.936071999999996,
+                  "occupancy": 5.2699919999999985,
+                  "density": 0.0
+                }
+              }
+            },
+            {
+              "name": "heat exchangers",
+              "material": "copper",
+              "shape": "sheet",
+              "count": 1,
+              "dims_cm": [
+                50.0,
+                36.0,
+                20.0
+              ],
+              "occupied_fraction": 0.2,
+              "evidence": "inferred",
+              "volume_m3": 0.001134,
+              "mass_kg": 5.09004,
+              "material_volumes_m3": {
+                "aluminum": 0.00081,
+                "copper": 0.00032399999999999996
+              },
+              "attribution": {
+                "before": {
+                  "geometry": 0.036,
+                  "occupancy": 0.2,
+                  "density": 8960.0
+                },
+                "after": {
+                  "geometry": 0.010799999999999999,
+                  "occupancy": 0.10500000000000001,
+                  "density": 4488.571428571428
+                },
+                "delta_kg": {
+                  "geometry": -26.733479999999997,
+                  "occupancy": -15.840137142857143,
+                  "density": -16.84834285714286
+                }
+              }
+            },
+            {
+              "name": "compressor",
+              "material": "steel",
+              "shape": "block",
+              "count": 1,
+              "dims_cm": [
+                15.0,
+                10.0,
+                5.0
+              ],
+              "occupied_fraction": 0.5,
+              "evidence": "inferred",
+              "volume_m3": 0.000375,
+              "mass_kg": 2.94375
+            },
+            {
+              "name": "fan assemblies",
+              "material": "aluminum",
+              "shape": "block",
+              "count": 1,
+              "dims_cm": [
+                10.0,
+                8.0,
+                5.0
+              ],
+              "occupied_fraction": 0.3,
+              "evidence": "inferred",
+              "volume_m3": 0.00011999999999999999,
+              "mass_kg": 0.32399999999999995
+            }
+          ]
+        },
+        {
+          "directory": "/autodl-fs/data/PartPhy3D/structure_study_1125/appliance_archive_replay_r1",
+          "field": "parts",
+          "part_sum_kg": 150.77175000000003,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/appliance_probe_bf16",
+          "field": "parts",
+          "part_sum_kg": 34.3605,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/appliance_probe_r1",
+          "field": "parts",
+          "part_sum_kg": 150.77175000000003,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/component_stability_r1",
+          "field": "parts",
+          "part_sum_kg": 71.00924999999998,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/construction_retry",
+          "field": "parts",
+          "part_sum_kg": 216.58395584846718,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/construction_weighted",
+          "field": "parts",
+          "part_sum_kg": 216.58395584846718,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_compact",
+          "field": "parts",
+          "part_sum_kg": 216.58395584846718,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_nested",
+          "field": "open_frame_groups",
+          "part_sum_kg": 3.0340168134870464,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_nested",
+          "field": "parts",
+          "part_sum_kg": 216.58395584846718,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_replay",
+          "field": "parts",
+          "part_sum_kg": 216.58395584846718,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+          "field": "parts",
+          "part_sum_kg": 216.58395584846718,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_replay",
+          "field": "parts",
+          "part_sum_kg": 216.58395584846718,
+          "matches": false,
+          "components": null
+        }
+      ]
+    },
+    "B07YM1FJ1M_ATVPDKIKX0DER": {
+      "split": "test",
+      "archived_total_kg": 10.623528345109884,
+      "alternatives": [
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/canopies",
+          "field": "open_frame_groups",
+          "part_sum_kg": 10.623528345109884,
+          "matches": true,
+          "components": [
+            {
+              "name": "Canopy Fabric",
+              "material": "fabric",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": [
+                2500,
+                2500,
+                2
+              ],
+              "area_m2": 6.25,
+              "thickness_mm": 2.0,
+              "volume_m3": 0.0125,
+              "mass_kg": 4.375
+            },
+            {
+              "name": "Support Tubes",
+              "material": "aluminum",
+              "kind": "tube",
+              "count": 4,
+              "dimensions": [
+                2500,
+                40,
+                1.5
+              ],
+              "length_m": 2.5,
+              "diameter_mm": 40.0,
+              "wall_mm": 1.5,
+              "volume_m3": 0.0018142697574481054,
+              "mass_kg": 4.898528345109884
+            },
+            {
+              "name": "Base Fittings",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                50,
+                50,
+                50
+              ],
+              "dimensions_mm": [
+                50.0,
+                50.0,
+                50.0
+              ],
+              "volume_m3": 0.0005000000000000001,
+              "mass_kg": 1.3500000000000003
+            }
+          ]
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/canopies",
+          "field": "parts",
+          "part_sum_kg": 541.060657856374,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/panels",
+          "field": "open_frame_groups",
+          "part_sum_kg": 10.623528345109884,
+          "matches": true,
+          "components": [
+            {
+              "name": "Canopy Fabric",
+              "material": "fabric",
+              "kind": "sheet",
+              "count": 1,
+              "dimensions": [
+                2500,
+                2500,
+                2
+              ],
+              "area_m2": 6.25,
+              "thickness_mm": 2.0,
+              "volume_m3": 0.0125,
+              "mass_kg": 4.375
+            },
+            {
+              "name": "Support Tubes",
+              "material": "aluminum",
+              "kind": "tube",
+              "count": 4,
+              "dimensions": [
+                2500,
+                40,
+                1.5
+              ],
+              "length_m": 2.5,
+              "diameter_mm": 40.0,
+              "wall_mm": 1.5,
+              "volume_m3": 0.0018142697574481054,
+              "mass_kg": 4.898528345109884
+            },
+            {
+              "name": "Base Fittings",
+              "material": "aluminum",
+              "kind": "box",
+              "count": 4,
+              "dimensions": [
+                50,
+                50,
+                50
+              ],
+              "dimensions_mm": [
+                50.0,
+                50.0,
+                50.0
+              ],
+              "volume_m3": 0.0005000000000000001,
+              "mass_kg": 1.3500000000000003
+            }
+          ]
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/panels",
+          "field": "parts",
+          "part_sum_kg": 541.060657856374,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-fs/PartPhy3D/abo100_20261120/batch_25/weighted",
+          "field": "parts",
+          "part_sum_kg": 541.060657856374,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/component_stability_r1",
+          "field": "parts",
+          "part_sum_kg": 52.95364601285851,
+          "matches": false,
+          "components": null
+        }
+      ]
+    },
+    "B07N6RT9SM_ATVPDKIKX0DER": {
+      "split": "test",
+      "archived_total_kg": 9.360315,
+      "alternatives": [
+        {
+          "directory": "/autodl-fs/data/PartPhy3D/structure_study_1125/appliance_archive_replay_bf16",
+          "field": "role_parts",
+          "part_sum_kg": 10.42460625,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/autodl-fs/data/PartPhy3D/structure_study_1125/appliance_archive_replay_bf16",
+          "field": "parts",
+          "part_sum_kg": 105.47625,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/autodl-fs/data/PartPhy3D/structure_study_1125/appliance_archive_replay_r1",
+          "field": "role_parts",
+          "part_sum_kg": 9.360315,
+          "matches": true,
+          "components": [
+            {
+              "name": "covering shell",
+              "material": "plastic",
+              "shape": "block",
+              "count": 1,
+              "dims_cm": [
+                52.0,
+                30.0,
+                30.0
+              ],
+              "occupied_fraction": 0.8,
+              "evidence": "visible",
+              "volume_m3": 0.0015075000000000002,
+              "mass_kg": 1.5828750000000003,
+              "material_volumes_m3": {
+                "plastic": 0.0015075000000000002
+              },
+              "attribution": {
+                "before": {
+                  "geometry": 0.0468,
+                  "occupancy": 0.8,
+                  "density": 1050.0
+                },
+                "after": {
+                  "geometry": 0.00201,
+                  "occupancy": 0.75,
+                  "density": 1050.0
+                },
+                "delta_kg": {
+                  "geometry": -36.44786249999999,
+                  "occupancy": -1.2812625000000004,
+                  "density": 0.0
+                }
+              }
+            },
+            {
+              "name": "chassis",
+              "material": "plastic",
+              "shape": "block",
+              "count": 1,
+              "dims_cm": [
+                52.0,
+                30.0,
+                30.0
+              ],
+              "occupied_fraction": 0.8,
+              "evidence": "visible",
+              "volume_m3": 0.000624,
+              "mass_kg": 0.6552,
+              "material_volumes_m3": {
+                "plastic": 0.000624
+              },
+              "attribution": {
+                "before": {
+                  "geometry": 0.0468,
+                  "occupancy": 0.8,
+                  "density": 1050.0
+                },
+                "after": {
+                  "geometry": 0.000624,
+                  "occupancy": 1.0,
+                  "density": 1050.0
+                },
+                "delta_kg": {
+                  "geometry": -43.63632,
+                  "occupancy": 4.979520000000002,
+                  "density": 0.0
+                }
+              }
+            },
+            {
+              "name": "heat exchangers",
+              "material": "copper",
+              "shape": "sheet",
+              "count": 1,
+              "dims_cm": [
+                40.0,
+                20.0,
+                10.0
+              ],
+              "occupied_fraction": 0.2,
+              "evidence": "inferred",
+              "volume_m3": 0.000504,
+              "mass_kg": 2.2622400000000003,
+              "material_volumes_m3": {
+                "aluminum": 0.00036,
+                "copper": 0.000144
+              },
+              "attribution": {
+                "before": {
+                  "geometry": 0.008,
+                  "occupancy": 0.2,
+                  "density": 8960.0
+                },
+                "after": {
+                  "geometry": 0.0048000000000000004,
+                  "occupancy": 0.105,
+                  "density": 4488.571428571429
+                },
+                "delta_kg": {
+                  "geometry": -3.394727619047619,
+                  "occupancy": -4.201641904761906,
+                  "density": -4.477390476190475
+                }
+              }
+            },
+            {
+              "name": "compressor and fan assemblies",
+              "material": "aluminum",
+              "shape": "block",
+              "count": 1,
+              "dims_cm": [
+                20.0,
+                15.0,
+                10.0
+              ],
+              "occupied_fraction": 0.6,
+              "evidence": "inferred",
+              "volume_m3": 0.0018,
+              "mass_kg": 4.859999999999999
+            }
+          ]
+        },
+        {
+          "directory": "/autodl-fs/data/PartPhy3D/structure_study_1125/appliance_archive_replay_r1",
+          "field": "parts",
+          "part_sum_kg": 97.82,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/appliance_probe_bf16",
+          "field": "parts",
+          "part_sum_kg": 105.47625,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/appliance_probe_r1",
+          "field": "parts",
+          "part_sum_kg": 97.82,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/catalog_and_winding",
+          "field": "parts",
+          "part_sum_kg": 2.1761623241826418,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/catalog_scale",
+          "field": "parts",
+          "part_sum_kg": 2.1761623241826418,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/component_stability_r1",
+          "field": "parts",
+          "part_sum_kg": 56.75564999999999,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/construction_retry",
+          "field": "parts",
+          "part_sum_kg": 2.4763624446181263,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/construction_weighted",
+          "field": "parts",
+          "part_sum_kg": 2.4763624446181263,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_compact",
+          "field": "parts",
+          "part_sum_kg": 2.4763624446181263,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_nested",
+          "field": "parts",
+          "part_sum_kg": 2.4763624446181263,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/local_assembly_replay",
+          "field": "parts",
+          "part_sum_kg": 2.4763624446181263,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/mass_hypotheses",
+          "field": "parts",
+          "part_sum_kg": 2.4763624446181263,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_compact",
+          "field": "parts",
+          "part_sum_kg": 2.4763624446181263,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/open_frame_replay",
+          "field": "parts",
+          "part_sum_kg": 2.4763624446181263,
+          "matches": false,
+          "components": null
+        },
+        {
+          "directory": "/root/autodl-tmp/PartPhy3D/outputs/abo50_20261119/winding_only",
+          "field": "parts",
+          "part_sum_kg": 2.4763624446181263,
+          "matches": false,
+          "components": null
+        }
+      ]
+    }
+  }
+}

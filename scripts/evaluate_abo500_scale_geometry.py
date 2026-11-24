@@ -42,7 +42,14 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--nonlinear", action="store_true")
     parser.add_argument("--mass-weights", action="store_true")
+    parser.add_argument(
+        "--routed-ledger",
+        action="store_true",
+        help="Use verified route-specific parts in the structure-only control",
+    )
     args = parser.parse_args()
+    if args.routed_ledger and (not args.nonlinear or args.mass_weights):
+        parser.error("--routed-ledger requires --nonlinear without --mass-weights")
     rows = read(WORK / "geometry_predictions.json")
     catalog = read(WORK / "abo500_catalog_dimensions.json")["objects"]
     panels = read(WORK / "component_evidence.json")["scenes"]
@@ -147,8 +154,36 @@ def main():
     if args.nonlinear:
         reference = read(WORK / "bounded_components.json")["metrics"]["train"]
         summaries = {}
-        for title, weight in (("structure", 0.0), ("catalog_assisted", 1.0)):
+        inputs = (
+            (("structure", 0.0),)
+            if args.routed_ledger
+            else (
+                ("structure", 0.0),
+                ("catalog_assisted", 1.0),
+            )
+        )
+        for title, weight in inputs:
             features, _, parts = prepare(weight)
+            if args.routed_ledger:
+                ledger = read(WORK / "abo500_component_ledger.json")["objects"]
+                for i, key in enumerate(ids):
+                    record = ledger[key]
+                    if record["source_field"] not in {
+                        "open_frame_groups",
+                        "role_parts",
+                    }:
+                        continue
+                    entries = record["components"]
+                    raw_parts = [p["mass_kg"] for p in entries]
+                    total = math.fsum(raw_parts)
+                    np.testing.assert_allclose(total, rows[key]["raw"])
+                    parts[i] = raw_parts
+                    features[i]["part_count"] = math.log1p(len(entries))
+                    for part, mass in zip(entries, raw_parts, strict=True):
+                        material = "material/" + part["material"]
+                        features[i][material] = (
+                            features[i].get(material, 0.0) + mass / total
+                        )
 
             def predict(fit_ids, eval_ids, leaf, blend, weight_power):
                 model = make_pipeline(
@@ -210,6 +245,8 @@ def main():
             if args.mass_weights
             else "nonlinear_structure_control.json"
         )
+        if args.routed_ledger:
+            filename = "routed_structure_control.json"
         (WORK / filename).write_text(json.dumps(summaries, indent=2))
         print({k: v["metrics"] for k, v in summaries.items()})
         return

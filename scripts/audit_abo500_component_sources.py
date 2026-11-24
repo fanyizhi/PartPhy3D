@@ -20,6 +20,7 @@ def main():
         f.parent
         for d, pattern in (
             (prior50, "*/prediction_seal.json"),
+            (WORK, "appliance_archive_replay_*/prediction_seal.json"),
             (test100, "batch_*/*/prediction_seal.json"),
             (test100, "batch_*/repaired_pipeline/*/prediction_seal.json"),
             (ROOT, "*_???/*/prediction_seal.json"),
@@ -41,24 +42,73 @@ def main():
         comparable += 1
         for row in payload:
             key = row.get("scene_id")
-            if key not in pending or not row.get("parts"):
+            if key not in pending:
                 continue
-            parts = row["parts"]
-            if not all(
-                isinstance(p, dict) and isinstance(p.get("mass_kg"), (float, int))
-                for p in parts
-            ):
-                continue
-            total = sum(p["mass_kg"] for p in parts)
-            pending[key].append(
-                dict(
-                    directory=str(directory),
-                    part_sum_kg=total,
-                    matches=math.isclose(
-                        total, geometry[key]["raw"], rel_tol=1e-6, abs_tol=1e-8
-                    ),
+            for field in ("open_frame_groups", "role_parts", "parts"):
+                parts = row.get(field)
+                if not isinstance(parts, list) or not parts:
+                    continue
+                if not all(
+                    isinstance(p, dict) and isinstance(p.get("mass_kg"), (float, int))
+                    for p in parts
+                ):
+                    continue
+                total = sum(p["mass_kg"] for p in parts)
+                matches = math.isclose(
+                    total, geometry[key]["raw"], rel_tol=1e-9, abs_tol=1e-8
                 )
-            )
+                pending[key].append(
+                    dict(
+                        directory=str(directory),
+                        field=field,
+                        part_sum_kg=total,
+                        matches=matches,
+                        components=parts if matches else None,
+                    )
+                )
+    ledger = {}
+    for key, row in geometry.items():
+        if row["component_evidence"]:
+            components = row["parts"]
+            source_field = "geometry_predictions.parts"
+            sources = []
+        else:
+            matches = [record for record in pending[key] if record["matches"]]
+            signatures = {
+                json.dumps(record["components"], sort_keys=True) for record in matches
+            }
+            if len(signatures) == 1:
+                components = matches[0]["components"]
+                source_field = matches[0]["field"]
+                sources = [record["directory"] for record in matches]
+            else:
+                components = []
+                source_field = "conflicting_records" if matches else "unresolved"
+                sources = []
+        if components and not math.isclose(
+            math.fsum(part["mass_kg"] for part in components),
+            row["raw"],
+            rel_tol=1e-9,
+            abs_tol=1e-8,
+        ):
+            raise ValueError(f"Canonical component sum mismatch for {key}")
+        ledger[key] = dict(
+            split=row["split"],
+            raw_kg=row["raw"],
+            source_field=source_field,
+            verified_archives=sources,
+            components=components,
+        )
+    assert len(ledger) == 500
+    coverage = {
+        s: sum(bool(r["components"]) for r in ledger.values() if r["split"] == s)
+        for s in ("train", "val", "test")
+    }
+    (WORK / "abo500_component_ledger.json").write_text(
+        json.dumps(dict(coverage=coverage, objects=ledger), indent=2, allow_nan=False)
+    )
+    print("Canonical component coverage", coverage)
+
     counts = Counter(geometry[k]["split"] for k in pending)
     records = unified["objects"]
     comparison = {}
@@ -72,7 +122,13 @@ def main():
     report = dict(
         archives_checked=comparable,
         skipped_invalid_seals=bad_seals,
-        unresolved_counts=dict(counts),
+        canonical_coverage=coverage,
+        original_unresolved_counts=dict(counts),
+        recovered=[
+            k
+            for k, candidates in pending.items()
+            if any(item["matches"] for item in candidates)
+        ],
         forced_image_fallback_metrics=comparison,
         objects={
             k: dict(
@@ -83,7 +139,7 @@ def main():
             for k, v in pending.items()
         },
     )
-    (WORK / "component_source_recovery_audit.json").write_text(
+    (WORK / "routed_component_recovery_audit.json").write_text(
         json.dumps(report, indent=2, allow_nan=False)
     )
     print(comparable, counts, comparison)
