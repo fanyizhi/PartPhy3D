@@ -47,7 +47,14 @@ def main():
         action="store_true",
         help="Use verified route-specific parts in the structure-only control",
     )
+    parser.add_argument(
+        "--areal-replay",
+        action="store_true",
+        help="Run the prespecified extreme-cover sensitivity on the verified ledger",
+    )
     args = parser.parse_args()
+    if args.areal_replay and not args.routed_ledger:
+        parser.error("--areal-replay requires --routed-ledger")
     if args.routed_ledger and (not args.nonlinear or args.mass_weights):
         parser.error("--routed-ledger requires --nonlinear without --mass-weights")
     rows = read(WORK / "geometry_predictions.json")
@@ -166,6 +173,13 @@ def main():
             features, _, parts = prepare(weight)
             if args.routed_ledger:
                 ledger = read(WORK / "abo500_component_ledger.json")["objects"]
+                replay = (
+                    read(WORK / "abo500_cover_areal_density.json")["variants"][
+                        "extreme_cover_only"
+                    ]["objects"]
+                    if args.areal_replay
+                    else {}
+                )
                 for i, key in enumerate(ids):
                     record = ledger[key]
                     if record["source_field"] not in {
@@ -177,6 +191,18 @@ def main():
                     raw_parts = [p["mass_kg"] for p in entries]
                     total = math.fsum(raw_parts)
                     np.testing.assert_allclose(total, rows[key]["raw"])
+                    if args.areal_replay:
+                        repaired = replay[key]["parts"]
+                        if [p["name"] for p in entries] != [
+                            p["name"] for p in repaired
+                        ]:
+                            raise ValueError(f"Replay part ordering differs for {key}")
+                        np.testing.assert_allclose(
+                            raw_parts, [p["before_kg"] for p in repaired]
+                        )
+                        raw_parts = [p["mass_kg"] for p in repaired]
+                        total = math.fsum(raw_parts)
+                        features[i]["log_base"] = math.log(total)
                     parts[i] = raw_parts
                     features[i]["part_count"] = math.log1p(len(entries))
                     for part, mass in zip(entries, raw_parts, strict=True):
@@ -247,6 +273,8 @@ def main():
         )
         if args.routed_ledger:
             filename = "routed_structure_control.json"
+        if args.areal_replay:
+            filename = "areal_structure_control.json"
         (WORK / filename).write_text(json.dumps(summaries, indent=2))
         print({k: v["metrics"] for k, v in summaries.items()})
         return

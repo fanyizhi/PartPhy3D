@@ -1,5 +1,6 @@
 """Evaluate visual-only, structure-only and confidence-gated fusion on all ABO objects."""
 
+import argparse
 import json
 from itertools import product
 
@@ -13,6 +14,9 @@ from evaluate_structure_cues import ROOT, WORK, errors, read
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--areal-replay", action="store_true")
+    args = parser.parse_args()
     splits = read(ROOT / "splits.json")
     cohorts = {s: splits[s] for s in ("train", "val", "test")}
     ids = [k for v in cohorts.values() for k in v]
@@ -21,9 +25,18 @@ def main():
     label = read(ROOT / "weights.json")
     truth = np.array([label.get(k, label.get(k.split("_")[0])) for k in ids])
     raw = read(WORK / "geometry_predictions.json")
-    archived = read(WORK / "nonlinear_structure_control.json")["structure"]["objects"]
+    structure_filename = (
+        "areal_structure_control.json"
+        if args.areal_replay
+        else "nonlinear_structure_control.json"
+    )
+    structure_details = read(WORK / structure_filename)["structure"]
+    archived = structure_details["objects"]
     structure = np.array([archived[k]["mass_kg"] for k in ids])
     localized = np.array([raw[k]["component_evidence"] for k in ids])
+    if args.areal_replay:
+        ledger = read(WORK / "abo500_component_ledger.json")["objects"]
+        localized = np.array([bool(ledger[k]["components"]) for k in ids])
     x = visual(ids)
     train = np.arange(300)
     folds = list(KFold(5, shuffle=True, random_state=25).split(train))
@@ -95,6 +108,12 @@ def main():
             structure_weight_multiplier_if_missing=fallback,
         ),
         splits=results,
+        structure_input=structure_filename,
+        structure_model={
+            k: structure_details[k]
+            for k in ("leaf", "features_fraction", "mass_weight_power")
+            if k in structure_details
+        },
         trials=[
             dict(score=s, weight=w, ratio_cap=str(c), fallback=f)
             for s, w, c, f in trials
@@ -109,9 +128,10 @@ def main():
         },
     )
     assert all(np.isfinite(v).all() and (v > 0).all() for v in methods.values())
-    (WORK / "unified_comparison_500.json").write_text(
-        json.dumps(output, indent=2, allow_nan=False)
+    filename = (
+        "areal_unified_500.json" if args.areal_replay else "unified_comparison_500.json"
     )
+    (WORK / filename).write_text(json.dumps(output, indent=2, allow_nan=False))
     print(output["parameters"], results)
 
 
