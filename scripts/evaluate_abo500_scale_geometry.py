@@ -1,11 +1,13 @@
 """Audit scale uncertainty and calibrate ABO mass using structural features only."""
 
+import argparse
 import json
 import math
 from collections import Counter
 from pathlib import Path
 
 import numpy as np
+from sklearn.ensemble import ExtraTreesRegressor
 from sklearn.feature_extraction import DictVectorizer
 from sklearn.linear_model import Ridge
 from sklearn.model_selection import KFold
@@ -37,6 +39,10 @@ def component_masses(panel, scale):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--nonlinear", action="store_true")
+    parser.add_argument("--mass-weights", action="store_true")
+    args = parser.parse_args()
     rows = read(WORK / "geometry_predictions.json")
     catalog = read(WORK / "abo500_catalog_dimensions.json")["objects"]
     panels = read(WORK / "component_evidence.json")["scenes"]
@@ -137,6 +143,76 @@ def main():
             s: errors(truth[ix], predictions[ix]).mean(0).tolist()
             for s, ix in {**groups, "all": np.arange(len(ids))}.items()
         }
+
+    if args.nonlinear:
+        reference = read(WORK / "bounded_components.json")["metrics"]["train"]
+        summaries = {}
+        for title, weight in (("structure", 0.0), ("catalog_assisted", 1.0)):
+            features, _, parts = prepare(weight)
+
+            def predict(fit_ids, eval_ids, leaf, blend, weight_power):
+                model = make_pipeline(
+                    DictVectorizer(sparse=False),
+                    ExtraTreesRegressor(
+                        n_estimators=128,
+                        min_samples_leaf=leaf,
+                        max_features=blend,
+                        random_state=25,
+                        n_jobs=1,
+                    ),
+                )
+                reliability = np.clip(
+                    (np.median(truth[fit_ids]) / truth[fit_ids]) ** weight_power,
+                    0.25,
+                    8.0,
+                )
+                model.fit(
+                    [features[i] for i in fit_ids],
+                    np.log(truth[fit_ids]),
+                    extratreesregressor__sample_weight=reliability,
+                )
+                return np.exp(model.predict([features[i] for i in eval_ids]))
+
+            trials = []
+            powers = (0.0, 0.25, 0.5, 1.0) if args.mass_weights else (0.0,)
+            for power in powers:
+                for leaf in (2, 5, 10):
+                    for fraction in (0.7, 1.0):
+                        oof = np.zeros(len(train))
+                        for build, held in folds:
+                            oof[held] = predict(
+                                train[build], train[held], leaf, fraction, power
+                            )
+                        score = errors(truth[train], oof).mean(0)
+                        objective = np.mean(score[:3] / reference[:3])
+                        trials.append((float(objective), leaf, fraction, power, oof))
+            _, leaf, fraction, power, oof = min(trials, key=lambda t: t[0])
+            predicted = predict(train, np.arange(len(ids)), leaf, fraction, power)
+            predicted[train] = oof
+            allocations = [
+                (m * np.array(p) / sum(p)).tolist()
+                for p, m in zip(parts, predicted, strict=True)
+            ]
+            np.testing.assert_allclose([sum(p) for p in allocations], predicted)
+            summaries[title] = dict(
+                leaf=leaf,
+                features_fraction=fraction,
+                mass_weight_power=power,
+                metrics=stats(predicted),
+                candidates=[t[:4] for t in trials],
+                objects={
+                    k: dict(mass_kg=float(predicted[i]), component_kg=allocations[i])
+                    for i, k in enumerate(ids)
+                },
+            )
+        filename = (
+            "weighted_structure_control.json"
+            if args.mass_weights
+            else "nonlinear_structure_control.json"
+        )
+        (WORK / filename).write_text(json.dumps(summaries, indent=2))
+        print({k: v["metrics"] for k, v in summaries.items()})
+        return
 
     results = {}
     for title, weights in (
