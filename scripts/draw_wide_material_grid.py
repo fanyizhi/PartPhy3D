@@ -1,4 +1,4 @@
-"""Draw seven ABO scenes with actual projected evidence and NeRF2Physics labels."""
+"""Draw shared ABO views and projected material predictions."""
 
 import argparse
 import hashlib
@@ -37,10 +37,11 @@ FAMILIES = {
     **{key: "Metal" for key in ("aluminum", "aluminium", "steel", "copper")},
     **{key: "Electronics" for key in ("circuit board", "wires")},
     **{key: "Paint" for key in ("black paint", "white paint")},
+    "polyester": "Fabric",
 }
 
 
-def add_local_legend(ax, names):
+def add_local_legend(ax, names, *, side=False):
     """Keep each method's observed families next to the prediction."""
     handles = [
         Patch(facecolor=MATERIALS[name], edgecolor="none", label=name)
@@ -51,11 +52,11 @@ def add_local_legend(ax, names):
         return
     ax.legend(
         handles=handles,
-        loc="upper center",
-        bbox_to_anchor=(0.5, 0.96),
-        ncols=min(2, len(handles)),
+        loc="center left" if side else "upper center",
+        bbox_to_anchor=(0, 0.5) if side else (0.5, 0.96),
+        ncols=1 if side else min(2, len(handles)),
         frameon=False,
-        fontsize=5.6,
+        fontsize=6.4 if side else 5.6,
         columnspacing=0.54,
         handlelength=0.68,
         handletextpad=0.28,
@@ -108,12 +109,18 @@ def main():
         ]
 
     methods = [("ours", "Ours"), ("nerf", "NeRF2Physics")]
+    pugs_available = ["pugs_classes" in record for record in selected]
+    if any(pugs_available):
+        if not all(pugs_available):
+            raise ValueError("Choose cases with a complete PUGS prediction row")
+        methods.insert(1, ("pugs", "PUGS–Qwen"))
     if args.maskclip is not None:
         methods.append(("maskclip", "MaskCLIP (2D)"))
     labels = ["RGB input", "Region evidence", *(label for _, label in methods)]
-    heights = (1, 1) + (1, 0.29) * len(methods)
-    image_rows = (0, 1, *range(2, len(heights), 2))
-    fig = plt.figure(figsize=(7.2, 4.9 if args.maskclip else 4.02))
+    side = all(pugs_available)
+    heights = (1,) * len(labels) if side else (1, 1) + (1, 0.29) * len(methods)
+    image_rows = range(len(labels)) if side else (0, 1, *range(2, len(heights), 2))
+    fig = plt.figure(figsize=(7.2, 4.4 if side else 4.9 + 0.88 * (len(methods) - 3)))
     grid = fig.add_gridspec(len(heights), len(selected), height_ratios=heights)
     fig.subplots_adjust(
         left=0.134, right=0.987, top=0.916, bottom=0.025, wspace=0.085, hspace=0.035
@@ -139,7 +146,20 @@ def main():
         borderaxespad=0,
     )
     for column, record in enumerate(selected):
+        if side:
+            cells = [
+                grid[row, column].subgridspec(
+                    1, 2, width_ratios=(0.72, 0.28), wspace=0.045
+                )
+                for row in image_rows
+            ]
         source = args.data / f"{record['scene_id']}.npz"
+        if "raster_sha256" in record:
+            checksum = hashlib.sha256(source.read_bytes()).hexdigest()
+            if checksum != record["raster_sha256"]:
+                raise ValueError(
+                    f"Raster differs from the sealed export for {source.name}"
+                )
         with np.load(source) as data:
             fg = data["foreground"]
             layers = [data["rgb"], data["evidence"]]
@@ -154,15 +174,19 @@ def main():
                 ]
                 record[f"{method}_display_families"] = groups[1:]
                 rgb = np.array([to_rgb(MATERIALS[n]) for n in groups])
-                legend = fig.add_subplot(grid[3 + 2 * step, column])
+                legend = fig.add_subplot(
+                    cells[2 + step][0, 1] if side else grid[3 + 2 * step, column]
+                )
                 legend.axis("off")
-                add_local_legend(legend, {groups[i] for i in np.unique(prediction[fg])})
+                add_local_legend(
+                    legend, {groups[i] for i in np.unique(prediction[fg])}, side=side
+                )
                 raster = np.ones(fg.shape + (3,))
                 raster[fg] = rgb[prediction[fg]]
                 layers.append(raster)
             y, x = np.nonzero(fg)
         for row, layer in zip(image_rows, layers, strict=True):
-            ax = fig.add_subplot(grid[row, column])
+            ax = fig.add_subplot(cells[row][0, 0] if side else grid[row, column])
             ax.imshow(layer, interpolation="nearest")
             ax.set(xlim=(x.min() - 5, x.max() + 5), ylim=(y.max() + 5, y.min() - 5))
             ax.axis("off")
@@ -172,7 +196,7 @@ def main():
             if len(words) > 2
             else record["object"]
         )
-        box = grid[0, column].get_position(fig)
+        box = (cells[0][0, 0] if side else grid[0, column]).get_position(fig)
         fig.text(
             (box.x0 + box.x1) / 2, 0.948, title, ha="center", va="center", size=6.8
         )

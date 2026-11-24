@@ -21,24 +21,21 @@ ADE 是平均绝对质量误差，ALDE 是平均绝对自然对数误差，APE �
 
 ## 同视角的物体材质对比
 
-![四件 ABO 物体的输入、区域证据以及 Ours、NeRF2Physics 和 MaskCLIP 的材质输出](../part_edit_20261124/material_selected.png)
+![花纹椅、灰沙发和金属鞋架的 RGB、区域证据、Ours、PUGS–Qwen 与 NeRF2Physics 材质结果](material_paper_baselines.png)
 
-主图从已有七例的固定第 08 帧中，按 Ours 的前景赋值覆盖选前四。USB 集线器、花纹椅、紫色椅和写字台覆盖分别为 97.29%、96.44%、95.27%、95.20%。每列共享相机和裁剪，区域证据用三视图部件票向量的 PCA 显色，预测行用共享类别色板。选择规则用于定性展示，覆盖率衡量是否完成赋值。 [主图 PDF](../part_edit_20261124/material_selected.pdf) · [逐例相机与选择分数](../part_edit_20261124/material_selected_data.json) · [完整七例](../part_edit_20261124/region_material_seven.pdf)
+三件代表物体分别展示织物与木腿、软包表面和单一金属构件。每列统一使用第 08 帧、同一相机、网格、裁剪和材料色板，灰色标出未赋值像素。区域证据用多视角部件投票的 PCA 显色。PUGS–Qwen 复用 PUGS 的原版高斯重建和物性传播，由 Qwen3-VL-8B 提议材料。导出时核对作者代码提交、原始图像、标定和缓存预测的来源。三例用于定性展示。 [主图 PDF](material_paper_baselines.pdf) · [源数据及哈希](material_inputs/manifest.json) · [PUGS 作者代码](https://github.com/EverNorif/PUGS)
 
-![两把椅子的 RGB、人工标注、Ours、NeRF2Physics、PUGS–Qwen 和 MaskCLIP](paired_material.png)
+### 两把椅子的标注定量验证
 
 | 方法 | Fabric IoU (%) ↑ | Wood IoU (%) ↑ | mIoU (%) ↑ |
 |---|---:|---:|---:|
 | NeRF2Physics | 96.33 | 34.57 | 65.45 |
 | PUGS–Qwen | 81.34 | 0.03 | 40.68 |
-| MaskCLIP (2D) | 69.39 | 52.84 | 61.12 |
 | **Ours** | **95.55** | **32.71** | **64.13** |
 
-三维方法在两把椅子的五个 PhysSeg 视角分别取公共相机和共享网格。NeRF2Physics 复用作者缓存和官方查询代码，PUGS–Qwen 使用 PUGS 原实现和 Qwen 材料提议，在固定半径内将预测概率转到同一网格。MaskCLIP 是新加的图像基线，用冻结的 ViT-B/16 DataComp 权重、448 px 输入和固定的十二类材料提示，直接分配相同 RGB 视角内的像素，使用 RGB 原有透明通道限制背景。它以原论文的末层 value 特征路径实现，未采用可选的类提示滤波与邻域平滑。
+从两把椅子各取五个 PhysSeg 视角，只在恰有一个人工标注类别的像素上评分。先汇总各类交集与并集，再把织物与木材 IoU 等权平均。NeRF2Physics 复用作者缓存与查询代码，PUGS–Qwen 在固定半径内将预测概率映射到同一网格。 [逐视角计数](paired_material.json) · [PhysSeg-15 数据](https://github.com/momaiyc/GS2Physics)
 
-四个方法均在恰有一个人工标注类别的像素上评分。先在十个视角汇总各类交集与并集，再把织物与木材 IoU 等权平均。单看图中的花纹椅视角，Ours 为 87.63%，NeRF2Physics 为 75.12%，PUGS–Qwen 为 44.09%，MaskCLIP 为 73.49%。十视角汇总里，NeRF2Physics 的 mIoU 最高，MaskCLIP 的木材 IoU 最高。 [材料图 PDF](paired_material.pdf) · [三维方法逐视角计数](paired_material.json) · [MaskCLIP 逐视角计数](maskclip_physseg.json) · [模型和输入记录](maskclip_manifest.json) · [MaskCLIP 原论文与代码](https://github.com/chongzhou96/MaskCLIP)
-
-### 其他基线的原文材质结果
+### 原论文的可视化与材质结果
 
 | 方法 | Gen2Physics 表 2，PartNet-Material mIoU (%) | GS2Physics 表 II，PhysSeg-15 Eval1 / Eval2 / Eval3 mIoU (%) |
 |---|---:|---:|
@@ -48,11 +45,18 @@ ADE 是平均绝对质量误差，ALDE 是平均绝对自然对数误差，APE �
 | Gen2Physics | 48.27 | — |
 | PhysVGGT | — | — |
 
-GS2Physics 已发布 PhysSeg-15 人工标注和模拟结果，材质预测图见原文 Fig. 8。Gen2Physics 材质图见原文 Fig. 4，样本来自 PartNet-Material。PhysVGGT 的 Fig. 4 是密度、摩擦、硬度和杨氏模量预测。当前公开资料中未找到三个方法在上述同视角 ABO 实例上的可复算预测。原论文图与成绩按各自数据和任务引用。 [GS2Physics Fig. 8 和表 II](https://ieeexplore.ieee.org/document/11653536/) · [作者仓库](https://github.com/momaiyc/GS2Physics) · [Gen2Physics Fig. 4](https://arxiv.org/html/2608.23869v1#S4.F4) · [PhysVGGT Fig. 4](https://arxiv.org/html/2609.18920v1#S4.F4)
+| 论文 | 发表图 | 图中输出 |
+|---|---|---|
+| PUGS | [Fig. 5](https://arxiv.org/html/2502.12231v2#S3.F5) | ABO 物体的区域特征和材料分割 |
+| GS2Physics | [Fig. 8](https://ieeexplore.ieee.org/document/11653536/) | 作者 ABO 示例的材质分割 |
+| Gen2Physics | [Fig. 4](https://arxiv.org/html/2608.23869v1#S4.F4) | PartNet-Material 材质分割 |
+| PhysVGGT | [Fig. 4](https://arxiv.org/html/2609.18920v1#S4.F4) | 摩擦、硬度、杨氏模量和密度 |
+
+作者图沿用各自样本与拍摄视角。GS2Physics 公开的是人工标注与仿真示例。Gen2Physics 与 PhysVGGT 未查到作者用于这三件同视角样本的可复算结果。 [GS2Physics 作者仓库](https://github.com/momaiyc/GS2Physics)
 
 ## 本轮发现的问题与修正验证
 
-- **材质基线在公开权重和输出格式上有差异。** CLIPSeg 权重下载端点从实验服务器连接失败。改用已有已封存的 DataComp ViT-B/16 权重实现 MaskCLIP 的末层 value 路径，在服务器为所展示案例推理，并用 PhysSeg 标注的同十个视角核算。渲染时比对输入与输出 SHA-256。新增基线的木材 IoU 达 52.84%，下一轮可据此检查 2D 细结构证据在哪些视角补回了三维投影遗漏。 [基线实现](../../scripts/run_maskclip_material.py) · [实验记录](maskclip_manifest.json)
+- **PUGS 材料提议的复现条件。** 作者代码默认使用 GPT‑4o，需要 API 凭据。服务器尚未配置，直接对照沿用已封存的 PUGS–Qwen。PUGS 发表图中的推车、软包长凳和床经 RGB 检索匹配到 ABO-500 第 00 帧，可作为后续核对原版结果的候选。 [PUGS 作者说明](https://github.com/EverNorif/PUGS)
 - **材质与几何有不同的失效原因。** 蓝椅的 8,900 个木材标注像素中，4,563 个看不到网格，3,844 个被赋成金属。剩下 493 个为无标签或其他材料，正确木材像素为 0。把冻结的亚像素轮廓网格投影到同五个留出视角，木材标注像素的几何命中从 **48.73% 提到 78.38%**，整件前景精度从 **96.86% 到 96.97%**。花纹椅的四个共同留出视角里，木材几何命中从 84.68% 到 95.53%，前景精度从 97.57% 降至 92.57%。因此本轮保留原网格的材质主结果。局部细件恢复具备潜力，仍需按部件转移材料证据并验证边界。 [逐视角几何和材质计数](paired_material.json)
 - **质量验证集上的损失集中在错误方向的结构修正。** 对 100 件验证物体，用每件实际进入融合的图像质量作同对象对照。完整融合有 48 件误差变小、52 件变大，净增 0.932 kg ADE。`B07QHYD94M_ATVPDKIKX0DER` 的目录质量为 55.34 kg，图像支路为 107.84 kg，构造修正把结果推到 151.63 kg，单件新增 43.79 kg 绝对误差。单靠改变最终的融合权重无法识别这类异常，需约束输入物理支路的尺度、实体占用和材料密度。主表继续使用封存完整方法。 [结构质量修正对照](../abo500_20261120/fusion_validation/README.md) · [验证失败归因](../abo500_20261120/validation_failure_audit.json)
 

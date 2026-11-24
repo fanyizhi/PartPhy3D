@@ -1,4 +1,4 @@
-"""Replay the official NeRF2Physics query for seven ABO material examples."""
+"""Export aligned ABO material views with official NeRF2Physics and optional PUGS–Qwen."""
 
 import argparse
 import json
@@ -8,6 +8,7 @@ from types import SimpleNamespace
 
 import numpy as np
 import trimesh
+from scipy.spatial import cKDTree
 
 from export_region_material_comparison import digest, project_evidence, read
 
@@ -21,20 +22,70 @@ CASES = (
     ("B07Y3Q7MDR", "Purple desk chair"),
     ("B07K6S2G5Z_A1F83G8C2ARO7P", "Writing desk"),
 )
+PAPER_CASES = (
+    ("B07DBDX15Y_ATVPDKIKX0DER", "Patterned accent chair"),
+    ("B07QFP4PV5_ATVPDKIKX0DER", "Gray upholstered sofa"),
+    ("B07TWQTVXL_ATVPDKIKX0DER", "Metal shoe rack"),
+)
+
+
+def pugs_projection(root, scene, mesh, face_ids, inverse, visible):
+    report = root / "reports" / scene
+    prediction = report / "official_predictions.json"
+    if digest(prediction) != read(report / "prediction_seal.json")[prediction.name]:
+        raise ValueError(f"PUGS mass prediction seal differs for {scene}")
+    protocol = read(report / "integral_protocol.json")
+    if protocol["method"] != "PUGS-Qwen3-VL-8B-NF4" or protocol["official_GPT4o"]:
+        raise ValueError(f"Expected the recorded Qwen proposal protocol for {scene}")
+    names = [p["name"] for p in read(report / "mass_decomposition.json")["materials"]]
+    result = root / "scenes" / scene / "pred_result_density"
+    points_path = result / "dense_points.npy"
+    scores_path = result / "dense_pred_probs.npy"
+    points, scores = np.load(points_path), np.load(scores_path)
+    if points.shape != (len(scores), 3) or scores.shape[1:] != (len(names),):
+        raise ValueError(f"PUGS points and scores do not correspond for {scene}")
+    finite = np.isfinite(points).all(1) & np.isfinite(scores).all(1)
+    if not finite.any():
+        raise ValueError(f"PUGS returned no finite predictions for {scene}")
+    distance, index = cKDTree(points[finite]).query(mesh.triangles_center[face_ids])
+    transfer_limit = 0.02 * mesh.extents.max()
+    predictions = 1 + scores[finite][index].argmax(axis=1)
+    predictions[distance > transfer_limit] = 0
+    labels = np.zeros(visible.shape, dtype=np.int16)
+    labels[visible] = predictions[inverse]
+    return (
+        labels,
+        names,
+        {
+            "pugs_scores_sha256": digest(scores_path),
+            "pugs_points_sha256": digest(points_path),
+            "pugs_proposal": protocol["method"],
+            "pugs_upstream_commit": protocol["upstream_commit"],
+            "pugs_transfer_limit_camera_units": float(transfer_limit),
+        },
+    )
 
 
 def export(case, args, query, model, tokenizer, torch):
     scene, name = case
-    main = (args.benchmark / "appearance_fill_final" / f"{scene}.npz").exists()
-    base, completion, cache = (
-        ("density_maps_v1", "appearance_fill_final", "heatmap_cache")
-        if main
-        else (
+    if (args.benchmark / "appearance_fill_final" / f"{scene}.npz").exists():
+        base, completion, cache = (
+            "density_maps_v1",
+            "appearance_fill_final",
+            "heatmap_cache",
+        )
+    elif (args.benchmark / "density_sofa_completion" / f"{scene}.npz").exists():
+        base, completion, cache = (
+            "density_sofa",
+            "density_sofa_completion",
+            "sofa_density_cache",
+        )
+    else:
+        base, completion, cache = (
             "density_paperlike",
             "density_paperlike_completion",
             "extra_density_cache",
         )
-    )
     base, completion, cache = (args.benchmark / p for p in (base, completion, cache))
     field = completion / "surface" / "fields" / scene
     source_field = base / "surface" / "fields" / scene
@@ -92,8 +143,7 @@ def export(case, args, query, model, tokenizer, torch):
         r["surface_material"] for r in sorted(parts, key=lambda p: p["part_index"])
     ]
     names = prediction["mat_names"]
-    np.savez_compressed(
-        args.output / f"{scene}.npz",
+    arrays = dict(
         rgb=rgb,
         foreground=fg,
         evidence=evidence,
@@ -102,7 +152,7 @@ def export(case, args, query, model, tokenizer, torch):
         ours=ours,
         ours_names=ours_names,
     )
-    return {
+    metadata = {
         "scene_id": scene,
         "object": name,
         "view": 8,
@@ -110,12 +160,40 @@ def export(case, args, query, model, tokenizer, torch):
         "nerf_classes": list(names),
         "partphy3d_classes": ours_names,
     }
+    if args.pugs is not None:
+        scene_path = args.benchmark / "observations" / "scenes" / scene
+        pugs_scene = args.pugs / "scenes" / scene
+        camera_file = scene_path / "transforms.json"
+        frame = read(camera_file)["frames"][metadata["view"]]["file_path"]
+        if any(
+            digest(scene_path / path) != digest(pugs_scene / path)
+            for path in ("transforms.json", frame)
+        ):
+            raise ValueError(f"PUGS camera or RGB frame differs for {scene}")
+        pugs, pugs_names, provenance = pugs_projection(
+            args.pugs, scene, mesh, ids_used, inverse, visible
+        )
+        arrays.update(pugs=pugs, pugs_names=pugs_names)
+        metadata.update(
+            pugs_classes=pugs_names,
+            camera_sha256=digest(camera_file),
+            rgb_sha256=digest(scene_path / frame),
+            **provenance,
+        )
+    raster_path = args.output / f"{scene}.npz"
+    np.savez_compressed(raster_path, **arrays)
+    if args.pugs is not None:
+        metadata["raster_sha256"] = digest(raster_path)
+    return metadata
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for key in ("benchmark", "nerf", "nerf-runs", "clip", "lock", "output"):
         parser.add_argument(f"--{key}", type=Path, required=True)
+    parser.add_argument(
+        "--pugs", type=Path, help="Export scenes with PUGS–Qwen outputs"
+    )
     args = parser.parse_args()
     import open_clip
     import torch
@@ -138,7 +216,7 @@ def main():
     args.output.mkdir(exist_ok=False)
     manifest = [
         export(case, args, predict_physical_property_query, model, tokenizer, torch)
-        for case in CASES
+        for case in (PAPER_CASES if args.pugs is not None else CASES)
     ]
     (args.output / "manifest.json").write_text(
         json.dumps(manifest, indent=2) + "\n", encoding="utf-8"

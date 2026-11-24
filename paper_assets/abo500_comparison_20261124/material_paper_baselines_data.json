@@ -1,0 +1,134 @@
+[
+  {
+    "scene_id": "B07DBDX15Y_ATVPDKIKX0DER",
+    "object": "Patterned accent chair",
+    "view": 8,
+    "mesh_sha256": "f431ead3d2a32003de12474f02f0a853f9a75b75304ee8f53ef3ca1de696f0c2",
+    "nerf_classes": [
+      "fabric",
+      "wood",
+      "foam",
+      "metal",
+      "plastic"
+    ],
+    "partphy3d_classes": [
+      "fabric",
+      "wood"
+    ],
+    "pugs_classes": [
+      "fabric",
+      "wood"
+    ],
+    "camera_sha256": "297e698f657b35d91215e89b8f0c108eb80bb75192bf90e9355d1e0849b96f69",
+    "rgb_sha256": "5d89950cfce60fbecf35ee30d38eebde439418cfe22cbd6edb7624dc64fd38ee",
+    "pugs_scores_sha256": "d58b12e63373b3ea3e6efd971ccb77bebb30d7246ef02d2d713b037de9f3f497",
+    "pugs_points_sha256": "b84c90c784214139d96e5dde0a1b54a3ba1fdeeab5bd6e522c1bc63d6fc7705f",
+    "pugs_proposal": "PUGS-Qwen3-VL-8B-NF4",
+    "pugs_upstream_commit": "ef7fd8c52543ab0fe6eb2a7a99e5267523133a09",
+    "pugs_transfer_limit_camera_units": 0.017225804596673697,
+    "raster_sha256": "2fb9a4db1b5f66cc06f5d84a3f63714839c4d7f6e4fefecee3fb78d4f025e0bf",
+    "ours_display_families": [
+      "Fabric",
+      "Wood"
+    ],
+    "pugs_display_families": [
+      "Fabric",
+      "Wood"
+    ],
+    "nerf_display_families": [
+      "Fabric",
+      "Wood",
+      "Foam",
+      "Metal",
+      "Plastic"
+    ]
+  },
+  {
+    "scene_id": "B07QFP4PV5_ATVPDKIKX0DER",
+    "object": "Gray upholstered sofa",
+    "view": 8,
+    "mesh_sha256": "8b86ea9caec5ecbd13dfd26835062e10db107ed3141a1bb9cac0e4b375a57c74",
+    "nerf_classes": [
+      "fabric",
+      "wood",
+      "foam",
+      "metal",
+      "polyester"
+    ],
+    "partphy3d_classes": [
+      "fabric",
+      "foam",
+      "wood"
+    ],
+    "pugs_classes": [
+      "fabric",
+      "foam",
+      "wood",
+      "metal",
+      "plastic"
+    ],
+    "camera_sha256": "41a23e979e004b1a43451ca3a982a810a4db1b5a7b049665c96b4ce3365a4ef0",
+    "rgb_sha256": "0ec246e74ef9e625dfd09b95963f5dcf80f340563b4b5847e7c403f457c6720c",
+    "pugs_scores_sha256": "e19d413b4badd46b853f4728dcc0abba30b3034184c56a292ecdb324f116e680",
+    "pugs_points_sha256": "72e3e7cac5e127e6d84e140db8213bb362ec33c72a591694fc8e7fda52f55711",
+    "pugs_proposal": "PUGS-Qwen3-VL-8B-NF4",
+    "pugs_upstream_commit": "ef7fd8c52543ab0fe6eb2a7a99e5267523133a09",
+    "pugs_transfer_limit_camera_units": 0.03721264958381653,
+    "raster_sha256": "bd03285b51fc10bf517951b4bba7e2bdf1441c7ff97a55658c5c1d0e8b9169c1",
+    "ours_display_families": [
+      "Fabric",
+      "Foam",
+      "Wood"
+    ],
+    "pugs_display_families": [
+      "Fabric",
+      "Foam",
+      "Wood",
+      "Metal",
+      "Plastic"
+    ],
+    "nerf_display_families": [
+      "Fabric",
+      "Wood",
+      "Foam",
+      "Metal",
+      "Fabric"
+    ]
+  },
+  {
+    "scene_id": "B07TWQTVXL_ATVPDKIKX0DER",
+    "object": "Metal shoe rack",
+    "view": 8,
+    "mesh_sha256": "0c1841499118e456fea866d3c01c876e61b79373c7f507d611fcc2338be0b780",
+    "nerf_classes": [
+      "metal",
+      "black paint",
+      "white paint"
+    ],
+    "partphy3d_classes": [
+      "steel"
+    ],
+    "pugs_classes": [
+      "steel"
+    ],
+    "camera_sha256": "9b1e1e67a44a763b56302a1ff8a2cd6fa1470f285b5afff472fac41fa9544288",
+    "rgb_sha256": "1bcbb7d72513e7bcd4dbfd99e710ea97eadc7927f86e708b1922e0bfa55a8dfe",
+    "pugs_scores_sha256": "85f437d8a6f98dadeb232c5c3febfc2d254ab9e84979cbebc354159f3b8ccbdf",
+    "pugs_points_sha256": "80683476bfc7213363d17f63ad3f91411631e352cb9efc8cca2f881f7f9057c0",
+    "pugs_proposal": "PUGS-Qwen3-VL-8B-NF4",
+    "pugs_upstream_commit": "ef7fd8c52543ab0fe6eb2a7a99e5267523133a09",
+    "pugs_transfer_limit_camera_units": 0.023059086799621584,
+    "raster_sha256": "eab9d56687b4c4086641921911cf569708b7f58beaf5e28d968376e77b0bde09",
+    "ours_display_families": [
+      "Metal"
+    ],
+    "pugs_display_families": [
+      "Metal"
+    ],
+    "nerf_display_families": [
+      "Metal",
+      "Paint",
+      "Paint"
+    ]
+  }
+]

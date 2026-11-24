@@ -8,9 +8,9 @@ The top row follows the upholstered chaise lounge reference mesh. It shows three
 
 The face-evidence row displays PCA colors of the recorded multi-view part votes, with color intensity modulated by support. The material rows use a different, shared categorical palette. PUGS–Qwen labels come from the class probabilities transferred to the same mesh and camera. The striped chair legs and blue chair legs are both annotated as wood; the blue chair remains a material error for PartPhy3D. [PDF](region_material_comparison.pdf) · [Source registration](region_comparison_manifest.json)
 
-![Four selected ABO objects with RGB, region evidence and three sets of predicted materials](material_selected.png)
+![Three ABO objects with RGB, region evidence and material maps from Ours, PUGS–Qwen and NeRF2Physics](../abo500_comparison_20261124/material_paper_baselines.png)
 
-Each column shows one ABO object from a fixed view and uses a common crop. Four out of seven recorded objects are selected by the fraction of foreground that Ours assigns a material. Region evidence is a PCA view of the recorded multi-view part votes. NeRF2Physics uses the author's cached features and official query. MaskCLIP uses the corresponding RGB frame and a fixed set of text prompts. [PDF](material_selected.pdf) · [Selection scores](material_selected_data.json) · [Full seven-object figure](region_material_seven.pdf) · [Annotated comparison with PUGS–Qwen](../abo500_comparison_20261124/README.md) · [Method details](../../docs/PARTPHY3D_METHODS_zh.md)
+Each object uses a fixed view and common mesh. Region evidence is a PCA view of the recorded multi-view part votes. The comparison includes the original NeRF2Physics query and PUGS with local Qwen material proposals. [PDF](../abo500_comparison_20261124/material_paper_baselines.pdf) · [Baseline paper figures and quantitative results](../abo500_comparison_20261124/README.md) · [Method details](../../docs/PARTPHY3D_METHODS_zh.md)
 
 ![Striped cushion above a fixed floor at four points during its drop, then in contact](cushion_drop_storyboard.png)
 
